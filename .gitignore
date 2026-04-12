@@ -5,3 +5,12 @@
 
 # assets
 assets/
+
+# Windows
+*.lnk
+Thumbs.db
+Desktop.ini
+
+# macOS
+*.alias
+.DS_Store

@@ -2,3 +2,6 @@
 *.sfc
 *.smc
 *.srm
+
+# assets
+assets/

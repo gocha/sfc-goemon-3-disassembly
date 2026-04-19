@@ -26,7 +26,9 @@ endif
 # Pretend rules that are actually flags defer to `make all`
 compare: all
 
-spc700.bin: spc700.asm
+DEPS=$(wildcard *.asm)
+
+spc700.bin: $(DEPS)
 	@$(ASAR) spc700.asm spc700.bin
 
 clean:

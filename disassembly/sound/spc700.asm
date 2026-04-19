@@ -13,66 +13,69 @@ arch 65816
 arch spc700
 base $0200
 
+incsrc spc_regs.asm
+incsrc dsp_regs.asm
+
 start:
-  clrp                                      ; $0200 |
-  mov   x,#$ff                              ; $0201 |
-  mov   sp,x                                ; $0203 |
-  mov   $f1,#$30                            ; $0204 | clear ports
-  mov   a,#$00                              ; $0207 |
-  mov   x,a                                 ; $0209 |
+  clrp                                      ; $0200 | Use direct page 0
+  mov   x,#$ff                              ; $0201 |\ Set stack pointer to $ff
+  mov   sp,x                                ; $0203 |/
+  mov   !reg_control,#$30                   ; $0204 | Clear ports
+  mov   a,#$00                              ; $0207 |\
+  mov   x,a                                 ; $0209 | |
 
-loc_020a:
-  mov   (x+),a                              ; $020a | clear direct page $00-$ef
-  cmp   x,#$f0                              ; $020b |
-  bne   loc_020a                            ; $020d |
-  mov   y,#$00                              ; $020f |
-  mov   $04,#$00                            ; $0211 |
-  mov   $05,#$01                            ; $0214 |
+.loop
+  mov   (x+),a                              ; $020a | | Clear $0000-$00ef
+  cmp   x,#$f0                              ; $020b | |
+  bne   .loop                               ; $020d |/
+  mov   y,#$00                              ; $020f |\
+  mov   $04,#$00                            ; $0211 | |
+  mov   $05,#$01                            ; $0214 | |
 
-loc_0217:
-  mov   ($04)+y,a                           ; $0217 |
-  inc   y                                   ; $0219 |
-  cmp   y,#$e0                              ; $021a |
-  bne   loc_0217                            ; $021c |
+.loop_2
+  mov   ($04)+y,a                           ; $0217 | | Clear $0100-$01df
+  inc   y                                   ; $0219 | |
+  cmp   y,#$e0                              ; $021a |/
+  bne   .loop_2                             ; $021c |
   mov   a,#$00                              ; $021e |
-  mov   $f2,#$7d                            ; $0220 |
-  mov   $f3,a                               ; $0223 | EDL - echo delay = 0
-  mov   $f2,#$6d                            ; $0225 |
-  mov   $f3,a                               ; $0228 | FLG - enable echo
-  set5  $13                                 ; $022a |
-  mov   $19,#$4b                            ; $022c |
-  mov   $f2,#$2c                            ; $022f |
-  mov   $f3,a                               ; $0232 | EVOL(L) - echo volume (L) = 0
-  mov   $f2,#$3c                            ; $0234 |
-  mov   $f3,a                               ; $0237 | EVOL(R) - echo volume (R) = 0
-  mov   $f2,#$0d                            ; $0239 |
-  mov   $f3,a                               ; $023c | EFB - echo feedback = 0
-  mov   y,#$71                              ; $023e |
+  mov   !reg_dspaddr,#!dsp_edl              ; $0220 |\ Clear echo delay
+  mov   !reg_dspdata,a                      ; $0223 |/
+  mov   !reg_dspaddr,#!dsp_esa              ; $0225 |\ Clear echo start address
+  mov   !reg_dspdata,a                      ; $0228 |/
+  set5  $13                                 ; $022a |  Set FLG shadow to $20 (disable echo)
+  mov   $19,#$4b                            ; $022c |  ???
+  mov   !reg_dspaddr,#!dsp_evoll            ; $022f |\ Clear echc volume (L)
+  mov   !reg_dspdata,a                      ; $0232 |/
+  mov   !reg_dspaddr,#!dsp_evolr            ; $0234 |\ Clear echc volume (R)
+  mov   !reg_dspdata,a                      ; $0237 |/
+  mov   !reg_dspaddr,#!dsp_efb              ; $0239 |\ Clear echo feedback
+  mov   !reg_dspdata,a                      ; $023c |/
+  mov   y,#!dsp_v7volr                      ; $023e |  Initialize destination S-DSP address
 
-loc_0240:
-  mov   a,#$00                              ; $0240 |
-  mov   $f2,y                               ; $0242 |
-  mov   $f3,#$00                            ; $0244 | VOL(R) - voice volume (R) = 0
-  dec   y                                   ; $0247 |
-  mov   $f2,y                               ; $0248 |
-  mov   $f3,#$00                            ; $024a | VOL(L) - voice volume (L) = 0
-  mov   a,y                                 ; $024d |
-  setc                                      ; $024e |
-  sbc   a,#$0f                              ; $024f |
-  mov   y,a                                 ; $0251 |
-  bpl   loc_0240                            ; $0252 |
-  mov   $f2,#$5c                            ; $0254 |
-  mov   $f3,#$ff                            ; $0257 | KOF - key off voices
-  mov   a,#$7f                              ; $025a |
-  mov   $f2,#$0c                            ; $025c |
-  mov   $f3,a                               ; $025f | MVOL(L) - master volume (L) = $7f
-  mov   $f2,#$1c                            ; $0261 |
-  mov   $f3,a                               ; $0264 | MVOL(R) - master volume (R) = $7f
-  mov   $f2,#$5d                            ; $0266 |
-  mov   $f3,#$04                            ; $0269 | DIR - sample dir = $0400
-  mov   $fa,#$20                            ; $026c | set timer 0 frequency (4 ms)
-  mov   $f1,#$01                            ; $026f | start timer 0
-  jmp   main                                ; $0272 |
+.voice_loop
+  mov   a,#$00                              ; $0240 |\
+  mov   !reg_dspaddr,y                      ; $0242 | |\ Clear voice volume (R)
+  mov   !reg_dspdata,#$00                   ; $0244 | |/
+  dec   y                                   ; $0247 | |\
+  mov   !reg_dspaddr,y                      ; $0248 | | | Clear voice volume (L)
+  mov   !reg_dspdata,#$00                   ; $024a | |/
+  mov   a,y                                 ; $024d | |\
+  setc                                      ; $024e | | |
+  sbc   a,#$0f                              ; $024f | | | Repeat the same steps for all voices
+  mov   y,a                                 ; $0251 | |/
+  bpl   .voice_loop                         ; $0252 |/
+  mov   !reg_dspaddr,#!dsp_koff             ; $0254 |\ Key off all voices
+  mov   !reg_dspdata,#$ff                   ; $0257 |/
+  mov   a,#$7f                              ; $025a |\ Set master volume (L) to $7f
+  mov   !reg_dspaddr,#!dsp_mvoll            ; $025c | |
+  mov   !reg_dspdata,a                      ; $025f |/
+  mov   !reg_dspaddr,#!dsp_mvolr            ; $0261 |\ Set master volume (R) to $7f
+  mov   !reg_dspdata,a                      ; $0264 |/
+  mov   !reg_dspaddr,#!dsp_dir              ; $0266 |\ Set sample dir to $0400
+  mov   !reg_dspdata,#$04                   ; $0269 |/
+  mov   !reg_t0div,#$20                     ; $026c | Set timer 0 frequency (4 ms)
+  mov   !reg_control,#$01                   ; $026f | Start timer 0
+  jmp   main                                ; $0272 | Enter to main
 
   fillbyte 0
   fill $0300-pc()                           ; $0275 |
@@ -511,9 +514,9 @@ sub_0d1b:
   mov   $fa,#$20                            ; $0d23 |
   mov   $f1,#$01                            ; $0d26 |
   mov   a,#$7f                              ; $0d29 |
-  mov   $f2,#$0c                            ; $0d2b |
+  mov   $f2,#!dsp_mvoll                     ; $0d2b |
   mov   $f3,a                               ; $0d2e | MVOL(L)
-  mov   $f2,#$1c                            ; $0d30 |
+  mov   $f2,#!dsp_mvolr                     ; $0d30 |
   mov   $f3,a                               ; $0d33 | MVOL(R)
 
 sub_0d35:
@@ -685,7 +688,7 @@ loc_0e3b:
   mov   $26,a                               ; $0e3b |
   mov   $29,#$00                            ; $0e3d |
   call  sub_0cf4                            ; $0e40 |
-  mov   $f2,#$5c                            ; $0e43 |
+  mov   $f2,#!dsp_koff                      ; $0e43 |
   mov   $f3,a                               ; $0e46 | KOF
   mov   $2e,#$00                            ; $0e48 |
   mov   $2f,#$35                            ; $0e4b |
@@ -978,8 +981,8 @@ data_1020:
   db $40,$c0,$70,$f0,$1f,$3f,$7f,$ff        ; $1020 |
 
 main:
-  mov   a,$fd                               ; $1028 |
-  beq   main                                ; $102a |
+  mov   a,!reg_t0out                        ; $1028 |\ Poll timer 0
+  beq   main                                ; $102a |/
 
 code_102c:
   bbs0  $24,loc_1041                        ; $102c |
@@ -1001,7 +1004,7 @@ loc_1041:
   call  sub_0da1                            ; $1048 |
 
 loc_104b:
-  mov   $f2,#$5c                            ; $104b |
+  mov   $f2,#!dsp_koff                      ; $104b |
   mov   ($f3),($10)                         ; $104e | KOF
   mov   y,#$ff                              ; $1051 |
   cmp   $26,#$00                            ; $1053 |
@@ -1065,16 +1068,16 @@ loc_10a5:
   beq   loc_10c5                            ; $10ad |
   dec   $1a                                 ; $10af |
   bne   loc_10c5                            ; $10b1 |
-  mov   $f2,#$2c                            ; $10b3 |
+  mov   $f2,#!dsp_evoll                     ; $10b3 |
   mov   ($f3),($15)                         ; $10b6 | EVOL(L)
-  mov   $f2,#$3c                            ; $10b9 |
+  mov   $f2,#!dsp_evolr                     ; $10b9 |
   mov   ($f3),($16)                         ; $10bc | EVOL(R)
-  mov   $f2,#$0d                            ; $10bf |
+  mov   $f2,#!dsp_efb                       ; $10bf |
   mov   ($f3),($17)                         ; $10c2 |
 
 loc_10c5:
   mov   a,#$00                              ; $10c5 |
-  mov   $f2,#$5c                            ; $10c7 |
+  mov   $f2,#!dsp_koff                      ; $10c7 |
   mov   $f3,a                               ; $10ca | KOF
   mov   $10,a                               ; $10cc |
   mov   $f2,#$4c                            ; $10ce |
@@ -2563,7 +2566,7 @@ vcmd_echo_params:
   mov   a,$13                               ; $1a8d |
   or    a,#$20                              ; $1a8f |
   mov   $f3,a                               ; $1a91 | set FLG
-  mov   $f2,#$7d                            ; $1a93 |
+  mov   $f2,#!dsp_edl                       ; $1a93 |
   mov   ($f3),($18)                         ; $1a96 | set EDL
   mov   a,$18                               ; $1a99 |
   beq   .update_echo_address                ; $1a9b |
@@ -2576,7 +2579,7 @@ vcmd_echo_params:
   adc   a,#$00                              ; $1aa4 |
 
 .update_echo_address
-  mov   $f2,#$6d                            ; $1aa6 |
+  mov   $f2,#!dsp_esa                       ; $1aa6 |
   mov   $f3,a                               ; $1aa9 | set ESA
 
 .after_delay_update
@@ -2589,7 +2592,7 @@ vcmd_echo_params:
   mov   $1a,a                               ; $1ab3 |
   call  read_voice_byte                     ; $1ab5 | arg2 - echo feedback
   mov   $17,a                               ; $1ab8 |
-  call  increment_voice_ptr                 ; $1aba | arg3 - echo FIR? (disabled)
+  call  increment_voice_ptr                 ; $1aba | arg3 - echo FIR (ignored)
   mov   y,#$00                              ; $1abd |
 
 .fir_loop
@@ -2611,11 +2614,11 @@ disable_echo:
   inc   a                                   ; $1ad9 |
   mov   $19,a                               ; $1ada |
   mov   a,#$00                              ; $1adc |
-  mov   $f2,#$2c                            ; $1ade |
+  mov   $f2,#!dsp_evoll                     ; $1ade |
   mov   $f3,a                               ; $1ae1 | set EVOL(L)
-  mov   $f2,#$3c                            ; $1ae3 |
+  mov   $f2,#!dsp_evolr                     ; $1ae3 |
   mov   $f3,a                               ; $1ae6 | set EVOL(R)
-  mov   $f2,#$0d                            ; $1ae8 |
+  mov   $f2,#!dsp_efb                       ; $1ae8 |
   mov   $f3,a                               ; $1aeb | set EFB
   set5  $13                                 ; $1aed |
   mov   $f2,#$6c                            ; $1aef |
@@ -2625,9 +2628,9 @@ disable_echo:
   mov   $16,a                               ; $1af9 |
   mov   $17,a                               ; $1afb |
   mov   $18,a                               ; $1afd |
-  mov   $f2,#$7d                            ; $1aff |
+  mov   $f2,#!dsp_edl                       ; $1aff |
   mov   $f3,a                               ; $1b02 | set EDL
-  mov   $f2,#$6d                            ; $1b04 |
+  mov   $f2,#!dsp_esa                       ; $1b04 |
   mov   $f3,a                               ; $1b07 | set ESA
 
 .ret

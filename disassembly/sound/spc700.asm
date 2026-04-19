@@ -480,7 +480,7 @@ sub_0cee:
   ret                                       ; $0cf0 |
 
 sub_0cf1:
-  call  sub_1ad1                            ; $0cf1 |
+  call  disable_echo                        ; $0cf1 |
 
 sub_0cf4:
   mov   $1c,#$00                            ; $0cf4 |
@@ -517,7 +517,7 @@ sub_0d1b:
   mov   $f3,a                               ; $0d33 | MVOL(R)
 
 sub_0d35:
-  call  sub_1ad1                            ; $0d35 |
+  call  disable_echo                        ; $0d35 |
   mov   a,#$00                              ; $0d38 |
   mov   $1c,a                               ; $0d3a |
   mov   $2a,a                               ; $0d3c |
@@ -895,7 +895,7 @@ code_0f79:
   mov   y,a                                 ; $0f7b |
   mov   a,$0c31+y                           ; $0f7c |
   mov   $25,a                               ; $0f7f |
-  call  sub_1ad1                            ; $0f81 |
+  call  disable_echo                        ; $0f81 |
   mov   a,#$08                              ; $0f84 |
   mov   y,#$ff                              ; $0f86 |
   cmp   $0c,#$95                            ; $0f88 |
@@ -1744,7 +1744,7 @@ exec_vcmds:
 ; (62-7f)
 loc_14fb:
   bne   loc_1500                            ; $14fb | 63-7f
-  jmp   vcmd_62                             ; $14fd |
+  jmp   set_gain                            ; $14fd | vcmd 62 - gain
 
 ; (63-7f)
 loc_1500:
@@ -2005,29 +2005,29 @@ vcmd_dispatch_table:
   dw vcmd_instrument                        ; $169c | e2 - instrument
   dw vcmd_panpot                            ; $169e | e3 - panpot
   dw vcmd_vibrato                           ; $16a0 | e4 - vibrato
-  dw vcmd_e5                                ; $16a2 | e5
+  dw vcmd_random_pitch_envelope             ; $16a2 | e5 - random pitch envelope
   dw vcmd_repeat_start                      ; $16a4 | e6 - start loop
   dw vcmd_repeat_end                        ; $16a6 | e7 - end loop
   dw vcmd_subrepeat_start                   ; $16a8 | e8 - start loop #2
   dw vcmd_subrepeat_end                     ; $16aa | e9 - end loop #2
-  dw vcmd_tempo                             ; $16ac | ea - set tempo (per track)
-  dw vcmd_eb                                ; $16ae | eb
-  dw vcmd_transpose                         ; $16b0 | ec - per-voice transpose
-  dw vcmd_ed                                ; $16b2 | ed
-  dw vcmd_volume                            ; $16b4 | ee - set volume
-  dw vcmd_ef                                ; $16b6 | ef
-  dw vcmd_f0                                ; $16b8 | f0
-  dw vcmd_f1                                ; $16ba | f1
+  dw vcmd_tempo                             ; $16ac | ea - tempo (per track)
+  dw vcmd_tempo_fade                        ; $16ae | eb - tempo fade (per track)
+  dw vcmd_transpose                         ; $16b0 | ec - transpose (per track)
+  dw vcmd_adsr1                             ; $16b2 | ed - ADSR(1)
+  dw vcmd_volume                            ; $16b4 | ee - volume
+  dw vcmd_volume_fade                       ; $16b6 | ef - volume fade
+  dw vcmd_portamento                        ; $16b8 | f0 - portamento
+  dw vcmd_pitch_envelope                    ; $16ba | f1 - pitch envelope
   dw vcmd_tuning                            ; $16bc | f2 - tuning
-  dw vcmd_f3                                ; $16be | f3
-  dw vcmd_f4                                ; $16b0 | f4
+  dw vcmd_pitch_slide                       ; $16be | f3 - pitch slide
+  dw vcmd_echo_on_off                       ; $16b0 | f4 - echo on/off
   dw vcmd_echo_params                       ; $16c2 | f5 - echo params
-  dw vcmd_complexed_repeat_start            ; $16c4 | f6 - start complexed loop
-  dw vcmd_complexed_repeat_end              ; $16c6 | f7 - end complexed loop
-  dw vcmd_f8                                ; $16c8 | f8
+  dw vcmd_repeat_case_start                 ; $16c4 | f6 - repeat with different endings - start repeat
+  dw vcmd_repeat_case_marker                ; $16c6 | f7 - repeat with different endings - start/end of endings
+  dw vcmd_panpot_fade                       ; $16c8 | f8 - panpot fade
   dw vcmd_vibrato_depth_fade_length         ; $16ca | f9 - vibrato depth fade length
-  dw vcmd_fa                                ; $16cc | fa
-  dw vcmd_fb                                ; $16ce | fb
+  dw vcmd_adsr_1_2                          ; $16cc | fa - ADSR(1)/ADSR(2)/GAIN
+  dw vcmd_adsr2                             ; $16ce | fb - ADSR(2)
   dw vcmd_volume_and_instrument             ; $16d0 | fc - volume and instrument
   dw vcmd_goto                              ; $16d2 | fd - goto
   dw vcmd_subroutine                        ; $16d4 | fe - subroutine
@@ -2273,27 +2273,27 @@ loc_1885:
   sbc   a,#$c7                              ; $188d | vibrato depth fade length = arg1 - 199
 
 vcmd_vibrato_depth_fade_length:
-  mov   $0211+x,a                           ; $188f |
+  mov   $0211+x,a                           ; $188f | arg1 - vibrato depth fade length
   push  a                                   ; $1892 |
   mov   y,#$00                              ; $1893 |
-  mov   a,$0220+x                           ; $1895 |
+  mov   a,$0220+x                           ; $1895 | vibrato depth
   pop   x                                   ; $1898 |
   div   ya,x                                ; $1899 |
   push  a                                   ; $189a |
   mov   a,#$00                              ; $189b |
   div   ya,x                                ; $189d |
   mov   x,$22                               ; $189e |
-  mov   $02e0+x,a                           ; $18a0 |
+  mov   $02e0+x,a                           ; $18a0 | ((vibrato_depth / vibrato_depth_fade_length) << 8) / vibrato_depth_fade_length
   pop   a                                   ; $18a3 |
-  mov   $02e1+x,a                           ; $18a4 |
+  mov   $02e1+x,a                           ; $18a4 | vibrato_depth / vibrato_depth_fade_length
   jmp   exec_vcmds                          ; $18a7 |
 
-vcmd_e5:
-  mov   $01d1+x,a                           ; $18aa |
+vcmd_random_pitch_envelope:
+  mov   $01d1+x,a                           ; $18aa | arg1 - envelope speed
   call  read_voice_byte                     ; $18ad |
-  mov   $02f1+x,a                           ; $18b0 |
+  mov   $02f1+x,a                           ; $18b0 | arg2 - delta pitch mask bits (low)
   call  read_voice_byte                     ; $18b3 |
-  mov   $02f0+x,a                           ; $18b6 |
+  mov   $02f0+x,a                           ; $18b6 | arg3 - delta pitch mask bits (high)
   mov   a,#$00                              ; $18b9 |
   mov   $d1+x,a                             ; $18bb |
   mov   $01d0+x,a                           ; $18bd |
@@ -2308,10 +2308,11 @@ vcmd_repeat_start:
 
 vcmd_repeat_end:
   cmp   a,#$00                              ; $18d0 | arg1: repeat count
-  beq   loc_18f2                            ; $18d2 | $0 => infinite loop
+  beq   .parse_arg2                         ; $18d2 | $0 => infinite loop
   inc   $50+x                               ; $18d4 | increment repeat counter
-  cbne  $50+x,loc_18f2                      ; $18d6 |
-; repeat end
+  cbne  $50+x,.parse_arg2                   ; $18d6 |
+
+.finish
   call  increment_voice_ptr                 ; $18d9 |
   call  increment_voice_ptr                 ; $18dc |
   mov   a,#$00                              ; $18df |
@@ -2322,16 +2323,15 @@ vcmd_repeat_end:
   mov   $0131+x,a                           ; $18ec |
   jmp   exec_vcmds                          ; $18ef |
 
-; repeat again
-loc_18f2:
-  call  read_voice_byte                     ; $18f2 |
+.parse_arg2
+  call  read_voice_byte                     ; $18f2 | get arg2 (delta volume, signed)
   mov   y,#$00                              ; $18f5 |
   or    a,#$00                              ; $18f7 |
-  beq   loc_1910                            ; $18f9 |
-  bpl   loc_18fe                            ; $18fb |
+  beq   .parse_arg3                         ; $18f9 |
+  bpl   .adjust_volume                      ; $18fb |
   dec   y                                   ; $18fd |
 
-loc_18fe:
+.adjust_volume
   movw  $04,ya                              ; $18fe |
   mov   a,$0111+x                           ; $1900 |
   mov   y,a                                 ; $1903 |
@@ -2341,17 +2341,16 @@ loc_18fe:
   mov   a,y                                 ; $190c |
   mov   $0111+x,a                           ; $190d | add arg2 to $0110/1
 
-; adjust pitch by repeat count
-loc_1910:
+.parse_arg3
   call  read_voice_byte                     ; $1910 | get arg3 (delta pitch, signed)
   or    a,#$00                              ; $1913 |
-  beq   loc_1934                            ; $1915 | do nothing if arg3 == 0
+  beq   .repeat_again                       ; $1915 | do nothing if arg3 == 0
   mov   y,#$00                              ; $1917 |
   asl   a                                   ; $1919 |
-  bcc   loc_191d                            ; $191a |
+  bcc   .adjust_pitch                       ; $191a |
   dec   y                                   ; $191c |
 
-loc_191d:
+.adjust_pitch
   mov   $04,y                               ; $191d |
   asl   a                                   ; $191f |
   rol   $04                                 ; $1920 |
@@ -2364,7 +2363,7 @@ loc_191d:
   adc   a,$0131+x                           ; $192e |
   mov   $0131+x,a                           ; $1931 | add (arg3 * 8) to $0130/1+x
 
-loc_1934:
+.repeat_again
   mov   a,$0150+x                           ; $1934 |
   mov   $30+x,a                             ; $1937 |
   mov   a,$0151+x                           ; $1939 |
@@ -2386,24 +2385,24 @@ vcmd_subrepeat_start:
 
 vcmd_subrepeat_end:
   cmp   a,#$00                              ; $195e |
-  beq   loc_1970                            ; $1960 |
+  beq   .parse_arg2                         ; $1960 |
   inc   $51+x                               ; $1962 |
-  cbne  $51+x,loc_1970                      ; $1964 |
-; repeat end
+  cbne  $51+x,.parse_arg2                   ; $1964 |
+
+.finish
   call  increment_voice_ptr                 ; $1967 |
   call  increment_voice_ptr                 ; $196a |
   jmp   exec_vcmds                          ; $196d |
 
-; repeat again
-loc_1970:
-  call  read_voice_byte                     ; $1970 |
+.parse_arg2
+  call  read_voice_byte                     ; $1970 | get arg2 (delta volume, signed)
   mov   y,#$00                              ; $1973 |
   or    a,#$00                              ; $1975 |
-  beq   loc_198e                            ; $1977 |
-  bpl   loc_197c                            ; $1979 |
+  beq   .parse_arg3                         ; $1977 |
+  bpl   .adjust_volume                      ; $1979 |
   dec   y                                   ; $197b |
 
-loc_197c:
+.adjust_volume
   movw  $04,ya                              ; $197c |
   mov   a,$0121+x                           ; $197e |
   mov   y,a                                 ; $1981 |
@@ -2413,17 +2412,16 @@ loc_197c:
   mov   a,y                                 ; $198a |
   mov   $0121+x,a                           ; $198b | add arg2 to $0120/1
 
-; adjust pitch by repeat count
-loc_198e:
+.parse_arg3
   call  read_voice_byte                     ; $198e | get arg3 (delta pitch, signed)
   or    a,#$00                              ; $1991 |
-  beq   loc_19b2                            ; $1993 | do nothing if arg3 == 0
+  beq   .repeat_again                       ; $1993 | do nothing if arg3 == 0
   mov   y,#$00                              ; $1995 |
   asl   a                                   ; $1997 |
-  bcc   loc_199b                            ; $1998 |
+  bcc   .adjust_pitch                       ; $1998 |
   dec   y                                   ; $199a |
 
-loc_199b:
+.adjust_pitch
   mov   $04,y                               ; $199b |
   asl   a                                   ; $199d |
   rol   $04                                 ; $199e |
@@ -2436,7 +2434,7 @@ loc_199b:
   adc   a,$0141+x                           ; $19ac |
   mov   $0141+x,a                           ; $19af | add (arg3 * 8) to $0140/1+x
 
-loc_19b2:
+.repeat_again
   mov   a,$0160+x                           ; $19b2 |
   mov   $30+x,a                             ; $19b5 |
   mov   a,$0161+x                           ; $19b7 |
@@ -2449,12 +2447,12 @@ vcmd_tempo:
   mov   $01c0+x,a                           ; $19c3 |
   jmp   exec_vcmds                          ; $19c6 |
 
-vcmd_eb:
-  mov   $0250+x,a                           ; $19c9 |
+vcmd_tempo_fade:
+  mov   $0250+x,a                           ; $19c9 | final tempo value
   call  read_voice_byte                     ; $19cc |
-  mov   $01c0+x,a                           ; $19cf |
+  mov   $01c0+x,a                           ; $19cf | tempo fade speed
   mov   a,#$00                              ; $19d2 |
-  mov   $0251+x,a                           ; $19d4 |
+  mov   $0251+x,a                           ; $19d4 | tempo fade counter
   jmp   exec_vcmds                          ; $19d7 |
 
 vcmd_transpose:
@@ -2467,89 +2465,89 @@ vcmd_volume:
   mov   $71+x,a                             ; $19e5 |
   jmp   exec_vcmds                          ; $19e7 |
 
-vcmd_ef:
-  mov   $0200+x,a                           ; $19ea |
+vcmd_volume_fade:
+  mov   $0200+x,a                           ; $19ea | final volume value
   call  read_voice_byte                     ; $19ed |
-  mov   $71+x,a                             ; $19f0 |
+  mov   $71+x,a                             ; $19f0 | volume fade speed
   mov   a,#$00                              ; $19f2 |
   mov   $0290+x,a                           ; $19f4 |
   jmp   exec_vcmds                          ; $19f7 |
 
-vcmd_f0:
-  mov   $90+x,a                             ; $19fa |
+vcmd_portamento:
+  mov   $90+x,a                             ; $19fa | portamento speed
   set4  $20                                 ; $19fc |
   jmp   exec_vcmds                          ; $19fe |
 
-vcmd_f1:
+vcmd_pitch_envelope:
   clr4  $20                                 ; $1a01 |
-  mov   $91+x,a                             ; $1a03 |
+  mov   $91+x,a                             ; $1a03 | arg1: envelope delay
   call  read_voice_byte                     ; $1a05 |
-  mov   $90+x,a                             ; $1a08 |
+  mov   $90+x,a                             ; $1a08 | arg2: envelope length (pitch will be restored to regular note when envelope phase gets done)
   call  read_voice_byte                     ; $1a0a |
-  mov   $0260+x,a                           ; $1a0d |
+  mov   $0260+x,a                           ; $1a0d | arg3: initial pitch (semitones, signed), will be *negated* and added to note number
   call  read_voice_byte                     ; $1a10 |
-  mov   $02b0+x,a                           ; $1a13 |
+  mov   $02b0+x,a                           ; $1a13 | arg4: pitch delta (fraction)
   call  read_voice_byte                     ; $1a16 |
-  mov   $02b1+x,a                           ; $1a19 |
+  mov   $02b1+x,a                           ; $1a19 | arg5: pitch delta (semitones, signed)
   jmp   exec_vcmds                          ; $1a1c |
 
 vcmd_tuning:
   asl   a                                   ; $1a1f | arg1: tuning (signed)
-  bcs   loc_1a2a                            ; $1a20 |
-; when arg1 >= 0
-  mov   y,#$00                              ; $1a22 |
-  asl   a                                   ; $1a24 |
-  bcc   loc_1a30                            ; $1a25 |
-  inc   y                                   ; $1a27 |
-  bra   loc_1a30                            ; $1a28 |
+  bcs   .negative                           ; $1a20 |
 
-; when arg1 < 0
-loc_1a2a:
+.positive
+  mov   y,#$00                              ; $1a22 |
+  asl   a                                   ; $1a24 | *= 2
+  bcc   .update_tuning                      ; $1a25 |
+  inc   y                                   ; $1a27 |
+  bra   .update_tuning                      ; $1a28 |
+
+.negative
   mov   y,#$ff                              ; $1a2a |
-  asl   a                                   ; $1a2c |
-  bcs   loc_1a30                            ; $1a2d |
+  asl   a                                   ; $1a2c | *= 2
+  bcs   .update_tuning                      ; $1a2d |
   dec   y                                   ; $1a2f |
 
-loc_1a30:
+.update_tuning
   mov   $0280+x,a                           ; $1a30 |
   mov   a,y                                 ; $1a33 |
   mov   $0281+x,a                           ; $1a34 | $0280/1+x = arg1 * 4
   jmp   exec_vcmds                          ; $1a37 |
 
-vcmd_f3:
+vcmd_pitch_slide:
   call  increment_voice_ptr                 ; $1a3a |
   call  increment_voice_ptr                 ; $1a3d |
   call  increment_voice_ptr                 ; $1a40 |
   call  increment_voice_ptr                 ; $1a43 |
   jmp   exec_vcmds                          ; $1a46 |
 
-vcmd_f4:
-  or    a,#$00                              ; $1a49 |
-  beq   loc_1a63                            ; $1a4b |
+vcmd_echo_on_off:
+  or    a,#$00                              ; $1a49 | arg1 - EON
+  beq   .zero                               ; $1a4b |
   clr5  $13                                 ; $1a4d |
   mov   $14,a                               ; $1a4f |
   mov   $f2,#$4d                            ; $1a51 |
   mov   $f3,a                               ; $1a54 | set EON
   call  read_voice_byte                     ; $1a56 |
-  mov   $15,a                               ; $1a59 |
+  mov   $15,a                               ; $1a59 | arg2 - EVOL(L)
   call  read_voice_byte                     ; $1a5b |
-  mov   $16,a                               ; $1a5e |
+  mov   $16,a                               ; $1a5e | arg3 - EVOL(R)
   jmp   exec_vcmds                          ; $1a60 |
 
-loc_1a63:
-  call  sub_1ad1                            ; $1a63 |
+.zero
+  call  disable_echo                        ; $1a63 | disable echo
 
-loc_1a66:
+ignore_echo_params:
   call  increment_voice_ptr                 ; $1a66 |
   call  increment_voice_ptr                 ; $1a69 |
   jmp   exec_vcmds                          ; $1a6c |
 
 vcmd_echo_params:
   cmp   $14,#$00                            ; $1a6f |
-  beq   loc_1a66                            ; $1a72 |
-  and   a,#$0f                              ; $1a74 |
+  beq   ignore_echo_params                  ; $1a72 |
+  and   a,#$0f                              ; $1a74 | arg1 - echo delay
   cmp   a,$18                               ; $1a76 |
-  beq   loc_1aab                            ; $1a78 |
+  beq   .after_delay_update                 ; $1a78 |
   mov   y,$18                               ; $1a7a |
   mov   $18,a                               ; $1a7c |
   mov   a,y                                 ; $1a7e |
@@ -2568,7 +2566,7 @@ vcmd_echo_params:
   mov   $f2,#$7d                            ; $1a93 |
   mov   ($f3),($18)                         ; $1a96 | set EDL
   mov   a,$18                               ; $1a99 |
-  beq   loc_1aa6                            ; $1a9b |
+  beq   .update_echo_address                ; $1a9b |
   asl   a                                   ; $1a9d |
   asl   a                                   ; $1a9e |
   asl   a                                   ; $1a9f |
@@ -2577,11 +2575,11 @@ vcmd_echo_params:
   clrc                                      ; $1aa3 |
   adc   a,#$00                              ; $1aa4 |
 
-loc_1aa6:
+.update_echo_address
   mov   $f2,#$6d                            ; $1aa6 |
   mov   $f3,a                               ; $1aa9 | set ESA
 
-loc_1aab:
+.after_delay_update
   mov   a,$18                               ; $1aab |
   asl   a                                   ; $1aad |
   asl   a                                   ; $1aae |
@@ -2589,24 +2587,24 @@ loc_1aab:
   asl   a                                   ; $1ab0 |
   or    a,#$0f                              ; $1ab1 |
   mov   $1a,a                               ; $1ab3 |
-  call  read_voice_byte                     ; $1ab5 |
+  call  read_voice_byte                     ; $1ab5 | arg2 - echo feedback
   mov   $17,a                               ; $1ab8 |
-  call  increment_voice_ptr                 ; $1aba |
+  call  increment_voice_ptr                 ; $1aba | arg3 - echo FIR? (disabled)
   mov   y,#$00                              ; $1abd |
 
-loc_1abf:
+.fir_loop
   mov   a,$1ec4+y                           ; $1abf |
   mov   $f2,a                               ; $1ac2 |
   mov   a,$1ecc+y                           ; $1ac4 |
   mov   $f3,a                               ; $1ac7 | set FIR
   inc   y                                   ; $1ac9 |
   cmp   y,#$08                              ; $1aca |
-  bne   loc_1abf                            ; $1acc |
+  bne   .fir_loop                           ; $1acc |
   jmp   exec_vcmds                          ; $1ace |
 
-sub_1ad1:
+disable_echo:
   mov   a,$14                               ; $1ad1 |
-  beq   locret_1b09                         ; $1ad3 |
+  beq   .ret                                ; $1ad3 |
   mov   a,$18                               ; $1ad5 |
   asl   a                                   ; $1ad7 |
   asl   a                                   ; $1ad8 |
@@ -2632,10 +2630,10 @@ sub_1ad1:
   mov   $f2,#$6d                            ; $1b04 |
   mov   $f3,a                               ; $1b07 | set ESA
 
-locret_1b09:
+.ret
   ret                                       ; $1b09 |
 
-vcmd_complexed_repeat_start:
+vcmd_repeat_case_start:
   mov   a,$30+x                             ; $1b0a |
   mov   $0170+x,a                           ; $1b0c |
   mov   a,$31+x                             ; $1b0f |
@@ -2644,15 +2642,17 @@ vcmd_complexed_repeat_start:
   tclr  $0020,a                             ; $1b16 | reset "visited" flags
   jmp   exec_vcmds                          ; $1b19 |
 
-vcmd_complexed_repeat_end:
-  bbs6  $20,loc_1b27                        ; $1b1c |
-  bbs7  $20,loc_1b42                        ; $1b1f |
-; first time, do nothing
+vcmd_repeat_case_marker:
+  bbs6  $20,.step_2                         ; $1b1c |
+  bbs7  $20,.step_3                         ; $1b1f |
+
+; first time
+.step_1
   set6  $20                                 ; $1b22 |
   jmp   exec_vcmds                          ; $1b24 |
 
 ; second time
-loc_1b27:
+.step_2
   clr6  $20                                 ; $1b27 |
   set7  $20                                 ; $1b29 |
   mov   a,$30+x                             ; $1b2b |
@@ -2666,7 +2666,7 @@ loc_1b27:
   jmp   exec_vcmds                          ; $1b3f |
 
 ; third time
-loc_1b42:
+.step_3
   set6  $20                                 ; $1b42 |
   clr7  $20                                 ; $1b44 |
   mov   a,$0180+x                           ; $1b46 |
@@ -2675,16 +2675,16 @@ loc_1b42:
   mov   $31+x,a                             ; $1b4e | back to $0180/1
   jmp   exec_vcmds                          ; $1b50 |
 
-vcmd_f8:
-  mov   $0201+x,a                           ; $1b53 |
+vcmd_panpot_fade:
+  mov   $0201+x,a                           ; $1b53 | final panpot value
   call  read_voice_byte                     ; $1b56 |
-  mov   $70+x,a                             ; $1b59 |
+  mov   $70+x,a                             ; $1b59 | panpot fade speed
   mov   a,#$00                              ; $1b5b |
   mov   $02a0+x,a                           ; $1b5d |
   jmp   exec_vcmds                          ; $1b60 |
 
-vcmd_fa:
-  mov   $0270+x,a                           ; $1b63 |
+vcmd_adsr_1_2:
+  mov   $0270+x,a                           ; $1b63 | arg1 - ADSR(1)
   mov   y,a                                 ; $1b66 |
   mov   a,#$05                              ; $1b67 |
   or    a,$23                               ; $1b69 |
@@ -2692,70 +2692,76 @@ vcmd_fa:
   mov   $f3,y                               ; $1b6d | set ADSR(1)
   inc   a                                   ; $1b6f |
   cmp   y,#$80                              ; $1b70 |
-  bcc   loc_1b7d                            ; $1b72 |
-  mov   $f2,a                               ; $1b74 |
-  call  read_voice_byte                     ; $1b76 |
-  mov   $f3,a                               ; $1b79 | set ADSR(2)
-  bra   vcmd_62                             ; $1b7b |
+  bcc   .gain                               ; $1b72 |
 
-loc_1b7d:
+.adsr
+  mov   $f2,a                               ; $1b74 |
+  call  read_voice_byte                     ; $1b76 | arg2 - ADSR(2)
+  mov   $f3,a                               ; $1b79 | set ADSR(2)
+  bra   set_gain                            ; $1b7b |
+
+.gain
   inc   a                                   ; $1b7d |
   mov   $f2,a                               ; $1b7e |
   call  read_voice_byte                     ; $1b80 |
   mov   $f3,a                               ; $1b83 | set GAIN
   mov   $0271+x,a                           ; $1b85 |
 
-vcmd_62:
-  call  read_voice_byte                     ; $1b88 |
+set_gain:
+  call  read_voice_byte                     ; $1b88 | arg1 - GAIN amount
   cmp   a,#$c8                              ; $1b8b |
-  bcs   loc_1b9b                            ; $1b8d |
+  bcs   .exp_decrease                       ; $1b8d |
   cmp   a,#$64                              ; $1b8f |
-  bcc   loc_1ba1                            ; $1b91 |
+  bcc   .update_gain                        ; $1b91 | 0..99: direct gain
+
+; arg1 in 100..199: linear decrease
+.linear_increase
   sbc   a,#$64                              ; $1b93 |
   and   a,#$1f                              ; $1b95 |
-  or    a,#$80                              ; $1b97 |
-  bra   loc_1ba1                            ; $1b99 |
+  or    a,#$80                              ; $1b97 | linear decrease
+  bra   .update_gain                        ; $1b99 |
 
-loc_1b9b:
+; arg1 in 200..255: exponential decrease
+.exp_decrease
   sbc   a,#$c8                              ; $1b9b |
   and   a,#$1f                              ; $1b9d |
-  or    a,#$a0                              ; $1b9f |
+  or    a,#$a0                              ; $1b9f | exponential decrease
 
-loc_1ba1:
+.update_gain
   mov   $01c1+x,a                           ; $1ba1 |
   jmp   exec_vcmds                          ; $1ba4 |
 
-vcmd_ed:
+vcmd_adsr1:
   push  a                                   ; $1ba7 |
   mov   a,$0270+x                           ; $1ba8 |
   pop   a                                   ; $1bab |
-  bpl   loc_1bba                            ; $1bac |
+  bpl   exit_vcmd                           ; $1bac | return if saved ADSR(1) is GAIN mode
   mov   $0270+x,a                           ; $1bae |
   mov   y,a                                 ; $1bb1 |
-  mov   a,#$05                              ; $1bb2 |
+  mov   a,#$05                              ; $1bb2 | ADSR(1)
 
-loc_1bb4:
+write_voice_reg:
   or    a,$23                               ; $1bb4 |
   mov   $f2,a                               ; $1bb6 |
-  mov   $f3,y                               ; $1bb8 | set ADSR(1)
+  mov   $f3,y                               ; $1bb8 |
 
-loc_1bba:
+exit_vcmd:
   jmp   exec_vcmds                          ; $1bba |
 
-vcmd_fb:
+vcmd_adsr2:
   push  a                                   ; $1bbd |
   mov   a,$0270+x                           ; $1bbe |
   pop   y                                   ; $1bc1 |
-  bpl   loc_1bba                            ; $1bc2 |
-  mov   a,#$06                              ; $1bc4 |
-  bra   loc_1bb4                            ; $1bc6 |
+  bpl   exit_vcmd                           ; $1bc2 |
+  mov   a,#$06                              ; $1bc4 | ADSR(2)
+  bra   write_voice_reg                     ; $1bc6 |
 
 vcmd_volume_and_instrument:
   mov   $0291+x,a                           ; $1bc8 |
   mov   a,#$00                              ; $1bcb |
   mov   $71+x,a                             ; $1bcd |
   call  read_voice_byte                     ; $1bcf |
-  jmp   vcmd_instrument                     ; $1bd2 | redirect to vcmd e2
+  jmp   vcmd_instrument                     ; $1bd2 |
 
 vcmd_goto:
   mov   $04,a                               ; $1bd5 |
@@ -3068,7 +3074,7 @@ pitch_scale_table:
   db $09,$09,$0a,$0a,$0a,$0a,$0b,$0b        ; $1e3a |
   db $0c,$0c,$0d,$0d,$0e,$0f,$10,$10        ; $1e42 |
   db $11,$12,$13,$14,$15,$15,$16,$17        ; $1e4a |
-  db $18,$19,$1b,$1c,$1d,$1e,$23,$22        ; $1e52 | BUG $23
+  db $18,$19,$1b,$1c,$1d,$1e,$23,$22        ; $1e52 | BUG: $23 should be $20
   db $23,$24,$26,$28,$2a,$2c,$2d,$2f        ; $1e5a |
   db $31,$33,$35,$38,$3a,$3d,$40,$43        ; $1e62 |
   db $46,$49,$4c,$4f,$52,$56,$5a,$5e        ; $1e6a |
@@ -3081,7 +3087,7 @@ pitch_scale_table:
 
 pan_table:
   db $00,$04,$08,$0e,$14,$1a,$20,$28        ; $1e9a |
-  db $30,$38,$46,$48,$50,$5a,$64,$6e        ; $1ea2 | BUG $46
+  db $30,$38,$46,$48,$50,$5a,$64,$6e        ; $1ea2 | BUG: $46 should be $40
   db $78,$82,$8c,$96,$a0,$a8,$b0,$b8        ; $1eaa |
   db $c0,$c8,$d0,$d6,$dc,$e0,$e4,$e8        ; $1eb2 |
   db $ec,$f0,$f4,$f6,$f8,$fa,$fc,$fe        ; $1eba |

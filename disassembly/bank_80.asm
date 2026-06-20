@@ -68,7 +68,7 @@ start:
   JSL.L CODE_FL_80BF4B                      ; $808070 |
   JSL.L clear_sound_ram                     ; $808074 |
 
-  JSL.L CODE_FL_808404                      ; $808078 |
+  JSL.L check_region                        ; $808078 |
   LDX.W #sound_driver_block                 ; $80807C |
   JSL.L sound_transfer_blocks               ; $80807F |
   SEI                                       ; $808083 |
@@ -473,7 +473,6 @@ CODE_808377:
 
 irq_handler:
   REP #$30                                  ; $808393 |
-
   PHA                                       ; $808395 |
   PHX                                       ; $808396 |
   PHY                                       ; $808397 |
@@ -482,14 +481,14 @@ irq_handler:
   LDA.W #$0000                              ; $80839A |
   TCD                                       ; $80839D |
   SEP #$20                                  ; $80839E |
-  LDA.B #$81                                ; $8083A0 |
-  PHA                                       ; $8083A2 |
-  PLB                                       ; $8083A3 |
+  LDA.B #bank(irq_handler_table)            ; $8083A0 |\
+  PHA                                       ; $8083A2 | | data bank $81
+  PLB                                       ; $8083A3 |/
   LDA.W $4211                               ; $8083A4 |
-  BPL CODE_JP_8083E1                        ; $8083A7 |
+  BPL irq_return                            ; $8083A7 |
   LDY.B $40                                 ; $8083A9 |
   CPY.W #$0002                              ; $8083AB |
-  BEQ CODE_8083E9                           ; $8083AE |
+  BEQ irq_handler_2                         ; $8083AE |
   REP #$20                                  ; $8083B0 |
   INC.B $D0                                 ; $8083B2 |
   INC.B $D0                                 ; $8083B4 |
@@ -504,7 +503,7 @@ irq_handler:
   STA.W $4207                               ; $8083C8 |
 
 CODE_8083CB:
-  LDA.W $8004,Y                             ; $8083CB |
+  LDA.W irq_handler_table,Y                 ; $8083CB |
   PHA                                       ; $8083CE |
   RTS                                       ; $8083CF |
 
@@ -519,7 +518,7 @@ CODE_8083D0:
   BRA CODE_8083CB                           ; $8083DF |
 
 
-CODE_JP_8083E1:
+irq_return:
   REP #$30                                  ; $8083E1 |
   PLB                                       ; $8083E3 |
   PLD                                       ; $8083E4 |
@@ -529,7 +528,7 @@ CODE_JP_8083E1:
   RTI                                       ; $8083E8 |
 
 
-CODE_8083E9:
+irq_handler_2:
   LDA.W $1FA2                               ; $8083E9 |
   AND.B #$7F                                ; $8083EC |
   STA.W $4200                               ; $8083EE |
@@ -542,16 +541,17 @@ CODE_8083F1:
   STA.W $2100                               ; $8083FB |
   JMP.W CODE_JP_808106                      ; $8083FE |
 
-  JMP.W CODE_JP_8083E1                      ; $808401 |
+empty_irq_handler:
+  JMP.W irq_return                          ; $808401 |
 
-
-CODE_FL_808404:
+check_region:
   SEP #$20                                  ; $808404 |
 
   LDA.W $213F                               ; $808406 |
   AND.B #$10                                ; $808409 |
-  CMP.L DATA8_80FFAD                        ; $80840B |
-  BEQ CODE_808455                           ; $80840F |
+  CMP.L region_code                         ; $80840B |
+  BEQ .ret                                  ; $80840F |
+
   STZ.W $2121                               ; $808411 |
   STZ.W $2122                               ; $808414 |
   STZ.W $2122                               ; $808417 |
@@ -567,32 +567,29 @@ CODE_FL_808404:
   STA.W $2115                               ; $808431 |
   LDY.W #$8007                              ; $808434 |
 
-CODE_808437:
+.CODE_808437
   INY                                       ; $808437 |
   LDX.W $0000,Y                             ; $808438 |
   STX.W $2116                               ; $80843B |
   INY                                       ; $80843E |
 
-CODE_80843F:
+.CODE_80843F
   INY                                       ; $80843F |
-
   LDA.W $0000,Y                             ; $808440 |
   CMP.B #$FE                                ; $808443 |
-  BEQ CODE_808437                           ; $808445 |
-  BCS CODE_80844E                           ; $808447 |
+  BEQ .CODE_808437                          ; $808445 |
+  BCS .CODE_80844E                          ; $808447 |
   STA.W $2118                               ; $808449 |
-  BRA CODE_80843F                           ; $80844C |
+  BRA .CODE_80843F                          ; $80844C |
 
-
-CODE_80844E:
+.CODE_80844E
   LDA.B #$0F                                ; $80844E |
   STA.W $2100                               ; $808450 |
 
-CODE_808453:
-  BRA CODE_808453                           ; $808453 |
+.halt
+  BRA .halt                                 ; $808453 |
 
-
-CODE_808455:
+.ret
   REP #$20                                  ; $808455 |
   RTL                                       ; $808457 |
 
@@ -19096,138 +19093,12 @@ CODE_80FB60:
   LDA.B $C2                                 ; $80FB78 |
   JML.L CODE_FL_80FA0F                      ; $80FB7A |
 
-  db $00,$00,$00,$00,$00,$00                ; $80FB7E |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FB84 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FB8C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FB94 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FB9C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBA4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBAC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBB4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBBC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBC4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBCC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBD4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBDC |
 
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBE4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBEC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBF4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FBFC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC04 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC0C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC14 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC1C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC24 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC2C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC34 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC3C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC44 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC4C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC54 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC5C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC64 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC6C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC74 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC7C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC84 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC8C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC94 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FC9C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCA4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCAC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCB4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCBC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCC4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCCC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCD4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCDC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCE4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCEC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCF4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FCFC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD04 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD0C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD14 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD1C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD24 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD2C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD34 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD3C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD44 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD4C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD54 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD5C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD64 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD6C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD74 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD7C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD84 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD8C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD94 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FD9C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDA4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDAC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDB4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDBC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDC4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDCC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDD4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDDC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDE4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDEC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDF4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FDFC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE04 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE0C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE14 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE1C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE24 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE2C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE34 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE3C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE44 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE4C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE54 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE5C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE64 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE6C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE74 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE7C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE84 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE8C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE94 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FE9C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEA4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEAC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEB4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEBC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEC4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FECC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FED4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEDC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEE4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEEC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEF4 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FEFC |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF04 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF0C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF14 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF1C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF24 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF2C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF34 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF3C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF44 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF4C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF54 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF5C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF64 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF6C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF74 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF7C |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF84 |
-  db $FF,$FF,$FF,$FF                        ; $80FF8C |
+  db $00,$00,$00,$00,$00,$00                ; $80FB7E |
+
+  fillbyte $FF
+  fill $80FF90-pc()                         ; $80FB84 |
+
 
 emulation_reset:
   CLC                                       ; $80FF90 |\ Switch to native mode
@@ -19243,12 +19114,15 @@ native_irq:
 native_nmi:
   JML.L vblank_handler                      ; $80FF9B |
 
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $80FF9F |
-  db $FF,$FF,$FF,$FF,$FF                    ; $80FFA7 |
+
+  fillbyte $FF
+  fill $80FFAC-pc()                         ; $80FF9F |
+
   db $03                                    ; $80FFAC |
 
-DATA8_80FFAD:
-  db $00                                    ; $80FFAD |
+region_code:
+  db $00                                    ; $80FFAD | NTSC($00) or PAL($10)
+
   db $00,$00                                ; $80FFAE |
 
 rom_registration:

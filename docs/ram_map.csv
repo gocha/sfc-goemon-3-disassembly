@@ -1,11 +1,11 @@
 RAM Address,Length,Type,Description
 $7E0028,2 bytes,I/O,Joypad #1: Controller buttons currently held down
-$7E002a,2 bytes,I/O,Joypad #2: Controller buttons currently held down
-$7E002c,2 bytes,I/O,Joypad #3: Controller buttons currently held down
-$7E002e,2 bytes,I/O,Joypad #4: Controller buttons currently held down
+$7E002A,2 bytes,I/O,Joypad #2: Controller buttons currently held down
+$7E002C,2 bytes,I/O,Joypad #3: Controller buttons currently held down
+$7E002E,2 bytes,I/O,Joypad #4: Controller buttons currently held down
 $7E0030,2 bytes,I/O,Joypad #1: Controller buttons newly pressed this frame
 $7E0032,2 bytes,I/O,Joypad #2: Controller buttons newly pressed this frame
 $7E0034,2 bytes,I/O,Joypad #3: Controller buttons newly pressed this frame
 $7E0036,2 bytes,I/O,Joypad #4: Controller buttons newly pressed this frame
-$7E008e,2 bytes,Misc.,Room number (max: 0x184)
+$7E008E,2 bytes,Misc.,Room number (max: 0x184)
 $7E0090,2 bytes,Misc.,Game mode

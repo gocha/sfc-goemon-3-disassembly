@@ -481,7 +481,7 @@ irq_handler:
   LDA.W #$0000                              ; $80839A |
   TCD                                       ; $80839D |
   SEP #$20                                  ; $80839E |
-  LDA.B #bank(irq_handler_table)            ; $8083A0 |\
+  LDA.B #$81                                ; $8083A0 |\
   PHA                                       ; $8083A2 | | data bank $81
   PLB                                       ; $8083A3 |/
   LDA.W $4211                               ; $8083A4 |

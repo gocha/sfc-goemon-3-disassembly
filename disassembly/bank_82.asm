@@ -11907,9 +11907,9 @@ CODE_FL_82D49F:
   PLB                                       ; $82D4A4 |
   SEP #$20                                  ; $82D4A5 |
   LDA.W $0000,Y                             ; $82D4A7 |
-  STA.W $210B                               ; $82D4AA |
+  STA.W !reg_bg12nba                        ; $82D4AA |
   LDA.W $0001,Y                             ; $82D4AD |
-  STA.W $210C                               ; $82D4B0 |
+  STA.W !reg_bg34nba                        ; $82D4B0 |
   LDA.W $0002,Y                             ; $82D4B3 |
   STA.W $1FA4                               ; $82D4B6 |
   LDA.W $0003,Y                             ; $82D4B9 |

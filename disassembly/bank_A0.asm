@@ -1362,9 +1362,9 @@ CODE_FL_A0F92E:
   JSL.L CODE_FL_808302                      ; $A0F97E |
   SEP #$20                                  ; $A0F982 |
   LDA.B #$00                                ; $A0F984 |
-  STA.W $2115                               ; $A0F986 |
-  STA.W $2116                               ; $A0F989 |
-  STA.W $2117                               ; $A0F98C |
+  STA.W !reg_vmain                          ; $A0F986 |
+  STA.W !reg_vmaddl                         ; $A0F989 |
+  STA.W !reg_vmaddh                         ; $A0F98C |
   REP #$20                                  ; $A0F98F |
   TDC                                       ; $A0F991 |
   STA.B $00                                 ; $A0F992 |
@@ -1379,13 +1379,13 @@ CODE_A0F994:
   TAX                                       ; $A0F99D |
   SEP #$20                                  ; $A0F99E |
   LDA.L $7F0000,X                           ; $A0F9A0 |
-  STA.W $2118                               ; $A0F9A4 |
+  STA.W !reg_vmdatal                        ; $A0F9A4 |
   LDA.L $7F0002,X                           ; $A0F9A7 |
-  STA.W $2118                               ; $A0F9AB |
+  STA.W !reg_vmdatal                        ; $A0F9AB |
   LDA.L $7F0004,X                           ; $A0F9AE |
-  STA.W $2118                               ; $A0F9B2 |
+  STA.W !reg_vmdatal                        ; $A0F9B2 |
   LDA.L $7F0006,X                           ; $A0F9B5 |
-  STA.W $2118                               ; $A0F9B9 |
+  STA.W !reg_vmdatal                        ; $A0F9B9 |
   REP #$20                                  ; $A0F9BC |
   INC.B $00                                 ; $A0F9BE |
   LDA.B $00                                 ; $A0F9C0 |

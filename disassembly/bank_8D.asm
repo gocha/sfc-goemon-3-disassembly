@@ -9599,9 +9599,9 @@ CODE_8DC529:
   STA.B $5C                                 ; $8DC545 |
   SEP #$20                                  ; $8DC547 |
   LDA.B #$22                                ; $8DC549 |
-  STA.W $210B                               ; $8DC54B |
+  STA.W !reg_bg12nba                        ; $8DC54B |
   LDA.B #$44                                ; $8DC54E |
-  STA.W $210C                               ; $8DC550 |
+  STA.W !reg_bg34nba                        ; $8DC550 |
   REP #$20                                  ; $8DC553 |
   JSL.L CODE_FL_80BEC7                      ; $8DC555 |
   JSL.L CODE_FL_808CB3                      ; $8DC559 |

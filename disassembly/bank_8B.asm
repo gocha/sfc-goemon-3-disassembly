@@ -2928,7 +2928,7 @@ CODE_8B94E8:
   STA.W $1FAC                               ; $8B94F3 |
   SEP #$20                                  ; $8B94F6 |
   LDA.B #$44                                ; $8B94F8 |
-  STA.W $210B                               ; $8B94FA |
+  STA.W !reg_bg12nba                        ; $8B94FA |
   REP #$20                                  ; $8B94FD |
   LDY.W #$0008                              ; $8B94FF |
   JSL.L CODE_FL_80972B                      ; $8B9502 |

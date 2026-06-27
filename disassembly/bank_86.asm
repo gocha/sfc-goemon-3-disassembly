@@ -16512,7 +16512,7 @@ CODE_86F65A:
   STA.W $1FAC                               ; $86F65F |
   SEP #$20                                  ; $86F662 |
   LDA.B #$44                                ; $86F664 |
-  STA.W $210B                               ; $86F666 |
+  STA.W !reg_bg12nba                        ; $86F666 |
   REP #$20                                  ; $86F669 |
   LDY.W #$0000                              ; $86F66B |
   JSR.W CODE_FN_86FC21                      ; $86F66E |

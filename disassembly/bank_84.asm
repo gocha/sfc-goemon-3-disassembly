@@ -1541,31 +1541,31 @@ CODE_FL_848B6C:
   TCD                                       ; $848B74 |
   SEP #$20                                  ; $848B75 |
   LDA.W $1FC6                               ; $848B77 |
-  STA.B $1A                                 ; $848B7A |
+  STA.B !reg_m7sel                          ; $848B7A |
   LDA.W $1FC8                               ; $848B7C |
-  STA.B $1B                                 ; $848B7F |
+  STA.B !reg_m7a                            ; $848B7F |
   LDA.W $1FC9                               ; $848B81 |
-  STA.B $1B                                 ; $848B84 |
+  STA.B !reg_m7a                            ; $848B84 |
   LDA.W $1FCA                               ; $848B86 |
-  STA.B $1C                                 ; $848B89 |
+  STA.B !reg_m7b                            ; $848B89 |
   LDA.W $1FCB                               ; $848B8B |
-  STA.B $1C                                 ; $848B8E |
+  STA.B !reg_m7b                            ; $848B8E |
   LDA.W $1FCC                               ; $848B90 |
-  STA.B $1D                                 ; $848B93 |
+  STA.B !reg_m7c                            ; $848B93 |
   LDA.W $1FCD                               ; $848B95 |
-  STA.B $1D                                 ; $848B98 |
+  STA.B !reg_m7c                            ; $848B98 |
   LDA.W $1FCE                               ; $848B9A |
-  STA.B $1E                                 ; $848B9D |
+  STA.B !reg_m7d                            ; $848B9D |
   LDA.W $1FCF                               ; $848B9F |
-  STA.B $1E                                 ; $848BA2 |
+  STA.B !reg_m7d                            ; $848BA2 |
   LDA.W $1FD0                               ; $848BA4 |
-  STA.B $1F                                 ; $848BA7 |
+  STA.B !reg_m7x                            ; $848BA7 |
   LDA.W $1FD1                               ; $848BA9 |
-  STA.B $1F                                 ; $848BAC |
+  STA.B !reg_m7x                            ; $848BAC |
   LDA.W $1FD2                               ; $848BAE |
-  STA.B $20                                 ; $848BB1 |
+  STA.B !reg_m7y                            ; $848BB1 |
   LDA.W $1FD3                               ; $848BB3 |
-  STA.B $20                                 ; $848BB6 |
+  STA.B !reg_m7y                            ; $848BB6 |
   REP #$20                                  ; $848BB8 |
   LDA.W #$0000                              ; $848BBA |
   TCD                                       ; $848BBD |
@@ -6268,7 +6268,7 @@ CODE_JP_84BF45:
   AND.B #$03                                ; $84BF54 |
   TAX                                       ; $84BF56 |
   LDA.W CODE_00BFE8,X                       ; $84BF57 |
-  STA.W $2115                               ; $84BF5A |
+  STA.W !reg_vmain                          ; $84BF5A |
   LDA.W LOOSE_OP_00BFEC,X                   ; $84BF5D |
   STA.W $4300                               ; $84BF60 |
   LDA.W CODE_00BFF0,X                       ; $84BF63 |
@@ -6277,7 +6277,7 @@ CODE_JP_84BF45:
   STA.W $4304                               ; $84BF6B |
   REP #$20                                  ; $84BF6E |
   LDA.B $15                                 ; $84BF70 |
-  STA.W $2116                               ; $84BF72 |
+  STA.W !reg_vmaddl                         ; $84BF72 |
   LDA.B $2A                                 ; $84BF75 |
   STA.W $4302                               ; $84BF77 |
   LDA.B $1A                                 ; $84BF7A |
@@ -8216,9 +8216,9 @@ CODE_FL_84CBE7:
   JSL.L CODE_FL_808302                      ; $84CBFD |
   SEP #$20                                  ; $84CC01 |
   LDA.B #$22                                ; $84CC03 |
-  STA.W $210B                               ; $84CC05 |
+  STA.W !reg_bg12nba                        ; $84CC05 |
   LDA.B #$44                                ; $84CC08 |
-  STA.W $210C                               ; $84CC0A |
+  STA.W !reg_bg34nba                        ; $84CC0A |
   REP #$20                                  ; $84CC0D |
   REP #$10                                  ; $84CC0F |
   LDY.W #$7FFF                              ; $84CC11 |

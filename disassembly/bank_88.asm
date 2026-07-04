@@ -6,8 +6,12 @@ DATA_888000:
   db $96,$00,$01,$D7,$8C,$96,$00,$58        ; $888010 |
   db $8F,$87,$A1,$FF                        ; $888018 |
 
-DATA_88801C:
-  db $00,$00,$00,$40,$FB,$8C,$96,$FF        ; $88801C |
+ascii_font_block:
+  db $00                                    ; $88801C | Transfer type
+  db $00                                    ; $88801D | Unknown
+  dw $4000                                  ; $88801E | [Font (2bpp)] Destination: VRAM $????
+  dl $968CFB                                ; $888020 |   Source: ROM $968CFB (compressed)
+  db $FF                                    ; $888023 | End of transfer
 
 DATA_888024:
   db $00,$00,$00,$00,$F3,$8E,$96,$00        ; $888024 |
@@ -523,11 +527,11 @@ seq_table:
 sound_driver_block:
   db $02                                    ; $8888AD | Transfer type
   db $00                                    ; $8888AE | Unused byte
-  dw $5300                                  ; $8888AF |\ BRR samples
-  dl sound_data_samples|$400000             ; $8888B1 |/ ROM $8E8000 (uncompressed, indicated by bank bit6) -> SPC $5300
-  dw $0200                                  ; $8888B4 |\ Sound driver program
-  dl $B78000                                ; $8888B6 |/ ROM $B78000 (compressed) -> SPC $0200
-  dw $FFFF                                  ; $8888B9 | End of transfer list
+  dw $5300                                  ; $8888AF |\ [BRR samples] Destination: SPC $5300
+  dl sound_data_samples|$400000             ; $8888B1 |/   Source: ROM $8E8000 (uncompressed, indicated by bank bit6)
+  dw $0200                                  ; $8888B4 |\ [Sound driver program] Destination: SPC $0200
+  dl $B78000                                ; $8888B6 |/   Source: ROM $B78000 (compressed)
+  dw $FFFF                                  ; $8888B9 | End of transfer
 
 DATA_8888BB:
   db $00,$00,$00,$6A                        ; $8888BB |
@@ -5963,7 +5967,7 @@ CODE_88FE27:
 CODE_88FE3F:
   PHX                                       ; $88FE3F |
   LDX.W #DATA_88CDC2                        ; $88FE40 |
-  JSL.L sound_transfer_blocks               ; $88FE43 |
+  JSL.L upload_data_blocks                  ; $88FE43 |
   PLX                                       ; $88FE47 |
   INC.B $1A,X                               ; $88FE48 |
 

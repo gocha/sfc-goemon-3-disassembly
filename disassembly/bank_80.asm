@@ -68,9 +68,9 @@ start:
   JSL.L CODE_FL_80BF4B                      ; $808070 |
   JSL.L clear_sound_ram                     ; $808074 |
 
-  JSL.L check_region                        ; $808078 |
+  JSL.L verify_region                       ; $808078 |
   LDX.W #sound_driver_block                 ; $80807C |
-  JSL.L sound_transfer_blocks               ; $80807F |
+  JSL.L upload_data_blocks                  ; $80807F |
   SEI                                       ; $808083 |
   CLD                                       ; $808084 |
   REP #$30                                  ; $808085 |
@@ -544,13 +544,12 @@ CODE_8083F1:
 empty_irq_handler:
   JMP.W irq_return                          ; $808401 |
 
-check_region:
-  SEP #$20                                  ; $808404 |
-
-  LDA.W !reg_stat78                         ; $808406 |
-  AND.B #$10                                ; $808409 |
-  CMP.L region_code                         ; $80840B |
-  BEQ .ret                                  ; $80840F |
+verify_region:
+  SEP #$20                                  ; $808404 |\  8 bit A
+  LDA.W !reg_stat78                         ; $808406 | | Read PAL/NTSC flag from STAT78
+  AND.B #$10                                ; $808409 |/
+  CMP.L region_code                         ; $80840B |\  Return if the console region matches the ROM
+  BEQ .ret                                  ; $80840F |/  (Otherwise, display an error screen and stop execution by the following code)
 
   STZ.W !reg_cgadd                          ; $808411 |
   STZ.W !reg_cgdata                         ; $808414 |
@@ -559,9 +558,10 @@ check_region:
   STA.W !reg_cgdata                         ; $80841C |
   LDA.B #$7F                                ; $80841F |
   STA.W !reg_cgdata                         ; $808421 |
+
   REP #$20                                  ; $808424 |
-  LDX.W #DATA_88801C                        ; $808426 |
-  JSL.L sound_transfer_blocks               ; $808429 |
+  LDX.W #ascii_font_block                   ; $808426 |
+  JSL.L upload_data_blocks                  ; $808429 |
   SEP #$20                                  ; $80842D |
   LDA.B #$00                                ; $80842F |
   STA.W !reg_vmain                          ; $808431 |
@@ -10324,7 +10324,7 @@ CODE_80C052:
   LDA.W #$0009                              ; $80C078 |
   STA.W $1FA4                               ; $80C07B |
   LDX.W #DATA_888000                        ; $80C07E |
-  JSL.L sound_transfer_blocks               ; $80C081 |
+  JSL.L upload_data_blocks                  ; $80C081 |
   LDY.W #$A917                              ; $80C085 |
   JSL.L CODE_FL_80C27C                      ; $80C088 |
   LDA.W #$0400                              ; $80C08C |
@@ -12817,7 +12817,7 @@ CODE_80D024:
   TAY                                       ; $80D025 |
   LDA.W LOOSE_OP_008EC8,Y                   ; $80D026 |
   TAX                                       ; $80D029 |
-  JML.L sound_transfer_blocks               ; $80D02A |
+  JML.L upload_data_blocks                  ; $80D02A |
 
 
 CODE_80D02E:
@@ -12843,7 +12843,7 @@ CODE_80D04D:
 
 CODE_80D050:
   TAX                                       ; $80D050 |
-  JML.L sound_transfer_blocks               ; $80D051 |
+  JML.L upload_data_blocks                  ; $80D051 |
 
 
 CODE_80D055:
@@ -13218,7 +13218,7 @@ CODE_FL_80D31B:
   INC.W $1932                               ; $80D363 |
   JSL.L CODE_FL_84A1D8                      ; $80D366 |
   LDX.W #DATA_88CDCA                        ; $80D36A |
-  JSL.L sound_transfer_blocks               ; $80D36D |
+  JSL.L upload_data_blocks                  ; $80D36D |
   LDA.B $8E                                 ; $80D371 |
   CMP.W #$00FF                              ; $80D373 |
   BNE CODE_80D38A                           ; $80D376 |
@@ -13260,16 +13260,16 @@ CODE_80D38A:
   CMP.W #$00FF                              ; $80D3D1 |
   BEQ CODE_80D3DF                           ; $80D3D4 |
   LDX.W #DATA_88CDD6                        ; $80D3D6 |
-  JSL.L sound_transfer_blocks               ; $80D3D9 |
+  JSL.L upload_data_blocks                  ; $80D3D9 |
   BRA CODE_80D41F                           ; $80D3DD |
 
 
 CODE_80D3DF:
   LDX.W #DATA_88CEB8                        ; $80D3DF |
-  JSL.L sound_transfer_blocks               ; $80D3E2 |
+  JSL.L upload_data_blocks                  ; $80D3E2 |
   JSL.L CODE_FL_808302                      ; $80D3E6 |
   LDX.W #DATA_88CECF                        ; $80D3EA |
-  JSL.L sound_transfer_blocks               ; $80D3ED |
+  JSL.L upload_data_blocks                  ; $80D3ED |
   JSL.L CODE_FL_808302                      ; $80D3F1 |
   LDX.W #$1FFE                              ; $80D3F5 |
 
@@ -13411,7 +13411,7 @@ CODE_FL_80D4C9:
 CODE_80D4ED:
   TAX                                       ; $80D4ED |
   PLB                                       ; $80D4EE |
-  JSL.L sound_transfer_blocks               ; $80D4EF |
+  JSL.L upload_data_blocks                  ; $80D4EF |
   LDA.B $8E                                 ; $80D4F3 |
   SEC                                       ; $80D4F5 |
   SBC.W #$0030                              ; $80D4F6 |
@@ -13425,7 +13425,7 @@ CODE_80D4ED:
   ORA.W #$8000                              ; $80D504 |
   TAX                                       ; $80D507 |
   PLB                                       ; $80D508 |
-  JML.L sound_transfer_blocks               ; $80D509 |
+  JML.L upload_data_blocks                  ; $80D509 |
 
 
 CODE_FL_80D50D:
@@ -13454,7 +13454,7 @@ CODE_FL_80D52D:
   LDA.W CODE_008BBF,X                       ; $80D536 |
   TAX                                       ; $80D539 |
   PLB                                       ; $80D53A |
-  JML.L sound_transfer_blocks               ; $80D53B |
+  JML.L upload_data_blocks                  ; $80D53B |
 
 
 CODE_FL_80D53F:
@@ -13878,7 +13878,7 @@ CODE_FN_80D7D8:
   LDA.W CODE_008BBF,X                       ; $80D847 |
   TAX                                       ; $80D84A |
   PLB                                       ; $80D84B |
-  JSL.L sound_transfer_blocks               ; $80D84C |
+  JSL.L upload_data_blocks                  ; $80D84C |
   RTL                                       ; $80D850 |
 
   JSR.W CODE_FN_80D866                      ; $80D851 |
@@ -17355,13 +17355,13 @@ CODE_80EE25:
   MVN $00,$00                               ; $80EE4F |
   PLB                                       ; $80EE52 |
   LDX.W #DATA_8881F3                        ; $80EE53 |
-  JSL.L sound_transfer_blocks               ; $80EE56 |
+  JSL.L upload_data_blocks                  ; $80EE56 |
   JSL.L CODE_FL_808302                      ; $80EE5A |
   LDX.W #DATA_88804A                        ; $80EE5E |
-  JSL.L sound_transfer_blocks               ; $80EE61 |
+  JSL.L upload_data_blocks                  ; $80EE61 |
   JSL.L CODE_FL_808302                      ; $80EE65 |
   LDX.W #DATA_888214                        ; $80EE69 |
-  JSL.L sound_transfer_blocks               ; $80EE6C |
+  JSL.L upload_data_blocks                  ; $80EE6C |
   JSL.L CODE_FL_808302                      ; $80EE70 |
   JSL.L CODE_FL_8BFCCA                      ; $80EE74 |
   LDY.W #$8198                              ; $80EE78 |

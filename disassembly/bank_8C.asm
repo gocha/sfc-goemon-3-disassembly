@@ -8670,9 +8670,9 @@ PTR16_8CBFC0:
 CODE_8CBFC4:
   INC.B $1A,X                               ; $8CBFC4 |
   LDX.W #DATA_888D91                        ; $8CBFC6 |
-  JSL.L sound_transfer_blocks               ; $8CBFC9 |
+  JSL.L upload_data_blocks                  ; $8CBFC9 |
   LDX.W #DATA_888D89                        ; $8CBFCD |
-  JSL.L sound_transfer_blocks               ; $8CBFD0 |
+  JSL.L upload_data_blocks                  ; $8CBFD0 |
   JSL.L CODE_FL_848624                      ; $8CBFD4 |
   PHB                                       ; $8CBFD8 |
   PEA.W $7E00                               ; $8CBFD9 |

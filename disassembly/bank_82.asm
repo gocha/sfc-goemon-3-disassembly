@@ -81,9 +81,9 @@ CODE_82803F:
   TAY                                       ; $8280B5 |
   JSL.L set_music                           ; $8280B6 |
   LDX.W #DATA_8882D4                        ; $8280BA |
-  JSL.L sound_transfer_blocks               ; $8280BD |
+  JSL.L upload_data_blocks                  ; $8280BD |
   LDX.W #DATA_8882F1                        ; $8280C1 |
-  JSL.L sound_transfer_blocks               ; $8280C4 |
+  JSL.L upload_data_blocks                  ; $8280C4 |
   LDA.W #$0006                              ; $8280C8 |
   JSL.L CODE_FL_80C74C                      ; $8280CB |
   LDA.B $DA                                 ; $8280CF |
@@ -594,18 +594,18 @@ CODE_FL_82847E:
 CODE_FL_8284D0:
   PHX                                       ; $8284D0 |
   LDX.W #DATA_888393                        ; $8284D1 |
-  JSL.L sound_transfer_blocks               ; $8284D4 |
+  JSL.L upload_data_blocks                  ; $8284D4 |
   LDY.W #$8C42                              ; $8284D8 |
   LDA.W #$000C                              ; $8284DB |
   JSL.L CODE_FL_80C2BA                      ; $8284DE |
   LDY.W $1C20                               ; $8284E2 |
   LDA.W $8090,Y                             ; $8284E5 |
   TAX                                       ; $8284E8 |
-  JSL.L sound_transfer_blocks               ; $8284E9 |
+  JSL.L upload_data_blocks                  ; $8284E9 |
   LDY.W $1C22                               ; $8284ED |
   LDA.W $8098,Y                             ; $8284F0 |
   TAX                                       ; $8284F3 |
-  JSL.L sound_transfer_blocks               ; $8284F4 |
+  JSL.L upload_data_blocks                  ; $8284F4 |
   PLX                                       ; $8284F8 |
   LDA.W #$0012                              ; $8284F9 |
   STA.W $1FBE                               ; $8284FC |
@@ -1155,7 +1155,7 @@ CODE_828919:
 
 CODE_82891C:
   TAX                                       ; $82891C |
-  JSL.L sound_transfer_blocks               ; $82891D |
+  JSL.L upload_data_blocks                  ; $82891D |
   LDY.W $1C20                               ; $828921 |
   LDA.W $80A0,Y                             ; $828924 |
   TAY                                       ; $828927 |
@@ -1175,7 +1175,7 @@ CODE_828943:
 
 CODE_828946:
   TAX                                       ; $828946 |
-  JSL.L sound_transfer_blocks               ; $828947 |
+  JSL.L upload_data_blocks                  ; $828947 |
   LDY.W $1C22                               ; $82894B |
   LDA.W $80A0,Y                             ; $82894E |
   TAY                                       ; $828951 |
@@ -11937,7 +11937,7 @@ CODE_FL_82D4CF:
   LDX.W #$4800                              ; $82D4F0 |
   JSL.L CODE_FL_80BF41                      ; $82D4F3 |
   LDX.W #DATA_8881C9                        ; $82D4F7 |
-  JML.L sound_transfer_blocks               ; $82D4FA |
+  JML.L upload_data_blocks                  ; $82D4FA |
 
 CODE_FL_82D4FE:
   PHX                                       ; $82D4FE |
@@ -12000,11 +12000,11 @@ CODE_82D577:
   RTL                                       ; $82D577 |
 
   LDX.W #DATA_8883ED                        ; $82D578 |
-  JSL.L sound_transfer_blocks               ; $82D57B |
+  JSL.L upload_data_blocks                  ; $82D57B |
   LDX.W #DATA_8883E5                        ; $82D57F |
-  JSL.L sound_transfer_blocks               ; $82D582 |
+  JSL.L upload_data_blocks                  ; $82D582 |
   LDX.W #DATA_8883F7                        ; $82D586 |
-  JSL.L sound_transfer_blocks               ; $82D589 |
+  JSL.L upload_data_blocks                  ; $82D589 |
   LDA.W #$00C0                              ; $82D58D |
   JSL.L CODE_FL_8AF606                      ; $82D590 |
   LDY.W #$8DF4                              ; $82D594 |
@@ -13420,7 +13420,7 @@ CODE_82E15E:
   BNE CODE_82E17A                           ; $82E168 |
   PHX                                       ; $82E16A |
   LDX.W #DATA_888520                        ; $82E16B |
-  JSL.L sound_transfer_blocks               ; $82E16E |
+  JSL.L upload_data_blocks                  ; $82E16E |
   PLX                                       ; $82E172 |
   LDA.W #$0020                              ; $82E173 |
   STA.B $38,X                               ; $82E176 |
@@ -13719,11 +13719,11 @@ CODE_82E39F:
   JMP.W CODE_FL_82CD96                      ; $82E3A2 |
 
   LDX.W #DATA_888431                        ; $82E3A5 |
-  JSL.L sound_transfer_blocks               ; $82E3A8 |
+  JSL.L upload_data_blocks                  ; $82E3A8 |
   LDX.W #DATA_888439                        ; $82E3AC |
-  JSL.L sound_transfer_blocks               ; $82E3AF |
+  JSL.L upload_data_blocks                  ; $82E3AF |
   LDX.W #DATA_888443                        ; $82E3B3 |
-  JSL.L sound_transfer_blocks               ; $82E3B6 |
+  JSL.L upload_data_blocks                  ; $82E3B6 |
   LDA.W #$001A                              ; $82E3BA |
   JSL.L CODE_FL_8AF69F                      ; $82E3BD |
   LDA.W #$0001                              ; $82E3C1 |
@@ -13907,7 +13907,7 @@ CODE_82E53D:
   JSL.L CODE_FL_82E225                      ; $82E543 |
   PHX                                       ; $82E547 |
   LDX.W #DATA_888460                        ; $82E548 |
-  JSL.L sound_transfer_blocks               ; $82E54B |
+  JSL.L upload_data_blocks                  ; $82E54B |
   PLX                                       ; $82E54F |
   STZ.W $1C9A                               ; $82E550 |
   STZ.W $1C6A                               ; $82E553 |
@@ -14780,7 +14780,7 @@ CODE_82EC75:
 CODE_82EC80:
   PHX                                       ; $82EC80 |
   LDX.W #DATA_888468                        ; $82EC81 |
-  JSL.L sound_transfer_blocks               ; $82EC84 |
+  JSL.L upload_data_blocks                  ; $82EC84 |
   PLX                                       ; $82EC88 |
   LDA.W #$0104                              ; $82EC89 |
   JSL.L CODE_FL_8AF69F                      ; $82EC8C |
@@ -14876,7 +14876,7 @@ CODE_82ED39:
   STZ.B $00,X                               ; $82ED4E |
   PHX                                       ; $82ED50 |
   LDX.W #DATA_888468                        ; $82ED51 |
-  JSL.L sound_transfer_blocks               ; $82ED54 |
+  JSL.L upload_data_blocks                  ; $82ED54 |
   PLX                                       ; $82ED58 |
   STZ.B $26,X                               ; $82ED59 |
   STZ.B $2A,X                               ; $82ED5B |
@@ -15832,13 +15832,13 @@ CODE_FN_82F4D7:
   RTS                                       ; $82F4E7 |
 
   LDX.W #DATA_888488                        ; $82F4E8 |
-  JSL.L sound_transfer_blocks               ; $82F4EB |
+  JSL.L upload_data_blocks                  ; $82F4EB |
   LDX.W #DATA_888490                        ; $82F4EF |
-  JSL.L sound_transfer_blocks               ; $82F4F2 |
+  JSL.L upload_data_blocks                  ; $82F4F2 |
   LDX.W #DATA_888498                        ; $82F4F6 |
-  JSL.L sound_transfer_blocks               ; $82F4F9 |
+  JSL.L upload_data_blocks                  ; $82F4F9 |
   LDX.W #DATA_8884A2                        ; $82F4FD |
-  JSL.L sound_transfer_blocks               ; $82F500 |
+  JSL.L upload_data_blocks                  ; $82F500 |
   LDY.W #$95A8                              ; $82F504 |
   LDA.W #$000C                              ; $82F507 |
   JSL.L CODE_FL_80C2C9                      ; $82F50A |

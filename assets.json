@@ -17,7 +17,10 @@
     { "path": "bank_93.bin", "start": "0x098000", "size": "0x8000" },
     { "path": "bank_94.bin", "start": "0x0A0000", "size": "0x8000" },
     { "path": "bank_95.bin", "start": "0x0A8000", "size": "0x8000" },
+
     { "path": "bank_96.bin", "start": "0x0B0000", "size": "0x8000" },
+    { "path": "_font.bin.konamiz", "start": "0x0B0CFB", "size": "0x1F8" },
+
     { "path": "bank_97.bin", "start": "0x0B8000", "size": "0x8000" },
     { "path": "bank_98.bin", "start": "0x0C0000", "size": "0x8000" },
     { "path": "bank_99.bin", "start": "0x0C8000", "size": "0x8000" },

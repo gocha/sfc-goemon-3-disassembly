@@ -2106,9 +2106,9 @@ CODE_84983E:
   JSL.L CODE_FL_8680E5                      ; $84983E |
   BCC CODE_JP_8498A6                        ; $849842 |
   LDX.W #DATA_8881D9                        ; $849844 |
-  JSL.L sound_transfer_blocks               ; $849847 |
+  JSL.L upload_data_blocks                  ; $849847 |
   LDX.W #DATA_8885FF                        ; $84984B |
-  JSL.L sound_transfer_blocks               ; $84984E |
+  JSL.L upload_data_blocks                  ; $84984E |
   JSL.L CODE_FL_808302                      ; $849852 |
   JSL.L CODE_FL_808302                      ; $849856 |
   LDY.W #$0058                              ; $84985A |
@@ -2246,9 +2246,9 @@ CODE_84996F:
   JSL.L CODE_FL_808BC2                      ; $849975 |
   JSL.L CODE_FL_80C1ED                      ; $849979 |
   LDX.W #DATA_8885DD                        ; $84997D |
-  JSL.L sound_transfer_blocks               ; $849980 |
+  JSL.L upload_data_blocks                  ; $849980 |
   LDX.W #DATA_8881D9                        ; $849984 |
-  JSL.L sound_transfer_blocks               ; $849987 |
+  JSL.L upload_data_blocks                  ; $849987 |
   LDY.W #$B6EB                              ; $84998B |
   JSL.L CODE_FL_80C277                      ; $84998E |
   LDY.W #$8179                              ; $849992 |
@@ -2451,18 +2451,18 @@ CODE_849AD6:
   LDA.W #$0080                              ; $849AFC |
   STA.W $1FC6                               ; $849AFF |
   LDX.W #DATA_8885BD                        ; $849B02 |
-  JSL.L sound_transfer_blocks               ; $849B05 |
+  JSL.L upload_data_blocks                  ; $849B05 |
   LDX.W #DATA_8885AD                        ; $849B09 |
-  JSL.L sound_transfer_blocks               ; $849B0C |
+  JSL.L upload_data_blocks                  ; $849B0C |
   LDX.W #DATA_8885C5                        ; $849B10 |
-  JSL.L sound_transfer_blocks               ; $849B13 |
+  JSL.L upload_data_blocks                  ; $849B13 |
   LDA.W #$0594                              ; $849B17 |
   JSL.L CODE_FL_8CF9D2                      ; $849B1A |
   BCS CODE_849B2E                           ; $849B1E |
   LDX.W #DATA_8885B5                        ; $849B20 |
-  JSL.L sound_transfer_blocks               ; $849B23 |
+  JSL.L upload_data_blocks                  ; $849B23 |
   LDX.W #DATA_8885CD                        ; $849B27 |
-  JSL.L sound_transfer_blocks               ; $849B2A |
+  JSL.L upload_data_blocks                  ; $849B2A |
 
 CODE_849B2E:
   LDY.W #$B6C0                              ; $849B2E |
@@ -2805,7 +2805,7 @@ CODE_849E0C:
   LDA.W $1F30                               ; $849E0C |
   BNE CODE_849E0B                           ; $849E0F |
   LDX.W #DATA_8888BB                        ; $849E11 |
-  JSL.L sound_transfer_blocks               ; $849E14 |
+  JSL.L upload_data_blocks                  ; $849E14 |
   JSL.L CODE_FL_808302                      ; $849E18 |
   JSL.L CODE_FL_8EFE90                      ; $849E1C |
   JSL.L CODE_FL_8EFF98                      ; $849E20 |
@@ -3345,9 +3345,9 @@ CODE_FN_84A1B0:
 
 CODE_FL_84A1D8:
   LDX.W #DATA_8888C3                        ; $84A1D8 |
-  JSL.L sound_transfer_blocks               ; $84A1DB |
+  JSL.L upload_data_blocks                  ; $84A1DB |
   LDX.W #DATA_8888DA                        ; $84A1DF |
-  JML.L sound_transfer_blocks               ; $84A1E2 |
+  JML.L upload_data_blocks                  ; $84A1E2 |
 
 CODE_FL_84A1E6:
   LDY.W #$C000                              ; $84A1E6 |
@@ -5601,7 +5601,7 @@ CODE_FL_84BAE2:
   RTL                                       ; $84BB13 |
 
 CODE_FL_84BB14:
-  JSL.L sound_transfer_blocks               ; $84BB14 |
+  JSL.L upload_data_blocks                  ; $84BB14 |
   LDX.W #$A000                              ; $84BB18 |
   JSR.W CODE_FN_84BB25                      ; $84BB1B |
   LDX.W #$F000                              ; $84BB1E |
@@ -5699,15 +5699,15 @@ CODE_84BBA3:
   dw CODE_84C19A                            ; $84BBAE |
 
 ;----------------------------------------------------------------
-; Transfer data blocks to the SPC from a ROM table.
+; Transfer data blocks to the ???/SPC from a ROM table.
 ;
 ; Input:
 ;   X = pointer to ROM transfer table (bank $88)
 ;
 ; Output:
-;   SPC memory updated according to the table entries
+;   ???/SPC memory updated according to the table entries
 ;----------------------------------------------------------------
-sound_transfer_blocks:
+upload_data_blocks:
   LDY.W #$0000                              ; $84BBB0 |
   LDA.W $0100                               ; $84BBB3 |
   BEQ CODE_84BBE0                           ; $84BBB6 |
@@ -5744,7 +5744,7 @@ CODE_84BBE0:
   TXA                                       ; $84BBE2 |\
   TYX                                       ; $84BBE3 | | swap X and Y
   TAY                                       ; $84BBE4 |/
-  LDA.L sound_dp_base_table,X               ; $84BBE5 |\  set direct page for this context
+  LDA.L upload_dp_base_table,X              ; $84BBE5 |\  set direct page for this context
   TCD                                       ; $84BBE9 |/
   LDA.L DATA16_84C508,X                     ; $84BBEA |\
   STA.B $11                                 ; $84BBEE |/
@@ -5759,7 +5759,7 @@ CODE_JP_84BBF3:
   LDA.B #$88                                ; $84BBFC |\
   PHA                                       ; $84BBFE | | data bank $88
   PLB                                       ; $84BBFF |/
-  LDA.W $0000,X                             ; $84BC00 |
+  LDA.W $0000,X                             ; $84BC00 | Read the first byte (transfer type)
   BEQ .case_0                               ; $84BC03 |
   BPL .case_positive                        ; $84BC05 |
   JMP.W CODE_JP_84C13F                      ; $84BC07 |
@@ -5791,7 +5791,7 @@ CODE_JP_84BBF3:
 CODE_JP_84BC28:
   LDA.B $02                                 ; $84BC28 |
   BNE CODE_84BC2F                           ; $84BC2A |
-  JSR.W CODE_FN_84BCBA                      ; $84BC2C |
+  JSR.W parse_block_header                  ; $84BC2C |
 
 CODE_84BC2F:
   REP #$20                                  ; $84BC2F |
@@ -5852,7 +5852,7 @@ CODE_84BC83:
   LDA.B #$88                                ; $84BC8B |
   PHA                                       ; $84BC8D |
   PLB                                       ; $84BC8E |
-  JSR.W CODE_FN_84BCBA                      ; $84BC8F |
+  JSR.W parse_block_header                  ; $84BC8F |
 
 CODE_84BC92:
   PEA.W $887E                               ; $84BC92 |
@@ -5877,15 +5877,15 @@ CODE_84BCAD:
 CODE_84BCB7:
   JMP.W CODE_JP_84BC5B                      ; $84BCB7 |
 
-CODE_FN_84BCBA:
+parse_block_header:
   LDX.B $06                                 ; $84BCBA |
-  LDA.W $0000,X                             ; $84BCBC |
-  STA.B $15                                 ; $84BCBF |
-  LDA.W $0001,X                             ; $84BCC1 |
-  STA.B $16                                 ; $84BCC4 |
-  INX                                       ; $84BCC6 |
-  INX                                       ; $84BCC7 |
-  JSR.W CODE_FN_84BDFA                      ; $84BCC8 |
+  LDA.W $0000,X                             ; $84BCBC |\
+  STA.B $15                                 ; $84BCBF | |
+  LDA.W $0001,X                             ; $84BCC1 | |
+  STA.B $16                                 ; $84BCC4 |/
+  INX                                       ; $84BCC6 |\
+  INX                                       ; $84BCC7 |/
+  JSR.W decompress_init_3                   ; $84BCC8 |
   LDA.W #$0080                              ; $84BCCB |
   LDY.B $07                                 ; $84BCCE |
   BPL CODE_84BCD5                           ; $84BCD0 |
@@ -6014,7 +6014,7 @@ CODE_84BD90:
   INX                                       ; $84BD9E |
 
 CODE_84BD9F:
-  JSR.W CODE_FN_84BDF8                      ; $84BD9F |
+  JSR.W decompress_init_2                   ; $84BD9F |
   LDA.W #$0080                              ; $84BDA2 |
   STA.B $1E                                 ; $84BDA5 |
   LDA.B $08                                 ; $84BDA7 |
@@ -6046,7 +6046,7 @@ decompress_block_to_wram:
   PLB                                       ; $84BDBB | Set data bank = $7E (WRAM for output buffer)
   LDA.B $02                                 ; $84BDBC |\ Check initialization flag (?)
   BNE .after_init                           ; $84BDBE | | Skip initialization if already done
-  JSR.W decompress_init                     ; $84BDC0 |/  Initialize decompression state (window, pointers, etc.)
+  JSR.W decompress_init_1                   ; $84BDC0 |/  Initialize decompression state (window, pointers, etc.)
 
 .after_init
   PLB                                       ; $84BDC3 | Set data bank = $88
@@ -6066,7 +6066,7 @@ decompress_block_to_wram:
   PLB                                       ; $84BDDD |  Restore original data bank
   RTL                                       ; $84BDDE |
 
-decompress_init:
+decompress_init_1:
   REP #$20                                  ; $84BDDF |
   LDA.W #$2800                              ; $84BDE1 |
   STA.B $11                                 ; $84BDE4 |
@@ -6077,35 +6077,35 @@ decompress_init:
   LDA.W $0002,X                             ; $84BDEF |
   AND.B #$BF                                ; $84BDF2 |
   STA.B $0C                                 ; $84BDF4 |
-  BRA CODE_84BE13                           ; $84BDF6 |
+  BRA decompress_init_main                  ; $84BDF6 |
 
-CODE_FN_84BDF8:
+decompress_init_2:
   SEP #$20                                  ; $84BDF8 |
 
-CODE_FN_84BDFA:
-  LDY.W $0000,X                             ; $84BDFA |
-  LDA.W $0002,X                             ; $84BDFD |
-  AND.B #$BF                                ; $84BE00 |
+decompress_init_3:
+  LDY.W $0000,X                             ; $84BDFA |\
+  LDA.W $0002,X                             ; $84BDFD | |
+  AND.B #$BF                                ; $84BE00 |/
   STA.B $0C                                 ; $84BE02 |
   INY                                       ; $84BE04 |
   LDA.B [$0A],Y                             ; $84BE05 |
   AND.B #$80                                ; $84BE07 |
   STA.B $05                                 ; $84BE09 |
-  LDA.W $0002,X                             ; $84BE0B |
-  AND.B #$40                                ; $84BE0E |
-  TSB.B $05                                 ; $84BE10 |
+  LDA.W $0002,X                             ; $84BE0B |\
+  AND.B #$40                                ; $84BE0E | |
+  TSB.B $05                                 ; $84BE10 |/
   DEY                                       ; $84BE12 |
 
-CODE_84BE13:
-  REP #$20                                  ; $84BE13 |
-  LDA.B [$0A],Y                             ; $84BE15 |
-  AND.W #$7FFF                              ; $84BE17 |
-  CLC                                       ; $84BE1A |
-  ADC.W $0000,X                             ; $84BE1B |
-  STA.B $0F                                 ; $84BE1E |
-  INY                                       ; $84BE20 |
-  INY                                       ; $84BE21 |
-  STY.B $0D                                 ; $84BE22 |
+decompress_init_main:
+  REP #$20                                  ; $84BE13 |  16 bit A
+  LDA.B [$0A],Y                             ; $84BE15 |\
+  AND.W #$7FFF                              ; $84BE17 | | Read the compressed data size (including this field)
+  CLC                                       ; $84BE1A | |
+  ADC.W $0000,X                             ; $84BE1B | | Calculate the end address of the compressed stream
+  STA.B $0F                                 ; $84BE1E |/
+  INY                                       ; $84BE20 |\
+  INY                                       ; $84BE21 | |
+  STY.B $0D                                 ; $84BE22 |/
   INX                                       ; $84BE24 |
   INX                                       ; $84BE25 |
   INX                                       ; $84BE26 |
@@ -6476,9 +6476,9 @@ CODE_FN_84C0ED:
   BIT.B $05                                 ; $84C0F1 |
   BVS CODE_84C12A                           ; $84C0F3 |
   STZ.B $05                                 ; $84C0F5 |
-  LDA.L $880000,X                           ; $84C0F7 |
-  CMP.B #$FF                                ; $84C0FB |
-  BNE CODE_84C134                           ; $84C0FD |
+  LDA.L $880000,X                           ; $84C0F7 |\
+  CMP.B #$FF                                ; $84C0FB |/
+  BNE finish_upload                         ; $84C0FD |
   SEC                                       ; $84C0FF |
   RTS                                       ; $84C100 |
 
@@ -6489,7 +6489,7 @@ CODE_FN_84C101:
   STZ.B $04                                 ; $84C107 |
   LDA.L $880000,X                           ; $84C109 |
   CMP.W #$FFFF                              ; $84C10D |
-  BNE CODE_84C134                           ; $84C110 |
+  BNE finish_upload                         ; $84C110 |
   SEP #$20                                  ; $84C112 |
   SEC                                       ; $84C114 |
   RTS                                       ; $84C115 |
@@ -6501,7 +6501,7 @@ CODE_FN_84C101:
   STZ.B $05                                 ; $84C11E |
   LDA.L $880000,X                           ; $84C120 |
   CMP.B #$80                                ; $84C124 |
-  BNE CODE_84C134                           ; $84C126 |
+  BNE finish_upload                         ; $84C126 |
   SEC                                       ; $84C128 |
   RTS                                       ; $84C129 |
 
@@ -6511,7 +6511,7 @@ CODE_84C12A:
   LDA.L $880000,X                           ; $84C12E |
   STA.B $06                                 ; $84C132 |
 
-CODE_84C134:
+finish_upload:
   SEP #$20                                  ; $84C134 |
   CLC                                       ; $84C136 |
   RTS                                       ; $84C137 |
@@ -6659,7 +6659,7 @@ CODE_FN_84C211:
   LDA.W #$C000                              ; $84C218 |
   STA.B $15                                 ; $84C21B |
   LDX.B $06                                 ; $84C21D |
-  JSR.W CODE_FN_84BDF8                      ; $84C21F |
+  JSR.W decompress_init_2                   ; $84C21F |
   LDA.W #$0080                              ; $84C222 |
   STA.B $1E                                 ; $84C225 |
   RTS                                       ; $84C227 |
@@ -7137,7 +7137,7 @@ CODE_FN_84C4F3:
   STA.L $001D9E                             ; $84C4FD |
   RTS                                       ; $84C501 |
 
-sound_dp_base_table:
+upload_dp_base_table:
   dw $0100,$1F00,$1E00                      ; $84C502 |
 
 DATA16_84C508:
@@ -8234,9 +8234,9 @@ CODE_FL_84CBE7:
   JSL.L CODE_FL_80BEE7                      ; $84CC30 |
   JSL.L CODE_FL_84C579                      ; $84CC34 |
   LDX.W #DATA_888024                        ; $84CC38 |
-  JSL.L sound_transfer_blocks               ; $84CC3B |
+  JSL.L upload_data_blocks                  ; $84CC3B |
   LDX.W #DATA_88804A                        ; $84CC3F |
-  JSL.L sound_transfer_blocks               ; $84CC42 |
+  JSL.L upload_data_blocks                  ; $84CC42 |
   LDY.W #DATA_8880BA                        ; $84CC46 |
   JSL.L CODE_FL_808D78                      ; $84CC49 |
   LDY.W #DATA_88B95C                        ; $84CC4D |
@@ -8771,9 +8771,9 @@ CODE_84D081:
   JSL.L CODE_FL_80BE9F                      ; $84D081 |
   JSL.L CODE_FL_808BC2                      ; $84D085 |
   LDX.W #DATA_8880C6                        ; $84D089 |
-  JSL.L sound_transfer_blocks               ; $84D08C |
+  JSL.L upload_data_blocks                  ; $84D08C |
   LDX.W #DATA_8880E3                        ; $84D090 |
-  JSL.L sound_transfer_blocks               ; $84D093 |
+  JSL.L upload_data_blocks                  ; $84D093 |
   REP #$30                                  ; $84D097 |
   PHB                                       ; $84D099 |
   LDA.W #$0000                              ; $84D09A |
@@ -9576,9 +9576,9 @@ CODE_84D670:
   JSL.L CODE_FL_80BEC7                      ; $84D670 |
   JSL.L CODE_FL_808BC2                      ; $84D674 |
   LDX.W #DATA_88811E                        ; $84D678 |
-  JSL.L sound_transfer_blocks               ; $84D67B |
+  JSL.L upload_data_blocks                  ; $84D67B |
   LDX.W #DATA_888135                        ; $84D67F |
-  JSL.L sound_transfer_blocks               ; $84D682 |
+  JSL.L upload_data_blocks                  ; $84D682 |
   REP #$30                                  ; $84D686 |
   PHB                                       ; $84D688 |
   LDA.W #$0000                              ; $84D689 |
@@ -9835,9 +9835,9 @@ CODE_84D868:
   JSL.L CODE_FL_80BEC7                      ; $84D868 |
   JSL.L CODE_FL_808BC2                      ; $84D86C |
   LDX.W #DATA_88814C                        ; $84D870 |
-  JSL.L sound_transfer_blocks               ; $84D873 |
+  JSL.L upload_data_blocks                  ; $84D873 |
   LDX.W #DATA_888173                        ; $84D877 |
-  JSL.L sound_transfer_blocks               ; $84D87A |
+  JSL.L upload_data_blocks                  ; $84D87A |
   REP #$30                                  ; $84D87E |
   PHB                                       ; $84D880 |
   LDA.W #$0000                              ; $84D881 |
@@ -10029,7 +10029,7 @@ CODE_84D9E9:
   JSL.L CODE_FL_80BEC7                      ; $84D9E9 |
   JSL.L CODE_FL_808BC2                      ; $84D9ED |
   LDX.W #DATA_8880C6                        ; $84D9F1 |
-  JSL.L sound_transfer_blocks               ; $84D9F4 |
+  JSL.L upload_data_blocks                  ; $84D9F4 |
   LDY.W #DATA_88B976                        ; $84D9F8 |
   JSL.L CODE_FL_80C27C                      ; $84D9FB |
   JSL.L CODE_FL_808230                      ; $84D9FF |
@@ -10312,9 +10312,9 @@ CODE_84DBCE:
   JSL.L CODE_FL_80BEC7                      ; $84DBCE |
   JSL.L CODE_FL_808BC2                      ; $84DBD2 |
   LDX.W #DATA_888196                        ; $84DBD6 |
-  JSL.L sound_transfer_blocks               ; $84DBD9 |
+  JSL.L upload_data_blocks                  ; $84DBD9 |
   LDX.W #DATA_8881B8                        ; $84DBDD |
-  JSL.L sound_transfer_blocks               ; $84DBE0 |
+  JSL.L upload_data_blocks                  ; $84DBE0 |
   REP #$30                                  ; $84DBE4 |
   PHB                                       ; $84DBE6 |
   LDA.W #$0000                              ; $84DBE7 |
@@ -11498,7 +11498,7 @@ CODE_84E528:
   STA.B $92                                 ; $84E53A |
   INC.B $1A,X                               ; $84E53C |
   LDX.W #DATA_88860D                        ; $84E53E |
-  JSL.L sound_transfer_blocks               ; $84E541 |
+  JSL.L upload_data_blocks                  ; $84E541 |
   LDY.W #$A126                              ; $84E545 |
   LDA.W #$001E                              ; $84E548 |
   JSL.L CODE_FL_80C2C4                      ; $84E54B |
@@ -12692,9 +12692,9 @@ CODE_JP_84EEC2:
   INC.B $76                                 ; $84EEC2 |
   PHX                                       ; $84EEC4 |
   LDX.W #DATA_88860D                        ; $84EEC5 |
-  JSL.L sound_transfer_blocks               ; $84EEC8 |
+  JSL.L upload_data_blocks                  ; $84EEC8 |
   LDX.W #DATA_88861D                        ; $84EECC |
-  JSL.L sound_transfer_blocks               ; $84EECF |
+  JSL.L upload_data_blocks                  ; $84EECF |
   LDY.W #$85D8                              ; $84EED3 |
   LDA.W #$001A                              ; $84EED6 |
   JSL.L CODE_FL_80C2C9                      ; $84EED9 |

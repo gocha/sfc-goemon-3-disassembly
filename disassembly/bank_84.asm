@@ -6270,18 +6270,18 @@ CODE_JP_84BF45:
   LDA.W CODE_00BFE8,X                       ; $84BF57 |
   STA.W !reg_vmain                          ; $84BF5A |
   LDA.W LOOSE_OP_00BFEC,X                   ; $84BF5D |
-  STA.W $4300                               ; $84BF60 |
+  STA.W !reg_dmap0                          ; $84BF60 |
   LDA.W CODE_00BFF0,X                       ; $84BF63 |
-  STA.W $4301                               ; $84BF66 |
+  STA.W !reg_bbad0                          ; $84BF66 |
   LDA.B $2C                                 ; $84BF69 |
-  STA.W $4304                               ; $84BF6B |
+  STA.W !reg_a1b0                           ; $84BF6B |
   REP #$20                                  ; $84BF6E |
   LDA.B $15                                 ; $84BF70 |
   STA.W !reg_vmaddl                         ; $84BF72 |
   LDA.B $2A                                 ; $84BF75 |
-  STA.W $4302                               ; $84BF77 |
+  STA.W !reg_a1t0l                          ; $84BF77 |
   LDA.B $1A                                 ; $84BF7A |
-  STA.W $4305                               ; $84BF7C |
+  STA.W !reg_das0l                          ; $84BF7C |
   CPX.B #$01                                ; $84BF7F |
   BCS CODE_84BF84                           ; $84BF81 |
   LSR A                                     ; $84BF83 |

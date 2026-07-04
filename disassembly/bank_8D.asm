@@ -16248,7 +16248,7 @@ CODE_FN_8DF75D:
   LDA.W #$0987                              ; $8DF763 |
   STA.W $4182                               ; $8DF766 |
   STA.W $41C2                               ; $8DF769 |
-  STA.W !reg_wrmpya                         ; $8DF76C |
+  STA.W $4202                               ; $8DF76C |
   STA.W $4242                               ; $8DF76F |
   STA.W $4282                               ; $8DF772 |
   STA.W $42C2                               ; $8DF775 |
@@ -16269,7 +16269,7 @@ CODE_FN_8DF75D:
   INC A                                     ; $8DF7A2 |
   STA.W $4184                               ; $8DF7A3 |
   STA.W $41C4                               ; $8DF7A6 |
-  STA.W !reg_wrdivl                         ; $8DF7A9 |
+  STA.W $4204                               ; $8DF7A9 |
   STA.W $4244                               ; $8DF7AC |
   STA.W $4284                               ; $8DF7AF |
   STA.W $42C4                               ; $8DF7B2 |
@@ -16291,7 +16291,7 @@ CODE_FN_8DF75D:
   LDA.W #$0982                              ; $8DF7E2 |
   STA.W $4186                               ; $8DF7E5 |
   STA.W $41C6                               ; $8DF7E8 |
-  STA.W !reg_wrdivb                         ; $8DF7EB |
+  STA.W $4206                               ; $8DF7EB |
   STA.W $4246                               ; $8DF7EE |
   STA.W $4286                               ; $8DF7F1 |
   STA.W $42C6                               ; $8DF7F4 |
@@ -16311,7 +16311,7 @@ CODE_FN_8DF75D:
   STA.W $4646                               ; $8DF81E |
   LDA.W #$09FE                              ; $8DF821 |
   STA.W $41C8                               ; $8DF824 |
-  STA.W !reg_htimeh                         ; $8DF827 |
+  STA.W $4208                               ; $8DF827 |
   STA.W $4248                               ; $8DF82A |
   STA.W $4288                               ; $8DF82D |
   STA.W $42C8                               ; $8DF830 |

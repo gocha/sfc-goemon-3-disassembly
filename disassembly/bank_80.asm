@@ -243,13 +243,13 @@ CODE_FN_8081CC:
   AND.W #$7FFF                              ; $8081D4 |
   STA.B $48                                 ; $8081D7 |
   LDA.B $4A                                 ; $8081D9 |
-  STA.W $4302                               ; $8081DB |
+  STA.W !reg_a1t0l                          ; $8081DB |
   LDA.W #$2200                              ; $8081DE |
-  STA.W $4300                               ; $8081E1 |
+  STA.W !reg_dmap0                          ; $8081E1 |
   LDX.B #$7E                                ; $8081E4 |
-  STX.W $4304                               ; $8081E6 |
+  STX.W !reg_a1b0                           ; $8081E6 |
   LDA.W #$0200                              ; $8081E9 |
-  STA.W $4305                               ; $8081EC |
+  STA.W !reg_das0l                          ; $8081EC |
   LDX.B #$00                                ; $8081EF |
   STX.W !reg_cgadd                          ; $8081F1 |
   STY.W !reg_mdmaen                         ; $8081F4 |
@@ -259,20 +259,20 @@ CODE_8081F7:
   BVS CODE_80822D                           ; $8081F9 |
   STZ.W !reg_oamaddl                        ; $8081FB |
   LDA.W #$0410                              ; $8081FE |
-  STA.W $4300                               ; $808201 |
+  STA.W !reg_dmap0                          ; $808201 |
   LDA.W #$03DF                              ; $808204 |
-  STA.W $4302                               ; $808207 |
+  STA.W !reg_a1t0l                          ; $808207 |
   LDX.B #$00                                ; $80820A |
-  STX.W $4304                               ; $80820C |
+  STX.W !reg_a1b0                           ; $80820C |
   LDA.W #$0200                              ; $80820F |
-  STA.W $4305                               ; $808212 |
+  STA.W !reg_das0l                          ; $808212 |
   STY.W !reg_mdmaen                         ; $808215 |
   LDA.W #$0400                              ; $808218 |
-  STA.W $4300                               ; $80821B |
+  STA.W !reg_dmap0                          ; $80821B |
   LDA.W #$03E0                              ; $80821E |
-  STA.W $4302                               ; $808221 |
+  STA.W !reg_a1t0l                          ; $808221 |
   LDA.W #$0020                              ; $808224 |
-  STA.W $4305                               ; $808227 |
+  STA.W !reg_das0l                          ; $808227 |
   STY.W !reg_mdmaen                         ; $80822A |
 
 CODE_80822D:
@@ -2989,22 +2989,22 @@ CODE_FL_80936E:
 
   STA.W !reg_vmain                          ; $80937A |
   LDA.W #$1801                              ; $80937D |
-  STA.W $4300                               ; $809380 |
+  STA.W !reg_dmap0                          ; $809380 |
   LDA.B $00                                 ; $809383 |
   BEQ CODE_8093B6                           ; $809385 |
-  STA.W $4305                               ; $809387 |
+  STA.W !reg_das0l                          ; $809387 |
   SEP #$20                                  ; $80938A |
   INC.W $0000                               ; $80938C |
   LDA.B $06                                 ; $80938F |
-  STA.W $4304                               ; $809391 |
+  STA.W !reg_a1b0                           ; $809391 |
   REP #$20                                  ; $809394 |
   LDA.W #$6000                              ; $809396 |
   STA.W !reg_vmaddl                         ; $809399 |
   LDA.B $04                                 ; $80939C |
-  STA.W $4302                               ; $80939E |
+  STA.W !reg_a1t0l                          ; $80939E |
   STY.W !reg_mdmaen                         ; $8093A1 |
   LDA.B $08                                 ; $8093A4 |
-  STA.W $4305                               ; $8093A6 |
+  STA.W !reg_das0l                          ; $8093A6 |
   LDA.W #$6100                              ; $8093A9 |
   STA.W !reg_vmaddl                         ; $8093AC |
   STY.W !reg_mdmaen                         ; $8093AF |
@@ -3015,15 +3015,15 @@ CODE_8093B6:
   LDA.B $0C                                 ; $8093B6 |
   BEQ CODE_8093D6                           ; $8093B8 |
 
-  STA.W $4305                               ; $8093BA |
+  STA.W !reg_das0l                          ; $8093BA |
   SEP #$20                                  ; $8093BD |
   LDA.B $12                                 ; $8093BF |
-  STA.W $4304                               ; $8093C1 |
+  STA.W !reg_a1b0                           ; $8093C1 |
   REP #$20                                  ; $8093C4 |
   LDA.W #$6200                              ; $8093C6 |
   STA.W !reg_vmaddl                         ; $8093C9 |
   LDA.B $10                                 ; $8093CC |
-  STA.W $4302                               ; $8093CE |
+  STA.W !reg_a1t0l                          ; $8093CE |
   STY.W !reg_mdmaen                         ; $8093D1 |
   STZ.B $0C                                 ; $8093D4 |
 
@@ -3031,19 +3031,19 @@ CODE_8093D6:
   LDA.B $14                                 ; $8093D6 |
   BEQ CODE_809409                           ; $8093D8 |
 
-  STA.W $4305                               ; $8093DA |
+  STA.W !reg_das0l                          ; $8093DA |
   SEP #$20                                  ; $8093DD |
   INC.W $0000                               ; $8093DF |
   LDA.B $1A                                 ; $8093E2 |
-  STA.W $4304                               ; $8093E4 |
+  STA.W !reg_a1b0                           ; $8093E4 |
   REP #$20                                  ; $8093E7 |
   LDA.W #$6300                              ; $8093E9 |
   STA.W !reg_vmaddl                         ; $8093EC |
   LDA.B $18                                 ; $8093EF |
-  STA.W $4302                               ; $8093F1 |
+  STA.W !reg_a1t0l                          ; $8093F1 |
   STY.W !reg_mdmaen                         ; $8093F4 |
   LDA.B $1C                                 ; $8093F7 |
-  STA.W $4305                               ; $8093F9 |
+  STA.W !reg_das0l                          ; $8093F9 |
   LDA.W #$6400                              ; $8093FC |
   STA.W !reg_vmaddl                         ; $8093FF |
   STY.W !reg_mdmaen                         ; $809402 |
@@ -3053,15 +3053,15 @@ CODE_8093D6:
 CODE_809409:
   LDA.B $20                                 ; $809409 |
   BEQ CODE_809429                           ; $80940B |
-  STA.W $4305                               ; $80940D |
+  STA.W !reg_das0l                          ; $80940D |
   SEP #$20                                  ; $809410 |
   LDA.B $26                                 ; $809412 |
-  STA.W $4304                               ; $809414 |
+  STA.W !reg_a1b0                           ; $809414 |
   REP #$20                                  ; $809417 |
   LDA.W #$6500                              ; $809419 |
   STA.W !reg_vmaddl                         ; $80941C |
   LDA.B $24                                 ; $80941F |
-  STA.W $4302                               ; $809421 |
+  STA.W !reg_a1t0l                          ; $809421 |
   STY.W !reg_mdmaen                         ; $809424 |
   STZ.B $20                                 ; $809427 |
 
@@ -3070,18 +3070,18 @@ CODE_809429:
   BNE CODE_80948E                           ; $80942C |
   LDA.B $28                                 ; $80942E |
   BEQ CODE_80945E                           ; $809430 |
-  STA.W $4305                               ; $809432 |
+  STA.W !reg_das0l                          ; $809432 |
   SEP #$20                                  ; $809435 |
   LDA.B $2E                                 ; $809437 |
-  STA.W $4304                               ; $809439 |
+  STA.W !reg_a1b0                           ; $809439 |
   REP #$20                                  ; $80943C |
   LDA.W #$6600                              ; $80943E |
   STA.W !reg_vmaddl                         ; $809441 |
   LDA.B $2C                                 ; $809444 |
-  STA.W $4302                               ; $809446 |
+  STA.W !reg_a1t0l                          ; $809446 |
   STY.W !reg_mdmaen                         ; $809449 |
   LDA.B $30                                 ; $80944C |
-  STA.W $4305                               ; $80944E |
+  STA.W !reg_das0l                          ; $80944E |
   LDA.W #$6700                              ; $809451 |
   STA.W !reg_vmaddl                         ; $809454 |
   STY.W !reg_mdmaen                         ; $809457 |
@@ -3091,18 +3091,18 @@ CODE_809429:
 CODE_80945E:
   LDA.B $34                                 ; $80945E |
   BEQ CODE_80948E                           ; $809460 |
-  STA.W $4305                               ; $809462 |
+  STA.W !reg_das0l                          ; $809462 |
   SEP #$20                                  ; $809465 |
   LDA.B $3A                                 ; $809467 |
-  STA.W $4304                               ; $809469 |
+  STA.W !reg_a1b0                           ; $809469 |
   REP #$20                                  ; $80946C |
   LDA.W #$6800                              ; $80946E |
   STA.W !reg_vmaddl                         ; $809471 |
   LDA.B $38                                 ; $809474 |
-  STA.W $4302                               ; $809476 |
+  STA.W !reg_a1t0l                          ; $809476 |
   STY.W !reg_mdmaen                         ; $809479 |
   LDA.B $3C                                 ; $80947C |
-  STA.W $4305                               ; $80947E |
+  STA.W !reg_das0l                          ; $80947E |
   LDA.W #$6900                              ; $809481 |
   STA.W !reg_vmaddl                         ; $809484 |
   STY.W !reg_mdmaen                         ; $809487 |

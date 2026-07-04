@@ -958,14 +958,14 @@ CODE_FL_8AB4B3:
   TAX                                       ; $8AB4B7 |
   SEP #$20                                  ; $8AB4B8 |
   TYA                                       ; $8AB4BA |
-  STA.W $4202                               ; $8AB4BB |
+  STA.W !reg_wrmpya                         ; $8AB4BB |
   LDA.L $8AA036,X                           ; $8AB4BE |
-  STA.W $4203                               ; $8AB4C2 |
+  STA.W !reg_wrmpyb                         ; $8AB4C2 |
   REP #$20                                  ; $8AB4C5 |
   NOP                                       ; $8AB4C7 |
   NOP                                       ; $8AB4C8 |
   CPX.W #$0010                              ; $8AB4C9 |
-  LDA.W $4216                               ; $8AB4CC |
+  LDA.W !reg_rdmpyl                         ; $8AB4CC |
   BCC CODE_8AB4D5                           ; $8AB4CF |
   EOR.W #$FFFF                              ; $8AB4D1 |
   INC A                                     ; $8AB4D4 |
@@ -980,13 +980,13 @@ CODE_8AB4D5:
 
 CODE_8AB4E0:
   LDA.L $8AA036,X                           ; $8AB4E0 |
-  STA.W $4203                               ; $8AB4E4 |
+  STA.W !reg_wrmpyb                         ; $8AB4E4 |
   NOP                                       ; $8AB4E7 |
   REP #$20                                  ; $8AB4E8 |
   NOP                                       ; $8AB4EA |
   NOP                                       ; $8AB4EB |
   CPX.W #$0010                              ; $8AB4EC |
-  LDA.W $4216                               ; $8AB4EF |
+  LDA.W !reg_rdmpyl                         ; $8AB4EF |
   BCC CODE_8AB4F8                           ; $8AB4F2 |
   EOR.W #$FFFF                              ; $8AB4F4 |
   INC A                                     ; $8AB4F7 |
@@ -1002,7 +1002,7 @@ CODE_FL_8AB4FC:
   TAX                                       ; $8AB500 |
   SEP #$20                                  ; $8AB501 |
   TYA                                       ; $8AB503 |
-  STA.W $4202                               ; $8AB504 |
+  STA.W !reg_wrmpya                         ; $8AB504 |
   BRA CODE_8AB4E0                           ; $8AB507 |
 
 CODE_FL_8AB509:
@@ -1022,15 +1022,15 @@ CODE_FL_8AB51A:
   TAX                                       ; $8AB51C |
   SEP #$20                                  ; $8AB51D |
   TYA                                       ; $8AB51F |
-  STA.W $4202                               ; $8AB520 |
+  STA.W !reg_wrmpya                         ; $8AB520 |
   LDA.L DATA8_978000,X                      ; $8AB523 |
-  STA.W $4203                               ; $8AB527 |
+  STA.W !reg_wrmpyb                         ; $8AB527 |
   LDA.L DATA8_978101,X                      ; $8AB52A |
   STA.B $02                                 ; $8AB52E |
   STZ.B $03                                 ; $8AB530 |
-  LDY.W $4216                               ; $8AB532 |
+  LDY.W !reg_rdmpyl                         ; $8AB532 |
   LDA.L DATA8_978100,X                      ; $8AB535 |
-  STA.W $4203                               ; $8AB539 |
+  STA.W !reg_wrmpyb                         ; $8AB539 |
   REP #$20                                  ; $8AB53C |
   LDA.L DATA8_978001,X                      ; $8AB53E |
   AND.W #$00FF                              ; $8AB542 |
@@ -1043,7 +1043,7 @@ CODE_FL_8AB51A:
 
 CODE_8AB54F:
   STY.B $04                                 ; $8AB54F |
-  LDY.W $4216                               ; $8AB551 |
+  LDY.W !reg_rdmpyl                         ; $8AB551 |
   LDA.B $02                                 ; $8AB554 |
   BEQ CODE_8AB55E                           ; $8AB556 |
   TYA                                       ; $8AB558 |

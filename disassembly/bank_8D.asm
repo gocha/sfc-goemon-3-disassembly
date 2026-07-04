@@ -16248,7 +16248,7 @@ CODE_FN_8DF75D:
   LDA.W #$0987                              ; $8DF763 |
   STA.W $4182                               ; $8DF766 |
   STA.W $41C2                               ; $8DF769 |
-  STA.W $4202                               ; $8DF76C |
+  STA.W !reg_wrmpya                         ; $8DF76C |
   STA.W $4242                               ; $8DF76F |
   STA.W $4282                               ; $8DF772 |
   STA.W $42C2                               ; $8DF775 |
@@ -16269,7 +16269,7 @@ CODE_FN_8DF75D:
   INC A                                     ; $8DF7A2 |
   STA.W $4184                               ; $8DF7A3 |
   STA.W $41C4                               ; $8DF7A6 |
-  STA.W $4204                               ; $8DF7A9 |
+  STA.W !reg_wrdivl                         ; $8DF7A9 |
   STA.W $4244                               ; $8DF7AC |
   STA.W $4284                               ; $8DF7AF |
   STA.W $42C4                               ; $8DF7B2 |
@@ -16291,7 +16291,7 @@ CODE_FN_8DF75D:
   LDA.W #$0982                              ; $8DF7E2 |
   STA.W $4186                               ; $8DF7E5 |
   STA.W $41C6                               ; $8DF7E8 |
-  STA.W $4206                               ; $8DF7EB |
+  STA.W !reg_wrdivb                         ; $8DF7EB |
   STA.W $4246                               ; $8DF7EE |
   STA.W $4286                               ; $8DF7F1 |
   STA.W $42C6                               ; $8DF7F4 |
@@ -16311,7 +16311,7 @@ CODE_FN_8DF75D:
   STA.W $4646                               ; $8DF81E |
   LDA.W #$09FE                              ; $8DF821 |
   STA.W $41C8                               ; $8DF824 |
-  STA.W $4208                               ; $8DF827 |
+  STA.W !reg_htimeh                         ; $8DF827 |
   STA.W $4248                               ; $8DF82A |
   STA.W $4288                               ; $8DF82D |
   STA.W $42C8                               ; $8DF830 |
@@ -16582,16 +16582,16 @@ CODE_8DFAAD:
   SBC.B $12                                 ; $8DFAB5 |
   AND.W #$00FF                              ; $8DFAB7 |
   SEP #$20                                  ; $8DFABA |
-  STA.W $4202                               ; $8DFABC |
+  STA.W !reg_wrmpya                         ; $8DFABC |
   LDA.W $1766                               ; $8DFABF |
-  STA.W $4203                               ; $8DFAC2 |
+  STA.W !reg_wrmpyb                         ; $8DFAC2 |
   REP #$20                                  ; $8DFAC5 |
   LDA.W $1924                               ; $8DFAC7 |
   ASL A                                     ; $8DFACA |
   TAY                                       ; $8DFACB |
   LDA.W LOOSE_OP_00FB3C,Y                   ; $8DFACC |
   CLC                                       ; $8DFACF |
-  ADC.W $4216                               ; $8DFAD0 |
+  ADC.W !reg_rdmpyl                         ; $8DFAD0 |
   STA.B $1C                                 ; $8DFAD3 |
   TYA                                       ; $8DFAD5 |
   CLC                                       ; $8DFAD6 |
@@ -16604,7 +16604,7 @@ CODE_8DFAAD:
   STA.B $0C                                 ; $8DFAE3 |
   LDA.W #$0070                              ; $8DFAE5 |
   STA.B $0E                                 ; $8DFAE8 |
-  LDA.W $4216                               ; $8DFAEA |
+  LDA.W !reg_rdmpyl                         ; $8DFAEA |
   STA.B $20                                 ; $8DFAED |
 
 CODE_JL_8DFAEF:
@@ -17166,15 +17166,15 @@ CODE_FL_8DFE7D:
   SEP #$20                                  ; $8DFEC7 |
   LDA.B $05                                 ; $8DFEC9 |
   DEC A                                     ; $8DFECB |
-  STA.W $4202                               ; $8DFECC |
+  STA.W !reg_wrmpya                         ; $8DFECC |
   LDA.W $1766                               ; $8DFECF |
-  STA.W $4203                               ; $8DFED2 |
+  STA.W !reg_wrmpyb                         ; $8DFED2 |
   REP #$20                                  ; $8DFED5 |
   LDA.B $01                                 ; $8DFED7 |
   AND.W #$00FF                              ; $8DFED9 |
   DEC A                                     ; $8DFEDC |
   CLC                                       ; $8DFEDD |
-  ADC.W $4216                               ; $8DFEDE |
+  ADC.W !reg_rdmpyl                         ; $8DFEDE |
   STA.B $00                                 ; $8DFEE1 |
   AND.W #$0007                              ; $8DFEE3 |
   ASL A                                     ; $8DFEE6 |

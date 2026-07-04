@@ -332,14 +332,14 @@ CODE_FL_848230:
   CMP.W $1768                               ; $84823F |
   BCS CODE_848272                           ; $848242 |
   LDA.B $05                                 ; $848244 |
-  STA.W $4202                               ; $848246 |
+  STA.W !reg_wrmpya                         ; $848246 |
   LDA.W $1766                               ; $848249 |
-  STA.W $4203                               ; $84824C |
+  STA.W !reg_wrmpyb                         ; $84824C |
   REP #$20                                  ; $84824F |
   LDA.B $01                                 ; $848251 |
   AND.W #$00FF                              ; $848253 |
   CLC                                       ; $848256 |
-  ADC.W $4216                               ; $848257 |
+  ADC.W !reg_rdmpyl                         ; $848257 |
   TAY                                       ; $84825A |
   LDA.B [$1C],Y                             ; $84825B |
   AND.W #$00FF                              ; $84825D |
@@ -944,10 +944,10 @@ CODE_8486E2:
   TAX                                       ; $8486E6 |
   LDA.L DATA8_978000,X                      ; $8486E7 |
   XBA                                       ; $8486EB |
-  STA.W $4204                               ; $8486EC |
+  STA.W !reg_wrdivl                         ; $8486EC |
   SEP #$20                                  ; $8486EF |
   LDA.L DATA8_978100,X                      ; $8486F1 |
-  STA.W $4206                               ; $8486F5 |
+  STA.W !reg_wrdivb                         ; $8486F5 |
   REP #$20                                  ; $8486F8 |
   LDA.W $1D64                               ; $8486FA |
   AND.W #$00FF                              ; $8486FD |
@@ -955,7 +955,7 @@ CODE_8486E2:
   ADC.W #$0080                              ; $848701 |
   XBA                                       ; $848704 |
   STA.B $10                                 ; $848705 |
-  LDA.W $4214                               ; $848707 |
+  LDA.W !reg_rddivl                         ; $848707 |
   LDY.W $1FDA                               ; $84870A |
   BPL CODE_848713                           ; $84870D |
   EOR.W #$FFFF                              ; $84870F |
@@ -974,10 +974,10 @@ CODE_848713:
   SEC                                       ; $848727 |
   SBC.L DATA8_978100,X                      ; $848728 |
   XBA                                       ; $84872C |
-  STA.W $4204                               ; $84872D |
+  STA.W !reg_wrdivl                         ; $84872D |
   SEP #$20                                  ; $848730 |
   LDA.L DATA8_978100,X                      ; $848732 |
-  STA.W $4206                               ; $848736 |
+  STA.W !reg_wrdivb                         ; $848736 |
   REP #$20                                  ; $848739 |
   NOP                                       ; $84873B |
   NOP                                       ; $84873C |
@@ -986,7 +986,7 @@ CODE_848713:
   NOP                                       ; $84873F |
   NOP                                       ; $848740 |
   NOP                                       ; $848741 |
-  LDA.W $4214                               ; $848742 |
+  LDA.W !reg_rddivl                         ; $848742 |
   STA.B $12                                 ; $848745 |
   TAY                                       ; $848747 |
   LDA.B $08                                 ; $848748 |
@@ -996,7 +996,7 @@ CODE_848713:
   LDA.B $02                                 ; $848752 |
   STA.B $1A                                 ; $848754 |
   LDA.B $10                                 ; $848756 |
-  STA.W $4204                               ; $848758 |
+  STA.W !reg_wrdivl                         ; $848758 |
   JSR.W CODE_FN_84876A                      ; $84875B |
   LDA.L $7EDAC0                             ; $84875E |
   EOR.W #$0001                              ; $848762 |
@@ -1164,10 +1164,10 @@ CODE_84881A:
 
 CODE_8488B3:
   LDA.B $0E                                 ; $8488B3 |
-  STA.W $4204                               ; $8488B5 |
+  STA.W !reg_wrdivl                         ; $8488B5 |
   SEP #$20                                  ; $8488B8 |
   LDA.B $18                                 ; $8488BA |
-  STA.W $4206                               ; $8488BC |
+  STA.W !reg_wrdivb                         ; $8488BC |
   REP #$20                                  ; $8488BF |
   LDA.B $1A                                 ; $8488C1 |
   ASL A                                     ; $8488C3 |
@@ -1176,7 +1176,7 @@ CODE_8488B3:
   STA.L $7EDAC6,X                           ; $8488C6 |
   STA.L $7EE2C4,X                           ; $8488CA |
   STZ.B $06                                 ; $8488CE |
-  LDA.W $4214                               ; $8488D0 |
+  LDA.W !reg_rddivl                         ; $8488D0 |
   STA.L $7EDAC4,X                           ; $8488D3 |
   STA.L $7EE2C6,X                           ; $8488D7 |
   LDA.B $08                                 ; $8488DB |
@@ -1188,10 +1188,10 @@ CODE_8488B3:
   INC.B $06                                 ; $8488E6 |
 
 CODE_8488E8:
-  STA.W $4204                               ; $8488E8 |
+  STA.W !reg_wrdivl                         ; $8488E8 |
   SEP #$20                                  ; $8488EB |
   LDA.W $1D6A                               ; $8488ED |
-  STA.W $4206                               ; $8488F0 |
+  STA.W !reg_wrdivb                         ; $8488F0 |
   REP #$20                                  ; $8488F3 |
   LDA.B $0C                                 ; $8488F5 |
   CLC                                       ; $8488F7 |
@@ -1202,12 +1202,12 @@ CODE_8488E8:
   LDY.B $06                                 ; $848901 |
   BEQ CODE_84890B                           ; $848903 |
   CLC                                       ; $848905 |
-  ADC.W $4214                               ; $848906 |
+  ADC.W !reg_rddivl                         ; $848906 |
   BRA CODE_84890F                           ; $848909 |
 
 CODE_84890B:
   SEC                                       ; $84890B |
-  SBC.W $4214                               ; $84890C |
+  SBC.W !reg_rddivl                         ; $84890C |
 
 CODE_84890F:
   STA.L $7EEAC4,X                           ; $84890F |
@@ -1236,10 +1236,10 @@ CODE_84890F:
 
 CODE_848945:
   LDA.B $0E                                 ; $848945 |
-  STA.W $4204                               ; $848947 |
+  STA.W !reg_wrdivl                         ; $848947 |
   SEP #$20                                  ; $84894A |
   LDA.B $18                                 ; $84894C |
-  STA.W $4206                               ; $84894E |
+  STA.W !reg_wrdivb                         ; $84894E |
   REP #$20                                  ; $848951 |
   LDA.B $1A                                 ; $848953 |
   ASL A                                     ; $848955 |
@@ -1248,7 +1248,7 @@ CODE_848945:
   STA.L $7EDAC6,X                           ; $848958 |
   STA.L $7EE2C4,X                           ; $84895C |
   STZ.B $06                                 ; $848960 |
-  LDA.W $4214                               ; $848962 |
+  LDA.W !reg_rddivl                         ; $848962 |
   STA.L $7EDAC4,X                           ; $848965 |
   STA.L $7EE2C6,X                           ; $848969 |
   LDA.B $08                                 ; $84896D |
@@ -1260,10 +1260,10 @@ CODE_848945:
   INC.B $06                                 ; $848978 |
 
 CODE_84897A:
-  STA.W $4204                               ; $84897A |
+  STA.W !reg_wrdivl                         ; $84897A |
   SEP #$20                                  ; $84897D |
   LDA.W $1D6E                               ; $84897F |
-  STA.W $4206                               ; $848982 |
+  STA.W !reg_wrdivb                         ; $848982 |
   REP #$20                                  ; $848985 |
   LDA.B $0C                                 ; $848987 |
   CLC                                       ; $848989 |
@@ -1276,12 +1276,12 @@ CODE_84897A:
   LDY.B $06                                 ; $848997 |
   BEQ CODE_8489A1                           ; $848999 |
   CLC                                       ; $84899B |
-  ADC.W $4214                               ; $84899C |
+  ADC.W !reg_rddivl                         ; $84899C |
   BRA CODE_8489A5                           ; $84899F |
 
 CODE_8489A1:
   SEC                                       ; $8489A1 |
-  SBC.W $4214                               ; $8489A2 |
+  SBC.W !reg_rddivl                         ; $8489A2 |
 
 CODE_8489A5:
   STA.L $7EEAC4,X                           ; $8489A5 |
@@ -1310,25 +1310,25 @@ CODE_8489C3:
   TAX                                       ; $8489C7 |
   LDA.L DATA8_978000,X                      ; $8489C8 |
   XBA                                       ; $8489CC |
-  STA.W $4204                               ; $8489CD |
+  STA.W !reg_wrdivl                         ; $8489CD |
   SEP #$20                                  ; $8489D0 |
   LDA.L DATA8_978100,X                      ; $8489D2 |
-  STA.W $4206                               ; $8489D6 |
+  STA.W !reg_wrdivb                         ; $8489D6 |
   REP #$20                                  ; $8489D9 |
   LDA.W $1D66                               ; $8489DB |
   CLC                                       ; $8489DE |
   ADC.W #$0080                              ; $8489DF |
   XBA                                       ; $8489E2 |
   STA.B $00                                 ; $8489E3 |
-  LDY.W $4214                               ; $8489E5 |
+  LDY.W !reg_rddivl                         ; $8489E5 |
   LDA.W #$0100                              ; $8489E8 |
   SEC                                       ; $8489EB |
   SBC.L DATA8_978100,X                      ; $8489EC |
   XBA                                       ; $8489F0 |
-  STA.W $4204                               ; $8489F1 |
+  STA.W !reg_wrdivl                         ; $8489F1 |
   SEP #$20                                  ; $8489F4 |
   LDA.L DATA8_978100,X                      ; $8489F6 |
-  STA.W $4206                               ; $8489FA |
+  STA.W !reg_wrdivb                         ; $8489FA |
   REP #$20                                  ; $8489FD |
   STZ.B $0E                                 ; $8489FF |
   TYA                                       ; $848A01 |
@@ -1342,7 +1342,7 @@ CODE_848A0D:
   STA.B $0C                                 ; $848A0D |
   STZ.B $14                                 ; $848A0F |
   STZ.B $16                                 ; $848A11 |
-  LDA.W $4214                               ; $848A13 |
+  LDA.W !reg_rddivl                         ; $848A13 |
   BMI CODE_848A1C                           ; $848A16 |
   EOR.W #$FFFF                              ; $848A18 |
   INC A                                     ; $848A1B |
@@ -1363,7 +1363,7 @@ CODE_848A2E:
   STZ.B $10                                 ; $848A2E |
   STZ.B $12                                 ; $848A30 |
   LDA.B $00                                 ; $848A32 |
-  STA.W $4204                               ; $848A34 |
+  STA.W !reg_wrdivl                         ; $848A34 |
   JSR.W CODE_FN_848A46                      ; $848A37 |
   LDA.L $7EDAC0                             ; $848A3A |
   EOR.W #$0001                              ; $848A3E |
@@ -6293,7 +6293,7 @@ CODE_84BF84:
   LDA.B $13                                 ; $84BF89 |
   STA.B $18                                 ; $84BF8B |
   LDY.B #$01                                ; $84BF8D |
-  STY.W $420B                               ; $84BF8F |
+  STY.W !reg_mdmaen                         ; $84BF8F |
   REP #$10                                  ; $84BF92 |
   JSL.L CODE_FL_808315                      ; $84BF94 |
   PLB                                       ; $84BF98 |
@@ -7261,7 +7261,7 @@ CODE_FL_84C5C9:
   BNE .CODE_84C5F8                          ; $84C5CC |
   PHA                                       ; $84C5CE |
   SEP #$20                                  ; $84C5CF |
-  STZ.W $4200                               ; $84C5D1 |
+  STZ.W !reg_nmitimen                       ; $84C5D1 |
   REP #$20                                  ; $84C5D4 |
   PHD                                       ; $84C5D6 |
   PHA                                       ; $84C5D7 |
@@ -7295,7 +7295,7 @@ CODE_FL_84C604:
   CMP.W $1E32                               ; $84C60A |
   BEQ loc_84C644                            ; $84C60D |
   SEP #$20                                  ; $84C60F |
-  STZ.W $4200                               ; $84C611 |
+  STZ.W !reg_nmitimen                       ; $84C611 |
   REP #$20                                  ; $84C614 |
   PHD                                       ; $84C616 |
   PHA                                       ; $84C617 |
@@ -7318,7 +7318,7 @@ loc_84C632:
   STZ.B $00                                 ; $84C637 |
   SEP #$20                                  ; $84C639 |
   LDA.W $1FA2                               ; $84C63B |
-  STA.W $4200                               ; $84C63E |
+  STA.W !reg_nmitimen                       ; $84C63E |
   REP #$20                                  ; $84C641 |
   PLD                                       ; $84C643 |
 

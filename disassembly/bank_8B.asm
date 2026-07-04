@@ -6299,7 +6299,7 @@ CODE_8BAC7F:
 CODE_8BAC9D:
   AND.W #$00FF                              ; $8BAC9D |
   PLX                                       ; $8BACA0 |
-  LDY.W $4214                               ; $8BACA1 |
+  LDY.W !reg_rddivl                         ; $8BACA1 |
   JSL.L CODE_FL_808E18                      ; $8BACA4 |
   LDA.B $01                                 ; $8BACA8 |
   LDY.B $08                                 ; $8BACAA |

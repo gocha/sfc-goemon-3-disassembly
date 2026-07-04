@@ -8237,9 +8237,9 @@ CODE_FL_84CBE7:
   JSL.L upload_data_blocks                  ; $84CC3B |
   LDX.W #DATA_88804A                        ; $84CC3F |
   JSL.L upload_data_blocks                  ; $84CC42 |
-  LDY.W #DATA_8880BA                        ; $84CC46 |
+  LDY.W #$80BA                              ; $84CC46 |
   JSL.L CODE_FL_808D78                      ; $84CC49 |
-  LDY.W #DATA_88B95C                        ; $84CC4D |
+  LDY.W #$B95C                              ; $84CC4D |
   JSL.L CODE_FL_80C27C                      ; $84CC50 |
   LDY.W #$9B8E                              ; $84CC54 |
   LDA.W #$00E0                              ; $84CC57 |
@@ -10030,7 +10030,7 @@ CODE_84D9E9:
   JSL.L CODE_FL_808BC2                      ; $84D9ED |
   LDX.W #DATA_8880C6                        ; $84D9F1 |
   JSL.L upload_data_blocks                  ; $84D9F4 |
-  LDY.W #DATA_88B976                        ; $84D9F8 |
+  LDY.W #$B976                              ; $84D9F8 |
   JSL.L CODE_FL_80C27C                      ; $84D9FB |
   JSL.L CODE_FL_808230                      ; $84D9FF |
   BRA CODE_JL_84DA69                        ; $84DA03 |

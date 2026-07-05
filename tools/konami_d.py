@@ -1,3 +1,4 @@
+from pathlib import Path
 import sys
 
 WINDOW_SIZE = 0x400
@@ -8,16 +9,14 @@ def check_pos(pos):
         pos -= WINDOW_SIZE
     return pos
 
-def konami_decompress(input_file, offset_hex, game_type):
+def konami_decompress(input_file, offset_hex, game_type, output_file):
     offset = int(offset_hex, 16)
     t = int(game_type, 16)
 
-    # 入力バッファと出力バッファ、窓バッファの初期化
     in_buf = bytearray(DATA_SIZE)
     out_buf = bytearray(DATA_SIZE)
     win_buf = bytearray(WINDOW_SIZE)
 
-    # ファイル読み込み
     with open(input_file, 'rb') as f:
         f.seek(offset)
         oldM1 = f.read(1)[0]
@@ -116,15 +115,18 @@ def konami_decompress(input_file, offset_hex, game_type):
                 buf_pos = check_pos(buf_pos + 1)
                 lz_off = check_pos(lz_off + 1)
 
-    # 展開結果を書き出し
-    with open("decomp.bin", "wb") as f:
+    with open(output_file, "wb") as f:
         f.write(out_buf[:out_pos])
 
     print(f"Decompressed data size: {out_pos}")
 
-# 実行例
+
 if __name__ == "__main__":
     if len(sys.argv) < 4:
         print("Usage: python konami_d.py <ROM_file> <offset_hex> <game_type>")
         sys.exit(1)
-    konami_decompress(sys.argv[1], sys.argv[2], sys.argv[3])
+
+    output_file = Path(sys.argv[1]).name.removesuffix('.konamiz')
+    if not output_file.endswith(".bin"):
+        output_file += ".bin"
+    konami_decompress(sys.argv[1], sys.argv[2], sys.argv[3], output_file)

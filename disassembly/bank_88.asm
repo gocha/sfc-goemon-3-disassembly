@@ -1,5 +1,13 @@
 org $888000
 
+; VRAM transfer mode
+;   00000mmx
+;
+;   mm=0: Normal word transfer
+;   mm=1: Byte transfer to VRAM low byte
+;   mm=2: Variation of mode 1?
+;   mm=3: Byte transfer to VRAM high byte
+
 DATA_888000:
   db $00                                    ; $888000 |
   db $00                                    ; $888001 |
@@ -15,10 +23,10 @@ DATA_888000:
   dl $A1878F                                ; $888018 |
   db $FF                                    ; $88801B |
 
-ascii_font_block:
-  db $00                                    ; $88801C | Transfer type
-  db $00                                    ; $88801D | Unknown
-  dw $4000                                  ; $88801E | [Font (2bpp)] Destination: VRAM $????
+asset_system_font:
+  db $00                                    ; $88801C | Transfer type: VRAM
+  db $00                                    ; $88801D | Transfer mode: Normal (word transfer)
+  dw $4000                                  ; $88801E | [Font (2bpp)] Destination: VRAM $4000 (layer 3)
   dl $968CFB                                ; $888020 |   Source: ROM $968CFB (compressed)
   db $FF                                    ; $888023 | End of transfer
 
@@ -1014,9 +1022,9 @@ seq_table:
   db $48 : dl $94F5EC                       ; $8888A5 | index $0118
   db $49 : dl $BBB096                       ; $8888A9 | index $011C
 
-sound_driver_block:
-  db $02                                    ; $8888AD | Transfer type
-  db $00                                    ; $8888AE | Unused byte
+asset_sound_driver:
+  db $02                                    ; $8888AD | Transfer type: SPC
+  db $00                                    ; $8888AE | Reserved
   dw $5300                                  ; $8888AF |\ [BRR samples] Destination: SPC $5300
   dl sound_data_samples|$400000             ; $8888B1 |/   Source: ROM $8E8000 (uncompressed, indicated by bank bit6)
   dw $0200                                  ; $8888B4 |\ [Sound driver program] Destination: SPC $0200

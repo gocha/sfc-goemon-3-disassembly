@@ -21,7 +21,7 @@ CODE_8AAE12:
   LDA.B $DA                                 ; $8AAE17 |
   BMI CODE_8AAE2A                           ; $8AAE19 |
   JSL.L CODE_FL_80BED7                      ; $8AAE1B |
-  LDX.W #ascii_font_block                   ; $8AAE1F |
+  LDX.W #asset_system_font                  ; $8AAE1F |
   JSL.L upload_data_blocks                  ; $8AAE22 |
   INC.B $80                                 ; $8AAE26 |
 

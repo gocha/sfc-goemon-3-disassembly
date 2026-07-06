@@ -60,16 +60,16 @@ start:
   STA.W !reg_inidisp                        ; $80805F |/
 
   REP #$20                                  ; $808062 |
-  JSL.L CODE_FL_808710                      ; $808064 |
+  JSL.L reset_registers                     ; $808064 |
   REP #$10                                  ; $808068 |
   LDY.W #$7FFF                              ; $80806A |
   LDX.W #$0000                              ; $80806D |
 
   JSL.L CODE_FL_80BF4B                      ; $808070 |
-  JSL.L clear_sound_ram                     ; $808074 |
+  JSL.L clear_asset_ram                     ; $808074 |
 
   JSL.L verify_region                       ; $808078 |
-  LDX.W #sound_driver_block                 ; $80807C |
+  LDX.W #asset_sound_driver                 ; $80807C |
   JSL.L upload_data_blocks                  ; $80807F |
   SEI                                       ; $808083 |
   CLD                                       ; $808084 |
@@ -86,7 +86,7 @@ start:
   STZ.W $1FF4                               ; $808098 |
   JSL.L CODE_FL_84C5BB                      ; $80809B |
   JSL.L CODE_FL_808302                      ; $80809F |
-  JSL.L CODE_FL_808710                      ; $8080A3 |
+  JSL.L reset_registers                     ; $8080A3 |
   JSL.L CODE_FL_808828                      ; $8080A7 |
   REP #$20                                  ; $8080AB |
   LDA.W #$7000                              ; $8080AD |
@@ -432,7 +432,7 @@ CODE_FL_808344:
   SEI                                       ; $808344 |
   LDA.W $00D2                               ; $808345 |
   STA.W $0040                               ; $808348 |
-  BEQ CODE_808377                           ; $80834B |
+  BEQ .CODE_808377                          ; $80834B |
   SEP #$20                                  ; $80834D |
   LDA.W $1FA2                               ; $80834F |
   ORA.B #$30                                ; $808352 |
@@ -453,10 +453,11 @@ CODE_FL_808344:
   RTL                                       ; $808376 |
 
 
-CODE_808377:
+.CODE_808377
   STZ.B $D0                                 ; $808377 |
   RTL                                       ; $808379 |
 
+.CODE_80837A_UNUSED
   STZ.B $D0                                 ; $80837A |
   STZ.B $D2                                 ; $80837C |
   STZ.B $D4                                 ; $80837E |
@@ -551,43 +552,44 @@ verify_region:
   CMP.L region_code                         ; $80840B |\  Return if the console region matches the ROM
   BEQ .ret                                  ; $80840F |/  (Otherwise, display an error screen and stop execution by the following code)
 
-  STZ.W !reg_cgadd                          ; $808411 |
-  STZ.W !reg_cgdata                         ; $808414 |
-  STZ.W !reg_cgdata                         ; $808417 |
-  LDA.B #$FF                                ; $80841A |
-  STA.W !reg_cgdata                         ; $80841C |
-  LDA.B #$7F                                ; $80841F |
-  STA.W !reg_cgdata                         ; $808421 |
+  STZ.W !reg_cgadd                          ; $808411 |  Select palette 0
+  STZ.W !reg_cgdata                         ; $808414 |\  Set color 0 = black (0x0000)
+  STZ.W !reg_cgdata                         ; $808417 |/
+  LDA.B #$FF                                ; $80841A |\
+  STA.W !reg_cgdata                         ; $80841C | | Set color 1 = black (0x7FFF)
+  LDA.B #$7F                                ; $80841F | |
+  STA.W !reg_cgdata                         ; $808421 |/
 
-  REP #$20                                  ; $808424 |
-  LDX.W #ascii_font_block                   ; $808426 |
-  JSL.L upload_data_blocks                  ; $808429 |
-  SEP #$20                                  ; $80842D |
-  LDA.B #$00                                ; $80842F |
-  STA.W !reg_vmain                          ; $808431 |
-  LDY.W #$8007                              ; $808434 |
+  REP #$20                                  ; $808424 |  16 bit A
+  LDX.W #asset_system_font                  ; $808426 |\ Upload font to VRAM
+  JSL.L upload_data_blocks                  ; $808429 |/
 
-.CODE_808437
-  INY                                       ; $808437 |
-  LDX.W $0000,Y                             ; $808438 |
-  STX.W !reg_vmaddl                         ; $80843B |
+  SEP #$20                                  ; $80842D |  8 bit A
+  LDA.B #$00                                ; $80842F |\ VRAM address increments after each write
+  STA.W !reg_vmain                          ; $808431 |/
+  LDY.W #region_error_msg-1                 ; $808434 |  Source pointer (first word is VRAM address)
+
+.newline
+  INY                                       ; $808437 |  Skip control byte ($FE)
+  LDX.W $0000,Y                             ; $808438 |\ Read VRAM destination address (word)
+  STX.W !reg_vmaddl                         ; $80843B |/ Set PPU regsiter
   INY                                       ; $80843E |
 
-.CODE_80843F
-  INY                                       ; $80843F |
-  LDA.W $0000,Y                             ; $808440 |
-  CMP.B #$FE                                ; $808443 |
-  BEQ .CODE_808437                          ; $808445 |
-  BCS .CODE_80844E                          ; $808447 |
-  STA.W !reg_vmdatal                        ; $808449 |
-  BRA .CODE_80843F                          ; $80844C |
+.char_loop
+  INY                                       ; $80843F |\  Advance source pointer
+  LDA.W $0000,Y                             ; $808440 | |
+  CMP.B #$FE                                ; $808443 | |\ Control code handling
+  BEQ .newline                              ; $808445 | | | $FE $xxxx => set VRAM address (newline)
+  BCS .finish                               ; $808447 | |/  $FF => end of text
+  STA.W !reg_vmdatal                        ; $808449 | | Write character to VRAM
+  BRA .char_loop                            ; $80844C |/
 
-.CODE_80844E
-  LDA.B #$0F                                ; $80844E |
-  STA.W !reg_inidisp                        ; $808450 |
+.finish
+  LDA.B #$0F                                ; $80844E |\ Enable display
+  STA.W !reg_inidisp                        ; $808450 |/
 
 .halt
-  BRA .halt                                 ; $808453 |
+  BRA .halt                                 ; $808453 |  Stop execution
 
 .ret
   REP #$20                                  ; $808455 |
@@ -1030,7 +1032,7 @@ CODE_8086EF:
   JML.L CODE_FL_8085F6                      ; $80870C |
 
 
-CODE_FL_808710:
+reset_registers:
   JSL.L CODE_FL_808D45                      ; $808710 |
   SEP #$10                                  ; $808714 |
   LDA.W #$2100                              ; $808716 |

@@ -5548,7 +5548,7 @@ DATA8_84B6AF:
   db $2E,$40,$2F,$38,$2C,$00,$00,$2F        ; $84BAAA |
   db $60,$2F,$00,$2D                        ; $84BAB2 |
 
-clear_sound_ram:
+clear_asset_ram:
   REP #$30                                  ; $84BAB6 |\
   PHB                                       ; $84BAB8 | |
   LDA.W #$0000                              ; $84BAB9 | |
@@ -5746,7 +5746,7 @@ CODE_84BBE0:
   TAY                                       ; $84BBE4 |/
   LDA.L upload_dp_base_table,X              ; $84BBE5 |\  set direct page for this context
   TCD                                       ; $84BBE9 |/
-  LDA.L DATA16_84C508,X                     ; $84BBEA |\
+  LDA.L asset_ram_base_table,X              ; $84BBEA |\
   STA.B $11                                 ; $84BBEE |/
   STY.B $06                                 ; $84BBF0 |
   TYX                                       ; $84BBF2 |  restore X
@@ -6168,13 +6168,13 @@ CODE_84BE74:
   STA.B $2A                                 ; $84BE78 |
   LDA.W #$007E                              ; $84BE7A |
   STA.B $2C                                 ; $84BE7D |
-  JMP.W CODE_JP_84BF45                      ; $84BE7F |
+  JMP.W upload_to_vram                      ; $84BE7F |
 
 CODE_84BE82:
   JSR.W CODE_FN_84BEA1                      ; $84BE82 |
   LDY.B $2A                                 ; $84BE85 |
   STY.W $0052                               ; $84BE87 |
-  JMP.W CODE_JP_84BF45                      ; $84BE8A |
+  JMP.W upload_to_vram                      ; $84BE8A |
 
 CODE_84BE8D:
   LDA.B $11                                 ; $84BE8D |
@@ -6255,48 +6255,48 @@ CODE_84BF3F:
   REP #$20                                  ; $84BF42 |
   RTS                                       ; $84BF44 |
 
-CODE_JP_84BF45:
-  SEP #$30                                  ; $84BF45 |
-  PHB                                       ; $84BF47 |
-  PHK                                       ; $84BF48 |
-  PLB                                       ; $84BF49 |
-  JSL.L CODE_FL_808302                      ; $84BF4A |
-  LDA.B #$00                                ; $84BF4E |
-  XBA                                       ; $84BF50 |
-  LDA.B $08                                 ; $84BF51 |
-  LSR A                                     ; $84BF53 |
-  AND.B #$03                                ; $84BF54 |
-  TAX                                       ; $84BF56 |
-  LDA.W CODE_00BFE8,X                       ; $84BF57 |
-  STA.W !reg_vmain                          ; $84BF5A |
-  LDA.W LOOSE_OP_00BFEC,X                   ; $84BF5D |
-  STA.W !reg_dmap0                          ; $84BF60 |
-  LDA.W CODE_00BFF0,X                       ; $84BF63 |
-  STA.W !reg_bbad0                          ; $84BF66 |
-  LDA.B $2C                                 ; $84BF69 |
-  STA.W !reg_a1b0                           ; $84BF6B |
-  REP #$20                                  ; $84BF6E |
-  LDA.B $15                                 ; $84BF70 |
-  STA.W !reg_vmaddl                         ; $84BF72 |
-  LDA.B $2A                                 ; $84BF75 |
-  STA.W !reg_a1t0l                          ; $84BF77 |
-  LDA.B $1A                                 ; $84BF7A |
-  STA.W !reg_das0l                          ; $84BF7C |
-  CPX.B #$01                                ; $84BF7F |
-  BCS CODE_84BF84                           ; $84BF81 |
-  LSR A                                     ; $84BF83 |
+upload_to_vram:
+  SEP #$30                                  ; $84BF45 |  8 bit A/X/Y
+  PHB                                       ; $84BF47 |\
+  PHK                                       ; $84BF48 | | Set data bank = program bank
+  PLB                                       ; $84BF49 |/
+  JSL.L CODE_FL_808302                      ; $84BF4A |  ???
+  LDA.B #$00                                ; $84BF4E |\
+  XBA                                       ; $84BF50 | | Clear the high byte of A
+  LDA.B $08                                 ; $84BF51 | |
+  LSR A                                     ; $84BF53 | |
+  AND.B #$03                                ; $84BF54 | | Extract the transfer mode (bits 1-2)
+  TAX                                       ; $84BF56 |/
+  LDA.W vmain_table,X                       ; $84BF57 |\
+  STA.W !reg_vmain                          ; $84BF5A |/ Select when the VRAM address is incremented
+  LDA.W dma_dmap_table,X                    ; $84BF5D |\
+  STA.W !reg_dmap0                          ; $84BF60 |/ Select DMA transfer width (1 or 2 bytes)
+  LDA.W dma_bbad_table,X                    ; $84BF63 |\
+  STA.W !reg_bbad0                          ; $84BF66 |/ Select DMA destination register (VMDATAL or VMDATAH)
+  LDA.B $2C                                 ; $84BF69 |\
+  STA.W !reg_a1b0                           ; $84BF6B |/ Set DMA source bank (typically $7E)
+  REP #$20                                  ; $84BF6E |  16 bit A
+  LDA.B $15                                 ; $84BF70 |\ Set destination VRAM address (word address)
+  STA.W !reg_vmaddl                         ; $84BF72 |/
+  LDA.B $2A                                 ; $84BF75 |\ Set DMA source address (typically $2000)
+  STA.W !reg_a1t0l                          ; $84BF77 |/
+  LDA.B $1A                                 ; $84BF7A |\ Set DMA transfer size (bytes)
+  STA.W !reg_das0l                          ; $84BF7C |/
+  CPX.B #$01                                ; $84BF7F |\
+  BCS .start_dma                            ; $84BF81 | | Convert bytes to VRAM words (16-bit transfers only)
+  LSR A                                     ; $84BF83 |/
 
-CODE_84BF84:
-  CLC                                       ; $84BF84 |
-  ADC.B $15                                 ; $84BF85 |
-  STA.B $15                                 ; $84BF87 |
-  LDA.B $13                                 ; $84BF89 |
-  STA.B $18                                 ; $84BF8B |
-  LDY.B #$01                                ; $84BF8D |
-  STY.W !reg_mdmaen                         ; $84BF8F |
-  REP #$10                                  ; $84BF92 |
-  JSL.L CODE_FL_808315                      ; $84BF94 |
-  PLB                                       ; $84BF98 |
+.start_dma
+  CLC                                       ; $84BF84 |\
+  ADC.B $15                                 ; $84BF85 | | Advance destination VRAM address for next time
+  STA.B $15                                 ; $84BF87 |/
+  LDA.B $13                                 ; $84BF89 |\ ???
+  STA.B $18                                 ; $84BF8B |/
+  LDY.B #$01                                ; $84BF8D |\ Start DMA transfer
+  STY.W !reg_mdmaen                         ; $84BF8F |/
+  REP #$10                                  ; $84BF92 |  16 bit X/Y
+  JSL.L CODE_FL_808315                      ; $84BF94 |  ???
+  PLB                                       ; $84BF98 |  Restore data bank
   RTS                                       ; $84BF99 |
 
 CODE_JP_84BF9A:
@@ -6306,11 +6306,11 @@ CODE_JP_84BF9A:
   TAX                                       ; $84BFA0 |
   LDY.W $0050                               ; $84BFA1 |
   SEP #$20                                  ; $84BFA4 |
-  LDA.L DATA8_84BFE8,X                      ; $84BFA6 |
+  LDA.L vmain_table,X                       ; $84BFA6 |
   STA.W $0000,Y                             ; $84BFAA |
-  LDA.L DATA8_84BFEC,X                      ; $84BFAD |
+  LDA.L dma_dmap_table,X                    ; $84BFAD |
   STA.W $0002,Y                             ; $84BFB1 |
-  LDA.L DATA8_84BFF0,X                      ; $84BFB4 |
+  LDA.L dma_bbad_table,X                    ; $84BFB4 |
   STA.W $0003,Y                             ; $84BFB8 |
   LDA.B $2C                                 ; $84BFBB |
   STA.W $0008,Y                             ; $84BFBD |
@@ -6336,13 +6336,13 @@ CODE_84BFD7:
   STA.W $0050                               ; $84BFE4 |
   RTS                                       ; $84BFE7 |
 
-DATA8_84BFE8:
+vmain_table:
   db $80,$00,$80,$80                        ; $84BFE8 |
 
-DATA8_84BFEC:
+dma_dmap_table:
   db $01,$00,$00,$00                        ; $84BFEC |
 
-DATA8_84BFF0:
+dma_bbad_table:
   db $18,$18,$18,$19                        ; $84BFF0 |
 
 CODE_FL_84BFF4:
@@ -7140,7 +7140,7 @@ CODE_FN_84C4F3:
 upload_dp_base_table:
   dw $0100,$1F00,$1E00                      ; $84C502 |
 
-DATA16_84C508:
+asset_ram_base_table:
   dw $2000,$2400,$2800                      ; $84C508 |
 
 PTR24_84C50E:

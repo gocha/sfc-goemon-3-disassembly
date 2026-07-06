@@ -8,13 +8,14 @@ irq_handler_table:
   dw (empty_irq_handler-1)                  ; $818004 |
   dw (irq_handler_2-1)                      ; $818006 |
 
-  db $04,$51                                ; $818008 |
+region_error_msg:
+  dw $5104                                  ; $818008 | col: 4, row: 8
   db "THIS GAME PAK IS NOT"                 ; $81800A |
-  db $FE,$44,$51                            ; $81801E |
+  db $FE : dw $5144                         ; $81801E | col: 4, row: 10
   db "DESIGNED FOR YOUR"                    ; $818021 |
-  db $FE,$84,$51                            ; $818032 |
+  db $FE : dw $5184                         ; $818032 | col: 4, row: 12
   db "SUPER FAMICOM OR SUPER NES."          ; $818035 |
-  db $FE,$E9,$51                            ; $818050 |
+  db $FE : dw $51E9                         ; $818050 | col: 9, row: 15
   db "KONAMI CO.,LTD."                      ; $818053 |
   db $FF                                    ; $818062 |
 

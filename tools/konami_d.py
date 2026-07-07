@@ -130,7 +130,4 @@ if __name__ == "__main__":
     if output_file.endswith(".konamiz"):
         output_file = output_file[:-len(".konamiz")]
 
-    if not output_file.endswith(".bin"):
-        output_file += ".bin"
-
     konami_decompress(sys.argv[1], sys.argv[2], sys.argv[3], output_file)

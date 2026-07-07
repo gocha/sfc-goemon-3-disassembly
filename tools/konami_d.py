@@ -9,6 +9,25 @@ def check_pos(pos):
         pos -= WINDOW_SIZE
     return pos
 
+def deinterleave_tile_data(data):
+    if len(data) % 16 != 0:
+        raise ValueError("Interleaved data size must be a multiple of 16")
+
+    result = bytearray(len(data))
+
+    for pos in range(0, len(data), 16):
+        block = data[pos:pos + 16]
+
+        if len(block) < 16:
+            result[pos:pos + len(block)] = block
+            continue
+
+        for i in range(8):
+            result[pos + i * 2] = block[i]
+            result[pos + i * 2 + 1] = block[i + 8]
+
+    return result
+
 def konami_decompress(input_file, offset_hex, game_type, output_file):
     offset = int(offset_hex, 16)
     t = int(game_type, 16)
@@ -22,6 +41,7 @@ def konami_decompress(input_file, offset_hex, game_type, output_file):
         oldM1 = f.read(1)[0]
         oldM2 = f.read(1)[0]
         comp_size = ((oldM2 << 8) | oldM1) & 0x7fff
+        interleaved = (oldM2 & 0x80) != 0
 
         if comp_size > DATA_SIZE:
             raise ValueError("Compressed size too large")
@@ -115,10 +135,13 @@ def konami_decompress(input_file, offset_hex, game_type, output_file):
                 buf_pos = check_pos(buf_pos + 1)
                 lz_off = check_pos(lz_off + 1)
 
+    if interleaved:
+        out_buf = deinterleave_tile_data(out_buf)
+
     with open(output_file, "wb") as f:
         f.write(out_buf[:out_pos])
 
-    print(f"Decompressed data size: {out_pos}")
+    print(f"Decompressed data size: {out_pos}{' (deinterleaved)' if interleaved else ''}")
 
 
 if __name__ == "__main__":

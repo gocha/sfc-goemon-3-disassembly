@@ -19,7 +19,11 @@
     { "path": "bank_95.bin", "start": "0x0A8000", "size": "0x8000" },
 
     { "path": "bank_96.bin", "start": "0x0B0000", "size": "0x8000" },
-    { "path": "_font.bin.konamiz", "start": "0x0B0CFB", "size": "0x1F8" },
+    { "path": "graphics/system_font_2bpp.chr.konamiz", "start": "0x0B0CFB", "size": "0x1F8" },
+    { "path": "graphics/konami_logo_4bpp.chr.konamiz", "start": "0x0B0000", "size": "0xAB9" },
+    { "path": "graphics/konami_logo.map.konamiz", "start": "0x0B0AB9", "size": "0x1F3" },
+    { "path": "graphics/968cac.bin.konamiz", "start": "0x0B0CAC", "size": "0x2B" },
+    { "path": "graphics/968cd7.bin.konamiz", "start": "0x0B0CD7", "size": "0x24" },
 
     { "path": "bank_97.bin", "start": "0x0B8000", "size": "0x8000" },
     { "path": "bank_98.bin", "start": "0x0C0000", "size": "0x8000" },
@@ -31,7 +35,10 @@
     { "path": "bank_9E.bin", "start": "0x0F0000", "size": "0x8000" },
     { "path": "bank_9F.bin", "start": "0x0F8000", "size": "0x8000" },
     { "path": "bank_A0.bin", "start": "0x100000", "size": "0x8000" },
+
     { "path": "bank_A1.bin", "start": "0x108000", "size": "0x8000" },
+    { "path": "graphics/font_and_icons_2bpp.chr.konamiz", "start": "0x10878F", "size": "0xCAD" },
+
     { "path": "bank_A2.bin", "start": "0x110000", "size": "0x8000" },
     { "path": "bank_A3.bin", "start": "0x118000", "size": "0x8000" },
     { "path": "bank_A4.bin", "start": "0x120000", "size": "0x8000" },

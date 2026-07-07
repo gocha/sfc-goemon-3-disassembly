@@ -8,20 +8,20 @@ org $888000
 ;   mm=2: Variation of mode 1?
 ;   mm=3: Byte transfer to VRAM high byte
 
-DATA_888000:
-  db $00                                    ; $888000 |
-  db $00                                    ; $888001 |
-  dw $2000                                  ; $888002 |
-  dl $968000                                ; $888004 |
-  dw $1000                                  ; $888007 |
-  dl $968AB9                                ; $888009 |
-  dw $0000                                  ; $88800C |
-  dl $968CAC                                ; $88800E |
-  dw $0100                                  ; $888011 |
-  dl $968CD7                                ; $888013 |
-  dw $5800                                  ; $888016 |
-  dl $A1878F                                ; $888018 |
-  db $FF                                    ; $88801B |
+asset_logo_and_icons:
+  db $00                                    ; $888000 | Transfer type: VRAM
+  db $00                                    ; $888001 | Transfer mode: Normal (word transfer)
+  dw $2000                                  ; $888002 | [Konami Logo (4bpp)] Destination: VRAM $2000 (layer 2)
+  dl $968000                                ; $888004 |   Source: ROM $968000 (compressed)
+  dw $1000                                  ; $888007 | [Konami Logo (tilemap)] Destination: VRAM $1000 (layer 2)
+  dl $968AB9                                ; $888009 |   Source: ROM $968AB9 (compressed)
+  dw $0000                                  ; $88800C | [?] Destination: VRAM $0000 (layer 1)
+  dl $968CAC                                ; $88800E |   Source: ROM $968CAC (compressed)
+  dw $0100                                  ; $888011 | [?] Destination: VRAM $0100 (layer 1)
+  dl $968CD7                                ; $888013 |   Source: ROM $968CAC (compressed)
+  dw $5800                                  ; $888016 | [Font/Icons (2bpp)] Destination: VRAM $5800 (layer 3)
+  dl $A1878F                                ; $888018 |   Source: ROM $A1878F (compressed)
+  db $FF                                    ; $88801B | End of transfer
 
 asset_system_font:
   db $00                                    ; $88801C | Transfer type: VRAM

@@ -5553,7 +5553,7 @@ clear_asset_ram:
   PHB                                       ; $84BAB8 | |
   LDA.W #$0000                              ; $84BAB9 | |
   STA.L $7E2000                             ; $84BABC | |
-  LDA.W #$0BFD                              ; $84BAC0 | | init $7E2000 - $7E2BFF
+  LDA.W #$0BFD                              ; $84BAC0 | | Clear $7E2000 - $7E2BFF
   LDX.W #$2001                              ; $84BAC3 | |
   TXY                                       ; $84BAC6 | |
   INY                                       ; $84BAC7 | |
@@ -5565,7 +5565,7 @@ CODE_FL_84BACC:
   PHB                                       ; $84BACE | |
   LDA.W #$0000                              ; $84BACF | |
   STA.L $001E00                             ; $84BAD2 | |
-  LDA.W #$0035                              ; $84BAD6 | | init $001E00 - $001E37
+  LDA.W #$0035                              ; $84BAD6 | | Clear $001E00 - $001E37
   LDX.W #$1E01                              ; $84BAD9 | |
   TXY                                       ; $84BADC | |
   INY                                       ; $84BADD | |
@@ -5577,7 +5577,7 @@ CODE_FL_84BAE2:
   PHB                                       ; $84BAE4 | |
   LDA.W #$0000                              ; $84BAE5 | |
   STA.L $000100                             ; $84BAE8 | |
-  LDA.W #$0035                              ; $84BAEC | | init $000100 - $000137
+  LDA.W #$0035                              ; $84BAEC | | Clear $000100 - $000137
   LDX.W #$0101                              ; $84BAEF | |
   TXY                                       ; $84BAF2 | |
   INY                                       ; $84BAF3 | |
@@ -5588,7 +5588,7 @@ CODE_FL_84BAE2:
   PHB                                       ; $84BAFA | |
   LDA.W #$0000                              ; $84BAFB | |
   STA.L $001F00                             ; $84BAFE | |
-  LDA.W #$002D                              ; $84BB02 | | init $001F00 - $001F2F
+  LDA.W #$002D                              ; $84BB02 | | Clear $001F00 - $001F2F
   LDX.W #$1F01                              ; $84BB05 | |
   TXY                                       ; $84BB08 | |
   INY                                       ; $84BB09 | |
@@ -5757,7 +5757,7 @@ CODE_JP_84BBF3:
   JSR.W CODE_FN_84C4F3                      ; $84BBF7 |
   SEP #$20                                  ; $84BBFA |
   LDA.B #$88                                ; $84BBFC |\
-  PHA                                       ; $84BBFE | | data bank $88
+  PHA                                       ; $84BBFE | | Data bank $88
   PLB                                       ; $84BBFF |/
   LDA.W $0000,X                             ; $84BC00 | Read the first byte (transfer type)
   BEQ .case_0                               ; $84BC03 |

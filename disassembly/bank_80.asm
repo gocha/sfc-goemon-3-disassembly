@@ -9,7 +9,7 @@ start:
   SEI                                       ; $808002 |  Disable IRQ
   CLD                                       ; $808003 |  Clear decimal mode
 
-  REP #$30                                  ; $808004 |
+  REP #$30                                  ; $808004 |  16 bit A/X/Y
   LDX.W #$01AF                              ; $808006 |\ Set up the stack pointer
   TXS                                       ; $808009 |/
 
@@ -17,7 +17,7 @@ start:
   PHB                                       ; $80800C | |
   LDA.W #$0000                              ; $80800D | |
   STA.L $000000                             ; $808010 | |
-  LDA.W #$1FFD                              ; $808014 | | init $000000 - $001FFF
+  LDA.W #$1FFD                              ; $808014 | | Clear $000000 - $001FFF
   LDX.W #$0001                              ; $808017 | |
   TXY                                       ; $80801A | |
   INY                                       ; $80801B | |
@@ -28,7 +28,7 @@ start:
   PHB                                       ; $808022 | |
   LDA.W #$0000                              ; $808023 | |
   STA.L $7E2000                             ; $808026 | |
-  LDA.W #$DFFC                              ; $80802A | | init $7E2000 - $7EFFFE
+  LDA.W #$DFFC                              ; $80802A | | Clear $7E2000 - $7EFFFE
   LDX.W #$2001                              ; $80802D | |
   TXY                                       ; $808030 | |
   INY                                       ; $808031 | |
@@ -39,29 +39,29 @@ start:
   PHB                                       ; $808038 | |
   LDA.W #$0000                              ; $808039 | |
   STA.L $7F0000                             ; $80803C | |
-  LDA.W #$FFFC                              ; $808040 | | init $7F0000 - $7FFFFE
+  LDA.W #$FFFC                              ; $808040 | | Clear $7F0000 - $7FFFFE
   LDX.W #$0001                              ; $808043 | |
   TXY                                       ; $808046 | |
   INY                                       ; $808047 | |
   MVN $7F,$7F                               ; $808048 | |
   PLB                                       ; $80804B |/
 
-  LDA.W #$0000                              ; $80804C |\ init direct page
+  LDA.W #$0000                              ; $80804C |\ Direct page 0
   TCD                                       ; $80804F |/
 
   PEA.W $8100                               ; $808050 |\
-  PLB                                       ; $808053 | | data bank $81
+  PLB                                       ; $808053 | | Data bank $81
   PLB                                       ; $808054 |/
 
-  SEP #$20                                  ; $808055 |
+  SEP #$20                                  ; $808055 | 8 bit A
   LDA.W !reg_rdnmi                          ; $808057 | Clear NMI flag
   STZ.W !reg_nmitimen                       ; $80805A | Disable NMI
   LDA.B #$80                                ; $80805D |\ Apply forced blank (screen off)
   STA.W !reg_inidisp                        ; $80805F |/
 
-  REP #$20                                  ; $808062 |
-  JSL.L reset_registers                     ; $808064 |
-  REP #$10                                  ; $808068 |
+  REP #$20                                  ; $808062 | 16 bit A
+  JSL.L reset_io_registers                  ; $808064 |
+  REP #$10                                  ; $808068 | 16 bit X/Y
   LDY.W #$7FFF                              ; $80806A |
   LDX.W #$0000                              ; $80806D |
 
@@ -71,26 +71,27 @@ start:
   JSL.L verify_region                       ; $808078 |
   LDX.W #asset_sound_driver                 ; $80807C |
   JSL.L upload_data_blocks                  ; $80807F |
-  SEI                                       ; $808083 |
-  CLD                                       ; $808084 |
-  REP #$30                                  ; $808085 |
-  LDX.W #$01AF                              ; $808087 |
-  TXS                                       ; $80808A |
-  LDA.W #$0000                              ; $80808B |
-  TCD                                       ; $80808E |
-  PEA.W $8100                               ; $80808F |
-  PLB                                       ; $808092 |
-  PLB                                       ; $808093 |
-  JSL.L CODE_FL_84C579                      ; $808094 |
 
+  SEI                                       ; $808083 |  Disable IRQ
+  CLD                                       ; $808084 |  Clear decimal mode
+  REP #$30                                  ; $808085 |  16 bit A/X/Y
+  LDX.W #$01AF                              ; $808087 |\ Set up the stack pointer
+  TXS                                       ; $80808A |/
+  LDA.W #$0000                              ; $80808B |\ Direct page 0
+  TCD                                       ; $80808E |/
+  PEA.W $8100                               ; $80808F |\
+  PLB                                       ; $808092 | | Data bank $81
+  PLB                                       ; $808093 |/
+
+  JSL.L CODE_FL_84C579                      ; $808094 |
   STZ.W $1FF4                               ; $808098 |
   JSL.L CODE_FL_84C5BB                      ; $80809B |
   JSL.L CODE_FL_808302                      ; $80809F |
-  JSL.L reset_registers                     ; $8080A3 |
+  JSL.L reset_io_registers                  ; $8080A3 |
   JSL.L CODE_FL_808828                      ; $8080A7 |
+
   REP #$20                                  ; $8080AB |
   LDA.W #$7000                              ; $8080AD |
-
   STA.B $50                                 ; $8080B0 |
   LDA.W #$7400                              ; $8080B2 |
   STA.B $52                                 ; $8080B5 |
@@ -109,19 +110,22 @@ start:
   STZ.W $17A4                               ; $8080DA |
   STZ.W $17AC                               ; $8080DD |
   JSL.L CODE_FL_808230                      ; $8080E0 |
-  CLI                                       ; $8080E4 |
 
-CODE_8080E5:
-  LDA.W #$0000                              ; $8080E5 |
-  TCD                                       ; $8080E8 |
-  LDA.B $4C                                 ; $8080E9 |
-  BNE CODE_8080F3                           ; $8080EB |
-  LDA.B $86                                 ; $8080ED |
-  ADC.B $42                                 ; $8080EF |
-  STA.B $86                                 ; $8080F1 |
+  CLI                                       ; $8080E4 |  Enable IRQ
 
-CODE_8080F3:
-  BRA CODE_8080E5                           ; $8080F3 |
+.main_loop
+  LDA.W #$0000                              ; $8080E5 |\ Direct page 0
+  TCD                                       ; $8080E8 |/
+
+  LDA.B $4C                                 ; $8080E9 |\ Skip RNG update in demo play
+  BNE .after_random                         ; $8080EB |/
+
+  LDA.B $86                                 ; $8080ED |\
+  ADC.B $42                                 ; $8080EF | | Update RNG until next NMI
+  STA.B $86                                 ; $8080F1 |/
+
+.after_random
+  BRA .main_loop                            ; $8080F3 |
 
 
 vblank_handler:
@@ -483,7 +487,7 @@ irq_handler:
   TCD                                       ; $80839D |
   SEP #$20                                  ; $80839E |
   LDA.B #$81                                ; $8083A0 |\
-  PHA                                       ; $8083A2 | | data bank $81
+  PHA                                       ; $8083A2 | | Data bank $81
   PLB                                       ; $8083A3 |/
   LDA.W !reg_timeup                         ; $8083A4 |
   BPL irq_return                            ; $8083A7 |
@@ -1032,7 +1036,7 @@ CODE_8086EF:
   JML.L CODE_FL_8085F6                      ; $80870C |
 
 
-reset_registers:
+reset_io_registers:
   JSL.L CODE_FL_808D45                      ; $808710 |
   SEP #$10                                  ; $808714 |
   LDA.W #$2100                              ; $808716 |
@@ -1376,7 +1380,7 @@ set_music:
 .process_music_entry
   PHX                                       ; $808963 |\
   PHB                                       ; $808964 | |
-  PEA.W $8181                               ; $808965 | | data bank $81
+  PEA.W $8181                               ; $808965 | | Data bank $81
   PLB                                       ; $808968 | |
   PLB                                       ; $808969 |/
   LDA.W music_table,Y                       ; $80896A |\
@@ -1391,7 +1395,7 @@ set_music:
   JSL.L CODE_FL_84C5C9                      ; $808979 |/  ???
   PLY                                       ; $80897D |
   PEA.W $8888                               ; $80897E |\
-  PLB                                       ; $808981 | | data bank $88
+  PLB                                       ; $808981 | | Data bank $88
   PLB                                       ; $808982 |/
   LDA.W DATA8_888649,Y                      ; $808983 |\  Read ??? from table
   AND.W #$00FF                              ; $808986 | |
@@ -1423,7 +1427,7 @@ CODE_8089A1:
   PHX                                       ; $8089A1 |
   PHB                                       ; $8089A2 |
   PEA.W $8181                               ; $8089A3 |\
-  PLB                                       ; $8089A6 | | data bank $81
+  PLB                                       ; $8089A6 | | Data bank $81
   PLB                                       ; $8089A7 |/
 
   LDA.W music_table,Y                       ; $8089A8 |
@@ -1444,7 +1448,7 @@ CODE_FL_8089BD:
   PHX                                       ; $8089BD |
   PHB                                       ; $8089BE |
   PEA.W $8100                               ; $8089BF |\
-  PLB                                       ; $8089C2 | | data bank $81
+  PLB                                       ; $8089C2 | | Data bank $81
   PLB                                       ; $8089C3 |/
   JSL.L CODE_FL_84C64E                      ; $8089C4 |
   PLB                                       ; $8089C8 |
@@ -10142,18 +10146,19 @@ CODE_80BF4E:
   STX.W !reg_vmaddl                         ; $80BF58 |
   PLA                                       ; $80BF5B |
 
-CODE_80BF5C:
+.CODE_80BF5C
   STA.W !reg_vmdatal                        ; $80BF5C |
   DEY                                       ; $80BF5F |
-  BPL CODE_80BF5C                           ; $80BF60 |
+  BPL .CODE_80BF5C                          ; $80BF60 |
   RTL                                       ; $80BF62 |
 
+CODE_FL_80BF63_UNUSED:
   LDA.W #$0200                              ; $80BF63 |
-  BRA CODE_80BF6B                           ; $80BF66 |
+  BRA .CODE_80BF6B                          ; $80BF66 |
 
   LDA.W #$0000                              ; $80BF68 |
 
-CODE_80BF6B:
+.CODE_80BF6B
   PHX                                       ; $80BF6B |
   PHA                                       ; $80BF6C |
   JSL.L CODE_FL_809622                      ; $80BF6D |
@@ -10161,10 +10166,10 @@ CODE_80BF6B:
   PLX                                       ; $80BF72 |
   TXY                                       ; $80BF73 |
 
-CODE_80BF74:
+.CODE_80BF74
   JSL.L CODE_FL_809658                      ; $80BF74 |
   DEY                                       ; $80BF78 |
-  BNE CODE_80BF74                           ; $80BF79 |
+  BNE .CODE_80BF74                          ; $80BF79 |
   JML.L CODE_FL_809663                      ; $80BF7B |
 
 
@@ -10325,7 +10330,7 @@ CODE_80C052:
   PLB                                       ; $80C077 |
   LDA.W #$0009                              ; $80C078 |
   STA.W $1FA4                               ; $80C07B |
-  LDX.W #DATA_888000                        ; $80C07E |
+  LDX.W #asset_logo_and_icons               ; $80C07E |
   JSL.L upload_data_blocks                  ; $80C081 |
   LDY.W #$A917                              ; $80C085 |
   JSL.L CODE_FL_80C27C                      ; $80C088 |

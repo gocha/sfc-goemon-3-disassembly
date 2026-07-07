@@ -1,18 +1,21 @@
 org $888000
 
 ; VRAM transfer mode
-;   00000mmx
+;   00000ffd
 ;
-;   mm=0: Normal word transfer
-;   mm=1: Byte transfer to VRAM low byte
-;   mm=2: Variation of mode 1?
-;   mm=3: Byte transfer to VRAM high byte
+;   dd=0: Immediate transfer
+;   dd=1: Deferred transfer (save DMA parameters)
+;
+;   ff=0: Normal (word transfer)
+;   ff=1: Mode 7 tilemap (byte transfer to VRAM low byte)
+;   ff=2: Variant of mode 1?
+;   ff=3: Mode 7 tileset (byte transfer to VRAM high byte)
 
 asset_logo_and_icons:
   db $00                                    ; $888000 | Transfer type: VRAM
-  db $00                                    ; $888001 | Transfer mode: Normal (word transfer)
+  db $00                                    ; $888001 | Transfer mode: Normal
   dw $2000                                  ; $888002 | [Konami Logo (4bpp)] Destination: VRAM $2000 (layer 2)
-  dl $968000                                ; $888004 |   Source: ROM $968000 (compressed)
+  dl $968000                                ; $888004 |   Source: ROM $968000 (compressed, interleaved)
   dw $1000                                  ; $888007 | [Konami Logo (tilemap)] Destination: VRAM $1000 (layer 2)
   dl $968AB9                                ; $888009 |   Source: ROM $968AB9 (compressed)
   dw $0000                                  ; $88800C | [?] Destination: VRAM $0000 (layer 1)
@@ -25,7 +28,7 @@ asset_logo_and_icons:
 
 asset_system_font:
   db $00                                    ; $88801C | Transfer type: VRAM
-  db $00                                    ; $88801D | Transfer mode: Normal (word transfer)
+  db $00                                    ; $88801D | Transfer mode: Normal
   dw $4000                                  ; $88801E | [Font (2bpp)] Destination: VRAM $4000 (layer 3)
   dl $968CFB                                ; $888020 |   Source: ROM $968CFB (compressed)
   db $FF                                    ; $888023 | End of transfer

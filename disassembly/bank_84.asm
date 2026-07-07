@@ -5809,7 +5809,7 @@ CODE_84BC39:
 
 CODE_84BC44:
   JSL.L decompress_stream                   ; $84BC44 |
-  JSL.L CODE_FL_84BE42                      ; $84BC48 |
+  JSL.L dispatch_vram_transfer              ; $84BC48 |
   LDA.B $01                                 ; $84BC4C |
   BPL CODE_84BC44                           ; $84BC4E |
   SEP #$20                                  ; $84BC50 |
@@ -5862,7 +5862,7 @@ CODE_84BC92:
   ADC.B $18                                 ; $84BC99 |
   STA.B $20                                 ; $84BC9B |
   JSL.L decompress_stream                   ; $84BC9D |
-  JSL.L CODE_FL_84BE42                      ; $84BCA1 |
+  JSL.L dispatch_vram_transfer              ; $84BCA1 |
   PLB                                       ; $84BCA5 |
   LDA.B $01                                 ; $84BCA6 |
   BMI CODE_84BCAD                           ; $84BCA8 |
@@ -5885,7 +5885,7 @@ parse_block_header:
   STA.B $16                                 ; $84BCC4 |/
   INX                                       ; $84BCC6 |\
   INX                                       ; $84BCC7 |/
-  JSR.W decompress_init_3                   ; $84BCC8 |
+  JSR.W decompress_init_2b                  ; $84BCC8 |
   LDA.W #$0080                              ; $84BCCB |
   LDY.B $07                                 ; $84BCCE |
   BPL CODE_84BCD5                           ; $84BCD0 |
@@ -6014,7 +6014,7 @@ CODE_84BD90:
   INX                                       ; $84BD9E |
 
 CODE_84BD9F:
-  JSR.W decompress_init_2                   ; $84BD9F |
+  JSR.W decompress_init_2a                  ; $84BD9F |
   LDA.W #$0080                              ; $84BDA2 |
   STA.B $1E                                 ; $84BDA5 |
   LDA.B $08                                 ; $84BDA7 |
@@ -6067,34 +6067,34 @@ decompress_block_to_wram:
   RTL                                       ; $84BDDE |
 
 decompress_init_1:
-  REP #$20                                  ; $84BDDF |
+  REP #$20                                  ; $84BDDF |  16 bit A
   LDA.W #$2800                              ; $84BDE1 |
   STA.B $11                                 ; $84BDE4 |
-  SEP #$20                                  ; $84BDE6 |
+  SEP #$20                                  ; $84BDE6 |  8 bit A
   INC.B $02                                 ; $84BDE8 |
   LDX.B $06                                 ; $84BDEA |
-  LDY.W $0000,X                             ; $84BDEC |
-  LDA.W $0002,X                             ; $84BDEF |
-  AND.B #$BF                                ; $84BDF2 |
-  STA.B $0C                                 ; $84BDF4 |
+  LDY.W $0000,X                             ; $84BDEC |\
+  LDA.W $0002,X                             ; $84BDEF | | Read bank byte of 24-bit source pointer
+  AND.B #$BF                                ; $84BDF2 | | Clear bit 6 (used as a flag, not part of the ROM address)
+  STA.B $0C                                 ; $84BDF4 |/
   BRA decompress_init_main                  ; $84BDF6 |
 
-decompress_init_2:
-  SEP #$20                                  ; $84BDF8 |
+decompress_init_2a:
+  SEP #$20                                  ; $84BDF8 |  8 bit A
 
-decompress_init_3:
+decompress_init_2b:
   LDY.W $0000,X                             ; $84BDFA |\
-  LDA.W $0002,X                             ; $84BDFD | |
-  AND.B #$BF                                ; $84BE00 |/
-  STA.B $0C                                 ; $84BE02 |
-  INY                                       ; $84BE04 |
-  LDA.B [$0A],Y                             ; $84BE05 |
-  AND.B #$80                                ; $84BE07 |
-  STA.B $05                                 ; $84BE09 |
-  LDA.W $0002,X                             ; $84BE0B |\
-  AND.B #$40                                ; $84BE0E | |
-  TSB.B $05                                 ; $84BE10 |/
-  DEY                                       ; $84BE12 |
+  LDA.W $0002,X                             ; $84BDFD | | Read bank byte of 24-bit source pointer
+  AND.B #$BF                                ; $84BE00 | | Clear bit 6 (used as a flag, not part of the ROM address)
+  STA.B $0C                                 ; $84BE02 |/
+  INY                                       ; $84BE04 |\
+  LDA.B [$0A],Y                             ; $84BE05 | |\ Read the high byte of the compressed data size field
+  AND.B #$80                                ; $84BE07 | | | Extract "compression mode?" flag (bit 7)
+  STA.B $05                                 ; $84BE09 | |/
+  LDA.W $0002,X                             ; $84BE0B | |\ Read bank byte of 24-bit source pointer
+  AND.B #$40                                ; $84BE0E | | | Extract "uncompressed" flag (bank bit 6)
+  TSB.B $05                                 ; $84BE10 | |/ Merge both mode flags
+  DEY                                       ; $84BE12 |/
 
 decompress_init_main:
   REP #$20                                  ; $84BE13 |  16 bit A
@@ -6123,46 +6123,48 @@ decompress_init_main:
   MVN $7E,$7E                               ; $84BE3E |
   RTS                                       ; $84BE41 |
 
-CODE_FL_84BE42:
-  PHB                                       ; $84BE42 |
-  SEP #$20                                  ; $84BE43 |
-  LDA.B #$7E                                ; $84BE45 |
-  PHA                                       ; $84BE47 |
-  PLB                                       ; $84BE48 |
-  REP #$30                                  ; $84BE49 |
-  LDA.B $08                                 ; $84BE4B |
-  LSR A                                     ; $84BE4D |
-  BCS CODE_84BE5E                           ; $84BE4E |
+dispatch_vram_transfer:
+  PHB                                       ; $84BE42 | Save data bank
+  SEP #$20                                  ; $84BE43 |\
+  LDA.B #$7E                                ; $84BE45 | | Data bank $7E
+  PHA                                       ; $84BE47 | |
+  PLB                                       ; $84BE48 |/
+
+  REP #$30                                  ; $84BE49 | 16 bit A/X/Y
+  LDA.B $08                                 ; $84BE4B |\
+  LSR A                                     ; $84BE4D | | Test transfer mode bit 0 (interleave)
+  BCS .case_deferred                        ; $84BE4E |/
+
   LDX.W #$0000                              ; $84BE50 |
-  BIT.B $04                                 ; $84BE53 |
-  BPL CODE_84BE59                           ; $84BE55 |
+  BIT.B $04                                 ; $84BE53 |\ Test flag extracted from the compressed data size field
+  BPL .dispatch                             ; $84BE55 |/
   INX                                       ; $84BE57 |
   INX                                       ; $84BE58 |
 
-CODE_84BE59:
-  JSR.W (PTR16_84BE6C,X)                    ; $84BE59 |
-  PLB                                       ; $84BE5C |
+.dispatch
+  JSR.W (.dispatch_table,X)                 ; $84BE59 |
+  PLB                                       ; $84BE5C | Restore data bank
   RTL                                       ; $84BE5D |
 
-CODE_84BE5E:
+.case_deferred
   LDX.W #$0004                              ; $84BE5E |
   BIT.B $04                                 ; $84BE61 |
-  BPL CODE_84BE67                           ; $84BE63 |
+  BPL .dispatch_deferred                    ; $84BE63 |
   INX                                       ; $84BE65 |
   INX                                       ; $84BE66 |
 
-CODE_84BE67:
-  JSR.W (PTR16_84BE6C,X)                    ; $84BE67 |
+.dispatch_deferred
+  JSR.W (.dispatch_table,X)                 ; $84BE67 |
   PLB                                       ; $84BE6A |
   RTL                                       ; $84BE6B |
 
-PTR16_84BE6C:
-  dw CODE_84BE74                            ; $84BE6C |
-  dw CODE_84BE82                            ; $84BE6E |
-  dw CODE_84BE8D                            ; $84BE70 |
-  dw CODE_84BE9B                            ; $84BE72 |
+.dispatch_table
+  dw .normal                                ; $84BE6C |
+  dw .interleaved                           ; $84BE6E |
+  dw .normal_deferred                       ; $84BE70 |
+  dw .interleaved_deferred                  ; $84BE72 |
 
-CODE_84BE74:
+.normal
   LDA.B $11                                 ; $84BE74 |
   ORA.B $18                                 ; $84BE76 |
   STA.B $2A                                 ; $84BE78 |
@@ -6170,88 +6172,91 @@ CODE_84BE74:
   STA.B $2C                                 ; $84BE7D |
   JMP.W upload_to_vram                      ; $84BE7F |
 
-CODE_84BE82:
-  JSR.W CODE_FN_84BEA1                      ; $84BE82 |
+.interleaved
+  JSR.W rearrange_tile_data                 ; $84BE82 |
   LDY.B $2A                                 ; $84BE85 |
   STY.W $0052                               ; $84BE87 |
   JMP.W upload_to_vram                      ; $84BE8A |
 
-CODE_84BE8D:
+.normal_deferred
   LDA.B $11                                 ; $84BE8D |
   ORA.B $18                                 ; $84BE8F |
   STA.B $2A                                 ; $84BE91 |
   LDA.W #$007E                              ; $84BE93 |
   STA.B $2C                                 ; $84BE96 |
-  JMP.W CODE_JP_84BF9A                      ; $84BE98 |
+  JMP.W prepare_vram_upload                 ; $84BE98 |
 
-CODE_84BE9B:
-  JSR.W CODE_FN_84BEA1                      ; $84BE9B |
-  JMP.W CODE_JP_84BF9A                      ; $84BE9E |
+.interleaved_deferred
+  JSR.W rearrange_tile_data                 ; $84BE9B |
+  JMP.W prepare_vram_upload                 ; $84BE9E |
 
-CODE_FN_84BEA1:
-  LDA.B $11                                 ; $84BEA1 |
-  ORA.B $18                                 ; $84BEA3 |
-  TAX                                       ; $84BEA5 |
-  LDY.W $0052                               ; $84BEA6 |
-  STY.B $2A                                 ; $84BEA9 |
-  LDA.B $1A                                 ; $84BEAB |
-  LSR A                                     ; $84BEAD |
-  LSR A                                     ; $84BEAE |
-  LSR A                                     ; $84BEAF |
-  LSR A                                     ; $84BEB0 |
-  SEP #$20                                  ; $84BEB1 |
-  STA.B $2D                                 ; $84BEB3 |
-  LDA.B #$7E                                ; $84BEB5 |
-  STA.B $2C                                 ; $84BEB7 |
+rearrange_tile_data:
+  LDA.B $11                                 ; $84BEA1 |\
+  ORA.B $18                                 ; $84BEA3 | | Source pointer (decompressed tile data)
+  TAX                                       ; $84BEA5 |/
+  LDY.W $0052                               ; $84BEA6 |\ Destination pointer
+  STY.B $2A                                 ; $84BEA9 |/
+  LDA.B $1A                                 ; $84BEAB |\ Decompressed data size
+  LSR A                                     ; $84BEAD | |
+  LSR A                                     ; $84BEAE | | Convert bytes to 16-byte blocks
+  LSR A                                     ; $84BEAF | |
+  LSR A                                     ; $84BEB0 |/
+  SEP #$20                                  ; $84BEB1 |\ Set number of blocks to process
+  STA.B $2D                                 ; $84BEB3 |/
+  LDA.B #$7E                                ; $84BEB5 |\ Destination bank ($7E)
+  STA.B $2C                                 ; $84BEB7 |/
   CLC                                       ; $84BEB9 |
 
-CODE_JP_84BEBA:
-  LDA.L $7E0000,X                           ; $84BEBA |
-  STA.W $0000,Y                             ; $84BEBE |
-  LDA.L $7E0008,X                           ; $84BEC1 |
-  STA.W $0001,Y                             ; $84BEC5 |
-  LDA.L $7E0001,X                           ; $84BEC8 |
-  STA.W $0002,Y                             ; $84BECC |
-  LDA.L $7E0009,X                           ; $84BECF |
-  STA.W $0003,Y                             ; $84BED3 |
-  LDA.L $7E0002,X                           ; $84BED6 |
-  STA.W $0004,Y                             ; $84BEDA |
-  LDA.L $7E000A,X                           ; $84BEDD |
-  STA.W $0005,Y                             ; $84BEE1 |
-  LDA.L $7E0003,X                           ; $84BEE4 |
-  STA.W $0006,Y                             ; $84BEE8 |
-  LDA.L $7E000B,X                           ; $84BEEB |
-  STA.W $0007,Y                             ; $84BEEF |
-  LDA.L $7E0004,X                           ; $84BEF2 |
-  STA.W $0008,Y                             ; $84BEF6 |
-  LDA.L $7E000C,X                           ; $84BEF9 |
-  STA.W $0009,Y                             ; $84BEFD |
-  LDA.L $7E0005,X                           ; $84BF00 |
-  STA.W $000A,Y                             ; $84BF04 |
-  LDA.L $7E000D,X                           ; $84BF07 |
-  STA.W $000B,Y                             ; $84BF0B |
-  LDA.L $7E0006,X                           ; $84BF0E |
-  STA.W $000C,Y                             ; $84BF12 |
-  LDA.L $7E000E,X                           ; $84BF15 |
-  STA.W $000D,Y                             ; $84BF19 |
-  LDA.L $7E0007,X                           ; $84BF1C |
-  STA.W $000E,Y                             ; $84BF20 |
-  LDA.L $7E000F,X                           ; $84BF23 |
-  STA.W $000F,Y                             ; $84BF27 |
-  REP #$20                                  ; $84BF2A |
-  TXA                                       ; $84BF2C |
-  ADC.W #$0010                              ; $84BF2D |
-  TAX                                       ; $84BF30 |
-  TYA                                       ; $84BF31 |
-  ADC.W #$0010                              ; $84BF32 |
-  TAY                                       ; $84BF35 |
+; Rearrange each 16-byte block while copying.
+; Source order:      0 1 2 3 4 5 6 7 8 9 A B C D E F
+; Destination order: 0 8 1 9 2 A 3 B 4 C 5 D 6 E 7 F
+.loop
+  LDA.L $7E0000,X                           ; $84BEBA |\  Copy 16-byte block
+  STA.W $0000,Y                             ; $84BEBE | |
+  LDA.L $7E0008,X                           ; $84BEC1 | |
+  STA.W $0001,Y                             ; $84BEC5 | |
+  LDA.L $7E0001,X                           ; $84BEC8 | |
+  STA.W $0002,Y                             ; $84BECC | |
+  LDA.L $7E0009,X                           ; $84BECF | |
+  STA.W $0003,Y                             ; $84BED3 | |
+  LDA.L $7E0002,X                           ; $84BED6 | |
+  STA.W $0004,Y                             ; $84BEDA | |
+  LDA.L $7E000A,X                           ; $84BEDD | |
+  STA.W $0005,Y                             ; $84BEE1 | |
+  LDA.L $7E0003,X                           ; $84BEE4 | |
+  STA.W $0006,Y                             ; $84BEE8 | |
+  LDA.L $7E000B,X                           ; $84BEEB | |
+  STA.W $0007,Y                             ; $84BEEF | |
+  LDA.L $7E0004,X                           ; $84BEF2 | |
+  STA.W $0008,Y                             ; $84BEF6 | |
+  LDA.L $7E000C,X                           ; $84BEF9 | |
+  STA.W $0009,Y                             ; $84BEFD | |
+  LDA.L $7E0005,X                           ; $84BF00 | |
+  STA.W $000A,Y                             ; $84BF04 | |
+  LDA.L $7E000D,X                           ; $84BF07 | |
+  STA.W $000B,Y                             ; $84BF0B | |
+  LDA.L $7E0006,X                           ; $84BF0E | |
+  STA.W $000C,Y                             ; $84BF12 | |
+  LDA.L $7E000E,X                           ; $84BF15 | |
+  STA.W $000D,Y                             ; $84BF19 | |
+  LDA.L $7E0007,X                           ; $84BF1C | |
+  STA.W $000E,Y                             ; $84BF20 | |
+  LDA.L $7E000F,X                           ; $84BF23 | |
+  STA.W $000F,Y                             ; $84BF27 |/
+  REP #$20                                  ; $84BF2A |\
+  TXA                                       ; $84BF2C | |
+  ADC.W #$0010                              ; $84BF2D | |
+  TAX                                       ; $84BF30 | | Advance to the next 16-byte block
+  TYA                                       ; $84BF31 | |
+  ADC.W #$0010                              ; $84BF32 | |
+  TAY                                       ; $84BF35 |/
   SEP #$20                                  ; $84BF36 |
-  DEC.B $2D                                 ; $84BF38 |
-  BEQ CODE_84BF3F                           ; $84BF3A |
-  JMP.W CODE_JP_84BEBA                      ; $84BF3C |
+  DEC.B $2D                                 ; $84BF38 | Decrement remaining block count
+  BEQ .finish                               ; $84BF3A |
+  JMP.W .loop                               ; $84BF3C | Process next block
 
-CODE_84BF3F:
-  STY.W $0052                               ; $84BF3F |
+.finish
+  STY.W $0052                               ; $84BF3F | Update destination buffer pointer
   REP #$20                                  ; $84BF42 |
   RTS                                       ; $84BF44 |
 
@@ -6270,17 +6275,17 @@ upload_to_vram:
   LDA.W vmain_table,X                       ; $84BF57 |\
   STA.W !reg_vmain                          ; $84BF5A |/ Select when the VRAM address is incremented
   LDA.W dma_dmap_table,X                    ; $84BF5D |\
-  STA.W !reg_dmap0                          ; $84BF60 |/ Select DMA transfer width (1 or 2 bytes)
+  STA.W !reg_dmap0                          ; $84BF60 |/ DMA transfer width (1 or 2 bytes)
   LDA.W dma_bbad_table,X                    ; $84BF63 |\
-  STA.W !reg_bbad0                          ; $84BF66 |/ Select DMA destination register (VMDATAL or VMDATAH)
+  STA.W !reg_bbad0                          ; $84BF66 |/ DMA destination register (VMDATAL or VMDATAH)
   LDA.B $2C                                 ; $84BF69 |\
-  STA.W !reg_a1b0                           ; $84BF6B |/ Set DMA source bank (typically $7E)
+  STA.W !reg_a1b0                           ; $84BF6B |/ DMA source bank (typically $7E)
   REP #$20                                  ; $84BF6E |  16 bit A
-  LDA.B $15                                 ; $84BF70 |\ Set destination VRAM address (word address)
+  LDA.B $15                                 ; $84BF70 |\ Destination VRAM address (word address)
   STA.W !reg_vmaddl                         ; $84BF72 |/
-  LDA.B $2A                                 ; $84BF75 |\ Set DMA source address (typically $2000)
+  LDA.B $2A                                 ; $84BF75 |\ DMA source address (typically $2000)
   STA.W !reg_a1t0l                          ; $84BF77 |/
-  LDA.B $1A                                 ; $84BF7A |\ Set DMA transfer size (bytes)
+  LDA.B $1A                                 ; $84BF7A |\ DMA transfer size (bytes)
   STA.W !reg_das0l                          ; $84BF7C |/
   CPX.B #$01                                ; $84BF7F |\
   BCS .start_dma                            ; $84BF81 | | Convert bytes to VRAM words (16-bit transfers only)
@@ -6299,38 +6304,38 @@ upload_to_vram:
   PLB                                       ; $84BF98 |  Restore data bank
   RTS                                       ; $84BF99 |
 
-CODE_JP_84BF9A:
+prepare_vram_upload:
   LDA.B $08                                 ; $84BF9A |
   LSR A                                     ; $84BF9C |
   AND.W #$0003                              ; $84BF9D |
   TAX                                       ; $84BFA0 |
   LDY.W $0050                               ; $84BFA1 |
-  SEP #$20                                  ; $84BFA4 |
-  LDA.L vmain_table,X                       ; $84BFA6 |
-  STA.W $0000,Y                             ; $84BFAA |
-  LDA.L dma_dmap_table,X                    ; $84BFAD |
-  STA.W $0002,Y                             ; $84BFB1 |
-  LDA.L dma_bbad_table,X                    ; $84BFB4 |
-  STA.W $0003,Y                             ; $84BFB8 |
-  LDA.B $2C                                 ; $84BFBB |
-  STA.W $0008,Y                             ; $84BFBD |
-  REP #$20                                  ; $84BFC0 |
-  LDA.B $15                                 ; $84BFC2 |
-  STA.W $0004,Y                             ; $84BFC4 |
-  LDA.B $2A                                 ; $84BFC7 |
-  STA.W $0006,Y                             ; $84BFC9 |
-  LDA.B $1A                                 ; $84BFCC |
-  STA.W $0009,Y                             ; $84BFCE |
-  CPX.W #$0001                              ; $84BFD1 |
-  BCS CODE_84BFD7                           ; $84BFD4 |
-  LSR A                                     ; $84BFD6 |
+  SEP #$20                                  ; $84BFA4 |  8 bit A
+  LDA.L vmain_table,X                       ; $84BFA6 |\
+  STA.W $0000,Y                             ; $84BFAA |/ Select when the VRAM address is incremented
+  LDA.L dma_dmap_table,X                    ; $84BFAD |\
+  STA.W $0002,Y                             ; $84BFB1 |/ DMA transfer width (1 or 2 bytes)
+  LDA.L dma_bbad_table,X                    ; $84BFB4 |\
+  STA.W $0003,Y                             ; $84BFB8 |/ DMA destination register (VMDATAL or VMDATAH)
+  LDA.B $2C                                 ; $84BFBB |\
+  STA.W $0008,Y                             ; $84BFBD |/ DMA source bank (typically $7E)
+  REP #$20                                  ; $84BFC0 |  16 bit A
+  LDA.B $15                                 ; $84BFC2 |\ Destination VRAM address (word address)
+  STA.W $0004,Y                             ; $84BFC4 |/
+  LDA.B $2A                                 ; $84BFC7 |\ DMA source address (typically $2000)
+  STA.W $0006,Y                             ; $84BFC9 |/
+  LDA.B $1A                                 ; $84BFCC |\ DMA transfer size (bytes)
+  STA.W $0009,Y                             ; $84BFCE |/
+  CPX.W #$0001                              ; $84BFD1 |\
+  BCS .finish                               ; $84BFD4 | | Convert bytes to VRAM words (16-bit transfers only)
+  LSR A                                     ; $84BFD6 |/
 
-CODE_84BFD7:
-  CLC                                       ; $84BFD7 |
-  ADC.B $15                                 ; $84BFD8 |
-  STA.B $15                                 ; $84BFDA |
-  LDA.B $13                                 ; $84BFDC |
-  STA.B $18                                 ; $84BFDE |
+.finish
+  CLC                                       ; $84BFD7 |\
+  ADC.B $15                                 ; $84BFD8 | | Advance destination VRAM address for next time
+  STA.B $15                                 ; $84BFDA |/
+  LDA.B $13                                 ; $84BFDC |\ ???
+  STA.B $18                                 ; $84BFDE |/
   TYA                                       ; $84BFE0 |
   ADC.W #$000B                              ; $84BFE1 |
   STA.W $0050                               ; $84BFE4 |
@@ -6478,7 +6483,7 @@ CODE_FN_84C0ED:
   STZ.B $05                                 ; $84C0F5 |
   LDA.L $880000,X                           ; $84C0F7 |\
   CMP.B #$FF                                ; $84C0FB |/
-  BNE finish_upload                         ; $84C0FD |
+  BNE ret_upload_pending                    ; $84C0FD |
   SEC                                       ; $84C0FF |
   RTS                                       ; $84C100 |
 
@@ -6489,11 +6494,12 @@ CODE_FN_84C101:
   STZ.B $04                                 ; $84C107 |
   LDA.L $880000,X                           ; $84C109 |
   CMP.W #$FFFF                              ; $84C10D |
-  BNE finish_upload                         ; $84C110 |
+  BNE ret_upload_pending                    ; $84C110 |
   SEP #$20                                  ; $84C112 |
   SEC                                       ; $84C114 |
   RTS                                       ; $84C115 |
 
+CODE_FN_84C116_UNUSED:
   LDX.B $06                                 ; $84C116 |
   STZ.B $02                                 ; $84C118 |
   BIT.B $05                                 ; $84C11A |
@@ -6501,7 +6507,7 @@ CODE_FN_84C101:
   STZ.B $05                                 ; $84C11E |
   LDA.L $880000,X                           ; $84C120 |
   CMP.B #$80                                ; $84C124 |
-  BNE finish_upload                         ; $84C126 |
+  BNE ret_upload_pending                    ; $84C126 |
   SEC                                       ; $84C128 |
   RTS                                       ; $84C129 |
 
@@ -6511,7 +6517,7 @@ CODE_84C12A:
   LDA.L $880000,X                           ; $84C12E |
   STA.B $06                                 ; $84C132 |
 
-finish_upload:
+ret_upload_pending:
   SEP #$20                                  ; $84C134 |
   CLC                                       ; $84C136 |
   RTS                                       ; $84C137 |
@@ -6659,7 +6665,7 @@ CODE_FN_84C211:
   LDA.W #$C000                              ; $84C218 |
   STA.B $15                                 ; $84C21B |
   LDX.B $06                                 ; $84C21D |
-  JSR.W decompress_init_2                   ; $84C21F |
+  JSR.W decompress_init_2a                  ; $84C21F |
   LDA.W #$0080                              ; $84C222 |
   STA.B $1E                                 ; $84C225 |
   RTS                                       ; $84C227 |

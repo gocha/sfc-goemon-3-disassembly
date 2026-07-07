@@ -126,7 +126,11 @@ if __name__ == "__main__":
         print("Usage: python konami_d.py <ROM_file> <offset_hex> <game_type>")
         sys.exit(1)
 
-    output_file = Path(sys.argv[1]).name.removesuffix('.konamiz')
+    output_file = Path(sys.argv[1]).name
+    if output_file.endswith(".konamiz"):
+        output_file = output_file[:-len(".konamiz")]
+
     if not output_file.endswith(".bin"):
         output_file += ".bin"
+
     konami_decompress(sys.argv[1], sys.argv[2], sys.argv[3], output_file)

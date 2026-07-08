@@ -14,10 +14,10 @@ The following tools can be used to compress and decompress data in this format:
 
 Compressed data begins with a 2-byte header.
 
-| Size    | Description                                 |
-|---------|---------------------------------------------|
-| 2 bytes | Compressed size (includes the field itself) |
-| n bytes | Compressed stream                           |
+| Size    | Description                                                                                                   |
+|---------|---------------------------------------------------------------------------------------------------------------|
+| 2 bytes | Compressed size (bits 0-14, includes the field itself). Bit 15 indicates tile data deinterleaving (see below) |
+| n bytes | Compressed stream                                                                                             |
 
 The decompression loop processes commands until all bytes specified by the size header are consumed.
 
@@ -87,3 +87,19 @@ u16 offset = (command_word - 0x3DF) & 0x3FF;
 ```
 
 The constant 0x3DF corresponds to the 10-bit two's complement representation of -0x21, where 0x21 matches the maximum copy length (33).
+
+## Post-Decompression Processing
+
+### Tile Data Deinterleaving
+
+Bit 15 (0x8000) of the size field indicates that the decompressed data is arranged in an interleaved layout.
+After decompression, each 16-byte block must be deinterleaved as follows:
+
+```
+Source:      0 1 2 3 4 5 6 7 8 9 A B C D E F
+Destination: 0 8 1 9 2 A 3 B 4 C 5 D 6 E 7 F
+```
+
+The same operation can be used for both interleaving and deinterleaving.
+
+Only the Konami logo tileset is currently known to use this flag.

@@ -10,6 +10,9 @@ org $888000
 ;   ff=1: Mode 7 tilemap (byte transfer to VRAM low byte)
 ;   ff=2: Variant of mode 1?
 ;   ff=3: Mode 7 tileset (byte transfer to VRAM high byte)
+;
+; WRAM transfer mode
+;   x000000y
 
 asset_logo_and_icons:
   db $00                                    ; $888000 | Transfer type: VRAM
@@ -232,8 +235,11 @@ DATA_8881F3:
   db $FF                                    ; $888213 |
 
 DATA_888214:
-  db $01,$00,$00,$00,$7F,$8F,$87            ; $888214 |
-  db $A1,$FF,$FF                            ; $88821B |
+  db $01                                    ; $888214 | Transfer type: WRAM
+  db $00                                    ; $888215 | Transfer mode: Normal
+  dl $7F0000                                ; $888216 |\ Destination: WRAM $7F0000
+  dl $A1878F                                ; $888219 |/ Source: ROM $A1878F (compressed) [Font/Icons (2bpp)]
+  dw $FFFF                                  ; $88821C | End of transfer
 
 DATA_88821E:
   db $00                                    ; $88821E |

@@ -8,7 +8,7 @@ org $888000
 ;
 ;   ff=0: Normal (word transfer)
 ;   ff=1: Mode 7 tilemap (byte transfer to VRAM low byte)
-;   ff=2: Variant of mode 1?
+;   ff=2: Variant of ff=1?
 ;   ff=3: Mode 7 tileset (byte transfer to VRAM high byte)
 ;
 ; WRAM transfer mode

@@ -1,5 +1,13 @@
 org $888000
 
+; Transfer type
+;   $00: VRAM
+;   $01: WRAM
+;   $02: SPC
+;   $03: ???
+;   $80: ???
+;   $FF: ???
+;
 ; VRAM transfer mode
 ;   00000ffd
 ;

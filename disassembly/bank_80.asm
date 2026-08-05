@@ -19103,8 +19103,8 @@ CODE_80FB60:
 
   db $00,$00,$00,$00,$00,$00                ; $80FB7E |
 
-  fillbyte $FF
-  fill $80FF90-pc()                         ; $80FB84 |
+  padbyte $FF
+  pad $80FF90                               ; $80FB84 |
 
 
 emulation_reset:
@@ -19122,8 +19122,8 @@ native_nmi:
   JML.L vblank_handler                      ; $80FF9B |
 
 
-  fillbyte $FF
-  fill $80FFAC-pc()                         ; $80FF9F |
+  padbyte $FF
+  pad $80FFAC                               ; $80FF9F |
 
   db $03                                    ; $80FFAC |
 

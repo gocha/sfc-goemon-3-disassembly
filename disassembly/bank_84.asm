@@ -7314,7 +7314,7 @@ CODE_FL_84C604:
   CLC                                       ; $84C626 |
   STA.B $32                                 ; $84C627 |
   AND.W #$7FFF                              ; $84C629 |
-  ADC.W #sample_load_table                  ; $84C62C |
+  ADC.W #sample_load_table-3                ; $84C62C |
   TAX                                       ; $84C62F |
   STX.B $00                                 ; $84C630 |
 

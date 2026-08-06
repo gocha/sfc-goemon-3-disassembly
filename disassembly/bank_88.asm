@@ -25,23 +25,23 @@ org $888000
 asset_logo_and_icons:
   db $00                                    ; $888000 | Transfer type: VRAM
   db $00                                    ; $888001 | Transfer mode: Normal
-  dw $2000                                  ; $888002 | [Konami Logo (4bpp)] Destination: VRAM $2000 (layer 2)
-  dl $968000                                ; $888004 |   Source: ROM $968000 (compressed, interleaved)
-  dw $1000                                  ; $888007 | [Konami Logo (tilemap)] Destination: VRAM $1000 (layer 2)
-  dl $968AB9                                ; $888009 |   Source: ROM $968AB9 (compressed)
-  dw $0000                                  ; $88800C | [?] Destination: VRAM $0000 (layer 1)
-  dl $968CAC                                ; $88800E |   Source: ROM $968CAC (compressed)
-  dw $0100                                  ; $888011 | [?] Destination: VRAM $0100 (layer 1)
-  dl $968CD7                                ; $888013 |   Source: ROM $968CAC (compressed)
-  dw $5800                                  ; $888016 | [Font/Icons (2bpp)] Destination: VRAM $5800 (layer 3)
-  dl $A1878F                                ; $888018 |   Source: ROM $A1878F (compressed)
+  dw $2000                                  ; $888002 |\ [Konami Logo (4bpp)] Destination: VRAM $2000 (layer 2)
+  dl $968000                                ; $888004 |/   Source: ROM $968000 (compressed, interleaved)
+  dw $1000                                  ; $888007 |\ [Konami Logo (tilemap)] Destination: VRAM $1000 (layer 2)
+  dl $968AB9                                ; $888009 |/   Source: ROM $968AB9 (compressed)
+  dw $0000                                  ; $88800C |\ [?] Destination: VRAM $0000 (layer 1)
+  dl $968CAC                                ; $88800E |/   Source: ROM $968CAC (compressed)
+  dw $0100                                  ; $888011 |\ [?] Destination: VRAM $0100 (layer 1)
+  dl $968CD7                                ; $888013 |/   Source: ROM $968CAC (compressed)
+  dw $5800                                  ; $888016 |\ [Font/Icons (2bpp)] Destination: VRAM $5800 (layer 3)
+  dl $A1878F                                ; $888018 |/   Source: ROM $A1878F (compressed)
   db $FF                                    ; $88801B | End of transfer
 
 asset_system_font:
   db $00                                    ; $88801C | Transfer type: VRAM
   db $00                                    ; $88801D | Transfer mode: Normal
-  dw $4000                                  ; $88801E | [Font (2bpp)] Destination: VRAM $4000 (layer 3)
-  dl $968CFB                                ; $888020 |   Source: ROM $968CFB (compressed)
+  dw $4000                                  ; $88801E |\ [Font (2bpp)] Destination: VRAM $4000 (layer 3)
+  dl $968CFB                                ; $888020 |/   Source: ROM $968CFB (compressed)
   db $FF                                    ; $888023 | End of transfer
 
 DATA_888024:
@@ -64,16 +64,22 @@ DATA_888024:
   db $FF                                    ; $888049 |
 
 DATA_88804A:
-  db $FF,$03                                ; $88804A |
-  db $A2,$96,$00,$B0,$80                    ; $88804C |
+  db $FF                                    ; $88804A | Transfer type: ?
+  dl $96A203                                ; $88804B |\ Source: $96A203 (compressed)
+  dw $B000                                  ; $88804E |/   $3000 (last)
+  db $80                                    ; $888050 | Transfer type: ?
 
 DATA_888051:
-  db $FF,$72,$F8                            ; $888051 |
-  db $BE,$00,$30,$DD,$DC,$BE,$A2,$33        ; $888054 |
-  db $F3,$F8,$AE,$1C,$B7                    ; $88805C |
+  db $FF                                    ; $888051 | Transfer type: ?
+  dl $BEF872                                ; $888052 |\ Source: $BEF872 (compressed)
+  dw $3000                                  ; $888055 |/   $3000
+  dl $BEDCDD                                ; $888057 |\ Source: $BEDCDD (compressed)
+  dw $33A2                                  ; $88805A |/   $33A2
+  dl $AEF8F3                                ; $88805C |\ Source: $AEF8F3 (compressed)
+  dw $B71C                                  ; $88805F |/   $371C (last)
 
-  db $00                                    ; $888061 |
-  db $00                                    ; $888062 |
+  db $00                                    ; $888061 | Transfer type: VRAM
+  db $00                                    ; $888062 | Transfer mode: Normal
   dw $2000                                  ; $888063 |
   dl $A59B61                                ; $888065 |
   dw $2900                                  ; $888068 |
@@ -120,7 +126,9 @@ DATA_8880BE:
   db $FF                                    ; $8880C5 |
 
 DATA_8880C6:
-  db $FF,$69,$E7,$94,$00,$B0                ; $8880C6 |
+  db $FF                                    ; $8880C6 |
+  dl $94E769                                ; $8880C7 |
+  dw $B000                                  ; $8880CA |
 
   db $00                                    ; $8880CC |
   db $00                                    ; $8880CD |
@@ -184,11 +192,25 @@ DATA_888135:
   db $00                                    ; $88814B |
 
 DATA_88814C:
-  db $FF,$8D,$EC,$96,$00,$B0,$00,$00        ; $88814C |
-  db $00,$20,$C2,$DB,$96,$00,$30,$AD        ; $888154 |
-  db $AE,$A3,$00,$34,$1D,$B4,$A3,$00        ; $88815C |
-  db $58,$8F,$87,$A1,$00,$5D,$44,$9E        ; $888164 |
-  db $96,$00,$60,$D4,$E3,$96,$FF            ; $88816C |
+  db $FF                                    ; $88814C |
+  dl $96EC8D                                ; $88814D |
+  dw $B000                                  ; $888150 |
+
+  db $00                                    ; $888152 |
+  db $00                                    ; $888153 |
+  dw $2000                                  ; $888154 |
+  dl $96DBC2                                ; $888156 |
+  dw $3000                                  ; $888159 |
+  dl $A3AEAD                                ; $88815B |
+  dw $3400                                  ; $88815E |
+  dl $A3B41D                                ; $888160 |
+  dw $5800                                  ; $888163 |
+  dl $A1878F                                ; $888165 |
+  dw $5D00                                  ; $888168 |
+  dl $969E44                                ; $88816A |
+  dw $6000                                  ; $88816D |
+  dl $96E3D4                                ; $88816F |
+  db $FF                                    ; $888172 |
 
 DATA_888173:
   db $01                                    ; $888173 |
@@ -207,11 +229,23 @@ DATA_888173:
   db $00                                    ; $888195 |
 
 DATA_888196:
-  db $FF,$A3,$F5,$96,$00,$B0,$00,$00        ; $888196 |
-  db $00,$20,$3D,$EA,$A8,$00,$44,$3F        ; $88819E |
-  db $FB,$9F,$00,$50,$80,$EB,$A0,$00        ; $8881A6 |
-  db $58,$8F,$87,$A1,$00,$60,$93,$ED        ; $8881AE |
-  db $96,$FF                                ; $8881B6 |
+  db $FF                                    ; $888196 |
+  dl $96F5A3                                ; $888197 |
+  dw $B000                                  ; $88819A |
+
+  db $00                                    ; $88819C |
+  db $00                                    ; $88819D |
+  dw $2000                                  ; $88819E |
+  dl $A8EA3D                                ; $8881A0 |
+  dw $4400                                  ; $8881A3 |
+  dl $9FFB3F                                ; $8881A5 |
+  dw $5000                                  ; $8881A8 |
+  dl $A0EB80                                ; $8881AA |
+  dw $5800                                  ; $8881AD |
+  dl $A1878F                                ; $8881AF |
+  dw $6000                                  ; $8881B2 |
+  dl $96ED93                                ; $8881B4 |
+  db $FF                                    ; $8881B7 |
 
 DATA_8881B8:
   db $01                                    ; $8881B8 |
@@ -378,11 +412,23 @@ DATA_888292:
   db $FF                                    ; $888299 |
 
 DATA_88829A:
-  db $FF,$DD,$DC,$BE,$00,$30,$9C,$E1        ; $88829A |
-  db $BE,$7A,$B3,$00,$00,$00,$60,$3E        ; $8882A2 |
-  db $92,$97,$00,$6A,$00,$B5,$97,$00        ; $8882AA |
-  db $58,$8F,$87,$A1,$00,$4E,$3C,$94        ; $8882B2 |
-  db $A1,$FF                                ; $8882BA |
+  db $FF                                    ; $88829A |
+  dl $BEDCDD                                ; $88829B |
+  dw $3000                                  ; $88829E |
+  dl $BEE19C                                ; $8882A0 |
+  dw $B37A                                  ; $8882A3 |
+
+  db $00                                    ; $8882A5 |
+  db $00                                    ; $8882A6 |
+  dw $6000                                  ; $8882A7 |
+  dl $97923E                                ; $8882A9 |
+  dw $6A00                                  ; $8882AC |
+  dl $97B500                                ; $8882AE |
+  dw $5800                                  ; $8882B1 |
+  dl $A1878F                                ; $8882B3 |
+  dw $4E00                                  ; $8882B6 |
+  dl $A1943C                                ; $8882B8 |
+  db $FF                                    ; $8882BB |
 
 DATA_8882BC:
   db $00                                    ; $8882BC |
@@ -406,10 +452,21 @@ DATA_8882CC:
   db $FF                                    ; $8882D3 |
 
 DATA_8882D4:
-  db $FF,$DD,$DC,$BE,$00,$B0,$00,$00        ; $8882D4 |
-  db $00,$60,$3E,$92,$97,$00,$50,$2E        ; $8882DC |
-  db $88,$97,$00,$44,$A1,$B0,$97,$00        ; $8882E4 |
-  db $48,$8F,$87,$A1,$FF                    ; $8882EC |
+  db $FF                                    ; $8882D4 |
+  dl $BEDCDD                                ; $8882D5 |
+  dw $B000                                  ; $8882D8 |
+
+  db $00                                    ; $8882DA |
+  db $00                                    ; $8882DB |
+  dw $6000                                  ; $8882DC |
+  dl $97923E                                ; $8882DE |
+  dw $5000                                  ; $8882E1 |
+  dl $97882E                                ; $8882E3 |
+  dw $4400                                  ; $8882E6 |
+  dl $97B0A1                                ; $8882E8 |
+  dw $4800                                  ; $8882EB |
+  dl $A1878F                                ; $8882ED |
+  db $FF                                    ; $8882F0 |
 
 DATA_8882F1:
   db $01                                    ; $8882F1 |
@@ -625,8 +682,11 @@ DATA_8883ED:
   dw $FFFF                                  ; $8883F5 |
 
 DATA_8883F7:
-  db $FF,$E6,$E6,$BE,$7A,$33                ; $8883F7 |
-  db $10,$F8,$BE,$F8,$B8                    ; $8883FD |
+  db $FF                                    ; $8883F7 |
+  dl $BEE6E6                                ; $8883F8 |
+  dw $337A                                  ; $8883FB |
+  dl $BEF810                                ; $8883FD |
+  dw $B8F8                                  ; $888400 |
 
   db $00                                    ; $888402 |
   db $00                                    ; $888403 |
@@ -669,9 +729,11 @@ DATA_888439:
   dw $FFFF                                  ; $888441 |
 
 DATA_888443:
-  db $FF,$05                                ; $888443 |
-  db $E8,$BE,$7A,$33,$59,$F7,$BE,$B8        ; $888445 |
-  db $B4                                    ; $88844D |
+  db $FF                                    ; $888443 |
+  dl $BEE805                                ; $888444 |
+  dw $337A                                  ; $888447 |
+  dl $BEF759                                ; $888449 |
+  dw $B4B8                                  ; $88844C |
 
   db $00                                    ; $88844E |
   db $00                                    ; $88844F |
@@ -698,7 +760,9 @@ DATA_888468:
   db $FF                                    ; $88846F |
 
 DATA_888470:
-  db $FF,$05,$E8,$BE,$EC,$B6                ; $888470 |
+  db $FF                                    ; $888470 |
+  dl $BEE805                                ; $888471 |
+  dw $B6EC                                  ; $888474 |
 
   db $00                                    ; $888476 |
   db $00                                    ; $888477 |
@@ -732,8 +796,9 @@ DATA_888498:
   dw $FFFF                                  ; $8884A0 |
 
 DATA_8884A2:
-  db $FF,$E4,$E9                            ; $8884A2 |
-  db $BE,$7A,$B3                            ; $8884A5 |
+  db $FF                                    ; $8884A2 |
+  dl $BEE9E4                                ; $8884A3 |
+  dw $B37A                                  ; $8884A6 |
 
   db $00                                    ; $8884A8 |
   db $00                                    ; $8884A9 |
@@ -783,8 +848,13 @@ DATA_8884DC:
   db $FF                                    ; $8884E8 |
 
 DATA_8884E9:
-  db $FF,$C4,$EC,$BE,$7A,$33,$B5,$F7        ; $8884E9 |
-  db $BE,$B0,$38,$10,$F8,$BE,$F8,$B8        ; $8884F1 |
+  db $FF                                    ; $8884E9 |
+  dl $BEECC4                                ; $8884EA |
+  dw $337A                                  ; $8884ED |
+  dl $BEF7B5                                ; $8884EF |
+  dw $38B0                                  ; $8884F2 |
+  dl $BEF810                                ; $8884F4 |
+  dw $B8F8                                  ; $8884F7 |
 
   db $00                                    ; $8884F9 |
   db $00                                    ; $8884FA |
@@ -840,8 +910,11 @@ DATA_888538:
   dw $FFFF                                  ; $888540 |
 
 DATA_888542:
-  db $FF,$B2,$F2,$BE,$7A,$33                ; $888542 |
-  db $B5,$F7,$BE,$B0,$B8                    ; $888548 |
+  db $FF                                    ; $888542 |
+  dl $BEF2B2                                ; $888543 |
+  dw $337A                                  ; $888546 |
+  dl $BEF7B5                                ; $888548 |
+  dw $B8B0                                  ; $88854B |
 
   db $00                                    ; $88854D |
   db $00                                    ; $88854E |
@@ -876,7 +949,8 @@ DATA_88856F:
 
 DATA_888577:
   db $FF                                    ; $888577 |
-  db $BC,$F6,$BE,$22,$B5                    ; $888578 |
+  dl $BEF6BC                                ; $888578 |
+  dw $B522                                  ; $88857B |
 
   db $00                                    ; $88857D |
   db $01                                    ; $88857E |
@@ -901,7 +975,9 @@ DATA_88858D:
   db $FF                                    ; $888599 |
 
 DATA_88859A:
-  db $FF,$B4,$BC,$A8,$1E,$B5                ; $88859A |
+  db $FF                                    ; $88859A |
+  dl $A8BCB4                                ; $88859B |
+  dw $B51E                                  ; $88859E |
 
   db $00                                    ; $8885A0 |
   db $01                                    ; $8885A1 |
@@ -953,8 +1029,11 @@ DATA_8885CD:
   db $FF                                    ; $8885DC |
 
 DATA_8885DD:
-  db $FF,$14,$F5,$BE,$00,$30,$7E,$F5        ; $8885DD |
-  db $BE,$4A,$B0                            ; $8885E5 |
+  db $FF                                    ; $8885DD |
+  dl $BEF514                                ; $8885DE |
+  dw $3000                                  ; $8885E1 |
+  dl $BEF57E                                ; $8885E3 |
+  dw $B04A                                  ; $8885E6 |
 
   db $00                                    ; $8885E8 |
   db $00                                    ; $8885E9 |
@@ -969,7 +1048,9 @@ DATA_8885DD:
   db $FF                                    ; $8885FE |
 
 DATA_8885FF:
-  db $FF,$14,$F5,$BE,$00,$B0                ; $8885FF |
+  db $FF                                    ; $8885FF |
+  dl $BEF514                                ; $888600 |
+  dw $B000                                  ; $888603 |
 
   db $00                                    ; $888605 |
   db $00                                    ; $888606 |
@@ -991,11 +1072,17 @@ DATA_88860D:
   db $FF                                    ; $88861C |
 
 DATA_88861D:
-  db $FF,$30,$89,$A8,$96,$B1,$00,$01        ; $88861D |
-  db $00,$70,$F9                            ; $888625 |
+  db $FF                                    ; $88861D |
+  dl $A88930                                ; $88861E |
+  dw $B196                                  ; $888621 |
+
+  db $00                                    ; $888623 |
+  db $01                                    ; $888624 |
+  dw $7000                                  ; $888625 |
+  dl $AAA9F9                                ; $888627 |
+  db $FF                                    ; $88862A |
 
 sample_load_table:
-  dw $AAA9 : db $FF                         ; $888628 | index $0000
   dw $8000 : db $0E                         ; $88862B | index $0003
   dw $8000 : db $0F                         ; $88862E | index $0006
   dw $B950 : db $0F                         ; $888631 | index $0009
@@ -4405,12 +4492,25 @@ DATA_88CFCE:
   db $C7,$96,$7C,$B4,$80,$80                ; $88E835 |
 
 DATA_88E83B:
-  db $FF,$E9                                ; $88E83B |
-  db $C2,$A8,$9A,$30,$93,$C3,$A8,$1E        ; $88E83D |
-  db $31,$41,$C5,$A8,$48,$32,$F1,$C3        ; $88E845 |
-  db $A8,$56,$31,$F8,$C1,$A8,$00,$B0        ; $88E84D |
-  db $01,$00,$00,$00,$7F,$8B,$83,$A7        ; $88E855 |
-  db $FF,$FF,$FF,$F8,$C1,$A8,$00,$30        ; $88E85D |
+  db $FF                                    ; $88E83B | Transfer Type: ?
+  dl $A8C2E9                                ; $88E83C |\ Source: $A8C2E9 (compressed)
+  dw $309A                                  ; $88E83F |/   $309A
+  dl $A8C393                                ; $88E841 |\ Source: $A8C393 (compressed)
+  dw $311E                                  ; $88E844 |/   $311E
+  dl $A8C541                                ; $88E846 |\ Source: $A8C541 (compressed)
+  dw $3248                                  ; $88E849 |/   $3248
+  dl $A8C3F1                                ; $88E84B |\ Source: $A8C3F1 (compressed)
+  dw $3156                                  ; $88E84E |/   $3156
+  dl $A8C1F8                                ; $88E850 |\ Source: $A8C1F8 (compressed)
+  dw $B000                                  ; $88E853 |/   $3000 (last)
+
+  db $01                                    ; $88E855 | Transfer type: WRAM
+  db $00                                    ; $88E856 | Transfer mode: Normal
+  dl $7F0000                                ; $88E857 |\ Destination: WRAM $7F0000
+  dl $A7838B                                ; $88E85A |/ Source: ROM $A7838B (compressed)
+  dw $FFFF                                  ; $88E85D | End of transfer
+
+  db $FF,$F8,$C1,$A8,$00,$30                ; $88E85F |
   db $AE,$C4,$A8,$F4,$B1,$01,$00,$00        ; $88E865 |
   db $00,$7F,$8B,$83,$A7,$FF,$FF,$FF        ; $88E86D |
   db $F8,$C1,$A8,$00,$30,$50,$D8,$A8        ; $88E875 |

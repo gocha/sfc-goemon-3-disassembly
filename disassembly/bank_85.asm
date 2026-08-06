@@ -809,7 +809,7 @@ CODE_FL_85858F:
   TAX                                       ; $858592 |
   LDA.L DATA8_878E9F,X                      ; $858593 |
   TAX                                       ; $858597 |
-  JML.L upload_data_blocks                  ; $858598 |
+  JML.L load_asset                          ; $858598 |
 
 CODE_FL_85859C:
   PHB                                       ; $85859C |

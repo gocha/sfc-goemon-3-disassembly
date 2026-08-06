@@ -15,7 +15,10 @@
     { "path": "bank_91.bin", "start": "0x088000", "size": "0x8000" },
     { "path": "bank_92.bin", "start": "0x090000", "size": "0x8000" },
     { "path": "bank_93.bin", "start": "0x098000", "size": "0x8000" },
+
     { "path": "bank_94.bin", "start": "0x0A0000", "size": "0x8000" },
+    { "path": "sprites/94e769.bin.konamiz", "start": "0x0A6769", "size": "0x172" },
+
     { "path": "bank_95.bin", "start": "0x0A8000", "size": "0x8000" },
 
     { "path": "bank_96.bin", "start": "0x0B0000", "size": "0x8000" },
@@ -24,6 +27,7 @@
     { "path": "graphics/konami_logo.map.konamiz", "start": "0x0B0AB9", "size": "0x1F3" },
     { "path": "graphics/968cac.bin.konamiz", "start": "0x0B0CAC", "size": "0x2B" },
     { "path": "graphics/968cd7.bin.konamiz", "start": "0x0B0CD7", "size": "0x24" },
+    { "path": "sprites/96a203.bin.konamiz", "start": "0x0B2203", "size": "0xFC" },
 
     { "path": "bank_97.bin", "start": "0x0B8000", "size": "0x8000" },
     { "path": "bank_98.bin", "start": "0x0C0000", "size": "0x8000" },
@@ -45,7 +49,14 @@
     { "path": "bank_A5.bin", "start": "0x128000", "size": "0x8000" },
     { "path": "bank_A6.bin", "start": "0x130000", "size": "0x8000" },
     { "path": "bank_A7.bin", "start": "0x138000", "size": "0x8000" },
+
     { "path": "bank_A8.bin", "start": "0x140000", "size": "0x8000" },
+    { "path": "sprites/a8c1f8.bin.konamiz", "start": "0x1441F8", "size": "0xF1" },
+    { "path": "sprites/a8c2e9.bin.konamiz", "start": "0x1442E9", "size": "0xAA" },
+    { "path": "sprites/a8c393.bin.konamiz", "start": "0x144393", "size": "0x5E" },
+    { "path": "sprites/a8c3f1.bin.konamiz", "start": "0x1443F1", "size": "0xBD" },
+    { "path": "sprites/a8c541.bin.konamiz", "start": "0x144541", "size": "0x109" },
+
     { "path": "bank_A9.bin", "start": "0x148000", "size": "0x8000" },
     { "path": "bank_AA.bin", "start": "0x150000", "size": "0x8000" },
     { "path": "bank_AB.bin", "start": "0x158000", "size": "0x8000" },

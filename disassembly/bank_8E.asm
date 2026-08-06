@@ -159,7 +159,7 @@ CODE_FL_8EFF98:
   LDA.W CODE_008BBF,Y                       ; $8EFFA2 |
   PLB                                       ; $8EFFA5 |
   TAX                                       ; $8EFFA6 |
-  JML.L upload_data_blocks                  ; $8EFFA7 |
+  JML.L load_asset                          ; $8EFFA7 |
 
   db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFAB |
   db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFB3 |

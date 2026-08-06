@@ -16534,9 +16534,9 @@ CODE_86F65A:
   STZ.W $1D66                               ; $86F6A0 |
   STZ.W $1FD4                               ; $86F6A3 |
   LDX.W #DATA_88B574                        ; $86F6A6 |
-  JSL.L upload_data_blocks                  ; $86F6A9 |
+  JSL.L load_asset                          ; $86F6A9 |
   LDX.W #DATA_88B57C                        ; $86F6AD |
-  JSL.L upload_data_blocks                  ; $86F6B0 |
+  JSL.L load_asset                          ; $86F6B0 |
   JSL.L CODE_FL_848655                      ; $86F6B4 |
   STZ.W $1662                               ; $86F6B8 |
   STZ.W $1672                               ; $86F6BB |

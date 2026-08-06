@@ -1,12 +1,11 @@
 org $888000
 
 ; Transfer type
-;   $00: VRAM
-;   $01: WRAM
-;   $02: SPC
-;   $03: ???
-;   $80: ???
-;   $FF: ???
+;   $00: VRAM transfer
+;   $01: WRAM transfer
+;   $02: SPC transfer
+;   $80: NOP
+;   $FF: Sprite definitions (with a trailing transfer block)
 ;
 ; VRAM transfer mode
 ;   00000ffd
@@ -63,14 +62,15 @@ DATA_888024:
   dl $96A2FF                                ; $888046 |
   db $FF                                    ; $888049 |
 
-DATA_88804A:
-  db $FF                                    ; $88804A | Transfer type: ?
+asset_logo_sprites:
+  db $FF                                    ; $88804A | Transfer type: Sprite
   dl $96A203                                ; $88804B |\ Source: $96A203 (compressed)
   dw $B000                                  ; $88804E |/   $3000 (last)
-  db $80                                    ; $888050 | Transfer type: ?
+
+  db $80                                    ; $888050 | Transfer type: NOP
 
 DATA_888051:
-  db $FF                                    ; $888051 | Transfer type: ?
+  db $FF                                    ; $888051 | Transfer type: Sprite
   dl $BEF872                                ; $888052 |\ Source: $BEF872 (compressed)
   dw $3000                                  ; $888055 |/   $3000
   dl $BEDCDD                                ; $888057 |\ Source: $BEDCDD (compressed)
@@ -4492,7 +4492,7 @@ DATA_88CFCE:
   db $C7,$96,$7C,$B4,$80,$80                ; $88E835 |
 
 DATA_88E83B:
-  db $FF                                    ; $88E83B | Transfer Type: ?
+  db $FF                                    ; $88E83B | Transfer Type: Sprite
   dl $A8C2E9                                ; $88E83C |\ Source: $A8C2E9 (compressed)
   dw $309A                                  ; $88E83F |/   $309A
   dl $A8C393                                ; $88E841 |\ Source: $A8C393 (compressed)
@@ -6742,7 +6742,7 @@ CODE_88FE27:
 CODE_88FE3F:
   PHX                                       ; $88FE3F |
   LDX.W #DATA_88CDC2                        ; $88FE40 |
-  JSL.L upload_data_blocks                  ; $88FE43 |
+  JSL.L load_asset                          ; $88FE43 |
   PLX                                       ; $88FE47 |
   INC.B $1A,X                               ; $88FE48 |
 

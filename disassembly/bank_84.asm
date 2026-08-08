@@ -5688,15 +5688,15 @@ CODE_84BBA1:
 CODE_84BBA2:
   PLB                                       ; $84BBA2 |
 
-CODE_84BBA3:
+CODE_FN_84BBA3:
   RTL                                       ; $84BBA3 |
 
-  dw CODE_84BBA3                            ; $84BBA4 |
-  dw CODE_84BC83                            ; $84BBA6 |
-  dw CODE_84BBA3                            ; $84BBA8 |
-  dw CODE_84BD41                            ; $84BBAA |
-  dw CODE_84BBA3                            ; $84BBAC |
-  dw CODE_84C19A                            ; $84BBAE |
+  dw CODE_FN_84BBA3                         ; $84BBA4 |
+  dw CODE_FN_84BC83                         ; $84BBA6 |
+  dw CODE_FN_84BBA3                         ; $84BBA8 |
+  dw CODE_FN_84BD41                         ; $84BBAA |
+  dw CODE_FN_84BBA3                         ; $84BBAC |
+  dw CODE_FN_84C19A                         ; $84BBAE |
 
 ;----------------------------------------------------------------
 ; Transfer data blocks to the VRAM/WRAM/SPC from a ROM table.
@@ -5788,43 +5788,43 @@ load_asset_vram:
   INX                                       ; $84BC25 |
   STX.B $06                                 ; $84BC26 |
 
-CODE_JP_84BC28:
+.CODE_JP_84BC28
   LDA.B $02                                 ; $84BC28 |
-  BNE CODE_84BC2F                           ; $84BC2A |
+  BNE .CODE_84BC2F                          ; $84BC2A |
   JSR.W parse_block_header                  ; $84BC2C |
 
-CODE_84BC2F:
+.CODE_84BC2F
   REP #$20                                  ; $84BC2F |
   LDA.B $08                                 ; $84BC31 |
   LSR A                                     ; $84BC33 |
-  BCC CODE_84BC39                           ; $84BC34 |
+  BCC .CODE_84BC39                          ; $84BC34 |
   JMP.W CODE_JP_84C22C                      ; $84BC36 |
 
-CODE_84BC39:
+.CODE_84BC39
   PEA.W $887E                               ; $84BC39 |
   PLB                                       ; $84BC3C |
   LDA.W #$0400                              ; $84BC3D |
   STA.B $1E                                 ; $84BC40 |
   STA.B $20                                 ; $84BC42 |
 
-CODE_84BC44:
+.CODE_84BC44
   JSL.L decompress_stream                   ; $84BC44 |
   JSL.L dispatch_vram_transfer              ; $84BC48 |
   LDA.B $01                                 ; $84BC4C |
-  BPL CODE_84BC44                           ; $84BC4E |
+  BPL .CODE_84BC44                          ; $84BC4E |
   SEP #$20                                  ; $84BC50 |
   PLB                                       ; $84BC52 |
   JSR.W CODE_FN_84C0ED                      ; $84BC53 |
   BCS CODE_JP_84BC5B                        ; $84BC56 |
-  JMP.W CODE_JP_84BC28                      ; $84BC58 |
+  JMP.W .CODE_JP_84BC28                     ; $84BC58 |
 
 CODE_JP_84BC5B:
   REP #$30                                  ; $84BC5B |
   TDC                                       ; $84BC5D |
   CMP.W #$0100                              ; $84BC5E |
-  BNE CODE_84BC80                           ; $84BC61 |
+  BNE .CODE_84BC80                          ; $84BC61 |
   LDX.B $30                                 ; $84BC63 |
-  BEQ CODE_84BC80                           ; $84BC65 |
+  BEQ .CODE_84BC80                          ; $84BC65 |
   DEX                                       ; $84BC67 |
   DEX                                       ; $84BC68 |
   STX.B $30                                 ; $84BC69 |
@@ -5840,21 +5840,21 @@ CODE_JP_84BC5B:
   PLB                                       ; $84BC7C |
   JMP.W CODE_JP_84BBD1                      ; $84BC7D |
 
-CODE_84BC80:
+.CODE_84BC80
   JMP.W asset_done                          ; $84BC80 |
 
-CODE_84BC83:
+CODE_FN_84BC83:
   PHB                                       ; $84BC83 |
   PHD                                       ; $84BC84 |
   LDA.B $02                                 ; $84BC85 |
-  BNE CODE_84BC92                           ; $84BC87 |
+  BNE .CODE_84BC92                          ; $84BC87 |
   SEP #$20                                  ; $84BC89 |
   LDA.B #$88                                ; $84BC8B |
   PHA                                       ; $84BC8D |
   PLB                                       ; $84BC8E |
   JSR.W parse_block_header                  ; $84BC8F |
 
-CODE_84BC92:
+.CODE_84BC92
   PEA.W $887E                               ; $84BC92 |
   PLB                                       ; $84BC95 |
   LDA.B $1E                                 ; $84BC96 |
@@ -5865,16 +5865,16 @@ CODE_84BC92:
   JSL.L dispatch_vram_transfer              ; $84BCA1 |
   PLB                                       ; $84BCA5 |
   LDA.B $01                                 ; $84BCA6 |
-  BMI CODE_84BCAD                           ; $84BCA8 |
+  BMI .CODE_84BCAD                          ; $84BCA8 |
   JMP.W CODE_JP_84C22C                      ; $84BCAA |
 
-CODE_84BCAD:
+.CODE_84BCAD
   SEP #$20                                  ; $84BCAD |
   JSR.W CODE_FN_84C0ED                      ; $84BCAF |
-  BCS CODE_84BCB7                           ; $84BCB2 |
+  BCS .CODE_84BCB7                          ; $84BCB2 |
   JMP.W CODE_JP_84C22C                      ; $84BCB4 |
 
-CODE_84BCB7:
+.CODE_84BCB7
   JMP.W CODE_JP_84BC5B                      ; $84BCB7 |
 
 parse_block_header:
@@ -5888,10 +5888,10 @@ parse_block_header:
   JSR.W decompress_init_2b                  ; $84BCC8 |
   LDA.W #$0080                              ; $84BCCB |
   LDY.B $07                                 ; $84BCCE |
-  BPL CODE_84BCD5                           ; $84BCD0 |
+  BPL .CODE_84BCD5                          ; $84BCD0 |
   LDA.W #$0400                              ; $84BCD2 |
 
-CODE_84BCD5:
+.CODE_84BCD5
   STA.B $1E                                 ; $84BCD5 |
   INC.B $02                                 ; $84BCD7 |
   RTS                                       ; $84BCD9 |
@@ -5906,32 +5906,32 @@ load_asset_wram:
 
 CODE_JP_84BCE5:
   LDA.B $02                                 ; $84BCE5 |
-  BNE CODE_84BCEC                           ; $84BCE7 |
+  BNE .CODE_84BCEC                          ; $84BCE7 |
   JSR.W CODE_FN_84BD78                      ; $84BCE9 |
 
-CODE_84BCEC:
+.CODE_84BCEC
   REP #$20                                  ; $84BCEC |
   LDA.B $08                                 ; $84BCEE |
   LSR A                                     ; $84BCF0 |
-  BCC CODE_84BCF6                           ; $84BCF1 |
+  BCC .CODE_84BCF6                          ; $84BCF1 |
   JMP.W CODE_JP_84C22C                      ; $84BCF3 |
 
-CODE_84BCF6:
+.CODE_84BCF6
   PEA.W $887E                               ; $84BCF6 |
   PLB                                       ; $84BCF9 |
   LDA.W #$0400                              ; $84BCFA |
   STA.B $1E                                 ; $84BCFD |
   STA.B $20                                 ; $84BCFF |
 
-CODE_84BD01:
+.CODE_84BD01
   JSL.L decompress_stream                   ; $84BD01 |
   JSL.L CODE_FL_84BFF4                      ; $84BD05 |
   LDA.B $01                                 ; $84BD09 |
-  BPL CODE_84BD01                           ; $84BD0B |
+  BPL .CODE_84BD01                          ; $84BD0B |
   SEP #$20                                  ; $84BD0D |
   PLB                                       ; $84BD0F |
   LDA.B $08                                 ; $84BD10 |
-  BPL CODE_84BD36                           ; $84BD12 |
+  BPL .CODE_84BD36                          ; $84BD12 |
   STZ.B $02                                 ; $84BD14 |
   LDX.B $06                                 ; $84BD16 |
   LDA.L $880001,X                           ; $84BD18 |
@@ -5939,36 +5939,36 @@ CODE_84BD01:
   LDA.L $880000,X                           ; $84BD1D |
   TAY                                       ; $84BD21 |
   CPY.W #$FFFF                              ; $84BD22 |
-  BEQ CODE_84BD3E                           ; $84BD25 |
+  BEQ .CODE_84BD3E                          ; $84BD25 |
   LDX.B $2E                                 ; $84BD27 |
   INX                                       ; $84BD29 |
   INX                                       ; $84BD2A |
   INX                                       ; $84BD2B |
   STX.B $2E                                 ; $84BD2C |
   CPX.W #$0018                              ; $84BD2E |
-  BCS CODE_84BD3E                           ; $84BD31 |
+  BCS .CODE_84BD3E                          ; $84BD31 |
   JMP.W CODE_JP_84BCE5                      ; $84BD33 |
 
-CODE_84BD36:
+.CODE_84BD36
   JSR.W CODE_FN_84C101                      ; $84BD36 |
-  BCS CODE_84BD3E                           ; $84BD39 |
+  BCS .CODE_84BD3E                          ; $84BD39 |
   JMP.W CODE_JP_84BCE5                      ; $84BD3B |
 
-CODE_84BD3E:
+.CODE_84BD3E
   JMP.W CODE_JP_84BC5B                      ; $84BD3E |
 
-CODE_84BD41:
+CODE_FN_84BD41:
   PHB                                       ; $84BD41 |
   PHD                                       ; $84BD42 |
   LDA.B $02                                 ; $84BD43 |
-  BNE CODE_84BD50                           ; $84BD45 |
+  BNE .CODE_84BD50                          ; $84BD45 |
   SEP #$20                                  ; $84BD47 |
   LDA.B #$88                                ; $84BD49 |
   PHA                                       ; $84BD4B |
   PLB                                       ; $84BD4C |
   JSR.W CODE_FN_84BD78                      ; $84BD4D |
 
-CODE_84BD50:
+.CODE_84BD50
   PEA.W $887E                               ; $84BD50 |
   PLB                                       ; $84BD53 |
   LDA.B $1E                                 ; $84BD54 |
@@ -5979,31 +5979,31 @@ CODE_84BD50:
   JSL.L CODE_FL_84BFF4                      ; $84BD5F |
   PLB                                       ; $84BD63 |
   LDA.B $01                                 ; $84BD64 |
-  BMI CODE_84BD6B                           ; $84BD66 |
+  BMI .CODE_84BD6B                          ; $84BD66 |
   JMP.W CODE_JP_84C22C                      ; $84BD68 |
 
-CODE_84BD6B:
+.CODE_84BD6B
   SEP #$20                                  ; $84BD6B |
   JSR.W CODE_FN_84C101                      ; $84BD6D |
-  BCS CODE_84BD75                           ; $84BD70 |
+  BCS .CODE_84BD75                          ; $84BD70 |
   JMP.W CODE_JP_84BCE5                      ; $84BD72 |
 
-CODE_84BD75:
+.CODE_84BD75
   JMP.W CODE_JP_84BC5B                      ; $84BD75 |
 
 CODE_FN_84BD78:
   REP #$20                                  ; $84BD78 |
   LDA.B $07                                 ; $84BD7A |
-  BPL CODE_84BD90                           ; $84BD7C |
+  BPL .CODE_84BD90                          ; $84BD7C |
   LDX.B $2E                                 ; $84BD7E |
   LDA.L PTR24_84C50F,X                      ; $84BD80 |
   STA.B $16                                 ; $84BD84 |
   LDA.L PTR24_84C50E,X                      ; $84BD86 |
   STA.B $15                                 ; $84BD8A |
   LDX.B $06                                 ; $84BD8C |
-  BRA CODE_84BD9F                           ; $84BD8E |
+  BRA .CODE_84BD9F                          ; $84BD8E |
 
-CODE_84BD90:
+.CODE_84BD90
   LDX.B $06                                 ; $84BD90 |
   LDA.W $0000,X                             ; $84BD92 |
   STA.B $15                                 ; $84BD95 |
@@ -6013,7 +6013,7 @@ CODE_84BD90:
   INX                                       ; $84BD9D |
   INX                                       ; $84BD9E |
 
-CODE_84BD9F:
+.CODE_84BD9F
   JSR.W decompress_init_2a                  ; $84BD9F |
   LDA.W #$0080                              ; $84BDA2 |
   STA.B $1E                                 ; $84BDA5 |
@@ -6579,7 +6579,7 @@ load_asset_special:
   BPL .CODE_84C149                          ; $84C195 |
   JMP.W CODE_JP_84BBF3                      ; $84C197 |
 
-CODE_84C19A:
+CODE_FN_84C19A:
   PHB                                       ; $84C19A |
   PHD                                       ; $84C19B |
   LDX.B $02                                 ; $84C19C |

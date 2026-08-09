@@ -429,7 +429,6 @@ CODE_00F96D = $00F96D
 LOOSE_OP_00F96F = $00F96F                 
 LOOSE_OP_00F971 = $00F971                 
 CODE_00887E = $00887E                     
-PTR24_84C50F = $84C50F                    
 CODE_FL_80BC56 = $80BC56                  
 CODE_00FA0C = $00FA0C                     
 CODE_00FA0E = $00FA0E                     

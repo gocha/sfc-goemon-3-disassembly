@@ -5885,7 +5885,7 @@ parse_block_header:
   STA.B $16                                 ; $84BCC4 |/
   INX                                       ; $84BCC6 |\
   INX                                       ; $84BCC7 |/
-  JSR.W decompress_init_2b                  ; $84BCC8 |
+  JSR.W asset_decompress_init_a8            ; $84BCC8 |
   LDA.W #$0080                              ; $84BCCB |
   LDY.B $07                                 ; $84BCCE |
   BPL .CODE_84BCD5                          ; $84BCD0 |
@@ -5904,7 +5904,7 @@ load_asset_wram:
   STX.B $06                                 ; $84BCE1 |
   STZ.B $2E                                 ; $84BCE3 |
 
-CODE_JP_84BCE5:
+load_asset_wram_main:
   LDA.B $02                                 ; $84BCE5 |
   BNE .CODE_84BCEC                          ; $84BCE7 |
   JSR.W CODE_FN_84BD78                      ; $84BCE9 |
@@ -5947,12 +5947,12 @@ CODE_JP_84BCE5:
   STX.B $2E                                 ; $84BD2C |
   CPX.W #$0018                              ; $84BD2E |
   BCS .CODE_84BD3E                          ; $84BD31 |
-  JMP.W CODE_JP_84BCE5                      ; $84BD33 |
+  JMP.W load_asset_wram_main                ; $84BD33 |
 
 .CODE_84BD36
   JSR.W CODE_FN_84C101                      ; $84BD36 |
   BCS .CODE_84BD3E                          ; $84BD39 |
-  JMP.W CODE_JP_84BCE5                      ; $84BD3B |
+  JMP.W load_asset_wram_main                ; $84BD3B |
 
 .CODE_84BD3E
   JMP.W CODE_JP_84BC5B                      ; $84BD3E |
@@ -5986,7 +5986,7 @@ CODE_FN_84BD41:
   SEP #$20                                  ; $84BD6B |
   JSR.W CODE_FN_84C101                      ; $84BD6D |
   BCS .CODE_84BD75                          ; $84BD70 |
-  JMP.W CODE_JP_84BCE5                      ; $84BD72 |
+  JMP.W load_asset_wram_main                ; $84BD72 |
 
 .CODE_84BD75
   JMP.W CODE_JP_84BC5B                      ; $84BD75 |
@@ -5996,7 +5996,7 @@ CODE_FN_84BD78:
   LDA.B $07                                 ; $84BD7A |
   BPL .CODE_84BD90                          ; $84BD7C |
   LDX.B $2E                                 ; $84BD7E |
-  LDA.L PTR24_84C50F,X                      ; $84BD80 |
+  LDA.L PTR24_84C50E+1,X                    ; $84BD80 |
   STA.B $16                                 ; $84BD84 |
   LDA.L PTR24_84C50E,X                      ; $84BD86 |
   STA.B $15                                 ; $84BD8A |
@@ -6014,7 +6014,7 @@ CODE_FN_84BD78:
   INX                                       ; $84BD9E |
 
 .CODE_84BD9F
-  JSR.W decompress_init_2a                  ; $84BD9F |
+  JSR.W asset_decompress_init               ; $84BD9F |
   LDA.W #$0080                              ; $84BDA2 |
   STA.B $1E                                 ; $84BDA5 |
   LDA.B $08                                 ; $84BDA7 |
@@ -6046,7 +6046,7 @@ decompress_block_to_wram:
   PLB                                       ; $84BDBB | Set data bank = $7E (WRAM for output buffer)
   LDA.B $02                                 ; $84BDBC |\ Check initialization flag (?)
   BNE .after_init                           ; $84BDBE | | Skip initialization if already done
-  JSR.W decompress_init_1                   ; $84BDC0 |/  Initialize decompression state (window, pointers, etc.)
+  JSR.W decompress_init                     ; $84BDC0 |/  Initialize decompression state (window, pointers, etc.)
 
 .after_init
   PLB                                       ; $84BDC3 | Set data bank = $88
@@ -6066,7 +6066,7 @@ decompress_block_to_wram:
   PLB                                       ; $84BDDD |  Restore original data bank
   RTL                                       ; $84BDDE |
 
-decompress_init_1:
+decompress_init:
   REP #$20                                  ; $84BDDF |  16 bit A
   LDA.W #$2800                              ; $84BDE1 |
   STA.B $11                                 ; $84BDE4 |
@@ -6077,26 +6077,26 @@ decompress_init_1:
   LDA.W $0002,X                             ; $84BDEF | | Read bank byte of 24-bit source pointer
   AND.B #$BF                                ; $84BDF2 | | Clear bit 6 (used as a flag, not part of the ROM address)
   STA.B $0C                                 ; $84BDF4 |/
-  BRA decompress_init_main                  ; $84BDF6 |
+  BRA core_decompress_init                  ; $84BDF6 |
 
-decompress_init_2a:
+asset_decompress_init:
   SEP #$20                                  ; $84BDF8 |  8 bit A
 
-decompress_init_2b:
+asset_decompress_init_a8:
   LDY.W $0000,X                             ; $84BDFA |\
   LDA.W $0002,X                             ; $84BDFD | | Read bank byte of 24-bit source pointer
   AND.B #$BF                                ; $84BE00 | | Clear bit 6 (used as a flag, not part of the ROM address)
   STA.B $0C                                 ; $84BE02 |/
   INY                                       ; $84BE04 |\
   LDA.B [$0A],Y                             ; $84BE05 | |\ Read the high byte of the compressed data size field
-  AND.B #$80                                ; $84BE07 | | | Extract "compression mode?" flag (bit 7)
+  AND.B #$80                                ; $84BE07 | | | Extract "tile interleaved" flag (bit 7)
   STA.B $05                                 ; $84BE09 | |/
   LDA.W $0002,X                             ; $84BE0B | |\ Read bank byte of 24-bit source pointer
   AND.B #$40                                ; $84BE0E | | | Extract "uncompressed" flag (bank bit 6)
   TSB.B $05                                 ; $84BE10 | |/ Merge both mode flags
   DEY                                       ; $84BE12 |/
 
-decompress_init_main:
+core_decompress_init:
   REP #$20                                  ; $84BE13 |  16 bit A
   LDA.B [$0A],Y                             ; $84BE15 |\
   AND.W #$7FFF                              ; $84BE17 | | Read the compressed data size (including this field)
@@ -6665,7 +6665,7 @@ CODE_FN_84C211:
   LDA.W #$C000                              ; $84C218 |
   STA.B $15                                 ; $84C21B |
   LDX.B $06                                 ; $84C21D |
-  JSR.W decompress_init_2a                  ; $84C21F |
+  JSR.W asset_decompress_init               ; $84C21F |
   LDA.W #$0080                              ; $84C222 |
   STA.B $1E                                 ; $84C225 |
   RTS                                       ; $84C227 |

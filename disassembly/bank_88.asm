@@ -1,26 +1,5 @@
 org $888000
 
-; Transfer type
-;   $00: VRAM transfer
-;   $01: WRAM transfer
-;   $02: SPC transfer
-;   $80: NOP
-;   $FF: Sprite definitions (with a trailing transfer block)
-;
-; VRAM transfer mode
-;   00000ffd
-;
-;   dd=0: Immediate transfer
-;   dd=1: Deferred transfer (save DMA parameters)
-;
-;   ff=0: Normal (word transfer)
-;   ff=1: Mode 7 tilemap (byte transfer to VRAM low byte)
-;   ff=2: Variant of ff=1?
-;   ff=3: Mode 7 tileset (byte transfer to VRAM high byte)
-;
-; WRAM transfer mode
-;   x000000y
-
 asset_logo_and_icons:
   db $00                                    ; $888000 | Transfer type: VRAM
   db $00                                    ; $888001 | Transfer mode: Normal

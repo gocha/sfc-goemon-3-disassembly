@@ -12,7 +12,7 @@ The first byte of an asset specifies its type.
 | `$00` | VRAM transfer      | Mode + entries + terminator       | Tilesets, tilemaps        |
 | `$01` | WRAM transfer      | Mode + entries + terminator       | Unknown                   |
 | `$02` | SPC transfer       | Mode + entries + terminator       | Sound driver, BRR samples |
-| `$80` | NOP                | None                              | Dummy transfer            |
+| `$80` | NOP (no operation) | None                              | Dummy transfer            |
 | `$FF` | Sprite definitions | Entries + optional transfer block | Sprites                   |
 
 The format of the asset entries varies by asset type.

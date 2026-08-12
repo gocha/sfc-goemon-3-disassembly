@@ -4846,6 +4846,9 @@ asset_88A650:
   dl SPRITE_B4F011                          ; $88A651 |\ Source: ROM (compressed)
   dw $7FFF|$8000                            ; $88A654 |/ Value: $7FFF, last entry
 
+  ; fall through
+
+asset_88A656:
   db $00                                    ; $88A656 | VRAM
   db $00                                    ; $88A657 | Transfer Mode: Normal
   dw $2000                                  ; $88A658 |\ Destination: VRAM

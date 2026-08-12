@@ -156,19 +156,10 @@ CODE_FL_8EFF98:
   LDA.B $8E                                 ; $8EFF9E |
   ASL A                                     ; $8EFFA0 |
   TAY                                       ; $8EFFA1 |
-  LDA.W CODE_008BBF,Y                       ; $8EFFA2 |
+  LDA.W PTR16_848BBF,Y                      ; $8EFFA2 |
   PLB                                       ; $8EFFA5 |
   TAX                                       ; $8EFFA6 |
   JML.L load_asset                          ; $8EFFA7 |
 
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFAB |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFB3 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFBB |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFC3 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFCB |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFD3 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFDB |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFE3 |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFEB |
-  db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $8EFFF3 |
-  db $FF,$FF,$FF,$FF,$FF                    ; $8EFFFB |
+  padbyte $FF
+  pad $8F8000                               ; $8EFFAB |

@@ -13446,7 +13446,7 @@ CODE_FL_80D50D:
   PEA.W $8484                               ; $80D51F |
   PLB                                       ; $80D522 |
   PLB                                       ; $80D523 |
-  LDA.W CODE_0094DD,X                       ; $80D524 |
+  LDA.W PTR16_8494DD,X                      ; $80D524 |
   TAX                                       ; $80D527 |
   PLB                                       ; $80D528 |
   JML.L CODE_FL_84BB14                      ; $80D529 |
@@ -13458,7 +13458,7 @@ CODE_FL_80D52D:
   PEA.W $8484                               ; $80D531 |
   PLB                                       ; $80D534 |
   PLB                                       ; $80D535 |
-  LDA.W CODE_008BBF,X                       ; $80D536 |
+  LDA.W PTR16_848BBF,X                      ; $80D536 |
   TAX                                       ; $80D539 |
   PLB                                       ; $80D53A |
   JML.L load_asset                          ; $80D53B |
@@ -13873,7 +13873,7 @@ CODE_FN_80D7D8:
   PEA.W $8484                               ; $80D830 |
   PLB                                       ; $80D833 |
   PLB                                       ; $80D834 |
-  LDA.W CODE_0094DD,X                       ; $80D835 |
+  LDA.W PTR16_8494DD,X                      ; $80D835 |
   TAX                                       ; $80D838 |
   PLB                                       ; $80D839 |
   JSL.L CODE_FL_84BB14                      ; $80D83A |
@@ -13882,7 +13882,7 @@ CODE_FN_80D7D8:
   PEA.W $8484                               ; $80D842 |
   PLB                                       ; $80D845 |
   PLB                                       ; $80D846 |
-  LDA.W CODE_008BBF,X                       ; $80D847 |
+  LDA.W PTR16_848BBF,X                      ; $80D847 |
   TAX                                       ; $80D84A |
   PLB                                       ; $80D84B |
   JSL.L load_asset                          ; $80D84C |

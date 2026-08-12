@@ -1490,9 +1490,10 @@ asset_888A5A:
   dl VRAM_B4F1D5                            ; $888A81 |/ Source: ROM (compressed)
   db $FF                                    ; $888A84 | End of transfer
 
-DATA_888A85:
-  db $01                                    ; $888A85 |
-  db $80,$4B,$80,$A3,$A1,$81,$E3,$FF        ; $888A86 |
+asset_888A85:
+  db $01                                    ; $888A85 | WRAM
+  db $80                                    ; $888A86 | Transfer Mode: ?
+  db $4B,$80,$A3,$A1,$81,$E3,$FF            ; $888A87 |
   db $85,$E3,$59,$81,$A3,$C3,$87,$E3        ; $888A8E |
   db $39,$89,$E3,$9A,$89,$A3,$FF,$FF        ; $888A96 |
 
@@ -1572,7 +1573,10 @@ asset_888B2A:
   dl VRAM_998000                            ; $888B42 |/ Source: ROM (compressed)
   db $FF                                    ; $888B45 | End of transfer
 
-  db $01,$80,$7F,$C8,$A3,$A8                ; $888B46 |
+asset_888B46:
+  db $01                                    ; $888B46 | WRAM
+  db $80                                    ; $888B47 | Transfer Mode: ?
+  db $7F,$C8,$A3,$A8                        ; $888B48 |
   db $C9,$E3,$FA,$CB,$E3,$E1,$FF,$A4        ; $888B4C |
   db $0D,$CD,$E3,$24,$CD,$E3,$2A,$CD        ; $888B54 |
   db $A3,$FF,$FF                            ; $888B5C |
@@ -2960,8 +2964,9 @@ asset_889688:
   dl VRAM_AA9D67                            ; $8896B9 |/ Source: ROM (compressed)
   db $FF                                    ; $8896BC | End of transfer
 
-DATA_8896BD:
-  db $01,$80                                ; $8896BD |
+asset_8896BD:
+  db $01                                    ; $8896BD | WRAM
+  db $80                                    ; $8896BE | Transfer Mode: ?
   db $58,$BE,$AF,$67,$BF,$EF,$B6,$C6        ; $8896BF |
   db $EF,$D6,$C9,$AF,$79,$CA,$EF,$1E        ; $8896C7 |
   db $CF,$EF,$50,$C9,$AF,$FF,$FF            ; $8896CF |
@@ -3140,8 +3145,10 @@ asset_889810:
   dl VRAM_98D2A6                            ; $88982D |/ Source: ROM (compressed)
   db $FF                                    ; $889830 | End of transfer
 
-DATA_889831:
-  db $01,$80,$5E,$A0,$B0,$9D,$A1,$F0        ; $889831 |
+asset_889831:
+  db $01                                    ; $889831 | WRAM
+  db $80                                    ; $889832 | Transfer Mode: ?
+  db $5E,$A0,$B0,$9D,$A1,$F0                ; $889833 |
   db $B1,$AA,$F0,$68,$AE,$B0,$85,$AE        ; $889839 |
   db $F0,$D7,$AE,$F0,$B3,$AD,$B0,$FF        ; $889841 |
   db $FF                                    ; $889849 |
@@ -3277,8 +3284,10 @@ asset_889939:
   dl VRAM_AADF5B                            ; $889960 |/ Source: ROM (compressed)
   db $FF                                    ; $889963 | End of transfer
 
-DATA_889964:
-  db $01,$80,$85,$BC,$B0                    ; $889964 |
+asset_889964:
+  db $01                                    ; $889964 | WRAM
+  db $80                                    ; $889965 | Transfer Mode: ?
+  db $85,$BC,$B0                            ; $889966 |
   db $9D,$A1,$F0,$B1,$AA,$F0,$7E,$FF        ; $889969 |
   db $AF,$85,$AE,$F0,$D7,$AE,$F0,$B3        ; $889971 |
   db $AD,$B0,$FF,$FF                        ; $889979 |
@@ -3340,7 +3349,10 @@ asset_8899BF:
   dl VRAM_AADF5B                            ; $8899F0 |/ Source: ROM (compressed)
   db $FF                                    ; $8899F3 | End of transfer
 
-  db $01,$80,$E5,$CD,$B0                    ; $8899F4 |
+asset_8899F4:
+  db $01                                    ; $8899F4 | WRAM
+  db $80                                    ; $8899F5 | Transfer Mode: ?
+  db $E5,$CD,$B0                            ; $8899F6 |
   db $1C,$CE,$F0,$0C,$D1,$F0,$F6,$D2        ; $8899F9 |
   db $B0,$1E,$D3,$F0,$B0,$D3,$F0,$CF        ; $889A01 |
   db $D2,$B0,$FF,$FF                        ; $889A09 |
@@ -3770,8 +3782,10 @@ asset_889D4D:
   dl VRAM_AB8000                            ; $889D7E |/ Source: ROM (compressed)
   db $FF                                    ; $889D81 | End of transfer
 
-DATA_889D82:
-  db $01,$80,$A6,$E9,$B0,$26,$EA            ; $889D82 |
+asset_889D82:
+  db $01                                    ; $889D82 | WRAM
+  db $80                                    ; $889D83 | Transfer Mode: ?
+  db $A6,$E9,$B0,$26,$EA                    ; $889D84 |
   db $F0,$8C,$F1,$F0,$A5,$FC,$B1,$85        ; $889D89 |
   db $AE,$F0,$D7,$AE,$F0,$22,$F4,$B0        ; $889D91 |
   db $FF,$FF                                ; $889D99 |
@@ -3925,8 +3939,10 @@ asset_889EAD:
   dl VRAM_AB8000                            ; $889ECA |/ Source: ROM (compressed)
   db $FF                                    ; $889ECD | End of transfer
 
-DATA_889ECE:
-  db $01,$80,$88                            ; $889ECE |
+asset_889ECE:
+  db $01                                    ; $889ECE | WRAM
+  db $80                                    ; $889ECF | Transfer Mode: ?
+  db $88                                    ; $889ED0 |
   db $FE,$AF,$26,$EA,$F0,$8C,$F1,$F0        ; $889ED1 |
   db $DF,$F6,$B0,$15,$F7,$F0,$A1,$F7        ; $889ED9 |
   db $F0,$22,$F4,$B0,$FF,$FF                ; $889EE1 |
@@ -4220,9 +4236,10 @@ asset_88A11A:
   dl VRAM_AEC024                            ; $88A13C |/ Source: ROM (compressed)
   db $FF                                    ; $88A13F | End of transfer
 
-DATA_88A140:
-  db $01                                    ; $88A140 |
-  db $80,$0C,$C8,$B4,$73,$B3,$F4,$47        ; $88A141 |
+asset_88A140:
+  db $01                                    ; $88A140 | WRAM
+  db $80                                    ; $88A141 | Transfer Mode: ?
+  db $0C,$C8,$B4,$73,$B3,$F4,$47            ; $88A142 |
   db $B8,$F4,$45,$FF,$B2,$63,$C8,$F4        ; $88A149 |
   db $76,$C8,$F4,$4A,$FF,$B4,$FF,$FF        ; $88A151 |
 
@@ -4273,8 +4290,9 @@ asset_88A191:
   dl VRAM_AEC024                            ; $88A1B3 |/ Source: ROM (compressed)
   db $FF                                    ; $88A1B6 | End of transfer
 
-DATA_88A1B7:
-  db $01,$80                                ; $88A1B7 |
+asset_88A1B7:
+  db $01                                    ; $88A1B7 | WRAM
+  db $80                                    ; $88A1B8 | Transfer Mode: ?
   db $99,$C8,$B4,$35,$BB,$F4,$91,$C3        ; $88A1B9 |
   db $F4,$1B,$FF,$B0,$63,$E5,$F4,$8C        ; $88A1C1 |
   db $E5,$F4,$14,$C7,$B4,$FF,$FF            ; $88A1C9 |
@@ -4686,9 +4704,10 @@ asset_88A4F7:
   dl VRAM_AEC753                            ; $88A514 |/ Source: ROM (compressed)
   db $FF                                    ; $88A517 | End of transfer
 
-DATA_88A518:
-  db $01                                    ; $88A518 |
-  db $80,$23,$DA,$B4,$D5,$DA,$F4,$B7        ; $88A519 |
+asset_88A518:
+  db $01                                    ; $88A518 | WRAM
+  db $80                                    ; $88A519 | Transfer Mode: ?
+  db $23,$DA,$B4,$D5,$DA,$F4,$B7            ; $88A51A |
   db $E1,$F4,$55,$E5,$B4,$63,$E5,$F4        ; $88A521 |
   db $8C,$E5,$F4,$8C,$E4,$B4,$FF,$FF        ; $88A529 |
 
@@ -4711,8 +4730,9 @@ asset_88A531:
   dl VRAM_AECD5E                            ; $88A553 |/ Source: ROM (compressed)
   db $FF                                    ; $88A556 | End of transfer
 
-DATA_88A557:
-  db $01,$80                                ; $88A557 |
+asset_88A557:
+  db $01                                    ; $88A557 | WRAM
+  db $80                                    ; $88A558 | Transfer Mode: ?
   db $A5,$E5,$B4,$4A,$E7,$F4,$3E,$ED        ; $88A559 |
   db $F4,$98,$FF,$B2,$FD,$E6,$F4,$28        ; $88A561 |
   db $E7,$F4,$11,$F0,$B4,$FF,$FF            ; $88A569 |
@@ -4814,8 +4834,10 @@ asset_88A612:
   dl VRAM_AADF5B                            ; $88A639 |/ Source: ROM (compressed)
   db $FF                                    ; $88A63C | End of transfer
 
-DATA_88A63D:
-  db $01,$80,$9D,$F1                        ; $88A63D |
+asset_88A63D:
+  db $01                                    ; $88A63D | WRAM
+  db $80                                    ; $88A63E | Transfer Mode: ?
+  db $9D,$F1                                ; $88A63F |
   db $B4,$4A,$E7,$F4,$3E,$ED,$F4,$BC        ; $88A641 |
   db $8F,$BF,$13,$90,$FF,$14,$92            ; $88A649 |
 
@@ -6032,8 +6054,10 @@ asset_88B03C:
   dl VRAM_98BADB                            ; $88B059 |/ Source: ROM (compressed)
   db $FF                                    ; $88B05C | End of transfer
 
-DATA_88B05D:
-  db $01,$80,$E4,$E4,$91,$21,$E3            ; $88B05D |
+asset_88B05D:
+  db $01                                    ; $88B05D | WRAM
+  db $80                                    ; $88B05E | Transfer Mode: ?
+  db $E4,$E4,$91,$21,$E3                    ; $88B05F |
   db $D2,$C4,$E8,$D2,$94,$E5,$91,$E6        ; $88B064 |
   db $E5,$D1,$B3,$E6,$D1,$36,$EB,$92        ; $88B06C |
   db $FF,$FF                                ; $88B074 |
@@ -6135,9 +6159,10 @@ asset_88B113:
   dl VRAM_A2FC2E                            ; $88B13F |/ Source: ROM (compressed)
   db $FF                                    ; $88B142 | End of transfer
 
-DATA_88B143:
-  db $01                                    ; $88B143 |
-  db $80,$38,$E8,$91,$B1,$BD,$D2,$E1        ; $88B144 |
+asset_88B143:
+  db $01                                    ; $88B143 | WRAM
+  db $80                                    ; $88B144 | Transfer Mode: ?
+  db $38,$E8,$91,$B1,$BD,$D2,$E1            ; $88B145 |
   db $C4,$D2,$AD,$E8,$91,$C7,$E8,$D1        ; $88B14C |
   db $9E,$E9,$D1,$DC,$C7,$92,$FF,$FF        ; $88B154 |
 
@@ -6338,9 +6363,10 @@ asset_88B2CE:
   dl VRAM_AA9041                            ; $88B2F5 |/ Source: ROM (compressed)
   db $FF                                    ; $88B2F8 | End of transfer
 
-DATA_88B2F9:
-  db $01                                    ; $88B2F9 |
-  db $80,$60,$EA,$91,$21,$E3,$D2,$C4        ; $88B2FA |
+asset_88B2F9:
+  db $01                                    ; $88B2F9 | WRAM
+  db $80                                    ; $88B2FA | Transfer Mode: ?
+  db $60,$EA,$91,$21,$E3,$D2,$C4            ; $88B2FB |
   db $E8,$D2,$C4,$EB,$92,$E6,$E5,$D1        ; $88B302 |
   db $B3,$E6,$D1,$36,$EB,$92,$FF,$FF        ; $88B30A |
 
@@ -10668,8 +10694,7 @@ asset_88D71F:
 
   db $80                                    ; $88D739 | NOP
 
-DATA_88D73A:
-  db $FF,$FF                                ; $88D73A |
+  dw $FFFF                                  ; $88D73A |
 
 asset_88D73C:
   db $FF                                    ; $88D73C | Sprite

@@ -2105,9 +2105,9 @@ CODE_849831:
 CODE_84983E:
   JSL.L CODE_FL_8680E5                      ; $84983E |
   BCC CODE_JP_8498A6                        ; $849842 |
-  LDX.W #DATA_8881D9                        ; $849844 |
+  LDX.W #asset_8881D9                       ; $849844 |
   JSL.L load_asset                          ; $849847 |
-  LDX.W #DATA_8885FF                        ; $84984B |
+  LDX.W #asset_8885FF                       ; $84984B |
   JSL.L load_asset                          ; $84984E |
   JSL.L CODE_FL_808302                      ; $849852 |
   JSL.L CODE_FL_808302                      ; $849856 |
@@ -2245,9 +2245,9 @@ CODE_84996F:
   JSL.L CODE_FL_80BED7                      ; $849971 |
   JSL.L CODE_FL_808BC2                      ; $849975 |
   JSL.L CODE_FL_80C1ED                      ; $849979 |
-  LDX.W #DATA_8885DD                        ; $84997D |
+  LDX.W #asset_8885DD                       ; $84997D |
   JSL.L load_asset                          ; $849980 |
-  LDX.W #DATA_8881D9                        ; $849984 |
+  LDX.W #asset_8881D9                       ; $849984 |
   JSL.L load_asset                          ; $849987 |
   LDY.W #$B6EB                              ; $84998B |
   JSL.L CODE_FL_80C277                      ; $84998E |
@@ -2450,18 +2450,18 @@ CODE_849AD6:
   STZ.B $62                                 ; $849AFA |
   LDA.W #$0080                              ; $849AFC |
   STA.W $1FC6                               ; $849AFF |
-  LDX.W #DATA_8885BD                        ; $849B02 |
+  LDX.W #asset_8885BD                       ; $849B02 |
   JSL.L load_asset                          ; $849B05 |
-  LDX.W #DATA_8885AD                        ; $849B09 |
+  LDX.W #asset_8885AD                       ; $849B09 |
   JSL.L load_asset                          ; $849B0C |
-  LDX.W #DATA_8885C5                        ; $849B10 |
+  LDX.W #asset_8885C5                       ; $849B10 |
   JSL.L load_asset                          ; $849B13 |
   LDA.W #$0594                              ; $849B17 |
   JSL.L CODE_FL_8CF9D2                      ; $849B1A |
   BCS CODE_849B2E                           ; $849B1E |
-  LDX.W #DATA_8885B5                        ; $849B20 |
+  LDX.W #asset_8885B5                       ; $849B20 |
   JSL.L load_asset                          ; $849B23 |
-  LDX.W #DATA_8885CD                        ; $849B27 |
+  LDX.W #asset_8885CD                       ; $849B27 |
   JSL.L load_asset                          ; $849B2A |
 
 CODE_849B2E:
@@ -2804,7 +2804,7 @@ CODE_849E0B:
 CODE_849E0C:
   LDA.W $1F30                               ; $849E0C |
   BNE CODE_849E0B                           ; $849E0F |
-  LDX.W #DATA_8888BB                        ; $849E11 |
+  LDX.W #asset_8888BB                       ; $849E11 |
   JSL.L load_asset                          ; $849E14 |
   JSL.L CODE_FL_808302                      ; $849E18 |
   JSL.L CODE_FL_8EFE90                      ; $849E1C |
@@ -3344,9 +3344,9 @@ CODE_FN_84A1B0:
   RTS                                       ; $84A1D7 |
 
 CODE_FL_84A1D8:
-  LDX.W #DATA_8888C3                        ; $84A1D8 |
+  LDX.W #asset_8888C3                       ; $84A1D8 |
   JSL.L load_asset                          ; $84A1DB |
-  LDX.W #DATA_8888DA                        ; $84A1DF |
+  LDX.W #asset_8888DA                       ; $84A1DF |
   JML.L load_asset                          ; $84A1E2 |
 
 CODE_FL_84A1E6:
@@ -8239,7 +8239,7 @@ CODE_FL_84CBE7:
   JSL.L CODE_FL_80B04D                      ; $84CC2C |
   JSL.L CODE_FL_80BEE7                      ; $84CC30 |
   JSL.L CODE_FL_84C579                      ; $84CC34 |
-  LDX.W #DATA_888024                        ; $84CC38 |
+  LDX.W #asset_888024                       ; $84CC38 |
   JSL.L load_asset                          ; $84CC3B |
   LDX.W #asset_logo_sprites                 ; $84CC3F |
   JSL.L load_asset                          ; $84CC42 |
@@ -8776,9 +8776,9 @@ CODE_84D05A:
 CODE_84D081:
   JSL.L CODE_FL_80BE9F                      ; $84D081 |
   JSL.L CODE_FL_808BC2                      ; $84D085 |
-  LDX.W #DATA_8880C6                        ; $84D089 |
+  LDX.W #asset_8880C6                       ; $84D089 |
   JSL.L load_asset                          ; $84D08C |
-  LDX.W #DATA_8880E3                        ; $84D090 |
+  LDX.W #asset_8880E3                       ; $84D090 |
   JSL.L load_asset                          ; $84D093 |
   REP #$30                                  ; $84D097 |
   PHB                                       ; $84D099 |
@@ -9581,9 +9581,9 @@ CODE_84D649:
 CODE_84D670:
   JSL.L CODE_FL_80BEC7                      ; $84D670 |
   JSL.L CODE_FL_808BC2                      ; $84D674 |
-  LDX.W #DATA_88811E                        ; $84D678 |
+  LDX.W #asset_88811E                       ; $84D678 |
   JSL.L load_asset                          ; $84D67B |
-  LDX.W #DATA_888135                        ; $84D67F |
+  LDX.W #asset_888135                       ; $84D67F |
   JSL.L load_asset                          ; $84D682 |
   REP #$30                                  ; $84D686 |
   PHB                                       ; $84D688 |
@@ -9840,9 +9840,9 @@ CODE_84D83D:
 CODE_84D868:
   JSL.L CODE_FL_80BEC7                      ; $84D868 |
   JSL.L CODE_FL_808BC2                      ; $84D86C |
-  LDX.W #DATA_88814C                        ; $84D870 |
+  LDX.W #asset_88814C                       ; $84D870 |
   JSL.L load_asset                          ; $84D873 |
-  LDX.W #DATA_888173                        ; $84D877 |
+  LDX.W #asset_888173                       ; $84D877 |
   JSL.L load_asset                          ; $84D87A |
   REP #$30                                  ; $84D87E |
   PHB                                       ; $84D880 |
@@ -10034,7 +10034,7 @@ CODE_84D9E7:
 CODE_84D9E9:
   JSL.L CODE_FL_80BEC7                      ; $84D9E9 |
   JSL.L CODE_FL_808BC2                      ; $84D9ED |
-  LDX.W #DATA_8880C6                        ; $84D9F1 |
+  LDX.W #asset_8880C6                       ; $84D9F1 |
   JSL.L load_asset                          ; $84D9F4 |
   LDY.W #$B976                              ; $84D9F8 |
   JSL.L CODE_FL_80C27C                      ; $84D9FB |
@@ -10317,9 +10317,9 @@ CODE_84DBA7:
 CODE_84DBCE:
   JSL.L CODE_FL_80BEC7                      ; $84DBCE |
   JSL.L CODE_FL_808BC2                      ; $84DBD2 |
-  LDX.W #DATA_888196                        ; $84DBD6 |
+  LDX.W #asset_888196                       ; $84DBD6 |
   JSL.L load_asset                          ; $84DBD9 |
-  LDX.W #DATA_8881B8                        ; $84DBDD |
+  LDX.W #asset_8881B8                       ; $84DBDD |
   JSL.L load_asset                          ; $84DBE0 |
   REP #$30                                  ; $84DBE4 |
   PHB                                       ; $84DBE6 |
@@ -11503,7 +11503,7 @@ CODE_84E528:
   LDA.W #$0011                              ; $84E537 |
   STA.B $92                                 ; $84E53A |
   INC.B $1A,X                               ; $84E53C |
-  LDX.W #DATA_88860D                        ; $84E53E |
+  LDX.W #asset_88860D                       ; $84E53E |
   JSL.L load_asset                          ; $84E541 |
   LDY.W #$A126                              ; $84E545 |
   LDA.W #$001E                              ; $84E548 |
@@ -12697,9 +12697,9 @@ CODE_JP_84EEB8:
 CODE_JP_84EEC2:
   INC.B $76                                 ; $84EEC2 |
   PHX                                       ; $84EEC4 |
-  LDX.W #DATA_88860D                        ; $84EEC5 |
+  LDX.W #asset_88860D                       ; $84EEC5 |
   JSL.L load_asset                          ; $84EEC8 |
-  LDX.W #DATA_88861D                        ; $84EECC |
+  LDX.W #asset_88861D                       ; $84EECC |
   JSL.L load_asset                          ; $84EECF |
   LDY.W #$85D8                              ; $84EED3 |
   LDA.W #$001A                              ; $84EED6 |

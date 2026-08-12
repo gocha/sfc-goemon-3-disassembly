@@ -5,6 +5,7 @@ incsrc vars/reg_vars.asm
 incsrc vars/ram_vars.asm
 
 incsrc labels.asm
+incsrc asset-labels.asm
 
 incsrc bank_80.asm
 incsrc bank_81.asm

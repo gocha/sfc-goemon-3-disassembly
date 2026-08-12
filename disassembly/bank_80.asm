@@ -13224,7 +13224,7 @@ CODE_FL_80D31B:
   STA.W $197A                               ; $80D360 |
   INC.W $1932                               ; $80D363 |
   JSL.L CODE_FL_84A1D8                      ; $80D366 |
-  LDX.W #DATA_88CDCA                        ; $80D36A |
+  LDX.W #asset_88CDCA                       ; $80D36A |
   JSL.L load_asset                          ; $80D36D |
   LDA.B $8E                                 ; $80D371 |
   CMP.W #$00FF                              ; $80D373 |
@@ -13266,16 +13266,16 @@ CODE_80D38A:
   LDA.B $8E                                 ; $80D3CF |
   CMP.W #$00FF                              ; $80D3D1 |
   BEQ CODE_80D3DF                           ; $80D3D4 |
-  LDX.W #DATA_88CDD6                        ; $80D3D6 |
+  LDX.W #asset_88CDD6                       ; $80D3D6 |
   JSL.L load_asset                          ; $80D3D9 |
   BRA CODE_80D41F                           ; $80D3DD |
 
 
 CODE_80D3DF:
-  LDX.W #DATA_88CEB8                        ; $80D3DF |
+  LDX.W #asset_88CEB8                       ; $80D3DF |
   JSL.L load_asset                          ; $80D3E2 |
   JSL.L CODE_FL_808302                      ; $80D3E6 |
-  LDX.W #DATA_88CECF                        ; $80D3EA |
+  LDX.W #asset_88CECF                       ; $80D3EA |
   JSL.L load_asset                          ; $80D3ED |
   JSL.L CODE_FL_808302                      ; $80D3F1 |
   LDX.W #$1FFE                              ; $80D3F5 |
@@ -17361,13 +17361,13 @@ CODE_80EE25:
   INY                                       ; $80EE4E |
   MVN $00,$00                               ; $80EE4F |
   PLB                                       ; $80EE52 |
-  LDX.W #DATA_8881F3                        ; $80EE53 |
+  LDX.W #asset_8881F3                       ; $80EE53 |
   JSL.L load_asset                          ; $80EE56 |
   JSL.L CODE_FL_808302                      ; $80EE5A |
   LDX.W #asset_logo_sprites                 ; $80EE5E |
   JSL.L load_asset                          ; $80EE61 |
   JSL.L CODE_FL_808302                      ; $80EE65 |
-  LDX.W #DATA_888214                        ; $80EE69 |
+  LDX.W #asset_888214                       ; $80EE69 |
   JSL.L load_asset                          ; $80EE6C |
   JSL.L CODE_FL_808302                      ; $80EE70 |
   JSL.L CODE_FL_8BFCCA                      ; $80EE74 |

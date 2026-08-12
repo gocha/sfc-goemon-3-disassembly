@@ -1,6 +1,6 @@
 org $8E8000
 
-sound_data_samples:
+spc_samples:
   dw 2+filesize("../assets/sound/samples.bin")  ; $8E8000 |
   incbin ../assets/sound/samples.bin            ; $8E8002 |
 

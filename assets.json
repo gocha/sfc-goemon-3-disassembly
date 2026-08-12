@@ -2,6 +2,8 @@
   "assets": [
     { "path": "bank_81.bin", "start": "0x008000", "size": "0x8000" },
 
+    { "path": "bank_84.bin", "start": "0x020000", "size": "0x8000" },
+
     { "path": "bank_87.bin", "start": "0x038000", "size": "0x8000" },
 
     { "path": "bank_89.bin", "start": "0x048000", "size": "0x8000" },

@@ -1383,14 +1383,14 @@ set_music:
   PEA.W $8181                               ; $808965 | | Data bank $81
   PLB                                       ; $808968 | |
   PLB                                       ; $808969 |/
-  LDA.W music_table,Y                       ; $80896A |\
+  LDA.W music_table-4,Y                     ; $80896A |\
   BEQ .skip_instrument_load                 ; $80896D | |
   PHY                                       ; $80896F | |
   JSL.L CODE_FL_84C604                      ; $808970 | | ???
   PLY                                       ; $808974 |/
 
 .skip_instrument_load
-  LDA.W music_table+2,Y                     ; $808975 |\  Read param2 from table
+  LDA.W music_table-2,Y                     ; $808975 |\  Read param2 from table
   PHA                                       ; $808978 | |
   JSL.L CODE_FL_84C5C9                      ; $808979 |/  ???
   PLY                                       ; $80897D |
@@ -1430,14 +1430,14 @@ CODE_8089A1:
   PLB                                       ; $8089A6 | | Data bank $81
   PLB                                       ; $8089A7 |/
 
-  LDA.W music_table,Y                       ; $8089A8 |
+  LDA.W music_table-4,Y                     ; $8089A8 |
   BEQ CODE_8089B3                           ; $8089AB |
   PHY                                       ; $8089AD |
   JSL.L CODE_FL_84C604                      ; $8089AE |
   PLY                                       ; $8089B2 |
 
 CODE_8089B3:
-  LDA.W music_table+2,Y                     ; $8089B3 |
+  LDA.W music_table-2,Y                     ; $8089B3 |
   JSL.L CODE_FL_84C6D5                      ; $8089B6 |
   PLB                                       ; $8089BA |
   PLX                                       ; $8089BB |

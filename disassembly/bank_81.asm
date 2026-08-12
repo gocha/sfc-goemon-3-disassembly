@@ -84,11 +84,10 @@ region_error_msg:
   db $23,$82,$00,$00,$08,$01,$31,$01        ; $81821B |
   db $00,$0A,$19,$21,$31,$01                ; $818223 |
   dw $00FD,$0001,$0100,$0003                ; $818229 |
-  dw $0200,$0000                            ; $818231 |
+  dw $0200,$0000,$00FD,$0003                ; $818231 |
 
 music_table:
   ;  sample  seq                            ; See sample table ($888628) and seq table ($88878D)
-  dw $00FD,$0003                            ; $818235 | index $0000
   dw $0009,$0004                            ; $818239 | index $0004
   dw $0006,$0008                            ; $81823D | index $0008 (Edo Field)
   dw $0006,$0010                            ; $818241 | index $000C (Edo General Merchant - Inn)

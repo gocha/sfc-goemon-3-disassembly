@@ -1551,12 +1551,12 @@ CODE_FN_A0FAB2:
   PHY                                       ; $A0FAB4 |
   AND.W #$FFFE                              ; $A0FAB5 |
   TAX                                       ; $A0FAB8 |
-  LDA.L music_table+2,X                     ; $A0FAB9 |
+  LDA.L music_table-2,X                     ; $A0FAB9 |
   STA.B $08                                 ; $A0FABD |
   PLA                                       ; $A0FABF |
   AND.W #$FFFE                              ; $A0FAC0 |
   TAX                                       ; $A0FAC3 |
-  LDA.L music_table+2,X                     ; $A0FAC4 |
+  LDA.L music_table-2,X                     ; $A0FAC4 |
   CMP.B $08                                 ; $A0FAC8 |
   BEQ CODE_A0FAD0                           ; $A0FACA |
   PLX                                       ; $A0FACC |

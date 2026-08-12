@@ -1082,90 +1082,90 @@ sample_load_table:
   dw $D330 : db $27                         ; $888643 | index $001B
   dw $A913 : db $37                         ; $888646 | index $001E
 
-DATA8_888649:
-  db $9C,$85,$FA,$BA                        ; $888649 | index $0000
-  db $67,$F5,$CF,$B8                        ; $88864D | index $0004
-  db $4F,$5A,$D0,$B8                        ; $888651 | index $0008
-  db $63,$31,$D7,$B8                        ; $888655 | index $000C
-  db $50,$84,$D9,$B8                        ; $888659 | index $0010
-  db $59,$2D,$DC,$B8                        ; $88865D | index $0014
-  db $69,$27,$E1,$B8                        ; $888661 | index $0018
-  db $57,$22,$E6,$B8                        ; $888665 | index $001C
-  db $5E,$FE,$EC,$B8                        ; $888669 | index $0020
-  db $61,$4E,$F9,$B9                        ; $88866D | index $0024
-  db $62,$FD,$C7,$B9                        ; $888671 | index $0028
-  db $5C,$9C,$CC,$B9                        ; $888675 | index $002C
-  db $91,$E8,$D1,$B9                        ; $888679 | index $0030
-  db $5A,$6F,$D2,$B9                        ; $88867D | index $0034
-  db $55,$50,$D3,$B9                        ; $888681 | index $0038
-  db $53,$3D,$D5,$B9                        ; $888685 | index $003C
-  db $54,$CA,$D6,$BA                        ; $888689 | index $0040
-  db $58,$FB,$D9,$BA                        ; $88868D | index $0044
-  db $8F,$E0,$FA,$BC                        ; $888691 | index $0048
-  db $7C,$B2,$8F,$BC                        ; $888695 | index $004C
-  db $5F,$63,$92,$BC                        ; $888699 | index $0050
-  db $66,$7D,$BC,$B9                        ; $88869D | index $0054
-  db $4E,$49,$C1,$B9                        ; $8886A1 | index $0058
-  db $5B,$83,$C4,$B9                        ; $8886A5 | index $005C
-  db $65,$A2,$C5,$B9                        ; $8886A9 | index $0060
-  db $65,$A2,$C5,$B9                        ; $8886AD | index $0064
-  db $6D,$08,$EF,$B8                        ; $8886B1 | index $0068
-  db $56,$9B,$FE,$B9                        ; $8886B5 | index $006C
-  db $6B,$7F,$FD,$B9                        ; $8886B9 | index $0070
-  db $6C,$31,$B7,$B8                        ; $8886BD | index $0074
-  db $71,$46,$B8,$B8                        ; $8886C1 | index $0078
-  db $72,$8D,$B5,$B8                        ; $8886C5 | index $007C
-  db $77,$8C,$BE,$B8                        ; $8886C9 | index $0080
-  db $7A,$82,$C1,$B8                        ; $8886CD | index $0084
-  db $7F,$4E,$C8,$B8                        ; $8886D1 | index $0088
-  db $80,$5E,$C9,$B8                        ; $8886D5 | index $008C
-  db $8A,$65,$CF,$B8                        ; $8886D9 | index $0090
-  db $95,$E3,$DB,$BA                        ; $8886DD | index $0094
-  db $4D,$4A,$DE,$BA                        ; $8886E1 | index $0098
-  db $97,$E6,$E1,$BA                        ; $8886E5 | index $009C
-  db $60,$65,$E8,$BA                        ; $8886E9 | index $00A0
-  db $6F,$A2,$E9,$BA                        ; $8886ED | index $00A4
-  db $70,$40,$EA,$BA                        ; $8886F1 | index $00A8
-  db $78,$87,$EC,$BA                        ; $8886F5 | index $00AC
-  db $79,$99,$F4,$BB                        ; $8886F9 | index $00B0
-  db $7D,$8F,$E6,$BC                        ; $8886FD | index $00B4
-  db $85,$83,$FB,$BA                        ; $888701 | index $00B8
-  db $83,$50,$FC,$BF                        ; $888705 | index $00BC
-  db $87,$CD,$E8,$BC                        ; $888709 | index $00C0
-  db $90,$08,$FF,$B8                        ; $88870D | index $00C4
-  db $82,$9D,$F0,$8E                        ; $888711 | index $00C8
-  db $81,$66,$F1,$8E                        ; $888715 | index $00CC
-  db $73,$1E,$F5,$8E                        ; $888719 | index $00D0
-  db $74,$99,$FC,$90                        ; $88871D | index $00D4
-  db $7B,$C6,$FA,$8E                        ; $888721 | index $00D8
-  db $64,$40,$EF,$8F                        ; $888725 | index $00DC
-  db $6A,$0A,$F3,$8F                        ; $888729 | index $00E0
-  db $93,$02,$FE,$B7                        ; $88872D | index $00E4
-  db $92,$E6,$F9,$BC                        ; $888731 | index $00E8
-  db $76,$7D,$F4,$B8                        ; $888735 | index $00EC
-  db $96,$1C,$F3,$B8                        ; $888739 | index $00F0
-  db $99,$60,$F4,$BF                        ; $88873D | index $00F4
-  db $98,$6D,$F4,$BC                        ; $888741 | index $00F8
-  db $8E,$C9,$F8,$B8                        ; $888745 | index $00FC
-  db $8B,$56,$F7,$90                        ; $888749 | index $0100
-  db $89,$71,$F7,$BF                        ; $88874D | index $0104
-  db $9A,$B0,$C6,$BA                        ; $888751 | index $0108
-  db $9B,$65,$FA,$B9                        ; $888755 | index $010C
-  db $88,$5C,$F3,$BC                        ; $888759 | index $0110
-  db $94,$5A,$EF,$BA                        ; $88875D | index $0114
-  db $8D,$81,$FB,$BC                        ; $888761 | index $0118
-  db $86,$BF,$F9,$BA                        ; $888765 | index $011C
-  db $8C,$7E,$EE,$BA                        ; $888769 | index $0120
-  db $84,$5E,$FA,$BC                        ; $88876D | index $0124
-  db $7E,$01,$F7,$8F                        ; $888771 | index $0128
-  db $68,$3B,$FB,$B8                        ; $888775 | index $012C
-  db $5D,$3F,$FB,$8F                        ; $888779 | index $0130
-  db $6E,$53,$FB,$8F                        ; $88877D | index $0134
-  db $75,$55,$FF,$B8                        ; $888781 | index $0138
-  db $52,$78,$FC,$A7                        ; $888785 | index $013C
-  db $51,$68,$FE,$BA                        ; $888789 | index $0140
-
 seq_table:
+  db $9C : dl SPC_BAFA85                    ; $888649 | index $0000
+  db $67 : dl SPC_B8CFF5                    ; $88864D | index $0004
+  db $4F : dl SPC_B8D05A                    ; $888651 | index $0008
+  db $63 : dl SPC_B8D731                    ; $888655 | index $000C
+  db $50 : dl SPC_B8D984                    ; $888659 | index $0010
+  db $59 : dl SPC_B8DC2D                    ; $88865D | index $0014
+  db $69 : dl SPC_B8E127                    ; $888661 | index $0018
+  db $57 : dl SPC_B8E622                    ; $888665 | index $001C
+  db $5E : dl SPC_B8ECFE                    ; $888669 | index $0020
+  db $61 : dl SPC_B9F94E                    ; $88866D | index $0024
+  db $62 : dl SPC_B9C7FD                    ; $888671 | index $0028
+  db $5C : dl SPC_B9CC9C                    ; $888675 | index $002C
+  db $91 : dl SPC_B9D1E8                    ; $888679 | index $0030
+  db $5A : dl SPC_B9D26F                    ; $88867D | index $0034
+  db $55 : dl SPC_B9D350                    ; $888681 | index $0038
+  db $53 : dl SPC_B9D53D                    ; $888685 | index $003C
+  db $54 : dl SPC_BAD6CA                    ; $888689 | index $0040
+  db $58 : dl SPC_BAD9FB                    ; $88868D | index $0044
+  db $8F : dl SPC_BCFAE0                    ; $888691 | index $0048
+  db $7C : dl SPC_BC8FB2                    ; $888695 | index $004C
+  db $5F : dl SPC_BC9263                    ; $888699 | index $0050
+  db $66 : dl SPC_B9BC7D                    ; $88869D | index $0054
+  db $4E : dl SPC_B9C149                    ; $8886A1 | index $0058
+  db $5B : dl SPC_B9C483                    ; $8886A5 | index $005C
+  db $65 : dl SPC_B9C5A2                    ; $8886A9 | index $0060
+  db $65 : dl SPC_B9C5A2                    ; $8886AD | index $0064
+  db $6D : dl SPC_B8EF08                    ; $8886B1 | index $0068
+  db $56 : dl SPC_B9FE9B                    ; $8886B5 | index $006C
+  db $6B : dl SPC_B9FD7F                    ; $8886B9 | index $0070
+  db $6C : dl SPC_B8B731                    ; $8886BD | index $0074
+  db $71 : dl SPC_B8B846                    ; $8886C1 | index $0078
+  db $72 : dl SPC_B8B58D                    ; $8886C5 | index $007C
+  db $77 : dl SPC_B8BE8C                    ; $8886C9 | index $0080
+  db $7A : dl SPC_B8C182                    ; $8886CD | index $0084
+  db $7F : dl SPC_B8C84E                    ; $8886D1 | index $0088
+  db $80 : dl SPC_B8C95E                    ; $8886D5 | index $008C
+  db $8A : dl SPC_B8CF65                    ; $8886D9 | index $0090
+  db $95 : dl SPC_BADBE3                    ; $8886DD | index $0094
+  db $4D : dl SPC_BADE4A                    ; $8886E1 | index $0098
+  db $97 : dl SPC_BAE1E6                    ; $8886E5 | index $009C
+  db $60 : dl SPC_BAE865                    ; $8886E9 | index $00A0
+  db $6F : dl SPC_BAE9A2                    ; $8886ED | index $00A4
+  db $70 : dl SPC_BAEA40                    ; $8886F1 | index $00A8
+  db $78 : dl SPC_BAEC87                    ; $8886F5 | index $00AC
+  db $79 : dl SPC_BBF499                    ; $8886F9 | index $00B0
+  db $7D : dl SPC_BCE68F                    ; $8886FD | index $00B4
+  db $85 : dl SPC_BAFB83                    ; $888701 | index $00B8
+  db $83 : dl SPC_BFFC50                    ; $888705 | index $00BC
+  db $87 : dl SPC_BCE8CD                    ; $888709 | index $00C0
+  db $90 : dl SPC_B8FF08                    ; $88870D | index $00C4
+  db $82 : dl SPC_8EF09D                    ; $888711 | index $00C8
+  db $81 : dl SPC_8EF166                    ; $888715 | index $00CC
+  db $73 : dl SPC_8EF51E                    ; $888719 | index $00D0
+  db $74 : dl SPC_90FC99                    ; $88871D | index $00D4
+  db $7B : dl SPC_8EFAC6                    ; $888721 | index $00D8
+  db $64 : dl SPC_8FEF40                    ; $888725 | index $00DC
+  db $6A : dl SPC_8FF30A                    ; $888729 | index $00E0
+  db $93 : dl SPC_B7FE02                    ; $88872D | index $00E4
+  db $92 : dl SPC_BCF9E6                    ; $888731 | index $00E8
+  db $76 : dl SPC_B8F47D                    ; $888735 | index $00EC
+  db $96 : dl SPC_B8F31C                    ; $888739 | index $00F0
+  db $99 : dl SPC_BFF460                    ; $88873D | index $00F4
+  db $98 : dl SPC_BCF46D                    ; $888741 | index $00F8
+  db $8E : dl SPC_B8F8C9                    ; $888745 | index $00FC
+  db $8B : dl SPC_90F756                    ; $888749 | index $0100
+  db $89 : dl SPC_BFF771                    ; $88874D | index $0104
+  db $9A : dl SPC_BAC6B0                    ; $888751 | index $0108
+  db $9B : dl SPC_B9FA65                    ; $888755 | index $010C
+  db $88 : dl SPC_BCF35C                    ; $888759 | index $0110
+  db $94 : dl SPC_BAEF5A                    ; $88875D | index $0114
+  db $8D : dl SPC_BCFB81                    ; $888761 | index $0118
+  db $86 : dl SPC_BAF9BF                    ; $888765 | index $011C
+  db $8C : dl SPC_BAEE7E                    ; $888769 | index $0120
+  db $84 : dl SPC_BCFA5E                    ; $88876D | index $0124
+  db $7E : dl SPC_8FF701                    ; $888771 | index $0128
+  db $68 : dl SPC_B8FB3B                    ; $888775 | index $012C
+  db $5D : dl SPC_8FFB3F                    ; $888779 | index $0130
+  db $6E : dl SPC_8FFB53                    ; $88877D | index $0134
+  db $75 : dl SPC_B8FF55                    ; $888781 | index $0138
+  db $52 : dl SPC_A7FC78                    ; $888785 | index $013C
+  db $51 : dl SPC_BAFE68                    ; $888789 | index $0140
+
+seq_table_2:
   db $0A : dl $BA8000                       ; $88878D | index $0000
   db $0B : dl $BB8000                       ; $888791 | index $0004
   db $0D : dl $BBBA28                       ; $888795 | index $0008

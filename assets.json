@@ -74,7 +74,10 @@
     { "path": "bank_B5.bin", "start": "0x1A8000", "size": "0x8000" },
     { "path": "bank_B6.bin", "start": "0x1B0000", "size": "0x8000" },
     { "path": "bank_B7.bin", "start": "0x1B8000", "size": "0x8000" },
+
     { "path": "bank_B8.bin", "start": "0x1C0000", "size": "0x8000" },
+    { "path": "sound/0002.seq.konamiz", "start": "0x1C505A", "size": "0x6D7" },
+
     { "path": "bank_B9.bin", "start": "0x1C8000", "size": "0x8000" },
     { "path": "bank_BA.bin", "start": "0x1D0000", "size": "0x8000" },
     { "path": "bank_BB.bin", "start": "0x1D8000", "size": "0x8000" },

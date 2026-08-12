@@ -7278,10 +7278,10 @@ CODE_FL_84C5C9:
   STZ.B $34                                 ; $84C5E2 |
   PLA                                       ; $84C5E4 |
   CLC                                       ; $84C5E5 |
-  ADC.W #DATA8_888649                       ; $84C5E6 |
+  ADC.W #seq_table                          ; $84C5E6 |
   TAX                                       ; $84C5E9 |
   STX.B $00                                 ; $84C5EA |
-  LDA.L bank(DATA8_888649)<<16,X            ; $84C5EC |
+  LDA.L $880000,X                           ; $84C5EC |
   STA.B $04                                 ; $84C5F0 |
   STA.W !reg_apuio2                         ; $84C5F2 |
   INX                                       ; $84C5F5 |
@@ -7343,9 +7343,9 @@ CODE_FL_84C64E:
   BNE CODE_84C6CB                           ; $84C652 |
   PHA                                       ; $84C654 |
   CLC                                       ; $84C655 |
-  ADC.W #seq_table                          ; $84C656 |
+  ADC.W #seq_table_2                        ; $84C656 |
   TAX                                       ; $84C659 |
-  LDA.L bank(seq_table)<<16,X               ; $84C65A |
+  LDA.L $880000,X                           ; $84C65A |
   AND.W #$00FF                              ; $84C65E |
   CMP.W #$0009                              ; $84C661 |
   PLA                                       ; $84C664 |
@@ -7366,9 +7366,9 @@ CODE_84C677:
   PLD                                       ; $84C67B |
   STZ.B $2E                                 ; $84C67C |
   CLC                                       ; $84C67E |
-  ADC.W #seq_table                          ; $84C67F |
+  ADC.W #seq_table_2                        ; $84C67F |
   TAX                                       ; $84C682 |
-  LDA.L bank(seq_table)<<16,X               ; $84C683 |
+  LDA.L $880000,X                           ; $84C683 |
   CMP.B $08                                 ; $84C687 |
   BEQ CODE_84C6C1                           ; $84C689 |
   STA.B $08                                 ; $84C68B |
@@ -7422,7 +7422,7 @@ CODE_FL_84C6D5:
   PEA.W $1E00                               ; $84C6DC |
   PLD                                       ; $84C6DF |
   CLC                                       ; $84C6E0 |
-  ADC.W #DATA8_888649                       ; $84C6E1 |
+  ADC.W #seq_table                          ; $84C6E1 |
   TAX                                       ; $84C6E4 |
   STX.B $00                                 ; $84C6E5 |
   STZ.B $30                                 ; $84C6E7 |
@@ -7431,7 +7431,7 @@ CODE_FL_84C6D5:
   STZ.B $0A                                 ; $84C6ED |
   JSR.W CODE_FN_84C4F3                      ; $84C6EF |
   SEP #$20                                  ; $84C6F2 |
-  LDA.L bank(DATA8_888649)<<16,X            ; $84C6F4 |
+  LDA.L $880000,X                           ; $84C6F4 |
   STA.B $04                                 ; $84C6F8 |
   STA.W !reg_apuio2                         ; $84C6FA |
   LDA.B #$FF                                ; $84C6FD |

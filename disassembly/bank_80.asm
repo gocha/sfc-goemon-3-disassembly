@@ -1397,7 +1397,7 @@ set_music:
   PEA.W $8888                               ; $80897E |\
   PLB                                       ; $808981 | | Data bank $88
   PLB                                       ; $808982 |/
-  LDA.W DATA8_888649,Y                      ; $808983 |\  Read ??? from table
+  LDA.W seq_table,Y                         ; $808983 |\  Read ??? from table
   AND.W #$00FF                              ; $808986 | |
   JSL.L push_sound_queue                    ; $808989 |/  Play music track
   PLB                                       ; $80898D |

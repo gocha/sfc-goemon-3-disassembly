@@ -3290,9 +3290,9 @@ CODE_FL_8095B5:
 CODE_JP_8095BC:
   LDX.W #$7000                              ; $8095BC |
 
-CODE_8095BF:
+.CODE_8095BF
   CPX.W $0050                               ; $8095BF |
-  BCS CODE_809600                           ; $8095C2 |
+  BCS .CODE_809600                          ; $8095C2 |
   LDA.L $7E0004,X                           ; $8095C4 |
   STA.W !reg_vmaddl                         ; $8095C8 |
   LDA.L $7E0006,X                           ; $8095CB |
@@ -3306,23 +3306,23 @@ CODE_8095BF:
   STA.W !reg_vmain                          ; $8095E3 |
   XBA                                       ; $8095E6 |
   CMP.B #$39                                ; $8095E7 |
-  BCC CODE_8095EF                           ; $8095E9 |
+  BCC .CODE_8095EF                          ; $8095E9 |
   CLC                                       ; $8095EB |
   LDA.W !reg_rdvram                         ; $8095EC |
 
-CODE_8095EF:
+.CODE_8095EF
   LDA.L $7E0008,X                           ; $8095EF |
-  STA.B $F9                                 ; $8095F3 |
-  STY.B $00                                 ; $8095F5 |
+  STA.B !reg_a1b0-!reg_mdmaen               ; $8095F3 |
+  STY.B !reg_mdmaen-!reg_mdmaen             ; $8095F5 |
   REP #$20                                  ; $8095F7 |
   TXA                                       ; $8095F9 |
 
   ADC.W #$000B                              ; $8095FA |
   TAX                                       ; $8095FD |
-  BRA CODE_8095BF                           ; $8095FE |
+  BRA .CODE_8095BF                          ; $8095FE |
 
 
-CODE_809600:
+.CODE_809600
   LDA.W #$0000                              ; $809600 |
   TCD                                       ; $809603 |
   LDA.W #$7000                              ; $809604 |

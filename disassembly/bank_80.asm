@@ -3296,11 +3296,11 @@ CODE_JP_8095BC:
   LDA.L $7E0004,X                           ; $8095C4 |
   STA.W !reg_vmaddl                         ; $8095C8 |
   LDA.L $7E0006,X                           ; $8095CB |
-  STA.B $F7                                 ; $8095CF |
+  STA.B !reg_a1t0l-!reg_mdmaen              ; $8095CF |
   LDA.L $7E0009,X                           ; $8095D1 |
-  STA.B $FA                                 ; $8095D5 |
+  STA.B !reg_das0l-!reg_mdmaen              ; $8095D5 |
   LDA.L $7E0002,X                           ; $8095D7 |
-  STA.B $F5                                 ; $8095DB |
+  STA.B !reg_dmap0-!reg_mdmaen              ; $8095DB |
   SEP #$20                                  ; $8095DD |
   LDA.L $7E0000,X                           ; $8095DF |
   STA.W !reg_vmain                          ; $8095E3 |

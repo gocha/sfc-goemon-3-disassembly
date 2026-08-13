@@ -8401,7 +8401,7 @@ CODE_FL_84C604:
   CLC                                       ; $84C626 |
   STA.B $32                                 ; $84C627 |
   AND.W #$7FFF                              ; $84C629 |
-  ADC.W #sample_load_table-3                ; $84C62C |
+  ADC.W #seq_sample_table-3                 ; $84C62C |
   TAX                                       ; $84C62F |
   STX.B $00                                 ; $84C630 |
 
@@ -8430,7 +8430,7 @@ CODE_FL_84C64E:
   BNE CODE_84C6CB                           ; $84C652 |
   PHA                                       ; $84C654 |
   CLC                                       ; $84C655 |
-  ADC.W #seq_table_2                        ; $84C656 |
+  ADC.W #sfx_table                          ; $84C656 |
   TAX                                       ; $84C659 |
   LDA.L $880000,X                           ; $84C65A |
   AND.W #$00FF                              ; $84C65E |
@@ -8453,7 +8453,7 @@ CODE_84C677:
   PLD                                       ; $84C67B |
   STZ.B $2E                                 ; $84C67C |
   CLC                                       ; $84C67E |
-  ADC.W #seq_table_2                        ; $84C67F |
+  ADC.W #sfx_table                          ; $84C67F |
   TAX                                       ; $84C682 |
   LDA.L $880000,X                           ; $84C683 |
   CMP.B $08                                 ; $84C687 |

@@ -4368,42 +4368,42 @@ CODE_FL_809C52:
 CODE_FL_809C64:
   STA.B $06                                 ; $809C64 |
   CMP.W #$0018                              ; $809C66 |
-  BNE CODE_809C6E                           ; $809C69 |
-  JMP.W CODE_JP_809D18                      ; $809C6B |
+  BNE .CODE_809C6E                          ; $809C69 |
+  JMP.W .CODE_JP_809D18                     ; $809C6B |
 
 
-CODE_809C6E:
+.CODE_809C6E
   JSR.W CODE_FN_809D1B                      ; $809C6E |
   DEC.B $02                                 ; $809C71 |
   LDA.W $7C2E                               ; $809C73 |
-  BNE CODE_809C9F                           ; $809C76 |
+  BNE .CODE_809C9F                          ; $809C76 |
   LDA.W #$0006                              ; $809C78 |
   STA.W $0009,X                             ; $809C7B |
   LDY.B $06                                 ; $809C7E |
   LDA.W #$0310                              ; $809C80 |
   CPY.W #$0088                              ; $809C83 |
-  BCC CODE_809C93                           ; $809C86 |
+  BCC .CODE_809C93                          ; $809C86 |
   LDA.W #$039E                              ; $809C88 |
   CPY.W #$00A8                              ; $809C8B |
-  BCC CODE_809C93                           ; $809C8E |
+  BCC .CODE_809C93                          ; $809C8E |
   LDA.W #$039D                              ; $809C90 |
 
-CODE_809C93:
+.CODE_809C93
   TXY                                       ; $809C93 |
   AND.W #$E3FF                              ; $809C94 |
   ORA.W $7C30                               ; $809C97 |
   JSL.L CODE_FL_809658                      ; $809C9A |
   TYX                                       ; $809C9E |
 
-CODE_809C9F:
+.CODE_809C9F
   LDA.B $06                                 ; $809C9F |
   CMP.W #$0088                              ; $809CA1 |
-  BCC CODE_809CAE                           ; $809CA4 |
+  BCC .CODE_809CAE                          ; $809CA4 |
   TAX                                       ; $809CA6 |
   LDA.L UNREACH_818A81,X                    ; $809CA7 |
   AND.W #$00FF                              ; $809CAB |
 
-CODE_809CAE:
+.CODE_809CAE
   ASL A                                     ; $809CAE |
   ASL A                                     ; $809CAF |
   TAX                                       ; $809CB0 |
@@ -4420,17 +4420,17 @@ CODE_809CAE:
   JSL.L CODE_FL_809658                      ; $809CCC |
   TYX                                       ; $809CD0 |
   LDA.W $7C2E                               ; $809CD1 |
-  BEQ CODE_JP_809D18                        ; $809CD4 |
+  BEQ .CODE_JP_809D18                       ; $809CD4 |
   LDY.B $06                                 ; $809CD6 |
   LDA.W #$0300                              ; $809CD8 |
   CPY.W #$0088                              ; $809CDB |
-  BCC CODE_JP_809D18                        ; $809CDE |
+  BCC .CODE_JP_809D18                       ; $809CDE |
   LDA.W #$0200                              ; $809CE0 |
   CPY.W #$00A8                              ; $809CE3 |
-  BCC CODE_809CEB                           ; $809CE6 |
+  BCC .CODE_809CEB                          ; $809CE6 |
   LDA.W #$01F8                              ; $809CE8 |
 
-CODE_809CEB:
+.CODE_809CEB
   PHA                                       ; $809CEB |
   INC.W $7C22                               ; $809CEC |
   JSR.W CODE_FN_809D1B                      ; $809CEF |
@@ -4450,7 +4450,7 @@ CODE_809CEB:
   JSL.L CODE_FL_809658                      ; $809D13 |
   TYX                                       ; $809D17 |
 
-CODE_JP_809D18:
+.CODE_JP_809D18
   LDA.B $06                                 ; $809D18 |
   RTL                                       ; $809D1A |
 

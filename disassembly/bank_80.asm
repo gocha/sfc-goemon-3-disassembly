@@ -4196,7 +4196,7 @@ CODE_809B6C:
   CMP.W #$0002                              ; $809B6F |
   BNE CODE_809B7B                           ; $809B72 |
   LDA.W #$0019                              ; $809B74 |
-  JSL.L CODE_FL_809C64                      ; $809B77 |
+  JSL.L put_char                            ; $809B77 |
 
 CODE_809B7B:
   STZ.W $7C36                               ; $809B7B |
@@ -4327,7 +4327,7 @@ CODE_809C2E:
 
 CODE_809C36:
   PLA                                       ; $809C36 |
-  JSL.L CODE_FL_809C64                      ; $809C37 |
+  JSL.L put_char                            ; $809C37 |
 
 CODE_JP_809C3B:
   JSL.L CODE_FL_809D4F                      ; $809C3B |
@@ -4357,7 +4357,7 @@ CODE_FL_809C52:
   PEA.W $7E00                               ; $809C56 |
   PLB                                       ; $809C59 |
   PLB                                       ; $809C5A |
-  JSL.L CODE_FL_809C64                      ; $809C5B |
+  JSL.L put_char                            ; $809C5B |
   PLY                                       ; $809C5F |
   PLX                                       ; $809C60 |
   PLA                                       ; $809C61 |
@@ -4365,7 +4365,7 @@ CODE_FL_809C52:
   RTL                                       ; $809C63 |
 
 
-CODE_FL_809C64:
+put_char:
   STA.B $06                                 ; $809C64 |
   CMP.W #$0018                              ; $809C66 |
   BNE .CODE_809C6E                          ; $809C69 |
@@ -4705,7 +4705,7 @@ CODE_809E8D:
   LDA.W $7C12                               ; $809E96 |
   STA.W $7C0E                               ; $809E99 |
   LDA.W #$0009                              ; $809E9C |
-  JMP.W CODE_FL_809C64                      ; $809E9F |
+  JMP.W put_char                            ; $809E9F |
 
 
 CODE_809EA2:
@@ -5324,7 +5324,7 @@ CODE_80A266:
   LDA.W #$0004                              ; $80A266 |
   STA.W $7C3A                               ; $80A269 |
   LDA.W #$0009                              ; $80A26C |
-  JSL.L CODE_FL_809C64                      ; $80A26F |
+  JSL.L put_char                            ; $80A26F |
   LDA.W $7C3E                               ; $80A273 |
   LSR A                                     ; $80A276 |
   TAY                                       ; $80A277 |
@@ -5372,11 +5372,11 @@ CODE_80A2B5:
   LDA.W $7C40                               ; $80A2B6 |
   JSL.L CODE_FL_80A3DA                      ; $80A2B9 |
   LDA.W #$0019                              ; $80A2BD |
-  JSL.L CODE_FL_809C64                      ; $80A2C0 |
+  JSL.L put_char                            ; $80A2C0 |
   PLA                                       ; $80A2C4 |
   JSL.L CODE_FL_80A3DA                      ; $80A2C5 |
   LDA.W #$0009                              ; $80A2C9 |
-  JSL.L CODE_FL_809C64                      ; $80A2CC |
+  JSL.L put_char                            ; $80A2CC |
   LDY.W #$0046                              ; $80A2D0 |
   LDA.W #$0046                              ; $80A2D3 |
   JSL.L CODE_FL_809E34                      ; $80A2D6 |
@@ -5514,7 +5514,7 @@ CODE_80A3BC:
   LDA.W #$0002                              ; $80A3BC |
   STA.W $7C3A                               ; $80A3BF |
   LDA.W #$0019                              ; $80A3C2 |
-  JSL.L CODE_FL_809C64                      ; $80A3C5 |
+  JSL.L put_char                            ; $80A3C5 |
   JMP.W CODE_JP_809C3B                      ; $80A3C9 |
 
 
@@ -5718,64 +5718,64 @@ CODE_FL_80A502:
   LDA.W $7C62                               ; $80A50E |
   STA.W $7C6E                               ; $80A511 |
   CMP.W #$00F0                              ; $80A514 |
-  BCC CODE_80A51C                           ; $80A517 |
-  JMP.W CODE_JP_80A5A4                      ; $80A519 |
+  BCC .CODE_80A51C                          ; $80A517 |
+  JMP.W .CODE_JP_80A5A4                     ; $80A519 |
 
 
-CODE_80A51C:
+.CODE_80A51C
   CMP.W #$00E0                              ; $80A51C |
-  BCC CODE_80A524                           ; $80A51F |
-  JMP.W CODE_JP_80A5FB                      ; $80A521 |
+  BCC .CODE_80A524                          ; $80A51F |
+  JMP.W .CODE_JP_80A5FB                     ; $80A521 |
 
 
-CODE_80A524:
+.CODE_80A524
   CMP.W #$00D0                              ; $80A524 |
-  BCS CODE_80A57E                           ; $80A527 |
+  BCS .CODE_80A57E                          ; $80A527 |
   CMP.W #$00C0                              ; $80A529 |
-  BCC CODE_JP_80A531                        ; $80A52C |
-  JMP.W CODE_JP_80A5CC                      ; $80A52E |
+  BCC .CODE_JP_80A531                       ; $80A52C |
+  JMP.W .CODE_JP_80A5CC                     ; $80A52E |
 
 
-CODE_JP_80A531:
+.CODE_JP_80A531
   STZ.W $7C64                               ; $80A531 |
   LDX.W $7C16                               ; $80A534 |
   TXA                                       ; $80A537 |
-  BPL CODE_80A540                           ; $80A538 |
+  BPL .CODE_80A540                          ; $80A538 |
   LDA.L $BD0000,X                           ; $80A53A |
-  BRA CODE_80A544                           ; $80A53E |
+  BRA .CODE_80A544                          ; $80A53E |
 
 
-CODE_80A540:
+.CODE_80A540
   LDA.L DATA8_B68000,X                      ; $80A540 |
 
-CODE_80A544:
+.CODE_80A544
   AND.W #$00FF                              ; $80A544 |
   STA.W $7C62                               ; $80A547 |
   INC.W $7C16                               ; $80A54A |
   CMP.W #$00F0                              ; $80A54D |
-  BCS CODE_80A560                           ; $80A550 |
+  BCS .CODE_80A560                          ; $80A550 |
   CMP.W #$00E0                              ; $80A552 |
-  BCC CODE_80A55A                           ; $80A555 |
-  JMP.W CODE_JP_80A5DF                      ; $80A557 |
+  BCC .CODE_80A55A                          ; $80A555 |
+  JMP.W .CODE_JP_80A5DF                     ; $80A557 |
 
 
-CODE_80A55A:
+.CODE_80A55A
   CMP.W #$00C0                              ; $80A55A |
   BCS CODE_FL_80A502                        ; $80A55D |
   RTL                                       ; $80A55F |
 
 
-CODE_80A560:
+.CODE_80A560
   LDX.W $7C16                               ; $80A560 |
-  BPL CODE_80A56B                           ; $80A563 |
+  BPL .CODE_80A56B                          ; $80A563 |
   LDA.L $BD0000,X                           ; $80A565 |
-  BRA CODE_80A56F                           ; $80A569 |
+  BRA .CODE_80A56F                          ; $80A569 |
 
 
-CODE_80A56B:
+.CODE_80A56B
   LDA.L DATA8_B68000,X                      ; $80A56B |
 
-CODE_80A56F:
+.CODE_80A56F
   AND.W #$FFFF                              ; $80A56F |
   STA.W $7C66                               ; $80A572 |
   INC.W $7C16                               ; $80A575 |
@@ -5783,7 +5783,7 @@ CODE_80A56F:
   JMP.W CODE_FL_80A502                      ; $80A57B |
 
 
-CODE_80A57E:
+.CODE_80A57E
   SBC.W #$00D0                              ; $80A57E |
   ASL A                                     ; $80A581 |
   TAX                                       ; $80A582 |
@@ -5791,94 +5791,94 @@ CODE_80A57E:
   ADC.W $7C64                               ; $80A587 |
   TAX                                       ; $80A58A |
   TXA                                       ; $80A58B |
-  BPL CODE_80A594                           ; $80A58C |
+  BPL .CODE_80A594                          ; $80A58C |
   LDA.L $BD0000,X                           ; $80A58E |
-  BRA CODE_80A598                           ; $80A592 |
+  BRA .CODE_80A598                          ; $80A592 |
 
 
-CODE_80A594:
+.CODE_80A594
   LDA.L DATA8_B68000,X                      ; $80A594 |
 
-CODE_80A598:
+.CODE_80A598
   AND.W #$00FF                              ; $80A598 |
-  BNE CODE_80A5A0                           ; $80A59B |
-  JMP.W CODE_JP_80A531                      ; $80A59D |
+  BNE .CODE_80A5A0                          ; $80A59B |
+  JMP.W .CODE_JP_80A531                     ; $80A59D |
 
 
-CODE_80A5A0:
+.CODE_80A5A0
   INC.W $7C64                               ; $80A5A0 |
   RTL                                       ; $80A5A3 |
 
 
-CODE_JP_80A5A4:
+.CODE_JP_80A5A4
   SBC.W #$00EC                              ; $80A5A4 |
   CLC                                       ; $80A5A7 |
   SBC.W $7C64                               ; $80A5A8 |
-  BPL CODE_80A5B0                           ; $80A5AB |
-  JMP.W CODE_JP_80A531                      ; $80A5AD |
+  BPL .CODE_80A5B0                          ; $80A5AB |
+  JMP.W .CODE_JP_80A531                     ; $80A5AD |
 
 
-CODE_80A5B0:
+.CODE_80A5B0
   CLC                                       ; $80A5B0 |
   LDA.W $7C66                               ; $80A5B1 |
   ADC.W $7C64                               ; $80A5B4 |
   TAX                                       ; $80A5B7 |
   TXA                                       ; $80A5B8 |
-  BPL CODE_80A5C1                           ; $80A5B9 |
+  BPL .CODE_80A5C1                          ; $80A5B9 |
   LDA.L $BD0000,X                           ; $80A5BB |
-  BRA CODE_80A5C5                           ; $80A5BF |
+  BRA .CODE_80A5C5                          ; $80A5BF |
 
 
-CODE_80A5C1:
+.CODE_80A5C1
   LDA.L DATA8_B68000,X                      ; $80A5C1 |
 
-CODE_80A5C5:
+.CODE_80A5C5
   AND.W #$00FF                              ; $80A5C5 |
   INC.W $7C64                               ; $80A5C8 |
   RTL                                       ; $80A5CB |
 
 
-CODE_JP_80A5CC:
+.CODE_JP_80A5CC
   SBC.W #$00BE                              ; $80A5CC |
   CLC                                       ; $80A5CF |
   SBC.W $7C64                               ; $80A5D0 |
-  BPL CODE_80A5D8                           ; $80A5D3 |
-  JMP.W CODE_JP_80A531                      ; $80A5D5 |
+  BPL .CODE_80A5D8                          ; $80A5D3 |
+  JMP.W .CODE_JP_80A531                     ; $80A5D5 |
 
 
-CODE_80A5D8:
+.CODE_80A5D8
   LDA.W #$0018                              ; $80A5D8 |
   INC.W $7C64                               ; $80A5DB |
   RTL                                       ; $80A5DE |
 
 
-CODE_JP_80A5DF:
+.CODE_JP_80A5DF
   LDX.W $7C16                               ; $80A5DF |
   TXA                                       ; $80A5E2 |
-  BPL CODE_80A5EB                           ; $80A5E3 |
+  BPL .CODE_80A5EB                          ; $80A5E3 |
   LDA.L $BD0000,X                           ; $80A5E5 |
-  BRA CODE_80A5EF                           ; $80A5E9 |
+  BRA .CODE_80A5EF                          ; $80A5E9 |
 
 
-CODE_80A5EB:
+.CODE_80A5EB
   LDA.L DATA8_B68000,X                      ; $80A5EB |
 
-CODE_80A5EF:
+.CODE_80A5EF
   AND.W #$00FF                              ; $80A5EF |
   STA.W $7C68                               ; $80A5F2 |
   INC.W $7C16                               ; $80A5F5 |
   BRL CODE_FL_80A502                        ; $80A5F8 |
 
 
-CODE_JP_80A5FB:
+.CODE_JP_80A5FB
   SBC.W #$00DD                              ; $80A5FB |
   CLC                                       ; $80A5FE |
   SBC.W $7C64                               ; $80A5FF |
-  BPL CODE_80A607                           ; $80A602 |
-  JMP.W CODE_JP_80A531                      ; $80A604 |
+  BPL .CODE_80A607                          ; $80A602 |
+  JMP.W .CODE_JP_80A531                     ; $80A604 |
 
 
-CODE_80A607:
+.CODE_80A607
   LDA.W $7C68                               ; $80A607 |
   INC.W $7C64                               ; $80A60A |
   RTL                                       ; $80A60D |
@@ -7585,7 +7585,7 @@ CODE_80AFAE:
   LDA.W $7C1C                               ; $80AFD1 |
   BEQ CODE_80AFDD                           ; $80AFD4 |
   LDA.W #$0009                              ; $80AFD6 |
-  JSL.L CODE_FL_809C64                      ; $80AFD9 |
+  JSL.L put_char                            ; $80AFD9 |
 
 CODE_80AFDD:
   LDA.W #$0001                              ; $80AFDD |

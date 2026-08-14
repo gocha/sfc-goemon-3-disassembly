@@ -3916,7 +3916,7 @@ CODE_80996C:
   LDA.W $7C18                               ; $809976 |
   ORA.W $7C4C                               ; $809979 |
   BNE CODE_809996                           ; $80997C |
-  JSL.L CODE_FL_80A621                      ; $80997E |
+  JSL.L set_text                            ; $80997E |
   STZ.W $7C36                               ; $809982 |
   STZ.W $7C0E                               ; $809985 |
   STZ.W $7C3A                               ; $809988 |
@@ -4000,7 +4000,7 @@ CODE_FL_8099B2:
 
 .CODE_809A02
   LDA.B $04                                 ; $809A02 |
-  JSL.L CODE_FL_80A621                      ; $809A04 |
+  JSL.L set_text                            ; $809A04 |
   STA.W $7C18                               ; $809A08 |
   STX.W $7C1A                               ; $809A0B |
   STY.W $7C1C                               ; $809A0E |
@@ -4293,7 +4293,7 @@ CODE_809C01:
   STA.B $02                                 ; $809C01 |
 
 CODE_JP_809C03:
-  JSL.L CODE_FL_80A502                      ; $809C03 |
+  JSL.L get_char                            ; $809C03 |
   AND.W #$00FF                              ; $809C07 |
   BNE CODE_809C0F                           ; $809C0A |
   JMP.W CODE_JL_809B30                      ; $809C0C |
@@ -4689,7 +4689,7 @@ CODE_809E7B:
 
 
 CODE_809E7F:
-  JSL.L CODE_FL_80A502                      ; $809E7F |
+  JSL.L get_char                            ; $809E7F |
   AND.W #$00FF                              ; $809E83 |
   JMP.W CODE_JP_809C03                      ; $809E86 |
 
@@ -4788,7 +4788,7 @@ CODE_809F1B:
   INX                                       ; $809F1C |
   STX.W $7C16                               ; $809F1D |
   BCC CODE_809F27                           ; $809F20 |
-  JSL.L CODE_FL_80A621                      ; $809F22 |
+  JSL.L set_text                            ; $809F22 |
   RTL                                       ; $809F26 |
 
 
@@ -4801,7 +4801,7 @@ CODE_809F2A:
   BCS CODE_809F74                           ; $809F2D |
 
 CODE_809F2F:
-  JSL.L CODE_FL_80A502                      ; $809F2F |
+  JSL.L get_char                            ; $809F2F |
   AND.W #$00FF                              ; $809F33 |
   CMP.W #$0016                              ; $809F36 |
   BCS CODE_809F3E                           ; $809F39 |
@@ -4867,7 +4867,7 @@ CODE_809F8E:
   INX                                       ; $809F8F |
   STX.W $7C16                               ; $809F90 |
   BCS CODE_809F9A                           ; $809F93 |
-  JSL.L CODE_FL_80A621                      ; $809F95 |
+  JSL.L set_text                            ; $809F95 |
   RTL                                       ; $809F99 |
 
 
@@ -4878,7 +4878,7 @@ CODE_809F9A:
   BCC CODE_809FE7                           ; $809FA0 |
 
 CODE_809FA2:
-  JSL.L CODE_FL_80A502                      ; $809FA2 |
+  JSL.L get_char                            ; $809FA2 |
   AND.W #$00FF                              ; $809FA6 |
   CMP.W #$0016                              ; $809FA9 |
   BCS CODE_809FB1                           ; $809FAC |
@@ -4976,7 +4976,7 @@ CODE_80A020:
   INX                                       ; $80A020 |
   INX                                       ; $80A021 |
   STX.W $7C16                               ; $80A022 |
-  JSL.L CODE_FL_80A621                      ; $80A025 |
+  JSL.L set_text                            ; $80A025 |
   RTL                                       ; $80A029 |
 
 
@@ -5412,7 +5412,7 @@ CODE_80A302:
   STA.W $7C42                               ; $80A311 |
 
 CODE_80A314:
-  JSL.L CODE_FL_80A502                      ; $80A314 |
+  JSL.L get_char                            ; $80A314 |
   AND.W #$00FF                              ; $80A318 |
   CMP.W #$00B8                              ; $80A31B |
   BEQ CODE_80A325                           ; $80A31E |
@@ -5436,7 +5436,7 @@ CODE_80A334:
   STX.W $7C16                               ; $80A336 |
 
 CODE_80A339:
-  JSL.L CODE_FL_80A621                      ; $80A339 |
+  JSL.L set_text                            ; $80A339 |
   STZ.W $7C3A                               ; $80A33D |
   JML.L CODE_JL_80AD2D                      ; $80A340 |
 
@@ -5495,7 +5495,7 @@ CODE_80A393:
   INX                                       ; $80A393 |
   INX                                       ; $80A394 |
   STX.W $7C16                               ; $80A395 |
-  JSL.L CODE_FL_80A502                      ; $80A398 |
+  JSL.L get_char                            ; $80A398 |
   AND.W #$00FF                              ; $80A39C |
   CMP.W #$00BA                              ; $80A39F |
   BEQ CODE_JP_80A3CC                        ; $80A3A2 |
@@ -5534,13 +5534,13 @@ CODE_JP_80A3D3:
 CODE_FL_80A3DA:
   STA.B $04                                 ; $80A3DA |
   LDA.W $7C3C                               ; $80A3DC |
-  JSL.L CODE_FL_80A621                      ; $80A3DF |
+  JSL.L set_text                            ; $80A3DF |
   JSR.W CODE_FN_80A49F                      ; $80A3E3 |
   LDA.W #$FFFF                              ; $80A3E6 |
   STA.W $7C40                               ; $80A3E9 |
 
 CODE_JP_80A3EC:
-  JSL.L CODE_FL_80A502                      ; $80A3EC |
+  JSL.L get_char                            ; $80A3EC |
   AND.W #$00FF                              ; $80A3F0 |
   CMP.W #$00B0                              ; $80A3F3 |
   BNE CODE_80A402                           ; $80A3F6 |
@@ -5562,7 +5562,7 @@ CODE_80A402:
 
 
 CODE_80A40F:
-  JSL.L CODE_FL_80A502                      ; $80A40F |
+  JSL.L get_char                            ; $80A40F |
   AND.W #$00FF                              ; $80A413 |
 
 CODE_80A416:
@@ -5587,7 +5587,7 @@ CODE_80A431:
   BCS CODE_JP_80A465                        ; $80A438 |
 
 CODE_80A43A:
-  JSL.L CODE_FL_80A502                      ; $80A43A |
+  JSL.L get_char                            ; $80A43A |
   AND.W #$00FF                              ; $80A43E |
   CMP.W #$0016                              ; $80A441 |
   BCC CODE_JP_80A465                        ; $80A444 |
@@ -5655,7 +5655,7 @@ CODE_FN_80A49F:
 
 
 CODE_JP_80A4AC:
-  JSL.L CODE_FL_80A502                      ; $80A4AC |
+  JSL.L get_char                            ; $80A4AC |
   AND.W #$00FF                              ; $80A4B0 |
   CMP.W #$0016                              ; $80A4B3 |
   BCC CODE_JP_80A465                        ; $80A4B6 |
@@ -5710,7 +5710,7 @@ CODE_80A4FF:
   JMP.W CODE_FL_80A3DA                      ; $80A4FF |
 
 
-CODE_FL_80A502:
+get_char:
   LDA.W $7C16                               ; $80A502 |
   STA.W $7C6A                               ; $80A505 |
   LDA.W $7C64                               ; $80A508 |
@@ -5761,7 +5761,7 @@ CODE_FL_80A502:
 
 .CODE_80A55A
   CMP.W #$00C0                              ; $80A55A |
-  BCS CODE_FL_80A502                        ; $80A55D |
+  BCS get_char                              ; $80A55D |
   RTL                                       ; $80A55F |
 
 
@@ -5780,7 +5780,7 @@ CODE_FL_80A502:
   STA.W $7C66                               ; $80A572 |
   INC.W $7C16                               ; $80A575 |
   INC.W $7C16                               ; $80A578 |
-  JMP.W CODE_FL_80A502                      ; $80A57B |
+  JMP.W get_char                            ; $80A57B |
 
 
 .CODE_80A57E
@@ -5867,7 +5867,7 @@ CODE_FL_80A502:
   AND.W #$00FF                              ; $80A5EF |
   STA.W $7C68                               ; $80A5F2 |
   INC.W $7C16                               ; $80A5F5 |
-  BRL CODE_FL_80A502                        ; $80A5F8 |
+  BRL get_char                              ; $80A5F8 |
 
 
 .CODE_JP_80A5FB
@@ -5894,7 +5894,7 @@ CODE_FL_80A60E:
   RTL                                       ; $80A620 |
 
 
-CODE_FL_80A621:
+set_text:
   STA.W $7C6A                               ; $80A621 |
   STA.W $7C16                               ; $80A624 |
   STZ.W $7C6C                               ; $80A627 |

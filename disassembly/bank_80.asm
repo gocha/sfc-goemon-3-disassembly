@@ -3950,55 +3950,55 @@ CODE_809996:
 CODE_FL_8099B2:
   STA.B $04                                 ; $8099B2 |
   LDA.W $7C16                               ; $8099B4 |
-  BEQ CODE_809A02                           ; $8099B7 |
+  BEQ .CODE_809A02                          ; $8099B7 |
   JSR.W CODE_FN_809B37                      ; $8099B9 |
   LDA.W $7C4C                               ; $8099BC |
-  BNE CODE_8099FE                           ; $8099BF |
+  BNE .CODE_8099FE                          ; $8099BF |
   LDA.W $7C3A                               ; $8099C1 |
-  BEQ CODE_8099C9                           ; $8099C4 |
+  BEQ .CODE_8099C9                          ; $8099C4 |
   JMP.W CODE_JP_80A216                      ; $8099C6 |
 
 
-CODE_8099C9:
+.CODE_8099C9
   LDA.W $7C00                               ; $8099C9 |
-  BEQ CODE_8099D4                           ; $8099CC |
+  BEQ .CODE_8099D4                          ; $8099CC |
   STZ.W $7C00                               ; $8099CE |
   STA.W $7C02                               ; $8099D1 |
 
-CODE_8099D4:
+.CODE_8099D4
   LDA.W $7C02                               ; $8099D4 |
-  BNE CODE_8099FD                           ; $8099D7 |
+  BNE .CODE_8099FD                          ; $8099D7 |
   LDA.L $007C20                             ; $8099D9 |
-  BNE CODE_8099ED                           ; $8099DD |
+  BNE .CODE_8099ED                          ; $8099DD |
   LDA.W $7C4E                               ; $8099DF |
   LSR A                                     ; $8099E2 |
-  BEQ CODE_8099ED                           ; $8099E3 |
+  BEQ .CODE_8099ED                          ; $8099E3 |
   LDA.W CODE_00DA06                         ; $8099E5 |
-  BNE CODE_8099ED                           ; $8099E8 |
+  BNE .CODE_8099ED                          ; $8099E8 |
   JMP.W CODE_JP_809BD0                      ; $8099EA |
 
 
-CODE_8099ED:
+.CODE_8099ED
   LDA.W $7C0E                               ; $8099ED |
-  BNE CODE_8099F5                           ; $8099F0 |
+  BNE .CODE_8099F5                          ; $8099F0 |
   JMP.W CODE_JP_809BD0                      ; $8099F2 |
 
 
-CODE_8099F5:
+.CODE_8099F5
   DEC.W $7C0E                               ; $8099F5 |
-  BNE CODE_8099FD                           ; $8099F8 |
+  BNE .CODE_8099FD                          ; $8099F8 |
   JMP.W CODE_JP_809BD0                      ; $8099FA |
 
 
-CODE_8099FD:
+.CODE_8099FD
   RTL                                       ; $8099FD |
 
 
-CODE_8099FE:
+.CODE_8099FE
   JML.L CODE_JL_80AD13                      ; $8099FE |
 
 
-CODE_809A02:
+.CODE_809A02
   LDA.B $04                                 ; $809A02 |
   JSL.L CODE_FL_80A621                      ; $809A04 |
   STA.W $7C18                               ; $809A08 |
@@ -4033,21 +4033,21 @@ CODE_809A02:
   STZ.W CODE_00DA06                         ; $809A60 |
   LDX.W $7C16                               ; $809A63 |
   TXA                                       ; $809A66 |
-  BPL CODE_809A6F                           ; $809A67 |
+  BPL .CODE_809A6F                          ; $809A67 |
   LDA.L $BD0000,X                           ; $809A69 |
-  BRA CODE_809A73                           ; $809A6D |
+  BRA .CODE_809A73                          ; $809A6D |
 
 
-CODE_809A6F:
+.CODE_809A6F
   LDA.L DATA8_B68000,X                      ; $809A6F |
 
-CODE_809A73:
+.CODE_809A73
   AND.W #$00FF                              ; $809A73 |
-  BNE CODE_809A7E                           ; $809A76 |
+  BNE .CODE_809A7E                          ; $809A76 |
   STZ.W $7C18                               ; $809A78 |
   STZ.W $7C4C                               ; $809A7B |
 
-CODE_809A7E:
+.CODE_809A7E
   RTL                                       ; $809A7E |
 
 

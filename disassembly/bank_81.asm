@@ -498,22 +498,22 @@ DATA8_818B37:
 
 ; Pointers to null-terminated strings in bank $BD.
 dictionary_texts:
-  dw $8000                                  ; $818B3D | (cmd $D0) -shita."\n
-  dw $8006                                  ; $818B3F | (cmd $D1) 
-  dw $800A                                  ; $818B41 | (cmd $D2) 
-  dw $800E                                  ; $818B43 | (cmd $D3) 
-  dw $8011                                  ; $818B45 | (cmd $D4) 
-  dw $8018                                  ; $818B47 | (cmd $D5) 
-  dw $801F                                  ; $818B49 | (cmd $D6) 
-  dw $8026                                  ; $818B4B | (cmd $D7) 
-  dw $802D                                  ; $818B4D | (cmd $D8) 
-  dw $8031                                  ; $818B4F | (cmd $D9) 
-  dw $8038                                  ; $818B51 | (cmd $DA) 
-  dw $803E                                  ; $818B53 | (cmd $DB) 
-  dw $8043                                  ; $818B55 | (cmd $DC) 
-  dw $8047                                  ; $818B57 | (cmd $DD) 
-  dw $804A                                  ; $818B59 | (cmd $DE) 
-  dw $804D                                  ; $818B5B | (cmd $DF) 
+  dw $8000                                  ; $818B3D | offset for command 0xD0
+  dw $8006                                  ; $818B3F | offset for command 0xD1
+  dw $800A                                  ; $818B41 | offset for command 0xD2
+  dw $800E                                  ; $818B43 | offset for command 0xD3
+  dw $8011                                  ; $818B45 | offset for command 0xD4
+  dw $8018                                  ; $818B47 | offset for command 0xD5
+  dw $801F                                  ; $818B49 | offset for command 0xD6
+  dw $8026                                  ; $818B4B | offset for command 0xD7
+  dw $802D                                  ; $818B4D | offset for command 0xD8
+  dw $8031                                  ; $818B4F | offset for command 0xD9
+  dw $8038                                  ; $818B51 | offset for command 0xDA
+  dw $803E                                  ; $818B53 | offset for command 0xDB
+  dw $8043                                  ; $818B55 | offset for command 0xDC
+  dw $8047                                  ; $818B57 | offset for command 0xDD
+  dw $804A                                  ; $818B59 | offset for command 0xDE
+  dw $804D                                  ; $818B5B | offset for command 0xDF
 
   db $A9,$55,$FD,$21,$26,$27,$28,$1A        ; $818B5D |
   db $29,$1D,$00,$59,$1C,$2A,$21,$2A        ; $818B65 |

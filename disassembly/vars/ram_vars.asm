@@ -9,3 +9,9 @@
 !r_sound_block_table_ptr_dp = $06
 !r_sound_transfer_source_ptr_dp = $15
 !r_sound_transfer_counter_dp = $2A
+
+!r_text_ptr = $7E7C16                       ; Current text stream pointer
+!r_text_token = $7E7C62                     ; Current token read from the text stream
+!r_text_op_arg = $7E7C64                    ; Argument/state value for the current text operation
+!r_text_copy_ptr = $7E7C66                  ; Copy source pointer for an F0-FF command
+!r_text_repeat_char = $7E7C68               ; Repeated character for an E0-EF command

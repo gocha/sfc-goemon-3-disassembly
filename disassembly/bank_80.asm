@@ -4039,7 +4039,7 @@ CODE_FL_8099B2:
 
 
 .CODE_809A6F
-  LDA.L DATA8_B68000,X                      ; $809A6F |
+  LDA.L $B68000,X                           ; $809A6F |
 
 .CODE_809A73
   AND.W #$00FF                              ; $809A73 |
@@ -4293,7 +4293,7 @@ CODE_809C01:
   STA.B $02                                 ; $809C01 |
 
 CODE_JP_809C03:
-  JSL.L get_char                            ; $809C03 |
+  JSL.L get_next_char                       ; $809C03 |
   AND.W #$00FF                              ; $809C07 |
   BNE CODE_809C0F                           ; $809C0A |
   JMP.W CODE_JL_809B30                      ; $809C0C |
@@ -4689,7 +4689,7 @@ CODE_809E7B:
 
 
 CODE_809E7F:
-  JSL.L get_char                            ; $809E7F |
+  JSL.L get_next_char                       ; $809E7F |
   AND.W #$00FF                              ; $809E83 |
   JMP.W CODE_JP_809C03                      ; $809E86 |
 
@@ -4781,7 +4781,7 @@ CODE_809F04:
 
 
 CODE_809F17:
-  LDA.L DATA8_B68000,X                      ; $809F17 |
+  LDA.L $B68000,X                           ; $809F17 |
 
 CODE_809F1B:
   INX                                       ; $809F1B |
@@ -4801,7 +4801,7 @@ CODE_809F2A:
   BCS CODE_809F74                           ; $809F2D |
 
 CODE_809F2F:
-  JSL.L get_char                            ; $809F2F |
+  JSL.L get_next_char                       ; $809F2F |
   AND.W #$00FF                              ; $809F33 |
   CMP.W #$0016                              ; $809F36 |
   BCS CODE_809F3E                           ; $809F39 |
@@ -4838,7 +4838,7 @@ CODE_809F60:
 
 
 CODE_809F6B:
-  LDA.L DATA8_B68000,X                      ; $809F6B |
+  LDA.L $B68000,X                           ; $809F6B |
 
 CODE_809F6F:
   INX                                       ; $809F6F |
@@ -4860,7 +4860,7 @@ CODE_809F77:
 
 
 CODE_809F8A:
-  LDA.L DATA8_B68000,X                      ; $809F8A |
+  LDA.L $B68000,X                           ; $809F8A |
 
 CODE_809F8E:
   INX                                       ; $809F8E |
@@ -4878,7 +4878,7 @@ CODE_809F9A:
   BCC CODE_809FE7                           ; $809FA0 |
 
 CODE_809FA2:
-  JSL.L get_char                            ; $809FA2 |
+  JSL.L get_next_char                       ; $809FA2 |
   AND.W #$00FF                              ; $809FA6 |
   CMP.W #$0016                              ; $809FA9 |
   BCS CODE_809FB1                           ; $809FAC |
@@ -4915,7 +4915,7 @@ CODE_809FD3:
 
 
 CODE_809FDE:
-  LDA.L DATA8_B68000,X                      ; $809FDE |
+  LDA.L $B68000,X                           ; $809FDE |
 
 CODE_809FE2:
   INX                                       ; $809FE2 |
@@ -4970,7 +4970,7 @@ CODE_80A011:
 
 
 CODE_80A01C:
-  LDA.L DATA8_B68000,X                      ; $80A01C |
+  LDA.L $B68000,X                           ; $80A01C |
 
 CODE_80A020:
   INX                                       ; $80A020 |
@@ -4990,7 +4990,7 @@ CODE_80A02A:
 
 
 CODE_80A039:
-  LDA.L DATA8_B68000,X                      ; $80A039 |
+  LDA.L $B68000,X                           ; $80A039 |
 
 CODE_80A03D:
   AND.W #$00FF                              ; $80A03D |
@@ -5037,7 +5037,7 @@ CODE_80A078:
 
 
 CODE_80A084:
-  LDA.L DATA8_B68000,X                      ; $80A084 |
+  LDA.L $B68000,X                           ; $80A084 |
 
 CODE_80A088:
   AND.W #$00FF                              ; $80A088 |
@@ -5067,7 +5067,7 @@ CODE_80A0AB:
 
 
 CODE_80A0B7:
-  LDA.L DATA8_B68000,X                      ; $80A0B7 |
+  LDA.L $B68000,X                           ; $80A0B7 |
 
 CODE_80A0BB:
   AND.W #$00FF                              ; $80A0BB |
@@ -5096,7 +5096,7 @@ CODE_80A0D3:
 
 
 CODE_80A0E5:
-  LDA.L DATA8_B68000,X                      ; $80A0E5 |
+  LDA.L $B68000,X                           ; $80A0E5 |
 
 CODE_80A0E9:
   AND.W #$00FF                              ; $80A0E9 |
@@ -5131,7 +5131,7 @@ CODE_80A10F:
 
 
 CODE_80A11B:
-  LDA.L DATA8_B68000,X                      ; $80A11B |
+  LDA.L $B68000,X                           ; $80A11B |
 
 CODE_80A11F:
   AND.W #$00FF                              ; $80A11F |
@@ -5147,7 +5147,7 @@ CODE_80A11F:
 
 
 CODE_80A139:
-  LDA.L DATA8_B68000,X                      ; $80A139 |
+  LDA.L $B68000,X                           ; $80A139 |
 
 CODE_80A13D:
   AND.W #$00FF                              ; $80A13D |
@@ -5163,7 +5163,7 @@ CODE_80A13D:
 
 
 CODE_80A157:
-  LDA.L DATA8_B68000,X                      ; $80A157 |
+  LDA.L $B68000,X                           ; $80A157 |
 
 CODE_80A15B:
   AND.W #$00FF                              ; $80A15B |
@@ -5182,7 +5182,7 @@ CODE_80A169:
 
 
 CODE_80A175:
-  LDA.L DATA8_B68000,X                      ; $80A175 |
+  LDA.L $B68000,X                           ; $80A175 |
 
 CODE_80A179:
   AND.W #$00FF                              ; $80A179 |
@@ -5241,7 +5241,7 @@ CODE_80A1C2:
 
 
 CODE_80A1D1:
-  LDA.L DATA8_B68000,X                      ; $80A1D1 |
+  LDA.L $B68000,X                           ; $80A1D1 |
 
 CODE_80A1D5:
   AND.W #$00FF                              ; $80A1D5 |
@@ -5412,7 +5412,7 @@ CODE_80A302:
   STA.W $7C42                               ; $80A311 |
 
 CODE_80A314:
-  JSL.L get_char                            ; $80A314 |
+  JSL.L get_next_char                       ; $80A314 |
   AND.W #$00FF                              ; $80A318 |
   CMP.W #$00B8                              ; $80A31B |
   BEQ CODE_80A325                           ; $80A31E |
@@ -5428,7 +5428,7 @@ CODE_80A325:
 
 
 CODE_80A330:
-  LDA.L DATA8_B68000,X                      ; $80A330 |
+  LDA.L $B68000,X                           ; $80A330 |
 
 CODE_80A334:
   INX                                       ; $80A334 |
@@ -5489,13 +5489,13 @@ CODE_80A384:
 
 
 CODE_80A38F:
-  LDA.L DATA8_B68000,X                      ; $80A38F |
+  LDA.L $B68000,X                           ; $80A38F |
 
 CODE_80A393:
   INX                                       ; $80A393 |
   INX                                       ; $80A394 |
   STX.W $7C16                               ; $80A395 |
-  JSL.L get_char                            ; $80A398 |
+  JSL.L get_next_char                       ; $80A398 |
   AND.W #$00FF                              ; $80A39C |
   CMP.W #$00BA                              ; $80A39F |
   BEQ CODE_JP_80A3CC                        ; $80A3A2 |
@@ -5540,7 +5540,7 @@ CODE_FL_80A3DA:
   STA.W $7C40                               ; $80A3E9 |
 
 CODE_JP_80A3EC:
-  JSL.L get_char                            ; $80A3EC |
+  JSL.L get_next_char                       ; $80A3EC |
   AND.W #$00FF                              ; $80A3F0 |
   CMP.W #$00B0                              ; $80A3F3 |
   BNE CODE_80A402                           ; $80A3F6 |
@@ -5562,7 +5562,7 @@ CODE_80A402:
 
 
 CODE_80A40F:
-  JSL.L get_char                            ; $80A40F |
+  JSL.L get_next_char                       ; $80A40F |
   AND.W #$00FF                              ; $80A413 |
 
 CODE_80A416:
@@ -5587,7 +5587,7 @@ CODE_80A431:
   BCS CODE_JP_80A465                        ; $80A438 |
 
 CODE_80A43A:
-  JSL.L get_char                            ; $80A43A |
+  JSL.L get_next_char                       ; $80A43A |
   AND.W #$00FF                              ; $80A43E |
   CMP.W #$0016                              ; $80A441 |
   BCC CODE_JP_80A465                        ; $80A444 |
@@ -5625,7 +5625,7 @@ CODE_80A477:
 
 
 CODE_80A486:
-  LDA.L DATA8_B68000,X                      ; $80A486 |
+  LDA.L $B68000,X                           ; $80A486 |
 
 CODE_80A48A:
   INX                                       ; $80A48A |
@@ -5655,7 +5655,7 @@ CODE_FN_80A49F:
 
 
 CODE_JP_80A4AC:
-  JSL.L get_char                            ; $80A4AC |
+  JSL.L get_next_char                       ; $80A4AC |
   AND.W #$00FF                              ; $80A4B0 |
   CMP.W #$0016                              ; $80A4B3 |
   BCC CODE_JP_80A465                        ; $80A4B6 |
@@ -5688,7 +5688,7 @@ CODE_JP_80A4D9:
 
 
 CODE_80A4E4:
-  LDA.L DATA8_B68000,X                      ; $80A4E4 |
+  LDA.L $B68000,X                           ; $80A4E4 |
 
 CODE_80A4E8:
   INX                                       ; $80A4E8 |
@@ -5710,177 +5710,163 @@ CODE_80A4FF:
   JMP.W CODE_FL_80A3DA                      ; $80A4FF |
 
 
-get_char:
-  LDA.W $7C16                               ; $80A502 |
+get_next_char:
+  LDA.W !r_text_ptr                         ; $80A502 |
   STA.W $7C6A                               ; $80A505 |
-  LDA.W $7C64                               ; $80A508 |
+  LDA.W !r_text_op_arg                      ; $80A508 |
   STA.W $7C6C                               ; $80A50B |
-  LDA.W $7C62                               ; $80A50E |
+  LDA.W !r_text_token                       ; $80A50E |
   STA.W $7C6E                               ; $80A511 |
   CMP.W #$00F0                              ; $80A514 |
-  BCC .CODE_80A51C                          ; $80A517 |
-  JMP.W .CODE_JP_80A5A4                     ; $80A519 |
+  BCC .below_f0                             ; $80A517 |
+  JMP.W .dispatch_copy                      ; $80A519 |
 
-
-.CODE_80A51C
+.below_f0
   CMP.W #$00E0                              ; $80A51C |
-  BCC .CODE_80A524                          ; $80A51F |
-  JMP.W .CODE_JP_80A5FB                     ; $80A521 |
+  BCC .below_e0                             ; $80A51F |
+  JMP.W .dispatch_repeat                    ; $80A521 |
 
-
-.CODE_80A524
+.below_e0
   CMP.W #$00D0                              ; $80A524 |
-  BCS .CODE_80A57E                          ; $80A527 |
+  BCS .dispatch_dictionary                  ; $80A527 |
   CMP.W #$00C0                              ; $80A529 |
-  BCC .CODE_JP_80A531                       ; $80A52C |
-  JMP.W .CODE_JP_80A5CC                     ; $80A52E |
+  BCC .read_next_token                      ; $80A52C |
+  JMP.W .dispatch_repeated_space            ; $80A52E |
 
-
-.CODE_JP_80A531
-  STZ.W $7C64                               ; $80A531 |
-  LDX.W $7C16                               ; $80A534 |
+.read_next_token
+  STZ.W !r_text_op_arg                      ; $80A531 |
+  LDX.W !r_text_ptr                         ; $80A534 |
   TXA                                       ; $80A537 |
-  BPL .CODE_80A540                          ; $80A538 |
+  BPL ..low_offset                          ; $80A538 |
   LDA.L $BD0000,X                           ; $80A53A |
-  BRA .CODE_80A544                          ; $80A53E |
+  BRA ..loaded                              ; $80A53E |
 
+..low_offset
+  LDA.L $B68000,X                           ; $80A540 |
 
-.CODE_80A540
-  LDA.L DATA8_B68000,X                      ; $80A540 |
-
-.CODE_80A544
+..loaded
   AND.W #$00FF                              ; $80A544 |
-  STA.W $7C62                               ; $80A547 |
-  INC.W $7C16                               ; $80A54A |
+  STA.W !r_text_token                       ; $80A547 |
+  INC.W !r_text_ptr                         ; $80A54A |
   CMP.W #$00F0                              ; $80A54D |
-  BCS .CODE_80A560                          ; $80A550 |
+  BCS .read_copy_pointer                    ; $80A550 |
   CMP.W #$00E0                              ; $80A552 |
-  BCC .CODE_80A55A                          ; $80A555 |
-  JMP.W .CODE_JP_80A5DF                     ; $80A557 |
+  BCC ..others                              ; $80A555 |
+  JMP.W .read_repeated_char                 ; $80A557 |
 
-
-.CODE_80A55A
+..others
   CMP.W #$00C0                              ; $80A55A |
-  BCS get_char                              ; $80A55D |
+  BCS get_next_char                         ; $80A55D |
   RTL                                       ; $80A55F |
 
-
-.CODE_80A560
-  LDX.W $7C16                               ; $80A560 |
-  BPL .CODE_80A56B                          ; $80A563 |
+.read_copy_pointer
+  LDX.W !r_text_ptr                         ; $80A560 |
+  BPL ..low_offset                          ; $80A563 |
   LDA.L $BD0000,X                           ; $80A565 |
-  BRA .CODE_80A56F                          ; $80A569 |
+  BRA ..loaded                              ; $80A569 |
 
+..low_offset
+  LDA.L $B68000,X                           ; $80A56B |
 
-.CODE_80A56B
-  LDA.L DATA8_B68000,X                      ; $80A56B |
-
-.CODE_80A56F
+..loaded
   AND.W #$FFFF                              ; $80A56F |
-  STA.W $7C66                               ; $80A572 |
-  INC.W $7C16                               ; $80A575 |
-  INC.W $7C16                               ; $80A578 |
-  JMP.W get_char                            ; $80A57B |
+  STA.W !r_text_copy_ptr                    ; $80A572 |
+  INC.W !r_text_ptr                         ; $80A575 |
+  INC.W !r_text_ptr                         ; $80A578 |
+  JMP.W get_next_char                       ; $80A57B |
 
 
-.CODE_80A57E
+.dispatch_dictionary
   SBC.W #$00D0                              ; $80A57E |
   ASL A                                     ; $80A581 |
   TAX                                       ; $80A582 |
-  LDA.L DATA16_818B3D,X                     ; $80A583 |
-  ADC.W $7C64                               ; $80A587 |
+  LDA.L dictionary_texts,X                  ; $80A583 |
+  ADC.W !r_text_op_arg                      ; $80A587 |
   TAX                                       ; $80A58A |
   TXA                                       ; $80A58B |
-  BPL .CODE_80A594                          ; $80A58C |
+  BPL ..low_offset                          ; $80A58C |
   LDA.L $BD0000,X                           ; $80A58E |
-  BRA .CODE_80A598                          ; $80A592 |
+  BRA ..loaded                              ; $80A592 |
 
+..low_offset
+  LDA.L $B68000,X                           ; $80A594 |
 
-.CODE_80A594
-  LDA.L DATA8_B68000,X                      ; $80A594 |
-
-.CODE_80A598
+..loaded
   AND.W #$00FF                              ; $80A598 |
-  BNE .CODE_80A5A0                          ; $80A59B |
-  JMP.W .CODE_JP_80A531                     ; $80A59D |
+  BNE ..return_char                         ; $80A59B |
+  JMP.W .read_next_token                    ; $80A59D |
 
-
-.CODE_80A5A0
-  INC.W $7C64                               ; $80A5A0 |
+..return_char
+  INC.W !r_text_op_arg                      ; $80A5A0 |
   RTL                                       ; $80A5A3 |
 
 
-.CODE_JP_80A5A4
+.dispatch_copy
   SBC.W #$00EC                              ; $80A5A4 |
   CLC                                       ; $80A5A7 |
-  SBC.W $7C64                               ; $80A5A8 |
-  BPL .CODE_80A5B0                          ; $80A5AB |
-  JMP.W .CODE_JP_80A531                     ; $80A5AD |
+  SBC.W !r_text_op_arg                      ; $80A5A8 |
+  BPL ..copy                                ; $80A5AB |
+  JMP.W .read_next_token                    ; $80A5AD |
 
-
-.CODE_80A5B0
+..copy
   CLC                                       ; $80A5B0 |
-  LDA.W $7C66                               ; $80A5B1 |
-  ADC.W $7C64                               ; $80A5B4 |
+  LDA.W !r_text_copy_ptr                    ; $80A5B1 |
+  ADC.W !r_text_op_arg                      ; $80A5B4 |
   TAX                                       ; $80A5B7 |
   TXA                                       ; $80A5B8 |
-  BPL .CODE_80A5C1                          ; $80A5B9 |
+  BPL ..low_offset                          ; $80A5B9 |
   LDA.L $BD0000,X                           ; $80A5BB |
-  BRA .CODE_80A5C5                          ; $80A5BF |
+  BRA ..loaded                              ; $80A5BF |
 
+..low_offset
+  LDA.L $B68000,X                           ; $80A5C1 |
 
-.CODE_80A5C1
-  LDA.L DATA8_B68000,X                      ; $80A5C1 |
-
-.CODE_80A5C5
+..loaded
   AND.W #$00FF                              ; $80A5C5 |
-  INC.W $7C64                               ; $80A5C8 |
+  INC.W !r_text_op_arg                      ; $80A5C8 |
   RTL                                       ; $80A5CB |
 
 
-.CODE_JP_80A5CC
+.dispatch_repeated_space
   SBC.W #$00BE                              ; $80A5CC |
   CLC                                       ; $80A5CF |
-  SBC.W $7C64                               ; $80A5D0 |
-  BPL .CODE_80A5D8                          ; $80A5D3 |
-  JMP.W .CODE_JP_80A531                     ; $80A5D5 |
+  SBC.W !r_text_op_arg                      ; $80A5D0 |
+  BPL ..return_char                         ; $80A5D3 |
+  JMP.W .read_next_token                    ; $80A5D5 |
 
-
-.CODE_80A5D8
+..return_char
   LDA.W #$0018                              ; $80A5D8 |
-  INC.W $7C64                               ; $80A5DB |
+  INC.W !r_text_op_arg                      ; $80A5DB |
   RTL                                       ; $80A5DE |
 
 
-.CODE_JP_80A5DF
-  LDX.W $7C16                               ; $80A5DF |
+.read_repeated_char
+  LDX.W !r_text_ptr                         ; $80A5DF |
   TXA                                       ; $80A5E2 |
-  BPL .CODE_80A5EB                          ; $80A5E3 |
+  BPL ..low_offset                          ; $80A5E3 |
   LDA.L $BD0000,X                           ; $80A5E5 |
-  BRA .CODE_80A5EF                          ; $80A5E9 |
+  BRA ..loaded                              ; $80A5E9 |
 
+..low_offset
+  LDA.L $B68000,X                           ; $80A5EB |
 
-.CODE_80A5EB
-  LDA.L DATA8_B68000,X                      ; $80A5EB |
-
-.CODE_80A5EF
+..loaded
   AND.W #$00FF                              ; $80A5EF |
-  STA.W $7C68                               ; $80A5F2 |
-  INC.W $7C16                               ; $80A5F5 |
-  BRL get_char                              ; $80A5F8 |
+  STA.W !r_text_repeat_char                 ; $80A5F2 |
+  INC.W !r_text_ptr                         ; $80A5F5 |
+  BRL get_next_char                         ; $80A5F8 |
 
 
-.CODE_JP_80A5FB
+.dispatch_repeat
   SBC.W #$00DD                              ; $80A5FB |
   CLC                                       ; $80A5FE |
-  SBC.W $7C64                               ; $80A5FF |
-  BPL .CODE_80A607                          ; $80A602 |
-  JMP.W .CODE_JP_80A531                     ; $80A604 |
+  SBC.W !r_text_op_arg                      ; $80A5FF |
+  BPL ..return_char                         ; $80A602 |
+  JMP.W .read_next_token                    ; $80A604 |
 
-
-.CODE_80A607
-  LDA.W $7C68                               ; $80A607 |
-  INC.W $7C64                               ; $80A60A |
+..return_char
+  LDA.W !r_text_repeat_char                 ; $80A607 |
+  INC.W !r_text_op_arg                      ; $80A60A |
   RTL                                       ; $80A60D |
 
 
@@ -5941,7 +5927,7 @@ CODE_FN_80A65B:
 
 
 CODE_80A666:
-  LDA.L DATA8_B68000,X                      ; $80A666 |
+  LDA.L $B68000,X                           ; $80A666 |
 
 CODE_80A66A:
   INX                                       ; $80A66A |
@@ -6495,7 +6481,7 @@ CODE_FN_80A939:
 
 
 CODE_80A948:
-  LDA.L DATA8_B68000,X                      ; $80A948 |
+  LDA.L $B68000,X                           ; $80A948 |
 
 CODE_80A94C:
   INX                                       ; $80A94C |
@@ -6948,7 +6934,7 @@ CODE_FN_80ABD1:
 
 
 CODE_80ABE0:
-  LDA.L DATA8_B68000,X                      ; $80ABE0 |
+  LDA.L $B68000,X                           ; $80ABE0 |
 
 CODE_80ABE4:
   INX                                       ; $80ABE4 |

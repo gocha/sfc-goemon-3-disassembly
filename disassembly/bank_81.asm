@@ -496,11 +496,25 @@ DATA8_818B37:
   db $00,$01,$00,$01                        ; $818B37 |
   db $00,$04                                ; $818B3B |
 
-DATA16_818B3D:
-  dw $8000,$8006,$800A,$800E                ; $818B3D |
-  dw $8011,$8018,$801F,$8026                ; $818B45 |
-  dw $802D,$8031,$8038,$803E                ; $818B4D |
-  dw $8043,$8047,$804A,$804D                ; $818B55 |
+; Pointers to null-terminated strings in bank $BD.
+dictionary_texts:
+  dw $8000                                  ; $818B3D | (cmd $D0) -shita."\n
+  dw $8006                                  ; $818B3F | (cmd $D1) 
+  dw $800A                                  ; $818B41 | (cmd $D2) 
+  dw $800E                                  ; $818B43 | (cmd $D3) 
+  dw $8011                                  ; $818B45 | (cmd $D4) 
+  dw $8018                                  ; $818B47 | (cmd $D5) 
+  dw $801F                                  ; $818B49 | (cmd $D6) 
+  dw $8026                                  ; $818B4B | (cmd $D7) 
+  dw $802D                                  ; $818B4D | (cmd $D8) 
+  dw $8031                                  ; $818B4F | (cmd $D9) 
+  dw $8038                                  ; $818B51 | (cmd $DA) 
+  dw $803E                                  ; $818B53 | (cmd $DB) 
+  dw $8043                                  ; $818B55 | (cmd $DC) 
+  dw $8047                                  ; $818B57 | (cmd $DD) 
+  dw $804A                                  ; $818B59 | (cmd $DE) 
+  dw $804D                                  ; $818B5B | (cmd $DF) 
+
   db $A9,$55,$FD,$21,$26,$27,$28,$1A        ; $818B5D |
   db $29,$1D,$00,$59,$1C,$2A,$21,$2A        ; $818B65 |
   db $28,$20,$21,$FF,$6F,$55,$FD,$21        ; $818B6D |

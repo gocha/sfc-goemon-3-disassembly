@@ -104,3 +104,6 @@ F2 5A 95
 
 This command copies 6 characters from the text at offset `0x955A`,
 which corresponds to ROM address `$BD955A`.
+
+The referenced bytes are treated as character codes, not text stream commands.
+Values in the 0xC0-0xFF range are therefore not normally expected in the referenced data.

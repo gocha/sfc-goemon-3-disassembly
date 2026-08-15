@@ -1,12 +1,34 @@
-# Japanese text reader
-
 from pathlib import Path
+
 
 ROM_PATH = Path("base.sfc")
 
+# Scan these LoROM banks.
+BANKS = [0xB6, 0xBD]
+
+# Number of bytes examined when looking for text-like regions.
+WINDOW_SIZE = 32
+
+# Minimum number of 00-BF bytes in a window.
+MIN_CHAR_CODES = 12
+
+# Merge nearby candidate windows.
+MERGE_DISTANCE = 8
+
+# Maximum number of commands decoded from a candidate.
+MAX_COMMANDS = 256
+
+
+# ----------------------------------------------------------------------
+# Character table
+# ----------------------------------------------------------------------
+
 CHAR_MAP = {
-    # 判明した文字コードを追加していく
+    0x04: "\n",
+    0x16: "[normal]",
+    0x17: "[red]",
     0x18: "　",
+
     0x1A: "あ",
     0x1B: "い",
     0x1C: "う",
@@ -67,6 +89,7 @@ CHAR_MAP = {
     0x53: "▶",
     0x54: "▲",
     0x55: "▼",
+
     0x58: "０",
     0x59: "１",
     0x5A: "２",
@@ -78,6 +101,7 @@ CHAR_MAP = {
     0x60: "８",
     0x61: "９",
 
+    0x68: "コ",
     0x69: "エ",
     0x6A: "モ",
     0x6B: "ン",
@@ -86,11 +110,11 @@ CHAR_MAP = {
     0x6E: "サ",
     0x6F: "ケ",
     0x70: "ヤ",
-    # 0x71 金?
 
     0x74: "両",
     0x75: "丸",
     0x76: "ー",
+    0x77: "金",
 
     0x78: "・",
     0x79: "？",
@@ -136,108 +160,348 @@ CHAR_MAP = {
     0xAD: "ピ",
 }
 
-UNKNOWN = "?"
 
-# 候補として表示する最低既知文字数
-MIN_KNOWN_CHARS = 3
+PREDEFINED_TEXT = {
+    0xD0: "した。」\n",
+    0xD1: "！」\n",
+    0xD2: "。」\n",
+    0xD3: "」\n",
+    0xD4: "ゴエモン　「",
+    0xD5: "エビス丸　「",
+    0xD6: "サスケ　　「",
+    0xD7: "ヤエ　　　「",
+    0xD8: "・・・",
+    0xD9: "　　　　　　",
+    0xDA: "　　　　　",
+    0xDB: "　　　　",
+    0xDC: "　　　",
+    0xDD: "　　",
+    0xDE: "はん",
+    0xDF: "ござる",
+}
 
-# 既知文字の途中に許容する未知バイト数
-MAX_UNKNOWN_RUN = 2
 
-# スキャン対象
-BANKS = [
-    0xB6,
-    0xBD,
-]
+# ----------------------------------------------------------------------
+# Address conversion
+# ----------------------------------------------------------------------
+
+def snes_to_file(address):
+    """Convert a LoROM SNES address to a ROM file offset."""
+
+    bank = (address >> 16) & 0xFF
+    offset = address & 0xFFFF
+
+    if offset < 0x8000:
+        return None
+
+    rom_bank = bank & 0x3F
+
+    return rom_bank * 0x8000 + (offset - 0x8000)
 
 
-def format_text(data):
-    return "".join(
-        CHAR_MAP.get(value, UNKNOWN)
-        for value in data
-    )
+def file_to_snes(file_offset):
+    """Convert a ROM file offset to a LoROM SNES address."""
+
+    bank = file_offset // 0x8000
+    offset = file_offset % 0x8000
+
+    return ((bank | 0x80) << 16) | (offset + 0x8000)
 
 
-def find_candidate_regions(data):
+def offset_to_snes(offset):
+    """Convert a 16-bit text offset to its SNES address."""
+
+    offset &= 0xFFFF
+
+    if offset < 0x8000:
+        return 0xB68000 + offset
+
+    return 0xBD0000 + offset
+
+
+def read_text_byte(data, offset):
     """
-    既知文字を含む候補領域を探す。
+    Read one byte using the game's 16-bit text offset scheme.
 
-    未知バイトも MAX_UNKNOWN_RUN 個までは、
-    同じ候補領域として扱う。
+    The offset is interpreted as:
+        0x0000-0x7FFF -> $B68000-$B6FFFF
+        0x8000-0xFFFF -> $BD8000-$BDFFFF
     """
+
+    offset &= 0xFFFF
+
+    address = offset_to_snes(offset)
+    file_offset = snes_to_file(address)
+
+    if file_offset is None or file_offset >= len(data):
+        return None
+
+    return data[file_offset]
+
+
+# ----------------------------------------------------------------------
+# Candidate search
+# ----------------------------------------------------------------------
+
+def find_candidates(data, bank):
+    """
+    Find regions containing many 00-BF bytes.
+
+    Returns a list of (start_file_offset, end_file_offset).
+    """
+
+    bank_start = snes_to_file(bank << 16 | 0x8000)
 
     candidates = []
 
-    start = None
-    known_count = 0
-    unknown_count = 0
+    for pos in range(
+        bank_start,
+        bank_start + 0x8000 - WINDOW_SIZE + 1,
+    ):
+        window = data[pos:pos + WINDOW_SIZE]
 
-    for i, value in enumerate(data):
+        char_count = sum(byte <= 0xBF for byte in window)
 
-        if value in CHAR_MAP:
+        if char_count >= MIN_CHAR_CODES:
+            candidates.append(pos)
 
-            if start is None:
-                start = i
-                known_count = 0
-                unknown_count = 0
+    # Merge overlapping / nearby windows.
+    regions = []
 
-            known_count += 1
-            unknown_count = 0
+    for pos in candidates:
 
-        elif start is not None:
+        if not regions:
+            regions.append([pos, pos + WINDOW_SIZE])
+            continue
 
-            unknown_count += 1
+        start, end = regions[-1]
 
-            if unknown_count > MAX_UNKNOWN_RUN:
+        if pos <= end + MERGE_DISTANCE:
+            regions[-1][1] = pos + WINDOW_SIZE
+        else:
+            regions.append([pos, pos + WINDOW_SIZE])
 
-                # 未知バイト列の直前までを候補とする
-                end = i - unknown_count + 1
-
-                if known_count >= MIN_KNOWN_CHARS:
-                    candidates.append((start, end))
-
-                start = None
-                known_count = 0
-                unknown_count = 0
-
-    # バンク末尾まで候補が続いていた場合
-    if start is not None and known_count >= MIN_KNOWN_CHARS:
-        candidates.append((start, len(data)))
-
-    return candidates
+    return regions
 
 
-def scan_bank(rom, bank):
+# ----------------------------------------------------------------------
+# Text decoding
+# ----------------------------------------------------------------------
 
-    # LoROM の PC offset
-    bank_offset = (bank & 0x7F) * 0x8000
+def decode_character(code):
+    """Decode a byte as a character code."""
 
-    # $xx:8000-$xx:FFFF
-    data = rom[bank_offset:bank_offset + 0x8000]
+    return CHAR_MAP.get(code, f"<{code:02X}>")
 
-    print()
-    print(f"===== BANK ${bank:02X} =====")
 
-    for start, end in find_candidate_regions(data):
+def decode_stream(data, file_offset, max_commands=MAX_COMMANDS):
+    """
+    Decode a text stream beginning at a ROM file offset.
 
-        address = (bank << 16) | (0x8000 + start)
+    F0-FF copies bytes from the referenced text offset.
+    Copied bytes are emitted directly and are NOT interpreted
+    as text stream commands.
 
-        raw = data[start:end]
-        text = format_text(raw)
+    Unknown character codes are represented by '?'.
 
-        print(
-            f"${address:06X}  "
-            f"{text:<300}  "
-            f"[{raw.hex(' ')}]"
+    Returns:
+        (text, consumed_bytes)
+    """
+
+    output = []
+    pos = file_offset
+
+    for _ in range(max_commands):
+
+        if pos >= len(data):
+            break
+
+        command = data[pos]
+        pos += 1
+
+        # Terminator.
+        if command == 0x00:
+            return "".join(output), pos - file_offset
+
+        # 00-BF: character.
+        if command <= 0xBF:
+            output.append(decode_character(command))
+            continue
+
+        # C0-CF: repeat space.
+        if command <= 0xCF:
+            count = command - 0xC0 + 2
+            output.append("　" * count)
+            continue
+
+        # D0-DF: predefined text.
+        if command <= 0xDF:
+            text = PREDEFINED_TEXT.get(command)
+
+            if text is None:
+                break
+
+            output.append(text)
+            continue
+
+        # E0-EF: repeat following character.
+        if command <= 0xEF:
+
+            if pos >= len(data):
+                break
+
+            char_code = data[pos]
+            pos += 1
+
+            count = command - 0xE0 + 3
+
+            output.append(
+                decode_character(char_code) * count
+            )
+
+            continue
+
+        # F0-FF: copy from offset.
+        if command <= 0xFF:
+
+            if pos + 1 >= len(data):
+                break
+
+            copy_offset = (
+                data[pos]
+                | (data[pos + 1] << 8)
+            )
+            pos += 2
+
+            count = command - 0xF0 + 4
+
+            copied = []
+
+            for i in range(count):
+
+                source_offset = (
+                    copy_offset + i
+                ) & 0xFFFF
+
+                value = read_text_byte(
+                    data,
+                    source_offset,
+                )
+
+                if value is None or value > 0xBF:
+                    # The referenced data is not a valid text sequence.
+                    return "", 0
+
+                copied.append(decode_character(value))
+
+            output.append("".join(copied))
+            continue
+
+    return "".join(output), pos - file_offset
+
+
+# ----------------------------------------------------------------------
+# Dump
+# ----------------------------------------------------------------------
+
+def hexdump(data, start, length):
+    values = data[start:start + length]
+
+    return " ".join(
+        f"{value:02X}"
+        for value in values
+    )
+
+
+def dump_region(data, start, end):
+    """
+    Try every byte in a candidate region as a possible
+    text-stream start.
+    """
+
+    used = set()
+
+    pos = start
+
+    while pos < end:
+
+        if pos in used:
+            pos += 1
+            continue
+
+        command = data[pos]
+
+        # Do not start a candidate with an unknown character code.
+        if command == 0x04 or (command <= 0xBF and command not in CHAR_MAP):
+            pos += 1
+            continue
+
+        text, consumed = decode_stream(data, pos)
+
+        if consumed <= 0:
+            pos += 1
+            continue
+
+        raw = data[pos:pos + consumed]
+
+        # Require some actual character codes.
+        char_count = sum(
+            byte <= 0xBF
+            for byte in raw
         )
 
+        if char_count < MIN_CHAR_CODES:
+            pos += 1
+            continue
+
+        # Require at least some recognizable characters.
+        known_count = sum(
+            byte in CHAR_MAP
+            for byte in raw
+            if byte <= 0xBF
+        )
+
+        if known_count < 4:
+            pos += 1
+            continue
+
+        address = file_to_snes(pos)
+
+        print(f"${address:06X}")
+        print(f"  {hexdump(data, pos, consumed)}")
+        print(f"  {text}")
+        print()
+
+        # Avoid dumping the same stream repeatedly.
+        for i in range(pos, pos + consumed):
+            used.add(i)
+
+        pos += consumed
+
+
+# ----------------------------------------------------------------------
+# Main
+# ----------------------------------------------------------------------
 
 def main():
 
-    rom = ROM_PATH.read_bytes()
+    data = ROM_PATH.read_bytes()
+
+    print(f"ROM size: ${len(data):X}")
 
     for bank in BANKS:
-        scan_bank(rom, bank)
+
+        print()
+        print("=" * 72)
+        print(f"Bank ${bank:02X}")
+        print("=" * 72)
+
+        regions = find_candidates(data, bank)
+
+        print(f"Candidate regions: {len(regions)}")
+
+        for start, end in regions:
+            dump_region(data, start, end)
 
 
 if __name__ == "__main__":

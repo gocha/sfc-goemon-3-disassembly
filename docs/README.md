@@ -6,26 +6,26 @@
 
 ## Bank Overview
 
-| Bank     | Summary                                                      |
-| -------- | ------------------------------------------------------------ |
-| $80      | Program code                                                 |
-| $81      | Program data (constants and tables)                          |
-| $82      | Unknown code                                                 |
-| $83      | Unknown code                                                 |
-| $84      | Asset loading, decompression, transfer, and 65816 sound code |
-| $85      | Unknown code                                                 |
-| $86      | Unknown code                                                 |
-| $87      | Unknown data and code                                        |
-| $88      | Asset location and transfer information                      |
-| $89      | Unknown data and code                                        |
-| $8A      | Unknown data and code                                        |
-| $8B      | Unknown code                                                 |
-| $8C      | Unknown code                                                 |
-| $8D      | Unknown code                                                 |
-| $8E-$B4  | Primarily asset data, with minor code                        |
-| $B5      | Unknown data                                                 |
-| $B6      | Text data (low bank)                                         |
-| $B7      | SPC700 code and unknown data                                 |
-| $B8-$BC  | Unknown data                                                 |
-| $BD      | Text data (high bank)                                        |
-| $BE-$BF  | Unknown data                                                 |
+| Bank       | Summary                                                      |
+| ---------- | ------------------------------------------------------------ |
+| `$80`      | Program code                                                 |
+| `$81`      | Program data (constants and tables)                          |
+| `$82`      | Unknown code                                                 |
+| `$83`      | Unknown code                                                 |
+| `$84`      | Asset loading, decompression, transfer, and 65816 sound code |
+| `$85`      | Unknown code                                                 |
+| `$86`      | Unknown code                                                 |
+| `$87`      | Unknown data and code                                        |
+| `$88`      | Asset location and transfer information                      |
+| `$89`      | Unknown data and code                                        |
+| `$8A`      | Unknown data and code                                        |
+| `$8B`      | Unknown code                                                 |
+| `$8C`      | Unknown code                                                 |
+| `$8D`      | Unknown code                                                 |
+| `$8E-$B4`  | Primarily asset data, with minor code                        |
+| `$B5`      | Unknown data                                                 |
+| `$B6`      | Text data (low bank)                                         |
+| `$B7`      | SPC700 code and unknown data                                 |
+| `$B8-$BC`  | Unknown data                                                 |
+| `$BD`      | Text data (high bank)                                        |
+| `$BE-$BF`  | Unknown data                                                 |

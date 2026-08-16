@@ -3,3 +3,28 @@
 - [Asset Table Format](asset-table.md)
 - [Konami SNES Compression Format](konami-snes-compression.md)
 - [Text Format](text-format.md)
+
+## Bank Overview
+
+| Bank     | Summary                                 |
+| -------- | --------------------------------------- |
+| $80      | Program code                            |
+| $81      | Program data (constants and tables)     |
+| $82      | Unknown code                            |
+| $83      | Unknown code                            |
+| $84      | Asset loading and decompression code    |
+| $85      | Unknown code                            |
+| $86      | Unknown code                            |
+| $87      | Unknown data and code                   |
+| $88      | Asset location and transfer information |
+| $89      | Unknown data and code                   |
+| $8A      | Unknown data and code                   |
+| $8B      | Unknown code                            |
+| $8C      | Unknown code                            |
+| $8D      | Unknown code                            |
+| $8E-$B4  | Asset data and unknown code             |
+| $B5      | Unknown data                            |
+| $B6      | Text data (low bank)                    |
+| $B7-$BC  | Unknown data                            |
+| $BD      | Text data (high bank)                   |
+| $BE-$BF  | Unknown data                            |

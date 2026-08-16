@@ -22,7 +22,7 @@
 | $8B      | Unknown code                            |
 | $8C      | Unknown code                            |
 | $8D      | Unknown code                            |
-| $8E-$B4  | Asset data and unknown code             |
+| $8E-$B4  | Primarily asset data, with minor code   |
 | $B5      | Unknown data                            |
 | $B6      | Text data (low bank)                    |
 | $B7-$BC  | Unknown data                            |

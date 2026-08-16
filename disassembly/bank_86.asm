@@ -2923,13 +2923,13 @@ CODE_FL_86958B:
   LSR A                                     ; $869597 |
   TAX                                       ; $869598 |
   SEP #$20                                  ; $869599 |
-  LDA.B $86                                 ; $86959B |
+  LDA.B !r_rng                              ; $86959B |
   ADC.L $808000,X                           ; $86959D |
   XBA                                       ; $8695A1 |
   LDA.B $87                                 ; $8695A2 |
   EOR.L $828000,X                           ; $8695A4 |
   REP #$20                                  ; $8695A8 |
-  STA.B $86                                 ; $8695AA |
+  STA.B !r_rng                              ; $8695AA |
   INC.W $1C92                               ; $8695AC |
   INC.W $1C92                               ; $8695AF |
   INC.W $1C92                               ; $8695B2 |
@@ -7965,7 +7965,7 @@ CODE_FL_86B8BD:
 CODE_86B8D9:
   ASL A                                     ; $86B8D9 |
   STA.B $00                                 ; $86B8DA |
-  JSL.L CODE_FL_86C432                      ; $86B8DC |
+  JSL.L rng_advance                         ; $86B8DC |
   AND.W #$000F                              ; $86B8E0 |
   ADC.W #$001C                              ; $86B8E3 |
   SBC.B $00                                 ; $86B8E6 |
@@ -7982,7 +7982,7 @@ CODE_86B8D9:
   LDA.B $16                                 ; $86B8FF |
   JSL.L CODE_FL_86CAE6                      ; $86B901 |
   JSL.L CODE_FL_86C7C4                      ; $86B905 |
-  LDA.B $86                                 ; $86B909 |
+  LDA.B !r_rng                              ; $86B909 |
   AND.W #$0060                              ; $86B90B |
   ORA.W #$9898                              ; $86B90E |
   STA.W $0004,Y                             ; $86B911 |
@@ -9587,17 +9587,17 @@ CODE_FL_86C42B:
   LDA.B $1A,X                               ; $86C42F |
   RTL                                       ; $86C431 |
 
-CODE_FL_86C432:
-  LDA.B $86                                 ; $86C432 |
+rng_advance:
+  LDA.B !r_rng                              ; $86C432 |
   ASL A                                     ; $86C434 |
-  ADC.B $86                                 ; $86C435 |
+  ADC.B !r_rng                              ; $86C435 |
   ASL A                                     ; $86C437 |
   ASL A                                     ; $86C438 |
   ASL A                                     ; $86C439 |
-  SBC.B $86                                 ; $86C43A |
+  SBC.B !r_rng                              ; $86C43A |
   ADC.W $1C38                               ; $86C43C |
-  EOR.B $86                                 ; $86C43F |
-  STA.B $86                                 ; $86C441 |
+  EOR.B !r_rng                              ; $86C43F |
+  STA.B !r_rng                              ; $86C441 |
   RTL                                       ; $86C443 |
 
 CODE_FL_86C444:
@@ -9607,7 +9607,7 @@ CODE_FL_86C444:
   LDX.B $DE                                 ; $86C44A |
   LDA.B $18,X                               ; $86C44C |
   BEQ CODE_86C460                           ; $86C44E |
-  LDA.B $86                                 ; $86C450 |
+  LDA.B !r_rng                              ; $86C450 |
   LSR A                                     ; $86C452 |
   LDA.W #$00DC                              ; $86C453 |
   BCC CODE_86C45B                           ; $86C456 |
@@ -9661,7 +9661,7 @@ CODE_JL_86C49B:
   STA.B $04,X                               ; $86C49B |
   RTL                                       ; $86C49D |
 
-  LDA.B $86                                 ; $86C49E |
+  LDA.B !r_rng                              ; $86C49E |
   CMP.W #$8000                              ; $86C4A0 |
   BRA CODE_86C491                           ; $86C4A3 |
 
@@ -10085,7 +10085,7 @@ CODE_86C73C:
   TYA                                       ; $86C73C |
   STA.B $26,X                               ; $86C73D |
   TAY                                       ; $86C73F |
-  LDA.B $86                                 ; $86C740 |
+  LDA.B !r_rng                              ; $86C740 |
   BMI CODE_86C74A                           ; $86C742 |
   TYA                                       ; $86C744 |
   EOR.W #$FFFF                              ; $86C745 |
@@ -15064,7 +15064,7 @@ CODE_86EB27:
   JSL.L CODE_FL_86C70D                      ; $86EB27 |
   STZ.B $28,X                               ; $86EB2B |
   STZ.B $26,X                               ; $86EB2D |
-  LDA.B $86                                 ; $86EB2F |
+  LDA.B !r_rng                              ; $86EB2F |
   LSR A                                     ; $86EB31 |
   BCS CODE_86EB39                           ; $86EB32 |
   LDA.W #$006B                              ; $86EB34 |
@@ -17347,7 +17347,7 @@ CODE_86FC40:
   LDA.W #$000F                              ; $86FC53 |
 
 CODE_86FC56:
-  AND.B $86                                 ; $86FC56 |
+  AND.B !r_rng                              ; $86FC56 |
   ASL A                                     ; $86FC58 |
   TAY                                       ; $86FC59 |
   LDA.W LOOSE_OP_00CFED,Y                   ; $86FC5A |
@@ -17417,7 +17417,7 @@ CODE_86FCC8:
   LDA.W #$0100                              ; $86FCCE |
   LDY.W $0DE0                               ; $86FCD1 |
   BEQ CODE_86FCE0                           ; $86FCD4 |
-  LDA.B $86                                 ; $86FCD6 |
+  LDA.B !r_rng                              ; $86FCD6 |
   AND.W #$0003                              ; $86FCD8 |
   ASL A                                     ; $86FCDB |
   TAY                                       ; $86FCDC |

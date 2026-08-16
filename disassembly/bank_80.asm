@@ -117,12 +117,12 @@ start:
   LDA.W #$0000                              ; $8080E5 |\ Direct page 0
   TCD                                       ; $8080E8 |/
 
-  LDA.B $4C                                 ; $8080E9 |\ Skip RNG update in demo play
+  LDA.B !r_demo_flag                        ; $8080E9 |\ Skip RNG update in demo play
   BNE .after_random                         ; $8080EB |/
 
-  LDA.B $86                                 ; $8080ED |\
+  LDA.B !r_rng                              ; $8080ED |\
   ADC.B $42                                 ; $8080EF | | Update RNG until next NMI
-  STA.B $86                                 ; $8080F1 |/
+  STA.B !r_rng                              ; $8080F1 |/
 
 .after_random
   BRA .main_loop                            ; $8080F3 |
@@ -737,7 +737,7 @@ CODE_808531:
 CODE_808535:
   LDX.B $3C                                 ; $808535 |
   BNE CODE_808541                           ; $808537 |
-  STZ.B $4C                                 ; $808539 |
+  STZ.B !r_demo_flag                        ; $808539 |
 
 CODE_80853B:
   LDX.W #$0050                              ; $80853B |
@@ -880,13 +880,13 @@ CODE_808605:
 
 CODE_FN_808606:
   LDA.W #$0001                              ; $808606 |
-  STA.B $4C                                 ; $808609 |
+  STA.B !r_demo_flag                        ; $808609 |
   RTS                                       ; $80860B |
 
 
 CODE_FN_80860C:
   JSL.L CODE_FL_808613                      ; $80860C |
-  STZ.B $4C                                 ; $808610 |
+  STZ.B !r_demo_flag                        ; $808610 |
   RTS                                       ; $808612 |
 
 
@@ -11730,7 +11730,7 @@ CODE_FL_80C876:
 
 
 CODE_FL_80C885:
-  LDA.W $004C                               ; $80C885 |
+  LDA.W !r_demo_flag                        ; $80C885 |
   ORA.W $00E4                               ; $80C888 |
   ORA.W $0076                               ; $80C88B |
   ORA.W $0046                               ; $80C88E |
@@ -11819,7 +11819,7 @@ CODE_JL_80C896:
   STZ.B $70                                 ; $80C95A |
   STZ.B $72                                 ; $80C95C |
   LDA.W #$0001                              ; $80C95E |
-  STA.B $4C                                 ; $80C961 |
+  STA.B !r_demo_flag                        ; $80C961 |
 
   RTL                                       ; $80C963 |
 

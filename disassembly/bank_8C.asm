@@ -7236,7 +7236,7 @@ CODE_8CB364:
   AND.W #$001F                              ; $8CB366 |
   BNE CODE_8CB377                           ; $8CB369 |
   JSL.L CODE_FL_8CFBAE                      ; $8CB36B |
-  JSL.L CODE_FL_86C432                      ; $8CB36F |
+  JSL.L rng_advance                         ; $8CB36F |
   JSL.L CODE_FL_8CFBB6                      ; $8CB373 |
 
 CODE_8CB377:
@@ -11685,7 +11685,7 @@ CODE_8CD628:
   JSL.L CODE_FL_86C9A4                      ; $8CD637 |
   BCS CODE_8CD655                           ; $8CD63B |
   PHY                                       ; $8CD63D |
-  JSL.L CODE_FL_86C432                      ; $8CD63E |
+  JSL.L rng_advance                         ; $8CD63E |
   PLY                                       ; $8CD642 |
   AND.W #$007F                              ; $8CD643 |
   ADC.W #$0040                              ; $8CD646 |
@@ -17330,8 +17330,8 @@ CODE_8CFE16:
 
 CODE_FL_8CFE19:
   STA.B $00                                 ; $8CFE19 |
-  JSL.L CODE_FL_86C432                      ; $8CFE1B |
-  LDA.B $86                                 ; $8CFE1F |
+  JSL.L rng_advance                         ; $8CFE1B |
+  LDA.B !r_rng                              ; $8CFE1F |
   AND.W #$007F                              ; $8CFE21 |
   ADC.B $00                                 ; $8CFE24 |
   STA.B $2C,X                               ; $8CFE26 |
@@ -17339,7 +17339,7 @@ CODE_FL_8CFE19:
 
 CODE_FL_8CFE29:
   JSL.L CODE_FL_86C887                      ; $8CFE29 |
-  LDA.B $86                                 ; $8CFE2D |
+  LDA.B !r_rng                              ; $8CFE2D |
   BMI CODE_8CFE35                           ; $8CFE2F |
   JSL.L CODE_FL_86CB6A                      ; $8CFE31 |
 

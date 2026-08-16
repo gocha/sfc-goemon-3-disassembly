@@ -4783,7 +4783,7 @@ CODE_85A532:
   STA.W $0002,Y                             ; $85A553 |
   LDA.W #$1898                              ; $85A556 |
   STA.W $0004,Y                             ; $85A559 |
-  LDA.B $86                                 ; $85A55C |
+  LDA.B !r_rng                              ; $85A55C |
   AND.W #$000F                              ; $85A55E |
   ADC.B $0D,X                               ; $85A561 |
   STA.W $000D,Y                             ; $85A563 |
@@ -5172,7 +5172,7 @@ CODE_85A7E0:
 
 CODE_85A7F6:
   STA.B $00                                 ; $85A7F6 |
-  JSL.L CODE_FL_86C432                      ; $85A7F8 |
+  JSL.L rng_advance                         ; $85A7F8 |
   AND.W #$000F                              ; $85A7FC |
   CLC                                       ; $85A7FF |
   ADC.W #$0020                              ; $85A800 |
@@ -5492,7 +5492,7 @@ CODE_FL_85AA07:
 CODE_FL_85AA0F:
   LDA.W #$C000                              ; $85AA0F |
   STA.B $00                                 ; $85AA12 |
-  JSL.L CODE_FL_86C432                      ; $85AA14 |
+  JSL.L rng_advance                         ; $85AA14 |
   CMP.B $00                                 ; $85AA18 |
   BCS CODE_85AA6F                           ; $85AA1A |
   AND.W #$000F                              ; $85AA1C |
@@ -6091,7 +6091,7 @@ CODE_FL_85AD8B:
 CODE_85ADA7:
   ASL A                                     ; $85ADA7 |
   STA.B $00                                 ; $85ADA8 |
-  JSL.L CODE_FL_86C432                      ; $85ADAA |
+  JSL.L rng_advance                         ; $85ADAA |
   AND.W #$000F                              ; $85ADAE |
   ADC.W #$001C                              ; $85ADB1 |
   SBC.B $00                                 ; $85ADB4 |
@@ -6110,7 +6110,7 @@ CODE_85ADA7:
   LDA.B $16                                 ; $85ADD1 |
   JSL.L CODE_FL_86CAE6                      ; $85ADD3 |
   JSL.L CODE_FL_86C7C4                      ; $85ADD7 |
-  LDA.B $86                                 ; $85ADDB |
+  LDA.B !r_rng                              ; $85ADDB |
   AND.W #$0060                              ; $85ADDD |
   ORA.W #$9090                              ; $85ADE0 |
   STA.W $0004,Y                             ; $85ADE3 |
@@ -7259,16 +7259,16 @@ CODE_FL_85B50F:
 
 CODE_FL_85B51A:
   STA.B $00                                 ; $85B51A |
-  JSL.L CODE_FL_86C432                      ; $85B51C |
-  LDA.B $86                                 ; $85B520 |
+  JSL.L rng_advance                         ; $85B51C |
+  LDA.B !r_rng                              ; $85B520 |
   AND.W #$007F                              ; $85B522 |
   ADC.B $00                                 ; $85B525 |
   RTL                                       ; $85B527 |
 
 CODE_FL_85B528:
   STA.B $00                                 ; $85B528 |
-  JSL.L CODE_FL_86C432                      ; $85B52A |
-  LDA.B $86                                 ; $85B52E |
+  JSL.L rng_advance                         ; $85B52A |
+  LDA.B !r_rng                              ; $85B52E |
   AND.B $00                                 ; $85B530 |
   BNE CODE_85B535                           ; $85B532 |
   INC A                                     ; $85B534 |

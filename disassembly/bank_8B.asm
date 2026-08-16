@@ -7662,7 +7662,7 @@ PTR16_8BB6C2:
   STA.B $02                                 ; $8BB705 |
 
 CODE_8BB707:
-  JSL.L CODE_FL_86C432                      ; $8BB707 |
+  JSL.L rng_advance                         ; $8BB707 |
   JSR.W CODE_FN_8BB867                      ; $8BB70B |
   BCS CODE_8BB72A                           ; $8BB70E |
   LDA.W #$0047                              ; $8BB710 |
@@ -8267,7 +8267,7 @@ CODE_8BBB39:
   JSL.L CODE_FL_86C9A4                      ; $8BBB46 |
   BCS CODE_8BBB5F                           ; $8BBB4A |
   JSL.L CODE_FL_86C7C4                      ; $8BBB4C |
-  JSL.L CODE_FL_86C432                      ; $8BBB50 |
+  JSL.L rng_advance                         ; $8BBB50 |
   LDA.B $86                                 ; $8BBB54 |
   AND.W #$000F                              ; $8BBB56 |
   CLC                                       ; $8BBB59 |
@@ -8880,7 +8880,7 @@ CODE_8BBFE5:
   CMP.W #$8000                              ; $8BC015 |
   ROR A                                     ; $8BC018 |
   STA.W $0026,Y                             ; $8BC019 |
-  JSL.L CODE_FL_86C432                      ; $8BC01C |
+  JSL.L rng_advance                         ; $8BC01C |
   BRA CODE_8BBFE5                           ; $8BC020 |
 
 CODE_8BC022:

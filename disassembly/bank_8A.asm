@@ -9769,7 +9769,7 @@ CODE_8AFBA9:
   JML.L CODE_FL_B3FE45                      ; $8AFBC4 |
 
 CODE_FN_8AFBC8:
-  JSL.L CODE_FL_86C432                      ; $8AFBC8 |
+  JSL.L rng_advance                         ; $8AFBC8 |
   JSL.L CODE_FL_8CFBCE                      ; $8AFBCC |
   BCS CODE_8AFBE2                           ; $8AFBD0 |
   LDA.W #$8100                              ; $8AFBD2 |

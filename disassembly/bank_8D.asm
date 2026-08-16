@@ -7321,7 +7321,7 @@ CODE_8DB4FF:
 CODE_8DB513:
   LDA.W #$0052                              ; $8DB513 |
   JSL.L CODE_FL_86CAEE                      ; $8DB516 |
-  JSL.L CODE_FL_86C432                      ; $8DB51A |
+  JSL.L rng_advance                         ; $8DB51A |
   AND.W #$00FF                              ; $8DB51E |
   ADC.W #$0200                              ; $8DB521 |
   EOR.W #$FFFF                              ; $8DB524 |

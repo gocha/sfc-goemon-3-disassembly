@@ -15,3 +15,5 @@
 !r_text_op_arg = $7E7C64                    ; Argument/state value for the current text operation
 !r_text_copy_ptr = $7E7C66                  ; Copy source pointer for an F0-FF command
 !r_text_repeat_char = $7E7C68               ; Repeated character for an E0-EF command
+
+!r_demo_flag = $7E004C                      ; Non-zero during demo play (suppresses idle RNG updates)

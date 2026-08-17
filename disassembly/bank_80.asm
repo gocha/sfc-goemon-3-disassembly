@@ -1608,7 +1608,7 @@ CODE_808AA0:
   ASL A                                     ; $808AA7 |
   ASL A                                     ; $808AA8 |
   TAY                                       ; $808AA9 |
-  LDA.W DATA8_81ABFB,Y                      ; $808AAA |
+  LDA.W DATA8_81ABF8+3,Y                    ; $808AAA |
   AND.W #$00FF                              ; $808AAD |
   STA.B $A0                                 ; $808AB0 |
   PLB                                       ; $808AB2 |
@@ -1674,7 +1674,7 @@ CODE_FL_808ACA:
   CLC                                       ; $808B10 |
   ADC.W #$0100                              ; $808B11 |
   STA.B $0C                                 ; $808B14 |
-  LDA.W DATA8_81ABF9,Y                      ; $808B16 |
+  LDA.W DATA8_81ABF8+1,Y                    ; $808B16 |
   AND.W #$FF00                              ; $808B19 |
   STA.B $00                                 ; $808B1C |
   LDA.B $0A                                 ; $808B1E |
@@ -1712,7 +1712,7 @@ CODE_FL_808ACA:
   PLB                                       ; $808B51 |
   PLB                                       ; $808B52 |
   JSR.W CODE_FN_808B6C                      ; $808B53 |
-  LDA.W DATA8_81ABF9,Y                      ; $808B56 |
+  LDA.W DATA8_81ABF8+1,Y                    ; $808B56 |
   AND.W #$FF00                              ; $808B59 |
   STA.B $00                                 ; $808B5C |
   LDA.B $0A                                 ; $808B5E |
@@ -13492,7 +13492,7 @@ CODE_FL_80D571:
   ASL A                                     ; $80D57E |
   ASL A                                     ; $80D57F |
   TAY                                       ; $80D580 |
-  LDA.W CODE_00ABF8,Y                       ; $80D581 |
+  LDA.W DATA8_81ABF8,Y                      ; $80D581 |
   AND.W #$FF00                              ; $80D584 |
 
   STA.W $1762                               ; $80D587 |

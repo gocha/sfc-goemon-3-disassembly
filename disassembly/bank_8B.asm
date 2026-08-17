@@ -2621,7 +2621,7 @@ CODE_8B92B8:
 
 CODE_8B92B9:
   LDA.W #$01FA                              ; $8B92B9 |
-  JSL.L CODE_FL_86C9A7                      ; $8B92BC |
+  JSL.L spawn_item_drop                     ; $8B92BC |
   BCS CODE_8B92CD                           ; $8B92C0 |
   STX.B $3A,Y                               ; $8B92C2 |
   STY.B $44,X                               ; $8B92C4 |
@@ -5383,7 +5383,7 @@ CODE_FN_8BA61C:
   AND.W #$007F                              ; $8BA624 |
   BNE CODE_8BA657                           ; $8BA627 |
   LDA.W #$00E3                              ; $8BA629 |
-  JSL.L CODE_FL_86C9A7                      ; $8BA62C |
+  JSL.L spawn_item_drop                     ; $8BA62C |
   BCS CODE_8BA657                           ; $8BA630 |
   PHX                                       ; $8BA632 |
   TYX                                       ; $8BA633 |
@@ -5427,7 +5427,7 @@ CODE_FN_8BA66C:
   JSR.W CODE_FN_8BA5F7                      ; $8BA66E |
   CMP.B $08                                 ; $8BA671 |
   BCS CODE_8BA679                           ; $8BA673 |
-  JSL.L CODE_FL_85AAA5                      ; $8BA675 |
+  JSL.L drop_fuel                           ; $8BA675 |
 
 CODE_8BA679:
   RTS                                       ; $8BA679 |
@@ -6328,7 +6328,7 @@ CODE_FN_8BACC6:
 CODE_8BACC7:
   PHA                                       ; $8BACC7 |
   LDA.W #$0108                              ; $8BACC8 |
-  JSL.L CODE_FL_86C9A7                      ; $8BACCB |
+  JSL.L spawn_item_drop                     ; $8BACCB |
   PLA                                       ; $8BACCF |
   BCS CODE_8BACD5                           ; $8BACD0 |
   STA.W $004E,Y                             ; $8BACD2 |
@@ -7399,7 +7399,7 @@ CODE_8BB515:
   LDA.W #$0174                              ; $8BB515 |
 
 CODE_8BB518:
-  JSL.L CODE_FL_86C9A7                      ; $8BB518 |
+  JSL.L spawn_item_drop                     ; $8BB518 |
   BCS CODE_8BB535                           ; $8BB51C |
   JSL.L CODE_FL_86C7C4                      ; $8BB51E |
   LDA.B $04,X                               ; $8BB522 |
@@ -8121,7 +8121,7 @@ CODE_8BBA20:
 
 CODE_8BBA36:
   LDA.W #$A000                              ; $8BBA36 |
-  JSL.L CODE_FL_85AA0F                      ; $8BBA39 |
+  JSL.L try_drop_item                       ; $8BBA39 |
   JSL.L CODE_FL_85A986                      ; $8BBA3D |
   INC.B $1A,X                               ; $8BBA41 |
   RTL                                       ; $8BBA43 |
@@ -14544,7 +14544,7 @@ CODE_8BE982:
   RTS                                       ; $8BE984 |
 
 CODE_FN_8BE985:
-  JSL.L CODE_FL_86C9A7                      ; $8BE985 |
+  JSL.L spawn_item_drop                     ; $8BE985 |
   BCS CODE_8BE992                           ; $8BE989 |
   LDA.W #$0A00                              ; $8BE98B |
   STA.W $004E,Y                             ; $8BE98E |
@@ -14694,7 +14694,7 @@ CODE_8BEA8D:
 
 CODE_8BEA99:
   LDA.W #$0167                              ; $8BEA99 |
-  JSL.L CODE_FL_86C9A7                      ; $8BEA9C |
+  JSL.L spawn_item_drop                     ; $8BEA9C |
   LDA.W #$00E8                              ; $8BEAA0 |
   STA.W $0009,Y                             ; $8BEAA3 |
   LDA.W #$0078                              ; $8BEAA6 |
@@ -14704,7 +14704,7 @@ CODE_8BEA99:
   TXA                                       ; $8BEAB2 |
   STA.W $0048,Y                             ; $8BEAB3 |
   LDA.W #$0168                              ; $8BEAB6 |
-  JSL.L CODE_FL_86C9A7                      ; $8BEAB9 |
+  JSL.L spawn_item_drop                     ; $8BEAB9 |
   LDA.W #$0018                              ; $8BEABD |
   STA.W $0009,Y                             ; $8BEAC0 |
   LDA.W #$0078                              ; $8BEAC3 |
@@ -14714,7 +14714,7 @@ CODE_8BEA99:
   TXA                                       ; $8BEACF |
   STA.W $0048,Y                             ; $8BEAD0 |
   LDA.W #$0170                              ; $8BEAD3 |
-  JSL.L CODE_FL_86C9A7                      ; $8BEAD6 |
+  JSL.L spawn_item_drop                     ; $8BEAD6 |
   LDA.W #$0050                              ; $8BEADA |
   STA.W $0009,Y                             ; $8BEADD |
   LDA.W #$0080                              ; $8BEAE0 |
@@ -14722,7 +14722,7 @@ CODE_8BEA99:
   LDA.W #$0800                              ; $8BEAE6 |
   STA.W $004E,Y                             ; $8BEAE9 |
   LDA.W #$0180                              ; $8BEAEC |
-  JSL.L CODE_FL_86C9A7                      ; $8BEAEF |
+  JSL.L spawn_item_drop                     ; $8BEAEF |
   JSL.L CODE_FL_85AAB6                      ; $8BEAF3 |
   LDA.W #$0001                              ; $8BEAF7 |
   STA.L $7E7D90                             ; $8BEAFA |
@@ -15128,7 +15128,7 @@ CODE_8BEDCE:
   RTS                                       ; $8BEDCE |
 
 CODE_FN_8BEDCF:
-  JSL.L CODE_FL_86C9A7                      ; $8BEDCF |
+  JSL.L spawn_item_drop                     ; $8BEDCF |
   BCS CODE_8BEDF5                           ; $8BEDD3 |
   LDA.B $86                                 ; $8BEDD5 |
   LSR A                                     ; $8BEDD7 |
@@ -15458,7 +15458,7 @@ CODE_8BEFFC:
 
 CODE_8BF00D:
   LDA.W #$016F                              ; $8BF00D |
-  JSL.L CODE_FL_86C9A7                      ; $8BF010 |
+  JSL.L spawn_item_drop                     ; $8BF010 |
   BCS CODE_8BF030                           ; $8BF014 |
   PHY                                       ; $8BF016 |
   LDA.B $00                                 ; $8BF017 |
@@ -15923,7 +15923,7 @@ CODE_8BF336:
   CMP.W #$0002                              ; $8BF339 |
   BNE CODE_8BF36D                           ; $8BF33C |
   LDA.W #$0186                              ; $8BF33E |
-  JSL.L CODE_FL_86C9A7                      ; $8BF341 |
+  JSL.L spawn_item_drop                     ; $8BF341 |
   BCS CODE_8BF36D                           ; $8BF345 |
   TYA                                       ; $8BF347 |
   STA.B $40,X                               ; $8BF348 |
@@ -16167,7 +16167,7 @@ CODE_8BF4D5:
 
 CODE_8BF4ED:
   LDA.W #$018A                              ; $8BF4ED |
-  JSL.L CODE_FL_86C9A7                      ; $8BF4F0 |
+  JSL.L spawn_item_drop                     ; $8BF4F0 |
   PHY                                       ; $8BF4F4 |
   LDY.B $02                                 ; $8BF4F5 |
   PHB                                       ; $8BF4F7 |

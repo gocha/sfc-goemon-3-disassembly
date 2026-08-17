@@ -5489,104 +5489,111 @@ CODE_FL_85AA07:
   STA.B $22,X                               ; $85AA0C |
   RTL                                       ; $85AA0E |
 
-CODE_FL_85AA0F:
-  LDA.W #$C000                              ; $85AA0F |
+;----------------------------------------------------------------
+; Select an item drop, typically after defeating an enemy.
+;
+; There is a 25% chance of dropping an item. The item is selected
+; from one of two 16-entry drop tables based on the current room.
+; Later areas use an alternate table that can contain fuel.
+;----------------------------------------------------------------
+try_drop_item:
+  LDA.W #$C000                              ; $85AA0F | Set drop threshold
   STA.B $00                                 ; $85AA12 |
-  JSL.L rng_advance                         ; $85AA14 |
-  CMP.B $00                                 ; $85AA18 |
-  BCS CODE_85AA6F                           ; $85AA1A |
-  AND.W #$000F                              ; $85AA1C |
+  JSL.L rng_advance                         ; $85AA14 |  Generate random value
+  CMP.B $00                                 ; $85AA18 |\ Skip drop if random value >= 0xC000
+  BCS ret_drop                              ; $85AA1A |/
+  AND.W #$000F                              ; $85AA1C | Select one of 16 drop entries
   STA.B $00                                 ; $85AA1F |
-  LDA.B $8E                                 ; $85AA21 |
-  CMP.W #$0027                              ; $85AA23 |
-  BCS CODE_85AA70                           ; $85AA26 |
+  LDA.B !r_room_id                          ; $85AA21 |  Load current room ID
+  CMP.W #$0027                              ; $85AA23 |\ Use alternate drop table for Neo Edo
+  BCS select_drop_v2                        ; $85AA26 |/
 
-CODE_85AA28:
-  LDA.B $00                                 ; $85AA28 |
-  PHX                                       ; $85AA2A |
-  ASL A                                     ; $85AA2B |
-  TAX                                       ; $85AA2C |
-  LDA.L PTR16_85AA37,X                      ; $85AA2D |
-  PLX                                       ; $85AA31 |
-  STA.B $00                                 ; $85AA32 |
-  JMP.W ($0000)                             ; $85AA34 |
+select_drop_v1:
+  LDA.B $00                                 ; $85AA28 |\
+  PHX                                       ; $85AA2A | |
+  ASL A                                     ; $85AA2B | | Select the drop handler
+  TAX                                       ; $85AA2C | | from the indexed jump table
+  LDA.L drop_handlers_v1,X                  ; $85AA2D | |
+  PLX                                       ; $85AA31 | |
+  STA.B $00                                 ; $85AA32 |/
+  JMP.W ($0000)                             ; $85AA34 | Jump to the selected drop handler
 
-PTR16_85AA37:
-  dw CODE_85AA57                            ; $85AA37 |
-  dw CODE_85AA57                            ; $85AA39 |
-  dw CODE_85AA5C                            ; $85AA3B |
-  dw CODE_85AA5C                            ; $85AA3D |
-  dw CODE_85AA5C                            ; $85AA3F |
-  dw CODE_85AA5C                            ; $85AA41 |
-  dw CODE_85AA61                            ; $85AA43 |
-  dw CODE_85AA61                            ; $85AA45 |
-  dw CODE_85AA57                            ; $85AA47 |
-  dw CODE_85AA57                            ; $85AA49 |
-  dw CODE_85AA5C                            ; $85AA4B |
-  dw CODE_85AA5C                            ; $85AA4D |
-  dw CODE_85AA5C                            ; $85AA4F |
-  dw CODE_85AA5C                            ; $85AA51 |
-  dw CODE_85AA61                            ; $85AA53 |
-  dw CODE_85AA66                            ; $85AA55 |
+drop_handlers_v1:
+  dw drop_makimono                          ; $85AA37 | index $00
+  dw drop_makimono                          ; $85AA39 | index $01
+  dw drop_5ryo                              ; $85AA3B | index $02
+  dw drop_5ryo                              ; $85AA3D | index $03
+  dw drop_5ryo                              ; $85AA3F | index $04
+  dw drop_5ryo                              ; $85AA41 | index $05
+  dw drop_10ryo                             ; $85AA43 | index $06
+  dw drop_10ryo                             ; $85AA45 | index $07
+  dw drop_makimono                          ; $85AA47 | index $08
+  dw drop_makimono                          ; $85AA49 | index $09
+  dw drop_5ryo                              ; $85AA4B | index $0A
+  dw drop_5ryo                              ; $85AA4D | index $0B
+  dw drop_5ryo                              ; $85AA4F | index $0C
+  dw drop_5ryo                              ; $85AA51 | index $0D
+  dw drop_10ryo                             ; $85AA53 | index $0E
+  dw drop_dango                             ; $85AA55 | index $0F
 
-CODE_85AA57:
+drop_makimono:
   LDA.W #$0003                              ; $85AA57 |
-  BRA CODE_85AA6B                           ; $85AA5A |
+  BRA spawn_drop                            ; $85AA5A |
 
-CODE_85AA5C:
+drop_5ryo:
   LDA.W #$0007                              ; $85AA5C |
-  BRA CODE_85AA6B                           ; $85AA5F |
+  BRA spawn_drop                            ; $85AA5F |
 
-CODE_85AA61:
+drop_10ryo:
   LDA.W #$0008                              ; $85AA61 |
-  BRA CODE_85AA6B                           ; $85AA64 |
+  BRA spawn_drop                            ; $85AA64 |
 
-CODE_85AA66:
+drop_dango:
   LDA.W #$0221                              ; $85AA66 |
-  BRA CODE_85AA6B                           ; $85AA69 |
+  BRA spawn_drop                            ; $85AA69 |
 
-CODE_85AA6B:
-  JSL.L CODE_FL_86C9A7                      ; $85AA6B |
+spawn_drop:
+  JSL.L spawn_item_drop                     ; $85AA6B |
 
-CODE_85AA6F:
+ret_drop:
   RTL                                       ; $85AA6F |
 
-CODE_85AA70:
-  LDA.L $7002EE                             ; $85AA70 |
-  BEQ CODE_85AA28                           ; $85AA74 |
-  LDA.B $00                                 ; $85AA76 |
-  PHX                                       ; $85AA78 |
-  ASL A                                     ; $85AA79 |
-  TAX                                       ; $85AA7A |
-  LDA.L PTR16_85AA85,X                      ; $85AA7B |
-  PLX                                       ; $85AA7F |
-  STA.B $00                                 ; $85AA80 |
-  JMP.W ($0000)                             ; $85AA82 |
+select_drop_v2:
+  LDA.L $7002EE                             ; $85AA70 | Check Karakuri Walker acquisition flag
+  BEQ select_drop_v1                        ; $85AA74 | Use normal drop table if flag is clear
+  LDA.B $00                                 ; $85AA76 |\
+  PHX                                       ; $85AA78 | |
+  ASL A                                     ; $85AA79 | | Select the drop handler
+  TAX                                       ; $85AA7A | | from the indexed jump table
+  LDA.L drop_handlers_v2,X                  ; $85AA7B | |
+  PLX                                       ; $85AA7F | |
+  STA.B $00                                 ; $85AA80 |/
+  JMP.W ($0000)                             ; $85AA82 | Jump to the selected drop handler
 
-PTR16_85AA85:
-  dw CODE_85AA57                            ; $85AA85 |
-  dw CODE_85AA57                            ; $85AA87 |
-  dw CODE_85AA5C                            ; $85AA89 |
-  dw CODE_85AA5C                            ; $85AA8B |
-  dw CODE_FL_85AAA5                         ; $85AA8D |
-  dw CODE_FL_85AAA5                         ; $85AA8F |
-  dw CODE_85AA61                            ; $85AA91 |
-  dw CODE_85AA61                            ; $85AA93 |
-  dw CODE_85AA57                            ; $85AA95 |
-  dw CODE_85AA57                            ; $85AA97 |
-  dw CODE_85AA5C                            ; $85AA99 |
-  dw CODE_85AA5C                            ; $85AA9B |
-  dw CODE_FL_85AAA5                         ; $85AA9D |
-  dw CODE_FL_85AAA5                         ; $85AA9F |
-  dw CODE_85AA61                            ; $85AAA1 |
-  dw CODE_85AA66                            ; $85AAA3 |
+drop_handlers_v2:
+  dw drop_makimono                          ; $85AA85 | index $00
+  dw drop_makimono                          ; $85AA87 | index $01
+  dw drop_5ryo                              ; $85AA89 | index $02
+  dw drop_5ryo                              ; $85AA8B | index $03
+  dw drop_fuel                              ; $85AA8D | index $04
+  dw drop_fuel                              ; $85AA8F | index $05
+  dw drop_10ryo                             ; $85AA91 | index $06
+  dw drop_10ryo                             ; $85AA93 | index $07
+  dw drop_makimono                          ; $85AA95 | index $08
+  dw drop_makimono                          ; $85AA97 | index $09
+  dw drop_5ryo                              ; $85AA99 | index $0A
+  dw drop_5ryo                              ; $85AA9B | index $0B
+  dw drop_fuel                              ; $85AA9D | index $0C
+  dw drop_fuel                              ; $85AA9F | index $0D
+  dw drop_10ryo                             ; $85AAA1 | index $0E
+  dw drop_dango                             ; $85AAA3 | index $0F
 
-CODE_FL_85AAA5:
+drop_fuel:
   LDA.W #$00D5                              ; $85AAA5 |
-  BRA CODE_85AA6B                           ; $85AAA8 |
+  BRA spawn_drop                            ; $85AAA8 |
 
 CODE_JL_85AAAA:
-  JSL.L CODE_FL_85AA0F                      ; $85AAAA |
+  JSL.L try_drop_item                       ; $85AAAA |
   JSL.L CODE_FL_85A71F                      ; $85AAAE |
   JML.L CODE_FL_86CA2D                      ; $85AAB2 |
 
@@ -5699,7 +5706,7 @@ CODE_FL_85AB47:
   LDA.W #$0084                              ; $85AB50 |
 
 CODE_85AB53:
-  JSL.L CODE_FL_86C9A7                      ; $85AB53 |
+  JSL.L spawn_item_drop                     ; $85AB53 |
   BCS CODE_85AB71                           ; $85AB57 |
   TXA                                       ; $85AB59 |
   STA.W $0044,Y                             ; $85AB5A |
@@ -5723,7 +5730,7 @@ CODE_85AB71:
   LDA.W #$0004                              ; $85AB76 |
   STA.B $0C                                 ; $85AB79 |
   LDA.W #$0021                              ; $85AB7B |
-  JSL.L CODE_FL_86C9A7                      ; $85AB7E |
+  JSL.L spawn_item_drop                     ; $85AB7E |
   BCS CODE_85AB98                           ; $85AB82 |
   TXA                                       ; $85AB84 |
   STA.W $0044,Y                             ; $85AB85 |
@@ -6123,7 +6130,7 @@ CODE_85ADEC:
 CODE_FL_85ADED:
   STA.B $0C                                 ; $85ADED |
   LDA.W #$017E                              ; $85ADEF |
-  JSL.L CODE_FL_86C9A7                      ; $85ADF2 |
+  JSL.L spawn_item_drop                     ; $85ADF2 |
   BCS CODE_85AE10                           ; $85ADF6 |
   TXA                                       ; $85ADF8 |
   STA.W $0044,Y                             ; $85ADF9 |
@@ -7998,7 +8005,7 @@ CODE_85BA3F:
   JSL.L CODE_FL_85ABC2                      ; $85BA3F |
   JSL.L CODE_FL_85BAA5                      ; $85BA43 |
   LDA.W #$0184                              ; $85BA47 |
-  JSL.L CODE_FL_86C9A7                      ; $85BA4A |
+  JSL.L spawn_item_drop                     ; $85BA4A |
   JML.L CODE_FL_86CA2D                      ; $85BA4E |
 
 CODE_85BA52:
@@ -8040,7 +8047,7 @@ CODE_85BA92:
   JSL.L CODE_FL_85ABC2                      ; $85BA92 |
   JSL.L CODE_FL_85BAA5                      ; $85BA96 |
   LDA.W #$0012                              ; $85BA9A |
-  JSL.L CODE_FL_86C9A7                      ; $85BA9D |
+  JSL.L spawn_item_drop                     ; $85BA9D |
   JML.L CODE_FL_86CA2D                      ; $85BAA1 |
 
 CODE_FL_85BAA5:
@@ -8079,7 +8086,7 @@ CODE_85BAC8:
 CODE_85BAE5:
   JSL.L CODE_FL_85BAA5                      ; $85BAE5 |
   LDA.W #$017A                              ; $85BAE9 |
-  JSL.L CODE_FL_86C9A7                      ; $85BAEC |
+  JSL.L spawn_item_drop                     ; $85BAEC |
   JML.L CODE_FL_86CA2D                      ; $85BAF0 |
 
 CODE_85BAF4:
@@ -8317,7 +8324,7 @@ CODE_85BC8C:
 
 CODE_85BC98:
   LDA.B $14                                 ; $85BC98 |
-  JSL.L CODE_FL_86C9A7                      ; $85BC9A |
+  JSL.L spawn_item_drop                     ; $85BC9A |
   BCS CODE_85BCC7                           ; $85BC9E |
   PHY                                       ; $85BCA0 |
   LDY.W #$000E                              ; $85BCA1 |
@@ -8349,7 +8356,7 @@ CODE_85BCCB:
 CODE_85BCD5:
   LDA.W #$0008                              ; $85BCD5 |
   AND.W #$00FF                              ; $85BCD8 |
-  JSL.L CODE_FL_86C9A7                      ; $85BCDB |
+  JSL.L spawn_item_drop                     ; $85BCDB |
   BCS CODE_85BD0B                           ; $85BCDF |
   PHY                                       ; $85BCE1 |
   LDY.W #$0002                              ; $85BCE2 |
@@ -8914,7 +8921,7 @@ CODE_85C0F5:
   LDA.W #$35FC                              ; $85C109 |
   STA.B $00,X                               ; $85C10C |
   LDA.W #$011E                              ; $85C10E |
-  JSL.L CODE_FL_86C9A7                      ; $85C111 |
+  JSL.L spawn_item_drop                     ; $85C111 |
   JSL.L CODE_FL_85AAB6                      ; $85C115 |
   LDA.B $09,X                               ; $85C119 |
   ADC.W #$0008                              ; $85C11B |
@@ -8937,7 +8944,7 @@ CODE_85C133:
   LDA.W #$35BA                              ; $85C13E |
   STA.B $00,X                               ; $85C141 |
   LDA.W #$0013                              ; $85C143 |
-  JSL.L CODE_FL_86C9A7                      ; $85C146 |
+  JSL.L spawn_item_drop                     ; $85C146 |
   LDA.W #$0078                              ; $85C14A |
   JSL.L CODE_FL_86CAE6                      ; $85C14D |
   JSL.L CODE_FL_85AAB6                      ; $85C151 |
@@ -9230,7 +9237,7 @@ CODE_85C3C6:
   LDA.W #$34D2                              ; $85C3D0 |
   STA.B $00,X                               ; $85C3D3 |
   LDA.W #$8000                              ; $85C3D5 |
-  JSL.L CODE_FL_85AA0F                      ; $85C3D8 |
+  JSL.L try_drop_item                       ; $85C3D8 |
   JSL.L CODE_FL_85A5A7                      ; $85C3DC |
   LDA.W #$0080                              ; $85C3E0 |
   STA.B $4C,X                               ; $85C3E3 |
@@ -9328,7 +9335,7 @@ CODE_85C4A1:
   LDA.W #$3084                              ; $85C4AB |
   STA.B $00,X                               ; $85C4AE |
   LDA.W #$8000                              ; $85C4B0 |
-  JSL.L CODE_FL_85AA0F                      ; $85C4B3 |
+  JSL.L try_drop_item                       ; $85C4B3 |
   JSL.L CODE_FL_85A5A7                      ; $85C4B7 |
   JML.L CODE_JL_8CFEC2                      ; $85C4BB |
 
@@ -9539,7 +9546,7 @@ CODE_JP_85C683:
   JSL.L CODE_FL_85A9F7                      ; $85C689 |
   STZ.B $1E,X                               ; $85C68D |
   LDA.W #$8000                              ; $85C68F |
-  JSL.L CODE_FL_85AA0F                      ; $85C692 |
+  JSL.L try_drop_item                       ; $85C692 |
   JSL.L CODE_FL_85A5A7                      ; $85C696 |
   JML.L CODE_JL_8CFEC2                      ; $85C69A |
 
@@ -9684,7 +9691,7 @@ CODE_85C7CE:
   LDA.B $3A,X                               ; $85C7CE |
   BNE CODE_85C7E9                           ; $85C7D0 |
   LDA.W #$005D                              ; $85C7D2 |
-  JSL.L CODE_FL_86C9A7                      ; $85C7D5 |
+  JSL.L spawn_item_drop                     ; $85C7D5 |
   BCS CODE_85C827                           ; $85C7D9 |
   JSL.L CODE_FL_86C7C4                      ; $85C7DB |
   LDA.B $48,X                               ; $85C7DF |
@@ -10029,7 +10036,7 @@ CODE_85CAB4:
   CMP.W #$0001                              ; $85CACC |
   BNE CODE_85CB11                           ; $85CACF |
   LDA.W #$015E                              ; $85CAD1 |
-  JSL.L CODE_FL_86C9A7                      ; $85CAD4 |
+  JSL.L spawn_item_drop                     ; $85CAD4 |
   BCS CODE_85CB11                           ; $85CAD8 |
   JSL.L CODE_FL_86C7C4                      ; $85CADA |
   LDA.B $48,X                               ; $85CADE |
@@ -10064,7 +10071,7 @@ CODE_85CB12:
   LDA.W #$3C2E                              ; $85CB1C |
   STA.B $00,X                               ; $85CB1F |
   LDA.W #$8000                              ; $85CB21 |
-  JSL.L CODE_FL_85AA0F                      ; $85CB24 |
+  JSL.L try_drop_item                       ; $85CB24 |
   JSL.L CODE_FL_85A5A7                      ; $85CB28 |
   LDA.W #$0080                              ; $85CB2C |
   STA.B $4C,X                               ; $85CB2F |
@@ -10494,7 +10501,7 @@ CODE_85CE51:
   JSL.L CODE_FL_8089BD                      ; $85CE5F |
   JSL.L CODE_FL_85A940                      ; $85CE63 |
   LDA.W #$0179                              ; $85CE67 |
-  JSL.L CODE_FL_86C9A7                      ; $85CE6A |
+  JSL.L spawn_item_drop                     ; $85CE6A |
   STZ.B $00,X                               ; $85CE6E |
   STZ.B $34,X                               ; $85CE70 |
   LDA.W #$0040                              ; $85CE72 |
@@ -12394,7 +12401,7 @@ CODE_85DE31:
   BEQ CODE_85DE60                           ; $85DE33 |
   STZ.B $02                                 ; $85DE35 |
   LDA.W #$0007                              ; $85DE37 |
-  JSL.L CODE_FL_86C9A7                      ; $85DE3A |
+  JSL.L spawn_item_drop                     ; $85DE3A |
   BCS CODE_85DE60                           ; $85DE3E |
   LDA.B $02                                 ; $85DE40 |
   JSR.W CODE_FN_85DEA6                      ; $85DE42 |
@@ -12404,7 +12411,7 @@ CODE_85DE31:
 
 CODE_85DE4C:
   LDA.W #$0008                              ; $85DE4C |
-  JSL.L CODE_FL_86C9A7                      ; $85DE4F |
+  JSL.L spawn_item_drop                     ; $85DE4F |
   BCS CODE_85DE60                           ; $85DE53 |
   LDA.B $02                                 ; $85DE55 |
   JSR.W CODE_FN_85DEA6                      ; $85DE57 |

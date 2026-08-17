@@ -11843,7 +11843,7 @@ CODE_FN_84DF06:
 CODE_FN_84DF08:
   LDY.B $10                                 ; $84DF08 |
   LDA.W CODE_00C44B,Y                       ; $84DF0A |
-  JSL.L CODE_FL_86C9A7                      ; $84DF0D |
+  JSL.L spawn_item_drop                     ; $84DF0D |
   PHY                                       ; $84DF11 |
   LDY.B $10                                 ; $84DF12 |
   LDA.W CODE_00C44D,Y                       ; $84DF14 |
@@ -12669,7 +12669,7 @@ CODE_84E5DB:
 
 CODE_84E5E4:
   LDA.W #$01F0                              ; $84E5E4 |
-  JSL.L CODE_FL_86C9A7                      ; $84E5E7 |
+  JSL.L spawn_item_drop                     ; $84E5E7 |
   BCS CODE_84E5FA                           ; $84E5EB |
   LDA.B $18                                 ; $84E5ED |
   STA.W $003A,Y                             ; $84E5EF |
@@ -13445,7 +13445,7 @@ CODE_84EC26:
   JSL.L CODE_FL_86C70D                      ; $84EC2E |
   JSL.L CODE_FL_8CFAE6                      ; $84EC32 |
   LDA.W #$01F7                              ; $84EC36 |
-  JSL.L CODE_FL_86C9A7                      ; $84EC39 |
+  JSL.L spawn_item_drop                     ; $84EC39 |
   STY.B $3A,X                               ; $84EC3D |
   LDA.W #$0001                              ; $84EC3F |
   STA.W $003A,Y                             ; $84EC42 |
@@ -13821,7 +13821,7 @@ CODE_84EF0E:
   JSL.L CODE_FL_86C70D                      ; $84EF16 |
   JSL.L CODE_FL_8CFAE6                      ; $84EF1A |
   LDA.W #$01F7                              ; $84EF1E |
-  JSL.L CODE_FL_86C9A7                      ; $84EF21 |
+  JSL.L spawn_item_drop                     ; $84EF21 |
   STY.B $3A,X                               ; $84EF25 |
   LDA.W #$0002                              ; $84EF27 |
   STA.W $003A,Y                             ; $84EF2A |
@@ -13844,7 +13844,7 @@ CODE_84EF43:
   LDA.W $0028,Y                             ; $84EF45 |
   BMI CODE_84EF6B                           ; $84EF48 |
   LDA.W #$020C                              ; $84EF4A |
-  JSL.L CODE_FL_86C9A7                      ; $84EF4D |
+  JSL.L spawn_item_drop                     ; $84EF4D |
   LDA.B $3A,X                               ; $84EF51 |
   STA.W $003A,Y                             ; $84EF53 |
   LDA.W #$0002                              ; $84EF56 |
@@ -13935,7 +13935,7 @@ CODE_84F012:
   JSL.L CODE_FL_86C70D                      ; $84F01A |
   JSL.L CODE_FL_8CFAE6                      ; $84F01E |
   LDA.W #$01F7                              ; $84F022 |
-  JSL.L CODE_FL_86C9A7                      ; $84F025 |
+  JSL.L spawn_item_drop                     ; $84F025 |
   STY.B $3A,X                               ; $84F029 |
   LDA.W #$0003                              ; $84F02B |
   STA.W $003A,Y                             ; $84F02E |
@@ -13986,7 +13986,7 @@ CODE_84F084:
   JSL.L CODE_FL_86C70D                      ; $84F08C |
   JSL.L CODE_FL_8CFAE6                      ; $84F090 |
   LDA.W #$01F7                              ; $84F094 |
-  JSL.L CODE_FL_86C9A7                      ; $84F097 |
+  JSL.L spawn_item_drop                     ; $84F097 |
   STY.B $3A,X                               ; $84F09B |
   LDA.W #$0004                              ; $84F09D |
   STA.W $003A,Y                             ; $84F0A0 |
@@ -14039,7 +14039,7 @@ CODE_84F0FA:
   JSL.L CODE_FL_86C70D                      ; $84F102 |
   JSL.L CODE_FL_8CFAE6                      ; $84F106 |
   LDA.W #$01F7                              ; $84F10A |
-  JSL.L CODE_FL_86C9A7                      ; $84F10D |
+  JSL.L spawn_item_drop                     ; $84F10D |
   STY.B $3A,X                               ; $84F111 |
   LDA.W #$0000                              ; $84F113 |
   STA.W $003A,Y                             ; $84F116 |
@@ -14131,7 +14131,7 @@ CODE_FL_84F1BE:
 
 CODE_FL_84F1C1:
   LDA.W #$0200                              ; $84F1C1 |
-  JSL.L CODE_FL_86C9A7                      ; $84F1C4 |
+  JSL.L spawn_item_drop                     ; $84F1C4 |
   LDA.W #$0080                              ; $84F1C8 |
   STA.W $0009,Y                             ; $84F1CB |
   LDA.W #$0028                              ; $84F1CE |
@@ -14140,7 +14140,7 @@ CODE_FL_84F1C1:
 
 CODE_FL_84F1D5:
   LDA.W #$0200                              ; $84F1D5 |
-  JSL.L CODE_FL_86C9A7                      ; $84F1D8 |
+  JSL.L spawn_item_drop                     ; $84F1D8 |
   LDA.W #$01C0                              ; $84F1DC |
   SEC                                       ; $84F1DF |
   SBC.W $1662                               ; $84F1E0 |
@@ -14163,11 +14163,11 @@ CODE_84F1F9:
 
 CODE_FL_84F206:
   LDA.W #$01F6                              ; $84F206 |
-  JML.L CODE_FL_86C9A7                      ; $84F209 |
+  JML.L spawn_item_drop                     ; $84F209 |
 
 CODE_FL_84F20D:
   LDA.W #$01B0                              ; $84F20D |
-  JSL.L CODE_FL_86C9A7                      ; $84F210 |
+  JSL.L spawn_item_drop                     ; $84F210 |
   LDA.W #$0000                              ; $84F214 |
   STA.W $004E,Y                             ; $84F217 |
   RTL                                       ; $84F21A |
@@ -14176,7 +14176,7 @@ CODE_FL_84F21B:
   LDA.W #$00B4                              ; $84F21B |
   JSL.L CODE_FL_8089BD                      ; $84F21E |
   LDA.W #$01B0                              ; $84F222 |
-  JSL.L CODE_FL_86C9A7                      ; $84F225 |
+  JSL.L spawn_item_drop                     ; $84F225 |
   LDA.W #$0002                              ; $84F229 |
   STA.W $004E,Y                             ; $84F22C |
   RTL                                       ; $84F22F |
@@ -14185,7 +14185,7 @@ CODE_FL_84F230:
   LDA.W #$00B4                              ; $84F230 |
   JSL.L CODE_FL_8089BD                      ; $84F233 |
   LDA.W #$01B0                              ; $84F237 |
-  JSL.L CODE_FL_86C9A7                      ; $84F23A |
+  JSL.L spawn_item_drop                     ; $84F23A |
   LDA.W #$0004                              ; $84F23E |
   STA.W $004E,Y                             ; $84F241 |
   RTL                                       ; $84F244 |
@@ -14194,7 +14194,7 @@ CODE_JL_84F245:
   LDA.W #$00B4                              ; $84F245 |
   JSL.L CODE_FL_8089BD                      ; $84F248 |
   LDA.W #$01B0                              ; $84F24C |
-  JSL.L CODE_FL_86C9A7                      ; $84F24F |
+  JSL.L spawn_item_drop                     ; $84F24F |
   LDA.W #$0006                              ; $84F253 |
   STA.W $004E,Y                             ; $84F256 |
   RTL                                       ; $84F259 |
@@ -14203,7 +14203,7 @@ CODE_FL_84F25A:
   LDA.W #$00B4                              ; $84F25A |
   JSL.L CODE_FL_8089BD                      ; $84F25D |
   LDA.W #$01B0                              ; $84F261 |
-  JSL.L CODE_FL_86C9A7                      ; $84F264 |
+  JSL.L spawn_item_drop                     ; $84F264 |
   LDA.W #$0008                              ; $84F268 |
   STA.W $004E,Y                             ; $84F26B |
   RTL                                       ; $84F26E |

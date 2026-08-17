@@ -858,7 +858,7 @@ CODE_A0F5E4:
   STA.B $2C,X                               ; $A0F5E7 |
   INC.B $1A,X                               ; $A0F5E9 |
   LDA.W #$0204                              ; $A0F5EB |
-  JSL.L CODE_FL_86C9A7                      ; $A0F5EE |
+  JSL.L spawn_item_drop                     ; $A0F5EE |
   BCS CODE_A0F600                           ; $A0F5F2 |
   LDA.W #$00B0                              ; $A0F5F4 |
   STA.W $0009,Y                             ; $A0F5F7 |

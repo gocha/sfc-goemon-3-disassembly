@@ -19,3 +19,5 @@
 !r_demo_flag = $7E004C                      ; Non-zero during demo play (suppresses idle RNG updates)
 
 !r_rng = $7E0086
+
+!r_room_id = $7E008E

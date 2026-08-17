@@ -14929,7 +14929,7 @@ CODE_88F1EB:
 
 CODE_JP_88F20C:
   LDA.W #$0009                              ; $88F20C |
-  JSL.L CODE_FL_86C9A7                      ; $88F20F |
+  JSL.L spawn_item_drop                     ; $88F20F |
   JSL.L CODE_FL_85A71F                      ; $88F213 |
   JML.L CODE_FL_86CA2D                      ; $88F217 |
 
@@ -15328,7 +15328,7 @@ CODE_88F4D7:
 
 CODE_JP_88F4F8:
   LDA.W #$0009                              ; $88F4F8 |
-  JSL.L CODE_FL_86C9A7                      ; $88F4FB |
+  JSL.L spawn_item_drop                     ; $88F4FB |
   JSL.L CODE_FL_85A71F                      ; $88F4FF |
   JML.L CODE_FL_86CA2D                      ; $88F503 |
 
@@ -15554,7 +15554,7 @@ CODE_88F67A:
   ORA.W #$BC80                              ; $88F69C |
   STA.B $34,X                               ; $88F69F |
   LDA.W #$01BC                              ; $88F6A1 |
-  JSL.L CODE_FL_86C9A7                      ; $88F6A4 |
+  JSL.L spawn_item_drop                     ; $88F6A4 |
   BCS CODE_88F6D0                           ; $88F6A8 |
   LDA.B $4E,X                               ; $88F6AA |
   STA.W $004E,Y                             ; $88F6AC |
@@ -15624,7 +15624,7 @@ CODE_88F710:
   ORA.W #$2020                              ; $88F726 |
   STA.B $04,X                               ; $88F729 |
   LDA.W #$01D1                              ; $88F72B |
-  JSL.L CODE_FL_86C9A7                      ; $88F72E |
+  JSL.L spawn_item_drop                     ; $88F72E |
   BCS CODE_88F745                           ; $88F732 |
   SEC                                       ; $88F734 |
   LDA.B $09,X                               ; $88F735 |
@@ -15955,13 +15955,13 @@ CODE_88F9A1:
 CODE_88F9A2:
   JSL.L CODE_FL_85ABC2                      ; $88F9A2 |
   LDA.W #$0009                              ; $88F9A6 |
-  JSL.L CODE_FL_86C9A7                      ; $88F9A9 |
+  JSL.L spawn_item_drop                     ; $88F9A9 |
   JSL.L CODE_FL_85A71F                      ; $88F9AD |
   JML.L CODE_FL_86CA2D                      ; $88F9B1 |
 
 CODE_FN_88F9B5:
   LDA.W #$0148                              ; $88F9B5 |
-  JSL.L CODE_FL_86C9A7                      ; $88F9B8 |
+  JSL.L spawn_item_drop                     ; $88F9B8 |
   BCS CODE_88F9E9                           ; $88F9BC |
   LDA.W #$0100                              ; $88F9BE |
   STA.W $0026,Y                             ; $88F9C1 |

@@ -22,50 +22,64 @@ else:
     address = 0xBD0000 + offset
 ```
 
-## Character Codes (0x00-0xBF)
+## Text Stream Format
+
+The first byte determines how the following data is interpreted.
+
+| Range     | Type                  |
+| --------- | --------------------- |
+| 0x00-0xAF | Single-byte character |
+| 0xB0-0xBF | Multi-byte sequence   |
+| 0xC0-0xFF | Compression command   |
+
+### Character Codes (0x00-0xAF)
 
 The character mapping is defined by the following table. (WIP)
 
-|          | +0 | +1 | +2 | +3 | +4 | +5 | +6  | +7  | +8 | +9 | +A | +B | +C | +D | +E | +F |
-| -------- |:--:|:--:|:--:|:--:|:--:|:--:|:---:|:---:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| **0x00** |    |    |    |    | LF |    |     |     |    |    |    |    |    |    |    |    |
-| **0x10** |    |    |    |    |    |    | ROF | RON | SP |    | あ | い | う | え | お | か |
-| **0x20** | き | く | け | こ | さ | し | す  | せ  | そ | た | ち | つ | て | と | な | に |
-| **0x30** | ぬ | ね | の | は | ひ | ふ | へ  | ほ  | ま | み | む | め | も | や | ゆ | よ |
-| **0x40** | ら | り | る | れ | ろ | わ | を  | ん  | っ | ゃ | ゅ | ょ | ぉ | 重 | 禄 | 兵 |
-| **0x50** | 衛 |    | ◀  | ▶  | ▲ | ▼ |     |     | ０ | １ | ２ | ３ | ４ | ５ | ６ | ７ |
-| **0x60** | ８ | ９ |    |    |    |    |     |     | コ | エ | モ | ン | ヒ | ス | サ | ケ |
-| **0x70** | ヤ |    |    |    | 両 | 丸 | ー  | 金  | ・ | ？ | ！ | 「 | 」 |    |    |    |
-| **0x80** |    | 。 | （ | ） |    |    |     |     | が | ぎ | ぐ | げ | ご | ざ | じ | ず |
-| **0x90** | ぜ | ぞ | だ | ぢ | づ | で | ど  | ば  | び | ぶ | べ | ぼ | ゴ | ビ | ズ | ザ |
-| **0xA0** | ゲ |    |    |    |    |    |     |     | ぱ | ぴ | ぷ | ぺ | ぽ | ピ |    |    |
-| **0xB0** |    |    |    |    |    |    |     |     |    |    |    |    |    |    |    |    |
+|          | +0  | +1 | +2 | +3 | +4 | +5 | +6  | +7  | +8 | +9 | +A | +B | +C | +D | +E | +F |
+| -------- |:---:|:--:|:--:|:--:|:--:|:--:|:---:|:---:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| **0x00** | NUL |    |    |    | LF |    |     |     |    |    |    |    |    |    |    |    |
+| **0x10** |     |    |    |    |    |    | ROF | RON | SP |    | あ | い | う | え | お | か |
+| **0x20** | き  | く | け | こ | さ | し | す  | せ  | そ | た | ち | つ | て | と | な | に |
+| **0x30** | ぬ  | ね | の | は | ひ | ふ | へ  | ほ  | ま | み | む | め | も | や | ゆ | よ |
+| **0x40** | ら  | り | る | れ | ろ | わ | を  | ん  | っ | ゃ | ゅ | ょ | ぉ | 重 | 禄 | 兵 |
+| **0x50** | 衛  |    | ◀  | ▶  | ▲ | ▼ |     |     | ０ | １ | ２ | ３ | ４ | ５ | ６ | ７ |
+| **0x60** | ８  | ９ |    |    |    |    |     |     | コ | エ | モ | ン | ヒ | ス | サ | ケ |
+| **0x70** | ヤ  |    |    |    | 両 | 丸 | ー  | 金  | ・ | ？ | ！ | 「 | 」 |    |    |    |
+| **0x80** |     | 。 | （ | ） |    |    |     |     | が | ぎ | ぐ | げ | ご | ざ | じ | ず |
+| **0x90** | ぜ  | ぞ | だ | ぢ | づ | で | ど  | ば  | び | ぶ | べ | ぼ | ゴ | ビ | ズ | ザ |
+| **0xA0** | ゲ  |    |    |    |    |    |     |     | ぱ | ぴ | ぷ | ぺ | ぽ | ピ |    |    |
 
-### Special Characters
+The following values have special meanings:
 
-| Code | Description           |
-| ---- | --------------------- |
-| 0x04 | Line feed (`\n`)      |
-| 0x16 | Switch to normal text |
-| 0x17 | Switch to red text    |
-| 0x18 | Space                 |
+| Code | Description            |
+| ---- | ---------------------- |
+| 0x00 | Null terminator ('\0') |
+| 0x04 | Line feed (`\n`)       |
+| 0x16 | Switch to normal text  |
+| 0x17 | Switch to red text     |
+| 0x18 | Space                  |
 
-## Text Stream Commands
+### Special Sequences (0xB0-0xBF)
 
-Each byte in a text stream is interpreted according to its value.
+These sequences contain additional data associated with the text.
+
+| Code | Command   | Extra Bytes | Description                          |
+| ---- | --------- | ----------: | ------------------------------------ |
+| 0xB4 | Next Text | 2           | 16-bit text offset to the next entry |
+
+### Compression Commands (0xC0-0xFF)
+
 For commands that produce multiple characters, the output length is determined by the command byte.
-
-The byte ranges and their meanings are summarized below.
 
 | Range     | Command          | Extra Bytes | Output Length      |
 | --------- | ---------------- | ----------: | -----------------: |
-| 0x00-0xBF | Character        |           0 |                  1 |
 | 0xC0-0xCF | Repeat Space     |           0 |               2-17 |
 | 0xD0-0xDF | Predefined Text  |           0 | varies (see below) |
 | 0xE0-0xEF | Repeat Character |           1 |               3-18 |
 | 0xF0-0xFF | Copy from Offset |           2 |               4-19 |
 
-### Predefined Text (0xD0-0xDF)
+#### Predefined Text (0xD0-0xDF)
 
 The following table lists the predefined text sequences.
 
@@ -91,7 +105,7 @@ The following table lists the predefined text sequences.
 A table of offsets for these predefined text sequences is located at `$818B3D`.
 Each text is terminated by 0x00.
 
-### Copy from Offset (0xF0-0xFF)
+#### Copy from Offset (0xF0-0xFF)
 
 The command is followed by a two-byte text offset.
 The referenced text is copied to the output.

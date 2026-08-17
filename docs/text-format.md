@@ -8,10 +8,10 @@ This document describes the structure of these text streams.
 
 A 16-bit offset is used to reference text data. The offset corresponds to the following ROM address ranges:
 
-| Offset        | ROM Address       |
-| ------------- | ----------------- |
-| 0x0000-0x7FFF | `$B68000-$B6FFFF` |
-| 0x8000-0xFFFF | `$BD8000-$BDFFFF` |
+| Offset        | ROM Address       | Notes                             |
+| ------------- | ----------------- | --------------------------------- |
+| 0x0000-0x7FFF | `$B68000-$B6FFFF` | Lower portion contains other data |
+| 0x8000-0xFFFF | `$BD8000-$BDFFFF` |                                   |
 
 The corresponding ROM address can be calculated as follows:
 

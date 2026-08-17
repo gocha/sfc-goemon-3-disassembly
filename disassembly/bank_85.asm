@@ -394,7 +394,7 @@ CODE_858262:
   STX.W $1C30                               ; $85827C |
   LDA.W $800C,Y                             ; $85827F |
   STA.B $14                                 ; $858282 |
-  LDA.B $8E                                 ; $858284 |
+  LDA.B !r_room_id                          ; $858284 |
   CMP.W #$002B                              ; $858286 |
   BNE CODE_858290                           ; $858289 |
   LDA.W $8014,Y                             ; $85828B |
@@ -720,17 +720,17 @@ CODE_FL_8584E1:
   INY                                       ; $8584F3 |
   MVN $7E,$7E                               ; $8584F4 |
   PLB                                       ; $8584F7 |
-  LDA.B $8E                                 ; $8584F8 |
+  LDA.B !r_room_id                          ; $8584F8 |
   ASL A                                     ; $8584FA |
-  ADC.B $8E                                 ; $8584FB |
+  ADC.B !r_room_id                          ; $8584FB |
   TAX                                       ; $8584FD |
   SEP #$20                                  ; $8584FE |
-  LDA.L DATA8_878A12,X                      ; $858500 |
+  LDA.L PTR24_878A10+2,X                    ; $858500 |
   STA.W $1C08                               ; $858504 |
   PHA                                       ; $858507 |
   PLB                                       ; $858508 |
   REP #$20                                  ; $858509 |
-  LDA.L DATA8_878A10,X                      ; $85850B |
+  LDA.L PTR24_878A10,X                      ; $85850B |
   TAX                                       ; $85850F |
   TDC                                       ; $858510 |
   SEP #$20                                  ; $858511 |
@@ -804,7 +804,7 @@ CODE_FN_858581:
   RTS                                       ; $85858E |
 
 CODE_FL_85858F:
-  LDA.B $8E                                 ; $85858F |
+  LDA.B !r_room_id                          ; $85858F |
   ASL A                                     ; $858591 |
   TAX                                       ; $858592 |
   LDA.L DATA8_878E9F,X                      ; $858593 |
@@ -6625,7 +6625,7 @@ CODE_85B124:
   ASL A                                     ; $85B127 |
   ASL A                                     ; $85B128 |
   TAX                                       ; $85B129 |
-  LDA.B $8E                                 ; $85B12A |
+  LDA.B !r_room_id                          ; $85B12A |
   CMP.W #$0172                              ; $85B12C |
   BEQ CODE_85B13D                           ; $85B12F |
   LDA.B $7E                                 ; $85B131 |
@@ -8289,7 +8289,7 @@ CODE_85BC54:
   JSL.L CODE_FL_85A8C3                      ; $85BC5A |
   JSL.L CODE_FL_83A23F                      ; $85BC5E |
   LDY.W #$010C                              ; $85BC62 |
-  LDA.B $8E                                 ; $85BC65 |
+  LDA.B !r_room_id                          ; $85BC65 |
   CMP.W #$003C                              ; $85BC67 |
   BEQ CODE_85BC77                           ; $85BC6A |
   LDY.W #$00A8                              ; $85BC6C |
@@ -15562,7 +15562,7 @@ CODE_85F401:
   STA.B $00                                 ; $85F40A |
   STZ.W $19CC                               ; $85F40C |
   LDA.B $B2                                 ; $85F40F |
-  CMP.B $8E                                 ; $85F411 |
+  CMP.B !r_room_id                          ; $85F411 |
   BNE CODE_85F420                           ; $85F413 |
   LDA.B $4E,X                               ; $85F415 |
   BNE CODE_85F421                           ; $85F417 |
@@ -15744,7 +15744,7 @@ CODE_JP_85F576:
   LDA.W $197E                               ; $85F576 |
   STA.W $193A                               ; $85F579 |
   LDA.B $B2                                 ; $85F57C |
-  CMP.B $8E                                 ; $85F57E |
+  CMP.B !r_room_id                          ; $85F57E |
   BNE CODE_JP_85F58C                        ; $85F580 |
   LDA.B $4E,X                               ; $85F582 |
   JSL.L CODE_FL_80E9E7                      ; $85F584 |
@@ -15800,7 +15800,7 @@ CODE_85F5DC:
   LDA.W $197E                               ; $85F5DC |
   STA.W $193A                               ; $85F5DF |
   LDA.B $B2                                 ; $85F5E2 |
-  CMP.B $8E                                 ; $85F5E4 |
+  CMP.B !r_room_id                          ; $85F5E4 |
   BNE CODE_85F5F2                           ; $85F5E6 |
   LDA.B $4E,X                               ; $85F5E8 |
   JSL.L CODE_FL_80E9E7                      ; $85F5EA |
@@ -15815,7 +15815,7 @@ CODE_85F5F2:
   LDA.W $197E                               ; $85F5FC |
   STA.W $193A                               ; $85F5FF |
   LDA.B $B2                                 ; $85F602 |
-  CMP.B $8E                                 ; $85F604 |
+  CMP.B !r_room_id                          ; $85F604 |
   BNE CODE_85F613                           ; $85F606 |
   LDA.W #$0000                              ; $85F608 |
   JSL.L CODE_FL_80E9E7                      ; $85F60B |

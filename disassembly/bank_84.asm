@@ -96,7 +96,7 @@ CODE_848058:
   AND.W #$00FF                              ; $848097 |
   BNE CODE_8480A3                           ; $84809A |
   JSL.L CODE_FL_848230                      ; $84809C |
-  JMP.W CODE_JP_84815A                      ; $8480A0 |
+  JMP.W change_room                         ; $8480A0 |
 
 CODE_8480A3:
   SEP #$20                                  ; $8480A3 |
@@ -116,7 +116,7 @@ CODE_8480B7:
   DEC.B $01                                 ; $8480BF |
   CMP.B !r_room_id                          ; $8480C1 |
   BNE CODE_8480C8                           ; $8480C3 |
-  JMP.W CODE_JP_848165                      ; $8480C5 |
+  JMP.W load_room                           ; $8480C5 |
 
 CODE_8480C8:
   LDA.B $00                                 ; $8480C8 |
@@ -127,18 +127,18 @@ CODE_8480C8:
   ADC.B $09,X                               ; $8480D3 |
   AND.W #$00FF                              ; $8480D5 |
   STA.B $18                                 ; $8480D8 |
-  JMP.W CODE_JP_848165                      ; $8480DA |
+  JMP.W load_room                           ; $8480DA |
 
 CODE_8480DD:
   INC.B $01                                 ; $8480DD |
   JSR.W CODE_FN_8481F8                      ; $8480DF |
-  BCC CODE_848157                           ; $8480E2 |
+  BCC ret_room_unchanged                    ; $8480E2 |
   STA.B !r_room_id                          ; $8480E4 |
   DEC.B $01                                 ; $8480E6 |
   JSL.L CODE_FL_848230                      ; $8480E8 |
   CMP.B !r_room_id                          ; $8480EC |
   BNE CODE_8480F3                           ; $8480EE |
-  JMP.W CODE_JP_848165                      ; $8480F0 |
+  JMP.W load_room                           ; $8480F0 |
 
 CODE_8480F3:
   INC.B $01                                 ; $8480F3 |
@@ -149,7 +149,7 @@ CODE_8480F7:
   AND.W #$00FF                              ; $8480FA |
   BNE CODE_848106                           ; $8480FD |
   JSL.L CODE_FL_848209                      ; $8480FF |
-  JMP.W CODE_JP_84815A                      ; $848103 |
+  JMP.W change_room                         ; $848103 |
 
 CODE_848106:
   SEP #$20                                  ; $848106 |
@@ -169,7 +169,7 @@ CODE_84811A:
   DEC.B $05                                 ; $848122 |
   CMP.B !r_room_id                          ; $848124 |
   BNE CODE_84812B                           ; $848126 |
-  JMP.W CODE_JP_848165                      ; $848128 |
+  JMP.W load_room                           ; $848128 |
 
 CODE_84812B:
   LDA.B $04                                 ; $84812B |
@@ -180,33 +180,33 @@ CODE_84812B:
   ADC.B $0D,X                               ; $848136 |
   AND.W #$00FF                              ; $848138 |
   STA.B $1A                                 ; $84813B |
-  JMP.W CODE_JP_848165                      ; $84813D |
+  JMP.W load_room                           ; $84813D |
 
 CODE_848140:
   INC.B $05                                 ; $848140 |
   JSR.W CODE_FN_8481F8                      ; $848142 |
-  BCC CODE_848157                           ; $848145 |
+  BCC ret_room_unchanged                    ; $848145 |
   STA.B !r_room_id                          ; $848147 |
   DEC.B $05                                 ; $848149 |
   JSL.L CODE_FL_848230                      ; $84814B |
   CMP.B !r_room_id                          ; $84814F |
-  BEQ CODE_JP_848165                        ; $848151 |
+  BEQ load_room                             ; $848151 |
   INC.B $05                                 ; $848153 |
   BRA CODE_84812B                           ; $848155 |
 
-CODE_848157:
+ret_room_unchanged:
   PLB                                       ; $848157 |
   CLC                                       ; $848158 |
   RTL                                       ; $848159 |
 
-CODE_JP_84815A:
+change_room:
   CMP.B !r_room_id                          ; $84815A |
-  BEQ CODE_848157                           ; $84815C |
+  BEQ ret_room_unchanged                    ; $84815C |
   CMP.W #$00FF                              ; $84815E |
-  BEQ CODE_848157                           ; $848161 |
+  BEQ ret_room_unchanged                    ; $848161 |
   STA.B !r_room_id                          ; $848163 |
 
-CODE_JP_848165:
+load_room:
   LDA.B !r_room_id                          ; $848165 |
   ASL A                                     ; $848167 |
   ASL A                                     ; $848168 |
@@ -215,30 +215,30 @@ CODE_JP_848165:
   AND.W #$FF00                              ; $84816D |
   SEC                                       ; $848170 |
   SBC.B $00                                 ; $848171 |
-  BMI CODE_848178                           ; $848173 |
+  BMI .CODE_848178                          ; $848173 |
   LDA.W #$0000                              ; $848175 |
 
-CODE_848178:
+.CODE_848178
   EOR.W #$FFFF                              ; $848178 |
   INC A                                     ; $84817B |
   STA.B $10                                 ; $84817C |
   AND.W #$FFF8                              ; $84817E |
   STA.W $1756                               ; $848181 |
-  LDA.W LOOSE_OP_00ABF9,Y                   ; $848184 |
+  LDA.W DATA8_81ABF8+1,Y                    ; $848184 |
   AND.W #$FF00                              ; $848187 |
   SEC                                       ; $84818A |
   SBC.B $04                                 ; $84818B |
-  BMI CODE_848192                           ; $84818D |
+  BMI .CODE_848192                          ; $84818D |
   LDA.W #$0000                              ; $84818F |
 
-CODE_848192:
+.CODE_848192
   EOR.W #$FFFF                              ; $848192 |
   INC A                                     ; $848195 |
   STA.B $12                                 ; $848196 |
   AND.W #$FFE0                              ; $848198 |
   STA.W $1758                               ; $84819B |
   LDA.W $1980                               ; $84819E |
-  BNE CODE_8481B7                           ; $8481A1 |
+  BNE .CODE_8481B7                          ; $8481A1 |
   LDA.B $10                                 ; $8481A3 |
   AND.W #$0007                              ; $8481A5 |
   STA.B $10                                 ; $8481A8 |
@@ -247,17 +247,17 @@ CODE_848192:
   CLC                                       ; $8481AF |
   ADC.B $10                                 ; $8481B0 |
   STA.W $1980                               ; $8481B2 |
-  BRA CODE_8481C0                           ; $8481B5 |
+  BRA .CODE_8481C0                          ; $8481B5 |
 
-CODE_8481B7:
+.CODE_8481B7
   CLC                                       ; $8481B7 |
   ADC.B $18                                 ; $8481B8 |
   AND.W #$00FF                              ; $8481BA |
   STA.W $1980                               ; $8481BD |
 
-CODE_8481C0:
+.CODE_8481C0
   LDA.W $1982                               ; $8481C0 |
-  BNE CODE_8481DA                           ; $8481C3 |
+  BNE .CODE_8481DA                          ; $8481C3 |
   LDA.B $12                                 ; $8481C5 |
   AND.W #$001F                              ; $8481C7 |
   STA.B $12                                 ; $8481CA |
@@ -267,15 +267,15 @@ CODE_8481C0:
   ADC.B $12                                 ; $8481D2 |
   CLC                                       ; $8481D4 |
   STA.W $1982                               ; $8481D5 |
-  BRA CODE_8481E3                           ; $8481D8 |
+  BRA .CODE_8481E3                          ; $8481D8 |
 
-CODE_8481DA:
+.CODE_8481DA
   CLC                                       ; $8481DA |
   ADC.B $1A                                 ; $8481DB |
   AND.W #$00FF                              ; $8481DD |
   STA.W $1982                               ; $8481E0 |
 
-CODE_8481E3:
+.CODE_8481E3
   LDA.W $1980                               ; $8481E3 |
   STA.W $195A                               ; $8481E6 |
   LDA.W $1982                               ; $8481E9 |
@@ -309,7 +309,7 @@ CODE_FN_848210:
   LDA.W $1760                               ; $848215 |
   ASL A                                     ; $848218 |
   TAY                                       ; $848219 |
-  LDA.W LOOSE_OP_00F6EF,Y                   ; $84821A |
+  LDA.W DATA16_81F6EF,Y                     ; $84821A |
   STA.B $1C                                 ; $84821D |
   LDA.B $08                                 ; $84821F |
   CLC                                       ; $848221 |
@@ -326,11 +326,11 @@ CODE_FL_848230:
   LDA.B $01                                 ; $848232 |
   AND.B #$FF                                ; $848234 |
   CMP.W $1766                               ; $848236 |
-  BCS CODE_848272                           ; $848239 |
+  BCS .CODE_848272                          ; $848239 |
   LDA.B $05                                 ; $84823B |
   AND.B #$FF                                ; $84823D |
   CMP.W $1768                               ; $84823F |
-  BCS CODE_848272                           ; $848242 |
+  BCS .CODE_848272                          ; $848242 |
   LDA.B $05                                 ; $848244 |
   STA.W !reg_wrmpya                         ; $848246 |
   LDA.W $1766                               ; $848249 |
@@ -341,21 +341,21 @@ CODE_FL_848230:
   CLC                                       ; $848256 |
   ADC.W !reg_rdmpyl                         ; $848257 |
   TAY                                       ; $84825A |
-  LDA.B [$1C],Y                             ; $84825B |
+  LDA.B [$1C],Y                             ; $84825B | Get destination room id
   AND.W #$00FF                              ; $84825D |
   STA.B $14                                 ; $848260 |
   LDA.B $90                                 ; $848262 |
   CMP.W #$0000                              ; $848264 |
-  BNE CODE_84826F                           ; $848267 |
+  BNE .CODE_84826F                          ; $848267 |
   LDA.B $14                                 ; $848269 |
   ORA.W #$0100                              ; $84826B |
   RTL                                       ; $84826E |
 
-CODE_84826F:
+.CODE_84826F
   LDA.B $14                                 ; $84826F |
   RTL                                       ; $848271 |
 
-CODE_848272:
+.CODE_848272
   REP #$20                                  ; $848272 |
   LDA.W #$00FF                              ; $848274 |
   RTL                                       ; $848277 |
@@ -374,27 +374,27 @@ CODE_FL_84827B:
   TAX                                       ; $84827F |
   LDA.L PTR16_819223,X                      ; $848280 |
   AND.W #$FF00                              ; $848284 |
-  BPL CODE_84828C                           ; $848287 |
+  BPL .CODE_84828C                          ; $848287 |
   LDA.W #$0100                              ; $848289 |
 
-CODE_84828C:
+.CODE_84828C
   STA.B $00                                 ; $84828C |
   LDA.L DATA8_819224,X                      ; $84828E |
   AND.W #$FF00                              ; $848292 |
-  BPL CODE_84829A                           ; $848295 |
+  BPL .CODE_84829A                          ; $848295 |
   LDA.W #$0100                              ; $848297 |
 
-CODE_84829A:
+.CODE_84829A
   STA.B $02                                 ; $84829A |
   LDA.W #$0100                              ; $84829C |
   LDY.B $90                                 ; $84829F |
   CPY.W #$0000                              ; $8482A1 |
-  BEQ CODE_8482A9                           ; $8482A4 |
+  BEQ .CODE_8482A9                          ; $8482A4 |
   LDA.W #$0200                              ; $8482A6 |
 
-CODE_8482A9:
+.CODE_8482A9
   STA.B $04                                 ; $8482A9 |
-  LDA.L UNREACH_819837,X                    ; $8482AB |
+  LDA.L DATA8_819838-1,X                    ; $8482AB |
   AND.W #$FF00                              ; $8482AF |
   SEC                                       ; $8482B2 |
   SBC.B $04                                 ; $8482B3 |

@@ -409,397 +409,397 @@ org $878000
   db $41,$10                                ; $878A0E |
 
 PTR24_878A10:
-  dl $B58000                                ; $878A10 |
-  dl $B580BC                                ; $878A13 |
-  dl $B581F4                                ; $878A16 |
-  dl $B5826C                                ; $878A19 |
-  dl $B583AC                                ; $878A1C |
-  dl $B58416                                ; $878A1F |
-  dl $B584BA                                ; $878A22 |
-  dl $B5857A                                ; $878A25 |
-  dl $B58612                                ; $878A28 |
-  dl $B586C0                                ; $878A2B |
-  dl $B5873A                                ; $878A2E |
-  dl $B587A0                                ; $878A31 |
-  dl $B587DA                                ; $878A34 |
-  dl $B5886C                                ; $878A37 |
-  dl $B58886                                ; $878A3A |
-  dl $B58904                                ; $878A3D |
-  dl $B58992                                ; $878A40 |
-  dl $B58A22                                ; $878A43 |
-  dl $B58AF2                                ; $878A46 |
-  dl $B58BE8                                ; $878A49 |
-  dl $B58C54                                ; $878A4C |
-  dl $B58D2C                                ; $878A4F |
-  dl $B58E22                                ; $878A52 |
-  dl $B58EDC                                ; $878A55 |
-  dl $B58FDE                                ; $878A58 |
-  dl $B5900C                                ; $878A5B |
-  dl $B59034                                ; $878A5E |
-  dl $B59082                                ; $878A61 |
-  dl $B590E2                                ; $878A64 |
-  dl $B59142                                ; $878A67 |
-  dl $B59194                                ; $878A6A |
-  dl $B5921C                                ; $878A6D |
-  dl $B5929C                                ; $878A70 |
-  dl $B59394                                ; $878A73 |
-  dl $B59400                                ; $878A76 |
-  dl $B59520                                ; $878A79 |
-  dl $B59586                                ; $878A7C |
-  dl $B595CC                                ; $878A7F |
-  dl $B59676                                ; $878A82 |
-  dl $B59774                                ; $878A85 |
-  dl $B5987A                                ; $878A88 |
-  dl $B598D8                                ; $878A8B |
-  dl $B5990A                                ; $878A8E |
-  dl $B59948                                ; $878A91 |
-  dl $B599BA                                ; $878A94 |
-  dl $B59A12                                ; $878A97 |
-  dl $B59B3E                                ; $878A9A |
-  dl $B59B9C                                ; $878A9D |
-  dl $B59C20                                ; $878AA0 |
-  dl $B59C84                                ; $878AA3 |
-  dl $B59D68                                ; $878AA6 |
-  dl $B59E02                                ; $878AA9 |
-  dl $B59E82                                ; $878AAC |
-  dl $B59F4C                                ; $878AAF |
-  dl $B59FB0                                ; $878AB2 |
-  dl $B5A054                                ; $878AB5 |
-  dl $B5A0E4                                ; $878AB8 |
-  dl $B5A1A6                                ; $878ABB |
-  dl $B5A210                                ; $878ABE |
-  dl $B5A27A                                ; $878AC1 |
-  dl $B5A2F0                                ; $878AC4 |
-  dl $B5A3C2                                ; $878AC7 |
-  dl $B5A432                                ; $878ACA |
-  dl $B5A4BC                                ; $878ACD |
-  dl $B5A52C                                ; $878AD0 |
-  dl $B5A5C8                                ; $878AD3 |
-  dl $B5A644                                ; $878AD6 |
-  dl $B5A6DE                                ; $878AD9 |
-  dl $B5A772                                ; $878ADC |
-  dl $B5A7DA                                ; $878ADF |
-  dl $B5A86E                                ; $878AE2 |
-  dl $B5A8D2                                ; $878AE5 |
-  dl $B5A952                                ; $878AE8 |
-  dl $B5AA08                                ; $878AEB |
-  dl $B5AAB4                                ; $878AEE |
-  dl $B5AB18                                ; $878AF1 |
-  dl $B5ABC8                                ; $878AF4 |
-  dl $B5AC86                                ; $878AF7 |
-  dl $B5ACCA                                ; $878AFA |
-  dl $B5AD58                                ; $878AFD |
-  dl $B5ADA2                                ; $878B00 |
-  dl $B5AE42                                ; $878B03 |
-  dl $B5AE88                                ; $878B06 |
-  dl $B5AF14                                ; $878B09 |
-  dl $B5AFE0                                ; $878B0C |
-  dl $B5B01C                                ; $878B0F |
-  dl $B5B080                                ; $878B12 |
-  dl $B5B0DE                                ; $878B15 |
-  dl $B5B240                                ; $878B18 |
-  dl $B5B2C4                                ; $878B1B |
-  dl $B5B3AA                                ; $878B1E |
-  dl $B5B3F0                                ; $878B21 |
-  dl $B5B43E                                ; $878B24 |
-  dl $B5B48A                                ; $878B27 |
-  dl $B5B522                                ; $878B2A |
-  dl $B5B850                                ; $878B2D |
-  dl $B5B976                                ; $878B30 |
-  dl $B5B9A8                                ; $878B33 |
-  dl $B5B9D8                                ; $878B36 |
-  dl $B5BA04                                ; $878B39 |
-  dl $B5BA6C                                ; $878B3C |
-  dl $B5BAD0                                ; $878B3F |
-  dl $B5BB38                                ; $878B42 |
-  dl $B5BB96                                ; $878B45 |
-  dl $B586C0                                ; $878B48 |
-  dl $B586C0                                ; $878B4B |
-  dl $B586C0                                ; $878B4E |
-  dl $B5BBB6                                ; $878B51 |
-  dl $B5BC2A                                ; $878B54 |
-  dl $B5BCAE                                ; $878B57 |
-  dl $B5BD52                                ; $878B5A |
-  dl $B5BDF0                                ; $878B5D |
-  dl $B5BE24                                ; $878B60 |
-  dl $B5BE8C                                ; $878B63 |
-  dl $B5BEBE                                ; $878B66 |
-  dl $B5BF72                                ; $878B69 |
-  dl $B5BFF0                                ; $878B6C |
-  dl $B5C038                                ; $878B6F |
-  dl $B5C0D0                                ; $878B72 |
-  dl $B5C168                                ; $878B75 |
-  dl $B5C1E6                                ; $878B78 |
-  dl $B5C268                                ; $878B7B |
-  dl $B5C2E2                                ; $878B7E |
-  dl $B5C32A                                ; $878B81 |
-  dl $B5C368                                ; $878B84 |
-  dl $B5C3A6                                ; $878B87 |
-  dl $B5C3E0                                ; $878B8A |
-  dl $B5C450                                ; $878B8D |
-  dl $B5C4AC                                ; $878B90 |
-  dl $B5C4E6                                ; $878B93 |
-  dl $B5C534                                ; $878B96 |
-  dl $B5C57E                                ; $878B99 |
-  dl $B5C636                                ; $878B9C |
-  dl $B5C6DA                                ; $878B9F |
-  dl $B5C75A                                ; $878BA2 |
-  dl $B5C856                                ; $878BA5 |
-  dl $B5C8C6                                ; $878BA8 |
-  dl $B5C974                                ; $878BAB |
-  dl $B5C994                                ; $878BAE |
-  dl $B5C9A2                                ; $878BB1 |
-  dl $B5C9E0                                ; $878BB4 |
-  dl $B5886C                                ; $878BB7 |
-  dl $B58886                                ; $878BBA |
-  dl $B58904                                ; $878BBD |
-  dl $B58000                                ; $878BC0 |
-  dl $B580BC                                ; $878BC3 |
-  dl $B581F4                                ; $878BC6 |
-  dl $B5826C                                ; $878BC9 |
-  dl $B583AC                                ; $878BCC |
-  dl $B58416                                ; $878BCF |
-  dl $B584BA                                ; $878BD2 |
-  dl $B5857A                                ; $878BD5 |
-  dl $B58612                                ; $878BD8 |
-  dl $B586C0                                ; $878BDB |
-  dl $B5873A                                ; $878BDE |
-  dl $B587A0                                ; $878BE1 |
-  dl $B587DA                                ; $878BE4 |
-  dl $B5886C                                ; $878BE7 |
-  dl $B58886                                ; $878BEA |
-  dl $B58904                                ; $878BED |
-  dl $B58000                                ; $878BF0 |
-  dl $B580BC                                ; $878BF3 |
-  dl $B581F4                                ; $878BF6 |
-  dl $B5826C                                ; $878BF9 |
-  dl $B583AC                                ; $878BFC |
-  dl $B58416                                ; $878BFF |
-  dl $B584BA                                ; $878C02 |
-  dl $B5857A                                ; $878C05 |
-  dl $B58612                                ; $878C08 |
-  dl $B586C0                                ; $878C0B |
-  dl $B5CAE4                                ; $878C0E |
-  dl $B5CB14                                ; $878C11 |
-  dl $B5CB3E                                ; $878C14 |
-  dl $B5CB8A                                ; $878C17 |
-  dl $B5CBE4                                ; $878C1A |
-  dl $B5CC0E                                ; $878C1D |
-  dl $B5CC54                                ; $878C20 |
-  dl $B5CC80                                ; $878C23 |
-  dl $B5CD16                                ; $878C26 |
+  dl $B58000                                ; $878A10 | index $00
+  dl $B580BC                                ; $878A13 | index $01
+  dl $B581F4                                ; $878A16 | index $02
+  dl $B5826C                                ; $878A19 | index $03
+  dl $B583AC                                ; $878A1C | index $04
+  dl $B58416                                ; $878A1F | index $05
+  dl $B584BA                                ; $878A22 | index $06
+  dl $B5857A                                ; $878A25 | index $07
+  dl $B58612                                ; $878A28 | index $08
+  dl $B586C0                                ; $878A2B | index $09
+  dl $B5873A                                ; $878A2E | index $0A
+  dl $B587A0                                ; $878A31 | index $0B
+  dl $B587DA                                ; $878A34 | index $0C
+  dl $B5886C                                ; $878A37 | index $0D
+  dl $B58886                                ; $878A3A | index $0E
+  dl $B58904                                ; $878A3D | index $0F
+  dl $B58992                                ; $878A40 | index $10
+  dl $B58A22                                ; $878A43 | index $11
+  dl $B58AF2                                ; $878A46 | index $12
+  dl $B58BE8                                ; $878A49 | index $13
+  dl $B58C54                                ; $878A4C | index $14
+  dl $B58D2C                                ; $878A4F | index $15
+  dl $B58E22                                ; $878A52 | index $16
+  dl $B58EDC                                ; $878A55 | index $17
+  dl $B58FDE                                ; $878A58 | index $18
+  dl $B5900C                                ; $878A5B | index $19
+  dl $B59034                                ; $878A5E | index $1A
+  dl $B59082                                ; $878A61 | index $1B
+  dl $B590E2                                ; $878A64 | index $1C
+  dl $B59142                                ; $878A67 | index $1D
+  dl $B59194                                ; $878A6A | index $1E
+  dl $B5921C                                ; $878A6D | index $1F
+  dl $B5929C                                ; $878A70 | index $20
+  dl $B59394                                ; $878A73 | index $21
+  dl $B59400                                ; $878A76 | index $22
+  dl $B59520                                ; $878A79 | index $23
+  dl $B59586                                ; $878A7C | index $24
+  dl $B595CC                                ; $878A7F | index $25
+  dl $B59676                                ; $878A82 | index $26
+  dl $B59774                                ; $878A85 | index $27
+  dl $B5987A                                ; $878A88 | index $28
+  dl $B598D8                                ; $878A8B | index $29
+  dl $B5990A                                ; $878A8E | index $2A
+  dl $B59948                                ; $878A91 | index $2B
+  dl $B599BA                                ; $878A94 | index $2C
+  dl $B59A12                                ; $878A97 | index $2D
+  dl $B59B3E                                ; $878A9A | index $2E
+  dl $B59B9C                                ; $878A9D | index $2F
+  dl $B59C20                                ; $878AA0 | index $30
+  dl $B59C84                                ; $878AA3 | index $31
+  dl $B59D68                                ; $878AA6 | index $32
+  dl $B59E02                                ; $878AA9 | index $33
+  dl $B59E82                                ; $878AAC | index $34
+  dl $B59F4C                                ; $878AAF | index $35
+  dl $B59FB0                                ; $878AB2 | index $36
+  dl $B5A054                                ; $878AB5 | index $37
+  dl $B5A0E4                                ; $878AB8 | index $38
+  dl $B5A1A6                                ; $878ABB | index $39
+  dl $B5A210                                ; $878ABE | index $3A
+  dl $B5A27A                                ; $878AC1 | index $3B
+  dl $B5A2F0                                ; $878AC4 | index $3C
+  dl $B5A3C2                                ; $878AC7 | index $3D
+  dl $B5A432                                ; $878ACA | index $3E
+  dl $B5A4BC                                ; $878ACD | index $3F
+  dl $B5A52C                                ; $878AD0 | index $40
+  dl $B5A5C8                                ; $878AD3 | index $41
+  dl $B5A644                                ; $878AD6 | index $42
+  dl $B5A6DE                                ; $878AD9 | index $43
+  dl $B5A772                                ; $878ADC | index $44
+  dl $B5A7DA                                ; $878ADF | index $45
+  dl $B5A86E                                ; $878AE2 | index $46
+  dl $B5A8D2                                ; $878AE5 | index $47
+  dl $B5A952                                ; $878AE8 | index $48
+  dl $B5AA08                                ; $878AEB | index $49
+  dl $B5AAB4                                ; $878AEE | index $4A
+  dl $B5AB18                                ; $878AF1 | index $4B
+  dl $B5ABC8                                ; $878AF4 | index $4C
+  dl $B5AC86                                ; $878AF7 | index $4D
+  dl $B5ACCA                                ; $878AFA | index $4E
+  dl $B5AD58                                ; $878AFD | index $4F
+  dl $B5ADA2                                ; $878B00 | index $50
+  dl $B5AE42                                ; $878B03 | index $51
+  dl $B5AE88                                ; $878B06 | index $52
+  dl $B5AF14                                ; $878B09 | index $53
+  dl $B5AFE0                                ; $878B0C | index $54
+  dl $B5B01C                                ; $878B0F | index $55
+  dl $B5B080                                ; $878B12 | index $56
+  dl $B5B0DE                                ; $878B15 | index $57
+  dl $B5B240                                ; $878B18 | index $58
+  dl $B5B2C4                                ; $878B1B | index $59
+  dl $B5B3AA                                ; $878B1E | index $5A
+  dl $B5B3F0                                ; $878B21 | index $5B
+  dl $B5B43E                                ; $878B24 | index $5C
+  dl $B5B48A                                ; $878B27 | index $5D
+  dl $B5B522                                ; $878B2A | index $5E
+  dl $B5B850                                ; $878B2D | index $5F
+  dl $B5B976                                ; $878B30 | index $60
+  dl $B5B9A8                                ; $878B33 | index $61
+  dl $B5B9D8                                ; $878B36 | index $62
+  dl $B5BA04                                ; $878B39 | index $63
+  dl $B5BA6C                                ; $878B3C | index $64
+  dl $B5BAD0                                ; $878B3F | index $65
+  dl $B5BB38                                ; $878B42 | index $66
+  dl $B5BB96                                ; $878B45 | index $67
+  dl $B586C0                                ; $878B48 | index $68
+  dl $B586C0                                ; $878B4B | index $69
+  dl $B586C0                                ; $878B4E | index $6A
+  dl $B5BBB6                                ; $878B51 | index $6B
+  dl $B5BC2A                                ; $878B54 | index $6C
+  dl $B5BCAE                                ; $878B57 | index $6D
+  dl $B5BD52                                ; $878B5A | index $6E
+  dl $B5BDF0                                ; $878B5D | index $6F
+  dl $B5BE24                                ; $878B60 | index $70
+  dl $B5BE8C                                ; $878B63 | index $71
+  dl $B5BEBE                                ; $878B66 | index $72
+  dl $B5BF72                                ; $878B69 | index $73
+  dl $B5BFF0                                ; $878B6C | index $74
+  dl $B5C038                                ; $878B6F | index $75
+  dl $B5C0D0                                ; $878B72 | index $76
+  dl $B5C168                                ; $878B75 | index $77
+  dl $B5C1E6                                ; $878B78 | index $78
+  dl $B5C268                                ; $878B7B | index $79
+  dl $B5C2E2                                ; $878B7E | index $7A
+  dl $B5C32A                                ; $878B81 | index $7B
+  dl $B5C368                                ; $878B84 | index $7C
+  dl $B5C3A6                                ; $878B87 | index $7D
+  dl $B5C3E0                                ; $878B8A | index $7E
+  dl $B5C450                                ; $878B8D | index $7F
+  dl $B5C4AC                                ; $878B90 | index $80
+  dl $B5C4E6                                ; $878B93 | index $81
+  dl $B5C534                                ; $878B96 | index $82
+  dl $B5C57E                                ; $878B99 | index $83
+  dl $B5C636                                ; $878B9C | index $84
+  dl $B5C6DA                                ; $878B9F | index $85
+  dl $B5C75A                                ; $878BA2 | index $86
+  dl $B5C856                                ; $878BA5 | index $87
+  dl $B5C8C6                                ; $878BA8 | index $88
+  dl $B5C974                                ; $878BAB | index $89
+  dl $B5C994                                ; $878BAE | index $8A
+  dl $B5C9A2                                ; $878BB1 | index $8B
+  dl $B5C9E0                                ; $878BB4 | index $8C
+  dl $B5886C                                ; $878BB7 | index $8D
+  dl $B58886                                ; $878BBA | index $8E
+  dl $B58904                                ; $878BBD | index $8F
+  dl $B58000                                ; $878BC0 | index $90
+  dl $B580BC                                ; $878BC3 | index $91
+  dl $B581F4                                ; $878BC6 | index $92
+  dl $B5826C                                ; $878BC9 | index $93
+  dl $B583AC                                ; $878BCC | index $94
+  dl $B58416                                ; $878BCF | index $95
+  dl $B584BA                                ; $878BD2 | index $96
+  dl $B5857A                                ; $878BD5 | index $97
+  dl $B58612                                ; $878BD8 | index $98
+  dl $B586C0                                ; $878BDB | index $99
+  dl $B5873A                                ; $878BDE | index $9A
+  dl $B587A0                                ; $878BE1 | index $9B
+  dl $B587DA                                ; $878BE4 | index $9C
+  dl $B5886C                                ; $878BE7 | index $9D
+  dl $B58886                                ; $878BEA | index $9E
+  dl $B58904                                ; $878BED | index $9F
+  dl $B58000                                ; $878BF0 | index $A0
+  dl $B580BC                                ; $878BF3 | index $A1
+  dl $B581F4                                ; $878BF6 | index $A2
+  dl $B5826C                                ; $878BF9 | index $A3
+  dl $B583AC                                ; $878BFC | index $A4
+  dl $B58416                                ; $878BFF | index $A5
+  dl $B584BA                                ; $878C02 | index $A6
+  dl $B5857A                                ; $878C05 | index $A7
+  dl $B58612                                ; $878C08 | index $A8
+  dl $B586C0                                ; $878C0B | index $A9
+  dl $B5CAE4                                ; $878C0E | index $AA
+  dl $B5CB14                                ; $878C11 | index $AB
+  dl $B5CB3E                                ; $878C14 | index $AC
+  dl $B5CB8A                                ; $878C17 | index $AD
+  dl $B5CBE4                                ; $878C1A | index $AE
+  dl $B5CC0E                                ; $878C1D | index $AF
+  dl $B5CC54                                ; $878C20 | index $B0
+  dl $B5CC80                                ; $878C23 | index $B1
+  dl $B5CD16                                ; $878C26 | index $B2
 
 PTR24_878C29:
-  dl $B5CD5E                                ; $878C29 |
-  dl $B5CD8A                                ; $878C2C |
-  dl $B5CDF8                                ; $878C2F |
-  dl $B5CE5A                                ; $878C32 |
-  dl $B5CE86                                ; $878C35 |
-  dl $B5CEB6                                ; $878C38 |
-  dl $B5CEDE                                ; $878C3B |
-  dl $B5CF00                                ; $878C3E |
-  dl $B5CF5C                                ; $878C41 |
-  dl $B5CF86                                ; $878C44 |
-  dl $B5CFB0                                ; $878C47 |
-  dl $B5CFDA                                ; $878C4A |
-  dl $B5D004                                ; $878C4D |
-  dl $B5D02E                                ; $878C50 |
-  dl $B5D058                                ; $878C53 |
-  dl $B5D082                                ; $878C56 |
-  dl $B5D0AC                                ; $878C59 |
-  dl $B5D0D6                                ; $878C5C |
-  dl $B5D100                                ; $878C5F |
-  dl $B5D12A                                ; $878C62 |
-  dl $B5D154                                ; $878C65 |
-  dl $B5D17E                                ; $878C68 |
-  dl $B5D1A8                                ; $878C6B |
-  dl $B5D1D2                                ; $878C6E |
-  dl $B5D1FC                                ; $878C71 |
-  dl $B5D226                                ; $878C74 |
-  dl $B5D250                                ; $878C77 |
-  dl $B5D27A                                ; $878C7A |
-  dl $B5D2A4                                ; $878C7D |
-  dl $B5D2CE                                ; $878C80 |
-  dl $B5D2F8                                ; $878C83 |
-  dl $B5D322                                ; $878C86 |
-  dl $B5D34C                                ; $878C89 |
-  dl $B5D376                                ; $878C8C |
-  dl $B5D3A0                                ; $878C8F |
-  dl $B5D3CA                                ; $878C92 |
-  dl $B5D3F4                                ; $878C95 |
-  dl $B5D41E                                ; $878C98 |
-  dl $B5D448                                ; $878C9B |
-  dl $B5D472                                ; $878C9E |
-  dl $B5D49C                                ; $878CA1 |
-  dl $B5D4C6                                ; $878CA4 |
-  dl $B5D4F0                                ; $878CA7 |
-  dl $B5D51A                                ; $878CAA |
-  dl $B5D544                                ; $878CAD |
-  dl $B5D56E                                ; $878CB0 |
-  dl $B5D598                                ; $878CB3 |
-  dl $B5D5C2                                ; $878CB6 |
-  dl $B5D5EC                                ; $878CB9 |
-  dl $B5D616                                ; $878CBC |
-  dl $B5D640                                ; $878CBF |
-  dl $B5D66A                                ; $878CC2 |
-  dl $B5D694                                ; $878CC5 |
-  dl $B5D6BE                                ; $878CC8 |
-  dl $B5D6E8                                ; $878CCB |
-  dl $B5D712                                ; $878CCE |
-  dl $B5D73C                                ; $878CD1 |
-  dl $B5D766                                ; $878CD4 |
-  dl $B5D790                                ; $878CD7 |
-  dl $B5D7BA                                ; $878CDA |
-  dl $B5D7E4                                ; $878CDD |
-  dl $B5D80E                                ; $878CE0 |
-  dl $B5D978                                ; $878CE3 |
-  dl $B5DA46                                ; $878CE6 |
-  dl $B5DB26                                ; $878CE9 |
-  dl $B5DB50                                ; $878CEC |
-  dl $B5DB7A                                ; $878CEF |
-  dl $B5DBA4                                ; $878CF2 |
-  dl $B5DBCE                                ; $878CF5 |
-  dl $B5DBF8                                ; $878CF8 |
-  dl $B5DC22                                ; $878CFB |
-  dl $B5DC4C                                ; $878CFE |
-  dl $B5DC76                                ; $878D01 |
-  dl $B5DCA0                                ; $878D04 |
-  dl $B5DDD4                                ; $878D07 |
-  dl $B5DE96                                ; $878D0A |
-  dl $B5DF82                                ; $878D0D |
-  dl $B5DFC0                                ; $878D10 |
-  dl $B5E29A                                ; $878D13 |
-  dl $B5E322                                ; $878D16 |
-  dl $B5E380                                ; $878D19 |
-  dl $B5E442                                ; $878D1C |
-  dl $B5E4FC                                ; $878D1F |
-  dl $B5E5B6                                ; $878D22 |
-  dl $B5E6E8                                ; $878D25 |
-  dl $B5E80E                                ; $878D28 |
-  dl $B5EAE0                                ; $878D2B |
-  dl $B5EB0A                                ; $878D2E |
-  dl $B5EC18                                ; $878D31 |
-  dl $B5ECDE                                ; $878D34 |
-  dl $B5ED1C                                ; $878D37 |
-  dl $B5ED62                                ; $878D3A |
-  dl $B5EDB2                                ; $878D3D |
-  dl $B5EDEC                                ; $878D40 |
-  dl $B5EF8C                                ; $878D43 |
-  dl $B5EFA6                                ; $878D46 |
-  dl $B5EFC6                                ; $878D49 |
-  dl $B5EFE0                                ; $878D4C |
-  dl $B5EFF6                                ; $878D4F |
-  dl $B5F06A                                ; $878D52 |
-  dl $B5F0D6                                ; $878D55 |
-  dl $B5F1BE                                ; $878D58 |
-  dl $B5F386                                ; $878D5B |
-  dl $B5F3AC                                ; $878D5E |
-  dl $B5F3EC                                ; $878D61 |
-  dl $B5F442                                ; $878D64 |
-  dl $B5F486                                ; $878D67 |
-  dl $B5F4D6                                ; $878D6A |
-  dl $B5F4F4                                ; $878D6D |
-  dl $B5F676                                ; $878D70 |
-  dl $B5F7EE                                ; $878D73 |
-  dl $B5F822                                ; $878D76 |
-  dl $B5F868                                ; $878D79 |
-  dl $B5F978                                ; $878D7C |
-  dl $B5F9F8                                ; $878D7F |
-  dl $B68000                                ; $878D82 |
-  dl $B5FAA2                                ; $878D85 |
-  dl $B6805E                                ; $878D88 |
-  dl $B5FA7A                                ; $878D8B |
-  dl $B680AA                                ; $878D8E |
-  dl $B6824A                                ; $878D91 |
-  dl $B6827C                                ; $878D94 |
-  dl $B682C0                                ; $878D97 |
-  dl $B68388                                ; $878D9A |
-  dl $B68418                                ; $878D9D |
-  dl $B68458                                ; $878DA0 |
-  dl $B684D0                                ; $878DA3 |
-  dl $B68546                                ; $878DA6 |
-  dl $B68580                                ; $878DA9 |
-  dl $B580BC                                ; $878DAC |
-  dl $B580BC                                ; $878DAF |
-  dl $B580BC                                ; $878DB2 |
-  dl $B580BC                                ; $878DB5 |
-  dl $B580BC                                ; $878DB8 |
-  dl $B580BC                                ; $878DBB |
-  dl $B580BC                                ; $878DBE |
-  dl $B580BC                                ; $878DC1 |
-  dl $B580BC                                ; $878DC4 |
-  dl $B580BC                                ; $878DC7 |
-  dl $B580BC                                ; $878DCA |
-  dl $B580BC                                ; $878DCD |
-  dl $B685DA                                ; $878DD0 |
-  dl $B68624                                ; $878DD3 |
-  dl $B68662                                ; $878DD6 |
-  dl $B686A0                                ; $878DD9 |
-  dl $B686F6                                ; $878DDC |
-  dl $B68734                                ; $878DDF |
-  dl $B68778                                ; $878DE2 |
-  dl $B687C2                                ; $878DE5 |
-  dl $B68812                                ; $878DE8 |
-  dl $B68862                                ; $878DEB |
-  dl $B68894                                ; $878DEE |
-  dl $B688DE                                ; $878DF1 |
-  dl $B68928                                ; $878DF4 |
-  dl $B68972                                ; $878DF7 |
-  dl $B689BC                                ; $878DFA |
-  dl $B68CE0                                ; $878DFD |
-  dl $B689F4                                ; $878E00 |
-  dl $B68A26                                ; $878E03 |
-  dl $B68A58                                ; $878E06 |
-  dl $B68A8A                                ; $878E09 |
-  dl $B68AC2                                ; $878E0C |
-  dl $B68AFA                                ; $878E0F |
-  dl $B68B32                                ; $878E12 |
-  dl $B68B76                                ; $878E15 |
-  dl $B68BA2                                ; $878E18 |
-  dl $B68BD4                                ; $878E1B |
-  dl $B68C0C                                ; $878E1E |
-  dl $B68C44                                ; $878E21 |
-  dl $B68C88                                ; $878E24 |
-  dl $B68CB4                                ; $878E27 |
-  dl $B68CE0                                ; $878E2A |
-  dl $B68D0C                                ; $878E2D |
-  dl $B68D44                                ; $878E30 |
-  dl $B68D76                                ; $878E33 |
-  dl $B68DAE                                ; $878E36 |
-  dl $B68CE0                                ; $878E39 |
-  dl $B68DE6                                ; $878E3C |
-  dl $B68CE0                                ; $878E3F |
-  dl $B68CE0                                ; $878E42 |
-  dl $B68CE0                                ; $878E45 |
-  dl $B68CE0                                ; $878E48 |
-  dl $B68CE0                                ; $878E4B |
-  dl $B68CE0                                ; $878E4E |
-  dl $B68CE0                                ; $878E51 |
-  dl $B68CE0                                ; $878E54 |
-  dl $B68CE0                                ; $878E57 |
-  dl $B68CE0                                ; $878E5A |
-  dl $B68CE0                                ; $878E5D |
-  dl $B68E1E                                ; $878E60 |
-  dl $B68E5C                                ; $878E63 |
-  dl $B68E90                                ; $878E66 |
-  dl $B68F5E                                ; $878E69 |
-  dl $B68F90                                ; $878E6C |
-  dl $B68FC2                                ; $878E6F |
-  dl $B68FFA                                ; $878E72 |
-  dl $B69026                                ; $878E75 |
-  dl $B69064                                ; $878E78 |
-  dl $B69096                                ; $878E7B |
-  dl $B690C2                                ; $878E7E |
-  dl $B690F4                                ; $878E81 |
-  dl $B69126                                ; $878E84 |
-  dl $B69158                                ; $878E87 |
-  dl $B69172                                ; $878E8A |
-  dl $B6918C                                ; $878E8D |
-  dl $B691D6                                ; $878E90 |
-  dl $B69220                                ; $878E93 |
-  dl $B69270                                ; $878E96 |
-  dl $B692A2                                ; $878E99 |
-  dl $B692D4                                ; $878E9C |
+  dl $B5CD5E                                ; $878C29 | index $00
+  dl $B5CD8A                                ; $878C2C | index $01
+  dl $B5CDF8                                ; $878C2F | index $02
+  dl $B5CE5A                                ; $878C32 | index $03
+  dl $B5CE86                                ; $878C35 | index $04
+  dl $B5CEB6                                ; $878C38 | index $05
+  dl $B5CEDE                                ; $878C3B | index $06
+  dl $B5CF00                                ; $878C3E | index $07
+  dl $B5CF5C                                ; $878C41 | index $08
+  dl $B5CF86                                ; $878C44 | index $09
+  dl $B5CFB0                                ; $878C47 | index $0A
+  dl $B5CFDA                                ; $878C4A | index $0B
+  dl $B5D004                                ; $878C4D | index $0C
+  dl $B5D02E                                ; $878C50 | index $0D
+  dl $B5D058                                ; $878C53 | index $0E
+  dl $B5D082                                ; $878C56 | index $0F
+  dl $B5D0AC                                ; $878C59 | index $10
+  dl $B5D0D6                                ; $878C5C | index $11
+  dl $B5D100                                ; $878C5F | index $12
+  dl $B5D12A                                ; $878C62 | index $13
+  dl $B5D154                                ; $878C65 | index $14
+  dl $B5D17E                                ; $878C68 | index $15
+  dl $B5D1A8                                ; $878C6B | index $16
+  dl $B5D1D2                                ; $878C6E | index $17
+  dl $B5D1FC                                ; $878C71 | index $18
+  dl $B5D226                                ; $878C74 | index $19
+  dl $B5D250                                ; $878C77 | index $1A
+  dl $B5D27A                                ; $878C7A | index $1B
+  dl $B5D2A4                                ; $878C7D | index $1C
+  dl $B5D2CE                                ; $878C80 | index $1D
+  dl $B5D2F8                                ; $878C83 | index $1E
+  dl $B5D322                                ; $878C86 | index $1F
+  dl $B5D34C                                ; $878C89 | index $20
+  dl $B5D376                                ; $878C8C | index $21
+  dl $B5D3A0                                ; $878C8F | index $22
+  dl $B5D3CA                                ; $878C92 | index $23
+  dl $B5D3F4                                ; $878C95 | index $24
+  dl $B5D41E                                ; $878C98 | index $25
+  dl $B5D448                                ; $878C9B | index $26
+  dl $B5D472                                ; $878C9E | index $27
+  dl $B5D49C                                ; $878CA1 | index $28
+  dl $B5D4C6                                ; $878CA4 | index $29
+  dl $B5D4F0                                ; $878CA7 | index $2A
+  dl $B5D51A                                ; $878CAA | index $2B
+  dl $B5D544                                ; $878CAD | index $2C
+  dl $B5D56E                                ; $878CB0 | index $2D
+  dl $B5D598                                ; $878CB3 | index $2E
+  dl $B5D5C2                                ; $878CB6 | index $2F
+  dl $B5D5EC                                ; $878CB9 | index $30
+  dl $B5D616                                ; $878CBC | index $31
+  dl $B5D640                                ; $878CBF | index $32
+  dl $B5D66A                                ; $878CC2 | index $33
+  dl $B5D694                                ; $878CC5 | index $34
+  dl $B5D6BE                                ; $878CC8 | index $35
+  dl $B5D6E8                                ; $878CCB | index $36
+  dl $B5D712                                ; $878CCE | index $37
+  dl $B5D73C                                ; $878CD1 | index $38
+  dl $B5D766                                ; $878CD4 | index $39
+  dl $B5D790                                ; $878CD7 | index $3A
+  dl $B5D7BA                                ; $878CDA | index $3B
+  dl $B5D7E4                                ; $878CDD | index $3C
+  dl $B5D80E                                ; $878CE0 | index $3D
+  dl $B5D978                                ; $878CE3 | index $3E
+  dl $B5DA46                                ; $878CE6 | index $3F
+  dl $B5DB26                                ; $878CE9 | index $40
+  dl $B5DB50                                ; $878CEC | index $41
+  dl $B5DB7A                                ; $878CEF | index $42
+  dl $B5DBA4                                ; $878CF2 | index $43
+  dl $B5DBCE                                ; $878CF5 | index $44
+  dl $B5DBF8                                ; $878CF8 | index $45
+  dl $B5DC22                                ; $878CFB | index $46
+  dl $B5DC4C                                ; $878CFE | index $47
+  dl $B5DC76                                ; $878D01 | index $48
+  dl $B5DCA0                                ; $878D04 | index $49
+  dl $B5DDD4                                ; $878D07 | index $4A
+  dl $B5DE96                                ; $878D0A | index $4B
+  dl $B5DF82                                ; $878D0D | index $4C
+  dl $B5DFC0                                ; $878D10 | index $4D
+  dl $B5E29A                                ; $878D13 | index $4E
+  dl $B5E322                                ; $878D16 | index $4F
+  dl $B5E380                                ; $878D19 | index $50
+  dl $B5E442                                ; $878D1C | index $51
+  dl $B5E4FC                                ; $878D1F | index $52
+  dl $B5E5B6                                ; $878D22 | index $53
+  dl $B5E6E8                                ; $878D25 | index $54
+  dl $B5E80E                                ; $878D28 | index $55
+  dl $B5EAE0                                ; $878D2B | index $56
+  dl $B5EB0A                                ; $878D2E | index $57
+  dl $B5EC18                                ; $878D31 | index $58
+  dl $B5ECDE                                ; $878D34 | index $59
+  dl $B5ED1C                                ; $878D37 | index $5A
+  dl $B5ED62                                ; $878D3A | index $5B
+  dl $B5EDB2                                ; $878D3D | index $5C
+  dl $B5EDEC                                ; $878D40 | index $5D
+  dl $B5EF8C                                ; $878D43 | index $5E
+  dl $B5EFA6                                ; $878D46 | index $5F
+  dl $B5EFC6                                ; $878D49 | index $60
+  dl $B5EFE0                                ; $878D4C | index $61
+  dl $B5EFF6                                ; $878D4F | index $62
+  dl $B5F06A                                ; $878D52 | index $63
+  dl $B5F0D6                                ; $878D55 | index $64
+  dl $B5F1BE                                ; $878D58 | index $65
+  dl $B5F386                                ; $878D5B | index $66
+  dl $B5F3AC                                ; $878D5E | index $67
+  dl $B5F3EC                                ; $878D61 | index $68
+  dl $B5F442                                ; $878D64 | index $69
+  dl $B5F486                                ; $878D67 | index $6A
+  dl $B5F4D6                                ; $878D6A | index $6B
+  dl $B5F4F4                                ; $878D6D | index $6C
+  dl $B5F676                                ; $878D70 | index $6D
+  dl $B5F7EE                                ; $878D73 | index $6E
+  dl $B5F822                                ; $878D76 | index $6F
+  dl $B5F868                                ; $878D79 | index $70
+  dl $B5F978                                ; $878D7C | index $71
+  dl $B5F9F8                                ; $878D7F | index $72
+  dl $B68000                                ; $878D82 | index $73
+  dl $B5FAA2                                ; $878D85 | index $74
+  dl $B6805E                                ; $878D88 | index $75
+  dl $B5FA7A                                ; $878D8B | index $76
+  dl $B680AA                                ; $878D8E | index $77
+  dl $B6824A                                ; $878D91 | index $78
+  dl $B6827C                                ; $878D94 | index $79
+  dl $B682C0                                ; $878D97 | index $7A
+  dl $B68388                                ; $878D9A | index $7B
+  dl $B68418                                ; $878D9D | index $7C
+  dl $B68458                                ; $878DA0 | index $7D
+  dl $B684D0                                ; $878DA3 | index $7E
+  dl $B68546                                ; $878DA6 | index $7F
+  dl $B68580                                ; $878DA9 | index $80
+  dl $B580BC                                ; $878DAC | index $81
+  dl $B580BC                                ; $878DAF | index $82
+  dl $B580BC                                ; $878DB2 | index $83
+  dl $B580BC                                ; $878DB5 | index $84
+  dl $B580BC                                ; $878DB8 | index $85
+  dl $B580BC                                ; $878DBB | index $86
+  dl $B580BC                                ; $878DBE | index $87
+  dl $B580BC                                ; $878DC1 | index $88
+  dl $B580BC                                ; $878DC4 | index $89
+  dl $B580BC                                ; $878DC7 | index $8A
+  dl $B580BC                                ; $878DCA | index $8B
+  dl $B580BC                                ; $878DCD | index $8C
+  dl $B685DA                                ; $878DD0 | index $8D
+  dl $B68624                                ; $878DD3 | index $8E
+  dl $B68662                                ; $878DD6 | index $8F
+  dl $B686A0                                ; $878DD9 | index $90
+  dl $B686F6                                ; $878DDC | index $91
+  dl $B68734                                ; $878DDF | index $92
+  dl $B68778                                ; $878DE2 | index $93
+  dl $B687C2                                ; $878DE5 | index $94
+  dl $B68812                                ; $878DE8 | index $95
+  dl $B68862                                ; $878DEB | index $96
+  dl $B68894                                ; $878DEE | index $97
+  dl $B688DE                                ; $878DF1 | index $98
+  dl $B68928                                ; $878DF4 | index $99
+  dl $B68972                                ; $878DF7 | index $9A
+  dl $B689BC                                ; $878DFA | index $9B
+  dl $B68CE0                                ; $878DFD | index $9C
+  dl $B689F4                                ; $878E00 | index $9D
+  dl $B68A26                                ; $878E03 | index $9E
+  dl $B68A58                                ; $878E06 | index $9F
+  dl $B68A8A                                ; $878E09 | index $A0
+  dl $B68AC2                                ; $878E0C | index $A1
+  dl $B68AFA                                ; $878E0F | index $A2
+  dl $B68B32                                ; $878E12 | index $A3
+  dl $B68B76                                ; $878E15 | index $A4
+  dl $B68BA2                                ; $878E18 | index $A5
+  dl $B68BD4                                ; $878E1B | index $A6
+  dl $B68C0C                                ; $878E1E | index $A7
+  dl $B68C44                                ; $878E21 | index $A8
+  dl $B68C88                                ; $878E24 | index $A9
+  dl $B68CB4                                ; $878E27 | index $AA
+  dl $B68CE0                                ; $878E2A | index $AB
+  dl $B68D0C                                ; $878E2D | index $AC
+  dl $B68D44                                ; $878E30 | index $AD
+  dl $B68D76                                ; $878E33 | index $AE
+  dl $B68DAE                                ; $878E36 | index $AF
+  dl $B68CE0                                ; $878E39 | index $B0
+  dl $B68DE6                                ; $878E3C | index $B1
+  dl $B68CE0                                ; $878E3F | index $B2
+  dl $B68CE0                                ; $878E42 | index $B3
+  dl $B68CE0                                ; $878E45 | index $B4
+  dl $B68CE0                                ; $878E48 | index $B5
+  dl $B68CE0                                ; $878E4B | index $B6
+  dl $B68CE0                                ; $878E4E | index $B7
+  dl $B68CE0                                ; $878E51 | index $B8
+  dl $B68CE0                                ; $878E54 | index $B9
+  dl $B68CE0                                ; $878E57 | index $BA
+  dl $B68CE0                                ; $878E5A | index $BB
+  dl $B68CE0                                ; $878E5D | index $BC
+  dl $B68E1E                                ; $878E60 | index $BD
+  dl $B68E5C                                ; $878E63 | index $BE
+  dl $B68E90                                ; $878E66 | index $BF
+  dl $B68F5E                                ; $878E69 | index $C0
+  dl $B68F90                                ; $878E6C | index $C1
+  dl $B68FC2                                ; $878E6F | index $C2
+  dl $B68FFA                                ; $878E72 | index $C3
+  dl $B69026                                ; $878E75 | index $C4
+  dl $B69064                                ; $878E78 | index $C5
+  dl $B69096                                ; $878E7B | index $C6
+  dl $B690C2                                ; $878E7E | index $C7
+  dl $B690F4                                ; $878E81 | index $C8
+  dl $B69126                                ; $878E84 | index $C9
+  dl $B69158                                ; $878E87 | index $CA
+  dl $B69172                                ; $878E8A | index $CB
+  dl $B6918C                                ; $878E8D | index $CC
+  dl $B691D6                                ; $878E90 | index $CD
+  dl $B69220                                ; $878E93 | index $CE
+  dl $B69270                                ; $878E96 | index $CF
+  dl $B692A2                                ; $878E99 | index $D0
+  dl $B692D4                                ; $878E9C | index $D1
 
 DATA8_878E9F:
   db $2C,$D6,$47,$D6,$58,$D6,$69,$D6        ; $878E9F |

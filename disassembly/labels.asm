@@ -505,7 +505,6 @@ LOOSE_OP_008448 = $008448
 LOOSE_OP_008662 = $008662                 
 LOOSE_OP_008661 = $008661                 
 LOOSE_OP_0086E2 = $0086E2                 
-LOOSE_OP_859187 = $859187                 
 LOOSE_OP_009C8C = $009C8C                 
 LOOSE_OP_00886E = $00886E                 
 LOOSE_OP_008874 = $008874                 

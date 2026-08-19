@@ -11236,7 +11236,7 @@ asset_88DB03:
 
   db $80                                    ; $88DB0E | NOP
 
-DATA_88DB0F:
+asset_88DB0F_broken:
   dl $A8AC30                                ; $88DB0F |
   dw $362E                                  ; $88DB12 |
   db $80                                    ; $88DB14 |
@@ -12649,6 +12649,7 @@ asset_88E47B:
   dl FILE_BFF154                            ; $88E49B |/ Source: ROM (compressed)
   dw $FFFF                                  ; $88E49E | End of transfer
 
+asset_88E4A0_broken:
   db $FF                                    ; $88E4A0 |
 
 asset_88E4A1:

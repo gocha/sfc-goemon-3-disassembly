@@ -5711,11 +5711,11 @@ CODE_80A4FF:
 
 
 get_next_char:
-  LDA.W !r_text_ptr                         ; $80A502 |
+  LDA.W !r_text_ptr_l                       ; $80A502 |
   STA.W $7C6A                               ; $80A505 |
-  LDA.W !r_text_op_arg                      ; $80A508 |
+  LDA.W !r_text_op_arg_l                    ; $80A508 |
   STA.W $7C6C                               ; $80A50B |
-  LDA.W !r_text_token                       ; $80A50E |
+  LDA.W !r_text_token_l                     ; $80A50E |
   STA.W $7C6E                               ; $80A511 |
   CMP.W #$00F0                              ; $80A514 |
   BCC .below_f0                             ; $80A517 |
@@ -5734,8 +5734,8 @@ get_next_char:
   JMP.W .dispatch_repeated_space            ; $80A52E |
 
 .read_next_token
-  STZ.W !r_text_op_arg                      ; $80A531 |
-  LDX.W !r_text_ptr                         ; $80A534 |
+  STZ.W !r_text_op_arg_l                    ; $80A531 |
+  LDX.W !r_text_ptr_l                       ; $80A534 |
   TXA                                       ; $80A537 |
   BPL ..low_offset                          ; $80A538 |
   LDA.L $BD0000,X                           ; $80A53A |
@@ -5746,8 +5746,8 @@ get_next_char:
 
 ..loaded
   AND.W #$00FF                              ; $80A544 |
-  STA.W !r_text_token                       ; $80A547 |
-  INC.W !r_text_ptr                         ; $80A54A |
+  STA.W !r_text_token_l                     ; $80A547 |
+  INC.W !r_text_ptr_l                       ; $80A54A |
   CMP.W #$00F0                              ; $80A54D |
   BCS .read_copy_pointer                    ; $80A550 |
   CMP.W #$00E0                              ; $80A552 |
@@ -5760,7 +5760,7 @@ get_next_char:
   RTL                                       ; $80A55F |
 
 .read_copy_pointer
-  LDX.W !r_text_ptr                         ; $80A560 |
+  LDX.W !r_text_ptr_l                       ; $80A560 |
   BPL ..low_offset                          ; $80A563 |
   LDA.L $BD0000,X                           ; $80A565 |
   BRA ..loaded                              ; $80A569 |
@@ -5770,9 +5770,9 @@ get_next_char:
 
 ..loaded
   AND.W #$FFFF                              ; $80A56F |
-  STA.W !r_text_copy_ptr                    ; $80A572 |
-  INC.W !r_text_ptr                         ; $80A575 |
-  INC.W !r_text_ptr                         ; $80A578 |
+  STA.W !r_text_copy_ptr_l                  ; $80A572 |
+  INC.W !r_text_ptr_l                       ; $80A575 |
+  INC.W !r_text_ptr_l                       ; $80A578 |
   JMP.W get_next_char                       ; $80A57B |
 
 
@@ -5781,7 +5781,7 @@ get_next_char:
   ASL A                                     ; $80A581 |
   TAX                                       ; $80A582 |
   LDA.L dictionary_texts,X                  ; $80A583 |
-  ADC.W !r_text_op_arg                      ; $80A587 |
+  ADC.W !r_text_op_arg_l                    ; $80A587 |
   TAX                                       ; $80A58A |
   TXA                                       ; $80A58B |
   BPL ..low_offset                          ; $80A58C |
@@ -5797,21 +5797,21 @@ get_next_char:
   JMP.W .read_next_token                    ; $80A59D |
 
 ..return_char
-  INC.W !r_text_op_arg                      ; $80A5A0 |
+  INC.W !r_text_op_arg_l                    ; $80A5A0 |
   RTL                                       ; $80A5A3 |
 
 
 .dispatch_copy
   SBC.W #$00EC                              ; $80A5A4 |
   CLC                                       ; $80A5A7 |
-  SBC.W !r_text_op_arg                      ; $80A5A8 |
+  SBC.W !r_text_op_arg_l                    ; $80A5A8 |
   BPL ..copy                                ; $80A5AB |
   JMP.W .read_next_token                    ; $80A5AD |
 
 ..copy
   CLC                                       ; $80A5B0 |
-  LDA.W !r_text_copy_ptr                    ; $80A5B1 |
-  ADC.W !r_text_op_arg                      ; $80A5B4 |
+  LDA.W !r_text_copy_ptr_l                  ; $80A5B1 |
+  ADC.W !r_text_op_arg_l                    ; $80A5B4 |
   TAX                                       ; $80A5B7 |
   TXA                                       ; $80A5B8 |
   BPL ..low_offset                          ; $80A5B9 |
@@ -5823,25 +5823,25 @@ get_next_char:
 
 ..loaded
   AND.W #$00FF                              ; $80A5C5 |
-  INC.W !r_text_op_arg                      ; $80A5C8 |
+  INC.W !r_text_op_arg_l                    ; $80A5C8 |
   RTL                                       ; $80A5CB |
 
 
 .dispatch_repeated_space
   SBC.W #$00BE                              ; $80A5CC |
   CLC                                       ; $80A5CF |
-  SBC.W !r_text_op_arg                      ; $80A5D0 |
+  SBC.W !r_text_op_arg_l                    ; $80A5D0 |
   BPL ..return_char                         ; $80A5D3 |
   JMP.W .read_next_token                    ; $80A5D5 |
 
 ..return_char
   LDA.W #$0018                              ; $80A5D8 |
-  INC.W !r_text_op_arg                      ; $80A5DB |
+  INC.W !r_text_op_arg_l                    ; $80A5DB |
   RTL                                       ; $80A5DE |
 
 
 .read_repeated_char
-  LDX.W !r_text_ptr                         ; $80A5DF |
+  LDX.W !r_text_ptr_l                       ; $80A5DF |
   TXA                                       ; $80A5E2 |
   BPL ..low_offset                          ; $80A5E3 |
   LDA.L $BD0000,X                           ; $80A5E5 |
@@ -5852,21 +5852,21 @@ get_next_char:
 
 ..loaded
   AND.W #$00FF                              ; $80A5EF |
-  STA.W !r_text_repeat_char                 ; $80A5F2 |
-  INC.W !r_text_ptr                         ; $80A5F5 |
+  STA.W !r_text_repeat_char_l               ; $80A5F2 |
+  INC.W !r_text_ptr_l                       ; $80A5F5 |
   BRL get_next_char                         ; $80A5F8 |
 
 
 .dispatch_repeat
   SBC.W #$00DD                              ; $80A5FB |
   CLC                                       ; $80A5FE |
-  SBC.W !r_text_op_arg                      ; $80A5FF |
+  SBC.W !r_text_op_arg_l                    ; $80A5FF |
   BPL ..return_char                         ; $80A602 |
   JMP.W .read_next_token                    ; $80A604 |
 
 ..return_char
-  LDA.W !r_text_repeat_char                 ; $80A607 |
-  INC.W !r_text_op_arg                      ; $80A60A |
+  LDA.W !r_text_repeat_char_l               ; $80A607 |
+  INC.W !r_text_op_arg_l                    ; $80A60A |
   RTL                                       ; $80A60D |
 
 

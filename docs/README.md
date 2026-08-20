@@ -23,8 +23,8 @@
 | `$8C`      | Unknown code                                                 |
 | `$8D`      | Unknown code                                                 |
 | `$8E-$B4`  | Primarily asset data, with minor code                        |
-| `$B5`      | Unknown data                                                 |
-| `$B6`      | Text data (low bank)                                         |
+| `$B5`      | Level data                                                   |
+| `$B6`      | Unknown data and text data (low bank)                        |
 | `$B7`      | SPC700 code and unknown data                                 |
 | `$B8-$BC`  | Unknown data                                                 |
 | `$BD`      | Text data (high bank)                                        |

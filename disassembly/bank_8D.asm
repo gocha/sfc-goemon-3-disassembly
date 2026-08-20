@@ -14716,9 +14716,9 @@ CODE_8DEAE0:
   AND.W #$00FF                              ; $8DEAE3 |
   ASL A                                     ; $8DEAE6 |
   TAX                                       ; $8DEAE7 |
-  LDA.L DATA8_87C9A1,X                      ; $8DEAE8 |
+  LDA.L PTR16_87C9A1,X                      ; $8DEAE8 |
   STA.B $00                                 ; $8DEAEC |
-  LDA.L DATA8_87C9DE,X                      ; $8DEAEE |
+  LDA.L PTR16_87C9DE,X                      ; $8DEAEE |
   STA.B $02                                 ; $8DEAF2 |
   TAX                                       ; $8DEAF4 |
   LDA.L $870000,X                           ; $8DEAF5 |
@@ -14820,9 +14820,9 @@ CODE_FN_8DEBA2:
   AND.W #$00FF                              ; $8DEBAD |
   ASL A                                     ; $8DEBB0 |
   TAX                                       ; $8DEBB1 |
-  LDA.L DATA8_87CA34,X                      ; $8DEBB2 |
+  LDA.L PTR16_87CA34,X                      ; $8DEBB2 |
   STA.B $00                                 ; $8DEBB6 |
-  LDA.L DATA8_87CA8E,X                      ; $8DEBB8 |
+  LDA.L PTR16_87CA8E,X                      ; $8DEBB8 |
   STA.B $02                                 ; $8DEBBC |
   TAX                                       ; $8DEBBE |
   LDA.L $870000,X                           ; $8DEBBF |

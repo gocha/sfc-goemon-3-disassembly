@@ -1966,13 +1966,13 @@ CODE_858D5C:
   STZ.B $10                                 ; $858D6A |
   SEP #$20                                  ; $858D6C |
   JSR.W CODE_FN_858FFC                      ; $858D6E |
-  LDA.W LOOSE_OP_008662,X                   ; $858D71 |
+  LDA.W DATA8_878662,X                      ; $858D71 |
   AND.B #$1F                                ; $858D74 |
   STA.B $00                                 ; $858D76 |
   SEC                                       ; $858D78 |
   LDA.B $10                                 ; $858D79 |
   SBC.B $00                                 ; $858D7B |
-  BIT.W LOOSE_OP_008662,X                   ; $858D7D |
+  BIT.W DATA8_878662,X                      ; $858D7D |
   PLX                                       ; $858D80 |
   BVC CODE_858D8A                           ; $858D81 |
   REP #$20                                  ; $858D83 |
@@ -2071,17 +2071,19 @@ CODE_JL_858E16:
   STA.W $1C22                               ; $858E16 |
   ASL A                                     ; $858E19 |
   TAX                                       ; $858E1A |
-  LDA.W LOOSE_OP_0086E2,X                   ; $858E1B |
+  LDA.W PTR16_8786E2,X                      ; $858E1B |
   PHA                                       ; $858E1E |
   SEP #$20                                  ; $858E1F |
   LDX.B $FC                                 ; $858E21 |
   RTS                                       ; $858E23 |
 
+CODE_FN_858E24:
   SEP #$20                                  ; $858E24 |
 
-CODE_JL_858E26:
+CODE_FN_858E26:
   RTS                                       ; $858E26 |
 
+CODE_FN_858E27:
   JSR.W CODE_FN_858FFC                      ; $858E27 |
   LDA.B $16                                 ; $858E2A |
   BEQ CODE_858E3B                           ; $858E2C |
@@ -2116,9 +2118,10 @@ CODE_858E4B:
   SEC                                       ; $858E4D |
   LDA.B $10                                 ; $858E4E |
   SBC.B $12                                 ; $858E50 |
-  BMI CODE_JL_858E26                        ; $858E52 |
+  BMI CODE_FN_858E26                        ; $858E52 |
   BRA CODE_858E6C                           ; $858E54 |
 
+CODE_FN_858E56:
   JSR.W CODE_FN_858FFC                      ; $858E56 |
   LDA.B $16                                 ; $858E59 |
   BEQ CODE_858E48                           ; $858E5B |
@@ -2129,7 +2132,7 @@ CODE_858E60:
   SEC                                       ; $858E62 |
   LDA.B $10                                 ; $858E63 |
   SBC.B $12                                 ; $858E65 |
-  BMI CODE_JL_858E26                        ; $858E67 |
+  BMI CODE_FN_858E26                        ; $858E67 |
   CLC                                       ; $858E69 |
   ADC.B $16                                 ; $858E6A |
 
@@ -2151,29 +2154,35 @@ CODE_JP_858E74:
   SEP #$20                                  ; $858E88 |
   RTS                                       ; $858E8A |
 
+CODE_FN_858E8B:
   JSR.W CODE_FN_858FF0                      ; $858E8B |
   LSR A                                     ; $858E8E |
   JML.L CODE_JL_858E42                      ; $858E8F |
 
+CODE_FN_858E93:
   JSR.W CODE_FN_858FF0                      ; $858E93 |
   LSR A                                     ; $858E96 |
   ORA.B #$08                                ; $858E97 |
   JML.L CODE_JL_858E42                      ; $858E99 |
 
+CODE_FN_858E9D:
   JSR.W CODE_FN_858FF0                      ; $858E9D |
   LSR A                                     ; $858EA0 |
   ORA.B #$08                                ; $858EA1 |
   JML.L CODE_JL_858E35                      ; $858EA3 |
 
+CODE_FN_858EA7:
   JSR.W CODE_FN_858FF0                      ; $858EA7 |
   LSR A                                     ; $858EAA |
   JML.L CODE_JL_858E35                      ; $858EAB |
 
+CODE_FN_858EAF:
   JSR.W CODE_FN_858FF0                      ; $858EAF |
   LSR A                                     ; $858EB2 |
   LSR A                                     ; $858EB3 |
   JML.L CODE_JL_858E42                      ; $858EB4 |
 
+CODE_FN_858EB8:
   JSR.W CODE_FN_858FF0                      ; $858EB8 |
   LSR A                                     ; $858EBB |
   LSR A                                     ; $858EBC |
@@ -2181,6 +2190,7 @@ CODE_JP_858E74:
   ADC.B #$04                                ; $858EBE |
   JML.L CODE_JL_858E42                      ; $858EC0 |
 
+CODE_FN_858EC4:
   JSR.W CODE_FN_858FF0                      ; $858EC4 |
   LSR A                                     ; $858EC7 |
   LSR A                                     ; $858EC8 |
@@ -2188,6 +2198,7 @@ CODE_JP_858E74:
   ADC.B #$08                                ; $858ECA |
   JML.L CODE_JL_858E42                      ; $858ECC |
 
+CODE_FN_858ED0:
   JSR.W CODE_FN_858FF0                      ; $858ED0 |
   LSR A                                     ; $858ED3 |
   LSR A                                     ; $858ED4 |
@@ -2195,6 +2206,7 @@ CODE_JP_858E74:
   ADC.B #$0C                                ; $858ED6 |
   JML.L CODE_JL_858E42                      ; $858ED8 |
 
+CODE_FN_858EDC:
   JSR.W CODE_FN_858FF0                      ; $858EDC |
   LSR A                                     ; $858EDF |
   LSR A                                     ; $858EE0 |
@@ -2202,6 +2214,7 @@ CODE_JP_858E74:
   ADC.B #$0C                                ; $858EE2 |
   JML.L CODE_JL_858E35                      ; $858EE4 |
 
+CODE_FN_858EE8:
   JSR.W CODE_FN_858FF0                      ; $858EE8 |
   LSR A                                     ; $858EEB |
   LSR A                                     ; $858EEC |
@@ -2209,6 +2222,7 @@ CODE_JP_858E74:
   ADC.B #$08                                ; $858EEE |
   JML.L CODE_JL_858E35                      ; $858EF0 |
 
+CODE_FN_858EF4:
   JSR.W CODE_FN_858FF0                      ; $858EF4 |
   LSR A                                     ; $858EF7 |
   LSR A                                     ; $858EF8 |
@@ -2216,11 +2230,13 @@ CODE_JP_858E74:
   ADC.B #$04                                ; $858EFA |
   JML.L CODE_JL_858E35                      ; $858EFC |
 
+CODE_FN_858F00:
   JSR.W CODE_FN_858FF0                      ; $858F00 |
   LSR A                                     ; $858F03 |
   LSR A                                     ; $858F04 |
   JML.L CODE_JL_858E35                      ; $858F05 |
 
+CODE_FN_858F09:
   JSR.W CODE_FN_858FF0                      ; $858F09 |
   CMP.B #$08                                ; $858F0C |
   BCS CODE_858F3D                           ; $858F0E |
@@ -2230,12 +2246,14 @@ CODE_858F10:
   AND.B #$0F                                ; $858F11 |
   JML.L CODE_JL_858E42                      ; $858F13 |
 
+CODE_FN_858F17:
   JSR.W CODE_FN_858FF0                      ; $858F17 |
   SEC                                       ; $858F1A |
   SBC.B #$08                                ; $858F1B |
   BCS CODE_858F10                           ; $858F1D |
   JML.L CODE_JL_858F50                      ; $858F1F |
 
+CODE_FN_858F23:
   JSR.W CODE_FN_858FF0                      ; $858F23 |
   SEC                                       ; $858F26 |
   SBC.B #$08                                ; $858F27 |
@@ -2246,14 +2264,16 @@ CODE_858F2B:
   AND.B #$0F                                ; $858F2C |
   JML.L CODE_JL_858E35                      ; $858F2E |
 
+CODE_FN_858F32:
   JSR.W CODE_FN_858FF0                      ; $858F32 |
   CMP.B #$08                                ; $858F35 |
   BCC CODE_858F2B                           ; $858F37 |
   JML.L CODE_JL_858F50                      ; $858F39 |
 
 CODE_858F3D:
-  JML.L CODE_JL_858E26                      ; $858F3D |
+  JML.L CODE_FN_858E26                      ; $858F3D |
 
+CODE_FN_858F41:
   LDA.W $1C14                               ; $858F41 |
   PHA                                       ; $858F44 |
   JSR.W CODE_FN_858F4D                      ; $858F45 |
@@ -2283,6 +2303,7 @@ CODE_JL_858F50:
 CODE_858F6F:
   JML.L CODE_JL_858E16                      ; $858F6F |
 
+CODE_FN_858F73:
   LDA.W $1C25                               ; $858F73 |
   BMI CODE_858F84                           ; $858F76 |
   LDA.W $1C1E                               ; $858F78 |
@@ -2294,6 +2315,7 @@ CODE_858F6F:
 CODE_858F84:
   RTS                                       ; $858F84 |
 
+CODE_FN_858F85:
   LDA.W $1C25                               ; $858F85 |
   BMI CODE_858F84                           ; $858F88 |
   LDA.W $1C1E                               ; $858F8A |
@@ -2313,30 +2335,33 @@ CODE_858F84:
   STA.W $1C24                               ; $858FA7 |
   BRA CODE_858FDE                           ; $858FAA |
 
+CODE_FN_858FAC:
   LDA.W $1C76                               ; $858FAC |
-  BEQ CODE_858FCD                           ; $858FAF |
+  BEQ CODE_FN_858FCD                        ; $858FAF |
   LSR A                                     ; $858FB1 |
-  BCC CODE_858FC2                           ; $858FB2 |
+  BCC CODE_FN_858FC2                        ; $858FB2 |
 
-CODE_858FB4:
+CODE_FN_858FB4:
   LDA.B #$01                                ; $858FB4 |
   STA.B $27,X                               ; $858FB6 |
-  BRA CODE_858FCD                           ; $858FB8 |
+  BRA CODE_FN_858FCD                        ; $858FB8 |
 
+CODE_FN_858FBA:
   LDA.W $1C76                               ; $858FBA |
-  BEQ CODE_858FCD                           ; $858FBD |
+  BEQ CODE_FN_858FCD                        ; $858FBD |
   LSR A                                     ; $858FBF |
-  BCC CODE_858FB4                           ; $858FC0 |
+  BCC CODE_FN_858FB4                        ; $858FC0 |
 
-CODE_858FC2:
+CODE_FN_858FC2:
   LDA.B #$FF                                ; $858FC2 |
   STA.B $27,X                               ; $858FC4 |
-  BRA CODE_858FCD                           ; $858FC6 |
+  BRA CODE_FN_858FCD                        ; $858FC6 |
 
+CODE_FN_858FC8:
   LDA.W $1C25                               ; $858FC8 |
   BMI CODE_858F84                           ; $858FCB |
 
-CODE_858FCD:
+CODE_FN_858FCD:
   JSR.W CODE_FN_858FFC                      ; $858FCD |
 
 CODE_858FD0:
@@ -2353,10 +2378,11 @@ CODE_858FDE:
   SEP #$20                                  ; $858FE4 |
   RTS                                       ; $858FE6 |
 
+CODE_FN_858FE7:
   BIT.B $34,X                               ; $858FE7 |
-  BVC CODE_858FCD                           ; $858FE9 |
+  BVC CODE_FN_858FCD                        ; $858FE9 |
   INC.W $1C1A                               ; $858FEB |
-  BRA CODE_858FCD                           ; $858FEE |
+  BRA CODE_FN_858FCD                        ; $858FEE |
 
 CODE_FN_858FF0:
   JSR.W CODE_FN_858FFC                      ; $858FF0 |

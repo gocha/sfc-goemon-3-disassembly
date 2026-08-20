@@ -564,88 +564,108 @@ dictionary_texts:
   db $FD,$B3,$8A,$8A,$8A,$8A,$8A,$8A        ; $818CCD |
   db $8A,$8A,$FD,$73,$AF,$FE,$C2,$50        ; $818CD5 |
   db $FD,$B3,$AD,$AE,$AE,$AE,$AE,$AE        ; $818CDD |
-  db $AE,$AE,$AE,$FD,$F3,$AD,$FF,$CB        ; $818CE5 |
-  db $50                                    ; $818CED |
+  db $AE,$AE,$AE,$FD,$F3,$AD,$FF            ; $818CE5 |
+
+DATA8_818CEC:
+  dw $50CB                                  ; $818CEC |
   db "COCKPIT"                              ; $818CEE |
-  db $FE,$0B,$51                            ; $818CF5 |
+  db $FE : dw $510B                         ; $818CF5 |
   db "BISU"                                 ; $818CF8 |
   db $00                                    ; $818CFC |
   db "ELEGANT"                              ; $818CFD |
-  db $FE,$4B,$51                            ; $818D04 |
+  db $FE : dw $514B                         ; $818D04 |
   db "CHUUSENOO"                            ; $818D07 |
-  db $FE,$8B,$51                            ; $818D10 |
+  db $FE : dw $518B                         ; $818D10 |
   db "DAM"                                  ; $818D13 |
-  db $FE,$CB,$51                            ; $818D16 |
+  db $FE : dw $51CB                         ; $818D16 |
   db "JYUUROKUBE"                           ; $818D19 |
-  db $FE,$0B,$52                            ; $818D23 |
+  db $FE : dw $520B                         ; $818D23 |
   db "DENSETU"                              ; $818D26 |
   db $00                                    ; $818D2D |
   db "MAE"                                  ; $818D2E |
-  db $FE,$4B,$52                            ; $818D31 |
+  db $FE : dw $524B                         ; $818D31 |
   db "DENSETU"                              ; $818D34 |
   db $00                                    ; $818D3B |
   db "ATO"                                  ; $818D3C |
-  db $FE,$8B,$52                            ; $818D3F |
+  db $FE : dw $528B                         ; $818D3F |
   db "NO"                                   ; $818D42 |
-  db $FF,$CD,$50                            ; $818D44 |
+  db $FF                                    ; $818D44 |
+
+  dw $50CD                                  ; $818D45 |
   db "BISUMARU"                             ; $818D47 |
-  db $FE,$0D,$51                            ; $818D4F |
+  db $FE : dw $510D                         ; $818D4F |
   db "CHUUSENOO"                            ; $818D52 |
-  db $FE,$4D,$51                            ; $818D5B |
+  db $FE : dw $514D                         ; $818D5B |
   db "NO"                                   ; $818D5E |
-  db $FE,$8D,$51                            ; $818D60 |
+  db $FE : dw $518D                         ; $818D60 |
   db "NO"                                   ; $818D63 |
-  db $FE,$CD,$51                            ; $818D65 |
+  db $FE : dw $51CD                         ; $818D65 |
   db "NO"                                   ; $818D68 |
-  db $FE,$0D,$52                            ; $818D6A |
+  db $FE : dw $520D                         ; $818D6A |
   db "NO"                                   ; $818D6D |
-  db $FE,$4D,$52                            ; $818D6F |
+  db $FE : dw $524D                         ; $818D6F |
   db "NO"                                   ; $818D72 |
-  db $FE,$8D,$52                            ; $818D74 |
+  db $FE : dw $528D                         ; $818D74 |
   db "NO"                                   ; $818D77 |
-  db $FF,$E8,$52                            ; $818D79 |
+  db $FF                                    ; $818D79 |
+
+DATA8_818D7A:
+  dw $52E8                                  ; $818D7A |
   db "MUTEKI"                               ; $818D7C |
   db $00                                    ; $818D82 |
   db "FLAG"                                 ; $818D83 |
   db $00                                    ; $818D87 |
   db "ON"                                   ; $818D88 |
-  db $00,$FF,$E8,$52                        ; $818D8A |
+  db $00                                    ; $818D8A |
+  db $FF                                    ; $818D8B |
+
+  dw $52E8                                  ; $818D8C |
   db "MUTEKI"                               ; $818D8E |
   db $00                                    ; $818D94 |
   db "FLAG"                                 ; $818D95 |
   db $00                                    ; $818D99 |
   db "OFF"                                  ; $818D9A |
-  db $FF,$CD,$50                            ; $818D9D |
+  db $FF                                    ; $818D9D |
+
+  dw $50CD                                  ; $818D9E |
   db "NO"                                   ; $818DA0 |
   db $00                                    ; $818DA2 |
   db "BOSS"                                 ; $818DA3 |
-  db $FE,$D0,$50                            ; $818DA7 |
+  db $FE : dw $50D0                         ; $818DA7 |
   db "GAMETYPE"                             ; $818DAA |
-  db $FF,$4D,$51                            ; $818DB2 |
+  db $FF                                    ; $818DB2 |
+
+  dw $514D                                  ; $818DB3 |
   db "MAP"                                  ; $818DB5 |
   db $00                                    ; $818DB8 |
   db "NO"                                   ; $818DB9 |
-  db $00,$00,$00,$FF,$4A,$51                ; $818DBB |
+  db $00,$00,$00                            ; $818DBB |
+  db $FF                                    ; $818DBE |
+
+  dw $514A                                  ; $818DBF |
   db "PLAYER"                               ; $818DC1 |
   db $00                                    ; $818DC7 |
   db "SELECT"                               ; $818DC8 |
-  db $FF,$CE,$51                            ; $818DCE |
+  db $FF : dw $51CE                         ; $818DCE |
   db "GOE"                                  ; $818DD1 |
-  db $FF,$CE,$51                            ; $818DD4 |
+  db $FF : dw $51CE                         ; $818DD4 |
   db "EBI"                                  ; $818DD7 |
-  db $FF,$CE,$51                            ; $818DDA |
+  db $FF : dw $51CE                         ; $818DDA |
   db "SAS"                                  ; $818DDD |
-  db $FF,$CE,$51                            ; $818DE0 |
+  db $FF : dw $51CE                         ; $818DE0 |
   db "YAE"                                  ; $818DE3 |
-  db $FF,$0E,$52                            ; $818DE6 |
+  db $FF : dw $520E                         ; $818DE6 |
   db "GOE"                                  ; $818DE9 |
-  db $FF,$0E,$52                            ; $818DEC |
+  db $FF : dw $520E                         ; $818DEC |
   db "EBI"                                  ; $818DEF |
-  db $FF,$0E,$52                            ; $818DF2 |
+  db $FF : dw $520E                         ; $818DF2 |
   db "SAS"                                  ; $818DF5 |
-  db $FF,$0E,$52                            ; $818DF8 |
+  db $FF : dw $520E                         ; $818DF8 |
   db "YAE"                                  ; $818DFB |
-  db $FF,$EC,$51,$8F,$FE,$0C,$52,$FD        ; $818DFE |
+  db $FF : dw $51EC                         ; $818DFE |
+  db $8F                                    ; $818E01 |
+  db $FE : dw $520C                         ; $818E02 |
+  db $FD                                    ; $818E05 |
   db $B3,$8F,$FE,$4C,$52,$00,$FE,$6C        ; $818E06 |
   db $52,$00,$FF,$EC,$51,$00,$FE,$0C        ; $818E0E |
   db $52,$00,$FE,$4C,$52,$8F,$FE,$6C        ; $818E16 |

@@ -107,13 +107,13 @@ CODE_8380CD:
   RTL                                       ; $8380D3 |
 
 CODE_FN_8380D4:
-  LDA.B $8E                                 ; $8380D4 |
+  LDA.B !r_room_id                          ; $8380D4 |
   CMP.W #$0140                              ; $8380D6 |
   BCS CODE_FN_8380F1                        ; $8380D9 |
   RTS                                       ; $8380DB |
 
 CODE_FN_8380DC:
-  LDA.B $8E                                 ; $8380DC |
+  LDA.B !r_room_id                          ; $8380DC |
   CMP.W #$0140                              ; $8380DE |
   BCC CODE_8380F0                           ; $8380E1 |
   JSR.W CODE_FN_8380F1                      ; $8380E3 |
@@ -7701,7 +7701,7 @@ CODE_FN_83B1E8:
   AND.W #$007F                              ; $83B1EA |
   XBA                                       ; $83B1ED |
   ASL A                                     ; $83B1EE |
-  ORA.B $8E                                 ; $83B1EF |
+  ORA.B !r_room_id                          ; $83B1EF |
   RTS                                       ; $83B1F1 |
 
 CODE_JP_83B1F2:

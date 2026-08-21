@@ -90,7 +90,7 @@ CODE_B3FC7F:
   STA.B $2C,X                               ; $B3FCB2 |
   JSL.L CODE_FL_86958B                      ; $B3FCB4 |
   AND.W #$0007                              ; $B3FCB8 |
-  LDY.B $8E                                 ; $B3FCBB |
+  LDY.B !r_room_id                          ; $B3FCBB |
   CPY.W #$00FC                              ; $B3FCBD |
   BEQ CODE_B3FCC5                           ; $B3FCC0 |
   ORA.W #$0008                              ; $B3FCC2 |

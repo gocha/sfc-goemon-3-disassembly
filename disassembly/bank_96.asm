@@ -638,7 +638,7 @@ CODE_96FD88:
   BCC CODE_JP_96FDDF                        ; $96FD95 |
   CMP.W #$00FF                              ; $96FD97 |
   BCS CODE_JP_96FDDF                        ; $96FD9A |
-  STA.B $8E                                 ; $96FD9C |
+  STA.B !r_room_id                          ; $96FD9C |
   PLB                                       ; $96FD9E |
   RTL                                       ; $96FD9F |
 
@@ -771,7 +771,7 @@ CODE_JP_96FE51:
   PLB                                       ; $96FE90 |
 
 CODE_96FE91:
-  LDA.B $8E                                 ; $96FE91 |
+  LDA.B !r_room_id                          ; $96FE91 |
   CMP.W #$00FE                              ; $96FE93 |
   BEQ CODE_96FEA7                           ; $96FE96 |
   CMP.W #$00FD                              ; $96FE98 |

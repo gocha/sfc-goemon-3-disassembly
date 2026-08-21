@@ -13504,7 +13504,7 @@ CODE_8BE260:
   RTL                                       ; $8BE26D |
 
 CODE_8BE26E:
-  LDA.B $8E                                 ; $8BE26E |
+  LDA.B !r_room_id                          ; $8BE26E |
   CMP.W #$0064                              ; $8BE270 |
   BEQ CODE_8BE286                           ; $8BE273 |
   BRA CODE_FL_8BE28D                        ; $8BE275 |
@@ -13524,7 +13524,7 @@ CODE_8BE286:
   STA.L $7E7C06                             ; $8BE289 |
 
 CODE_FL_8BE28D:
-  LDY.B $8E                                 ; $8BE28D |
+  LDY.B !r_room_id                          ; $8BE28D |
   LDA.W #$F5E4                              ; $8BE28F |
   CPY.W #$0170                              ; $8BE292 |
   BEQ CODE_8BE2A2                           ; $8BE295 |

@@ -1550,7 +1550,7 @@ CODE_FL_808A53:
   PEA.W $8181                               ; $808A58 |
   PLB                                       ; $808A5B |
   PLB                                       ; $808A5C |
-  LDA.B $8E                                 ; $808A5D |
+  LDA.B !r_room_id                          ; $808A5D |
 
 CODE_808A5F:
   CMP.W LOOSE_OP_008229,Y                   ; $808A5F |
@@ -1575,7 +1575,7 @@ CODE_808A6D:
 
 
 CODE_FL_808A7A:
-  STA.B $8E                                 ; $808A7A |
+  STA.B !r_room_id                          ; $808A7A |
 
 CODE_FL_808A7C:
   JSL.L CODE_FL_808A53                      ; $808A7C |
@@ -1587,7 +1587,7 @@ CODE_FL_808A7C:
   PEA.W $8181                               ; $808A89 |
   PLB                                       ; $808A8C |
   PLB                                       ; $808A8D |
-  LDA.B $8E                                 ; $808A8E |
+  LDA.B !r_room_id                          ; $808A8E |
   ASL A                                     ; $808A90 |
   ASL A                                     ; $808A91 |
   TAY                                       ; $808A92 |
@@ -1604,7 +1604,7 @@ CODE_808AA0:
   PEA.W $8181                               ; $808AA0 |
   PLB                                       ; $808AA3 |
   PLB                                       ; $808AA4 |
-  LDA.B $8E                                 ; $808AA5 |
+  LDA.B !r_room_id                          ; $808AA5 |
   ASL A                                     ; $808AA7 |
   ASL A                                     ; $808AA8 |
   TAY                                       ; $808AA9 |
@@ -11560,7 +11560,7 @@ CODE_FL_80C7A7:
   JSL.L CODE_FL_96FF15                      ; $80C7A7 |
 
   INC.B $84                                 ; $80C7AB |
-  LDA.B $8E                                 ; $80C7AD |
+  LDA.B !r_room_id                          ; $80C7AD |
   STA.B $B2                                 ; $80C7AF |
   LDA.B $90                                 ; $80C7B1 |
   ASL A                                     ; $80C7B3 |
@@ -11582,7 +11582,7 @@ CODE_80C7C6:
   JSL.L CODE_FL_8DC508                      ; $80C7C9 |
   LDA.B $3E                                 ; $80C7CD |
   BEQ CODE_80C7E0                           ; $80C7CF |
-  LDA.B $8E                                 ; $80C7D1 |
+  LDA.B !r_room_id                          ; $80C7D1 |
   CMP.W #$FFFF                              ; $80C7D3 |
   BEQ CODE_80C7DC                           ; $80C7D6 |
   JML.L CODE_JL_848356                      ; $80C7D8 |
@@ -11779,7 +11779,7 @@ CODE_JL_80C896:
   ASL A                                     ; $80C8E8 |
   TAY                                       ; $80C8E9 |
   LDA.W CODE_008E36,Y                       ; $80C8EA |
-  STA.B $8E                                 ; $80C8ED |
+  STA.B !r_room_id                          ; $80C8ED |
   STA.B $DA                                 ; $80C8EF |
 
   LDA.W CODE_008E38,Y                       ; $80C8F1 |
@@ -12457,20 +12457,20 @@ CODE_80CD4F:
   CMP.W #$0003                              ; $80CD73 |
   BNE CODE_80CD7E                           ; $80CD76 |
   LDA.B $B2                                 ; $80CD78 |
-  CMP.B $8E                                 ; $80CD7A |
+  CMP.B !r_room_id                          ; $80CD7A |
   BEQ CODE_80CD94                           ; $80CD7C |
 
 CODE_80CD7E:
   LDA.B $B2                                 ; $80CD7E |
   STA.W $1938                               ; $80CD80 |
-  LDA.B $8E                                 ; $80CD83 |
+  LDA.B !r_room_id                          ; $80CD83 |
   PHA                                       ; $80CD85 |
   LDA.B $B2                                 ; $80CD86 |
-  STA.B $8E                                 ; $80CD88 |
+  STA.B !r_room_id                          ; $80CD88 |
   JSL.L CODE_FL_85915F                      ; $80CD8A |
   STZ.W $19CC                               ; $80CD8E |
   PLA                                       ; $80CD91 |
-  STA.B $8E                                 ; $80CD92 |
+  STA.B !r_room_id                          ; $80CD92 |
 
 CODE_80CD94:
   RTL                                       ; $80CD94 |
@@ -12738,7 +12738,7 @@ CODE_FN_80CF91:
   LDA.W #$026E                              ; $80CFAF |
   JSL.L CODE_FL_80A634                      ; $80CFB2 |
   BCC CODE_80CFFC                           ; $80CFB6 |
-  LDA.B $8E                                 ; $80CFB8 |
+  LDA.B !r_room_id                          ; $80CFB8 |
   CMP.W #$0132                              ; $80CFBA |
   BEQ CODE_80CFE2                           ; $80CFBD |
   CMP.W #$0133                              ; $80CFBF |
@@ -12753,7 +12753,7 @@ CODE_FN_80CF91:
 
 
 CODE_80CFCF:
-  LDA.B $8E                                 ; $80CFCF |
+  LDA.B !r_room_id                          ; $80CFCF |
   CMP.W #$002C                              ; $80CFD1 |
   BEQ CODE_80CFFC                           ; $80CFD4 |
   CMP.W #$0063                              ; $80CFD6 |
@@ -12772,7 +12772,7 @@ CODE_80CFE2:
 CODE_80CFE9:
   BIT.W #$1000                              ; $80CFE9 |
   BEQ CODE_80CFFC                           ; $80CFEC |
-  LDA.B $8E                                 ; $80CFEE |
+  LDA.B !r_room_id                          ; $80CFEE |
   CMP.W #$0140                              ; $80CFF0 |
   BCS CODE_80CFFC                           ; $80CFF3 |
   INC.B $78                                 ; $80CFF5 |
@@ -12990,7 +12990,7 @@ CODE_FN_80D1AC:
   LDA.W #$0004                              ; $80D1AE |
   STA.W $16B2                               ; $80D1B1 |
   STZ.W $16A2                               ; $80D1B4 |
-  LDY.B $8E                                 ; $80D1B7 |
+  LDY.B !r_room_id                          ; $80D1B7 |
   LDA.W LOOSE_OP_00AA74,Y                   ; $80D1B9 |
   AND.W #$00FF                              ; $80D1BC |
   STA.B $92                                 ; $80D1BF |
@@ -13066,7 +13066,7 @@ CODE_80D22A:
   CMP.W #$0009                              ; $80D257 |
   BNE CODE_80D262                           ; $80D25A |
   LDA.B $B2                                 ; $80D25C |
-  CMP.B $8E                                 ; $80D25E |
+  CMP.B !r_room_id                          ; $80D25E |
   BEQ CODE_80D281                           ; $80D260 |
 
 CODE_80D262:
@@ -13074,7 +13074,7 @@ CODE_80D262:
   LDA.B $7E                                 ; $80D266 |
   CMP.W #$0008                              ; $80D268 |
   BEQ CODE_80D281                           ; $80D26B |
-  LDA.B $8E                                 ; $80D26D |
+  LDA.B !r_room_id                          ; $80D26D |
   CMP.W #$0140                              ; $80D26F |
   BCS CODE_80D281                           ; $80D272 |
   CMP.W #$0131                              ; $80D274 |
@@ -13127,7 +13127,7 @@ CODE_80D29A:
 
   BNE CODE_80D2EE                           ; $80D2CF |
 
-  LDA.B $8E                                 ; $80D2D1 |
+  LDA.B !r_room_id                          ; $80D2D1 |
   CMP.W #$0126                              ; $80D2D3 |
   BEQ CODE_80D2DD                           ; $80D2D6 |
   LDA.W #$00FD                              ; $80D2D8 |
@@ -13139,7 +13139,7 @@ CODE_80D2DD:
   LDA.W #$00FF                              ; $80D2DD |
 
 CODE_80D2E0:
-  STA.B $8E                                 ; $80D2E0 |
+  STA.B !r_room_id                          ; $80D2E0 |
   LDA.W #$0005                              ; $80D2E2 |
 
   STA.B $90                                 ; $80D2E5 |
@@ -13212,7 +13212,7 @@ CODE_FL_80D31B:
   JSL.L CODE_FL_84A1D8                      ; $80D366 |
   LDX.W #asset_88CDCA                       ; $80D36A |
   JSL.L load_asset                          ; $80D36D |
-  LDA.B $8E                                 ; $80D371 |
+  LDA.B !r_room_id                          ; $80D371 |
   CMP.W #$00FF                              ; $80D373 |
   BNE CODE_80D38A                           ; $80D376 |
   LDX.W #$047A                              ; $80D378 |
@@ -13249,7 +13249,7 @@ CODE_80D38A:
   STZ.B $76                                 ; $80D3C9 |
   STZ.B $78                                 ; $80D3CB |
   INC.B $7E                                 ; $80D3CD |
-  LDA.B $8E                                 ; $80D3CF |
+  LDA.B !r_room_id                          ; $80D3CF |
   CMP.W #$00FF                              ; $80D3D1 |
   BEQ CODE_80D3DF                           ; $80D3D4 |
   LDX.W #asset_88CDD6                       ; $80D3D6 |
@@ -13341,7 +13341,7 @@ CODE_80D48B:
   LDA.W #$8001                              ; $80D490 |
   STA.B $DA                                 ; $80D493 |
   SEC                                       ; $80D495 |
-  LDA.B $8E                                 ; $80D496 |
+  LDA.B !r_room_id                          ; $80D496 |
   SBC.W #$00FC                              ; $80D498 |
   PHX                                       ; $80D49B |
   ASL A                                     ; $80D49C |
@@ -13384,7 +13384,7 @@ CODE_FL_80D4C9:
 
   RTL                                       ; $80D4D3 |
 
-  LDA.B $8E                                 ; $80D4D4 |
+  LDA.B !r_room_id                          ; $80D4D4 |
   SEC                                       ; $80D4D6 |
   SBC.W #$0030                              ; $80D4D7 |
   ASL A                                     ; $80D4DA |
@@ -13405,7 +13405,7 @@ CODE_80D4ED:
   TAX                                       ; $80D4ED |
   PLB                                       ; $80D4EE |
   JSL.L load_asset                          ; $80D4EF |
-  LDA.B $8E                                 ; $80D4F3 |
+  LDA.B !r_room_id                          ; $80D4F3 |
   SEC                                       ; $80D4F5 |
   SBC.W #$0030                              ; $80D4F6 |
   ASL A                                     ; $80D4F9 |
@@ -13423,7 +13423,7 @@ CODE_80D4ED:
 
 CODE_FL_80D50D:
   JSL.L CODE_FL_808921                      ; $80D50D |
-  LDX.B $8E                                 ; $80D511 |
+  LDX.B !r_room_id                          ; $80D511 |
   LDA.W LOOSE_OP_00B517,X                   ; $80D513 |
   AND.W #$00FF                              ; $80D516 |
   STA.B $E8                                 ; $80D519 |
@@ -13476,7 +13476,7 @@ CODE_FL_80D55E:
 
 
 CODE_FN_80D56C:
-  LDA.B $8E                                 ; $80D56C |
+  LDA.B !r_room_id                          ; $80D56C |
   ASL A                                     ; $80D56E |
   TAX                                       ; $80D56F |
   RTS                                       ; $80D570 |
@@ -13487,7 +13487,7 @@ CODE_FL_80D571:
   STA.W $1754                               ; $80D574 |
   LDA.W #$1660                              ; $80D577 |
   TCD                                       ; $80D57A |
-  LDA.W $008E                               ; $80D57B |
+  LDA.W !r_room_id                          ; $80D57B |
   ASL A                                     ; $80D57E |
   ASL A                                     ; $80D57F |
   TAY                                       ; $80D580 |
@@ -13686,7 +13686,7 @@ CODE_80D6FE:
   AND.W #$7FFF                              ; $80D712 |
   STA.B $A4                                 ; $80D715 |
   PHY                                       ; $80D717 |
-  LDA.W $008E                               ; $80D718 |
+  LDA.W !r_room_id                          ; $80D718 |
   ASL A                                     ; $80D71B |
   TAY                                       ; $80D71C |
   LDA.W DATA16_81A460,Y                     ; $80D71D |
@@ -13709,7 +13709,7 @@ CODE_80D736:
   AND.W #$7FFF                              ; $80D738 |
   STA.B $A4                                 ; $80D73B |
   PHY                                       ; $80D73D |
-  LDA.W $008E                               ; $80D73E |
+  LDA.W !r_room_id                          ; $80D73E |
   ASL A                                     ; $80D741 |
   TAY                                       ; $80D742 |
   LDA.W DATA16_81A460,Y                     ; $80D743 |
@@ -13960,7 +13960,7 @@ CODE_FN_80D8E6:
   STZ.B $E8                                 ; $80D91C |
   STZ.B $EA                                 ; $80D91E |
   REP #$20                                  ; $80D920 |
-  LDA.W $008E                               ; $80D922 |
+  LDA.W !r_room_id                          ; $80D922 |
   ASL A                                     ; $80D925 |
   TAX                                       ; $80D926 |
   LDA.W DATA16_81A460,X                     ; $80D927 |
@@ -14878,7 +14878,7 @@ CODE_80DEBC:
 
 
 CODE_FN_80DEC5:
-  LDA.W $008E                               ; $80DEC5 |
+  LDA.W !r_room_id                          ; $80DEC5 |
   ASL A                                     ; $80DEC8 |
   TAX                                       ; $80DEC9 |
   LDA.W LOOSE_OP_00B9A6,X                   ; $80DECA |
@@ -16663,7 +16663,7 @@ CODE_FL_80E994:
   PLB                                       ; $80E9A4 |
   PLB                                       ; $80E9A5 |
   LDA.W $19C4                               ; $80E9A6 |
-  STA.B $8E                                 ; $80E9A9 |
+  STA.B !r_room_id                          ; $80E9A9 |
   JSL.L CODE_FL_808A7A                      ; $80E9AB |
   LDA.W $19C0                               ; $80E9AF |
   STA.B $1A                                 ; $80E9B2 |
@@ -16709,7 +16709,7 @@ CODE_FL_80E9EA:
 CODE_80E9EE:
   LDA.W #$0001                              ; $80E9EE |
   STA.W $199A                               ; $80E9F1 |
-  LDA.B $8E                                 ; $80E9F4 |
+  LDA.B !r_room_id                          ; $80E9F4 |
   STA.L $7E7C08                             ; $80E9F6 |
   LDA.W #$0001                              ; $80E9FA |
   STA.W $1986                               ; $80E9FD |
@@ -16717,7 +16717,7 @@ CODE_80E9EE:
   PLB                                       ; $80EA03 |
   PLB                                       ; $80EA04 |
   LDA.W $0002,X                             ; $80EA05 |
-  STA.B $8E                                 ; $80EA08 |
+  STA.B !r_room_id                          ; $80EA08 |
   JSL.L CODE_FL_808A7A                      ; $80EA0A |
   STX.B $00                                 ; $80EA0E |
   LDX.B $90                                 ; $80EA10 |
@@ -16769,7 +16769,7 @@ CODE_FL_80EA5B:
   PEA.W $8100                               ; $80EA5E |
   PLB                                       ; $80EA61 |
   PLB                                       ; $80EA62 |
-  LDA.B $8E                                 ; $80EA63 |
+  LDA.B !r_room_id                          ; $80EA63 |
   JSL.L CODE_FL_84827B                      ; $80EA65 |
   LDA.W #$0080                              ; $80EA69 |
   STA.B $12                                 ; $80EA6C |
@@ -16874,7 +16874,7 @@ CODE_80EAD2:
   LSR A                                     ; $80EB0A |
   AND.W #$0FFF                              ; $80EB0B |
   STA.B $1A                                 ; $80EB0E |
-  LDA.B $8E                                 ; $80EB10 |
+  LDA.B !r_room_id                          ; $80EB10 |
   ASL A                                     ; $80EB12 |
   TAY                                       ; $80EB13 |
   LDA.W LOOSE_OP_00F290,Y                   ; $80EB14 |

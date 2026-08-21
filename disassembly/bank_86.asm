@@ -617,7 +617,7 @@ CODE_868486:
   LDA.W #$FFFF                              ; $86848C |
   STA.W $1C94                               ; $86848F |
   LDA.W #$0030                              ; $868492 |
-  LDY.B $8E                                 ; $868495 |
+  LDY.B !r_room_id                          ; $868495 |
   CPY.W #$00FF                              ; $868497 |
   BNE CODE_86849F                           ; $86849A |
   LDA.W #$0020                              ; $86849C |
@@ -1080,7 +1080,7 @@ CODE_8687C9:
   LDA.W #$338C                              ; $8687D5 |
   STA.B $00,X                               ; $8687D8 |
   LDA.W #$9090                              ; $8687DA |
-  LDY.B $8E                                 ; $8687DD |
+  LDY.B !r_room_id                          ; $8687DD |
   CPY.W #$00FF                              ; $8687DF |
   BNE CODE_8687EC                           ; $8687E2 |
   LDA.W #$0004                              ; $8687E4 |
@@ -1160,7 +1160,7 @@ CODE_868865:
   BIT.W #$C000                              ; $868870 |
   BEQ CODE_868884                           ; $868873 |
   LDA.W #$0007                              ; $868875 |
-  LDY.B $8E                                 ; $868878 |
+  LDY.B !r_room_id                          ; $868878 |
   CPY.W #$00FF                              ; $86887A |
   BEQ CODE_8688A2                           ; $86887D |
   LDA.W #$0003                              ; $86887F |
@@ -2226,7 +2226,7 @@ CODE_868FDB:
 CODE_FL_868FDF:
   PHX                                       ; $868FDF |
   SEC                                       ; $868FE0 |
-  LDA.B $8E                                 ; $868FE1 |
+  LDA.B !r_room_id                          ; $868FE1 |
   SBC.W #$00FC                              ; $868FE3 |
   ASL A                                     ; $868FE6 |
   TAY                                       ; $868FE7 |
@@ -2242,7 +2242,7 @@ CODE_FL_868FDF:
   LDY.W #$0058                              ; $868FF8 |
   STY.W $1C96                               ; $868FFB |
   SEC                                       ; $868FFE |
-  LDA.B $8E                                 ; $868FFF |
+  LDA.B !r_room_id                          ; $868FFF |
   SBC.W #$00FC                              ; $869001 |
   PHX                                       ; $869004 |
   ASL A                                     ; $869005 |
@@ -2360,7 +2360,7 @@ CODE_FL_869128:
 
 CODE_FN_869133:
   SEC                                       ; $869133 |
-  LDA.B $8E                                 ; $869134 |
+  LDA.B !r_room_id                          ; $869134 |
   SBC.W #$00FC                              ; $869136 |
   PHX                                       ; $869139 |
   ASL A                                     ; $86913A |
@@ -2710,7 +2710,7 @@ CODE_86940D:
 
 CODE_FN_869410:
   PHA                                       ; $869410 |
-  LDY.B $8E                                 ; $869411 |
+  LDY.B !r_room_id                          ; $869411 |
   LDA.W LOOSE_OP_00CD3B,Y                   ; $869413 |
   AND.W #$00FF                              ; $869416 |
   PLY                                       ; $869419 |
@@ -2721,7 +2721,7 @@ CODE_FL_86941B:
   LSR A                                     ; $86941E |
   BCC CODE_869451                           ; $86941F |
   SEC                                       ; $869421 |
-  LDA.B $8E                                 ; $869422 |
+  LDA.B !r_room_id                          ; $869422 |
   SBC.W #$00FC                              ; $869424 |
   ASL A                                     ; $869427 |
   TAY                                       ; $869428 |
@@ -9461,7 +9461,7 @@ CODE_86C369:
   RTL                                       ; $86C369 |
 
 CODE_FL_86C36A:
-  LDA.B $8E                                 ; $86C36A |
+  LDA.B !r_room_id                          ; $86C36A |
   CMP.W #$0018                              ; $86C36C |
   BCS CODE_86C377                           ; $86C36F |
   LDA.W #$325C                              ; $86C371 |

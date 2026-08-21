@@ -1405,7 +1405,7 @@ CODE_JL_A0F9E0:
 CODE_FL_A0F9E7:
   PHX                                       ; $A0F9E7 |
   STZ.B $02                                 ; $A0F9E8 |
-  LDA.B $8E                                 ; $A0F9EA |
+  LDA.B !r_room_id                          ; $A0F9EA |
   ASL A                                     ; $A0F9EC |
   TAX                                       ; $A0F9ED |
   LDA.L DATA8_81B69C,X                      ; $A0F9EE |

@@ -1408,7 +1408,7 @@ CODE_FL_A0F9E7:
   LDA.B !r_room_id                          ; $A0F9EA |
   ASL A                                     ; $A0F9EC |
   TAX                                       ; $A0F9ED |
-  LDA.L DATA8_81B69C,X                      ; $A0F9EE |
+  LDA.L DATA16_81B69C,X                     ; $A0F9EE |
   BPL CODE_A0FA00                           ; $A0F9F2 |
   CMP.W #$FFFE                              ; $A0F9F4 |
   BCS CODE_A0FA00                           ; $A0F9F7 |

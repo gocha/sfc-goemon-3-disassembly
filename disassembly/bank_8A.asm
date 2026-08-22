@@ -37,7 +37,7 @@ CODE_8AAE2A:
 
 CODE_8AAE31:
   STZ.B $DA                                 ; $8AAE31 |
-  LDA.B $90                                 ; $8AAE33 |
+  LDA.B !r_room_mode                        ; $8AAE33 |
   CMP.W #$0002                              ; $8AAE35 |
   BEQ CODE_8AAE45                           ; $8AAE38 |
   CMP.W #$0004                              ; $8AAE3A |
@@ -9086,7 +9086,7 @@ CODE_FL_8AF606:
 
 CODE_8AF647:
   STA.W $1FD2                               ; $8AF647 |
-  LDY.B $90                                 ; $8AF64A |
+  LDY.B !r_room_mode                        ; $8AF64A |
   CPY.W #$0002                              ; $8AF64C |
   BNE CODE_8AF658                           ; $8AF64F |
   CLC                                       ; $8AF651 |
@@ -9171,7 +9171,7 @@ CODE_8AF6A7:
   LDA.W $0019,Y                             ; $8AF6D4 |
   AND.W #$00FF                              ; $8AF6D7 |
   STA.W $1FD2                               ; $8AF6DA |
-  LDY.B $90                                 ; $8AF6DD |
+  LDY.B !r_room_mode                        ; $8AF6DD |
   CPY.W #$0002                              ; $8AF6DF |
   BNE CODE_8AF6EB                           ; $8AF6E2 |
   CLC                                       ; $8AF6E4 |
@@ -9245,7 +9245,7 @@ CODE_8AF713:
   LDA.W $0029,Y                             ; $8AF75C |
   AND.W #$00FF                              ; $8AF75F |
   STA.W $1FD2                               ; $8AF762 |
-  LDY.B $90                                 ; $8AF765 |
+  LDY.B !r_room_mode                        ; $8AF765 |
   CPY.W #$0002                              ; $8AF767 |
   BNE CODE_8AF773                           ; $8AF76A |
   CLC                                       ; $8AF76C |
@@ -9288,7 +9288,7 @@ CODE_8AF77E:
   LDA.W $0015,Y                             ; $8AF7AB |
   AND.W #$00FF                              ; $8AF7AE |
   STA.W $1FD2                               ; $8AF7B1 |
-  LDY.B $90                                 ; $8AF7B4 |
+  LDY.B !r_room_mode                        ; $8AF7B4 |
   CPY.W #$0002                              ; $8AF7B6 |
   BNE CODE_8AF7C2                           ; $8AF7B9 |
   CLC                                       ; $8AF7BB |
@@ -9325,7 +9325,7 @@ CODE_8AF7CD:
   LDA.W $001B,Y                             ; $8AF7EC |
   AND.W #$00FF                              ; $8AF7EF |
   STA.W $1FD2                               ; $8AF7F2 |
-  LDY.B $90                                 ; $8AF7F5 |
+  LDY.B !r_room_mode                        ; $8AF7F5 |
   CPY.W #$0002                              ; $8AF7F7 |
   BNE CODE_8AF803                           ; $8AF7FA |
   CLC                                       ; $8AF7FC |

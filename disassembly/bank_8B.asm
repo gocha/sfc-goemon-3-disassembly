@@ -2143,7 +2143,7 @@ CODE_8B8F47:
   RTL                                       ; $8B8F5F |
 
 CODE_8B8F60:
-  LDA.W $0090                               ; $8B8F60 |
+  LDA.W !r_room_mode                        ; $8B8F60 |
   CMP.W #$0000                              ; $8B8F63 |
   BEQ CODE_8B8F6E                           ; $8B8F66 |
   JSL.L CODE_FL_86C3F8                      ; $8B8F68 |
@@ -2179,7 +2179,7 @@ CODE_8B8F91:
   LDA.W #$8000                              ; $8B8F9A |
   ORA.W #$0100                              ; $8B8F9D |
   STA.B $22,X                               ; $8B8FA0 |
-  LDA.W $0090                               ; $8B8FA2 |
+  LDA.W !r_room_mode                        ; $8B8FA2 |
   CMP.W #$0000                              ; $8B8FA5 |
   BEQ CODE_8B8FB1                           ; $8B8FA8 |
   LDA.W #$007A                              ; $8B8FAA |

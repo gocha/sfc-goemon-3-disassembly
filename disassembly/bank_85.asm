@@ -324,7 +324,7 @@ CODE_8581FB:
 
 CODE_FL_858213:
   LDA.B $12                                 ; $858213 |
-  LDY.B $90                                 ; $858215 |
+  LDY.B !r_room_mode                        ; $858215 |
   CPY.W #$0001                              ; $858217 |
   BNE CODE_85821F                           ; $85821A |
   SBC.W #$0100                              ; $85821C |
@@ -345,7 +345,7 @@ CODE_85821F:
   ASL A                                     ; $858232 |
   STA.B $00                                 ; $858233 |
   LDA.B $10                                 ; $858235 |
-  LDY.B $90                                 ; $858237 |
+  LDY.B !r_room_mode                        ; $858237 |
   CPY.W #$0001                              ; $858239 |
   BNE CODE_858241                           ; $85823C |
   SBC.W #$0100                              ; $85823E |
@@ -744,7 +744,7 @@ CODE_FL_8584E1:
   STX.W $1C0A                               ; $858523 |
   LDA.W #$0100                              ; $858526 |
   STA.W $1C0E                               ; $858529 |
-  LDA.B $90                                 ; $85852C |
+  LDA.B !r_room_mode                        ; $85852C |
   BNE CODE_858533                           ; $85852E |
   STZ.W $1C0E                               ; $858530 |
 
@@ -2415,7 +2415,7 @@ CODE_FL_859007:
   STZ.W $19B8                               ; $859022 |
   LDA.W #$FFFF                              ; $859025 |
   STA.W $1C3E                               ; $859028 |
-  LDA.B $90                                 ; $85902B |
+  LDA.B !r_room_mode                        ; $85902B |
   CMP.W #$0000                              ; $85902D |
   BEQ CODE_85903C                           ; $859030 |
   LDA.W #$0001                              ; $859032 |

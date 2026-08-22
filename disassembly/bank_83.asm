@@ -42,7 +42,7 @@ CODE_83804A:
   RTL                                       ; $838050 |
 
 CODE_FL_838051:
-  LDA.B $90                                 ; $838051 |
+  LDA.B !r_room_mode                        ; $838051 |
   CMP.W #$0000                              ; $838053 |
   BEQ CODE_83805E                           ; $838056 |
   CMP.W #$0001                              ; $838058 |
@@ -74,7 +74,7 @@ CODE_83805E:
   JSR.W CODE_FN_8380D4                      ; $83808F |
   LDA.W #$0004                              ; $838092 |
   JSL.L CODE_FL_838260                      ; $838095 |
-  LDY.B $90                                 ; $838099 |
+  LDY.B !r_room_mode                        ; $838099 |
   CPY.W $197C                               ; $83809B |
   BNE CODE_8380A2                           ; $83809E |
   INC.B $74,X                               ; $8380A0 |
@@ -95,13 +95,13 @@ CODE_8380B6:
   STZ.B $11,X                               ; $8380BB |
   LDA.W #$0004                              ; $8380BD |
   JSL.L CODE_FL_838260                      ; $8380C0 |
-  LDY.B $90                                 ; $8380C4 |
+  LDY.B !r_room_mode                        ; $8380C4 |
   CPY.W $197C                               ; $8380C6 |
   BNE CODE_8380CD                           ; $8380C9 |
   INC.B $74,X                               ; $8380CB |
 
 CODE_8380CD:
-  LDA.B $90                                 ; $8380CD |
+  LDA.B !r_room_mode                        ; $8380CD |
   STA.W $197C                               ; $8380CF |
   PLB                                       ; $8380D2 |
   RTL                                       ; $8380D3 |
@@ -166,21 +166,21 @@ CODE_FL_83812D:
   PHA                                       ; $838134 |
   RTS                                       ; $838135 |
 
-  LDA.B $90                                 ; $838136 |
+  LDA.B !r_room_mode                        ; $838136 |
   ASL A                                     ; $838138 |
   TAY                                       ; $838139 |
   LDA.W CODE_00D652,Y                       ; $83813A |
   PHA                                       ; $83813D |
   RTS                                       ; $83813E |
 
-  LDA.B $90                                 ; $83813F |
+  LDA.B !r_room_mode                        ; $83813F |
   ASL A                                     ; $838141 |
   TAY                                       ; $838142 |
   LDA.W CODE_00D65E,Y                       ; $838143 |
   PHA                                       ; $838146 |
   RTS                                       ; $838147 |
 
-  LDA.B $90                                 ; $838148 |
+  LDA.B !r_room_mode                        ; $838148 |
   ASL A                                     ; $83814A |
   TAY                                       ; $83814B |
   LDA.W CODE_00D676,Y                       ; $83814C |
@@ -200,7 +200,7 @@ CODE_838161:
   JSL.L CODE_FL_838260                      ; $838164 |
 
 CODE_838168:
-  LDA.B $90                                 ; $838168 |
+  LDA.B !r_room_mode                        ; $838168 |
   ASL A                                     ; $83816A |
   TAY                                       ; $83816B |
   LDA.W CODE_00D66A,Y                       ; $83816C |
@@ -218,7 +218,7 @@ CODE_838182:
   LDA.W $0030,Y                             ; $838182 |
   BIT.W #$1000                              ; $838185 |
   BEQ CODE_JP_8381A2                        ; $838188 |
-  LDA.B $90                                 ; $83818A |
+  LDA.B !r_room_mode                        ; $83818A |
   CMP.W #$0000                              ; $83818C |
   BEQ CODE_838196                           ; $83818F |
   CMP.W #$0001                              ; $838191 |
@@ -256,7 +256,7 @@ CODE_FL_8381A6:
   LDA.W $0492                               ; $8381CD |
   BIT.W #$00C2                              ; $8381D0 |
   BNE CODE_83820C                           ; $8381D3 |
-  LDA.W $0090                               ; $8381D5 |
+  LDA.W !r_room_mode                        ; $8381D5 |
   CMP.W #$0005                              ; $8381D8 |
   BCS CODE_83820C                           ; $8381DB |
   CMP.W #$0002                              ; $8381DD |
@@ -318,7 +318,7 @@ CODE_83822D:
   STA.B $18,X                               ; $83823C |
   LDA.W #$0001                              ; $83823E |
   JSL.L CODE_FL_83D24E                      ; $838241 |
-  LDY.B $90                                 ; $838245 |
+  LDY.B !r_room_mode                        ; $838245 |
   LDA.W #$0000                              ; $838247 |
   AND.W #$00FF                              ; $83824A |
   LDA.W #$0020                              ; $83824D |
@@ -343,7 +343,7 @@ CODE_FN_838265:
   RTS                                       ; $83826E |
 
   STZ.W $193A                               ; $83826F |
-  LDA.B $90                                 ; $838272 |
+  LDA.B !r_room_mode                        ; $838272 |
   STA.W $197C                               ; $838274 |
   RTL                                       ; $838277 |
 
@@ -749,7 +749,7 @@ CODE_838551:
   RTL                                       ; $838554 |
 
 CODE_FN_838555:
-  LDA.B $90                                 ; $838555 |
+  LDA.B !r_room_mode                        ; $838555 |
   CMP.W #$0000                              ; $838557 |
   BEQ CODE_838562                           ; $83855A |
   JSR.W CODE_FN_839E27                      ; $83855C |
@@ -1149,7 +1149,7 @@ CODE_8387BD:
   STA.W $0018,Y                             ; $8387E3 |
   LDA.W #$0000                              ; $8387E6 |
   STA.W $0022,Y                             ; $8387E9 |
-  LDA.B $90                                 ; $8387EC |
+  LDA.B !r_room_mode                        ; $8387EC |
   CMP.W #$0000                              ; $8387EE |
   BEQ CODE_8387FB                           ; $8387F1 |
   LDA.W #$0030                              ; $8387F3 |
@@ -2488,7 +2488,7 @@ CODE_839054:
   JMP.W CODE_JP_8391D7                      ; $83905E |
 
 CODE_839061:
-  LDA.B $90                                 ; $839061 |
+  LDA.B !r_room_mode                        ; $839061 |
   CMP.B #$01                                ; $839063 |
   BEQ CODE_839091                           ; $839065 |
   JSR.W CODE_FN_839453                      ; $839067 |
@@ -2566,7 +2566,7 @@ CODE_8390E2:
   JSL.L CODE_FL_83CD56                      ; $8390E7 |
 
 CODE_8390EB:
-  LDA.B $90                                 ; $8390EB |
+  LDA.B !r_room_mode                        ; $8390EB |
   CMP.B #$00                                ; $8390ED |
   BNE CODE_8390F9                           ; $8390EF |
   REP #$20                                  ; $8390F1 |
@@ -2579,7 +2579,7 @@ CODE_8390F9:
   RTS                                       ; $8390FA |
 
 CODE_JP_8390FB:
-  LDA.B $90                                 ; $8390FB |
+  LDA.B !r_room_mode                        ; $8390FB |
   CMP.B #$01                                ; $8390FD |
   BEQ CODE_839128                           ; $8390FF |
   JSR.W CODE_FN_839453                      ; $839101 |
@@ -2693,7 +2693,7 @@ CODE_8391A5:
   PLX                                       ; $8391C6 |
 
 CODE_8391C7:
-  LDA.B $90                                 ; $8391C7 |
+  LDA.B !r_room_mode                        ; $8391C7 |
   CMP.B #$00                                ; $8391C9 |
   BEQ CODE_8391D2                           ; $8391CB |
   JSR.W CODE_FN_83A29D                      ; $8391CD |
@@ -2726,7 +2726,7 @@ CODE_8391F8:
   LDA.B $92,X                               ; $8391FA |
   BIT.B #$10                                ; $8391FC |
   BEQ CODE_83920E                           ; $8391FE |
-  LDA.B $90                                 ; $839200 |
+  LDA.B !r_room_mode                        ; $839200 |
   CMP.B #$00                                ; $839202 |
   BEQ CODE_83920B                           ; $839204 |
   JSR.W CODE_FN_839E23                      ; $839206 |
@@ -7816,7 +7816,7 @@ CODE_83B2AD:
   STZ.W $17A8                               ; $83B2CB |
   SEP #$20                                  ; $83B2CE |
   JSR.W CODE_FN_83B9C9                      ; $83B2D0 |
-  LDA.B $90                                 ; $83B2D3 |
+  LDA.B !r_room_mode                        ; $83B2D3 |
   CMP.B #$00                                ; $83B2D5 |
   BEQ CODE_83B2E6                           ; $83B2D7 |
   LDA.B #$3C                                ; $83B2D9 |
@@ -7861,7 +7861,7 @@ CODE_83B301:
   LDA.W $000D,Y                             ; $83B316 |
   STA.B $0D,X                               ; $83B319 |
   STZ.B $11,X                               ; $83B31B |
-  LDA.B $90                                 ; $83B31D |
+  LDA.B !r_room_mode                        ; $83B31D |
   CMP.W #$0000                              ; $83B31F |
   BEQ CODE_83B32A                           ; $83B322 |
   LDA.W #$003C                              ; $83B324 |
@@ -7886,7 +7886,7 @@ CODE_FL_83B330:
 CODE_83B341:
   TAX                                       ; $83B341 |
   LDY.W #$0037                              ; $83B342 |
-  LDA.B $90                                 ; $83B345 |
+  LDA.B !r_room_mode                        ; $83B345 |
   CMP.W #$0000                              ; $83B347 |
   BEQ CODE_83B34F                           ; $83B34A |
   LDY.W #$0036                              ; $83B34C |
@@ -7941,7 +7941,7 @@ CODE_FL_83B38E:
   SEP #$20                                  ; $83B398 |
   PHX                                       ; $83B39A |
   TAX                                       ; $83B39B |
-  LDA.B $90                                 ; $83B39C |
+  LDA.B !r_room_mode                        ; $83B39C |
   CMP.B #$00                                ; $83B39E |
   BEQ CODE_83B3A7                           ; $83B3A0 |
   JSR.W CODE_FN_839ECD                      ; $83B3A2 |
@@ -11792,7 +11792,7 @@ CODE_83CCA8:
   STZ.W $1792                               ; $83CCAB |
 
 CODE_83CCAE:
-  LDA.B $90                                 ; $83CCAE |
+  LDA.B !r_room_mode                        ; $83CCAE |
   CMP.B #$00                                ; $83CCB0 |
   BEQ CODE_83CCC1                           ; $83CCB2 |
   CMP.B #$01                                ; $83CCB4 |
@@ -13293,7 +13293,7 @@ CODE_FL_83D5DE:
 CODE_83D5E9:
   LDA.W #$0001                              ; $83D5E9 |
   JSL.L CODE_FL_838260                      ; $83D5EC |
-  LDA.B $90                                 ; $83D5F0 |
+  LDA.B !r_room_mode                        ; $83D5F0 |
   CMP.W #$0000                              ; $83D5F2 |
   BEQ CODE_83D611                           ; $83D5F5 |
   LDA.W #$0050                              ; $83D5F7 |
@@ -13363,7 +13363,7 @@ CODE_83D631:
   STA.B $3A,X                               ; $83D667 |
   LDA.W #$C000                              ; $83D669 |
   STA.B $34,X                               ; $83D66C |
-  LDA.B $90                                 ; $83D66E |
+  LDA.B !r_room_mode                        ; $83D66E |
   CMP.W #$0000                              ; $83D670 |
   BEQ CODE_83D6D6                           ; $83D673 |
   LDA.W #$0050                              ; $83D675 |
@@ -18378,7 +18378,7 @@ CODE_83F9E5:
   LDA.W #$0004                              ; $83F9F9 |
   STA.B $2E,X                               ; $83F9FC |
   STA.B $30,X                               ; $83F9FE |
-  LDA.B $90                                 ; $83FA00 |
+  LDA.B !r_room_mode                        ; $83FA00 |
   CMP.W #$0000                              ; $83FA02 |
   BNE CODE_83FA0D                           ; $83FA05 |
   LDA.W #$0033                              ; $83FA07 |
@@ -18438,7 +18438,7 @@ CODE_JL_83FA24:
   LDA.W #$0004                              ; $83FA75 |
   STA.B $2E,X                               ; $83FA78 |
   STA.B $30,X                               ; $83FA7A |
-  LDA.B $90                                 ; $83FA7C |
+  LDA.B !r_room_mode                        ; $83FA7C |
   CMP.W #$0000                              ; $83FA7E |
   BNE CODE_83FA9C                           ; $83FA81 |
   LDA.W #$0034                              ; $83FA83 |

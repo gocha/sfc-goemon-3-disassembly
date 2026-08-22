@@ -543,7 +543,7 @@ CODE_828453:
 
 CODE_82845E:
   LDA.W #$0006                              ; $82845E |
-  STA.B $90                                 ; $828461 |
+  STA.B !r_room_mode                        ; $828461 |
   TDC                                       ; $828463 |
   JSL.L CODE_FL_80C876                      ; $828464 |
   RTL                                       ; $828468 |
@@ -6109,7 +6109,7 @@ CODE_82AD1D:
   LDA.B $00,X                               ; $82AD1D |
   BNE CODE_82AD32                           ; $82AD1F |
   LDY.W #$8664                              ; $82AD21 |
-  LDA.B $90                                 ; $82AD24 |
+  LDA.B !r_room_mode                        ; $82AD24 |
   CMP.W #$0002                              ; $82AD26 |
   BEQ CODE_82AD2E                           ; $82AD29 |
   LDY.W #$8390                              ; $82AD2B |
@@ -8865,7 +8865,7 @@ CODE_82C01D:
   LDA.W #$0000                              ; $82C03D |
   JSL.L CODE_FL_82B9C3                      ; $82C040 |
   INC.W $1DE0                               ; $82C044 |
-  LDA.B $90                                 ; $82C047 |
+  LDA.B !r_room_mode                        ; $82C047 |
   CMP.W #$0004                              ; $82C049 |
   BEQ CODE_82C05D                           ; $82C04C |
   LDA.W $1DA6                               ; $82C04E |
@@ -8992,7 +8992,7 @@ CODE_FL_82C13A:
   RTL                                       ; $82C15A |
 
 CODE_82C15B:
-  LDA.B $90                                 ; $82C15B |
+  LDA.B !r_room_mode                        ; $82C15B |
   CMP.W #$0004                              ; $82C15D |
   BNE CODE_82C168                           ; $82C160 |
   LDA.W #$8000                              ; $82C162 |
@@ -9107,7 +9107,7 @@ CODE_82C225:
   INC.W $1DE0                               ; $82C249 |
 
 CODE_82C24C:
-  LDA.B $90                                 ; $82C24C |
+  LDA.B !r_room_mode                        ; $82C24C |
   CMP.W #$0003                              ; $82C24E |
   BEQ CODE_82C259                           ; $82C251 |
   LDA.W #$8000                              ; $82C253 |
@@ -10869,7 +10869,7 @@ CODE_FL_82CE46:
   BRA CODE_82CE62                           ; $82CE49 |
 
 CODE_FL_82CE4B:
-  LDA.B $90                                 ; $82CE4B |
+  LDA.B !r_room_mode                        ; $82CE4B |
   CMP.W #$0002                              ; $82CE4D |
   BEQ CODE_82CE60                           ; $82CE50 |
   LDY.W #$13F0                              ; $82CE52 |
@@ -11576,7 +11576,7 @@ CODE_FL_82D257:
   BRA CODE_82D238                           ; $82D270 |
 
 CODE_FL_82D272:
-  LDY.B $90                                 ; $82D272 |
+  LDY.B !r_room_mode                        ; $82D272 |
   CPY.W #$0002                              ; $82D274 |
   BEQ CODE_82D2AB                           ; $82D277 |
   TAY                                       ; $82D279 |
@@ -14530,7 +14530,7 @@ CODE_FL_82EA3B:
   LDA.W #$00C0                              ; $82EA81 |
   JSL.L CODE_FL_82EAAB                      ; $82EA84 |
   LDA.W #$0042                              ; $82EA88 |
-  LDY.B $90                                 ; $82EA8B |
+  LDY.B !r_room_mode                        ; $82EA8B |
   CPY.W #$0002                              ; $82EA8D |
   BNE CODE_82EA95                           ; $82EA90 |
   LDA.W #$0045                              ; $82EA92 |

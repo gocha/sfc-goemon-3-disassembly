@@ -10643,7 +10643,7 @@ CODE_86CA65:
   STA.B $04,X                               ; $86CA68 |
   LDA.W #$0800                              ; $86CA6A |
   STA.B $02,X                               ; $86CA6D |
-  LDA.B $90                                 ; $86CA6F |
+  LDA.B !r_room_mode                        ; $86CA6F |
   CMP.W #$0003                              ; $86CA71 |
   BNE CODE_86CA7B                           ; $86CA74 |
   LDA.W #$0303                              ; $86CA76 |

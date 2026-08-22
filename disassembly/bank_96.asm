@@ -418,10 +418,10 @@ CODE_FL_96FBB1:
 
 CODE_FL_96FBB9:
   PHX                                       ; $96FBB9 |
-  LDA.B $90                                 ; $96FBBA |
+  LDA.B !r_room_mode                        ; $96FBBA |
   CMP.W #$0001                              ; $96FBBC |
   BEQ CODE_96FBE7                           ; $96FBBF |
-  LDA.B $90                                 ; $96FBC1 |
+  LDA.B !r_room_mode                        ; $96FBC1 |
   CMP.W #$0000                              ; $96FBC3 |
   BNE CODE_96FC0A                           ; $96FBC6 |
   LDA.B $A6                                 ; $96FBC8 |
@@ -619,7 +619,7 @@ CODE_96FD51:
 
 CODE_96FD72:
   LDA.W #$0002                              ; $96FD72 |
-  STA.B $90                                 ; $96FD75 |
+  STA.B !r_room_mode                        ; $96FD75 |
   LDA.B $20                                 ; $96FD77 |
   AND.W #$00FF                              ; $96FD79 |
   CMP.W #$0002                              ; $96FD7C |
@@ -631,7 +631,7 @@ CODE_96FD72:
 
 CODE_96FD88:
   LDA.W #$0003                              ; $96FD88 |
-  STA.B $90                                 ; $96FD8B |
+  STA.B !r_room_mode                        ; $96FD8B |
   LDA.B $20                                 ; $96FD8D |
   AND.W #$00FF                              ; $96FD8F |
   CMP.W #$00FC                              ; $96FD92 |
@@ -644,7 +644,7 @@ CODE_96FD88:
 
 CODE_96FDA0:
   LDA.W #$0004                              ; $96FDA0 |
-  STA.B $90                                 ; $96FDA3 |
+  STA.B !r_room_mode                        ; $96FDA3 |
   LDA.B $20                                 ; $96FDA5 |
   AND.W #$00FF                              ; $96FDA7 |
   CMP.W #$0003                              ; $96FDAA |
@@ -707,7 +707,7 @@ CODE_FL_96FE20:
   PEA.W $8787                               ; $96FE27 |
   PLB                                       ; $96FE2A |
   PLB                                       ; $96FE2B |
-  LDA.B $90                                 ; $96FE2C |
+  LDA.B !r_room_mode                        ; $96FE2C |
   CMP.W #$0003                              ; $96FE2E |
   BEQ CODE_96FE91                           ; $96FE31 |
   LDY.W #$0000                              ; $96FE33 |
@@ -740,7 +740,7 @@ CODE_JP_96FE51:
   JSL.L CODE_FL_96FB90                      ; $96FE53 |
   LDA.B $00                                 ; $96FE57 |
   STA.L $700768                             ; $96FE59 |
-  LDA.B $90                                 ; $96FE5D |
+  LDA.B !r_room_mode                        ; $96FE5D |
   STA.L $70076A                             ; $96FE5F |
   JSR.W CODE_FN_96FEC2                      ; $96FE63 |
   LDA.B $C2                                 ; $96FE66 |

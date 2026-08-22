@@ -21,3 +21,4 @@
 !r_rng = $0086
 
 !r_room_id = $008E
+!r_room_mode = $0090

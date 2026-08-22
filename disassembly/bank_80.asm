@@ -1540,33 +1540,32 @@ CODE_808A50:
   RTL                                       ; $808A52 |
 
 
-CODE_FL_808A53:
+set_room_mode:
   PHY                                       ; $808A53 |
   PHB                                       ; $808A54 |
-  LDY.W #$0000                              ; $808A55 |
+  LDY.W #$0000                              ; $808A55 | Start with the first room mode threshold
   PEA.W $8181                               ; $808A58 |
   PLB                                       ; $808A5B |
   PLB                                       ; $808A5C |
-  LDA.B !r_room_id                          ; $808A5D |
+  LDA.B !r_room_id                          ; $808A5D | Load current room ID
 
-CODE_808A5F:
-  CMP.W room_mode_thresholds,Y              ; $808A5F |
-  BCC CODE_808A6D                           ; $808A62 |
-  INY                                       ; $808A64 |
-  INY                                       ; $808A65 |
-  INY                                       ; $808A66 |
-  INY                                       ; $808A67 |
+.find_room_mode
+  CMP.W room_mode_thresholds,Y              ; $808A5F | Find the first threshold above the room ID
+  BCC .set_mode                             ; $808A62 |
+  INY                                       ; $808A64 |\
+  INY                                       ; $808A65 | | Advance to the next threshold
+  INY                                       ; $808A66 | |
+  INY                                       ; $808A67 |/
   CPY.W #$000C                              ; $808A68 |
-  BCC CODE_808A5F                           ; $808A6B |
+  BCC .find_room_mode                       ; $808A6B | Continue search
 
-CODE_808A6D:
-  LDA.B $90                                 ; $808A6D |
-  STA.W $19B6                               ; $808A6F |
+.set_mode
+  LDA.B !r_room_mode                        ; $808A6D |
+  STA.W $19B6                               ; $808A6F | Save previous room mode
 
-  LDA.W room_mode_thresholds+2,Y            ; $808A72 |
-  STA.B $90                                 ; $808A75 |
+  LDA.W room_mode_thresholds+2,Y            ; $808A72 | Load mode for the selected room range
+  STA.B !r_room_mode                        ; $808A75 | Set current room mode
   PLB                                       ; $808A77 |
-
   PLY                                       ; $808A78 |
   RTL                                       ; $808A79 |
 
@@ -1575,7 +1574,7 @@ CODE_FL_808A7A:
   STA.B !r_room_id                          ; $808A7A |
 
 CODE_FL_808A7C:
-  JSL.L CODE_FL_808A53                      ; $808A7C |
+  JSL.L set_room_mode                       ; $808A7C |
   PHY                                       ; $808A80 |
   PHB                                       ; $808A81 |
   LDA.B $90                                 ; $808A82 |

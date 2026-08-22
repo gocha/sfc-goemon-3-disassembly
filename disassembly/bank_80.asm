@@ -149,29 +149,26 @@ CODE_JP_808106:
   LDA.W #$0001                              ; $80810B |
   LDY.B $44                                 ; $80810E |
   STA.B $44                                 ; $808110 |
-  BEQ CODE_80813E                           ; $808112 |
+  BEQ .CODE_80813E                          ; $808112 |
   JSR.W CODE_FN_80824B                      ; $808114 |
   JSR.W CODE_FN_8081A0                      ; $808117 |
   JSL.L CODE_FL_808344                      ; $80811A |
   LDA.W $1E36                               ; $80811E |
-  BNE CODE_80813B                           ; $808121 |
+  BNE .CODE_80813B                          ; $808121 |
   LDA.L $001D9C                             ; $808123 |
   PHA                                       ; $808127 |
   LDA.L $001D9E                             ; $808128 |
   PHA                                       ; $80812C |
   JSL.L CODE_FL_84C7DD                      ; $80812D |
-
   PLA                                       ; $808131 |
-
   STA.L $001D9E                             ; $808132 |
   PLA                                       ; $808136 |
   STA.L $001D9C                             ; $808137 |
 
-CODE_80813B:
-  BRL CODE_JL_808198                        ; $80813B |
+.CODE_80813B
+  BRL .CODE_JL_808198                       ; $80813B |
 
-
-CODE_80813E:
+.CODE_80813E
   SEP #$20                                  ; $80813E |
   STZ.W !reg_hdmaen                         ; $808140 |
   REP #$20                                  ; $808143 |
@@ -200,7 +197,7 @@ CODE_80813E:
   JSL.L handle_sound                        ; $808192 |
   STZ.B $44                                 ; $808196 |
 
-CODE_JL_808198:
+.CODE_JL_808198
   REP #$30                                  ; $808198 |
 
   PLB                                       ; $80819A |
@@ -214,26 +211,26 @@ CODE_JL_808198:
 CODE_FN_8081A0:
   SEP #$20                                  ; $8081A0 |
 
-CODE_8081A2:
+.CODE_8081A2
   BIT.W !reg_hvbjoy                         ; $8081A2 |
-  BMI CODE_8081B9                           ; $8081A5 |
+  BMI .CODE_8081B9                          ; $8081A5 |
   BIT.W !reg_slhv                           ; $8081A7 |
   BIT.W !reg_stat78                         ; $8081AA |
   BIT.W !reg_opvct                          ; $8081AD |
-  BMI CODE_8081A2                           ; $8081B0 |
+  BMI .CODE_8081A2                          ; $8081B0 |
   LDA.B #$01                                ; $8081B2 |
   BIT.W !reg_opvct                          ; $8081B4 |
-  BNE CODE_8081A2                           ; $8081B7 |
+  BNE .CODE_8081A2                          ; $8081B7 |
 
-CODE_8081B9:
+.CODE_8081B9
   LDA.W $1FA0                               ; $8081B9 |
   LDY.B $46                                 ; $8081BC |
-  BEQ CODE_8081C6                           ; $8081BE |
+  BEQ .CODE_8081C6                          ; $8081BE |
   DEC.B $46                                 ; $8081C0 |
-  BEQ CODE_8081C6                           ; $8081C2 |
+  BEQ .CODE_8081C6                          ; $8081C2 |
   ORA.B #$80                                ; $8081C4 |
 
-CODE_8081C6:
+.CODE_8081C6
   STA.W !reg_inidisp                        ; $8081C6 |
   REP #$20                                  ; $8081C9 |
   RTS                                       ; $8081CB |
@@ -243,7 +240,7 @@ CODE_FN_8081CC:
   SEP #$10                                  ; $8081CC |
   LDY.B #$01                                ; $8081CE |
   LDA.B $48                                 ; $8081D0 |
-  BPL CODE_8081F7                           ; $8081D2 |
+  BPL .CODE_8081F7                          ; $8081D2 |
   AND.W #$7FFF                              ; $8081D4 |
   STA.B $48                                 ; $8081D7 |
   LDA.B $4A                                 ; $8081D9 |
@@ -258,9 +255,9 @@ CODE_FN_8081CC:
   STX.W !reg_cgadd                          ; $8081F1 |
   STY.W !reg_mdmaen                         ; $8081F4 |
 
-CODE_8081F7:
+.CODE_8081F7
   BIT.B $48                                 ; $8081F7 |
-  BVS CODE_80822D                           ; $8081F9 |
+  BVS .CODE_80822D                          ; $8081F9 |
   STZ.W !reg_oamaddl                        ; $8081FB |
   LDA.W #$0410                              ; $8081FE |
   STA.W !reg_dmap0                          ; $808201 |
@@ -279,7 +276,7 @@ CODE_8081F7:
   STA.W !reg_das0l                          ; $808227 |
   STY.W !reg_mdmaen                         ; $80822A |
 
-CODE_80822D:
+.CODE_80822D
   REP #$10                                  ; $80822D |
   RTS                                       ; $80822F |
 
@@ -348,10 +345,10 @@ CODE_FN_80824B:
   STA.B !reg_w34sel                         ; $8082B8 |
   LDA.W $1FB8                               ; $8082BA |
   STA.B !reg_wobjsel                        ; $8082BD |
-  BRA CODE_8082C1                           ; $8082BF |
+  BRA .CODE_8082C1                          ; $8082BF |
 
 
-CODE_8082C1:
+.CODE_8082C1
   REP #$20                                  ; $8082C1 |
   LDA.W #$0000                              ; $8082C3 |
   TCD                                       ; $8082C6 |
@@ -1553,7 +1550,7 @@ CODE_FL_808A53:
   LDA.B !r_room_id                          ; $808A5D |
 
 CODE_808A5F:
-  CMP.W DATA16_818229,Y                     ; $808A5F |
+  CMP.W room_mode_thresholds,Y              ; $808A5F |
   BCC CODE_808A6D                           ; $808A62 |
   INY                                       ; $808A64 |
   INY                                       ; $808A65 |
@@ -1566,7 +1563,7 @@ CODE_808A6D:
   LDA.B $90                                 ; $808A6D |
   STA.W $19B6                               ; $808A6F |
 
-  LDA.W DATA16_818229+2,Y                   ; $808A72 |
+  LDA.W room_mode_thresholds+2,Y            ; $808A72 |
   STA.B $90                                 ; $808A75 |
   PLB                                       ; $808A77 |
 

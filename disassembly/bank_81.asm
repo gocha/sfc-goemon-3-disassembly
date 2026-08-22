@@ -84,7 +84,7 @@ region_error_msg:
   db $23,$82,$00,$00,$08,$01,$31,$01        ; $81821B |
   db $00,$0A,$19,$21,$31,$01                ; $818223 |
 
-DATA16_818229:
+room_mode_thresholds:
   ; Room ID thresholds and their corresponding gameplay modes
   ; (overworld or side-scrolling stage).
   ;

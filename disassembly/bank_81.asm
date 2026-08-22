@@ -88,10 +88,10 @@ DATA16_818229:
   ; Room ID thresholds and their corresponding gameplay modes
   ; (overworld or side-scrolling stage).
   ;
-  ;   room     ?
-  dw $00FD,$0001                            ; $818229 |
+  ;   room  mode
+  dw $00FD,$0001                            ; $818229 | Side-scrolling levels
   dw $0100,$0003                            ; $81822D |
-  dw $0200,$0000                            ; $818231 |
+  dw $0200,$0000                            ; $818231 | Top-down perspective levels
   dw $00FD,$0003                            ; $818235 |
 
 music_table:

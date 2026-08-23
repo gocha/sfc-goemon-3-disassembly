@@ -16360,7 +16360,7 @@ CODE_83EA06:
 CODE_FN_83EA10:
   ASL A                                     ; $83EA10 |
   TAY                                       ; $83EA11 |
-  LDA.W LOOSE_OP_00F167,Y                   ; $83EA12 |
+  LDA.W PTR16_81F169-2,Y                    ; $83EA12 |
   PHA                                       ; $83EA15 |
   RTS                                       ; $83EA16 |
 
@@ -16378,9 +16378,10 @@ CODE_FN_83EA1E:
   PHA                                       ; $83EA23 |
   RTS                                       ; $83EA24 |
 
+CODE_FN_83EA25:
   RTS                                       ; $83EA25 |
 
-CODE_JP_83EA26:
+CODE_FN_83EA26:
   SEP #$20                                  ; $83EA26 |
   JSR.W CODE_FN_83EC11                      ; $83EA28 |
   REP #$20                                  ; $83EA2B |
@@ -16409,6 +16410,7 @@ CODE_83EA48:
   STA.W $1C12                               ; $83EA59 |
   RTS                                       ; $83EA5C |
 
+CODE_FN_83EA5D:
   SEP #$20                                  ; $83EA5D |
   JSR.W CODE_FN_83EC11                      ; $83EA5F |
   REP #$20                                  ; $83EA62 |
@@ -16465,6 +16467,7 @@ CODE_83EAAD:
 CODE_83EABF:
   RTS                                       ; $83EABF |
 
+CODE_FN_83EAC0:
   SEP #$20                                  ; $83EAC0 |
   LDA.W $1672                               ; $83EAC2 |
   CLC                                       ; $83EAC5 |
@@ -16473,8 +16476,9 @@ CODE_83EABF:
   CMP.B #$08                                ; $83EACA |
   REP #$20                                  ; $83EACC |
   BCC CODE_83EABF                           ; $83EACE |
-  JMP.W CODE_JP_83EA26                      ; $83EAD0 |
+  JMP.W CODE_FN_83EA26                      ; $83EAD0 |
 
+CODE_FN_83EAD3:
   SEP #$20                                  ; $83EAD3 |
   LDA.W $1672                               ; $83EAD5 |
   CLC                                       ; $83EAD8 |
@@ -16483,8 +16487,9 @@ CODE_83EABF:
   CMP.B #$08                                ; $83EADD |
   REP #$20                                  ; $83EADF |
   BCS CODE_83EABF                           ; $83EAE1 |
-  JMP.W CODE_JP_83EA26                      ; $83EAE3 |
+  JMP.W CODE_FN_83EA26                      ; $83EAE3 |
 
+CODE_FN_83EAE6:
   SEP #$20                                  ; $83EAE6 |
   LDA.W $1662                               ; $83EAE8 |
   CLC                                       ; $83EAEB |
@@ -16495,6 +16500,7 @@ CODE_83EABF:
   BCC CODE_83EA94                           ; $83EAF4 |
   RTS                                       ; $83EAF6 |
 
+CODE_FN_83EAF7:
   SEP #$20                                  ; $83EAF7 |
   LDA.W $1662                               ; $83EAF9 |
   CLC                                       ; $83EAFC |
@@ -16505,6 +16511,7 @@ CODE_83EABF:
   BCS CODE_83EA94                           ; $83EB05 |
   RTS                                       ; $83EB07 |
 
+CODE_FN_83EB08:
   SEP #$20                                  ; $83EB08 |
   JSR.W CODE_FN_83EC11                      ; $83EB0A |
   STA.B $00                                 ; $83EB0D |
@@ -16533,6 +16540,7 @@ CODE_83EB2A:
   EOR.W #$FFFF                              ; $83EB30 |
   BRA CODE_83EB56                           ; $83EB33 |
 
+CODE_FN_83EB35:
   SEP #$20                                  ; $83EB35 |
   JSR.W CODE_FN_83EC11                      ; $83EB37 |
   STA.B $00                                 ; $83EB3A |
@@ -16572,6 +16580,7 @@ CODE_83EB6E:
   LDA.B $00                                 ; $83EB6E |
   JMP.W CODE_JP_83EA64                      ; $83EB70 |
 
+CODE_FN_83EB73:
   SEP #$20                                  ; $83EB73 |
   JSR.W CODE_FN_83EC11                      ; $83EB75 |
   STA.B $00                                 ; $83EB78 |
@@ -16593,6 +16602,7 @@ CODE_83EB6E:
 CODE_83EB96:
   BRA CODE_83EB56                           ; $83EB96 |
 
+CODE_FN_83EB98:
   SEP #$20                                  ; $83EB98 |
   JSR.W CODE_FN_83EC11                      ; $83EB9A |
   STA.B $00                                 ; $83EB9D |
@@ -16619,55 +16629,61 @@ CODE_83EBB8:
   ROR A                                     ; $83EBBD |
   BRA CODE_83EB56                           ; $83EBBE |
 
+CODE_FN_83EBC0:
   LDA.B $C8                                 ; $83EBC0 |
   BMI CODE_83EBC9                           ; $83EBC2 |
-  BNE CODE_83EBEA                           ; $83EBC4 |
-  JMP.W CODE_JP_83EA26                      ; $83EBC6 |
+  BNE CODE_FN_83EBEA                        ; $83EBC4 |
+  JMP.W CODE_FN_83EA26                      ; $83EBC6 |
 
 CODE_83EBC9:
   LDA.B $04,X                               ; $83EBC9 |
   AND.W #$1898                              ; $83EBCB |
   CMP.W #$1898                              ; $83EBCE |
-  BEQ CODE_83EBEA                           ; $83EBD1 |
-  JMP.W CODE_JP_83EA26                      ; $83EBD3 |
+  BEQ CODE_FN_83EBEA                        ; $83EBD1 |
+  JMP.W CODE_FN_83EA26                      ; $83EBD3 |
 
+CODE_FN_83EBD6:
   LDA.B $C8                                 ; $83EBD6 |
   BMI CODE_83EBDD                           ; $83EBD8 |
-  JMP.W CODE_JP_83EA26                      ; $83EBDA |
+  JMP.W CODE_FN_83EA26                      ; $83EBDA |
 
 CODE_83EBDD:
   LDA.B $04,X                               ; $83EBDD |
   AND.W #$1898                              ; $83EBDF |
   CMP.W #$1898                              ; $83EBE2 |
-  BNE CODE_83EBEA                           ; $83EBE5 |
-  JMP.W CODE_JP_83EA26                      ; $83EBE7 |
+  BNE CODE_FN_83EBEA                        ; $83EBE5 |
+  JMP.W CODE_FN_83EA26                      ; $83EBE7 |
 
-CODE_83EBEA:
+CODE_FN_83EBEA:
   RTS                                       ; $83EBEA |
 
+CODE_FN_83EBEB:
   LDA.B $C8                                 ; $83EBEB |
-  BNE CODE_83EBEA                           ; $83EBED |
-  JMP.W CODE_JP_83EA26                      ; $83EBEF |
+  BNE CODE_FN_83EBEA                        ; $83EBED |
+  JMP.W CODE_FN_83EA26                      ; $83EBEF |
 
-  JMP.W CODE_JP_83EA26                      ; $83EBF2 |
+CODE_FN_83EBF2:
+  JMP.W CODE_FN_83EA26                      ; $83EBF2 |
 
+CODE_FN_83EBF5:
   LDA.B $C8                                 ; $83EBF5 |
   BNE CODE_83EBFC                           ; $83EBF7 |
-  JMP.W CODE_JP_83EA26                      ; $83EBF9 |
+  JMP.W CODE_FN_83EA26                      ; $83EBF9 |
 
 CODE_83EBFC:
   LDA.B $26,X                               ; $83EBFC |
-  BPL CODE_83EBEA                           ; $83EBFE |
-  JMP.W CODE_JP_83EA26                      ; $83EC00 |
+  BPL CODE_FN_83EBEA                        ; $83EBFE |
+  JMP.W CODE_FN_83EA26                      ; $83EC00 |
 
+CODE_FN_83EC03:
   LDA.B $C8                                 ; $83EC03 |
   BNE CODE_83EC0A                           ; $83EC05 |
-  JMP.W CODE_JP_83EA26                      ; $83EC07 |
+  JMP.W CODE_FN_83EA26                      ; $83EC07 |
 
 CODE_83EC0A:
   LDA.B $26,X                               ; $83EC0A |
-  BMI CODE_83EBEA                           ; $83EC0C |
-  JMP.W CODE_JP_83EA26                      ; $83EC0E |
+  BMI CODE_FN_83EBEA                        ; $83EC0C |
+  JMP.W CODE_FN_83EA26                      ; $83EC0E |
 
 CODE_FN_83EC11:
   LDA.W $1662                               ; $83EC11 |
@@ -16683,7 +16699,7 @@ CODE_FN_83EC1A:
   AND.B #$0F                                ; $83EC20 |
   RTS                                       ; $83EC22 |
 
-CODE_JP_83EC23:
+CODE_FN_83EC23:
   SEP #$20                                  ; $83EC23 |
   JSR.W CODE_FN_83EC1A                      ; $83EC25 |
   REP #$20                                  ; $83EC28 |
@@ -16712,7 +16728,7 @@ CODE_83EC45:
   STA.W $1C12                               ; $83EC56 |
   RTS                                       ; $83EC59 |
 
-CODE_JP_83EC5A:
+CODE_FN_83EC5A:
   SEP #$20                                  ; $83EC5A |
   JSR.W CODE_FN_83EC1A                      ; $83EC5C |
   REP #$20                                  ; $83EC5F |
@@ -16765,6 +16781,7 @@ CODE_83ECAA:
   STA.W $1C12                               ; $83ECB9 |
   RTS                                       ; $83ECBC |
 
+CODE_FN_83ECBD:
   SEP #$20                                  ; $83ECBD |
   LDA.W $1672                               ; $83ECBF |
   CLC                                       ; $83ECC2 |
@@ -16775,6 +16792,7 @@ CODE_83ECAA:
   BCS CODE_83EC91                           ; $83ECCB |
   RTS                                       ; $83ECCD |
 
+CODE_FN_83ECCE:
   SEP #$20                                  ; $83ECCE |
   LDA.W $1672                               ; $83ECD0 |
   CLC                                       ; $83ECD3 |
@@ -16785,6 +16803,7 @@ CODE_83ECAA:
   BCC CODE_83EC91                           ; $83ECDC |
   RTS                                       ; $83ECDE |
 
+CODE_FN_83ECDF:
   SEP #$20                                  ; $83ECDF |
   LDA.W $1662                               ; $83ECE1 |
   CLC                                       ; $83ECE4 |
@@ -16796,8 +16815,9 @@ CODE_83ECAA:
   RTS                                       ; $83ECEF |
 
 CODE_83ECF0:
-  JMP.W CODE_JP_83EC23                      ; $83ECF0 |
+  JMP.W CODE_FN_83EC23                      ; $83ECF0 |
 
+CODE_FN_83ECF3:
   SEP #$20                                  ; $83ECF3 |
   LDA.W $1662                               ; $83ECF5 |
   CLC                                       ; $83ECF8 |
@@ -16808,6 +16828,7 @@ CODE_83ECF0:
   BCS CODE_83ECF0                           ; $83ED01 |
   RTS                                       ; $83ED03 |
 
+CODE_FN_83ED04:
   SEP #$20                                  ; $83ED04 |
   JSR.W CODE_FN_83EC1A                      ; $83ED06 |
   STA.B $00                                 ; $83ED09 |
@@ -16833,6 +16854,7 @@ CODE_83ED26:
   BPL CODE_83ED51                           ; $83ED28 |
   BRA CODE_83ED51                           ; $83ED2A |
 
+CODE_FN_83ED2C:
   SEP #$20                                  ; $83ED2C |
   JSR.W CODE_FN_83EC1A                      ; $83ED2E |
   STA.B $00                                 ; $83ED31 |
@@ -16874,8 +16896,9 @@ CODE_83ED68:
 
 CODE_83ED69:
   LDA.B $00                                 ; $83ED69 |
-  JMP.W CODE_JP_83EC5A                      ; $83ED6B |
+  JMP.W CODE_FN_83EC5A                      ; $83ED6B |
 
+CODE_FN_83ED6E:
   SEP #$20                                  ; $83ED6E |
   JSR.W CODE_FN_83EC1A                      ; $83ED70 |
   STA.B $00                                 ; $83ED73 |
@@ -16897,6 +16920,7 @@ CODE_83ED8D:
   BPL CODE_83ED51                           ; $83ED8F |
   BRA CODE_83ED51                           ; $83ED91 |
 
+CODE_FN_83ED93:
   SEP #$20                                  ; $83ED93 |
   JSR.W CODE_FN_83EC1A                      ; $83ED95 |
   STA.B $00                                 ; $83ED98 |
@@ -16920,21 +16944,23 @@ CODE_83EDB2:
   BMI CODE_83ED51                           ; $83EDB4 |
   BRA CODE_83ED51                           ; $83EDB6 |
 
+CODE_FN_83EDB8:
   LDA.B $C8                                 ; $83EDB8 |
   BMI CODE_83EDC1                           ; $83EDBA |
-  BNE CODE_83EDE9                           ; $83EDBC |
-  JMP.W CODE_JP_83EC23                      ; $83EDBE |
+  BNE CODE_FN_83EDE9                        ; $83EDBC |
+  JMP.W CODE_FN_83EC23                      ; $83EDBE |
 
 CODE_83EDC1:
   LDA.B $04,X                               ; $83EDC1 |
   AND.W #$1898                              ; $83EDC3 |
   CMP.W #$1898                              ; $83EDC6 |
-  BEQ CODE_83EDE9                           ; $83EDC9 |
-  JMP.W CODE_JP_83EC23                      ; $83EDCB |
+  BEQ CODE_FN_83EDE9                        ; $83EDC9 |
+  JMP.W CODE_FN_83EC23                      ; $83EDCB |
 
+CODE_FN_83EDCE:
   LDA.B $C8                                 ; $83EDCE |
   BMI CODE_83EDD5                           ; $83EDD0 |
-  JMP.W CODE_JP_83EC23                      ; $83EDD2 |
+  JMP.W CODE_FN_83EC23                      ; $83EDD2 |
 
 CODE_83EDD5:
   LDA.B $22,X                               ; $83EDD5 |
@@ -16943,38 +16969,43 @@ CODE_83EDD5:
   LDA.B $04,X                               ; $83EDDC |
   AND.W #$1898                              ; $83EDDE |
   CMP.W #$1898                              ; $83EDE1 |
-  BNE CODE_83EDE9                           ; $83EDE4 |
+  BNE CODE_FN_83EDE9                        ; $83EDE4 |
 
 CODE_83EDE6:
-  JMP.W CODE_JP_83EC23                      ; $83EDE6 |
+  JMP.W CODE_FN_83EC23                      ; $83EDE6 |
 
-CODE_83EDE9:
+CODE_FN_83EDE9:
   RTS                                       ; $83EDE9 |
 
+CODE_FN_83EDEA:
   LDA.B $C8                                 ; $83EDEA |
-  BNE CODE_83EDE9                           ; $83EDEC |
-  JMP.W CODE_JP_83EC23                      ; $83EDEE |
+  BNE CODE_FN_83EDE9                        ; $83EDEC |
+  JMP.W CODE_FN_83EC23                      ; $83EDEE |
 
+CODE_FN_83EDF1:
   LDA.B $C8                                 ; $83EDF1 |
   BNE CODE_83EDF8                           ; $83EDF3 |
-  JMP.W CODE_JP_83EC23                      ; $83EDF5 |
+  JMP.W CODE_FN_83EC23                      ; $83EDF5 |
 
 CODE_83EDF8:
   LDA.B $28,X                               ; $83EDF8 |
-  BPL CODE_83EDE9                           ; $83EDFA |
-  JMP.W CODE_JP_83EC23                      ; $83EDFC |
+  BPL CODE_FN_83EDE9                        ; $83EDFA |
+  JMP.W CODE_FN_83EC23                      ; $83EDFC |
 
+CODE_FN_83EDFF:
   LDA.B $C8                                 ; $83EDFF |
   BNE CODE_83EE06                           ; $83EE01 |
-  JMP.W CODE_JP_83EC23                      ; $83EE03 |
+  JMP.W CODE_FN_83EC23                      ; $83EE03 |
 
 CODE_83EE06:
   LDA.B $28,X                               ; $83EE06 |
-  BMI CODE_83EDE9                           ; $83EE08 |
-  JMP.W CODE_JP_83EC23                      ; $83EE0A |
+  BMI CODE_FN_83EDE9                        ; $83EE08 |
+  JMP.W CODE_FN_83EC23                      ; $83EE0A |
 
-  JMP.W CODE_JP_83EC23                      ; $83EE0D |
+CODE_FN_83EE0D:
+  JMP.W CODE_FN_83EC23                      ; $83EE0D |
 
+CODE_FN_83EE10:
   LDA.W $1C16                               ; $83EE10 |
   BEQ CODE_83EE2E                           ; $83EE13 |
   LDA.W #$0002                              ; $83EE15 |
@@ -16996,6 +17027,7 @@ CODE_83EE2C:
 CODE_83EE2E:
   RTS                                       ; $83EE2E |
 
+CODE_FN_83EE2F:
   LDA.W $1C16                               ; $83EE2F |
   BEQ CODE_83EE2E                           ; $83EE32 |
   LDA.W #$0002                              ; $83EE34 |
@@ -17009,15 +17041,16 @@ CODE_83EE2E:
   BCS CODE_83EE2C                           ; $83EE46 |
   BRA CODE_83EE29                           ; $83EE48 |
 
+CODE_FN_83EE4A:
   LDA.W $1C16                               ; $83EE4A |
   BEQ CODE_83EE2E                           ; $83EE4D |
   LDA.W #$0002                              ; $83EE4F |
   STA.W $1C16                               ; $83EE52 |
   LDA.B $10,X                               ; $83EE55 |
-  BNE CODE_83EE68                           ; $83EE57 |
+  BNE CODE_FN_83EE68                        ; $83EE57 |
   CLC                                       ; $83EE59 |
   LDA.B $26,X                               ; $83EE5A |
-  BEQ CODE_83EE68                           ; $83EE5C |
+  BEQ CODE_FN_83EE68                        ; $83EE5C |
   ADC.W #$0080                              ; $83EE5E |
   BCC CODE_83EE66                           ; $83EE61 |
 
@@ -17027,22 +17060,24 @@ CODE_83EE63:
 CODE_83EE66:
   STA.B $26,X                               ; $83EE66 |
 
-CODE_83EE68:
+CODE_FN_83EE68:
   RTS                                       ; $83EE68 |
 
+CODE_FN_83EE69:
   LDA.W $1C16                               ; $83EE69 |
   BEQ CODE_83EE2E                           ; $83EE6C |
   LDA.W #$0002                              ; $83EE6E |
   STA.W $1C16                               ; $83EE71 |
   LDA.B $10,X                               ; $83EE74 |
-  BNE CODE_83EE68                           ; $83EE76 |
+  BNE CODE_FN_83EE68                        ; $83EE76 |
   SEC                                       ; $83EE78 |
   LDA.B $26,X                               ; $83EE79 |
-  BEQ CODE_83EE68                           ; $83EE7B |
+  BEQ CODE_FN_83EE68                        ; $83EE7B |
   SBC.W #$0080                              ; $83EE7D |
   BCS CODE_83EE66                           ; $83EE80 |
   BRA CODE_83EE63                           ; $83EE82 |
 
+CODE_FN_83EE84:
   CPX.W #$04C1                              ; $83EE84 |
   BCS CODE_83EEC8                           ; $83EE87 |
   LDA.W $1C16                               ; $83EE89 |
@@ -17077,6 +17112,7 @@ CODE_83EEC4:
 CODE_83EEC8:
   RTS                                       ; $83EEC8 |
 
+CODE_FN_83EEC9:
   LDA.W $1C16                               ; $83EEC9 |
   BEQ CODE_83EED4                           ; $83EECC |
   LDA.W #$001E                              ; $83EECE |
@@ -17094,6 +17130,8 @@ CODE_83EED4:
 
 CODE_83EEE7:
   STY.B $00                                 ; $83EEE7 |
+
+CODE_FN_83EEE9:
   LDA.B $34,X                               ; $83EEE9 |
   ORA.W #$0001                              ; $83EEEB |
   STA.B $34,X                               ; $83EEEE |
@@ -17101,6 +17139,7 @@ CODE_83EEE7:
 CODE_83EEF0:
   RTS                                       ; $83EEF0 |
 
+CODE_FN_83EEF1:
   CPX.W #$04C1                              ; $83EEF1 |
   BCS CODE_83EEF0                           ; $83EEF4 |
   STZ.W $1C16                               ; $83EEF6 |

@@ -3579,395 +3579,395 @@ DATA16_81B69C:
   dw $0100                                  ; $81B9A4 |
 
 PTR16_81B9A6:
-  dw DATA8_81BFBA                           ; $81B9A6 |
-  dw DATA8_81BFD2                           ; $81B9A8 |
-  dw DATA8_81BFEA                           ; $81B9AA |
-  dw DATA8_81C002                           ; $81B9AC |
-  dw DATA8_81C020                           ; $81B9AE |
-  dw DATA8_81C029                           ; $81B9B0 |
-  dw DATA8_81C035                           ; $81B9B2 |
-  dw DATA8_81C044                           ; $81B9B4 |
-  dw DATA8_81C050                           ; $81B9B6 |
-  dw DATA8_81C066                           ; $81B9B8 |
-  dw DATA8_81C072                           ; $81B9BA |
-  dw DATA8_81C081                           ; $81B9BC |
-  dw DATA8_81C089                           ; $81B9BE |
-  dw DATA8_81C095                           ; $81B9C0 |
-  dw DATA8_81C09B                           ; $81B9C2 |
-  dw DATA8_81C0B1                           ; $81B9C4 |
-  dw DATA8_81C0C5                           ; $81B9C6 |
-  dw DATA8_81C0DB                           ; $81B9C8 |
-  dw DATA8_81C0EF                           ; $81B9CA |
-  dw DATA8_81C105                           ; $81B9CC |
-  dw DATA8_81C11B                           ; $81B9CE |
-  dw DATA8_81C131                           ; $81B9D0 |
-  dw DATA8_81C147                           ; $81B9D2 |
-  dw DATA8_81C15D                           ; $81B9D4 |
-  dw DATA8_81C173                           ; $81B9D6 |
-  dw DATA8_81C17C                           ; $81B9D8 |
-  dw DATA8_81C184                           ; $81B9DA |
-  dw DATA8_81C190                           ; $81B9DC |
-  dw DATA8_81C19A                           ; $81B9DE |
-  dw DATA8_81C1A4                           ; $81B9E0 |
-  dw DATA8_81C1AD                           ; $81B9E2 |
-  dw DATA8_81C1BB                           ; $81B9E4 |
-  dw DATA8_81C1C7                           ; $81B9E6 |
-  dw DATA8_81C1DF                           ; $81B9E8 |
-  dw DATA8_81C1EF                           ; $81B9EA |
-  dw DATA8_81C207                           ; $81B9EC |
-  dw DATA8_81C216                           ; $81B9EE |
-  dw DATA8_81C21E                           ; $81B9F0 |
-  dw DATA8_81C233                           ; $81B9F2 |
-  dw DATA8_81C24B                           ; $81B9F4 |
-  dw DATA8_81C25F                           ; $81B9F6 |
-  dw DATA8_81C273                           ; $81B9F8 |
-  dw DATA8_81C279                           ; $81B9FA |
-  dw DATA8_81C285                           ; $81B9FC |
-  dw DATA8_81C294                           ; $81B9FE |
-  dw DATA8_81C29D                           ; $81BA00 |
-  dw DATA8_81C2AC                           ; $81BA02 |
-  dw DATA8_81C2B4                           ; $81BA04 |
-  dw DATA8_81C2BE                           ; $81BA06 |
-  dw DATA8_81C2C6                           ; $81BA08 |
-  dw DATA8_81C2D5                           ; $81BA0A |
-  dw DATA8_81C2DE                           ; $81BA0C |
-  dw DATA8_81C2E4                           ; $81BA0E |
-  dw DATA8_81C2ED                           ; $81BA10 |
-  dw DATA8_81C2F5                           ; $81BA12 |
-  dw DATA8_81C301                           ; $81BA14 |
-  dw DATA8_81C30B                           ; $81BA16 |
-  dw DATA8_81C317                           ; $81BA18 |
-  dw DATA8_81C31F                           ; $81BA1A |
-  dw DATA8_81C328                           ; $81BA1C |
-  dw DATA8_81C330                           ; $81BA1E |
-  dw DATA8_81C33F                           ; $81BA20 |
-  dw DATA8_81C347                           ; $81BA22 |
-  dw DATA8_81C351                           ; $81BA24 |
-  dw DATA8_81C35A                           ; $81BA26 |
-  dw DATA8_81C364                           ; $81BA28 |
-  dw DATA8_81C36D                           ; $81BA2A |
-  dw DATA8_81C375                           ; $81BA2C |
-  dw DATA8_81C37E                           ; $81BA2E |
-  dw DATA8_81C384                           ; $81BA30 |
-  dw DATA8_81C392                           ; $81BA32 |
-  dw DATA8_81C39A                           ; $81BA34 |
-  dw DATA8_81C3A0                           ; $81BA36 |
-  dw DATA8_81C3AC                           ; $81BA38 |
-  dw DATA8_81C3BE                           ; $81BA3A |
-  dw DATA8_81C3C6                           ; $81BA3C |
-  dw DATA8_81C3D2                           ; $81BA3E |
-  dw DATA8_81C3E4                           ; $81BA40 |
-  dw DATA8_81C3EA                           ; $81BA42 |
-  dw DATA8_81C3F2                           ; $81BA44 |
-  dw DATA8_81C3F8                           ; $81BA46 |
-  dw DATA8_81C40A                           ; $81BA48 |
-  dw DATA8_81C412                           ; $81BA4A |
-  dw DATA8_81C41E                           ; $81BA4C |
-  dw DATA8_81C433                           ; $81BA4E |
-  dw DATA8_81C43D                           ; $81BA50 |
-  dw DATA8_81C443                           ; $81BA52 |
-  dw DATA8_81C44B                           ; $81BA54 |
-  dw DATA8_81C469                           ; $81BA56 |
-  dw DATA8_81C473                           ; $81BA58 |
-  dw DATA8_81C48B                           ; $81BA5A |
-  dw DATA8_81C493                           ; $81BA5C |
-  dw DATA8_81C4A3                           ; $81BA5E |
-  dw DATA8_81C4AB                           ; $81BA60 |
-  dw DATA8_81C4BA                           ; $81BA62 |
-  dw DATA8_81C4D5                           ; $81BA64 |
-  dw DATA8_81C4F3                           ; $81BA66 |
-  dw DATA8_81C4F9                           ; $81BA68 |
-  dw DATA8_81C50E                           ; $81BA6A |
-  dw DATA8_81C517                           ; $81BA6C |
-  dw DATA8_81C523                           ; $81BA6E |
-  dw DATA8_81C52C                           ; $81BA70 |
-  dw DATA8_81C538                           ; $81BA72 |
-  dw DATA8_81C552                           ; $81BA74 |
-  dw DATA8_81C558                           ; $81BA76 |
-  dw DATA8_81C564                           ; $81BA78 |
-  dw DATA8_81C570                           ; $81BA7A |
-  dw DATA8_81C57C                           ; $81BA7C |
-  dw DATA8_81C588                           ; $81BA7E |
-  dw DATA8_81C594                           ; $81BA80 |
-  dw DATA8_81C5A0                           ; $81BA82 |
-  dw DATA8_81C5AC                           ; $81BA84 |
-  dw DATA8_81C5B4                           ; $81BA86 |
-  dw DATA8_81C5C0                           ; $81BA88 |
-  dw DATA8_81C5C6                           ; $81BA8A |
-  dw DATA8_81C5D0                           ; $81BA8C |
-  dw DATA8_81C5DC                           ; $81BA8E |
-  dw DATA8_81C5E6                           ; $81BA90 |
-  dw DATA8_81C5F2                           ; $81BA92 |
-  dw DATA8_81C604                           ; $81BA94 |
-  dw DATA8_81C610                           ; $81BA96 |
-  dw DATA8_81C61E                           ; $81BA98 |
-  dw DATA8_81C62D                           ; $81BA9A |
-  dw DATA8_81C639                           ; $81BA9C |
-  dw DATA8_81C63F                           ; $81BA9E |
-  dw DATA8_81C645                           ; $81BAA0 |
-  dw DATA8_81C64E                           ; $81BAA2 |
-  dw DATA8_81C65C                           ; $81BAA4 |
-  dw DATA8_81C662                           ; $81BAA6 |
-  dw DATA8_81C66B                           ; $81BAA8 |
-  dw DATA8_81C675                           ; $81BAAA |
-  dw DATA8_81C67B                           ; $81BAAC |
-  dw DATA8_81C689                           ; $81BAAE |
-  dw DATA8_81C69E                           ; $81BAB0 |
-  dw DATA8_81C6AD                           ; $81BAB2 |
-  dw DATA8_81C6B7                           ; $81BAB4 |
-  dw DATA8_81C6BF                           ; $81BAB6 |
-  dw DATA8_81C6C9                           ; $81BAB8 |
-  dw DATA8_81C6CF                           ; $81BABA |
-  dw DATA8_81C6D5                           ; $81BABC |
-  dw DATA8_81C6DB                           ; $81BABE |
-  dw DATA8_81C6EA                           ; $81BAC0 |
-  dw DATA8_81C6F0                           ; $81BAC2 |
-  dw DATA8_81C6F1                           ; $81BAC4 |
-  dw DATA8_81C6F2                           ; $81BAC6 |
-  dw DATA8_81C6F3                           ; $81BAC8 |
-  dw DATA8_81C6F4                           ; $81BACA |
-  dw DATA8_81C6F5                           ; $81BACC |
-  dw DATA8_81C6F6                           ; $81BACE |
-  dw DATA8_81C6F7                           ; $81BAD0 |
-  dw DATA8_81C6F8                           ; $81BAD2 |
-  dw DATA8_81C701                           ; $81BAD4 |
-  dw DATA8_81C709                           ; $81BAD6 |
-  dw DATA8_81C712                           ; $81BAD8 |
-  dw DATA8_81C71B                           ; $81BADA |
-  dw DATA8_81C72D                           ; $81BADC |
-  dw DATA8_81C736                           ; $81BADE |
-  dw DATA8_81C742                           ; $81BAE0 |
-  dw DATA8_81C752                           ; $81BAE2 |
-  dw DATA8_81C772                           ; $81BAE4 |
-  dw DATA8_81C782                           ; $81BAE6 |
-  dw DATA8_81C78A                           ; $81BAE8 |
-  dw DATA8_81C798                           ; $81BAEA |
-  dw DATA8_81C7AA                           ; $81BAEC |
-  dw DATA8_81C7B6                           ; $81BAEE |
-  dw DATA8_81C7C2                           ; $81BAF0 |
-  dw DATA8_81C7CE                           ; $81BAF2 |
-  dw DATA8_81C7DC                           ; $81BAF4 |
-  dw DATA8_81C7E8                           ; $81BAF6 |
-  dw DATA8_81C7F2                           ; $81BAF8 |
-  dw DATA8_81C800                           ; $81BAFA |
-  dw DATA8_81C815                           ; $81BAFC |
-  dw DATA8_81C816                           ; $81BAFE |
-  dw DATA8_81C81E                           ; $81BB00 |
-  dw DATA8_81C82A                           ; $81BB02 |
-  dw DATA8_81C830                           ; $81BB04 |
-  dw DATA8_81C838                           ; $81BB06 |
-  dw DATA8_81C83E                           ; $81BB08 |
-  dw DATA8_81C848                           ; $81BB0A |
-  dw DATA8_81C852                           ; $81BB0C |
-  dw DATA8_81C858                           ; $81BB0E |
-  dw DATA8_81C85E                           ; $81BB10 |
-  dw DATA8_81C86D                           ; $81BB12 |
-  dw DATA8_81C873                           ; $81BB14 |
-  dw DATA8_81C894                           ; $81BB16 |
-  dw DATA8_81C89A                           ; $81BB18 |
-  dw DATA8_81C8A3                           ; $81BB1A |
-  dw DATA8_81C8A9                           ; $81BB1C |
-  dw DATA8_81C8AA                           ; $81BB1E |
-  dw DATA8_81C8AB                           ; $81BB20 |
-  dw DATA8_81C8AC                           ; $81BB22 |
-  dw DATA8_81C8AD                           ; $81BB24 |
-  dw DATA8_81C8AE                           ; $81BB26 |
-  dw DATA8_81C8AF                           ; $81BB28 |
-  dw DATA8_81C8B0                           ; $81BB2A |
-  dw DATA8_81C8B1                           ; $81BB2C |
-  dw DATA8_81C8B2                           ; $81BB2E |
-  dw DATA8_81C8B3                           ; $81BB30 |
-  dw DATA8_81C8B4                           ; $81BB32 |
-  dw DATA8_81C8B5                           ; $81BB34 |
-  dw DATA8_81C8B6                           ; $81BB36 |
-  dw DATA8_81C8B7                           ; $81BB38 |
-  dw DATA8_81C8B8                           ; $81BB3A |
-  dw DATA8_81C8B9                           ; $81BB3C |
-  dw DATA8_81C8BA                           ; $81BB3E |
-  dw DATA8_81C8BB                           ; $81BB40 |
-  dw DATA8_81C8BC                           ; $81BB42 |
-  dw DATA8_81C8BD                           ; $81BB44 |
-  dw DATA8_81C8BE                           ; $81BB46 |
-  dw DATA8_81C8BF                           ; $81BB48 |
-  dw DATA8_81C8C0                           ; $81BB4A |
-  dw DATA8_81C8C1                           ; $81BB4C |
-  dw DATA8_81C8C2                           ; $81BB4E |
-  dw DATA8_81C8C3                           ; $81BB50 |
-  dw DATA8_81C8C4                           ; $81BB52 |
-  dw DATA8_81C8C5                           ; $81BB54 |
-  dw DATA8_81C8C6                           ; $81BB56 |
-  dw DATA8_81C8C7                           ; $81BB58 |
-  dw DATA8_81C8C8                           ; $81BB5A |
-  dw DATA8_81C8C9                           ; $81BB5C |
-  dw DATA8_81C8CA                           ; $81BB5E |
-  dw DATA8_81C8CB                           ; $81BB60 |
-  dw DATA8_81C8CC                           ; $81BB62 |
-  dw DATA8_81C8CD                           ; $81BB64 |
-  dw DATA8_81C8CE                           ; $81BB66 |
-  dw DATA8_81C8CF                           ; $81BB68 |
-  dw DATA8_81C8D0                           ; $81BB6A |
-  dw DATA8_81C8D1                           ; $81BB6C |
-  dw DATA8_81C8D2                           ; $81BB6E |
-  dw DATA8_81C8D3                           ; $81BB70 |
-  dw DATA8_81C8D4                           ; $81BB72 |
-  dw DATA8_81C8D5                           ; $81BB74 |
-  dw DATA8_81C8D6                           ; $81BB76 |
-  dw DATA8_81C8D7                           ; $81BB78 |
-  dw DATA8_81C8D8                           ; $81BB7A |
-  dw DATA8_81C8D9                           ; $81BB7C |
-  dw DATA8_81C8DA                           ; $81BB7E |
-  dw DATA8_81C8DB                           ; $81BB80 |
-  dw DATA8_81C8DC                           ; $81BB82 |
-  dw DATA8_81C8DD                           ; $81BB84 |
-  dw DATA8_81C8DE                           ; $81BB86 |
-  dw DATA8_81C8DF                           ; $81BB88 |
-  dw DATA8_81C8E0                           ; $81BB8A |
-  dw DATA8_81C8E1                           ; $81BB8C |
-  dw DATA8_81C8E2                           ; $81BB8E |
-  dw DATA8_81C8E3                           ; $81BB90 |
-  dw DATA8_81C8E4                           ; $81BB92 |
-  dw DATA8_81C8E5                           ; $81BB94 |
-  dw DATA8_81C8E6                           ; $81BB96 |
-  dw DATA8_81C8E7                           ; $81BB98 |
-  dw DATA8_81C8EF                           ; $81BB9A |
-  dw DATA8_81C8F7                           ; $81BB9C |
-  dw DATA8_81C8FF                           ; $81BB9E |
-  dw DATA8_81C911                           ; $81BBA0 |
-  dw DATA8_81C929                           ; $81BBA2 |
-  dw DATA8_81C941                           ; $81BBA4 |
-  dw DATA8_81C947                           ; $81BBA6 |
-  dw DATA8_81C967                           ; $81BBA8 |
-  dw DATA8_81C96C                           ; $81BBAA |
-  dw DATA8_81C96E                           ; $81BBAC |
-  dw DATA8_81C972                           ; $81BBAE |
-  dw DATA8_81C978                           ; $81BBB0 |
-  dw DATA8_81C97E                           ; $81BBB2 |
-  dw DATA8_81C987                           ; $81BBB4 |
-  dw DATA8_81C999                           ; $81BBB6 |
-  dw DATA8_81C9B5                           ; $81BBB8 |
-  dw DATA8_81C9BB                           ; $81BBBA |
-  dw DATA8_81C9C4                           ; $81BBBC |
-  dw DATA8_81C9CA                           ; $81BBBE |
-  dw DATA8_81C9CE                           ; $81BBC0 |
-  dw DATA8_81C9D0                           ; $81BBC2 |
-  dw DATA8_81C9D4                           ; $81BBC4 |
-  dw DATA8_81C9D6                           ; $81BBC6 |
-  dw DATA8_81C9FE                           ; $81BBC8 |
-  dw DATA8_81CA02                           ; $81BBCA |
-  dw DATA8_81CA06                           ; $81BBCC |
-  dw DATA8_81CA07                           ; $81BBCE |
-  dw DATA8_81CA09                           ; $81BBD0 |
-  dw DATA8_81CA13                           ; $81BBD2 |
-  dw DATA8_81CA19                           ; $81BBD4 |
-  dw DATA8_81CA21                           ; $81BBD6 |
-  dw DATA8_81CA39                           ; $81BBD8 |
-  dw DATA8_81CA3A                           ; $81BBDA |
-  dw DATA8_81CA3C                           ; $81BBDC |
-  dw DATA8_81CA40                           ; $81BBDE |
-  dw DATA8_81CA44                           ; $81BBE0 |
-  dw DATA8_81CA48                           ; $81BBE2 |
-  dw DATA8_81CA4B                           ; $81BBE4 |
-  dw DATA8_81CA55                           ; $81BBE6 |
-  dw DATA8_81CA81                           ; $81BBE8 |
-  dw DATA8_81CA83                           ; $81BBEA |
-  dw DATA8_81CA85                           ; $81BBEC |
-  dw DATA8_81CA95                           ; $81BBEE |
-  dw DATA8_81CA9F                           ; $81BBF0 |
-  dw DATA8_81CAA7                           ; $81BBF2 |
-  dw DATA8_81CAA9                           ; $81BBF4 |
-  dw DATA8_81CAAB                           ; $81BBF6 |
-  dw DATA8_81CAAD                           ; $81BBF8 |
-  dw DATA8_81CAAF                           ; $81BBFA |
-  dw DATA8_81CAD7                           ; $81BBFC |
-  dw DATA8_81CADB                           ; $81BBFE |
-  dw DATA8_81CADF                           ; $81BC00 |
-  dw DATA8_81CAE9                           ; $81BC02 |
-  dw DATA8_81CAEF                           ; $81BC04 |
-  dw DATA8_81CAF1                           ; $81BC06 |
-  dw DATA8_81CAF7                           ; $81BC08 |
-  dw DATA8_81CAF9                           ; $81BC0A |
-  dw DATA8_81CAFB                           ; $81BC0C |
-  dw DATA8_81CB01                           ; $81BC0E |
-  dw DATA8_81CB09                           ; $81BC10 |
-  dw DATA8_81CB11                           ; $81BC12 |
-  dw DATA8_81CB19                           ; $81BC14 |
-  dw DATA8_81CB21                           ; $81BC16 |
-  dw DATA8_81CB29                           ; $81BC18 |
-  dw DATA8_81CB31                           ; $81BC1A |
-  dw DATA8_81CB39                           ; $81BC1C |
-  dw DATA8_81CB41                           ; $81BC1E |
-  dw DATA8_81CB49                           ; $81BC20 |
-  dw DATA8_81CB51                           ; $81BC22 |
-  dw DATA8_81CB59                           ; $81BC24 |
-  dw DATA8_81CB61                           ; $81BC26 |
-  dw DATA8_81CB62                           ; $81BC28 |
-  dw DATA8_81CB63                           ; $81BC2A |
-  dw DATA8_81CB64                           ; $81BC2C |
-  dw DATA8_81CB65                           ; $81BC2E |
-  dw DATA8_81CB66                           ; $81BC30 |
-  dw DATA8_81CB67                           ; $81BC32 |
-  dw DATA8_81CB68                           ; $81BC34 |
-  dw DATA8_81CB69                           ; $81BC36 |
-  dw DATA8_81CB6A                           ; $81BC38 |
-  dw DATA8_81CB6B                           ; $81BC3A |
-  dw DATA8_81CB6C                           ; $81BC3C |
-  dw DATA8_81CB6D                           ; $81BC3E |
-  dw DATA8_81CB6E                           ; $81BC40 |
-  dw DATA8_81CB6F                           ; $81BC42 |
-  dw DATA8_81CB70                           ; $81BC44 |
-  dw DATA8_81CB71                           ; $81BC46 |
-  dw DATA8_81CB72                           ; $81BC48 |
-  dw DATA8_81CB73                           ; $81BC4A |
-  dw DATA8_81CB74                           ; $81BC4C |
-  dw DATA8_81CB75                           ; $81BC4E |
-  dw DATA8_81CB76                           ; $81BC50 |
-  dw DATA8_81CB77                           ; $81BC52 |
-  dw DATA8_81CB78                           ; $81BC54 |
-  dw DATA8_81CB79                           ; $81BC56 |
-  dw DATA8_81CB7A                           ; $81BC58 |
-  dw DATA8_81CB7B                           ; $81BC5A |
-  dw DATA8_81CB7C                           ; $81BC5C |
-  dw DATA8_81CB7D                           ; $81BC5E |
-  dw DATA8_81CB7E                           ; $81BC60 |
-  dw DATA8_81CB7F                           ; $81BC62 |
-  dw DATA8_81CB80                           ; $81BC64 |
-  dw DATA8_81CB81                           ; $81BC66 |
-  dw DATA8_81CB82                           ; $81BC68 |
-  dw DATA8_81CB83                           ; $81BC6A |
-  dw DATA8_81CB84                           ; $81BC6C |
-  dw DATA8_81CB85                           ; $81BC6E |
-  dw DATA8_81CB86                           ; $81BC70 |
-  dw DATA8_81CB87                           ; $81BC72 |
-  dw DATA8_81CB88                           ; $81BC74 |
-  dw DATA8_81CB89                           ; $81BC76 |
-  dw DATA8_81CB8A                           ; $81BC78 |
-  dw DATA8_81CB8B                           ; $81BC7A |
-  dw DATA8_81CB8C                           ; $81BC7C |
-  dw DATA8_81CB8D                           ; $81BC7E |
-  dw DATA8_81CB8E                           ; $81BC80 |
-  dw DATA8_81CB8F                           ; $81BC82 |
-  dw DATA8_81CB90                           ; $81BC84 |
-  dw DATA8_81CB91                           ; $81BC86 |
-  dw DATA8_81CB92                           ; $81BC88 |
-  dw DATA8_81CB94                           ; $81BC8A |
-  dw DATA8_81CB95                           ; $81BC8C |
-  dw DATA8_81CB96                           ; $81BC8E |
-  dw DATA8_81CB97                           ; $81BC90 |
-  dw DATA8_81CB98                           ; $81BC92 |
-  dw DATA8_81CB99                           ; $81BC94 |
-  dw DATA8_81CB9A                           ; $81BC96 |
-  dw DATA8_81CB9B                           ; $81BC98 |
-  dw DATA8_81CB9C                           ; $81BC9A |
-  dw DATA8_81CB9D                           ; $81BC9C |
-  dw DATA8_81CB9E                           ; $81BC9E |
-  dw DATA8_81CB9F                           ; $81BCA0 |
-  dw DATA8_81CBA0                           ; $81BCA2 |
-  dw DATA8_81CBA1                           ; $81BCA4 |
-  dw DATA8_81CBA2                           ; $81BCA6 |
-  dw DATA8_81CBA3                           ; $81BCA8 |
-  dw DATA8_81CBA4                           ; $81BCAA |
-  dw DATA8_81CBA5                           ; $81BCAC |
-  dw DATA8_81CBA6                           ; $81BCAE |
+  dw DATA8_81BFBA                           ; $81B9A6 | room $000
+  dw DATA8_81BFD2                           ; $81B9A8 | room $001
+  dw DATA8_81BFEA                           ; $81B9AA | room $002
+  dw DATA8_81C002                           ; $81B9AC | room $003
+  dw DATA8_81C020                           ; $81B9AE | room $004
+  dw DATA8_81C029                           ; $81B9B0 | room $005
+  dw DATA8_81C035                           ; $81B9B2 | room $006
+  dw DATA8_81C044                           ; $81B9B4 | room $007
+  dw DATA8_81C050                           ; $81B9B6 | room $008
+  dw DATA8_81C066                           ; $81B9B8 | room $009
+  dw DATA8_81C072                           ; $81B9BA | room $00A
+  dw DATA8_81C081                           ; $81B9BC | room $00B
+  dw DATA8_81C089                           ; $81B9BE | room $00C
+  dw DATA8_81C095                           ; $81B9C0 | room $00D
+  dw DATA8_81C09B                           ; $81B9C2 | room $00E
+  dw DATA8_81C0B1                           ; $81B9C4 | room $00F
+  dw DATA8_81C0C5                           ; $81B9C6 | room $010
+  dw DATA8_81C0DB                           ; $81B9C8 | room $011
+  dw DATA8_81C0EF                           ; $81B9CA | room $012
+  dw DATA8_81C105                           ; $81B9CC | room $013
+  dw DATA8_81C11B                           ; $81B9CE | room $014
+  dw DATA8_81C131                           ; $81B9D0 | room $015
+  dw DATA8_81C147                           ; $81B9D2 | room $016
+  dw DATA8_81C15D                           ; $81B9D4 | room $017
+  dw DATA8_81C173                           ; $81B9D6 | room $018
+  dw DATA8_81C17C                           ; $81B9D8 | room $019
+  dw DATA8_81C184                           ; $81B9DA | room $01A
+  dw DATA8_81C190                           ; $81B9DC | room $01B
+  dw DATA8_81C19A                           ; $81B9DE | room $01C
+  dw DATA8_81C1A4                           ; $81B9E0 | room $01D
+  dw DATA8_81C1AD                           ; $81B9E2 | room $01E
+  dw DATA8_81C1BB                           ; $81B9E4 | room $01F
+  dw DATA8_81C1C7                           ; $81B9E6 | room $020
+  dw DATA8_81C1DF                           ; $81B9E8 | room $021
+  dw DATA8_81C1EF                           ; $81B9EA | room $022
+  dw DATA8_81C207                           ; $81B9EC | room $023
+  dw DATA8_81C216                           ; $81B9EE | room $024
+  dw DATA8_81C21E                           ; $81B9F0 | room $025
+  dw DATA8_81C233                           ; $81B9F2 | room $026
+  dw DATA8_81C24B                           ; $81B9F4 | room $027
+  dw DATA8_81C25F                           ; $81B9F6 | room $028
+  dw DATA8_81C273                           ; $81B9F8 | room $029
+  dw DATA8_81C279                           ; $81B9FA | room $02A
+  dw DATA8_81C285                           ; $81B9FC | room $02B
+  dw DATA8_81C294                           ; $81B9FE | room $02C
+  dw DATA8_81C29D                           ; $81BA00 | room $02D
+  dw DATA8_81C2AC                           ; $81BA02 | room $02E
+  dw DATA8_81C2B4                           ; $81BA04 | room $02F
+  dw DATA8_81C2BE                           ; $81BA06 | room $030
+  dw DATA8_81C2C6                           ; $81BA08 | room $031
+  dw DATA8_81C2D5                           ; $81BA0A | room $032
+  dw DATA8_81C2DE                           ; $81BA0C | room $033
+  dw DATA8_81C2E4                           ; $81BA0E | room $034
+  dw DATA8_81C2ED                           ; $81BA10 | room $035
+  dw DATA8_81C2F5                           ; $81BA12 | room $036
+  dw DATA8_81C301                           ; $81BA14 | room $037
+  dw DATA8_81C30B                           ; $81BA16 | room $038
+  dw DATA8_81C317                           ; $81BA18 | room $039
+  dw DATA8_81C31F                           ; $81BA1A | room $03A
+  dw DATA8_81C328                           ; $81BA1C | room $03B
+  dw DATA8_81C330                           ; $81BA1E | room $03C
+  dw DATA8_81C33F                           ; $81BA20 | room $03D
+  dw DATA8_81C347                           ; $81BA22 | room $03E
+  dw DATA8_81C351                           ; $81BA24 | room $03F
+  dw DATA8_81C35A                           ; $81BA26 | room $040
+  dw DATA8_81C364                           ; $81BA28 | room $041
+  dw DATA8_81C36D                           ; $81BA2A | room $042
+  dw DATA8_81C375                           ; $81BA2C | room $043
+  dw DATA8_81C37E                           ; $81BA2E | room $044
+  dw DATA8_81C384                           ; $81BA30 | room $045
+  dw DATA8_81C392                           ; $81BA32 | room $046
+  dw DATA8_81C39A                           ; $81BA34 | room $047
+  dw DATA8_81C3A0                           ; $81BA36 | room $048
+  dw DATA8_81C3AC                           ; $81BA38 | room $049
+  dw DATA8_81C3BE                           ; $81BA3A | room $04A
+  dw DATA8_81C3C6                           ; $81BA3C | room $04B
+  dw DATA8_81C3D2                           ; $81BA3E | room $04C
+  dw DATA8_81C3E4                           ; $81BA40 | room $04D
+  dw DATA8_81C3EA                           ; $81BA42 | room $04E
+  dw DATA8_81C3F2                           ; $81BA44 | room $04F
+  dw DATA8_81C3F8                           ; $81BA46 | room $050
+  dw DATA8_81C40A                           ; $81BA48 | room $051
+  dw DATA8_81C412                           ; $81BA4A | room $052
+  dw DATA8_81C41E                           ; $81BA4C | room $053
+  dw DATA8_81C433                           ; $81BA4E | room $054
+  dw DATA8_81C43D                           ; $81BA50 | room $055
+  dw DATA8_81C443                           ; $81BA52 | room $056
+  dw DATA8_81C44B                           ; $81BA54 | room $057
+  dw DATA8_81C469                           ; $81BA56 | room $058
+  dw DATA8_81C473                           ; $81BA58 | room $059
+  dw DATA8_81C48B                           ; $81BA5A | room $05A
+  dw DATA8_81C493                           ; $81BA5C | room $05B
+  dw DATA8_81C4A3                           ; $81BA5E | room $05C
+  dw DATA8_81C4AB                           ; $81BA60 | room $05D
+  dw DATA8_81C4BA                           ; $81BA62 | room $05E
+  dw DATA8_81C4D5                           ; $81BA64 | room $05F
+  dw DATA8_81C4F3                           ; $81BA66 | room $060
+  dw DATA8_81C4F9                           ; $81BA68 | room $061
+  dw DATA8_81C50E                           ; $81BA6A | room $062
+  dw DATA8_81C517                           ; $81BA6C | room $063
+  dw DATA8_81C523                           ; $81BA6E | room $064
+  dw DATA8_81C52C                           ; $81BA70 | room $065
+  dw DATA8_81C538                           ; $81BA72 | room $066
+  dw DATA8_81C552                           ; $81BA74 | room $067
+  dw DATA8_81C558                           ; $81BA76 | room $068
+  dw DATA8_81C564                           ; $81BA78 | room $069
+  dw DATA8_81C570                           ; $81BA7A | room $06A
+  dw DATA8_81C57C                           ; $81BA7C | room $06B
+  dw DATA8_81C588                           ; $81BA7E | room $06C
+  dw DATA8_81C594                           ; $81BA80 | room $06D
+  dw DATA8_81C5A0                           ; $81BA82 | room $06E
+  dw DATA8_81C5AC                           ; $81BA84 | room $06F
+  dw DATA8_81C5B4                           ; $81BA86 | room $070
+  dw DATA8_81C5C0                           ; $81BA88 | room $071
+  dw DATA8_81C5C6                           ; $81BA8A | room $072
+  dw DATA8_81C5D0                           ; $81BA8C | room $073
+  dw DATA8_81C5DC                           ; $81BA8E | room $074
+  dw DATA8_81C5E6                           ; $81BA90 | room $075
+  dw DATA8_81C5F2                           ; $81BA92 | room $076
+  dw DATA8_81C604                           ; $81BA94 | room $077
+  dw DATA8_81C610                           ; $81BA96 | room $078
+  dw DATA8_81C61E                           ; $81BA98 | room $079
+  dw DATA8_81C62D                           ; $81BA9A | room $07A
+  dw DATA8_81C639                           ; $81BA9C | room $07B
+  dw DATA8_81C63F                           ; $81BA9E | room $07C
+  dw DATA8_81C645                           ; $81BAA0 | room $07D
+  dw DATA8_81C64E                           ; $81BAA2 | room $07E
+  dw DATA8_81C65C                           ; $81BAA4 | room $07F
+  dw DATA8_81C662                           ; $81BAA6 | room $080
+  dw DATA8_81C66B                           ; $81BAA8 | room $081
+  dw DATA8_81C675                           ; $81BAAA | room $082
+  dw DATA8_81C67B                           ; $81BAAC | room $083
+  dw DATA8_81C689                           ; $81BAAE | room $084
+  dw DATA8_81C69E                           ; $81BAB0 | room $085
+  dw DATA8_81C6AD                           ; $81BAB2 | room $086
+  dw DATA8_81C6B7                           ; $81BAB4 | room $087
+  dw DATA8_81C6BF                           ; $81BAB6 | room $088
+  dw DATA8_81C6C9                           ; $81BAB8 | room $089
+  dw DATA8_81C6CF                           ; $81BABA | room $08A
+  dw DATA8_81C6D5                           ; $81BABC | room $08B
+  dw DATA8_81C6DB                           ; $81BABE | room $08C
+  dw DATA8_81C6EA                           ; $81BAC0 | room $08D
+  dw DATA8_81C6F0                           ; $81BAC2 | room $08E
+  dw DATA8_81C6F1                           ; $81BAC4 | room $08F
+  dw DATA8_81C6F2                           ; $81BAC6 | room $090
+  dw DATA8_81C6F3                           ; $81BAC8 | room $091
+  dw DATA8_81C6F4                           ; $81BACA | room $092
+  dw DATA8_81C6F5                           ; $81BACC | room $093
+  dw DATA8_81C6F6                           ; $81BACE | room $094
+  dw DATA8_81C6F7                           ; $81BAD0 | room $095
+  dw DATA8_81C6F8                           ; $81BAD2 | room $096
+  dw DATA8_81C701                           ; $81BAD4 | room $097
+  dw DATA8_81C709                           ; $81BAD6 | room $098
+  dw DATA8_81C712                           ; $81BAD8 | room $099
+  dw DATA8_81C71B                           ; $81BADA | room $09A
+  dw DATA8_81C72D                           ; $81BADC | room $09B
+  dw DATA8_81C736                           ; $81BADE | room $09C
+  dw DATA8_81C742                           ; $81BAE0 | room $09D
+  dw DATA8_81C752                           ; $81BAE2 | room $09E
+  dw DATA8_81C772                           ; $81BAE4 | room $09F
+  dw DATA8_81C782                           ; $81BAE6 | room $0A0
+  dw DATA8_81C78A                           ; $81BAE8 | room $0A1
+  dw DATA8_81C798                           ; $81BAEA | room $0A2
+  dw DATA8_81C7AA                           ; $81BAEC | room $0A3
+  dw DATA8_81C7B6                           ; $81BAEE | room $0A4
+  dw DATA8_81C7C2                           ; $81BAF0 | room $0A5
+  dw DATA8_81C7CE                           ; $81BAF2 | room $0A6
+  dw DATA8_81C7DC                           ; $81BAF4 | room $0A7
+  dw DATA8_81C7E8                           ; $81BAF6 | room $0A8
+  dw DATA8_81C7F2                           ; $81BAF8 | room $0A9
+  dw DATA8_81C800                           ; $81BAFA | room $0AA
+  dw DATA8_81C815                           ; $81BAFC | room $0AB
+  dw DATA8_81C816                           ; $81BAFE | room $0AC
+  dw DATA8_81C81E                           ; $81BB00 | room $0AD
+  dw DATA8_81C82A                           ; $81BB02 | room $0AE
+  dw DATA8_81C830                           ; $81BB04 | room $0AF
+  dw DATA8_81C838                           ; $81BB06 | room $0B0
+  dw DATA8_81C83E                           ; $81BB08 | room $0B1
+  dw DATA8_81C848                           ; $81BB0A | room $0B2
+  dw DATA8_81C852                           ; $81BB0C | room $0B3
+  dw DATA8_81C858                           ; $81BB0E | room $0B4
+  dw DATA8_81C85E                           ; $81BB10 | room $0B5
+  dw DATA8_81C86D                           ; $81BB12 | room $0B6
+  dw DATA8_81C873                           ; $81BB14 | room $0B7
+  dw DATA8_81C894                           ; $81BB16 | room $0B8
+  dw DATA8_81C89A                           ; $81BB18 | room $0B9
+  dw DATA8_81C8A3                           ; $81BB1A | room $0BA
+  dw DATA8_81C8A9                           ; $81BB1C | room $0BB
+  dw DATA8_81C8AA                           ; $81BB1E | room $0BC
+  dw DATA8_81C8AB                           ; $81BB20 | room $0BD
+  dw DATA8_81C8AC                           ; $81BB22 | room $0BE
+  dw DATA8_81C8AD                           ; $81BB24 | room $0BF
+  dw DATA8_81C8AE                           ; $81BB26 | room $0C0
+  dw DATA8_81C8AF                           ; $81BB28 | room $0C1
+  dw DATA8_81C8B0                           ; $81BB2A | room $0C2
+  dw DATA8_81C8B1                           ; $81BB2C | room $0C3
+  dw DATA8_81C8B2                           ; $81BB2E | room $0C4
+  dw DATA8_81C8B3                           ; $81BB30 | room $0C5
+  dw DATA8_81C8B4                           ; $81BB32 | room $0C6
+  dw DATA8_81C8B5                           ; $81BB34 | room $0C7
+  dw DATA8_81C8B6                           ; $81BB36 | room $0C8
+  dw DATA8_81C8B7                           ; $81BB38 | room $0C9
+  dw DATA8_81C8B8                           ; $81BB3A | room $0CA
+  dw DATA8_81C8B9                           ; $81BB3C | room $0CB
+  dw DATA8_81C8BA                           ; $81BB3E | room $0CC
+  dw DATA8_81C8BB                           ; $81BB40 | room $0CD
+  dw DATA8_81C8BC                           ; $81BB42 | room $0CE
+  dw DATA8_81C8BD                           ; $81BB44 | room $0CF
+  dw DATA8_81C8BE                           ; $81BB46 | room $0D0
+  dw DATA8_81C8BF                           ; $81BB48 | room $0D1
+  dw DATA8_81C8C0                           ; $81BB4A | room $0D2
+  dw DATA8_81C8C1                           ; $81BB4C | room $0D3
+  dw DATA8_81C8C2                           ; $81BB4E | room $0D4
+  dw DATA8_81C8C3                           ; $81BB50 | room $0D5
+  dw DATA8_81C8C4                           ; $81BB52 | room $0D6
+  dw DATA8_81C8C5                           ; $81BB54 | room $0D7
+  dw DATA8_81C8C6                           ; $81BB56 | room $0D8
+  dw DATA8_81C8C7                           ; $81BB58 | room $0D9
+  dw DATA8_81C8C8                           ; $81BB5A | room $0DA
+  dw DATA8_81C8C9                           ; $81BB5C | room $0DB
+  dw DATA8_81C8CA                           ; $81BB5E | room $0DC
+  dw DATA8_81C8CB                           ; $81BB60 | room $0DD
+  dw DATA8_81C8CC                           ; $81BB62 | room $0DE
+  dw DATA8_81C8CD                           ; $81BB64 | room $0DF
+  dw DATA8_81C8CE                           ; $81BB66 | room $0E0
+  dw DATA8_81C8CF                           ; $81BB68 | room $0E1
+  dw DATA8_81C8D0                           ; $81BB6A | room $0E2
+  dw DATA8_81C8D1                           ; $81BB6C | room $0E3
+  dw DATA8_81C8D2                           ; $81BB6E | room $0E4
+  dw DATA8_81C8D3                           ; $81BB70 | room $0E5
+  dw DATA8_81C8D4                           ; $81BB72 | room $0E6
+  dw DATA8_81C8D5                           ; $81BB74 | room $0E7
+  dw DATA8_81C8D6                           ; $81BB76 | room $0E8
+  dw DATA8_81C8D7                           ; $81BB78 | room $0E9
+  dw DATA8_81C8D8                           ; $81BB7A | room $0EA
+  dw DATA8_81C8D9                           ; $81BB7C | room $0EB
+  dw DATA8_81C8DA                           ; $81BB7E | room $0EC
+  dw DATA8_81C8DB                           ; $81BB80 | room $0ED
+  dw DATA8_81C8DC                           ; $81BB82 | room $0EE
+  dw DATA8_81C8DD                           ; $81BB84 | room $0EF
+  dw DATA8_81C8DE                           ; $81BB86 | room $0F0
+  dw DATA8_81C8DF                           ; $81BB88 | room $0F1
+  dw DATA8_81C8E0                           ; $81BB8A | room $0F2
+  dw DATA8_81C8E1                           ; $81BB8C | room $0F3
+  dw DATA8_81C8E2                           ; $81BB8E | room $0F4
+  dw DATA8_81C8E3                           ; $81BB90 | room $0F5
+  dw DATA8_81C8E4                           ; $81BB92 | room $0F6
+  dw DATA8_81C8E5                           ; $81BB94 | room $0F7
+  dw DATA8_81C8E6                           ; $81BB96 | room $0F8
+  dw DATA8_81C8E7                           ; $81BB98 | room $0F9
+  dw DATA8_81C8EF                           ; $81BB9A | room $0FA
+  dw DATA8_81C8F7                           ; $81BB9C | room $0FB
+  dw DATA8_81C8FF                           ; $81BB9E | room $0FC
+  dw DATA8_81C911                           ; $81BBA0 | room $0FD
+  dw DATA8_81C929                           ; $81BBA2 | room $0FE
+  dw DATA8_81C941                           ; $81BBA4 | room $0FF
+  dw DATA8_81C947                           ; $81BBA6 | room $100
+  dw DATA8_81C967                           ; $81BBA8 | room $101
+  dw DATA8_81C96C                           ; $81BBAA | room $102
+  dw DATA8_81C96E                           ; $81BBAC | room $103
+  dw DATA8_81C972                           ; $81BBAE | room $104
+  dw DATA8_81C978                           ; $81BBB0 | room $105
+  dw DATA8_81C97E                           ; $81BBB2 | room $106
+  dw DATA8_81C987                           ; $81BBB4 | room $107
+  dw DATA8_81C999                           ; $81BBB6 | room $108
+  dw DATA8_81C9B5                           ; $81BBB8 | room $109
+  dw DATA8_81C9BB                           ; $81BBBA | room $10A
+  dw DATA8_81C9C4                           ; $81BBBC | room $10B
+  dw DATA8_81C9CA                           ; $81BBBE | room $10C
+  dw DATA8_81C9CE                           ; $81BBC0 | room $10D
+  dw DATA8_81C9D0                           ; $81BBC2 | room $10E
+  dw DATA8_81C9D4                           ; $81BBC4 | room $10F
+  dw DATA8_81C9D6                           ; $81BBC6 | room $110
+  dw DATA8_81C9FE                           ; $81BBC8 | room $111
+  dw DATA8_81CA02                           ; $81BBCA | room $112
+  dw DATA8_81CA06                           ; $81BBCC | room $113
+  dw DATA8_81CA07                           ; $81BBCE | room $114
+  dw DATA8_81CA09                           ; $81BBD0 | room $115
+  dw DATA8_81CA13                           ; $81BBD2 | room $116
+  dw DATA8_81CA19                           ; $81BBD4 | room $117
+  dw DATA8_81CA21                           ; $81BBD6 | room $118
+  dw DATA8_81CA39                           ; $81BBD8 | room $119
+  dw DATA8_81CA3A                           ; $81BBDA | room $11A
+  dw DATA8_81CA3C                           ; $81BBDC | room $11B
+  dw DATA8_81CA40                           ; $81BBDE | room $11C
+  dw DATA8_81CA44                           ; $81BBE0 | room $11D
+  dw DATA8_81CA48                           ; $81BBE2 | room $11E
+  dw DATA8_81CA4B                           ; $81BBE4 | room $11F
+  dw DATA8_81CA55                           ; $81BBE6 | room $120
+  dw DATA8_81CA81                           ; $81BBE8 | room $121
+  dw DATA8_81CA83                           ; $81BBEA | room $122
+  dw DATA8_81CA85                           ; $81BBEC | room $123
+  dw DATA8_81CA95                           ; $81BBEE | room $124
+  dw DATA8_81CA9F                           ; $81BBF0 | room $125
+  dw DATA8_81CAA7                           ; $81BBF2 | room $126
+  dw DATA8_81CAA9                           ; $81BBF4 | room $127
+  dw DATA8_81CAAB                           ; $81BBF6 | room $128
+  dw DATA8_81CAAD                           ; $81BBF8 | room $129
+  dw DATA8_81CAAF                           ; $81BBFA | room $12A
+  dw DATA8_81CAD7                           ; $81BBFC | room $12B
+  dw DATA8_81CADB                           ; $81BBFE | room $12C
+  dw DATA8_81CADF                           ; $81BC00 | room $12D
+  dw DATA8_81CAE9                           ; $81BC02 | room $12E
+  dw DATA8_81CAEF                           ; $81BC04 | room $12F
+  dw DATA8_81CAF1                           ; $81BC06 | room $130
+  dw DATA8_81CAF7                           ; $81BC08 | room $131
+  dw DATA8_81CAF9                           ; $81BC0A | room $132
+  dw DATA8_81CAFB                           ; $81BC0C | room $133
+  dw DATA8_81CB01                           ; $81BC0E | room $134
+  dw DATA8_81CB09                           ; $81BC10 | room $135
+  dw DATA8_81CB11                           ; $81BC12 | room $136
+  dw DATA8_81CB19                           ; $81BC14 | room $137
+  dw DATA8_81CB21                           ; $81BC16 | room $138
+  dw DATA8_81CB29                           ; $81BC18 | room $139
+  dw DATA8_81CB31                           ; $81BC1A | room $13A
+  dw DATA8_81CB39                           ; $81BC1C | room $13B
+  dw DATA8_81CB41                           ; $81BC1E | room $13C
+  dw DATA8_81CB49                           ; $81BC20 | room $13D
+  dw DATA8_81CB51                           ; $81BC22 | room $13E
+  dw DATA8_81CB59                           ; $81BC24 | room $13F
+  dw DATA8_81CB61                           ; $81BC26 | room $140
+  dw DATA8_81CB62                           ; $81BC28 | room $141
+  dw DATA8_81CB63                           ; $81BC2A | room $142
+  dw DATA8_81CB64                           ; $81BC2C | room $143
+  dw DATA8_81CB65                           ; $81BC2E | room $144
+  dw DATA8_81CB66                           ; $81BC30 | room $145
+  dw DATA8_81CB67                           ; $81BC32 | room $146
+  dw DATA8_81CB68                           ; $81BC34 | room $147
+  dw DATA8_81CB69                           ; $81BC36 | room $148
+  dw DATA8_81CB6A                           ; $81BC38 | room $149
+  dw DATA8_81CB6B                           ; $81BC3A | room $14A
+  dw DATA8_81CB6C                           ; $81BC3C | room $14B
+  dw DATA8_81CB6D                           ; $81BC3E | room $14C
+  dw DATA8_81CB6E                           ; $81BC40 | room $14D
+  dw DATA8_81CB6F                           ; $81BC42 | room $14E
+  dw DATA8_81CB70                           ; $81BC44 | room $14F
+  dw DATA8_81CB71                           ; $81BC46 | room $150
+  dw DATA8_81CB72                           ; $81BC48 | room $151
+  dw DATA8_81CB73                           ; $81BC4A | room $152
+  dw DATA8_81CB74                           ; $81BC4C | room $153
+  dw DATA8_81CB75                           ; $81BC4E | room $154
+  dw DATA8_81CB76                           ; $81BC50 | room $155
+  dw DATA8_81CB77                           ; $81BC52 | room $156
+  dw DATA8_81CB78                           ; $81BC54 | room $157
+  dw DATA8_81CB79                           ; $81BC56 | room $158
+  dw DATA8_81CB7A                           ; $81BC58 | room $159
+  dw DATA8_81CB7B                           ; $81BC5A | room $15A
+  dw DATA8_81CB7C                           ; $81BC5C | room $15B
+  dw DATA8_81CB7D                           ; $81BC5E | room $15C
+  dw DATA8_81CB7E                           ; $81BC60 | room $15D
+  dw DATA8_81CB7F                           ; $81BC62 | room $15E
+  dw DATA8_81CB80                           ; $81BC64 | room $15F
+  dw DATA8_81CB81                           ; $81BC66 | room $160
+  dw DATA8_81CB82                           ; $81BC68 | room $161
+  dw DATA8_81CB83                           ; $81BC6A | room $162
+  dw DATA8_81CB84                           ; $81BC6C | room $163
+  dw DATA8_81CB85                           ; $81BC6E | room $164
+  dw DATA8_81CB86                           ; $81BC70 | room $165
+  dw DATA8_81CB87                           ; $81BC72 | room $166
+  dw DATA8_81CB88                           ; $81BC74 | room $167
+  dw DATA8_81CB89                           ; $81BC76 | room $168
+  dw DATA8_81CB8A                           ; $81BC78 | room $169
+  dw DATA8_81CB8B                           ; $81BC7A | room $16A
+  dw DATA8_81CB8C                           ; $81BC7C | room $16B
+  dw DATA8_81CB8D                           ; $81BC7E | room $16C
+  dw DATA8_81CB8E                           ; $81BC80 | room $16D
+  dw DATA8_81CB8F                           ; $81BC82 | room $16E
+  dw DATA8_81CB90                           ; $81BC84 | room $16F
+  dw DATA8_81CB91                           ; $81BC86 | room $170
+  dw DATA8_81CB92                           ; $81BC88 | room $171
+  dw DATA8_81CB94                           ; $81BC8A | room $172
+  dw DATA8_81CB95                           ; $81BC8C | room $173
+  dw DATA8_81CB96                           ; $81BC8E | room $174
+  dw DATA8_81CB97                           ; $81BC90 | room $175
+  dw DATA8_81CB98                           ; $81BC92 | room $176
+  dw DATA8_81CB99                           ; $81BC94 | room $177
+  dw DATA8_81CB9A                           ; $81BC96 | room $178
+  dw DATA8_81CB9B                           ; $81BC98 | room $179
+  dw DATA8_81CB9C                           ; $81BC9A | room $17A
+  dw DATA8_81CB9D                           ; $81BC9C | room $17B
+  dw DATA8_81CB9E                           ; $81BC9E | room $17C
+  dw DATA8_81CB9F                           ; $81BCA0 | room $17D
+  dw DATA8_81CBA0                           ; $81BCA2 | room $17E
+  dw DATA8_81CBA1                           ; $81BCA4 | room $17F
+  dw DATA8_81CBA2                           ; $81BCA6 | room $180
+  dw DATA8_81CBA3                           ; $81BCA8 | room $181
+  dw DATA8_81CBA4                           ; $81BCAA | room $182
+  dw DATA8_81CBA5                           ; $81BCAC | room $183
+  dw DATA8_81CBA6                           ; $81BCAE | room $184
 
 PTR16_81BCB0:
   dw DATA8_81CBA7                           ; $81BCB0 |
@@ -9066,59 +9066,150 @@ UNREACH_81EF7D:
   db $50,$50,$20,$45,$45                    ; $81F157 |
   db $45,$10,$10,$50,$50,$00,$00,$00        ; $81F15C |
   db $00,$00,$00,$00,$00                    ; $81F164 |
-  db $25,$EA                                ; $81F169 |
-  db $BF,$EA                                ; $81F16B |
-  db $D2,$EA                                ; $81F16D |
-  db $E5,$EA,$F6,$EA                        ; $81F16F |
-  db $5C,$EA,$07,$EB,$34,$EB,$72,$EB        ; $81F173 |
-  db $97,$EB,$25,$EA                        ; $81F17B |
-  db $25,$EA                                ; $81F17F |
-  db $25,$EA,$25,$EA,$5C,$EA,$07,$EB        ; $81F181 |
-  db $34,$EB,$72,$EB                        ; $81F189 |
-  db $97,$EB,$F1,$EB,$F1,$EB,$F4,$EB        ; $81F18D |
-  db $02,$EC,$24,$EA,$24,$EA,$24,$EA        ; $81F195 |
-  db $25,$EA                                ; $81F19D |
-  db $EA,$EB,$E9,$EB,$BF,$EB                ; $81F19F |
-  db $D5,$EB,$25,$EA,$25,$EA,$25,$EA        ; $81F1A5 |
-  db $25,$EA                                ; $81F1AD |
-  db $EA,$EB,$25,$EA,$25,$EA,$25,$EA        ; $81F1AF |
-  db $25,$EA,$25,$EA,$25,$EA,$25,$EA        ; $81F1B7 |
-  db $25,$EA,$25,$EA,$25,$EA,$25,$EA        ; $81F1BF |
-  db $22,$EC                                ; $81F1C7 |
-  db $BC,$EC,$CD,$EC,$DE,$EC,$F2,$EC        ; $81F1C9 |
-  db $59,$EC,$03,$ED,$2B,$ED,$6D,$ED        ; $81F1D1 |
-  db $92,$ED,$22,$EC,$22,$EC,$22,$EC        ; $81F1D9 |
-  db $22,$EC                                ; $81F1E1 |
-  db $59,$EC,$03,$ED,$2B,$ED,$6D,$ED        ; $81F1E3 |
-  db $92,$ED                                ; $81F1EB |
-  db $F0,$ED,$FE,$ED                        ; $81F1ED |
-  db $0C,$EE,$0C,$EE,$24,$EA,$24,$EA        ; $81F1F1 |
-  db $24,$EA,$22,$EC,$E9,$ED,$E8,$ED        ; $81F1F9 |
-  db $B7,$ED                                ; $81F201 |
-  db $CD,$ED,$22,$EC,$22,$EC,$22,$EC        ; $81F203 |
-  db $22,$EC,$E9,$ED,$22,$EC,$22,$EC        ; $81F20B |
-  db $22,$EC,$22,$EC,$22,$EC,$22,$EC        ; $81F213 |
-  db $22,$EC,$22,$EC,$22,$EC,$22,$EC        ; $81F21B |
-  db $22,$EC                                ; $81F223 |
-  db $67,$EE,$67,$EE,$67,$EE,$67,$EE        ; $81F225 |
-  db $67,$EE                                ; $81F22D |
-  db $67,$EE,$67,$EE,$67,$EE,$67,$EE        ; $81F22F |
-  db $67,$EE,$67,$EE,$67,$EE,$67,$EE        ; $81F237 |
-  db $67,$EE,$67,$EE,$67,$EE,$67,$EE        ; $81F23F |
-  db $67,$EE                                ; $81F247 |
-  db $67,$EE                                ; $81F249 |
-  db $0F,$EE,$2E,$EE                        ; $81F24B |
-  db $49,$EE,$68,$EE                        ; $81F24F |
-  db $83,$EE,$83,$EE                        ; $81F253 |
-  db $83,$EE,$67,$EE                        ; $81F257 |
-  db $F0,$EE,$C8,$EE,$E8,$EE,$C8,$EE        ; $81F25B |
-  db $67,$EE                                ; $81F263 |
-  db $67,$EE                                ; $81F265 |
-  db $67,$EE                                ; $81F267 |
-  db $67,$EE                                ; $81F269 |
-  db $67,$EE,$67,$EE,$67,$EE,$67,$EE        ; $81F26B |
-  db $67,$EE,$67,$EE,$67,$EE,$67,$EE        ; $81F273 |
-  db $67,$EE,$67,$EE,$67,$EE,$67,$EE        ; $81F27B |
+
+PTR16_81F169:
+  dw CODE_FN_83EA26-1                       ; $81F169 |
+  dw CODE_FN_83EAC0-1                       ; $81F16B |
+  dw CODE_FN_83EAD3-1                       ; $81F16D |
+  dw CODE_FN_83EAE6-1                       ; $81F16F |
+  dw CODE_FN_83EAF7-1                       ; $81F171 |
+  dw CODE_FN_83EA5D-1                       ; $81F173 |
+  dw CODE_FN_83EB08-1                       ; $81F175 |
+  dw CODE_FN_83EB35-1                       ; $81F177 |
+  dw CODE_FN_83EB73-1                       ; $81F179 |
+  dw CODE_FN_83EB98-1                       ; $81F17B |
+  dw CODE_FN_83EA26-1                       ; $81F17D |
+  dw CODE_FN_83EA26-1                       ; $81F17F |
+  dw CODE_FN_83EA26-1                       ; $81F181 |
+  dw CODE_FN_83EA26-1                       ; $81F183 |
+  dw CODE_FN_83EA5D-1                       ; $81F185 |
+  dw CODE_FN_83EB08-1                       ; $81F187 |
+  dw CODE_FN_83EB35-1                       ; $81F189 |
+  dw CODE_FN_83EB73-1                       ; $81F18B |
+  dw CODE_FN_83EB98-1                       ; $81F18D |
+  dw CODE_FN_83EBF2-1                       ; $81F18F |
+  dw CODE_FN_83EBF2-1                       ; $81F191 |
+  dw CODE_FN_83EBF5-1                       ; $81F193 |
+  dw CODE_FN_83EC03-1                       ; $81F195 |
+  dw CODE_FN_83EA25-1                       ; $81F197 |
+  dw CODE_FN_83EA25-1                       ; $81F199 |
+  dw CODE_FN_83EA25-1                       ; $81F19B |
+  dw CODE_FN_83EA26-1                       ; $81F19D |
+  dw CODE_FN_83EBEB-1                       ; $81F19F |
+  dw CODE_FN_83EBEA-1                       ; $81F1A1 |
+  dw CODE_FN_83EBC0-1                       ; $81F1A3 |
+  dw CODE_FN_83EBD6-1                       ; $81F1A5 |
+  dw CODE_FN_83EA26-1                       ; $81F1A7 |
+  dw CODE_FN_83EA26-1                       ; $81F1A9 |
+  dw CODE_FN_83EA26-1                       ; $81F1AB |
+  dw CODE_FN_83EA26-1                       ; $81F1AD |
+  dw CODE_FN_83EBEB-1                       ; $81F1AF |
+  dw CODE_FN_83EA26-1                       ; $81F1B1 |
+  dw CODE_FN_83EA26-1                       ; $81F1B3 |
+  dw CODE_FN_83EA26-1                       ; $81F1B5 |
+  dw CODE_FN_83EA26-1                       ; $81F1B7 |
+  dw CODE_FN_83EA26-1                       ; $81F1B9 |
+  dw CODE_FN_83EA26-1                       ; $81F1BB |
+  dw CODE_FN_83EA26-1                       ; $81F1BD |
+  dw CODE_FN_83EA26-1                       ; $81F1BF |
+  dw CODE_FN_83EA26-1                       ; $81F1C1 |
+  dw CODE_FN_83EA26-1                       ; $81F1C3 |
+  dw CODE_FN_83EA26-1                       ; $81F1C5 |
+  dw CODE_FN_83EC23-1                       ; $81F1C7 |
+  dw CODE_FN_83ECBD-1                       ; $81F1C9 |
+  dw CODE_FN_83ECCE-1                       ; $81F1CB |
+  dw CODE_FN_83ECDF-1                       ; $81F1CD |
+  dw CODE_FN_83ECF3-1                       ; $81F1CF |
+  dw CODE_FN_83EC5A-1                       ; $81F1D1 |
+  dw CODE_FN_83ED04-1                       ; $81F1D3 |
+  dw CODE_FN_83ED2C-1                       ; $81F1D5 |
+  dw CODE_FN_83ED6E-1                       ; $81F1D7 |
+  dw CODE_FN_83ED93-1                       ; $81F1D9 |
+  dw CODE_FN_83EC23-1                       ; $81F1DB |
+  dw CODE_FN_83EC23-1                       ; $81F1DD |
+  dw CODE_FN_83EC23-1                       ; $81F1DF |
+  dw CODE_FN_83EC23-1                       ; $81F1E1 |
+  dw CODE_FN_83EC5A-1                       ; $81F1E3 |
+  dw CODE_FN_83ED04-1                       ; $81F1E5 |
+  dw CODE_FN_83ED2C-1                       ; $81F1E7 |
+  dw CODE_FN_83ED6E-1                       ; $81F1E9 |
+  dw CODE_FN_83ED93-1                       ; $81F1EB |
+  dw CODE_FN_83EDF1-1                       ; $81F1ED |
+  dw CODE_FN_83EDFF-1                       ; $81F1EF |
+  dw CODE_FN_83EE0D-1                       ; $81F1F1 |
+  dw CODE_FN_83EE0D-1                       ; $81F1F3 |
+  dw CODE_FN_83EA25-1                       ; $81F1F5 |
+  dw CODE_FN_83EA25-1                       ; $81F1F7 |
+  dw CODE_FN_83EA25-1                       ; $81F1F9 |
+  dw CODE_FN_83EC23-1                       ; $81F1FB |
+  dw CODE_FN_83EDEA-1                       ; $81F1FD |
+  dw CODE_FN_83EDE9-1                       ; $81F1FF |
+  dw CODE_FN_83EDB8-1                       ; $81F201 |
+  dw CODE_FN_83EDCE-1                       ; $81F203 |
+  dw CODE_FN_83EC23-1                       ; $81F205 |
+  dw CODE_FN_83EC23-1                       ; $81F207 |
+  dw CODE_FN_83EC23-1                       ; $81F209 |
+  dw CODE_FN_83EC23-1                       ; $81F20B |
+  dw CODE_FN_83EDEA-1                       ; $81F20D |
+  dw CODE_FN_83EC23-1                       ; $81F20F |
+  dw CODE_FN_83EC23-1                       ; $81F211 |
+  dw CODE_FN_83EC23-1                       ; $81F213 |
+  dw CODE_FN_83EC23-1                       ; $81F215 |
+  dw CODE_FN_83EC23-1                       ; $81F217 |
+  dw CODE_FN_83EC23-1                       ; $81F219 |
+  dw CODE_FN_83EC23-1                       ; $81F21B |
+  dw CODE_FN_83EC23-1                       ; $81F21D |
+  dw CODE_FN_83EC23-1                       ; $81F21F |
+  dw CODE_FN_83EC23-1                       ; $81F221 |
+  dw CODE_FN_83EC23-1                       ; $81F223 |
+  dw CODE_FN_83EE68-1                       ; $81F225 |
+  dw CODE_FN_83EE68-1                       ; $81F227 |
+  dw CODE_FN_83EE68-1                       ; $81F229 |
+  dw CODE_FN_83EE68-1                       ; $81F22B |
+  dw CODE_FN_83EE68-1                       ; $81F22D |
+  dw CODE_FN_83EE68-1                       ; $81F22F |
+  dw CODE_FN_83EE68-1                       ; $81F231 |
+  dw CODE_FN_83EE68-1                       ; $81F233 |
+  dw CODE_FN_83EE68-1                       ; $81F235 |
+  dw CODE_FN_83EE68-1                       ; $81F237 |
+  dw CODE_FN_83EE68-1                       ; $81F239 |
+  dw CODE_FN_83EE68-1                       ; $81F23B |
+  dw CODE_FN_83EE68-1                       ; $81F23D |
+  dw CODE_FN_83EE68-1                       ; $81F23F |
+  dw CODE_FN_83EE68-1                       ; $81F241 |
+  dw CODE_FN_83EE68-1                       ; $81F243 |
+  dw CODE_FN_83EE68-1                       ; $81F245 |
+  dw CODE_FN_83EE68-1                       ; $81F247 |
+  dw CODE_FN_83EE68-1                       ; $81F249 |
+  dw CODE_FN_83EE10-1                       ; $81F24B |
+  dw CODE_FN_83EE2F-1                       ; $81F24D |
+  dw CODE_FN_83EE4A-1                       ; $81F24F |
+  dw CODE_FN_83EE69-1                       ; $81F251 |
+  dw CODE_FN_83EE84-1                       ; $81F253 |
+  dw CODE_FN_83EE84-1                       ; $81F255 |
+  dw CODE_FN_83EE84-1                       ; $81F257 |
+  dw CODE_FN_83EE68-1                       ; $81F259 |
+  dw CODE_FN_83EEF1-1                       ; $81F25B |
+  dw CODE_FN_83EEC9-1                       ; $81F25D |
+  dw CODE_FN_83EEE9-1                       ; $81F25F |
+  dw CODE_FN_83EEC9-1                       ; $81F261 |
+  dw CODE_FN_83EE68-1                       ; $81F263 |
+  dw CODE_FN_83EE68-1                       ; $81F265 |
+  dw CODE_FN_83EE68-1                       ; $81F267 |
+  dw CODE_FN_83EE68-1                       ; $81F269 |
+  dw CODE_FN_83EE68-1                       ; $81F26B |
+  dw CODE_FN_83EE68-1                       ; $81F26D |
+  dw CODE_FN_83EE68-1                       ; $81F26F |
+  dw CODE_FN_83EE68-1                       ; $81F271 |
+  dw CODE_FN_83EE68-1                       ; $81F273 |
+  dw CODE_FN_83EE68-1                       ; $81F275 |
+  dw CODE_FN_83EE68-1                       ; $81F277 |
+  dw CODE_FN_83EE68-1                       ; $81F279 |
+  dw CODE_FN_83EE68-1                       ; $81F27B |
+  dw CODE_FN_83EE68-1                       ; $81F27D |
+  dw CODE_FN_83EE68-1                       ; $81F27F |
+  dw CODE_FN_83EE68-1                       ; $81F281 |
+
   db $00,$03,$00,$05,$00,$07,$00,$09        ; $81F283 |
   db $00,$0B,$00,$0D,$70                    ; $81F28B |
 

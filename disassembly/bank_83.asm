@@ -162,28 +162,28 @@ CODE_FL_83812D:
   LDA.B $1A,X                               ; $83812D |
   ASL A                                     ; $83812F |
   TAY                                       ; $838130 |
-  LDA.W CODE_00D646,Y                       ; $838131 |
+  LDA.W PTR16_81D646,Y                      ; $838131 |
   PHA                                       ; $838134 |
   RTS                                       ; $838135 |
 
   LDA.B !r_room_mode                        ; $838136 |
   ASL A                                     ; $838138 |
   TAY                                       ; $838139 |
-  LDA.W CODE_00D652,Y                       ; $83813A |
+  LDA.W PTR16_81D652,Y                      ; $83813A |
   PHA                                       ; $83813D |
   RTS                                       ; $83813E |
 
   LDA.B !r_room_mode                        ; $83813F |
   ASL A                                     ; $838141 |
   TAY                                       ; $838142 |
-  LDA.W CODE_00D65E,Y                       ; $838143 |
+  LDA.W PTR16_81D65E,Y                      ; $838143 |
   PHA                                       ; $838146 |
   RTS                                       ; $838147 |
 
   LDA.B !r_room_mode                        ; $838148 |
   ASL A                                     ; $83814A |
   TAY                                       ; $83814B |
-  LDA.W CODE_00D676,Y                       ; $83814C |
+  LDA.W PTR16_81D676,Y                      ; $83814C |
   PHA                                       ; $83814F |
   RTS                                       ; $838150 |
 
@@ -203,7 +203,7 @@ CODE_838168:
   LDA.B !r_room_mode                        ; $838168 |
   ASL A                                     ; $83816A |
   TAY                                       ; $83816B |
-  LDA.W CODE_00D66A,Y                       ; $83816C |
+  LDA.W PTR16_81D66A,Y                      ; $83816C |
   PHA                                       ; $83816F |
   RTS                                       ; $838170 |
 
@@ -3134,7 +3134,7 @@ CODE_839493:
   REP #$20                                  ; $839496 |
   AND.W #$00FF                              ; $839498 |
   TAY                                       ; $83949B |
-  LDA.W CODE_00D6AA,Y                       ; $83949C |
+  LDA.W PTR16_81D6AA,Y                      ; $83949C |
   PHA                                       ; $83949F |
   SEP #$20                                  ; $8394A0 |
   RTS                                       ; $8394A2 |
@@ -5480,7 +5480,7 @@ CODE_83A3AC:
   REP #$20                                  ; $83A3AF |
   AND.W #$00FF                              ; $83A3B1 |
   TAY                                       ; $83A3B4 |
-  LDA.W LOOSE_OP_00D73C,Y                   ; $83A3B5 |
+  LDA.W PTR16_81D73C,Y                      ; $83A3B5 |
   PHA                                       ; $83A3B8 |
   SEP #$20                                  ; $83A3B9 |
   RTS                                       ; $83A3BB |
@@ -6064,7 +6064,7 @@ CODE_83A74F:
   REP #$20                                  ; $83A752 |
   AND.W #$00FF                              ; $83A754 |
   TAY                                       ; $83A757 |
-  LDA.W CODE_00D7CE,Y                       ; $83A758 |
+  LDA.W PTR16_81D7CE,Y                      ; $83A758 |
   PHA                                       ; $83A75B |
   SEP #$20                                  ; $83A75C |
   RTS                                       ; $83A75E |
@@ -6464,7 +6464,7 @@ CODE_83A9D5:
   REP #$20                                  ; $83A9D8 |
   AND.W #$00FF                              ; $83A9DA |
   TAY                                       ; $83A9DD |
-  LDA.W LOOSE_OP_00D860,Y                   ; $83A9DE |
+  LDA.W PTR16_81D860,Y                      ; $83A9DE |
   PHA                                       ; $83A9E1 |
   SEP #$20                                  ; $83A9E2 |
   RTS                                       ; $83A9E4 |
@@ -8911,7 +8911,7 @@ CODE_83BA06:
   REP #$20                                  ; $83BA09 |
   AND.W #$00FF                              ; $83BA0B |
   TAY                                       ; $83BA0E |
-  LDA.W CODE_00D8F2,Y                       ; $83BA0F |
+  LDA.W PTR16_81D8F2,Y                      ; $83BA0F |
   PHA                                       ; $83BA12 |
   SEP #$20                                  ; $83BA13 |
 
@@ -9927,7 +9927,7 @@ CODE_83C0CE:
   REP #$20                                  ; $83C0D1 |
   AND.W #$00FF                              ; $83C0D3 |
   TAY                                       ; $83C0D6 |
-  LDA.W LOOSE_OP_00D984,Y                   ; $83C0D7 |
+  LDA.W PTR16_81D984,Y                      ; $83C0D7 |
   PHA                                       ; $83C0DA |
   SEP #$20                                  ; $83C0DB |
   RTS                                       ; $83C0DD |
@@ -10301,7 +10301,7 @@ CODE_83C330:
   REP #$20                                  ; $83C333 |
   AND.W #$00FF                              ; $83C335 |
   TAY                                       ; $83C338 |
-  LDA.W CODE_00DA16,Y                       ; $83C339 |
+  LDA.W PTR16_81DA16,Y                      ; $83C339 |
   PHA                                       ; $83C33C |
   SEP #$20                                  ; $83C33D |
   RTS                                       ; $83C33F |
@@ -10430,7 +10430,7 @@ CODE_83C3F5:
   REP #$20                                  ; $83C3F8 |
   AND.W #$00FF                              ; $83C3FA |
   TAY                                       ; $83C3FD |
-  LDA.W LOOSE_OP_00DAA8,Y                   ; $83C3FE |
+  LDA.W PTR16_81DAA8,Y                      ; $83C3FE |
   PHA                                       ; $83C401 |
   SEP #$20                                  ; $83C402 |
   RTS                                       ; $83C404 |
@@ -11941,14 +11941,14 @@ CODE_FL_83CD69:
 CODE_83CD82:
   CPX.W #$0400                              ; $83CD82 |
   BNE CODE_83CD94                           ; $83CD85 |
-  LDA.W LOOSE_OP_00D688,Y                   ; $83CD87 |
+  LDA.W PTR16_81D68A-2,Y                    ; $83CD87 |
   TAY                                       ; $83CD8A |
   LDX.W #$1F40                              ; $83CD8B |
   JSL.L CODE_FL_80C27F                      ; $83CD8E |
   BRA CODE_83CD9F                           ; $83CD92 |
 
 CODE_83CD94:
-  LDA.W LOOSE_OP_00D698,Y                   ; $83CD94 |
+  LDA.W PTR16_81D69A-2,Y                    ; $83CD94 |
   TAY                                       ; $83CD97 |
   LDX.W #$1F50                              ; $83CD98 |
   JSL.L CODE_FL_80C27F                      ; $83CD9B |

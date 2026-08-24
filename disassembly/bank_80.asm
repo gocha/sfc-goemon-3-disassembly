@@ -13630,7 +13630,7 @@ CODE_80D64F:
   TXA                                       ; $80D664 |
   ASL A                                     ; $80D665 |
   TAX                                       ; $80D666 |
-  LDA.W LOOSE_OP_009838,X                   ; $80D667 |
+  LDA.W DATA8_819838,X                      ; $80D667 |
   AND.W #$00FF                              ; $80D66A |
   STA.B $86                                 ; $80D66D |
   SEP #$20                                  ; $80D66F |
@@ -13639,7 +13639,7 @@ CODE_80D64F:
   STA.W $00AF                               ; $80D673 |
   STZ.W $00AE                               ; $80D676 |
   REP #$20                                  ; $80D679 |
-  LDA.W LOOSE_OP_009839,X                   ; $80D67B |
+  LDA.W DATA8_819838+1,X                    ; $80D67B |
   AND.W #$00FF                              ; $80D67E |
   STA.B $88                                 ; $80D681 |
   SEP #$20                                  ; $80D683 |
@@ -13647,23 +13647,23 @@ CODE_80D64F:
   STA.W $00B1                               ; $80D686 |
   STZ.W $00B0                               ; $80D689 |
   REP #$20                                  ; $80D68C |
-  LDA.W CODE_00983A,X                       ; $80D68E |
+  LDA.W DATA8_819838+2,X                    ; $80D68E |
   AND.W #$00FF                              ; $80D691 |
   STA.B $D4                                 ; $80D694 |
-  LDA.W LOOSE_OP_00983B,X                   ; $80D696 |
+  LDA.W DATA8_819838+3,X                    ; $80D696 |
   AND.W #$00FF                              ; $80D699 |
   STA.B $D6                                 ; $80D69C |
-  LDA.W CODE_009E4C,X                       ; $80D69E |
+  LDA.W DATA8_819E4C,X                      ; $80D69E |
   AND.W #$00FF                              ; $80D6A1 |
   TAY                                       ; $80D6A4 |
-  LDA.W CODE_00D13A,Y                       ; $80D6A5 |
+  LDA.W DATA8_81D13A,Y                      ; $80D6A5 |
   STA.B $06                                 ; $80D6A8 |
-  LDA.W LOOSE_OP_009223,X                   ; $80D6AA |
+  LDA.W DATA8_819224-1,X                    ; $80D6AA |
   BIT.W #$8000                              ; $80D6AD |
   BEQ CODE_80D6C5                           ; $80D6B0 |
   LDA.B $F6                                 ; $80D6B2 |
   BNE CODE_80D6C2                           ; $80D6B4 |
-  LDA.W LOOSE_OP_009223,X                   ; $80D6B6 |
+  LDA.W DATA8_819224-1,X                    ; $80D6B6 |
   AND.W #$7F00                              ; $80D6B9 |
   SEC                                       ; $80D6BC |
   SBC.W #$0100                              ; $80D6BD |
@@ -13679,19 +13679,19 @@ CODE_80D6C5:
   ADC.B $F6                                 ; $80D6CC |
   CLC                                       ; $80D6CE |
   AND.W #$7FFF                              ; $80D6CF |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D6D2 |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D6D2 |
   STA.B $02                                 ; $80D6D5 |
-  LDA.W LOOSE_OP_009E4D,X                   ; $80D6D7 |
+  LDA.W DATA8_819E4C+1,X                    ; $80D6D7 |
   AND.W #$00FF                              ; $80D6DA |
   TAY                                       ; $80D6DD |
-  LDA.W CODE_00D13A,Y                       ; $80D6DE |
+  LDA.W DATA8_81D13A,Y                      ; $80D6DE |
   STA.B $16                                 ; $80D6E1 |
-  LDA.W CODE_009224,X                       ; $80D6E3 |
+  LDA.W DATA8_819224,X                      ; $80D6E3 |
   BIT.W #$8000                              ; $80D6E6 |
   BEQ CODE_80D6FE                           ; $80D6E9 |
   LDA.B $F8                                 ; $80D6EB |
   BNE CODE_80D6FB                           ; $80D6ED |
-  LDA.W CODE_009224,X                       ; $80D6EF |
+  LDA.W DATA8_819224,X                      ; $80D6EF |
   AND.W #$7F00                              ; $80D6F2 |
   SEC                                       ; $80D6F5 |
   SBC.W #$0100                              ; $80D6F6 |
@@ -13707,7 +13707,7 @@ CODE_80D6FE:
   ADC.B $F8                                 ; $80D705 |
   CLC                                       ; $80D707 |
   AND.W #$7FFF                              ; $80D708 |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D70B |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D70B |
   STA.B $12                                 ; $80D70E |
   LDA.B $F6                                 ; $80D710 |
   AND.W #$7FFF                              ; $80D712 |
@@ -13755,29 +13755,29 @@ CODE_80D756:
   STA.B $C2                                 ; $80D75A |
 
 CODE_80D75C:
-  LDA.W LOOSE_OP_009E4E,X                   ; $80D75C |
+  LDA.W DATA8_819E4C+2,X                    ; $80D75C |
   AND.W #$00FF                              ; $80D75F |
   TAY                                       ; $80D762 |
-  LDA.W CODE_00D13A,Y                       ; $80D763 |
+  LDA.W DATA8_81D13A,Y                      ; $80D763 |
   STA.B $26                                 ; $80D766 |
-  LDA.W CODE_009225,X                       ; $80D768 |
+  LDA.W DATA8_819224+1,X                    ; $80D768 |
   AND.W #$FF00                              ; $80D76B |
   CLC                                       ; $80D76E |
   ADC.B $C0                                 ; $80D76F |
   CLC                                       ; $80D771 |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D772 |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D772 |
   STA.B $22                                 ; $80D775 |
-  LDA.W CODE_009E4F,X                       ; $80D777 |
+  LDA.W DATA8_819E4C+3,X                    ; $80D777 |
   AND.W #$00FF                              ; $80D77A |
   TAY                                       ; $80D77D |
-  LDA.W CODE_00D13A,Y                       ; $80D77E |
+  LDA.W DATA8_81D13A,Y                      ; $80D77E |
   STA.B $36                                 ; $80D781 |
-  LDA.W LOOSE_OP_009226,X                   ; $80D783 |
+  LDA.W DATA8_819224+2,X                    ; $80D783 |
   AND.W #$FF00                              ; $80D786 |
   CLC                                       ; $80D789 |
   ADC.B $C2                                 ; $80D78A |
   CLC                                       ; $80D78C |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D78D |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D78D |
   STA.B $32                                 ; $80D790 |
   LDA.L $7F7002                             ; $80D792 |
   STA.W $00F0                               ; $80D796 |
@@ -13916,61 +13916,61 @@ CODE_80D876:
   TXA                                       ; $80D87D |
   ASL A                                     ; $80D87E |
   TAX                                       ; $80D87F |
-  LDA.W LOOSE_OP_009838,X                   ; $80D880 |
+  LDA.W DATA8_819838,X                      ; $80D880 |
   AND.W #$00FF                              ; $80D883 |
   STA.B $86                                 ; $80D886 |
-  LDA.W LOOSE_OP_009839,X                   ; $80D888 |
+  LDA.W DATA8_819838+1,X                    ; $80D888 |
   AND.W #$00FF                              ; $80D88B |
   STA.B $88                                 ; $80D88E |
-  LDA.W CODE_00983A,X                       ; $80D890 |
+  LDA.W DATA8_819838+2,X                    ; $80D890 |
   AND.W #$00FF                              ; $80D893 |
   STA.B $D4                                 ; $80D896 |
-  LDA.W LOOSE_OP_00983B,X                   ; $80D898 |
+  LDA.W DATA8_819838+3,X                    ; $80D898 |
   AND.W #$00FF                              ; $80D89B |
   STA.B $D6                                 ; $80D89E |
   STZ.B $42                                 ; $80D8A0 |
   STZ.B $52                                 ; $80D8A2 |
-  LDA.W CODE_009E4C,X                       ; $80D8A4 |
+  LDA.W DATA8_819E4C,X                      ; $80D8A4 |
   AND.W #$00FF                              ; $80D8A7 |
   TAY                                       ; $80D8AA |
-  LDA.W CODE_00D13A,Y                       ; $80D8AB |
+  LDA.W DATA8_81D13A,Y                      ; $80D8AB |
   STA.B $06                                 ; $80D8AE |
-  LDA.W LOOSE_OP_009223,X                   ; $80D8B0 |
+  LDA.W DATA8_819224-1,X                    ; $80D8B0 |
   AND.W #$FF00                              ; $80D8B3 |
   CLC                                       ; $80D8B6 |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D8B7 |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D8B7 |
   STA.B $02                                 ; $80D8BA |
-  LDA.W LOOSE_OP_009E4D,X                   ; $80D8BC |
+  LDA.W DATA8_819E4C+1,X                    ; $80D8BC |
   AND.W #$00FF                              ; $80D8BF |
   TAY                                       ; $80D8C2 |
-  LDA.W CODE_00D13A,Y                       ; $80D8C3 |
+  LDA.W DATA8_81D13A,Y                      ; $80D8C3 |
   STA.B $16                                 ; $80D8C6 |
-  LDA.W CODE_009224,X                       ; $80D8C8 |
+  LDA.W DATA8_819224,X                      ; $80D8C8 |
   AND.W #$FF00                              ; $80D8CB |
   CLC                                       ; $80D8CE |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D8CF |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D8CF |
   STA.B $12                                 ; $80D8D2 |
-  LDA.W LOOSE_OP_009E4E,X                   ; $80D8D4 |
+  LDA.W DATA8_819E4C+2,X                    ; $80D8D4 |
   AND.W #$00FF                              ; $80D8D7 |
   TAY                                       ; $80D8DA |
-  LDA.W CODE_00D13A,Y                       ; $80D8DB |
+  LDA.W DATA8_81D13A,Y                      ; $80D8DB |
   STA.B $26                                 ; $80D8DE |
-  LDA.W CODE_009225,X                       ; $80D8E0 |
+  LDA.W DATA8_819224+1,X                    ; $80D8E0 |
   AND.W #$FF00                              ; $80D8E3 |
 
 CODE_FN_80D8E6:
   CLC                                       ; $80D8E6 |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D8E7 |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D8E7 |
   STA.B $22                                 ; $80D8EA |
   LDA.W CODE_009E4F,X                       ; $80D8EC |
   AND.W #$00FF                              ; $80D8EF |
   TAY                                       ; $80D8F2 |
-  LDA.W CODE_00D13A,Y                       ; $80D8F3 |
+  LDA.W DATA8_81D13A,Y                      ; $80D8F3 |
   STA.B $36                                 ; $80D8F6 |
-  LDA.W LOOSE_OP_009226,X                   ; $80D8F8 |
+  LDA.W DATA8_819224+2,X                    ; $80D8F8 |
   AND.W #$FF00                              ; $80D8FB |
   CLC                                       ; $80D8FE |
-  ADC.W LOOSE_OP_00D13C,Y                   ; $80D8FF |
+  ADC.W DATA8_81D13A+2,Y                    ; $80D8FF |
   STA.B $32                                 ; $80D902 |
   SEP #$20                                  ; $80D904 |
   LDA.B #$FF                                ; $80D906 |

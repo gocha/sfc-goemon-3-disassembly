@@ -1963,6 +1963,8 @@ PTR16_848BBF:
   dw asset_88CCB9                           ; $848EC3 |
   dw asset_88CCCB                           ; $848EC5 |
   dw asset_88CADF                           ; $848EC7 |
+
+PTR16_848EC9:
   dw asset_8888C3                           ; $848EC9 |
   dw asset_8888C3                           ; $848ECB |
   dw asset_8888C3                           ; $848ECD |

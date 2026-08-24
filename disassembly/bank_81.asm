@@ -866,6 +866,8 @@ PTR16_818EC8:
 PTR16_818EDE:
   dw asset_88B6E3                           ; $818EDE |
   dw asset_88B6F7                           ; $818EE0 |
+
+PTR16_818EE2:
   dw asset_88B6ED                           ; $818EE2 |
   dw asset_88B701                           ; $818EE4 |
 
@@ -889,6 +891,8 @@ PTR16_818EE6:
   dw CODE_FL_80D2BD-1                       ; $818F06 |
   dw CODE_FL_80D2CC-1                       ; $818F08 |
   dw CODE_FL_80D2F0-1                       ; $818F0A |
+
+PTR16_818F0C:
   dw CODE_FL_80D324-1                       ; $818F0C |
   dw CODE_FL_80D357-1                       ; $818F0E |
   dw CODE_FL_80D130-1                       ; $818F10 |

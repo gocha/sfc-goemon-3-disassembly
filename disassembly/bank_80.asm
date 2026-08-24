@@ -12849,7 +12849,7 @@ CODE_80D050:
 
 
 CODE_80D055:
-  LDA.W CODE_008EE2,Y                       ; $80D055 |
+  LDA.W PTR16_818EE2,Y                      ; $80D055 |
   BRA CODE_80D050                           ; $80D058 |
 
 
@@ -13203,7 +13203,7 @@ CODE_FL_80D31B:
   ASL A                                     ; $80D31D |
   TAX                                       ; $80D31E |
 
-  LDA.W LOOSE_OP_008F0C,X                   ; $80D31F |
+  LDA.W PTR16_818F0C,X                      ; $80D31F |
   PHA                                       ; $80D322 |
   RTS                                       ; $80D323 |
 
@@ -13423,7 +13423,7 @@ CODE_FL_80D4C9:
   PLB                                       ; $80D4E0 |
 
   PLB                                       ; $80D4E1 |
-  LDA.W CODE_008EC9,Y                       ; $80D4E2 |
+  LDA.W PTR16_848EC9,Y                      ; $80D4E2 |
   BMI CODE_80D4ED                           ; $80D4E5 |
   ORA.W #$8000                              ; $80D4E7 |
   INC.W $19BC                               ; $80D4EA |

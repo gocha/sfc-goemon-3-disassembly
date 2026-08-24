@@ -851,17 +851,17 @@ PTR16_818EAE:
   dw CODE_FL_80CF47-1                       ; $818EC6 |
 
 PTR16_818EC8:
-  dw $8924                                  ; $818EC8 |
-  dw $8940                                  ; $818ECA |
-  dw $895C                                  ; $818ECC |
-  dw $8978                                  ; $818ECE |
-  dw $8994                                  ; $818ED0 |
-  dw $89B0                                  ; $818ED2 |
-  dw $89CC                                  ; $818ED4 |
-  dw $89F8                                  ; $818ED6 |
-  dw $89E8                                  ; $818ED8 |
-  dw $8A14                                  ; $818EDA |
-  dw $8A24                                  ; $818EDC |
+  dw asset_888924                           ; $818EC8 |
+  dw asset_888940                           ; $818ECA |
+  dw asset_88895C                           ; $818ECC |
+  dw asset_888978                           ; $818ECE |
+  dw asset_888994                           ; $818ED0 |
+  dw asset_8889B0                           ; $818ED2 |
+  dw asset_8889CC                           ; $818ED4 |
+  dw asset_8889F8                           ; $818ED6 |
+  dw asset_8889E8                           ; $818ED8 |
+  dw asset_888A14                           ; $818EDA |
+  dw asset_888A24                           ; $818EDC |
 
 PTR16_818EDE:
   dw asset_88B6E3                           ; $818EDE |

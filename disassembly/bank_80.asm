@@ -14908,10 +14908,10 @@ CODE_FN_80DEC5:
   LDA.W !r_room_id                          ; $80DEC5 |
   ASL A                                     ; $80DEC8 |
   TAX                                       ; $80DEC9 |
-  LDA.W PTR16_81B9A6,X                      ; $80DECA |
+  LDA.W PTR16_81B9A6,X                      ; $80DECA | foreground pattern?
 
   STA.B $9A                                 ; $80DECD |
-  LDA.W PTR16_81BCB0,X                      ; $80DECF |
+  LDA.W PTR16_81BCB0,X                      ; $80DECF | background pattern?
   STA.B $9D                                 ; $80DED2 |
   SEP #$20                                  ; $80DED4 |
   LDA.B #$81                                ; $80DED6 |

@@ -14908,52 +14908,49 @@ CODE_FN_80DEC5:
   LDA.W !r_room_id                          ; $80DEC5 |
   ASL A                                     ; $80DEC8 |
   TAX                                       ; $80DEC9 |
-  LDA.W PTR16_81B9A6,X                      ; $80DECA | foreground pattern?
-
-  STA.B $9A                                 ; $80DECD |
-  LDA.W PTR16_81BCB0,X                      ; $80DECF | background pattern?
-  STA.B $9D                                 ; $80DED2 |
+  LDA.W PTR16_81B9A6,X                      ; $80DECA | terrain
+  STA.B $16FA-$1660                         ; $80DECD |
+  LDA.W PTR16_81BCB0,X                      ; $80DECF | background
+  STA.B $16FD-$1660                         ; $80DED2 |
   SEP #$20                                  ; $80DED4 |
   LDA.B #$81                                ; $80DED6 |
-  STA.B $9C                                 ; $80DED8 |
-  STA.B $9F                                 ; $80DEDA |
+  STA.B $16FC-$1660                         ; $80DED8 |
+  STA.B $16FF-$1660                         ; $80DEDA |
   REP #$20                                  ; $80DEDC |
-
   RTS                                       ; $80DEDE |
 
 
 CODE_FN_80DEDF:
   SEP #$20                                  ; $80DEDF |
-  LDA.B $93                                 ; $80DEE1 |
+  LDA.B $16F3-$1660                         ; $80DEE1 |
   STA.W !reg_wrmpya                         ; $80DEE3 |
-  LDA.B $86                                 ; $80DEE6 |
+  LDA.B $16E6-$1660                         ; $80DEE6 |
   STA.W !reg_wrmpyb                         ; $80DEE8 |
   REP #$20                                  ; $80DEEB |
-  LDA.B $91                                 ; $80DEED |
+  LDA.B $16F1-$1660                         ; $80DEED |
   AND.W #$00FF                              ; $80DEEF |
   CLC                                       ; $80DEF2 |
   ADC.W !reg_rdmpyl                         ; $80DEF3 |
   TAY                                       ; $80DEF6 |
-  LDA.B [$9A],Y                             ; $80DEF7 |
+  LDA.B [$16FA-$1660],Y                     ; $80DEF7 |
   AND.W #$007F                              ; $80DEF9 |
-  STA.B $8C                                 ; $80DEFC |
+  STA.B $16EC-$1660                         ; $80DEFC |
   RTS                                       ; $80DEFE |
 
 
 CODE_FN_80DEFF:
-  LDA.B $B2                                 ; $80DEFF |
+  LDA.B $1712-$1660                         ; $80DEFF |
   STA.W !reg_wrmpya                         ; $80DF01 |
-  LDA.B $86                                 ; $80DF04 |
+  LDA.B $16E6-$1660                         ; $80DF04 |
   STA.W !reg_wrmpyb                         ; $80DF06 |
   REP #$20                                  ; $80DF09 |
-  LDA.B $B0                                 ; $80DF0B |
+  LDA.B $1710-$1660                         ; $80DF0B |
   AND.W #$00FF                              ; $80DF0D |
-
   CLC                                       ; $80DF10 |
   ADC.W !reg_rdmpyl                         ; $80DF11 |
   TAY                                       ; $80DF14 |
   SEP #$20                                  ; $80DF15 |
-  LDA.B [$9A],Y                             ; $80DF17 |
+  LDA.B [$16FA-$1660],Y                     ; $80DF17 |
   RTS                                       ; $80DF19 |
 
 

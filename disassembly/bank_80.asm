@@ -13539,49 +13539,49 @@ CODE_FL_80D571:
   JSR.W CODE_FN_80DEC5                      ; $80D5BA |
   SEP #$20                                  ; $80D5BD |
   LDA.B #$FF                                ; $80D5BF |
-  STA.B $82                                 ; $80D5C1 |
-  STA.B $83                                 ; $80D5C3 |
-  STA.B $D0                                 ; $80D5C5 |
-  STA.B $D1                                 ; $80D5C7 |
-  STZ.B $98                                 ; $80D5C9 |
-  STZ.B $E6                                 ; $80D5CB |
-  STZ.B $84                                 ; $80D5CD |
-  STZ.B $85                                 ; $80D5CF |
-  STZ.B $D2                                 ; $80D5D1 |
-  STZ.B $D3                                 ; $80D5D3 |
-  STZ.B $E8                                 ; $80D5D5 |
-  STZ.B $EA                                 ; $80D5D7 |
+  STA.B $16E2-$1660                         ; $80D5C1 |
+  STA.B $16E3-$1660                         ; $80D5C3 |
+  STA.B $1730-$1660                         ; $80D5C5 |
+  STA.B $1731-$1660                         ; $80D5C7 |
+  STZ.B $16F8-$1660                         ; $80D5C9 |
+  STZ.B $1746-$1660                         ; $80D5CB |
+  STZ.B $16E4-$1660                         ; $80D5CD |
+  STZ.B $16E5-$1660                         ; $80D5CF |
+  STZ.B $1732-$1660                         ; $80D5D1 |
+  STZ.B $1733-$1660                         ; $80D5D3 |
+  STZ.B $1748-$1660                         ; $80D5D5 |
+  STZ.B $174A-$1660                         ; $80D5D7 |
   REP #$20                                  ; $80D5D9 |
   LDA.W DATA16_81A460,X                     ; $80D5DB |
-  STA.B $F2                                 ; $80D5DE |
+  STA.B $1752-$1660                         ; $80D5DE |
   AND.W #$FF00                              ; $80D5E0 |
   BEQ CODE_80D5ED                           ; $80D5E3 |
-  LDA.W CODE_00A76A,X                       ; $80D5E5 |
-  STA.B $F0                                 ; $80D5E8 |
+  LDA.W DATA16_81A76A,X                     ; $80D5E5 |
+  STA.B $1750-$1660                         ; $80D5E8 |
   JMP.W CODE_JP_80D7A0                      ; $80D5EA |
 
 
 CODE_80D5ED:
-  LDY.W CODE_00A76A,X                       ; $80D5ED |
-  LDA.W CODE_00D14A,Y                       ; $80D5F0 |
-  STA.B $A0                                 ; $80D5F3 |
-  LDA.W CODE_00D14C,Y                       ; $80D5F5 |
-  STA.B $A2                                 ; $80D5F8 |
-  LDA.W LOOSE_OP_00D14E,Y                   ; $80D5FA |
-  STA.B $A4                                 ; $80D5FD |
-  LDA.W LOOSE_OP_00D150,Y                   ; $80D5FF |
-  STA.B $A6                                 ; $80D602 |
-  STZ.B $B0                                 ; $80D604 |
-  STZ.B $B2                                 ; $80D606 |
-  STZ.B $B4                                 ; $80D608 |
-  STZ.B $B6                                 ; $80D60A |
+  LDY.W DATA16_81A76A,X                     ; $80D5ED |
+  LDA.W DATA16_81D14A,Y                     ; $80D5F0 |
+  STA.B $1700-$1660                         ; $80D5F3 |
+  LDA.W DATA16_81D14A+2,Y                   ; $80D5F5 |
+  STA.B $1702-$1660                         ; $80D5F8 |
+  LDA.W DATA16_81D14A+4,Y                   ; $80D5FA |
+  STA.B $1704-$1660                         ; $80D5FD |
+  LDA.W DATA16_81D14A+6,Y                   ; $80D5FF |
+  STA.B $1706-$1660                         ; $80D602 |
+  STZ.B $1710-$1660                         ; $80D604 |
+  STZ.B $1712-$1660                         ; $80D606 |
+  STZ.B $1714-$1660                         ; $80D608 |
+  STZ.B $1716-$1660                         ; $80D60A |
   LDY.W #$0000                              ; $80D60C |
 
 CODE_80D60F:
-  LDA.B $A0                                 ; $80D60F |
+  LDA.B $1700-$1660                         ; $80D60F |
   CLC                                       ; $80D611 |
-  ADC.B $B0                                 ; $80D612 |
-  STA.B $B0                                 ; $80D614 |
+  ADC.B $1710-$1660                         ; $80D612 |
+  STA.B $1710-$1660                         ; $80D614 |
   STA.W $17E0,Y                             ; $80D616 |
   INY                                       ; $80D619 |
   INY                                       ; $80D61A |
@@ -13590,10 +13590,10 @@ CODE_80D60F:
   LDY.W #$0000                              ; $80D620 |
 
 CODE_80D623:
-  LDA.B $A2                                 ; $80D623 |
+  LDA.B $1702-$1660                         ; $80D623 |
   CLC                                       ; $80D625 |
-  ADC.B $B2                                 ; $80D626 |
-  STA.B $B2                                 ; $80D628 |
+  ADC.B $1712-$1660                         ; $80D626 |
+  STA.B $1712-$1660                         ; $80D628 |
   EOR.W #$FFFF                              ; $80D62A |
   INC A                                     ; $80D62D |
   STA.W $17F0,Y                             ; $80D62E |
@@ -13604,10 +13604,10 @@ CODE_80D623:
   LDY.W #$0000                              ; $80D638 |
 
 CODE_80D63B:
-  LDA.B $A4                                 ; $80D63B |
+  LDA.B $1704-$1660                         ; $80D63B |
   CLC                                       ; $80D63D |
-  ADC.B $B4                                 ; $80D63E |
-  STA.B $B4                                 ; $80D640 |
+  ADC.B $1714-$1660                         ; $80D63E |
+  STA.B $1714-$1660                         ; $80D640 |
   STA.W $1800,Y                             ; $80D642 |
   INY                                       ; $80D645 |
   INY                                       ; $80D646 |
@@ -13616,10 +13616,10 @@ CODE_80D63B:
   LDY.W #$0000                              ; $80D64C |
 
 CODE_80D64F:
-  LDA.B $A6                                 ; $80D64F |
+  LDA.B $1706-$1660                         ; $80D64F |
   CLC                                       ; $80D651 |
-  ADC.B $B6                                 ; $80D652 |
-  STA.B $B6                                 ; $80D654 |
+  ADC.B $1716-$1660                         ; $80D652 |
+  STA.B $1716-$1660                         ; $80D654 |
   EOR.W #$FFFF                              ; $80D656 |
   INC A                                     ; $80D659 |
   STA.W $1810,Y                             ; $80D65A |
@@ -13632,7 +13632,7 @@ CODE_80D64F:
   TAX                                       ; $80D666 |
   LDA.W DATA8_819838,X                      ; $80D667 |
   AND.W #$00FF                              ; $80D66A |
-  STA.B $86                                 ; $80D66D |
+  STA.B $16E6-$1660                         ; $80D66D |
   SEP #$20                                  ; $80D66F |
   DEC A                                     ; $80D671 |
   DEC A                                     ; $80D672 |
@@ -13641,7 +13641,7 @@ CODE_80D64F:
   REP #$20                                  ; $80D679 |
   LDA.W DATA8_819838+1,X                    ; $80D67B |
   AND.W #$00FF                              ; $80D67E |
-  STA.B $88                                 ; $80D681 |
+  STA.B $16E8-$1660                         ; $80D681 |
   SEP #$20                                  ; $80D683 |
   DEC A                                     ; $80D685 |
   STA.W $00B1                               ; $80D686 |
@@ -13649,25 +13649,25 @@ CODE_80D64F:
   REP #$20                                  ; $80D68C |
   LDA.W DATA8_819838+2,X                    ; $80D68E |
   AND.W #$00FF                              ; $80D691 |
-  STA.B $D4                                 ; $80D694 |
+  STA.B $1734-$1660                         ; $80D694 |
   LDA.W DATA8_819838+3,X                    ; $80D696 |
   AND.W #$00FF                              ; $80D699 |
-  STA.B $D6                                 ; $80D69C |
+  STA.B $1736-$1660                         ; $80D69C |
   LDA.W DATA8_819E4C,X                      ; $80D69E |
   AND.W #$00FF                              ; $80D6A1 |
   TAY                                       ; $80D6A4 |
   LDA.W DATA8_81D13A,Y                      ; $80D6A5 |
-  STA.B $06                                 ; $80D6A8 |
+  STA.B $1666-$1660                         ; $80D6A8 |
   LDA.W DATA8_819224-1,X                    ; $80D6AA |
   BIT.W #$8000                              ; $80D6AD |
   BEQ CODE_80D6C5                           ; $80D6B0 |
-  LDA.B $F6                                 ; $80D6B2 |
+  LDA.B $1756-$1660                         ; $80D6B2 |
   BNE CODE_80D6C2                           ; $80D6B4 |
   LDA.W DATA8_819224-1,X                    ; $80D6B6 |
   AND.W #$7F00                              ; $80D6B9 |
   SEC                                       ; $80D6BC |
   SBC.W #$0100                              ; $80D6BD |
-  STA.B $F6                                 ; $80D6C0 |
+  STA.B $1756-$1660                         ; $80D6C0 |
 
 CODE_80D6C2:
   LDA.W #$0100                              ; $80D6C2 |
@@ -13676,26 +13676,26 @@ CODE_80D6C5:
   AND.W #$FF00                              ; $80D6C5 |
   STA.W $19A6                               ; $80D6C8 |
   CLC                                       ; $80D6CB |
-  ADC.B $F6                                 ; $80D6CC |
+  ADC.B $1756-$1660                         ; $80D6CC |
   CLC                                       ; $80D6CE |
   AND.W #$7FFF                              ; $80D6CF |
   ADC.W DATA8_81D13A+2,Y                    ; $80D6D2 |
-  STA.B $02                                 ; $80D6D5 |
+  STA.B $1662-$1660                         ; $80D6D5 |
   LDA.W DATA8_819E4C+1,X                    ; $80D6D7 |
   AND.W #$00FF                              ; $80D6DA |
   TAY                                       ; $80D6DD |
   LDA.W DATA8_81D13A,Y                      ; $80D6DE |
-  STA.B $16                                 ; $80D6E1 |
+  STA.B $1676-$1660                         ; $80D6E1 |
   LDA.W DATA8_819224,X                      ; $80D6E3 |
   BIT.W #$8000                              ; $80D6E6 |
   BEQ CODE_80D6FE                           ; $80D6E9 |
-  LDA.B $F8                                 ; $80D6EB |
+  LDA.B $1758-$1660                         ; $80D6EB |
   BNE CODE_80D6FB                           ; $80D6ED |
   LDA.W DATA8_819224,X                      ; $80D6EF |
   AND.W #$7F00                              ; $80D6F2 |
   SEC                                       ; $80D6F5 |
   SBC.W #$0100                              ; $80D6F6 |
-  STA.B $F8                                 ; $80D6F9 |
+  STA.B $1758-$1660                         ; $80D6F9 |
 
 CODE_80D6FB:
   LDA.W #$0100                              ; $80D6FB |
@@ -13704,14 +13704,14 @@ CODE_80D6FE:
   AND.W #$FF00                              ; $80D6FE |
   STA.W $19A8                               ; $80D701 |
   CLC                                       ; $80D704 |
-  ADC.B $F8                                 ; $80D705 |
+  ADC.B $1758-$1660                         ; $80D705 |
   CLC                                       ; $80D707 |
   AND.W #$7FFF                              ; $80D708 |
   ADC.W DATA8_81D13A+2,Y                    ; $80D70B |
-  STA.B $12                                 ; $80D70E |
-  LDA.B $F6                                 ; $80D710 |
+  STA.B $1672-$1660                         ; $80D70E |
+  LDA.B $1756-$1660                         ; $80D710 |
   AND.W #$7FFF                              ; $80D712 |
-  STA.B $A4                                 ; $80D715 |
+  STA.B $1704-$1660                         ; $80D715 |
   PHY                                       ; $80D717 |
   LDA.W !r_room_id                          ; $80D718 |
   ASL A                                     ; $80D71B |
@@ -13722,19 +13722,19 @@ CODE_80D6FE:
   PLY                                       ; $80D725 |
   LDY.W $17E0                               ; $80D726 |
   JSR.W CODE_FN_80D7D8                      ; $80D729 |
-  STA.B $C0                                 ; $80D72C |
+  STA.B $1720-$1660                         ; $80D72C |
   BRA CODE_80D736                           ; $80D72E |
 
 
 CODE_80D730:
   PLY                                       ; $80D730 |
   LDA.W #$0000                              ; $80D731 |
-  STA.B $C0                                 ; $80D734 |
+  STA.B $1720-$1660                         ; $80D734 |
 
 CODE_80D736:
-  LDA.B $F8                                 ; $80D736 |
+  LDA.B $1758-$1660                         ; $80D736 |
   AND.W #$7FFF                              ; $80D738 |
-  STA.B $A4                                 ; $80D73B |
+  STA.B $1704-$1660                         ; $80D73B |
   PHY                                       ; $80D73D |
   LDA.W !r_room_id                          ; $80D73E |
   ASL A                                     ; $80D741 |
@@ -13745,40 +13745,40 @@ CODE_80D736:
   PLY                                       ; $80D74B |
   LDY.W $1800                               ; $80D74C |
   JSR.W CODE_FN_80D7D8                      ; $80D74F |
-  STA.B $C2                                 ; $80D752 |
+  STA.B $1722-$1660                         ; $80D752 |
   BRA CODE_80D75C                           ; $80D754 |
 
 
 CODE_80D756:
   PLY                                       ; $80D756 |
   LDA.W #$0000                              ; $80D757 |
-  STA.B $C2                                 ; $80D75A |
+  STA.B $1722-$1660                         ; $80D75A |
 
 CODE_80D75C:
   LDA.W DATA8_819E4C+2,X                    ; $80D75C |
   AND.W #$00FF                              ; $80D75F |
   TAY                                       ; $80D762 |
   LDA.W DATA8_81D13A,Y                      ; $80D763 |
-  STA.B $26                                 ; $80D766 |
+  STA.B $1686-$1660                         ; $80D766 |
   LDA.W DATA8_819224+1,X                    ; $80D768 |
   AND.W #$FF00                              ; $80D76B |
   CLC                                       ; $80D76E |
-  ADC.B $C0                                 ; $80D76F |
+  ADC.B $1720-$1660                         ; $80D76F |
   CLC                                       ; $80D771 |
   ADC.W DATA8_81D13A+2,Y                    ; $80D772 |
-  STA.B $22                                 ; $80D775 |
+  STA.B $1682-$1660                         ; $80D775 |
   LDA.W DATA8_819E4C+3,X                    ; $80D777 |
   AND.W #$00FF                              ; $80D77A |
   TAY                                       ; $80D77D |
   LDA.W DATA8_81D13A,Y                      ; $80D77E |
-  STA.B $36                                 ; $80D781 |
+  STA.B $1696-$1660                         ; $80D781 |
   LDA.W DATA8_819224+2,X                    ; $80D783 |
   AND.W #$FF00                              ; $80D786 |
   CLC                                       ; $80D789 |
-  ADC.B $C2                                 ; $80D78A |
+  ADC.B $1722-$1660                         ; $80D78A |
   CLC                                       ; $80D78C |
   ADC.W DATA8_81D13A+2,Y                    ; $80D78D |
-  STA.B $32                                 ; $80D790 |
+  STA.B $1692-$1660                         ; $80D790 |
   LDA.L $7F7002                             ; $80D792 |
   STA.W $00F0                               ; $80D796 |
   LDA.L $7F7004                             ; $80D799 |
@@ -13994,20 +13994,20 @@ CODE_FN_80D8E6:
   STA.B $F2                                 ; $80D92A |
   AND.W #$FF00                              ; $80D92C |
   BEQ CODE_80D938                           ; $80D92F |
-  LDA.W CODE_00A76A,X                       ; $80D931 |
+  LDA.W DATA16_81A76A,X                     ; $80D931 |
   STA.B $F0                                 ; $80D934 |
   BRA CODE_80D9AF                           ; $80D936 |
 
 
 CODE_80D938:
-  LDY.W CODE_00A76A,X                       ; $80D938 |
-  LDA.W CODE_00D14A,Y                       ; $80D93B |
+  LDY.W DATA16_81A76A,X                     ; $80D938 |
+  LDA.W DATA16_81D14A,Y                     ; $80D93B |
   STA.B $A0                                 ; $80D93E |
-  LDA.W CODE_00D14C,Y                       ; $80D940 |
+  LDA.W DATA16_81D14A+2,Y                   ; $80D940 |
   STA.B $A2                                 ; $80D943 |
-  LDA.W LOOSE_OP_00D14E,Y                   ; $80D945 |
+  LDA.W DATA16_81D14A+4,Y                   ; $80D945 |
   STA.B $A4                                 ; $80D948 |
-  LDA.W LOOSE_OP_00D150,Y                   ; $80D94A |
+  LDA.W DATA16_81D14A+6,Y                   ; $80D94A |
   STA.B $A6                                 ; $80D94D |
   STZ.B $B0                                 ; $80D94F |
   STZ.B $B2                                 ; $80D951 |
@@ -14586,27 +14586,27 @@ CODE_80DCEF:
 CODE_FN_80DCF3:
   LDA.W #$1660                              ; $80DCF3 |
   TCD                                       ; $80DCF6 |
-  STZ.B $EC                                 ; $80DCF7 |
-  STZ.B $EE                                 ; $80DCF9 |
-  LDA.B $06                                 ; $80DCFB |
+  STZ.B $174C-$1660                         ; $80DCF7 |
+  STZ.B $174E-$1660                         ; $80DCF9 |
+  LDA.B $1666-$1660                         ; $80DCFB |
   BEQ CODE_JP_80DD44                        ; $80DCFD |
   CLC                                       ; $80DCFF |
   BMI CODE_80DD23                           ; $80DD00 |
-  ADC.B $02                                 ; $80DD02 |
-  STA.B $02                                 ; $80DD04 |
+  ADC.B $1662-$1660                         ; $80DD02 |
+  STA.B $1662-$1660                         ; $80DD04 |
   JSR.W CODE_FN_80DDFB                      ; $80DD06 |
-  LDA.B $82                                 ; $80DD09 |
+  LDA.B $16E2-$1660                         ; $80DD09 |
   CLC                                       ; $80DD0B |
-  ADC.B $EC                                 ; $80DD0C |
-  STA.B $82                                 ; $80DD0E |
+  ADC.B $174C-$1660                         ; $80DD0C |
+  STA.B $16E2-$1660                         ; $80DD0E |
   BMI CODE_80DD1F                           ; $80DD10 |
   SEC                                       ; $80DD12 |
   SBC.B #$20                                ; $80DD13 |
-  STA.B $82                                 ; $80DD15 |
-  LDA.B $84                                 ; $80DD17 |
+  STA.B $16E2-$1660                         ; $80DD15 |
+  LDA.B $16E4-$1660                         ; $80DD17 |
   AND.B #$0C                                ; $80DD19 |
   ORA.B #$01                                ; $80DD1B |
-  STA.B $84                                 ; $80DD1D |
+  STA.B $16E4-$1660                         ; $80DD1D |
 
 CODE_80DD1F:
   REP #$20                                  ; $80DD1F |
@@ -14614,75 +14614,75 @@ CODE_80DD1F:
 
 
 CODE_80DD23:
-  ADC.B $02                                 ; $80DD23 |
-  STA.B $02                                 ; $80DD25 |
+  ADC.B $1662-$1660                         ; $80DD23 |
+  STA.B $1662-$1660                         ; $80DD25 |
   JSR.W CODE_FN_80DE2A                      ; $80DD27 |
-  LDA.B $82                                 ; $80DD2A |
+  LDA.B $16E2-$1660                         ; $80DD2A |
   CLC                                       ; $80DD2C |
-  ADC.B $EC                                 ; $80DD2D |
-  STA.B $82                                 ; $80DD2F |
+  ADC.B $174C-$1660                         ; $80DD2D |
+  STA.B $16E2-$1660                         ; $80DD2F |
   CMP.B #$E0                                ; $80DD31 |
   BCS CODE_80DD42                           ; $80DD33 |
   CLC                                       ; $80DD35 |
   ADC.B #$20                                ; $80DD36 |
-  STA.B $82                                 ; $80DD38 |
-  LDA.B $84                                 ; $80DD3A |
+  STA.B $16E2-$1660                         ; $80DD38 |
+  LDA.B $16E4-$1660                         ; $80DD3A |
   AND.B #$0C                                ; $80DD3C |
   ORA.B #$02                                ; $80DD3E |
-  STA.B $84                                 ; $80DD40 |
+  STA.B $16E4-$1660                         ; $80DD40 |
 
 CODE_80DD42:
   REP #$20                                  ; $80DD42 |
 
 CODE_JP_80DD44:
-  LDA.B $16                                 ; $80DD44 |
+  LDA.B $1676-$1660                         ; $80DD44 |
   BEQ CODE_80DDA7                           ; $80DD46 |
   CLC                                       ; $80DD48 |
   BPL CODE_80DD6C                           ; $80DD49 |
-  ADC.B $12                                 ; $80DD4B |
-  STA.B $12                                 ; $80DD4D |
+  ADC.B $1672-$1660                         ; $80DD4B |
+  STA.B $1672-$1660                         ; $80DD4D |
   JSR.W CODE_FN_80DE8F                      ; $80DD4F |
-  LDA.B $83                                 ; $80DD52 |
+  LDA.B $16E3-$1660                         ; $80DD52 |
   CLC                                       ; $80DD54 |
-  ADC.B $EE                                 ; $80DD55 |
-  STA.B $83                                 ; $80DD57 |
+  ADC.B $174E-$1660                         ; $80DD55 |
+  STA.B $16E3-$1660                         ; $80DD57 |
   CMP.B #$E0                                ; $80DD59 |
   BCS CODE_80DD89                           ; $80DD5B |
   CLC                                       ; $80DD5D |
   ADC.B #$20                                ; $80DD5E |
-  STA.B $83                                 ; $80DD60 |
-  LDA.B $84                                 ; $80DD62 |
+  STA.B $16E3-$1660                         ; $80DD60 |
+  LDA.B $16E4-$1660                         ; $80DD62 |
   AND.B #$03                                ; $80DD64 |
   ORA.B #$08                                ; $80DD66 |
-  STA.B $84                                 ; $80DD68 |
+  STA.B $16E4-$1660                         ; $80DD68 |
   BRA CODE_80DD89                           ; $80DD6A |
 
 
 CODE_80DD6C:
-  ADC.B $12                                 ; $80DD6C |
-  STA.B $12                                 ; $80DD6E |
+  ADC.B $1672-$1660                         ; $80DD6C |
+  STA.B $1672-$1660                         ; $80DD6E |
   JSR.W CODE_FN_80DE60                      ; $80DD70 |
-  LDA.B $83                                 ; $80DD73 |
+  LDA.B $16E3-$1660                         ; $80DD73 |
   CLC                                       ; $80DD75 |
-  ADC.B $EE                                 ; $80DD76 |
-  STA.B $83                                 ; $80DD78 |
+  ADC.B $174E-$1660                         ; $80DD76 |
+  STA.B $16E3-$1660                         ; $80DD78 |
   BMI CODE_80DD89                           ; $80DD7A |
   SEC                                       ; $80DD7C |
   SBC.B #$20                                ; $80DD7D |
-  STA.B $83                                 ; $80DD7F |
-  LDA.B $84                                 ; $80DD81 |
+  STA.B $16E3-$1660                         ; $80DD7F |
+  LDA.B $16E4-$1660                         ; $80DD81 |
   AND.B #$03                                ; $80DD83 |
   ORA.B #$04                                ; $80DD85 |
-  STA.B $84                                 ; $80DD87 |
+  STA.B $16E4-$1660                         ; $80DD87 |
 
 CODE_80DD89:
-  LDA.B $98                                 ; $80DD89 |
+  LDA.B $16F8-$1660                         ; $80DD89 |
   BEQ CODE_80DDAD                           ; $80DD8B |
-  LDA.B $84                                 ; $80DD8D |
+  LDA.B $16E4-$1660                         ; $80DD8D |
   BEQ CODE_80DD9B                           ; $80DD8F |
   BIT.B #$0C                                ; $80DD91 |
   BNE CODE_80DD9E                           ; $80DD93 |
-  LDA.B $85                                 ; $80DD95 |
+  LDA.B $16E5-$1660                         ; $80DD95 |
   AND.B #$03                                ; $80DD97 |
   BNE CODE_80DDAB                           ; $80DD99 |
 
@@ -14691,7 +14691,7 @@ CODE_80DD9B:
 
 
 CODE_80DD9E:
-  LDA.B $85                                 ; $80DD9E |
+  LDA.B $16E5-$1660                         ; $80DD9E |
   AND.B #$0C                                ; $80DDA0 |
   BNE CODE_80DDAB                           ; $80DDA2 |
   JMP.W CODE_JP_80DAC9                      ; $80DDA4 |
@@ -14703,16 +14703,16 @@ CODE_80DDA7:
 
 
 CODE_80DDAB:
-  STZ.B $98                                 ; $80DDAB |
+  STZ.B $16F8-$1660                         ; $80DDAB |
 
 CODE_80DDAD:
-  LDA.B $85                                 ; $80DDAD |
+  LDA.B $16E5-$1660                         ; $80DDAD |
   AND.B #$03                                ; $80DDAF |
   BNE CODE_80DDC6                           ; $80DDB1 |
-  LDA.B $84                                 ; $80DDB3 |
+  LDA.B $16E4-$1660                         ; $80DDB3 |
   AND.B #$03                                ; $80DDB5 |
   BNE CODE_80DDD9                           ; $80DDB7 |
-  LDA.B $84                                 ; $80DDB9 |
+  LDA.B $16E4-$1660                         ; $80DDB9 |
   AND.B #$0C                                ; $80DDBB |
   BNE CODE_80DDE6                           ; $80DDBD |
   REP #$20                                  ; $80DDBF |
@@ -14722,10 +14722,10 @@ CODE_80DDAD:
 
 
 CODE_80DDC6:
-  LDA.B $84                                 ; $80DDC6 |
+  LDA.B $16E4-$1660                         ; $80DDC6 |
   AND.B #$0C                                ; $80DDC8 |
   BNE CODE_80DDE6                           ; $80DDCA |
-  LDA.B $84                                 ; $80DDCC |
+  LDA.B $16E4-$1660                         ; $80DDCC |
   AND.B #$03                                ; $80DDCE |
   BNE CODE_80DDD9                           ; $80DDD0 |
   REP #$20                                  ; $80DDD2 |
@@ -14735,20 +14735,20 @@ CODE_80DDC6:
 
 
 CODE_80DDD9:
-  STA.B $85                                 ; $80DDD9 |
-  LDA.B $84                                 ; $80DDDB |
+  STA.B $16E5-$1660                         ; $80DDD9 |
+  LDA.B $16E4-$1660                         ; $80DDDB |
   AND.B #$0C                                ; $80DDDD |
-  STA.B $84                                 ; $80DDDF |
-  INC.B $98                                 ; $80DDE1 |
+  STA.B $16E4-$1660                         ; $80DDDF |
+  INC.B $16F8-$1660                         ; $80DDE1 |
   JMP.W CODE_JP_80D9E7                      ; $80DDE3 |
 
 
 CODE_80DDE6:
-  STA.B $85                                 ; $80DDE6 |
-  LDA.B $84                                 ; $80DDE8 |
+  STA.B $16E5-$1660                         ; $80DDE6 |
+  LDA.B $16E4-$1660                         ; $80DDE8 |
   AND.B #$03                                ; $80DDEA |
-  STA.B $84                                 ; $80DDEC |
-  INC.B $98                                 ; $80DDEE |
+  STA.B $16E4-$1660                         ; $80DDEC |
+  INC.B $16F8-$1660                         ; $80DDEE |
   JMP.W CODE_JP_80DAE2                      ; $80DDF0 |
 
 
@@ -14766,31 +14766,31 @@ CODE_FN_80DDFB:
   ADC.W #$00FF                              ; $80DDFB |
   SEP #$20                                  ; $80DDFE |
   XBA                                       ; $80DE00 |
-  CMP.B $86                                 ; $80DE01 |
+  CMP.B $16E6-$1660                         ; $80DE01 |
   BCS CODE_80DE20                           ; $80DE03 |
-  STA.B $B0                                 ; $80DE05 |
-  LDA.B $13                                 ; $80DE07 |
-  STA.B $B2                                 ; $80DE09 |
+  STA.B $1710-$1660                         ; $80DE05 |
+  LDA.B $1673-$1660                         ; $80DE07 |
+  STA.B $1712-$1660                         ; $80DE09 |
   JSR.W CODE_FN_80DEFF                      ; $80DE0B |
   BMI CODE_80DE20                           ; $80DE0E |
-  LDA.B $12                                 ; $80DE10 |
+  LDA.B $1672-$1660                         ; $80DE10 |
   BEQ CODE_80DE1B                           ; $80DE12 |
-  INC.B $B2                                 ; $80DE14 |
+  INC.B $1712-$1660                         ; $80DE14 |
   JSR.W CODE_FN_80DEFF                      ; $80DE16 |
   BMI CODE_80DE20                           ; $80DE19 |
 
 CODE_80DE1B:
-  LDA.B $06                                 ; $80DE1B |
-  STA.B $EC                                 ; $80DE1D |
+  LDA.B $1666-$1660                         ; $80DE1B |
+  STA.B $174C-$1660                         ; $80DE1D |
   RTS                                       ; $80DE1F |
 
 
 CODE_80DE20:
-  LDA.B $06                                 ; $80DE20 |
+  LDA.B $1666-$1660                         ; $80DE20 |
   SEC                                       ; $80DE22 |
-  SBC.B $02                                 ; $80DE23 |
-  STA.B $EC                                 ; $80DE25 |
-  STZ.B $02                                 ; $80DE27 |
+  SBC.B $1662-$1660                         ; $80DE23 |
+  STA.B $174C-$1660                         ; $80DE25 |
+  STZ.B $1662-$1660                         ; $80DE27 |
   RTS                                       ; $80DE29 |
 
 
@@ -14798,37 +14798,37 @@ CODE_FN_80DE2A:
   SEP #$20                                  ; $80DE2A |
   XBA                                       ; $80DE2C |
   BMI CODE_80DE45                           ; $80DE2D |
-  STA.B $B0                                 ; $80DE2F |
-  LDA.B $13                                 ; $80DE31 |
-  STA.B $B2                                 ; $80DE33 |
+  STA.B $1710-$1660                         ; $80DE2F |
+  LDA.B $1673-$1660                         ; $80DE31 |
+  STA.B $1712-$1660                         ; $80DE33 |
   JSR.W CODE_FN_80DEFF                      ; $80DE35 |
   BMI CODE_80DE45                           ; $80DE38 |
-  LDA.B $12                                 ; $80DE3A |
+  LDA.B $1672-$1660                         ; $80DE3A |
   BEQ CODE_80DE57                           ; $80DE3C |
-  INC.B $B2                                 ; $80DE3E |
+  INC.B $1712-$1660                         ; $80DE3E |
   JSR.W CODE_FN_80DEFF                      ; $80DE40 |
   BPL CODE_80DE57                           ; $80DE43 |
 
 CODE_80DE45:
-  INC.B $03                                 ; $80DE45 |
-  LDA.B $06                                 ; $80DE47 |
+  INC.B $1663-$1660                         ; $80DE45 |
+  LDA.B $1666-$1660                         ; $80DE47 |
   SEC                                       ; $80DE49 |
-  SBC.B $02                                 ; $80DE4A |
+  SBC.B $1662-$1660                         ; $80DE4A |
   BEQ CODE_80DE54                           ; $80DE4C |
-  STA.B $EC                                 ; $80DE4E |
+  STA.B $174C-$1660                         ; $80DE4E |
   LDA.B #$FF                                ; $80DE50 |
-  STA.B $ED                                 ; $80DE52 |
+  STA.B $174D-$1660                         ; $80DE52 |
 
 CODE_80DE54:
-  STZ.B $02                                 ; $80DE54 |
+  STZ.B $1662-$1660                         ; $80DE54 |
   RTS                                       ; $80DE56 |
 
 
 CODE_80DE57:
-  LDA.B $06                                 ; $80DE57 |
-  STA.B $EC                                 ; $80DE59 |
+  LDA.B $1666-$1660                         ; $80DE57 |
+  STA.B $174C-$1660                         ; $80DE59 |
   LDA.B #$FF                                ; $80DE5B |
-  STA.B $ED                                 ; $80DE5D |
+  STA.B $174D-$1660                         ; $80DE5D |
   RTS                                       ; $80DE5F |
 
 
@@ -14836,31 +14836,31 @@ CODE_FN_80DE60:
   ADC.W #$00FF                              ; $80DE60 |
   SEP #$20                                  ; $80DE63 |
   XBA                                       ; $80DE65 |
-  CMP.B $88                                 ; $80DE66 |
+  CMP.B $16E8-$1660                         ; $80DE66 |
   BCS CODE_80DE85                           ; $80DE68 |
-  STA.B $B2                                 ; $80DE6A |
-  LDA.B $03                                 ; $80DE6C |
-  STA.B $B0                                 ; $80DE6E |
+  STA.B $1712-$1660                         ; $80DE6A |
+  LDA.B $1663-$1660                         ; $80DE6C |
+  STA.B $1710-$1660                         ; $80DE6E |
   JSR.W CODE_FN_80DEFF                      ; $80DE70 |
   BMI CODE_80DE85                           ; $80DE73 |
-  LDA.B $02                                 ; $80DE75 |
+  LDA.B $1662-$1660                         ; $80DE75 |
   BEQ CODE_80DE80                           ; $80DE77 |
-  INC.B $B0                                 ; $80DE79 |
+  INC.B $1710-$1660                         ; $80DE79 |
   JSR.W CODE_FN_80DEFF                      ; $80DE7B |
   BMI CODE_80DE85                           ; $80DE7E |
 
 CODE_80DE80:
-  LDA.B $16                                 ; $80DE80 |
-  STA.B $EE                                 ; $80DE82 |
+  LDA.B $1676-$1660                         ; $80DE80 |
+  STA.B $174E-$1660                         ; $80DE82 |
   RTS                                       ; $80DE84 |
 
 
 CODE_80DE85:
-  LDA.B $16                                 ; $80DE85 |
+  LDA.B $1676-$1660                         ; $80DE85 |
   SEC                                       ; $80DE87 |
-  SBC.B $12                                 ; $80DE88 |
-  STA.B $EE                                 ; $80DE8A |
-  STZ.B $12                                 ; $80DE8C |
+  SBC.B $1672-$1660                         ; $80DE88 |
+  STA.B $174E-$1660                         ; $80DE8A |
+  STZ.B $1672-$1660                         ; $80DE8C |
   RTS                                       ; $80DE8E |
 
 
@@ -14868,39 +14868,39 @@ CODE_FN_80DE8F:
   SEP #$20                                  ; $80DE8F |
   XBA                                       ; $80DE91 |
   BMI CODE_80DEAA                           ; $80DE92 |
-  STA.B $B2                                 ; $80DE94 |
-  LDA.B $03                                 ; $80DE96 |
-  STA.B $B0                                 ; $80DE98 |
+  STA.B $1712-$1660                         ; $80DE94 |
+  LDA.B $1663-$1660                         ; $80DE96 |
+  STA.B $1710-$1660                         ; $80DE98 |
   JSR.W CODE_FN_80DEFF                      ; $80DE9A |
   BMI CODE_80DEAA                           ; $80DE9D |
-  LDA.B $02                                 ; $80DE9F |
+  LDA.B $1662-$1660                         ; $80DE9F |
   BEQ CODE_80DEBC                           ; $80DEA1 |
-  INC.B $B0                                 ; $80DEA3 |
+  INC.B $1710-$1660                         ; $80DEA3 |
   JSR.W CODE_FN_80DEFF                      ; $80DEA5 |
   BPL CODE_80DEBC                           ; $80DEA8 |
 
 CODE_80DEAA:
-  INC.B $13                                 ; $80DEAA |
-  LDA.B $16                                 ; $80DEAC |
+  INC.B $1673-$1660                         ; $80DEAA |
+  LDA.B $1676-$1660                         ; $80DEAC |
 
   SEC                                       ; $80DEAE |
-  SBC.B $12                                 ; $80DEAF |
+  SBC.B $1672-$1660                         ; $80DEAF |
   BEQ CODE_80DEB9                           ; $80DEB1 |
-  STA.B $EE                                 ; $80DEB3 |
+  STA.B $174E-$1660                         ; $80DEB3 |
   LDA.B #$FF                                ; $80DEB5 |
-  STA.B $EF                                 ; $80DEB7 |
+  STA.B $174F-$1660                         ; $80DEB7 |
 
 CODE_80DEB9:
-  STZ.B $12                                 ; $80DEB9 |
+  STZ.B $1672-$1660                         ; $80DEB9 |
   RTS                                       ; $80DEBB |
 
 
 CODE_80DEBC:
-  LDA.B $16                                 ; $80DEBC |
+  LDA.B $1676-$1660                         ; $80DEBC |
 
-  STA.B $EE                                 ; $80DEBE |
+  STA.B $174E-$1660                         ; $80DEBE |
   LDA.B #$FF                                ; $80DEC0 |
-  STA.B $EF                                 ; $80DEC2 |
+  STA.B $174F-$1660                         ; $80DEC2 |
   RTS                                       ; $80DEC4 |
 
 

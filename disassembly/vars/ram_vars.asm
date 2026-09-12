@@ -16,7 +16,10 @@
 !r_text_copy_ptr_l = $7E7C66                ; Copy source pointer for an F0-FF command
 !r_text_repeat_char_l = $7E7C68             ; Repeated character for an E0-EF command
 
+!r_frame_counter = $0042                    ; Frame counter
+
 !r_demo_flag = $004C                        ; Non-zero during demo play (suppresses idle RNG updates)
+!r_demo_index = $004E                       ; Index of the demo sequence (0-4)
 
 !r_rng = $0086
 

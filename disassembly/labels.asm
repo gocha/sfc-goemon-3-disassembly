@@ -232,7 +232,6 @@ LOOSE_OP_00EBAE = $00EBAE
 LOOSE_OP_00EBAC = $00EBAC                 
 CODE_00EBAA = $00EBAA                     
 LOOSE_OP_00EBA8 = $00EBA8                 
-LOOSE_OP_008787 = $008787                 
 CODE_00EC0A = $00EC0A                     
 LOOSE_OP_00EC2C = $00EC2C                 
 LOOSE_OP_00EBE8 = $00EBE8                 

@@ -2485,7 +2485,7 @@ CODE_85909E:
 CODE_FL_8590A4:
   STZ.W $1C78                               ; $8590A4 |
   PHB                                       ; $8590A7 |
-  PEA.W LOOSE_OP_008787                     ; $8590A8 |
+  PEA.W $8787                               ; $8590A8 |
   PLB                                       ; $8590AB |
   PLB                                       ; $8590AC |
   LDA.L $7E7C74                             ; $8590AD |
@@ -2543,34 +2543,34 @@ CODE_FL_8590F7:
   STA.B $02                                 ; $859108 |
   TYX                                       ; $85910A |
   BIT.B $22,X                               ; $85910B |
-  BVC CODE_859115                           ; $85910D |
+  BVC .CODE_859115                          ; $85910D |
   JSL.L CODE_FL_86CB11                      ; $85910F |
-  BCC CODE_85912F                           ; $859113 |
+  BCC .CODE_85912F                          ; $859113 |
 
-CODE_859115:
+.CODE_859115
   LDA.B $23,X                               ; $859115 |
   LSR A                                     ; $859117 |
-  BCS CODE_85912B                           ; $859118 |
+  BCS .CODE_85912B                          ; $859118 |
   LDA.B $78                                 ; $85911A |
-  BNE CODE_85912E                           ; $85911C |
+  BNE .CODE_85912E                          ; $85911C |
   LDA.L $7E7C74                             ; $85911E |
-  BEQ CODE_85912B                           ; $859122 |
+  BEQ .CODE_85912B                          ; $859122 |
   TXA                                       ; $859124 |
   CMP.L $7E7C1A                             ; $859125 |
-  BNE CODE_85912E                           ; $859129 |
+  BNE .CODE_85912E                          ; $859129 |
 
-CODE_85912B:
+.CODE_85912B
   JML.W [$0000]                             ; $85912B |
 
-CODE_85912E:
+.CODE_85912E
   RTL                                       ; $85912E |
 
-CODE_85912F:
+.CODE_85912F
   JML.L CODE_FL_86CA36                      ; $85912F |
 
 CODE_FL_859133:
   PHB                                       ; $859133 |
-  PEA.W LOOSE_OP_008787                     ; $859134 |
+  PEA.W $8787                               ; $859134 |
   PLB                                       ; $859137 |
   PLB                                       ; $859138 |
   LDA.W $1C44                               ; $859139 |
@@ -2599,33 +2599,31 @@ CODE_859154:
 
 CODE_FL_85915F:
   PHB                                       ; $85915F |
-  PEA.W LOOSE_OP_008787                     ; $859160 |
+  PEA.W $8787                               ; $859160 |
   PLB                                       ; $859163 |
   PLB                                       ; $859164 |
   LDA.W $1C44                               ; $859165 |
-  BEQ CODE_85916D                           ; $859168 |
+  BEQ .CODE_85916D                          ; $859168 |
   STZ.W $197E                               ; $85916A |
 
-CODE_85916D:
+.CODE_85916D
   LDX.W $1B70                               ; $85916D |
 
-CODE_859170:
+.CODE_859170
   LDA.B $22,X                               ; $859170 |
   AND.W #$1000                              ; $859172 |
-  BEQ CODE_859183                           ; $859175 |
+  BEQ .CODE_859183                          ; $859175 |
   LDA.B $18,X                               ; $859177 |
-  BEQ CODE_859183                           ; $859179 |
+  BEQ .CODE_859183                          ; $859179 |
   STX.B $FC                                 ; $85917B |
   JSL.L CODE_FL_8590F7                      ; $85917D |
   LDX.B $FC                                 ; $859181 |
 
-CODE_859183:
+.CODE_859183
   LDA.B $16,X                               ; $859183 |
   TAX                                       ; $859185 |
-  BNE CODE_859170                           ; $859186 |
+  BNE .CODE_859170                          ; $859186 |
   PLB                                       ; $859188 |
-
-CODE_859189:
   RTL                                       ; $859189 |
 
 PTR24_85918A:
@@ -11709,7 +11707,7 @@ CODE_85D7E4:
 CODE_85D7FC:
   JSL.L CODE_FL_86CB11                      ; $85D7FC |
   BCC CODE_85D810                           ; $85D800 |
-  LDA.B $42                                 ; $85D802 |
+  LDA.B !r_frame_counter                    ; $85D802 |
   AND.W #$000F                              ; $85D804 |
   BNE CODE_85D810                           ; $85D807 |
   LDA.W #$0008                              ; $85D809 |

@@ -121,7 +121,7 @@ start:
   BNE .after_random                         ; $8080EB |/
 
   LDA.B !r_rng                              ; $8080ED |\
-  ADC.B $42                                 ; $8080EF | | Update RNG until next NMI
+  ADC.B !r_frame_counter                    ; $8080EF | | Update RNG until next NMI
   STA.B !r_rng                              ; $8080F1 |/
 
 .after_random
@@ -599,7 +599,7 @@ verify_region:
 
 CODE_FL_808458:
   REP #$30                                  ; $808458 |
-  INC.B $42                                 ; $80845A |
+  INC.B !r_frame_counter                    ; $80845A |
   LDA.B $3A                                 ; $80845C |
   ORA.B $3C                                 ; $80845E |
   BEQ CODE_80846D                           ; $808460 |
@@ -8136,7 +8136,7 @@ CODE_80B422:
   LDY.W #$B448                              ; $80B427 |
   STY.B $00                                 ; $80B42A |
   LDY.W #$1E38                              ; $80B42C |
-  LDA.B $42                                 ; $80B42F |
+  LDA.B !r_frame_counter                    ; $80B42F |
   LSR A                                     ; $80B431 |
   BCC CODE_80B437                           ; $80B432 |
   INY                                       ; $80B434 |
@@ -11747,7 +11747,7 @@ CODE_JL_80C896:
   STZ.B $80                                 ; $80C8A5 |
   STZ.B $86                                 ; $80C8A7 |
 
-  STZ.B $42                                 ; $80C8A9 |
+  STZ.B !r_frame_counter                    ; $80C8A9 |
 
   STZ.W $1C38                               ; $80C8AB |
   STZ.W $1FA0                               ; $80C8AE |
@@ -11772,7 +11772,7 @@ CODE_JL_80C896:
   STA.B $BE                                 ; $80C8DC |
   LDA.W #$0001                              ; $80C8DE |
   STA.W $199A                               ; $80C8E1 |
-  LDA.B $4E                                 ; $80C8E4 |
+  LDA.B !r_demo_index                       ; $80C8E4 |
   ASL A                                     ; $80C8E6 |
   ASL A                                     ; $80C8E7 |
   ASL A                                     ; $80C8E8 |
@@ -11797,7 +11797,7 @@ CODE_JL_80C896:
 
   STA.L $7002F8                             ; $80C917 |
   STA.L $70030C                             ; $80C91B |
-  LDY.B $4E                                 ; $80C91F |
+  LDY.B !r_demo_index                       ; $80C91F |
   LDA.W DATA8_818E68,Y                      ; $80C921 |
   AND.W #$00FF                              ; $80C924 |
   STA.L $700320                             ; $80C927 |
@@ -11826,48 +11826,47 @@ CODE_JL_80C896:
 CODE_FL_80C964:
   REP #$20                                  ; $80C964 |
   REP #$10                                  ; $80C966 |
-  LDA.B $42                                 ; $80C968 |
+  LDA.B !r_frame_counter                    ; $80C968 |
   AND.W #$003F                              ; $80C96A |
   TAX                                       ; $80C96D |
   LDA.W DATA8_818E6D,X                      ; $80C96E |
-  STA.B $86                                 ; $80C971 |
+  STA.B !r_rng                              ; $80C971 |
   LDA.B !r_room_mode                        ; $80C973 |
   ASL A                                     ; $80C975 |
   TAY                                       ; $80C976 |
   LDA.B $7E                                 ; $80C977 |
   CMP.W #$000C                              ; $80C979 |
-  BEQ CODE_80C983                           ; $80C97C |
+  BEQ .CODE_80C983                          ; $80C97C |
 
   CMP.W DATA8_818E5E,Y                      ; $80C97E |
-  BNE CODE_80C9EB                           ; $80C981 |
+  BNE CODE_FL_80C99E_ret                    ; $80C981 |
 
-CODE_80C983:
+.CODE_80C983
   LDA.B $36                                 ; $80C983 |
   BIT.W #$1000                              ; $80C985 |
-  BEQ CODE_80C990                           ; $80C988 |
+  BEQ .CODE_80C990                          ; $80C988 |
   LDA.W #$0001                              ; $80C98A |
   STA.W $1936                               ; $80C98D |
 
-CODE_80C990:
+.CODE_80C990
   LDA.W $19C8                               ; $80C990 |
-  BEQ CODE_80C996                           ; $80C993 |
+  BEQ .CODE_80C996                          ; $80C993 |
   RTL                                       ; $80C995 |
 
 
-CODE_80C996:
+.CODE_80C996
   LDX.W #$0000                              ; $80C996 |
-
   JSL.L CODE_FL_80C99E                      ; $80C999 |
   RTL                                       ; $80C99D |
 
 
 CODE_FL_80C99E:
   LDA.W $1936                               ; $80C99E |
-  BNE CODE_80C9F0                           ; $80C9A1 |
-  LDA.B $4E                                 ; $80C9A3 |
+  BNE .CODE_80C9F0                          ; $80C9A1 |
+  LDA.B !r_demo_index                       ; $80C9A3 |
   ASL A                                     ; $80C9A5 |
   CLC                                       ; $80C9A6 |
-  ADC.B $4E                                 ; $80C9A7 |
+  ADC.B !r_demo_index                       ; $80C9A7 |
   TAY                                       ; $80C9A9 |
   LDA.W PTR24_818E27,Y                      ; $80C9AA |
   STA.B $00                                 ; $80C9AD |
@@ -11875,77 +11874,77 @@ CODE_FL_80C99E:
   AND.W #$00FF                              ; $80C9B2 |
   STA.B $02                                 ; $80C9B5 |
   LDY.B $70,X                               ; $80C9B7 |
-  BEQ CODE_80C9BF                           ; $80C9B9 |
+  BEQ .CODE_80C9BF                          ; $80C9B9 |
   DEC.B $72,X                               ; $80C9BB |
-  BPL CODE_80C9EC                           ; $80C9BD |
+  BPL .CODE_80C9EC                          ; $80C9BD |
 
-CODE_80C9BF:
+.CODE_80C9BF
   LDA.B [$00],Y                             ; $80C9BF |
   AND.W #$00FF                              ; $80C9C1 |
   CMP.W #$00FF                              ; $80C9C4 |
-  BEQ CODE_80C9F0                           ; $80C9C7 |
+  BEQ .CODE_80C9F0                          ; $80C9C7 |
   CPY.W #$0000                              ; $80C9C9 |
-  BNE CODE_80C9D2                           ; $80C9CC |
+  BNE .CODE_80C9D2                          ; $80C9CC |
   DEC A                                     ; $80C9CE |
   DEC A                                     ; $80C9CF |
-  BRA CODE_80C9D8                           ; $80C9D0 |
+  BRA .CODE_80C9D8                          ; $80C9D0 |
 
 
-CODE_80C9D2:
+.CODE_80C9D2:
   CMP.W #$00FE                              ; $80C9D2 |
-  BNE CODE_80C9D8                           ; $80C9D5 |
+  BNE .CODE_80C9D8                          ; $80C9D5 |
   DEC A                                     ; $80C9D7 |
 
-CODE_80C9D8:
+.CODE_80C9D8
   STA.B $72,X                               ; $80C9D8 |
   INC.B $70,X                               ; $80C9DA |
   INC.B $70,X                               ; $80C9DC |
 
-CODE_80C9DE:
+.CODE_80C9DE
   LDA.B [$00],Y                             ; $80C9DE |
   AND.W #$FF00                              ; $80C9E0 |
   STA.B $28,X                               ; $80C9E3 |
   STZ.B $30,X                               ; $80C9E5 |
   JSL.L CODE_FL_80CA1A                      ; $80C9E7 |
 
-CODE_80C9EB:
+.ret
   RTL                                       ; $80C9EB |
 
 
-CODE_80C9EC:
+.CODE_80C9EC
   DEY                                       ; $80C9EC |
   DEY                                       ; $80C9ED |
-  BRA CODE_80C9DE                           ; $80C9EE |
+  BRA .CODE_80C9DE                          ; $80C9EE |
 
 
-CODE_80C9F0:
+.CODE_80C9F0
   LDA.W $1FA0                               ; $80C9F0 |
-  BEQ CODE_80CA05                           ; $80C9F3 |
+  BEQ .CODE_80CA05                          ; $80C9F3 |
   CMP.W #$000F                              ; $80C9F5 |
-  BNE CODE_80CA01                           ; $80C9F8 |
+  BNE .CODE_80CA01                          ; $80C9F8 |
   LDA.W #$00EB                              ; $80C9FA |
   JSL.L push_sound_queue                    ; $80C9FD |
 
-CODE_80CA01:
+.CODE_80CA01
   DEC.W $1FA0                               ; $80CA01 |
   RTL                                       ; $80CA04 |
 
 
-CODE_80CA05:
+.CODE_80CA05
   LDA.W #$0001                              ; $80CA05 |
   CMP.B $3E                                 ; $80CA08 |
-  BEQ CODE_80CA19                           ; $80CA0A |
+  BEQ .CODE_80CA19                          ; $80CA0A |
   STA.B $3E                                 ; $80CA0C |
   LDA.B $4E                                 ; $80CA0E |
   INC A                                     ; $80CA10 |
   CMP.W #$0005                              ; $80CA11 |
-  BNE CODE_80CA17                           ; $80CA14 |
+  BNE .CODE_80CA17                          ; $80CA14 |
   TDC                                       ; $80CA16 |
 
-CODE_80CA17:
-  STA.B $4E                                 ; $80CA17 |
+.CODE_80CA17
+  STA.B !r_demo_index                       ; $80CA17 |
 
-CODE_80CA19:
+.CODE_80CA19
   RTL                                       ; $80CA19 |
 
 

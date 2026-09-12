@@ -14638,7 +14638,7 @@ CODE_FL_8DEA6D:
   PLB                                       ; $8DEA73 |
   STZ.W $7D78                               ; $8DEA74 |
   STZ.W $7D7A                               ; $8DEA77 |
-  LDA.B $42                                 ; $8DEA7A |
+  LDA.B !r_frame_counter                    ; $8DEA7A |
   LSR A                                     ; $8DEA7C |
   BCS CODE_8DEA99                           ; $8DEA7D |
   LDX.W #$7D00                              ; $8DEA7F |

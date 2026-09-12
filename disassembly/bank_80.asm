@@ -6728,7 +6728,7 @@ CODE_80AAAA:
 CODE_80AAB2:
   CPY.W #$0301                              ; $80AAB2 |
   BCS CODE_80AAE0                           ; $80AAB5 |
-  LDX.W #$00AA                              ; $80AAB7 |
+  LDX.W #$00AA                              ; $80AAB7 | Swim tube (ukiwa)
   SEC                                       ; $80AABA |
   TYA                                       ; $80AABB |
   SBC.W #$0209                              ; $80AABC |
@@ -11741,27 +11741,28 @@ CODE_JL_80C896:
   REP #$20                                  ; $80C896 |
   REP #$10                                  ; $80C898 |
   JSL.L CODE_FL_808613                      ; $80C89A |
+
   LDA.W #$0000                              ; $80C89E |
   STA.B $5A                                 ; $80C8A1 |
   STZ.B $7E                                 ; $80C8A3 |
   STZ.B $80                                 ; $80C8A5 |
-  STZ.B $86                                 ; $80C8A7 |
-
+  STZ.B !r_rng                              ; $80C8A7 |
   STZ.B !r_frame_counter                    ; $80C8A9 |
-
   STZ.W $1C38                               ; $80C8AB |
   STZ.W $1FA0                               ; $80C8AE |
   STZ.W $1936                               ; $80C8B1 |
-  REP #$30                                  ; $80C8B4 |
-  PHB                                       ; $80C8B6 |
-  LDA.W #$0000                              ; $80C8B7 |
-  STA.L $700200                             ; $80C8BA |
-  LDA.W #$06F3                              ; $80C8BE |
-  LDX.W #$0201                              ; $80C8C1 |
-  TXY                                       ; $80C8C4 |
-  INY                                       ; $80C8C5 |
-  MVN $70,$70                               ; $80C8C6 |
-  PLB                                       ; $80C8C9 |
+
+  REP #$30                                  ; $80C8B4 |\
+  PHB                                       ; $80C8B6 | |
+  LDA.W #$0000                              ; $80C8B7 | |
+  STA.L $700200                             ; $80C8BA | |
+  LDA.W #$06F3                              ; $80C8BE | | Clear $700200 - $7008F5
+  LDX.W #$0201                              ; $80C8C1 | |
+  TXY                                       ; $80C8C4 | |
+  INY                                       ; $80C8C5 | |
+  MVN $70,$70                               ; $80C8C6 | |
+  PLB                                       ; $80C8C9 |/
+
   LDA.W #$0003                              ; $80C8CA |
   STA.B $B8                                 ; $80C8CD |
   LDA.W #$000A                              ; $80C8CF |
@@ -11772,11 +11773,13 @@ CODE_JL_80C896:
   STA.B $BE                                 ; $80C8DC |
   LDA.W #$0001                              ; $80C8DE |
   STA.W $199A                               ; $80C8E1 |
+
   LDA.B !r_demo_index                       ; $80C8E4 |
   ASL A                                     ; $80C8E6 |
   ASL A                                     ; $80C8E7 |
   ASL A                                     ; $80C8E8 |
   TAY                                       ; $80C8E9 |
+
   LDA.W DATA8_818E36,Y                      ; $80C8EA |
   STA.B !r_room_id                          ; $80C8ED |
   STA.B $DA                                 ; $80C8EF |
@@ -11784,42 +11787,51 @@ CODE_JL_80C896:
   LDA.W DATA8_818E36+2,Y                    ; $80C8F1 |
   AND.W #$00FF                              ; $80C8F4 |
   STA.B !r_room_mode                        ; $80C8F7 |
+
   LDA.W #$0080                              ; $80C8F9 |
   STA.W $195A                               ; $80C8FC |
+
   LDA.W DATA8_818E36+3,Y                    ; $80C8FF |
   AND.W #$00FF                              ; $80C902 |
   STA.W $195C                               ; $80C905 |
+
   LDA.W DATA8_818E36+4,Y                    ; $80C908 |
   STA.W $1756                               ; $80C90B |
+
   LDA.W DATA8_818E36+6,Y                    ; $80C90E |
   STA.W $1758                               ; $80C911 |
-  LDA.W #$0001                              ; $80C914 |
 
-  STA.L $7002F8                             ; $80C917 |
-  STA.L $70030C                             ; $80C91B |
+  LDA.W #$0001                              ; $80C914 |
+  STA.L $7002F8                             ; $80C917 | Set Goemon availability
+  STA.L $70030C                             ; $80C91B | Set Ebisumaru availability
+
   LDY.B !r_demo_index                       ; $80C91F |
   LDA.W DATA8_818E68,Y                      ; $80C921 |
   AND.W #$00FF                              ; $80C924 |
-  STA.L $700320                             ; $80C927 |
-  STA.L $700334                             ; $80C92B |
-  LDA.W #$0000                              ; $80C92F |
-  STA.L $7002FA                             ; $80C932 |
-  STA.L $70030E                             ; $80C936 |
-  LDA.W #$0001                              ; $80C93A |
+  STA.L $700320                             ; $80C927 | Set Sasuke availability
+  STA.L $700334                             ; $80C92B | Set Yae availability
 
-  STA.L $7002FC                             ; $80C93D |
-  STA.L $700310                             ; $80C941 |
+  LDA.W #$0000                              ; $80C92F |
+  STA.L $7002FA                             ; $80C932 | Set Goemon's main weapon
+  STA.L $70030E                             ; $80C936 | Set Ebisumaru's main weapon
+
+  LDA.W #$0001                              ; $80C93A |
+  STA.L $7002FC                             ; $80C93D | Set Goemon's sub weapon availability
+  STA.L $700310                             ; $80C941 | Set Ebisumaru's sub weapon availability
+
   LDA.W #$0001                              ; $80C945 |
-  STA.L $7002FE                             ; $80C948 |
-  STA.L $700312                             ; $80C94C |
+  STA.L $7002FE                             ; $80C948 | Set Goemon's charged attack availability
+  STA.L $700312                             ; $80C94C | Set Ebisumaru's charged attack availability
+
   JSL.L CODE_FL_838004                      ; $80C950 |
+
   LDA.W #$0000                              ; $80C954 |
   STA.W $195E                               ; $80C957 |
   STZ.B $70                                 ; $80C95A |
   STZ.B $72                                 ; $80C95C |
+
   LDA.W #$0001                              ; $80C95E |
   STA.B !r_demo_flag                        ; $80C961 |
-
   RTL                                       ; $80C963 |
 
 

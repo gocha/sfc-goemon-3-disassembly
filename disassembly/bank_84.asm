@@ -674,25 +674,25 @@ CODE_84842F:
   STA.B $B8                                 ; $8484C3 |
   JSL.L CODE_FL_96FB63                      ; $8484C5 |
   TDC                                       ; $8484C9 |
-  STA.L $7002A0                             ; $8484CA |
-  STA.L $7002A2                             ; $8484CE |
-  STA.L $7002A4                             ; $8484D2 |
-  STA.L $7002FA                             ; $8484D6 |
-  STA.L $7002FC                             ; $8484DA |
-  STA.L $7002FE                             ; $8484DE |
-  STA.L $700300                             ; $8484E2 |
-  STA.L $70030E                             ; $8484E6 |
-  STA.L $700310                             ; $8484EA |
-  STA.L $700312                             ; $8484EE |
-  STA.L $700314                             ; $8484F2 |
-  STA.L $70030E                             ; $8484F6 |
-  STA.L $700310                             ; $8484FA |
-  STA.L $700312                             ; $8484FE |
-  STA.L $700314                             ; $848502 |
-  STA.L $700336                             ; $848506 |
-  STA.L $700338                             ; $84850A |
-  STA.L $70033A                             ; $84850E |
-  STA.L $70033C                             ; $848512 |
+  STA.L $7002A0                             ; $8484CA | Set riceballs (onirigi)
+  STA.L $7002A2                             ; $8484CE | Set helmets (kabuto)
+  STA.L $7002A4                             ; $8484D2 | Set armor (yoroi)
+  STA.L $7002FA                             ; $8484D6 | Set Goemon's main weapon
+  STA.L $7002FC                             ; $8484DA | Set Goemon's sub weapon availability
+  STA.L $7002FE                             ; $8484DE | Set Goemon's charged attack availability
+  STA.L $700300                             ; $8484E2 | Set Goemon's skill availability
+  STA.L $70030E                             ; $8484E6 | Set Ebisumaru's main weapon
+  STA.L $700310                             ; $8484EA | Set Ebisumaru's sub weapon availability
+  STA.L $700312                             ; $8484EE | Set Ebisumaru's charged attack availability
+  STA.L $700314                             ; $8484F2 | Set Ebisumaru's skill availability
+  STA.L $70030E                             ; $8484F6 |\
+  STA.L $700310                             ; $8484FA | | BUG?
+  STA.L $700312                             ; $8484FE | | Set Ebisumaru's status again
+  STA.L $700314                             ; $848502 |/
+  STA.L $700336                             ; $848506 | Set Yae's main weapon
+  STA.L $700338                             ; $84850A | Set Yae's sub weapon availability
+  STA.L $70033A                             ; $84850E | Set Yae's charged attack availability
+  STA.L $70033C                             ; $848512 | Set Yae's skill availability
 
 CODE_JP_848516:
   PLY                                       ; $848516 |

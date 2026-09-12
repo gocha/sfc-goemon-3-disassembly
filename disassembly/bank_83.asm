@@ -6,37 +6,37 @@ CODE_FL_838000:
 CODE_FL_838004:
   LDA.L $7002F8                             ; $838004 |
   BIT.W #$0080                              ; $838008 |
-  BNE CODE_83801F                           ; $83800B |
+  BNE .CODE_83801F                          ; $83800B |
   LDA.W #$0001                              ; $83800D |
   STA.W $0418                               ; $838010 |
   LDA.B $5A                                 ; $838013 |
-  BEQ CODE_83802F                           ; $838015 |
+  BEQ .CODE_83802F                          ; $838015 |
   LDA.W #$0002                              ; $838017 |
   STA.W $04D8                               ; $83801A |
-  BRA CODE_83802F                           ; $83801D |
+  BRA .CODE_83802F                          ; $83801D |
 
-CODE_83801F:
+.CODE_83801F
   LDA.W #$0003                              ; $83801F |
   STA.W $0418                               ; $838022 |
   LDA.B $5A                                 ; $838025 |
-  BEQ CODE_83802F                           ; $838027 |
+  BEQ .CODE_83802F                          ; $838027 |
   LDA.W #$0004                              ; $838029 |
   STA.W $04D8                               ; $83802C |
 
-CODE_83802F:
+.CODE_83802F
   LDX.W #$0400                              ; $83802F |
   JSL.L CODE_FL_83D3B8                      ; $838032 |
   LDX.W #$04C0                              ; $838036 |
   LDA.B $18,X                               ; $838039 |
-  BEQ CODE_838043                           ; $83803B |
+  BEQ .CODE_838043                          ; $83803B |
   JSL.L CODE_FL_83D3B8                      ; $83803D |
-  BRA CODE_83804A                           ; $838041 |
+  BRA .CODE_83804A                          ; $838041 |
 
-CODE_838043:
+.CODE_838043
   LDA.W #$0002                              ; $838043 |
   JSL.L CODE_FL_838260                      ; $838046 |
 
-CODE_83804A:
+.CODE_83804A
   LDA.W #$FFFF                              ; $83804A |
   STA.W $197C                               ; $83804D |
   RTL                                       ; $838050 |

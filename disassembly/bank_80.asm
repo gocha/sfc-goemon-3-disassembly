@@ -6009,7 +6009,7 @@ CODE_80A6D4:
   TYA                                       ; $80A6D9 |
   AND.W #$0007                              ; $80A6DA |
   TAX                                       ; $80A6DD |
-  LDA.L DATA8_80A6EF,X                      ; $80A6DE |
+  LDA.L bit_masks,X                         ; $80A6DE |
   PLX                                       ; $80A6E2 |
   AND.L $700210,X                           ; $80A6E3 |
   AND.W #$00FF                              ; $80A6E7 |
@@ -6021,7 +6021,7 @@ CODE_80A6EE:
   RTS                                       ; $80A6EE |
 
 
-DATA8_80A6EF:
+bit_masks:
   db $01,$02,$04,$08,$10,$20,$40,$80        ; $80A6EF |
 
 CODE_80A6F7:
@@ -6558,7 +6558,7 @@ CODE_80A9AE:
   AND.W #$0007                              ; $80A9B4 |
   TAX                                       ; $80A9B7 |
   SEP #$20                                  ; $80A9B8 |
-  LDA.L DATA8_80A6EF,X                      ; $80A9BA |
+  LDA.L bit_masks,X                         ; $80A9BA |
   PLX                                       ; $80A9BE |
   ORA.L $700210,X                           ; $80A9BF |
   STA.L $700210,X                           ; $80A9C3 |
@@ -7007,7 +7007,7 @@ CODE_80AC3E:
   AND.W #$0007                              ; $80AC44 |
   TAX                                       ; $80AC47 |
   SEP #$20                                  ; $80AC48 |
-  LDA.L DATA8_80A6EF,X                      ; $80AC4A |
+  LDA.L bit_masks,X                         ; $80AC4A |
   PLX                                       ; $80AC4E |
   EOR.B #$FF                                ; $80AC4F |
   AND.L $700210,X                           ; $80AC51 |

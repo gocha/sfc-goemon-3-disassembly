@@ -444,7 +444,7 @@ CODE_97FF66:
   PLX                                       ; $97FF6D |
   RTL                                       ; $97FF6E |
 
-CODE_97FF6F:
+CODE_FL_97FF6F:
   LDA.B $1A,X                               ; $97FF6F |
   PHX                                       ; $97FF71 |
   ASL A                                     ; $97FF72 |

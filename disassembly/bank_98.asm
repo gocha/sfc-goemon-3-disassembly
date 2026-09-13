@@ -2,7 +2,7 @@ org $988000
 
 incbin ../assets/bank_98.bin:$0000..$7E80   ; $988000 |
 
-CODE_98FE80:
+CODE_FL_98FE80:
   JSL.L CODE_FL_97FC80                      ; $98FE80 |
   LDA.B $1A,X                               ; $98FE84 |
   PHX                                       ; $98FE86 |

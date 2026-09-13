@@ -2,7 +2,7 @@ org $968000
 
 incbin ../assets/bank_96.bin:$0000..$7880   ; $968000 |
 
-CODE_96F880:
+CODE_FL_96F880:
   JSL.L CODE_FL_86C3A3                      ; $96F880 |
   LDA.B $1A,X                               ; $96F884 |
   PHX                                       ; $96F886 |
@@ -241,7 +241,7 @@ CODE_JL_96FA3A:
   STZ.B $E4                                 ; $96FA47 |
   BRA CODE_96FA37                           ; $96FA49 |
 
-CODE_96FA4B:
+CODE_FL_96FA4B:
   LDA.W #$0100                              ; $96FA4B |
   STA.B $22,X                               ; $96FA4E |
   JSL.L CODE_FL_8CFD8F                      ; $96FA50 |
@@ -265,7 +265,7 @@ CODE_96FA69:
 CODE_96FA75:
   JML.L CODE_FL_86CA57                      ; $96FA75 |
 
-CODE_96FA79:
+CODE_FL_96FA79:
   LDY.B $3C,X                               ; $96FA79 |
   LDA.W $001A,Y                             ; $96FA7B |
   CMP.W #$000E                              ; $96FA7E |

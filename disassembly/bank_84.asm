@@ -9756,7 +9756,7 @@ CODE_FL_84CF9D:
 CODE_84CFA9:
   RTL                                       ; $84CFA9 |
 
-CODE_84CFAA:
+CODE_FL_84CFAA:
   LDY.B $3A,X                               ; $84CFAA |
   LDA.W $00B6,Y                             ; $84CFAC |
   BEQ CODE_84CFDC                           ; $84CFAF |
@@ -11725,7 +11725,7 @@ CODE_84DE21:
 CODE_84DE2C:
   RTL                                       ; $84DE2C |
 
-CODE_84DE2D:
+CODE_FL_84DE2D:
   LDA.W #$0580                              ; $84DE2D |
   JSL.L CODE_FL_8CF9D2                      ; $84DE30 |
   BCS CODE_84DE45                           ; $84DE34 |
@@ -11738,7 +11738,7 @@ CODE_84DE45:
   JSL.L CODE_FL_84F1D5                      ; $84DE45 |
   JML.L CODE_FL_86CA36                      ; $84DE49 |
 
-CODE_84DE4D:
+CODE_FL_84DE4D:
   JSL.L CODE_FL_8CFD8F                      ; $84DE4D |
   PHX                                       ; $84DE51 |
   ASL A                                     ; $84DE52 |
@@ -11874,7 +11874,7 @@ CODE_84DF27:
   BMI CODE_84DF27                           ; $84DF35 |
   RTS                                       ; $84DF37 |
 
-CODE_84DF38:
+CODE_FL_84DF38:
   JSL.L CODE_FL_8CFD8F                      ; $84DF38 |
   PHX                                       ; $84DF3C |
   ASL A                                     ; $84DF3D |
@@ -13235,7 +13235,7 @@ CODE_84EA84:
   CLC                                       ; $84EA84 |
   RTL                                       ; $84EA85 |
 
-CODE_84EA86:
+CODE_FL_84EA86:
   JSL.L CODE_FL_86C3F8                      ; $84EA86 |
   PHX                                       ; $84EA8A |
   ASL A                                     ; $84EA8B |

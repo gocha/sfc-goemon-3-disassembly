@@ -2627,564 +2627,564 @@ CODE_FL_85915F:
   RTL                                       ; $859189 |
 
 PTR24_85918A:
-  dl CODE_85E14A                            ; $85918A |
-  dl CODE_98FE80                            ; $85918D |
-  dl CODE_85B601                            ; $859190 |
-  dl CODE_85B716                            ; $859193 |
-  dl CODE_85B79C                            ; $859196 |
-  dl CODE_85B897                            ; $859199 |
-  dl CODE_85B8EC                            ; $85919C |
-  dl CODE_85B938                            ; $85919F |
-  dl CODE_85B97D                            ; $8591A2 |
-  dl CODE_85B9B3                            ; $8591A5 |
-  dl CODE_85B9F1                            ; $8591A8 |
-  dl CODE_85BA52                            ; $8591AB |
-  dl CODE_85BAF4                            ; $8591AE |
-  dl CODE_85BB6E                            ; $8591B1 |
-  dl CODE_85BBB2                            ; $8591B4 |
-  dl CODE_85BBEF                            ; $8591B7 |
-  dl CODE_85BC89                            ; $8591BA |
-  dl CODE_85BC84                            ; $8591BD |
-  dl CODE_85B556                            ; $8591C0 |
-  dl CODE_84CFAA                            ; $8591C3 |
-  dl CODE_85B579                            ; $8591C6 |
-  dl CODE_85E2E6                            ; $8591C9 |
-  dl CODE_85E4AC                            ; $8591CC |
-  dl CODE_85B584                            ; $8591CF |
-  dl CODE_85E3CE                            ; $8591D2 |
-  dl CODE_85E1BE                            ; $8591D5 |
-  dl CODE_85E1D9                            ; $8591D8 |
-  dl CODE_85E791                            ; $8591DB |
-  dl CODE_85B5CC                            ; $8591DE |
-  dl CODE_85B598                            ; $8591E1 |
-  dl CODE_85B5F4                            ; $8591E4 |
-  dl CODE_8DB18C                            ; $8591E7 |
-  dl CODE_85BD0F                            ; $8591EA |
-  dl CODE_85E266                            ; $8591ED |
-  dl CODE_85E128                            ; $8591F0 |
-  dl CODE_85EC50                            ; $8591F3 |
-  dl CODE_85ECC5                            ; $8591F6 |
-  dl CODE_8AAEDF                            ; $8591F9 |
-  dl CODE_85ECE0                            ; $8591FC |
-  dl CODE_85F066                            ; $8591FF |
-  dl CODE_85F1CD                            ; $859202 |
-  dl CODE_85F0AC                            ; $859205 |
-  dl CODE_85ED35                            ; $859208 |
-  dl CODE_85EDF4                            ; $85920B |
-  dl CODE_85EA6A                            ; $85920E |
-  dl CODE_85EB96                            ; $859211 |
-  dl CODE_85EBEC                            ; $859214 |
-  dl CODE_85EC23                            ; $859217 |
-  dl CODE_8BFFA9                            ; $85921A |
-  dl CODE_85CBF1                            ; $85921D |
-  dl CODE_83FF27                            ; $859220 |
-  dl CODE_83FF7E                            ; $859223 |
+  dl CODE_FL_85E14A                         ; $85918A |
+  dl CODE_FL_98FE80                         ; $85918D |
+  dl CODE_FL_85B601                         ; $859190 |
+  dl CODE_FL_85B716                         ; $859193 |
+  dl CODE_FL_85B79C                         ; $859196 |
+  dl CODE_FL_85B897                         ; $859199 |
+  dl CODE_FL_85B8EC                         ; $85919C |
+  dl CODE_FL_85B938                         ; $85919F |
+  dl CODE_FL_85B97D                         ; $8591A2 |
+  dl CODE_FL_85B9B3                         ; $8591A5 |
+  dl CODE_FL_85B9F1                         ; $8591A8 |
+  dl CODE_FL_85BA52                         ; $8591AB |
+  dl CODE_FL_85BAF4                         ; $8591AE |
+  dl CODE_FL_85BB6E                         ; $8591B1 |
+  dl CODE_FL_85BBB2                         ; $8591B4 |
+  dl CODE_FL_85BBEF                         ; $8591B7 |
+  dl CODE_FL_85BC89                         ; $8591BA |
+  dl CODE_FL_85BC84                         ; $8591BD |
+  dl CODE_FL_85B556                         ; $8591C0 |
+  dl CODE_FL_84CFAA                         ; $8591C3 |
+  dl CODE_FL_85B579                         ; $8591C6 |
+  dl CODE_FL_85E2E6                         ; $8591C9 |
+  dl CODE_FL_85E4AC                         ; $8591CC |
+  dl CODE_FL_85B584                         ; $8591CF |
+  dl CODE_FL_85E3CE                         ; $8591D2 |
+  dl CODE_FL_85E1BE                         ; $8591D5 |
+  dl CODE_FL_85E1D9                         ; $8591D8 |
+  dl CODE_FL_85E791                         ; $8591DB |
+  dl CODE_FL_85B5CC                         ; $8591DE |
+  dl CODE_FL_85B598                         ; $8591E1 |
+  dl CODE_FL_85B5F4                         ; $8591E4 |
+  dl CODE_FL_8DB18C                         ; $8591E7 |
+  dl CODE_FL_85BD0F                         ; $8591EA |
+  dl CODE_FL_85E266                         ; $8591ED |
+  dl CODE_FL_85E128                         ; $8591F0 |
+  dl CODE_FL_85EC50                         ; $8591F3 |
+  dl CODE_FL_85ECC5                         ; $8591F6 |
+  dl CODE_FL_8AAEDF                         ; $8591F9 |
+  dl CODE_FL_85ECE0                         ; $8591FC |
+  dl CODE_FL_85F066                         ; $8591FF |
+  dl CODE_FL_85F1CD                         ; $859202 |
+  dl CODE_FL_85F0AC                         ; $859205 |
+  dl CODE_FL_85ED35                         ; $859208 |
+  dl CODE_FL_85EDF4                         ; $85920B |
+  dl CODE_FL_85EA6A                         ; $85920E |
+  dl CODE_FL_85EB96                         ; $859211 |
+  dl CODE_FL_85EBEC                         ; $859214 |
+  dl CODE_FL_85EC23                         ; $859217 |
+  dl CODE_FL_8BFFA9                         ; $85921A |
+  dl CODE_FL_85CBF1                         ; $85921D |
+  dl CODE_FL_83FF27                         ; $859220 |
+  dl CODE_FL_83FF7E                         ; $859223 |
   dl EMPTY_83FFB5                           ; $859226 |
-  dl CODE_85EB45                            ; $859229 |
-  dl CODE_83FED9                            ; $85922C |
-  dl CODE_85EA6A                            ; $85922F |
-  dl CODE_85F213                            ; $859232 |
-  dl CODE_85EAC3                            ; $859235 |
-  dl CODE_85F272                            ; $859238 |
-  dl CODE_8DB455                            ; $85923B |
-  dl CODE_85BEC7                            ; $85923E |
-  dl CODE_8DB3EC                            ; $859241 |
-  dl CODE_86AA13                            ; $859244 |
-  dl CODE_86AB2F                            ; $859247 |
-  dl CODE_86ABD5                            ; $85924A |
-  dl CODE_8DE77E                            ; $85924D |
-  dl CODE_86AC9E                            ; $859250 |
-  dl CODE_86AD6A                            ; $859253 |
-  dl CODE_86AD99                            ; $859256 |
-  dl CODE_86AE49                            ; $859259 |
-  dl CODE_86B15C                            ; $85925C |
-  dl CODE_86B2DE                            ; $85925F |
-  dl CODE_86B4E2                            ; $859262 |
-  dl CODE_86B56D                            ; $859265 |
-  dl CODE_86B704                            ; $859268 |
-  dl CODE_85C28C                            ; $85926B |
-  dl CODE_85F44F                            ; $85926E |
-  dl CODE_85F401                            ; $859271 |
-  dl CODE_8DB546                            ; $859274 |
-  dl CODE_85D8CB                            ; $859277 |
-  dl CODE_86B7D7                            ; $85927A |
-  dl CODE_86B844                            ; $85927D |
-  dl CODE_85D968                            ; $859280 |
-  dl CODE_8AAF2F                            ; $859283 |
-  dl CODE_86B3FF                            ; $859286 |
-  dl CODE_8DABDF                            ; $859289 |
-  dl CODE_85D301                            ; $85928C |
-  dl CODE_85D397                            ; $85928F |
-  dl CODE_86AECE                            ; $859292 |
-  dl CODE_85D6CC                            ; $859295 |
-  dl CODE_86B8B5                            ; $859298 |
-  dl CODE_86B8B6                            ; $85929B |
-  dl CODE_85C82E                            ; $85929E |
-  dl CODE_85F4F4                            ; $8592A1 |
-  dl CODE_86B92C                            ; $8592A4 |
-  dl CODE_85BEF4                            ; $8592A7 |
-  dl CODE_86DBBE                            ; $8592AA |
-  dl CODE_86DDB3                            ; $8592AD |
-  dl CODE_86DEFE                            ; $8592B0 |
-  dl CODE_86E070                            ; $8592B3 |
-  dl CODE_86E136                            ; $8592B6 |
-  dl CODE_86E271                            ; $8592B9 |
-  dl CODE_86E38F                            ; $8592BC |
-  dl CODE_86E60B                            ; $8592BF |
-  dl CODE_86B487                            ; $8592C2 |
-  dl CODE_85E72B                            ; $8592C5 |
-  dl CODE_8BBE36                            ; $8592C8 |
-  dl CODE_JL_85F5D3                         ; $8592CB |
-  dl CODE_86BCF2                            ; $8592CE |
-  dl CODE_86DEC6                            ; $8592D1 |
-  dl CODE_8BC5A9                            ; $8592D4 |
-  dl CODE_8BC7C7                            ; $8592D7 |
-  dl CODE_8BC963                            ; $8592DA |
-  dl CODE_86DCC5                            ; $8592DD |
-  dl CODE_8DA627                            ; $8592E0 |
-  dl CODE_86E5E5                            ; $8592E3 |
-  dl CODE_8BC9DB                            ; $8592E6 |
-  dl CODE_86BE2D                            ; $8592E9 |
-  dl CODE_86BE9B                            ; $8592EC |
-  dl CODE_86DFCE                            ; $8592EF |
-  dl CODE_86BFD2                            ; $8592F2 |
-  dl CODE_86C09C                            ; $8592F5 |
-  dl CODE_86E1EF                            ; $8592F8 |
-  dl CODE_86E6A5                            ; $8592FB |
-  dl CODE_86F19B                            ; $8592FE |
-  dl CODE_86BDFA                            ; $859301 |
-  dl CODE_86E8D3                            ; $859304 |
-  dl CODE_85F5C5                            ; $859307 |
-  dl CODE_86EA0C                            ; $85930A |
-  dl CODE_85E09A                            ; $85930D |
-  dl CODE_86B012                            ; $859310 |
-  dl CODE_85BD77                            ; $859313 |
-  dl CODE_86EBC7                            ; $859316 |
-  dl CODE_859C90                            ; $859319 |
-  dl CODE_86EF1A                            ; $85931C |
-  dl CODE_859CD3                            ; $85931F |
-  dl CODE_86B0BF                            ; $859322 |
-  dl CODE_859D14                            ; $859325 |
-  dl CODE_86B618                            ; $859328 |
-  dl CODE_86B61D                            ; $85932B |
-  dl CODE_86B622                            ; $85932E |
-  dl CODE_86B627                            ; $859331 |
-  dl CODE_86B62C                            ; $859334 |
-  dl CODE_86B631                            ; $859337 |
-  dl CODE_86B636                            ; $85933A |
-  dl CODE_86B63B                            ; $85933D |
-  dl CODE_8DA651                            ; $859340 |
-  dl CODE_86B6B4                            ; $859343 |
-  dl CODE_86EF3F                            ; $859346 |
-  dl CODE_86F04C                            ; $859349 |
-  dl CODE_859F72                            ; $85934C |
-  dl CODE_8DE78C                            ; $85934F |
-  dl CODE_85BF01                            ; $859352 |
-  dl CODE_85BF88                            ; $859355 |
-  dl CODE_85A028                            ; $859358 |
-  dl CODE_85C0D4                            ; $85935B |
-  dl CODE_8CFF30                            ; $85935E |
-  dl CODE_8C8000                            ; $859361 |
-  dl CODE_8DD7B4                            ; $859364 |
-  dl CODE_85A16A                            ; $859367 |
-  dl CODE_8DB59A                            ; $85936A |
-  dl CODE_85A2D7                            ; $85936D |
-  dl CODE_8BCAEA                            ; $859370 |
-  dl CODE_85BDD3                            ; $859373 |
-  dl CODE_8BCFC7                            ; $859376 |
-  dl CODE_85A1EA                            ; $859379 |
-  dl CODE_8BD0A7                            ; $85937C |
-  dl CODE_8BD1F0                            ; $85937F |
-  dl CODE_8C8A95                            ; $859382 |
-  dl CODE_85A3A7                            ; $859385 |
-  dl CODE_8C8AC6                            ; $859388 |
-  dl CODE_8C8C98                            ; $85938B |
-  dl CODE_85A3FE                            ; $85938E |
-  dl CODE_85F64B                            ; $859391 |
-  dl CODE_85F6DA                            ; $859394 |
-  dl CODE_8C8C61                            ; $859397 |
-  dl CODE_85A532                            ; $85939A |
-  dl CODE_85A578                            ; $85939D |
-  dl CODE_8DB5D1                            ; $8593A0 |
-  dl CODE_8DB663                            ; $8593A3 |
-  dl CODE_8DB6A1                            ; $8593A6 |
-  dl CODE_8DA66B                            ; $8593A9 |
-  dl CODE_8BD309                            ; $8593AC |
-  dl CODE_8BD6DB                            ; $8593AF |
-  dl CODE_8DB6E5                            ; $8593B2 |
-  dl UNREACH_8BD773                         ; $8593B5 |
-  dl CODE_8CE5F0                            ; $8593B8 |
-  dl CODE_8CE6CF                            ; $8593BB |
-  dl CODE_8DE901                            ; $8593BE |
-  dl CODE_85C4CE                            ; $8593C1 |
-  dl CODE_85C6BB                            ; $8593C4 |
-  dl CODE_85D112                            ; $8593C7 |
-  dl CODE_8CA4F2                            ; $8593CA |
-  dl CODE_8CB75D                            ; $8593CD |
-  dl CODE_8B94B5                            ; $8593D0 |
-  dl CODE_8B9F4A                            ; $8593D3 |
-  dl CODE_8CE952                            ; $8593D6 |
-  dl CODE_8CE838                            ; $8593D9 |
-  dl CODE_8CE8EC                            ; $8593DC |
-  dl CODE_8DD8E2                            ; $8593DF |
-  dl CODE_86EE6C                            ; $8593E2 |
-  dl CODE_8DE797                            ; $8593E5 |
-  dl CODE_85BE1F                            ; $8593E8 |
-  dl CODE_8CE9B0                            ; $8593EB |
-  dl CODE_8CE9FC                            ; $8593EE |
-  dl CODE_8CC169                            ; $8593F1 |
-  dl CODE_8BA2F0                            ; $8593F4 |
-  dl CODE_8CE8B5                            ; $8593F7 |
-  dl CODE_8CE53B                            ; $8593FA |
-  dl CODE_86BC1D                            ; $8593FD |
-  dl CODE_8CC255                            ; $859400 |
-  dl CODE_8CEA43                            ; $859403 |
-  dl CODE_85BB35                            ; $859406 |
-  dl CODE_8CC568                            ; $859409 |
-  dl CODE_8CC345                            ; $85940C |
-  dl CODE_8CC5B1                            ; $85940F |
-  dl CODE_85A261                            ; $859412 |
-  dl CODE_8CEBE6                            ; $859415 |
-  dl CODE_8CC42D                            ; $859418 |
-  dl CODE_8CEC32                            ; $85941B |
-  dl CODE_8CC634                            ; $85941E |
-  dl CODE_859D97                            ; $859421 |
-  dl CODE_86B105                            ; $859424 |
-  dl CODE_8CEECD                            ; $859427 |
-  dl CODE_8C9A1C                            ; $85942A |
-  dl CODE_8BA373                            ; $85942D |
-  dl CODE_8BA3F3                            ; $859430 |
-  dl CODE_8CEF56                            ; $859433 |
-  dl CODE_8CEFB4                            ; $859436 |
-  dl CODE_8CF0A1                            ; $859439 |
-  dl CODE_86AF8C                            ; $85943C |
-  dl CODE_8CF0F1                            ; $85943F |
-  dl CODE_86B117                            ; $859442 |
-  dl CODE_8CF204                            ; $859445 |
-  dl CODE_8CF268                            ; $859448 |
-  dl CODE_8CF332                            ; $85944B |
-  dl CODE_8DA90E                            ; $85944E |
-  dl CODE_859C3D                            ; $859451 |
-  dl CODE_8C9B24                            ; $859454 |
-  dl CODE_8C9C2C                            ; $859457 |
-  dl CODE_8CEDEF                            ; $85945A |
-  dl CODE_8DB618                            ; $85945D |
-  dl CODE_8CF572                            ; $859460 |
-  dl CODE_8CB8B5                            ; $859463 |
-  dl CODE_8C9546                            ; $859466 |
-  dl CODE_8CEE41                            ; $859469 |
-  dl CODE_859F03                            ; $85946C |
-  dl CODE_8CF2E6                            ; $85946F |
-  dl CODE_859E8C                            ; $859472 |
-  dl CODE_8CF5F1                            ; $859475 |
-  dl CODE_8CF802                            ; $859478 |
-  dl CODE_8CF8BA                            ; $85947B |
-  dl CODE_86BF72                            ; $85947E |
-  dl CODE_8CF905                            ; $859481 |
-  dl CODE_8CB946                            ; $859484 |
-  dl CODE_8C8EA3                            ; $859487 |
-  dl CODE_8CF905                            ; $85948A |
-  dl CODE_8B9D8D                            ; $85948D |
-  dl CODE_85E85C                            ; $859490 |
-  dl CODE_8C9968                            ; $859493 |
-  dl CODE_8C945E                            ; $859496 |
-  dl CODE_8CD656                            ; $859499 |
-  dl CODE_8CD6C2                            ; $85949C |
-  dl CODE_8B9EEC                            ; $85949F |
-  dl CODE_8C9ADE                            ; $8594A2 |
-  dl CODE_8CD6FE                            ; $8594A5 |
-  dl CODE_8CD605                            ; $8594A8 |
-  dl CODE_8CD6FF                            ; $8594AB |
-  dl CODE_8CD808                            ; $8594AE |
-  dl CODE_8CD8B7                            ; $8594B1 |
-  dl CODE_8CD789                            ; $8594B4 |
-  dl CODE_8CD905                            ; $8594B7 |
-  dl CODE_8CD977                            ; $8594BA |
-  dl CODE_86B075                            ; $8594BD |
-  dl CODE_8CD9C7                            ; $8594C0 |
-  dl CODE_8CDBB3                            ; $8594C3 |
-  dl CODE_8CDB6F                            ; $8594C6 |
-  dl CODE_8CDCCB                            ; $8594C9 |
-  dl CODE_8CE36C                            ; $8594CC |
-  dl CODE_8CDA9D                            ; $8594CF |
-  dl CODE_85BDFE                            ; $8594D2 |
-  dl CODE_86B91F                            ; $8594D5 |
-  dl CODE_8DA826                            ; $8594D8 |
-  dl CODE_8CE3F0                            ; $8594DB |
-  dl CODE_88EFA0                            ; $8594DE |
-  dl CODE_8AF900                            ; $8594E1 |
-  dl CODE_88F26B                            ; $8594E4 |
-  dl CODE_8CE45B                            ; $8594E7 |
-  dl CODE_86BBA4                            ; $8594EA |
-  dl CODE_8C9D4B                            ; $8594ED |
-  dl CODE_8CC9C1                            ; $8594F0 |
-  dl CODE_8CBA65                            ; $8594F3 |
-  dl CODE_8CCA46                            ; $8594F6 |
-  dl CODE_8CCCE0                            ; $8594F9 |
-  dl CODE_8CCD4C                            ; $8594FC |
-  dl CODE_8CCF75                            ; $8594FF |
-  dl CODE_8CD11F                            ; $859502 |
-  dl CODE_8CD261                            ; $859505 |
-  dl CODE_8CBFAD                            ; $859508 |
-  dl CODE_8CD310                            ; $85950B |
-  dl CODE_8CDF56                            ; $85950E |
-  dl CODE_8CCDCD                            ; $859511 |
-  dl CODE_8CE015                            ; $859514 |
-  dl CODE_85E90F                            ; $859517 |
-  dl CODE_8CE4F8                            ; $85951A |
-  dl CODE_85EA13                            ; $85951D |
-  dl CODE_8CC760                            ; $859520 |
-  dl CODE_8CE220                            ; $859523 |
-  dl CODE_8CE2BF                            ; $859526 |
-  dl CODE_8CC814                            ; $859529 |
-  dl CODE_8CC8D6                            ; $85952C |
+  dl CODE_FL_85EB45                         ; $859229 |
+  dl CODE_FL_83FED9                         ; $85922C |
+  dl CODE_FL_85EA6A                         ; $85922F |
+  dl CODE_FL_85F213                         ; $859232 |
+  dl CODE_FL_85EAC3                         ; $859235 |
+  dl CODE_FL_85F272                         ; $859238 |
+  dl CODE_FL_8DB455                         ; $85923B |
+  dl CODE_FL_85BEC7                         ; $85923E |
+  dl CODE_FL_8DB3EC                         ; $859241 |
+  dl CODE_FL_86AA13                         ; $859244 |
+  dl CODE_FL_86AB2F                         ; $859247 |
+  dl CODE_FL_86ABD5                         ; $85924A |
+  dl CODE_FL_8DE77E                         ; $85924D |
+  dl CODE_FL_86AC9E                         ; $859250 |
+  dl CODE_FL_86AD6A                         ; $859253 |
+  dl CODE_FL_86AD99                         ; $859256 |
+  dl CODE_FL_86AE49                         ; $859259 |
+  dl CODE_FL_86B15C                         ; $85925C |
+  dl CODE_FL_86B2DE                         ; $85925F |
+  dl CODE_FL_86B4E2                         ; $859262 |
+  dl CODE_FL_86B56D                         ; $859265 |
+  dl CODE_FL_86B704                         ; $859268 |
+  dl CODE_FL_85C28C                         ; $85926B |
+  dl CODE_FL_85F44F                         ; $85926E |
+  dl CODE_FL_85F401                         ; $859271 |
+  dl CODE_FL_8DB546                         ; $859274 |
+  dl CODE_FL_85D8CB                         ; $859277 |
+  dl CODE_FL_86B7D7                         ; $85927A |
+  dl CODE_FL_86B844                         ; $85927D |
+  dl CODE_FL_85D968                         ; $859280 |
+  dl CODE_FL_8AAF2F                         ; $859283 |
+  dl CODE_FL_86B3FF                         ; $859286 |
+  dl CODE_FL_8DABDF                         ; $859289 |
+  dl CODE_FL_85D301                         ; $85928C |
+  dl CODE_FL_85D397                         ; $85928F |
+  dl CODE_FL_86AECE                         ; $859292 |
+  dl CODE_FL_85D6CC                         ; $859295 |
+  dl CODE_FL_86B8B5                         ; $859298 |
+  dl CODE_FL_86B8B6                         ; $85929B |
+  dl CODE_FL_85C82E                         ; $85929E |
+  dl CODE_FL_85F4F4                         ; $8592A1 |
+  dl CODE_FL_86B92C                         ; $8592A4 |
+  dl CODE_FL_85BEF4                         ; $8592A7 |
+  dl CODE_FL_86DBBE                         ; $8592AA |
+  dl CODE_FL_86DDB3                         ; $8592AD |
+  dl CODE_FL_86DEFE                         ; $8592B0 |
+  dl CODE_FL_86E070                         ; $8592B3 |
+  dl CODE_FL_86E136                         ; $8592B6 |
+  dl CODE_FL_86E271                         ; $8592B9 |
+  dl CODE_FL_86E38F                         ; $8592BC |
+  dl CODE_FL_86E60B                         ; $8592BF |
+  dl CODE_FL_86B487                         ; $8592C2 |
+  dl CODE_FL_85E72B                         ; $8592C5 |
+  dl CODE_FL_8BBE36                         ; $8592C8 |
+  dl CODE_FL_85F5D3                         ; $8592CB |
+  dl CODE_FL_86BCF2                         ; $8592CE |
+  dl CODE_FL_86DEC6                         ; $8592D1 |
+  dl CODE_FL_8BC5A9                         ; $8592D4 |
+  dl CODE_FL_8BC7C7                         ; $8592D7 |
+  dl CODE_FL_8BC963                         ; $8592DA |
+  dl CODE_FL_86DCC5                         ; $8592DD |
+  dl CODE_FL_8DA627                         ; $8592E0 |
+  dl CODE_FL_86E5E5                         ; $8592E3 |
+  dl CODE_FL_8BC9DB                         ; $8592E6 |
+  dl CODE_FL_86BE2D                         ; $8592E9 |
+  dl CODE_FL_86BE9B                         ; $8592EC |
+  dl CODE_FL_86DFCE                         ; $8592EF |
+  dl CODE_FL_86BFD2                         ; $8592F2 |
+  dl CODE_FL_86C09C                         ; $8592F5 |
+  dl CODE_FL_86E1EF                         ; $8592F8 |
+  dl CODE_FL_86E6A5                         ; $8592FB |
+  dl CODE_FL_86F19B                         ; $8592FE |
+  dl CODE_FL_86BDFA                         ; $859301 |
+  dl CODE_FL_86E8D3                         ; $859304 |
+  dl CODE_FL_85F5C5                         ; $859307 |
+  dl CODE_FL_86EA0C                         ; $85930A |
+  dl CODE_FL_85E09A                         ; $85930D |
+  dl CODE_FL_86B012                         ; $859310 |
+  dl CODE_FL_85BD77                         ; $859313 |
+  dl CODE_FL_86EBC7                         ; $859316 |
+  dl CODE_FL_859C90                         ; $859319 |
+  dl CODE_FL_86EF1A                         ; $85931C |
+  dl CODE_FL_859CD3                         ; $85931F |
+  dl CODE_FL_86B0BF                         ; $859322 |
+  dl CODE_FL_859D14                         ; $859325 |
+  dl CODE_FL_86B618                         ; $859328 |
+  dl CODE_FL_86B61D                         ; $85932B |
+  dl CODE_FL_86B622                         ; $85932E |
+  dl CODE_FL_86B627                         ; $859331 |
+  dl CODE_FL_86B62C                         ; $859334 |
+  dl CODE_FL_86B631                         ; $859337 |
+  dl CODE_FL_86B636                         ; $85933A |
+  dl CODE_FL_86B63B                         ; $85933D |
+  dl CODE_FL_8DA651                         ; $859340 |
+  dl CODE_FL_86B6B4                         ; $859343 |
+  dl CODE_FL_86EF3F                         ; $859346 |
+  dl CODE_FL_86F04C                         ; $859349 |
+  dl CODE_FL_859F72                         ; $85934C |
+  dl CODE_FL_8DE78C                         ; $85934F |
+  dl CODE_FL_85BF01                         ; $859352 |
+  dl CODE_FL_85BF88                         ; $859355 |
+  dl CODE_FL_85A028                         ; $859358 |
+  dl CODE_FL_85C0D4                         ; $85935B |
+  dl CODE_FL_8CFF30                         ; $85935E |
+  dl CODE_FL_8C8000                         ; $859361 |
+  dl CODE_FL_8DD7B4                         ; $859364 |
+  dl CODE_FL_85A16A                         ; $859367 |
+  dl CODE_FL_8DB59A                         ; $85936A |
+  dl CODE_FL_85A2D7                         ; $85936D |
+  dl CODE_FL_8BCAEA                         ; $859370 |
+  dl CODE_FL_85BDD3                         ; $859373 |
+  dl CODE_FL_8BCFC7                         ; $859376 |
+  dl CODE_FL_85A1EA                         ; $859379 |
+  dl CODE_FL_8BD0A7                         ; $85937C |
+  dl CODE_FL_8BD1F0                         ; $85937F |
+  dl CODE_FL_8C8A95                         ; $859382 |
+  dl CODE_FL_85A3A7                         ; $859385 |
+  dl CODE_FL_8C8AC6                         ; $859388 |
+  dl CODE_FL_8C8C98                         ; $85938B |
+  dl CODE_FL_85A3FE                         ; $85938E |
+  dl CODE_FL_85F64B                         ; $859391 |
+  dl CODE_FL_85F6DA                         ; $859394 |
+  dl CODE_FL_8C8C61                         ; $859397 |
+  dl CODE_FL_85A532                         ; $85939A |
+  dl CODE_FL_85A578                         ; $85939D |
+  dl CODE_FL_8DB5D1                         ; $8593A0 |
+  dl CODE_FL_8DB663                         ; $8593A3 |
+  dl CODE_FL_8DB6A1                         ; $8593A6 |
+  dl CODE_FL_8DA66B                         ; $8593A9 |
+  dl CODE_FL_8BD309                         ; $8593AC |
+  dl CODE_FL_8BD6DB                         ; $8593AF |
+  dl CODE_FL_8DB6E5                         ; $8593B2 |
+  dl CODE_FL_8BD773                         ; $8593B5 |
+  dl CODE_FL_8CE5F0                         ; $8593B8 |
+  dl CODE_FL_8CE6CF                         ; $8593BB |
+  dl CODE_FL_8DE901                         ; $8593BE |
+  dl CODE_FL_85C4CE                         ; $8593C1 |
+  dl CODE_FL_85C6BB                         ; $8593C4 |
+  dl CODE_FL_85D112                         ; $8593C7 |
+  dl CODE_FL_8CA4F2                         ; $8593CA |
+  dl CODE_FL_8CB75D                         ; $8593CD |
+  dl CODE_FL_8B94B5                         ; $8593D0 |
+  dl CODE_FL_8B9F4A                         ; $8593D3 |
+  dl CODE_FL_8CE952                         ; $8593D6 |
+  dl CODE_FL_8CE838                         ; $8593D9 |
+  dl CODE_FL_8CE8EC                         ; $8593DC |
+  dl CODE_FL_8DD8E2                         ; $8593DF |
+  dl CODE_FL_86EE6C                         ; $8593E2 |
+  dl CODE_FL_8DE797                         ; $8593E5 |
+  dl CODE_FL_85BE1F                         ; $8593E8 |
+  dl CODE_FL_8CE9B0                         ; $8593EB |
+  dl CODE_FL_8CE9FC                         ; $8593EE |
+  dl CODE_FL_8CC169                         ; $8593F1 |
+  dl CODE_FL_8BA2F0                         ; $8593F4 |
+  dl CODE_FL_8CE8B5                         ; $8593F7 |
+  dl CODE_FL_8CE53B                         ; $8593FA |
+  dl CODE_FL_86BC1D                         ; $8593FD |
+  dl CODE_FL_8CC255                         ; $859400 |
+  dl CODE_FL_8CEA43                         ; $859403 |
+  dl CODE_FL_85BB35                         ; $859406 |
+  dl CODE_FL_8CC568                         ; $859409 |
+  dl CODE_FL_8CC345                         ; $85940C |
+  dl CODE_FL_8CC5B1                         ; $85940F |
+  dl CODE_FL_85A261                         ; $859412 |
+  dl CODE_FL_8CEBE6                         ; $859415 |
+  dl CODE_FL_8CC42D                         ; $859418 |
+  dl CODE_FL_8CEC32                         ; $85941B |
+  dl CODE_FL_8CC634                         ; $85941E |
+  dl CODE_FL_859D97                         ; $859421 |
+  dl CODE_FL_86B105                         ; $859424 |
+  dl CODE_FL_8CEECD                         ; $859427 |
+  dl CODE_FL_8C9A1C                         ; $85942A |
+  dl CODE_FL_8BA373                         ; $85942D |
+  dl CODE_FL_8BA3F3                         ; $859430 |
+  dl CODE_FL_8CEF56                         ; $859433 |
+  dl CODE_FL_8CEFB4                         ; $859436 |
+  dl CODE_FL_8CF0A1                         ; $859439 |
+  dl CODE_FL_86AF8C                         ; $85943C |
+  dl CODE_FL_8CF0F1                         ; $85943F |
+  dl CODE_FL_86B117                         ; $859442 |
+  dl CODE_FL_8CF204                         ; $859445 |
+  dl CODE_FL_8CF268                         ; $859448 |
+  dl CODE_FL_8CF332                         ; $85944B |
+  dl CODE_FL_8DA90E                         ; $85944E |
+  dl CODE_FL_859C3D                         ; $859451 |
+  dl CODE_FL_8C9B24                         ; $859454 |
+  dl CODE_FL_8C9C2C                         ; $859457 |
+  dl CODE_FL_8CEDEF                         ; $85945A |
+  dl CODE_FL_8DB618                         ; $85945D |
+  dl CODE_FL_8CF572                         ; $859460 |
+  dl CODE_FL_8CB8B5                         ; $859463 |
+  dl CODE_FL_8C9546                         ; $859466 |
+  dl CODE_FL_8CEE41                         ; $859469 |
+  dl CODE_FL_859F03                         ; $85946C |
+  dl CODE_FL_8CF2E6                         ; $85946F |
+  dl CODE_FL_859E8C                         ; $859472 |
+  dl CODE_FL_8CF5F1                         ; $859475 |
+  dl CODE_FL_8CF802                         ; $859478 |
+  dl CODE_FL_8CF8BA                         ; $85947B |
+  dl CODE_FL_86BF72                         ; $85947E |
+  dl CODE_FL_8CF905                         ; $859481 |
+  dl CODE_FL_8CB946                         ; $859484 |
+  dl CODE_FL_8C8EA3                         ; $859487 |
+  dl CODE_FL_8CF905                         ; $85948A |
+  dl CODE_FL_8B9D8D                         ; $85948D |
+  dl CODE_FL_85E85C                         ; $859490 |
+  dl CODE_FL_8C9968                         ; $859493 |
+  dl CODE_FL_8C945E                         ; $859496 |
+  dl CODE_FL_8CD656                         ; $859499 |
+  dl CODE_FL_8CD6C2                         ; $85949C |
+  dl CODE_FL_8B9EEC                         ; $85949F |
+  dl CODE_FL_8C9ADE                         ; $8594A2 |
+  dl CODE_FL_8CD6FE                         ; $8594A5 |
+  dl CODE_FL_8CD605                         ; $8594A8 |
+  dl CODE_FL_8CD6FF                         ; $8594AB |
+  dl CODE_FL_8CD808                         ; $8594AE |
+  dl CODE_FL_8CD8B7                         ; $8594B1 |
+  dl CODE_FL_8CD789                         ; $8594B4 |
+  dl CODE_FL_8CD905                         ; $8594B7 |
+  dl CODE_FL_8CD977                         ; $8594BA |
+  dl CODE_FL_86B075                         ; $8594BD |
+  dl CODE_FL_8CD9C7                         ; $8594C0 |
+  dl CODE_FL_8CDBB3                         ; $8594C3 |
+  dl CODE_FL_8CDB6F                         ; $8594C6 |
+  dl CODE_FL_8CDCCB                         ; $8594C9 |
+  dl CODE_FL_8CE36C                         ; $8594CC |
+  dl CODE_FL_8CDA9D                         ; $8594CF |
+  dl CODE_FL_85BDFE                         ; $8594D2 |
+  dl CODE_FL_86B91F                         ; $8594D5 |
+  dl CODE_FL_8DA826                         ; $8594D8 |
+  dl CODE_FL_8CE3F0                         ; $8594DB |
+  dl CODE_FL_88EFA0                         ; $8594DE |
+  dl CODE_FL_8AF900                         ; $8594E1 |
+  dl CODE_FL_88F26B                         ; $8594E4 |
+  dl CODE_FL_8CE45B                         ; $8594E7 |
+  dl CODE_FL_86BBA4                         ; $8594EA |
+  dl CODE_FL_8C9D4B                         ; $8594ED |
+  dl CODE_FL_8CC9C1                         ; $8594F0 |
+  dl CODE_FL_8CBA65                         ; $8594F3 |
+  dl CODE_FL_8CCA46                         ; $8594F6 |
+  dl CODE_FL_8CCCE0                         ; $8594F9 |
+  dl CODE_FL_8CCD4C                         ; $8594FC |
+  dl CODE_FL_8CCF75                         ; $8594FF |
+  dl CODE_FL_8CD11F                         ; $859502 |
+  dl CODE_FL_8CD261                         ; $859505 |
+  dl CODE_FL_8CBFAD                         ; $859508 |
+  dl CODE_FL_8CD310                         ; $85950B |
+  dl CODE_FL_8CDF56                         ; $85950E |
+  dl CODE_FL_8CCDCD                         ; $859511 |
+  dl CODE_FL_8CE015                         ; $859514 |
+  dl CODE_FL_85E90F                         ; $859517 |
+  dl CODE_FL_8CE4F8                         ; $85951A |
+  dl CODE_FL_85EA13                         ; $85951D |
+  dl CODE_FL_8CC760                         ; $859520 |
+  dl CODE_FL_8CE220                         ; $859523 |
+  dl CODE_FL_8CE2BF                         ; $859526 |
+  dl CODE_FL_8CC814                         ; $859529 |
+  dl CODE_FL_8CC8D6                         ; $85952C |
   dl CODE_FL_8CF98E                         ; $85952F |
-  dl CODE_8CD4C7                            ; $859532 |
-  dl CODE_8CD539                            ; $859535 |
-  dl CODE_85E032                            ; $859538 |
-  dl CODE_85D9E8                            ; $85953B |
-  dl CODE_85DA7E                            ; $85953E |
-  dl CODE_85DB13                            ; $859541 |
-  dl CODE_JL_85DBB0                         ; $859544 |
-  dl CODE_85DD04                            ; $859547 |
-  dl CODE_85C8BD                            ; $85954A |
-  dl CODE_8BADC5                            ; $85954D |
-  dl CODE_8BAE7B                            ; $859550 |
-  dl CODE_8BB0BD                            ; $859553 |
-  dl CODE_8BAE56                            ; $859556 |
-  dl CODE_8DE698                            ; $859559 |
-  dl CODE_8BB186                            ; $85955C |
-  dl CODE_88F854                            ; $85955F |
-  dl CODE_88F8C5                            ; $859562 |
-  dl CODE_8BB2C6                            ; $859565 |
-  dl CODE_8BB32B                            ; $859568 |
-  dl CODE_8BB48E                            ; $85956B |
-  dl CODE_8BB608                            ; $85956E |
-  dl CODE_8BB72B                            ; $859571 |
-  dl CODE_8BB8B6                            ; $859574 |
-  dl CODE_8BB9AC                            ; $859577 |
-  dl CODE_8DA0BD                            ; $85957A |
-  dl CODE_8BB9FB                            ; $85957D |
-  dl CODE_86B6DE                            ; $859580 |
-  dl CODE_85F486                            ; $859583 |
-  dl CODE_85F58D                            ; $859586 |
-  dl CODE_85CC28                            ; $859589 |
-  dl CODE_86AF32                            ; $85958C |
-  dl CODE_8B8C75                            ; $85958F |
-  dl CODE_85CCA0                            ; $859592 |
-  dl CODE_8BADC4                            ; $859595 |
-  dl CODE_8B8F60                            ; $859598 |
-  dl CODE_8B8F28                            ; $85959B |
-  dl CODE_85DCBD                            ; $85959E |
-  dl CODE_85CB52                            ; $8595A1 |
-  dl CODE_8DA719                            ; $8595A4 |
-  dl CODE_8DA69F                            ; $8595A7 |
-  dl CODE_85DC60                            ; $8595AA |
-  dl CODE_85DC84                            ; $8595AD |
-  dl CODE_8DA7E9                            ; $8595B0 |
-  dl CODE_8DA93F                            ; $8595B3 |
-  dl CODE_8DAA17                            ; $8595B6 |
-  dl CODE_8DAA7D                            ; $8595B9 |
-  dl CODE_8BE49E                            ; $8595BC |
-  dl CODE_8BE63D                            ; $8595BF |
-  dl CODE_8BE49E                            ; $8595C2 |
-  dl CODE_8BE49E                            ; $8595C5 |
-  dl CODE_8BEA4D                            ; $8595C8 |
-  dl CODE_8BEDF6                            ; $8595CB |
-  dl CODE_8BEE8D                            ; $8595CE |
-  dl CODE_8BEF57                            ; $8595D1 |
-  dl CODE_8BF0C2                            ; $8595D4 |
-  dl CODE_8BF1F1                            ; $8595D7 |
-  dl CODE_8DACA5                            ; $8595DA |
-  dl CODE_8DADF9                            ; $8595DD |
-  dl CODE_85B58C                            ; $8595E0 |
-  dl CODE_8BB536                            ; $8595E3 |
-  dl CODE_8DAE4A                            ; $8595E6 |
-  dl CODE_8B8370                            ; $8595E9 |
-  dl CODE_85CD41                            ; $8595EC |
-  dl CODE_8DA358                            ; $8595EF |
-  dl CODE_85BAB1                            ; $8595F2 |
-  dl CODE_85BCCB                            ; $8595F5 |
-  dl CODE_86AFBF                            ; $8595F8 |
-  dl CODE_86B679                            ; $8595FB |
-  dl CODE_85F2F4                            ; $8595FE |
-  dl CODE_8CD46C                            ; $859601 |
-  dl CODE_8BBA0B                            ; $859604 |
-  dl CODE_8BF2B8                            ; $859607 |
-  dl CODE_8BF455                            ; $85960A |
-  dl CODE_85BA24                            ; $85960D |
-  dl CODE_85B92A                            ; $859610 |
-  dl CODE_85BC7F                            ; $859613 |
-  dl CODE_8CE51E                            ; $859616 |
-  dl CODE_8BF48A                            ; $859619 |
-  dl CODE_8DAF3A                            ; $85961C |
-  dl CODE_8DAFEB                            ; $85961F |
-  dl CODE_8AF94F                            ; $859622 |
-  dl CODE_8BF5BA                            ; $859625 |
-  dl CODE_8AFA37                            ; $859628 |
-  dl CODE_8AFA55                            ; $85962B |
-  dl CODE_8AFABF                            ; $85962E |
-  dl CODE_8AFB39                            ; $859631 |
-  dl CODE_859FD8                            ; $859634 |
-  dl CODE_8DB0FA                            ; $859637 |
-  dl CODE_8AFBF6                            ; $85963A |
-  dl CODE_8AFCCF                            ; $85963D |
-  dl CODE_8AFD10                            ; $859640 |
-  dl CODE_8AFD9D                            ; $859643 |
-  dl CODE_8AFDD6                            ; $859646 |
-  dl CODE_8AFE81                            ; $859649 |
-  dl CODE_85C3F8                            ; $85964C |
-  dl CODE_8DD8F4                            ; $85964F |
-  dl CODE_8DE0DF                            ; $859652 |
-  dl CODE_8DE1B0                            ; $859655 |
-  dl CODE_8DE264                            ; $859658 |
-  dl CODE_8AFED0                            ; $85965B |
-  dl CODE_85D200                            ; $85965E |
-  dl CODE_85D4C7                            ; $859661 |
-  dl CODE_JL_85D55C                         ; $859664 |
-  dl CODE_85B5B2                            ; $859667 |
-  dl CODE_8DE2A8                            ; $85966A |
+  dl CODE_FL_8CD4C7                         ; $859532 |
+  dl CODE_FL_8CD539                         ; $859535 |
+  dl CODE_FL_85E032                         ; $859538 |
+  dl CODE_FL_85D9E8                         ; $85953B |
+  dl CODE_FL_85DA7E                         ; $85953E |
+  dl CODE_FL_85DB13                         ; $859541 |
+  dl CODE_FL_85DBB0                         ; $859544 |
+  dl CODE_FL_85DD04                         ; $859547 |
+  dl CODE_FL_85C8BD                         ; $85954A |
+  dl CODE_FL_8BADC5                         ; $85954D |
+  dl CODE_FL_8BAE7B                         ; $859550 |
+  dl CODE_FL_8BB0BD                         ; $859553 |
+  dl CODE_FL_8BAE56                         ; $859556 |
+  dl CODE_FL_8DE698                         ; $859559 |
+  dl CODE_FL_8BB186                         ; $85955C |
+  dl CODE_FL_88F854                         ; $85955F |
+  dl CODE_FL_88F8C5                         ; $859562 |
+  dl CODE_FL_8BB2C6                         ; $859565 |
+  dl CODE_FL_8BB32B                         ; $859568 |
+  dl CODE_FL_8BB48E                         ; $85956B |
+  dl CODE_FL_8BB608                         ; $85956E |
+  dl CODE_FL_8BB72B                         ; $859571 |
+  dl CODE_FL_8BB8B6                         ; $859574 |
+  dl CODE_FL_8BB9AC                         ; $859577 |
+  dl CODE_FL_8DA0BD                         ; $85957A |
+  dl CODE_FL_8BB9FB                         ; $85957D |
+  dl CODE_FL_86B6DE                         ; $859580 |
+  dl CODE_FL_85F486                         ; $859583 |
+  dl CODE_FL_85F58D                         ; $859586 |
+  dl CODE_FL_85CC28                         ; $859589 |
+  dl CODE_FL_86AF32                         ; $85958C |
+  dl CODE_FL_8B8C75                         ; $85958F |
+  dl CODE_FL_85CCA0                         ; $859592 |
+  dl CODE_FL_8BADC4                         ; $859595 |
+  dl CODE_FL_8B8F60                         ; $859598 |
+  dl CODE_FL_8B8F28                         ; $85959B |
+  dl CODE_FL_85DCBD                         ; $85959E |
+  dl CODE_FL_85CB52                         ; $8595A1 |
+  dl CODE_FL_8DA719                         ; $8595A4 |
+  dl CODE_FL_8DA69F                         ; $8595A7 |
+  dl CODE_FL_85DC60                         ; $8595AA |
+  dl CODE_FL_85DC84                         ; $8595AD |
+  dl CODE_FL_8DA7E9                         ; $8595B0 |
+  dl CODE_FL_8DA93F                         ; $8595B3 |
+  dl CODE_FL_8DAA17                         ; $8595B6 |
+  dl CODE_FL_8DAA7D                         ; $8595B9 |
+  dl CODE_FL_8BE49E                         ; $8595BC |
+  dl CODE_FL_8BE63D                         ; $8595BF |
+  dl CODE_FL_8BE49E                         ; $8595C2 |
+  dl CODE_FL_8BE49E                         ; $8595C5 |
+  dl CODE_FL_8BEA4D                         ; $8595C8 |
+  dl CODE_FL_8BEDF6                         ; $8595CB |
+  dl CODE_FL_8BEE8D                         ; $8595CE |
+  dl CODE_FL_8BEF57                         ; $8595D1 |
+  dl CODE_FL_8BF0C2                         ; $8595D4 |
+  dl CODE_FL_8BF1F1                         ; $8595D7 |
+  dl CODE_FL_8DACA5                         ; $8595DA |
+  dl CODE_FL_8DADF9                         ; $8595DD |
+  dl CODE_FL_85B58C                         ; $8595E0 |
+  dl CODE_FL_8BB536                         ; $8595E3 |
+  dl CODE_FL_8DAE4A                         ; $8595E6 |
+  dl CODE_FL_8B8370                         ; $8595E9 |
+  dl CODE_FL_85CD41                         ; $8595EC |
+  dl CODE_FL_8DA358                         ; $8595EF |
+  dl CODE_FL_85BAB1                         ; $8595F2 |
+  dl CODE_FL_85BCCB                         ; $8595F5 |
+  dl CODE_FL_86AFBF                         ; $8595F8 |
+  dl CODE_FL_86B679                         ; $8595FB |
+  dl CODE_FL_85F2F4                         ; $8595FE |
+  dl CODE_FL_8CD46C                         ; $859601 |
+  dl CODE_FL_8BBA0B                         ; $859604 |
+  dl CODE_FL_8BF2B8                         ; $859607 |
+  dl CODE_FL_8BF455                         ; $85960A |
+  dl CODE_FL_85BA24                         ; $85960D |
+  dl CODE_FL_85B92A                         ; $859610 |
+  dl CODE_FL_85BC7F                         ; $859613 |
+  dl CODE_FL_8CE51E                         ; $859616 |
+  dl CODE_FL_8BF48A                         ; $859619 |
+  dl CODE_FL_8DAF3A                         ; $85961C |
+  dl CODE_FL_8DAFEB                         ; $85961F |
+  dl CODE_FL_8AF94F                         ; $859622 |
+  dl CODE_FL_8BF5BA                         ; $859625 |
+  dl CODE_FL_8AFA37                         ; $859628 |
+  dl CODE_FL_8AFA55                         ; $85962B |
+  dl CODE_FL_8AFABF                         ; $85962E |
+  dl CODE_FL_8AFB39                         ; $859631 |
+  dl CODE_FL_859FD8                         ; $859634 |
+  dl CODE_FL_8DB0FA                         ; $859637 |
+  dl CODE_FL_8AFBF6                         ; $85963A |
+  dl CODE_FL_8AFCCF                         ; $85963D |
+  dl CODE_FL_8AFD10                         ; $859640 |
+  dl CODE_FL_8AFD9D                         ; $859643 |
+  dl CODE_FL_8AFDD6                         ; $859646 |
+  dl CODE_FL_8AFE81                         ; $859649 |
+  dl CODE_FL_85C3F8                         ; $85964C |
+  dl CODE_FL_8DD8F4                         ; $85964F |
+  dl CODE_FL_8DE0DF                         ; $859652 |
+  dl CODE_FL_8DE1B0                         ; $859655 |
+  dl CODE_FL_8DE264                         ; $859658 |
+  dl CODE_FL_8AFED0                         ; $85965B |
+  dl CODE_FL_85D200                         ; $85965E |
+  dl CODE_FL_85D4C7                         ; $859661 |
+  dl CODE_FL_85D55C                         ; $859664 |
+  dl CODE_FL_85B5B2                         ; $859667 |
+  dl CODE_FL_8DE2A8                         ; $85966A |
   dl CODE_FL_85D761                         ; $85966D |
-  dl CODE_85D5F1                            ; $859670 |
-  dl CODE_84DF38                            ; $859673 |
-  dl CODE_8BBB1D                            ; $859676 |
-  dl CODE_8BBA8D                            ; $859679 |
-  dl CODE_8AFF5B                            ; $85967C |
-  dl CODE_88F948                            ; $85967F |
-  dl CODE_8BB284                            ; $859682 |
-  dl CODE_8BB6B1                            ; $859685 |
-  dl CODE_86CBEC                            ; $859688 |
-  dl CODE_8DD35F                            ; $85968B |
-  dl CODE_8DD832                            ; $85968E |
-  dl CODE_8DD56D                            ; $859691 |
-  dl CODE_8DD674                            ; $859694 |
-  dl CODE_85BFFC                            ; $859697 |
-  dl CODE_85CF9F                            ; $85969A |
-  dl CODE_85D03B                            ; $85969D |
-  dl CODE_8DAC74                            ; $8596A0 |
-  dl CODE_8DD675                            ; $8596A3 |
-  dl CODE_8BBCAE                            ; $8596A6 |
-  dl CODE_8BBDDB                            ; $8596A9 |
-  dl CODE_88F511                            ; $8596AC |
-  dl CODE_85B854                            ; $8596AF |
-  dl CODE_85CF23                            ; $8596B2 |
-  dl CODE_85B7F6                            ; $8596B5 |
-  dl CODE_88F651                            ; $8596B8 |
-  dl CODE_88F7A0                            ; $8596BB |
-  dl CODE_8C9EC6                            ; $8596BE |
-  dl CODE_8BF681                            ; $8596C1 |
-  dl CODE_8DD7F3                            ; $8596C4 |
-  dl CODE_88F5E7                            ; $8596C7 |
-  dl CODE_8DD6E7                            ; $8596CA |
-  dl CODE_8BD734                            ; $8596CD |
-  dl CODE_8DD756                            ; $8596D0 |
-  dl CODE_88F225                            ; $8596D3 |
-  dl CODE_8B8798                            ; $8596D6 |
-  dl CODE_86CEBF                            ; $8596D9 |
-  dl CODE_86D0FF                            ; $8596DC |
-  dl CODE_86F635                            ; $8596DF |
-  dl CODE_8CFF5E                            ; $8596E2 |
-  dl CODE_8D886A                            ; $8596E5 |
-  dl CODE_8D8A3A                            ; $8596E8 |
-  dl CODE_8DE337                            ; $8596EB |
-  dl CODE_8D8A50                            ; $8596EE |
-  dl CODE_88F6F7                            ; $8596F1 |
-  dl CODE_8D8ECB                            ; $8596F4 |
-  dl CODE_85F429                            ; $8596F7 |
-  dl CODE_88F752                            ; $8596FA |
-  dl CODE_85D1BA                            ; $8596FD |
-  dl CODE_8BB5B4                            ; $859700 |
-  dl CODE_8D9139                            ; $859703 |
-  dl CODE_86D314                            ; $859706 |
-  dl CODE_86D49F                            ; $859709 |
-  dl CODE_86D56C                            ; $85970C |
-  dl CODE_86D624                            ; $85970F |
-  dl CODE_86D654                            ; $859712 |
-  dl CODE_8DE45F                            ; $859715 |
-  dl CODE_8BBB60                            ; $859718 |
-  dl CODE_8BBBA0                            ; $85971B |
-  dl CODE_85A01E                            ; $85971E |
-  dl CODE_8CE575                            ; $859721 |
-  dl CODE_8DE4DE                            ; $859724 |
-  dl CODE_8D8BE0                            ; $859727 |
-  dl CODE_8D8DDB                            ; $85972A |
-  dl CODE_8D8E8D                            ; $85972D |
-  dl CODE_8DD49E                            ; $859730 |
-  dl CODE_87E000                            ; $859733 |
-  dl CODE_8D8EA8                            ; $859736 |
-  dl CODE_8D9388                            ; $859739 |
-  dl CODE_8DE59A                            ; $85973C |
-  dl CODE_8D99CE                            ; $85973F |
-  dl CODE_8D9BF0                            ; $859742 |
-  dl CODE_8D9C18                            ; $859745 |
-  dl CODE_B3FFAF                            ; $859748 |
-  dl CODE_8D922B                            ; $85974B |
-  dl CODE_8D91FB                            ; $85974E |
-  dl CODE_8C9F1A                            ; $859751 |
-  dl CODE_86F634                            ; $859754 |
-  dl CODE_8B9389                            ; $859757 |
-  dl CODE_8D97B6                            ; $85975A |
-  dl CODE_97FF6F                            ; $85975D |
-  dl CODE_8D97D2                            ; $859760 |
-  dl CODE_8D97FE                            ; $859763 |
-  dl CODE_8D9570                            ; $859766 |
-  dl CODE_84EA86                            ; $859769 |
-  dl CODE_8B90D0                            ; $85976C |
-  dl CODE_8DD8AE                            ; $85976F |
-  dl CODE_85DFFF                            ; $859772 |
-  dl CODE_8B934B                            ; $859775 |
-  dl CODE_88FA07                            ; $859778 |
-  dl CODE_86E7FE                            ; $85977B |
-  dl CODE_8D9F97                            ; $85977E |
-  dl CODE_8D9FF9                            ; $859781 |
-  dl CODE_8DA472                            ; $859784 |
-  dl CODE_84DE4D                            ; $859787 |
-  dl CODE_A0F596                            ; $85978A |
-  dl CODE_8C9BE6                            ; $85978D |
-  dl CODE_8C9CF6                            ; $859790 |
-  dl CODE_A0F66C                            ; $859793 |
-  dl CODE_A0EF80                            ; $859796 |
-  dl CODE_A0F385                            ; $859799 |
-  dl CODE_A0F4A8                            ; $85979C |
-  dl CODE_A0F444                            ; $85979F |
-  dl CODE_A0F524                            ; $8597A2 |
-  dl CODE_8DE6E7                            ; $8597A5 |
-  dl CODE_86F1EF                            ; $8597A8 |
-  dl CODE_8B9414                            ; $8597AB |
-  dl CODE_86F5EB                            ; $8597AE |
-  dl CODE_86F5EC                            ; $8597B1 |
-  dl CODE_86F5ED                            ; $8597B4 |
-  dl CODE_86F5EE                            ; $8597B7 |
-  dl CODE_86F5EF                            ; $8597BA |
-  dl CODE_8D9EBF                            ; $8597BD |
-  dl CODE_8D9E9B                            ; $8597C0 |
-  dl CODE_8BCADB                            ; $8597C3 |
-  dl CODE_86D787                            ; $8597C6 |
-  dl CODE_86DB43                            ; $8597C9 |
-  dl CODE_86DB17                            ; $8597CC |
-  dl CODE_9CFD80                            ; $8597CF |
-  dl CODE_9CFE44                            ; $8597D2 |
-  dl CODE_85C0B8                            ; $8597D5 |
-  dl CODE_8DB245                            ; $8597D8 |
-  dl CODE_8DB32E                            ; $8597DB |
-  dl CODE_8D9EBF                            ; $8597DE |
-  dl CODE_8CCC07                            ; $8597E1 |
-  dl CODE_8C8E51                            ; $8597E4 |
-  dl CODE_8D9EBF                            ; $8597E7 |
-  dl CODE_85B75C                            ; $8597EA |
-  dl CODE_8BF5EC                            ; $8597ED |
-  dl CODE_84DE2D                            ; $8597F0 |
-  dl CODE_8DE865                            ; $8597F3 |
-  dl CODE_8DA3F6                            ; $8597F6 |
-  dl CODE_8DE208                            ; $8597F9 |
-  dl CODE_86B7B3                            ; $8597FC |
-  dl CODE_8DE918                            ; $8597FF |
-  dl CODE_8DA522                            ; $859802 |
-  dl CODE_8DA584                            ; $859805 |
-  dl CODE_85E06B                            ; $859808 |
-  dl CODE_8CE558                            ; $85980B |
-  dl CODE_8CFF27                            ; $85980E |
-  dl CODE_8D9F2B                            ; $859811 |
+  dl CODE_FL_85D5F1                         ; $859670 |
+  dl CODE_FL_84DF38                         ; $859673 |
+  dl CODE_FL_8BBB1D                         ; $859676 |
+  dl CODE_FL_8BBA8D                         ; $859679 |
+  dl CODE_FL_8AFF5B                         ; $85967C |
+  dl CODE_FL_88F948                         ; $85967F |
+  dl CODE_FL_8BB284                         ; $859682 |
+  dl CODE_FL_8BB6B1                         ; $859685 |
+  dl CODE_FL_86CBEC                         ; $859688 |
+  dl CODE_FL_8DD35F                         ; $85968B |
+  dl CODE_FL_8DD832                         ; $85968E |
+  dl CODE_FL_8DD56D                         ; $859691 |
+  dl CODE_FL_8DD674                         ; $859694 |
+  dl CODE_FL_85BFFC                         ; $859697 |
+  dl CODE_FL_85CF9F                         ; $85969A |
+  dl CODE_FL_85D03B                         ; $85969D |
+  dl CODE_FL_8DAC74                         ; $8596A0 |
+  dl CODE_FL_8DD675                         ; $8596A3 |
+  dl CODE_FL_8BBCAE                         ; $8596A6 |
+  dl CODE_FL_8BBDDB                         ; $8596A9 |
+  dl CODE_FL_88F511                         ; $8596AC |
+  dl CODE_FL_85B854                         ; $8596AF |
+  dl CODE_FL_85CF23                         ; $8596B2 |
+  dl CODE_FL_85B7F6                         ; $8596B5 |
+  dl CODE_FL_88F651                         ; $8596B8 |
+  dl CODE_FL_88F7A0                         ; $8596BB |
+  dl CODE_FL_8C9EC6                         ; $8596BE |
+  dl CODE_FL_8BF681                         ; $8596C1 |
+  dl CODE_FL_8DD7F3                         ; $8596C4 |
+  dl CODE_FL_88F5E7                         ; $8596C7 |
+  dl CODE_FL_8DD6E7                         ; $8596CA |
+  dl CODE_FL_8BD734                         ; $8596CD |
+  dl CODE_FL_8DD756                         ; $8596D0 |
+  dl CODE_FL_88F225                         ; $8596D3 |
+  dl CODE_FL_8B8798                         ; $8596D6 |
+  dl CODE_FL_86CEBF                         ; $8596D9 |
+  dl CODE_FL_86D0FF                         ; $8596DC |
+  dl CODE_FL_86F635                         ; $8596DF |
+  dl CODE_FL_8CFF5E                         ; $8596E2 |
+  dl CODE_FL_8D886A                         ; $8596E5 |
+  dl CODE_FL_8D8A3A                         ; $8596E8 |
+  dl CODE_FL_8DE337                         ; $8596EB |
+  dl CODE_FL_8D8A50                         ; $8596EE |
+  dl CODE_FL_88F6F7                         ; $8596F1 |
+  dl CODE_FL_8D8ECB                         ; $8596F4 |
+  dl CODE_FL_85F429                         ; $8596F7 |
+  dl CODE_FL_88F752                         ; $8596FA |
+  dl CODE_FL_85D1BA                         ; $8596FD |
+  dl CODE_FL_8BB5B4                         ; $859700 |
+  dl CODE_FL_8D9139                         ; $859703 |
+  dl CODE_FL_86D314                         ; $859706 |
+  dl CODE_FL_86D49F                         ; $859709 |
+  dl CODE_FL_86D56C                         ; $85970C |
+  dl CODE_FL_86D624                         ; $85970F |
+  dl CODE_FL_86D654                         ; $859712 |
+  dl CODE_FL_8DE45F                         ; $859715 |
+  dl CODE_FL_8BBB60                         ; $859718 |
+  dl CODE_FL_8BBBA0                         ; $85971B |
+  dl CODE_FL_85A01E                         ; $85971E |
+  dl CODE_FL_8CE575                         ; $859721 |
+  dl CODE_FL_8DE4DE                         ; $859724 |
+  dl CODE_FL_8D8BE0                         ; $859727 |
+  dl CODE_FL_8D8DDB                         ; $85972A |
+  dl CODE_FL_8D8E8D                         ; $85972D |
+  dl CODE_FL_8DD49E                         ; $859730 |
+  dl CODE_FL_87E000                         ; $859733 |
+  dl CODE_FL_8D8EA8                         ; $859736 |
+  dl CODE_FL_8D9388                         ; $859739 |
+  dl CODE_FL_8DE59A                         ; $85973C |
+  dl CODE_FL_8D99CE                         ; $85973F |
+  dl CODE_FL_8D9BF0                         ; $859742 |
+  dl CODE_FL_8D9C18                         ; $859745 |
+  dl CODE_FL_B3FFAF                         ; $859748 |
+  dl CODE_FL_8D922B                         ; $85974B |
+  dl CODE_FL_8D91FB                         ; $85974E |
+  dl CODE_FL_8C9F1A                         ; $859751 |
+  dl CODE_FL_86F634                         ; $859754 |
+  dl CODE_FL_8B9389                         ; $859757 |
+  dl CODE_FL_8D97B6                         ; $85975A |
+  dl CODE_FL_97FF6F                         ; $85975D |
+  dl CODE_FL_8D97D2                         ; $859760 |
+  dl CODE_FL_8D97FE                         ; $859763 |
+  dl CODE_FL_8D9570                         ; $859766 |
+  dl CODE_FL_84EA86                         ; $859769 |
+  dl CODE_FL_8B90D0                         ; $85976C |
+  dl CODE_FL_8DD8AE                         ; $85976F |
+  dl CODE_FL_85DFFF                         ; $859772 |
+  dl CODE_FL_8B934B                         ; $859775 |
+  dl CODE_FL_88FA07                         ; $859778 |
+  dl CODE_FL_86E7FE                         ; $85977B |
+  dl CODE_FL_8D9F97                         ; $85977E |
+  dl CODE_FL_8D9FF9                         ; $859781 |
+  dl CODE_FL_8DA472                         ; $859784 |
+  dl CODE_FL_84DE4D                         ; $859787 |
+  dl CODE_FL_A0F596                         ; $85978A |
+  dl CODE_FL_8C9BE6                         ; $85978D |
+  dl CODE_FL_8C9CF6                         ; $859790 |
+  dl CODE_FL_A0F66C                         ; $859793 |
+  dl CODE_FL_A0EF80                         ; $859796 |
+  dl CODE_FL_A0F385                         ; $859799 |
+  dl CODE_FL_A0F4A8                         ; $85979C |
+  dl CODE_FL_A0F444                         ; $85979F |
+  dl CODE_FL_A0F524                         ; $8597A2 |
+  dl CODE_FL_8DE6E7                         ; $8597A5 |
+  dl CODE_FL_86F1EF                         ; $8597A8 |
+  dl CODE_FL_8B9414                         ; $8597AB |
+  dl CODE_FL_86F5EB                         ; $8597AE |
+  dl CODE_FL_86F5EC                         ; $8597B1 |
+  dl CODE_FL_86F5ED                         ; $8597B4 |
+  dl CODE_FL_86F5EE                         ; $8597B7 |
+  dl CODE_FL_86F5EF                         ; $8597BA |
+  dl CODE_FL_8D9EBF                         ; $8597BD |
+  dl CODE_FL_8D9E9B                         ; $8597C0 |
+  dl CODE_FL_8BCADB                         ; $8597C3 |
+  dl CODE_FL_86D787                         ; $8597C6 |
+  dl CODE_FL_86DB43                         ; $8597C9 |
+  dl CODE_FL_86DB17                         ; $8597CC |
+  dl CODE_FL_9CFD80                         ; $8597CF |
+  dl CODE_FL_9CFE44                         ; $8597D2 |
+  dl CODE_FL_85C0B8                         ; $8597D5 |
+  dl CODE_FL_8DB245                         ; $8597D8 |
+  dl CODE_FL_8DB32E                         ; $8597DB |
+  dl CODE_FL_8D9EBF                         ; $8597DE |
+  dl CODE_FL_8CCC07                         ; $8597E1 |
+  dl CODE_FL_8C8E51                         ; $8597E4 |
+  dl CODE_FL_8D9EBF                         ; $8597E7 |
+  dl CODE_FL_85B75C                         ; $8597EA |
+  dl CODE_FL_8BF5EC                         ; $8597ED |
+  dl CODE_FL_84DE2D                         ; $8597F0 |
+  dl CODE_FL_8DE865                         ; $8597F3 |
+  dl CODE_FL_8DA3F6                         ; $8597F6 |
+  dl CODE_FL_8DE208                         ; $8597F9 |
+  dl CODE_FL_86B7B3                         ; $8597FC |
+  dl CODE_FL_8DE918                         ; $8597FF |
+  dl CODE_FL_8DA522                         ; $859802 |
+  dl CODE_FL_8DA584                         ; $859805 |
+  dl CODE_FL_85E06B                         ; $859808 |
+  dl CODE_FL_8CE558                         ; $85980B |
+  dl CODE_FL_8CFF27                         ; $85980E |
+  dl CODE_FL_8D9F2B                         ; $859811 |
   dl $000000                                ; $859814 |
   dl $000000                                ; $859817 |
   dl $000000                                ; $85981A |
@@ -3394,87 +3394,87 @@ PTR24_85918A:
   dl $000000                                ; $859A7E |
   dl $000000                                ; $859A81 |
   dl $000000                                ; $859A84 |
-  dl CODE_8BD7C8                            ; $859A87 |
-  dl CODE_8BE1B6                            ; $859A8A |
-  dl CODE_8BE2C1                            ; $859A8D |
-  dl CODE_8BE02D                            ; $859A90 |
-  dl CODE_8BDF6F                            ; $859A93 |
-  dl CODE_8BE362                            ; $859A96 |
-  dl CODE_8BE3F5                            ; $859A99 |
-  dl CODE_8DB732                            ; $859A9C |
-  dl CODE_8DB8A0                            ; $859A9F |
-  dl CODE_8DBA67                            ; $859AA2 |
-  dl CODE_8DBA84                            ; $859AA5 |
-  dl CODE_8DBCB4                            ; $859AA8 |
-  dl CODE_8DBDAC                            ; $859AAB |
-  dl CODE_8DBEEA                            ; $859AAE |
-  dl CODE_8DBF41                            ; $859AB1 |
-  dl CODE_8D8000                            ; $859AB4 |
-  dl CODE_8D81E7                            ; $859AB7 |
-  dl CODE_8DC065                            ; $859ABA |
-  dl CODE_8DC507                            ; $859ABD |
-  dl CODE_8DC065                            ; $859AC0 |
-  dl CODE_8DC1BC                            ; $859AC3 |
-  dl CODE_8DC25E                            ; $859AC6 |
-  dl CODE_8DC2EA                            ; $859AC9 |
-  dl CODE_8DC2EA                            ; $859ACC |
-  dl CODE_8DC45B                            ; $859ACF |
-  dl CODE_8D8286                            ; $859AD2 |
-  dl CODE_8D8456                            ; $859AD5 |
-  dl CODE_8D86A5                            ; $859AD8 |
-  dl CODE_8D84DE                            ; $859ADB |
-  dl CODE_8D8548                            ; $859ADE |
-  dl CODE_8D862A                            ; $859AE1 |
-  dl CODE_88FA2B                            ; $859AE4 |
-  dl CODE_96F880                            ; $859AE7 |
-  dl CODE_96FA4B                            ; $859AEA |
-  dl CODE_96FA79                            ; $859AED |
-  dl CODE_88FAA4                            ; $859AF0 |
-  dl CODE_88FAD8                            ; $859AF3 |
-  dl CODE_88FB0E                            ; $859AF6 |
-  dl CODE_8D86F6                            ; $859AF9 |
-  dl CODE_8D87B2                            ; $859AFC |
-  dl CODE_8BE44F                            ; $859AFF |
-  dl CODE_8BC963                            ; $859B02 |
-  dl CODE_88FF09                            ; $859B05 |
-  dl CODE_85CEDC                            ; $859B08 |
+  dl CODE_FL_8BD7C8                         ; $859A87 |
+  dl CODE_FL_8BE1B6                         ; $859A8A |
+  dl CODE_FL_8BE2C1                         ; $859A8D |
+  dl CODE_FL_8BE02D                         ; $859A90 |
+  dl CODE_FL_8BDF6F                         ; $859A93 |
+  dl CODE_FL_8BE362                         ; $859A96 |
+  dl CODE_FL_8BE3F5                         ; $859A99 |
+  dl CODE_FL_8DB732                         ; $859A9C |
+  dl CODE_FL_8DB8A0                         ; $859A9F |
+  dl CODE_FL_8DBA67                         ; $859AA2 |
+  dl CODE_FL_8DBA84                         ; $859AA5 |
+  dl CODE_FL_8DBCB4                         ; $859AA8 |
+  dl CODE_FL_8DBDAC                         ; $859AAB |
+  dl CODE_FL_8DBEEA                         ; $859AAE |
+  dl CODE_FL_8DBF41                         ; $859AB1 |
+  dl CODE_FL_8D8000                         ; $859AB4 |
+  dl CODE_FL_8D81E7                         ; $859AB7 |
+  dl CODE_FL_8DC065                         ; $859ABA |
+  dl CODE_FL_8DC507                         ; $859ABD |
+  dl CODE_FL_8DC065                         ; $859AC0 |
+  dl CODE_FL_8DC1BC                         ; $859AC3 |
+  dl CODE_FL_8DC25E                         ; $859AC6 |
+  dl CODE_FL_8DC2EA                         ; $859AC9 |
+  dl CODE_FL_8DC2EA                         ; $859ACC |
+  dl CODE_FL_8DC45B                         ; $859ACF |
+  dl CODE_FL_8D8286                         ; $859AD2 |
+  dl CODE_FL_8D8456                         ; $859AD5 |
+  dl CODE_FL_8D86A5                         ; $859AD8 |
+  dl CODE_FL_8D84DE                         ; $859ADB |
+  dl CODE_FL_8D8548                         ; $859ADE |
+  dl CODE_FL_8D862A                         ; $859AE1 |
+  dl CODE_FL_88FA2B                         ; $859AE4 |
+  dl CODE_FL_96F880                         ; $859AE7 |
+  dl CODE_FL_96FA4B                         ; $859AEA |
+  dl CODE_FL_96FA79                         ; $859AED |
+  dl CODE_FL_88FAA4                         ; $859AF0 |
+  dl CODE_FL_88FAD8                         ; $859AF3 |
+  dl CODE_FL_88FB0E                         ; $859AF6 |
+  dl CODE_FL_8D86F6                         ; $859AF9 |
+  dl CODE_FL_8D87B2                         ; $859AFC |
+  dl CODE_FL_8BE44F                         ; $859AFF |
+  dl CODE_FL_8BC963                         ; $859B02 |
+  dl CODE_FL_88FF09                         ; $859B05 |
+  dl CODE_FL_85CEDC                         ; $859B08 |
   dl $000000                                ; $859B0B |
   dl $000000                                ; $859B0E |
   dl $000000                                ; $859B11 |
   dl $000000                                ; $859B14 |
-  dl CODE_86A00C                            ; $859B17 |
-  dl CODE_86A5D2                            ; $859B1A |
-  dl CODE_86A69C                            ; $859B1D |
+  dl CODE_FL_86A00C                         ; $859B17 |
+  dl CODE_FL_86A5D2                         ; $859B1A |
+  dl CODE_FL_86A69C                         ; $859B1D |
   dl CODE_FL_86A095                         ; $859B20 |
   dl CODE_FL_86A095                         ; $859B23 |
   dl CODE_FL_86A095                         ; $859B26 |
   dl CODE_FL_86A095                         ; $859B29 |
-  dl CODE_86A444                            ; $859B2C |
-  dl CODE_86A1C0                            ; $859B2F |
-  dl CODE_86A4D4                            ; $859B32 |
+  dl CODE_FL_86A444                         ; $859B2C |
+  dl CODE_FL_86A1C0                         ; $859B2F |
+  dl CODE_FL_86A4D4                         ; $859B32 |
   dl CODE_FL_86A095                         ; $859B35 |
   dl CODE_FL_86A095                         ; $859B38 |
   dl CODE_FL_86A095                         ; $859B3B |
   dl CODE_FL_86A095                         ; $859B3E |
   dl CODE_FL_86A095                         ; $859B41 |
-  dl CODE_86A1E2                            ; $859B44 |
-  dl CODE_86A240                            ; $859B47 |
+  dl CODE_FL_86A1E2                         ; $859B44 |
+  dl CODE_FL_86A240                         ; $859B47 |
   dl CODE_FL_86A095                         ; $859B4A |
   dl CODE_FL_86A095                         ; $859B4D |
   dl CODE_FL_86A095                         ; $859B50 |
   dl CODE_FL_86A095                         ; $859B53 |
   dl CODE_FL_86A095                         ; $859B56 |
   dl CODE_FL_86A095                         ; $859B59 |
-  dl CODE_86A1EA                            ; $859B5C |
-  dl CODE_86A444                            ; $859B5F |
-  dl CODE_86A1C0                            ; $859B62 |
+  dl CODE_FL_86A1EA                         ; $859B5C |
+  dl CODE_FL_86A444                         ; $859B5F |
+  dl CODE_FL_86A1C0                         ; $859B62 |
   dl CODE_FL_86A095                         ; $859B65 |
   dl CODE_FL_86A095                         ; $859B68 |
-  dl CODE_86A4D4                            ; $859B6B |
-  dl CODE_86A250                            ; $859B6E |
-  dl CODE_86A7A6                            ; $859B71 |
-  dl CODE_85F737                            ; $859B74 |
-  dl CODE_86A42C                            ; $859B77 |
+  dl CODE_FL_86A4D4                         ; $859B6B |
+  dl CODE_FL_86A250                         ; $859B6E |
+  dl CODE_FL_86A7A6                         ; $859B71 |
+  dl CODE_FL_85F737                         ; $859B74 |
+  dl CODE_FL_86A42C                         ; $859B77 |
   dl $000000                                ; $859B7A |
   dl $000000                                ; $859B7D |
   dl $000000                                ; $859B80 |
@@ -3506,42 +3506,42 @@ PTR24_85918A:
   dl $000000                                ; $859BCE |
   dl $000000                                ; $859BD1 |
   dl $000000                                ; $859BD4 |
-  dl CODE_868122                            ; $859BD7 |
-  dl CODE_B3FC3B                            ; $859BDA |
-  dl CODE_B3FC7F                            ; $859BDD |
-  dl CODE_B3FCF1                            ; $859BE0 |
-  dl CODE_868828                            ; $859BE3 |
-  dl CODE_868E43                            ; $859BE6 |
-  dl CODE_868F6E                            ; $859BE9 |
-  dl CODE_868FCD                            ; $859BEC |
-  dl CODE_B3FD64                            ; $859BEF |
-  dl CODE_B3FDDD                            ; $859BF2 |
-  dl CODE_B3FDFA                            ; $859BF5 |
+  dl CODE_FL_868122                         ; $859BD7 |
+  dl CODE_FL_B3FC3B                         ; $859BDA |
+  dl CODE_FL_B3FC7F                         ; $859BDD |
+  dl CODE_FL_B3FCF1                         ; $859BE0 |
+  dl CODE_FL_868828                         ; $859BE3 |
+  dl CODE_FL_868E43                         ; $859BE6 |
+  dl CODE_FL_868F6E                         ; $859BE9 |
+  dl CODE_FL_868FCD                         ; $859BEC |
+  dl CODE_FL_B3FD64                         ; $859BEF |
+  dl CODE_FL_B3FDDD                         ; $859BF2 |
+  dl CODE_FL_B3FDFA                         ; $859BF5 |
   dl $000000                                ; $859BF8 |
   dl $000000                                ; $859BFB |
   dl $000000                                ; $859BFE |
   dl $000000                                ; $859C01 |
   dl $000000                                ; $859C04 |
-  dl CODE_86982B                            ; $859C07 |
-  dl CODE_869848                            ; $859C0A |
-  dl CODE_8698F8                            ; $859C0D |
-  dl CODE_869936                            ; $859C10 |
-  dl CODE_8699D9                            ; $859C13 |
-  dl CODE_869A06                            ; $859C16 |
-  dl CODE_869AB2                            ; $859C19 |
-  dl CODE_869B39                            ; $859C1C |
-  dl CODE_869BB2                            ; $859C1F |
-  dl CODE_869C40                            ; $859C22 |
-  dl CODE_869CFA                            ; $859C25 |
-  dl CODE_869D7D                            ; $859C28 |
-  dl CODE_869DC6                            ; $859C2B |
-  dl CODE_869E0F                            ; $859C2E |
-  dl CODE_869E84                            ; $859C31 |
-  dl CODE_869F79                            ; $859C34 |
-  dl CODE_869F8E                            ; $859C37 |
-  dl CODE_869FBE                            ; $859C3A |
+  dl CODE_FL_86982B                         ; $859C07 |
+  dl CODE_FL_869848                         ; $859C0A |
+  dl CODE_FL_8698F8                         ; $859C0D |
+  dl CODE_FL_869936                         ; $859C10 |
+  dl CODE_FL_8699D9                         ; $859C13 |
+  dl CODE_FL_869A06                         ; $859C16 |
+  dl CODE_FL_869AB2                         ; $859C19 |
+  dl CODE_FL_869B39                         ; $859C1C |
+  dl CODE_FL_869BB2                         ; $859C1F |
+  dl CODE_FL_869C40                         ; $859C22 |
+  dl CODE_FL_869CFA                         ; $859C25 |
+  dl CODE_FL_869D7D                         ; $859C28 |
+  dl CODE_FL_869DC6                         ; $859C2B |
+  dl CODE_FL_869E0F                         ; $859C2E |
+  dl CODE_FL_869E84                         ; $859C31 |
+  dl CODE_FL_869F79                         ; $859C34 |
+  dl CODE_FL_869F8E                         ; $859C37 |
+  dl CODE_FL_869FBE                         ; $859C3A |
 
-CODE_859C3D:
+CODE_FL_859C3D:
   JSL.L CODE_FL_86C3C9                      ; $859C3D |
   PHX                                       ; $859C41 |
   ASL A                                     ; $859C42 |
@@ -3587,7 +3587,7 @@ CODE_859C8B:
 
   dw $0078,$0068                            ; $859C8C |
 
-CODE_859C90:
+CODE_FL_859C90:
   JSL.L CODE_FL_86C3C9                      ; $859C90 |
   PHX                                       ; $859C94 |
   ASL A                                     ; $859C95 |
@@ -3621,7 +3621,7 @@ CODE_859CC4:
 CODE_859CD2:
   RTL                                       ; $859CD2 |
 
-CODE_859CD3:
+CODE_FL_859CD3:
   LDA.B $1A,X                               ; $859CD3 |
   PHX                                       ; $859CD5 |
   ASL A                                     ; $859CD6 |
@@ -3664,7 +3664,7 @@ CODE_859D0F:
 CODE_859D10:
   JML.L CODE_FL_86CA2D                      ; $859D10 |
 
-CODE_859D14:
+CODE_FL_859D14:
   JSL.L CODE_FL_86C424                      ; $859D14 |
   PHX                                       ; $859D18 |
   ASL A                                     ; $859D19 |
@@ -3740,7 +3740,7 @@ CODE_859D8F:
   JSL.L CODE_FL_85ABC2                      ; $859D8F |
   JML.L CODE_FL_86CA2D                      ; $859D93 |
 
-CODE_859D97:
+CODE_FL_859D97:
   JSL.L CODE_FL_86C424                      ; $859D97 |
   PHX                                       ; $859D9B |
   ASL A                                     ; $859D9C |
@@ -3880,7 +3880,7 @@ CODE_859E72:
   BCC CODE_859E6E                           ; $859E89 |
   RTL                                       ; $859E8B |
 
-CODE_859E8C:
+CODE_FL_859E8C:
   JSL.L CODE_FL_86C424                      ; $859E8C |
   PHX                                       ; $859E90 |
   ASL A                                     ; $859E91 |
@@ -3944,7 +3944,7 @@ CODE_859EE5:
 CODE_859EFF:
   JML.L CODE_FL_86CA2D                      ; $859EFF |
 
-CODE_859F03:
+CODE_FL_859F03:
   JSL.L CODE_FL_86C424                      ; $859F03 |
   PHX                                       ; $859F07 |
   ASL A                                     ; $859F08 |
@@ -4009,7 +4009,7 @@ CODE_859F6A:
   JSL.L CODE_FL_85ABC2                      ; $859F6A |
   JML.L CODE_FL_86CA2D                      ; $859F6E |
 
-CODE_859F72:
+CODE_FL_859F72:
   LDA.B $1A,X                               ; $859F72 |
   PHX                                       ; $859F74 |
   ASL A                                     ; $859F75 |
@@ -4075,7 +4075,7 @@ CODE_859FCE:
   REP #$20                                  ; $859FD5 |
   RTL                                       ; $859FD7 |
 
-CODE_859FD8:
+CODE_FL_859FD8:
   JSL.L CODE_FL_86C424                      ; $859FD8 |
   PHX                                       ; $859FDC |
   ASL A                                     ; $859FDD |
@@ -4110,13 +4110,13 @@ CODE_85A00F:
   INC.B $1A,X                               ; $85A01B |
   RTL                                       ; $85A01D |
 
-CODE_85A01E:
+CODE_FL_85A01E:
   LDA.W #$0001                              ; $85A01E |
   STA.B $3A,X                               ; $85A021 |
   LDA.W #$009B                              ; $85A023 |
   STA.B $18,X                               ; $85A026 |
 
-CODE_85A028:
+CODE_FL_85A028:
   LDA.B $3A,X                               ; $85A028 |
   BEQ CODE_85A02F                           ; $85A02A |
   STA.W $1C6C                               ; $85A02C |
@@ -4290,7 +4290,7 @@ CODE_85A14C:
 CODE_85A169:
   RTL                                       ; $85A169 |
 
-CODE_85A16A:
+CODE_FL_85A16A:
   JSL.L CODE_FL_86C3F8                      ; $85A16A |
   PHX                                       ; $85A16E |
   ASL A                                     ; $85A16F |
@@ -4360,7 +4360,7 @@ CODE_85A1D4:
 CODE_85A1E9:
   RTL                                       ; $85A1E9 |
 
-CODE_85A1EA:
+CODE_FL_85A1EA:
   JSL.L CODE_FL_86C3F8                      ; $85A1EA |
   PHX                                       ; $85A1EE |
   ASL A                                     ; $85A1EF |
@@ -4426,7 +4426,7 @@ CODE_85A25D:
   LDA.W #$0001                              ; $85A25D |
   RTS                                       ; $85A260 |
 
-CODE_85A261:
+CODE_FL_85A261:
   JSL.L CODE_FL_86C3C9                      ; $85A261 |
 
 CODE_FL_85A265:
@@ -4488,7 +4488,7 @@ CODE_85A2A1:
   DEC.B $1A,X                               ; $85A2D1 |
   JML.L CODE_FL_86C63F                      ; $85A2D3 |
 
-CODE_85A2D7:
+CODE_FL_85A2D7:
   JSL.L CODE_FL_85F885                      ; $85A2D7 |
   JSL.L CODE_FL_86C3F8                      ; $85A2DB |
   PHX                                       ; $85A2DF |
@@ -4598,7 +4598,7 @@ CODE_85A392:
   STA.B $1A,X                               ; $85A3A4 |
   RTL                                       ; $85A3A6 |
 
-CODE_85A3A7:
+CODE_FL_85A3A7:
   JSL.L CODE_FL_86C3B0                      ; $85A3A7 |
   PHX                                       ; $85A3AB |
   ASL A                                     ; $85A3AC |
@@ -4652,7 +4652,7 @@ CODE_85A3FB:
   STZ.B $28,X                               ; $85A3FB |
   RTL                                       ; $85A3FD |
 
-CODE_85A3FE:
+CODE_FL_85A3FE:
   JSL.L CODE_FL_86C424                      ; $85A3FE |
   PHX                                       ; $85A402 |
   ASL A                                     ; $85A403 |
@@ -4794,7 +4794,7 @@ CODE_85A4CA:
   STA.L $7EDAC0                             ; $85A52D |
   RTL                                       ; $85A531 |
 
-CODE_85A532:
+CODE_FL_85A532:
   JSL.L CODE_FL_86C3F8                      ; $85A532 |
   JSL.L CODE_FL_86C70D                      ; $85A536 |
   LDA.W #$00B2                              ; $85A53A |
@@ -4824,7 +4824,7 @@ CODE_85A566:
 CODE_85A577:
   RTL                                       ; $85A577 |
 
-CODE_85A578:
+CODE_FL_85A578:
   JSL.L CODE_FL_97FC80                      ; $85A578 |
   JSL.L CODE_FL_86C855                      ; $85A57C |
   LDA.B $20,X                               ; $85A580 |
@@ -7329,7 +7329,7 @@ CODE_FL_85B544:
   LDA.B $00                                 ; $85B550 |
   JML.L CODE_FL_8CFD63                      ; $85B552 |
 
-CODE_85B556:
+CODE_FL_85B556:
   JSL.L CODE_FL_85AAC6                      ; $85B556 |
   JSL.L CODE_FL_97FC80                      ; $85B55A |
   LDY.W $0044,X                             ; $85B55E |
@@ -7343,21 +7343,21 @@ CODE_85B556:
   STA.W $0002,X                             ; $85B575 |
   RTL                                       ; $85B578 |
 
-CODE_85B579:
+CODE_FL_85B579:
   JSL.L CODE_FL_85AAC6                      ; $85B579 |
   LDY.W $0044,X                             ; $85B57D |
   JML.L CODE_FL_86C89E                      ; $85B580 |
 
-CODE_85B584:
+CODE_FL_85B584:
   JSL.L CODE_FL_85AAC6                      ; $85B584 |
   JML.L CODE_FL_97FC80                      ; $85B588 |
 
-CODE_85B58C:
+CODE_FL_85B58C:
   JSL.L CODE_FL_85AAC6                      ; $85B58C |
   JSL.L CODE_FL_86C855                      ; $85B590 |
   JML.L CODE_FL_97FC80                      ; $85B594 |
 
-CODE_85B598:
+CODE_FL_85B598:
   JSL.L CODE_FL_97FC80                      ; $85B598 |
   JSL.L CODE_FL_86C855                      ; $85B59C |
   DEC.B $2C,X                               ; $85B5A0 |
@@ -7368,7 +7368,7 @@ CODE_85B598:
   JSL.L CODE_FL_86C70D                      ; $85B5AA |
   JML.L CODE_FL_86CA57                      ; $85B5AE |
 
-CODE_85B5B2:
+CODE_FL_85B5B2:
   JSL.L CODE_FL_97FC80                      ; $85B5B2 |
   JSL.L CODE_FL_8CFD59                      ; $85B5B6 |
   DEC.B $2C,X                               ; $85B5BA |
@@ -7379,7 +7379,7 @@ CODE_85B5B2:
   JSL.L CODE_FL_86C70D                      ; $85B5C4 |
   JML.L CODE_FL_86CA57                      ; $85B5C8 |
 
-CODE_85B5CC:
+CODE_FL_85B5CC:
   JSL.L CODE_FL_86C855                      ; $85B5CC |
   DEC.B $2C,X                               ; $85B5D0 |
   LDA.W $1C38                               ; $85B5D2 |
@@ -7398,7 +7398,7 @@ CODE_85B5DE:
   JSL.L CODE_FL_86C70D                      ; $85B5EC |
   JML.L CODE_FL_86CA57                      ; $85B5F0 |
 
-CODE_85B5F4:
+CODE_FL_85B5F4:
   JSL.L CODE_FL_97FC80                      ; $85B5F4 |
   LDA.B $20,X                               ; $85B5F8 |
   BNE CODE_85B600                           ; $85B5FA |
@@ -7407,7 +7407,7 @@ CODE_85B5F4:
 CODE_85B600:
   RTL                                       ; $85B600 |
 
-CODE_85B601:
+CODE_FL_85B601:
   JSL.L CODE_FL_86C3F8                      ; $85B601 |
   PHX                                       ; $85B605 |
   ASL A                                     ; $85B606 |
@@ -7564,7 +7564,7 @@ CODE_JP_85B6FE:
 CODE_85B712:
   JML.L CODE_FL_86CA2D                      ; $85B712 |
 
-CODE_85B716:
+CODE_FL_85B716:
   LDA.B $1A,X                               ; $85B716 |
   PHX                                       ; $85B718 |
   ASL A                                     ; $85B719 |
@@ -7604,7 +7604,7 @@ CODE_85B751:
   JSL.L CODE_FL_83D1EA                      ; $85B754 |
   JSL.L CODE_FL_85ABC2                      ; $85B758 |
 
-CODE_85B75C:
+CODE_FL_85B75C:
   JSL.L CODE_FL_86C870                      ; $85B75C |
   JSL.L CODE_FL_86C412                      ; $85B760 |
   PHX                                       ; $85B764 |
@@ -7641,7 +7641,7 @@ CODE_85B792:
   JSL.L CODE_FL_83D1EA                      ; $85B795 |
   BRL CODE_FL_85B6F7                        ; $85B799 |
 
-CODE_85B79C:
+CODE_FL_85B79C:
   JSL.L CODE_FL_86C3F8                      ; $85B79C |
   LDA.B $1A,X                               ; $85B7A0 |
   PHX                                       ; $85B7A2 |
@@ -7692,7 +7692,7 @@ CODE_JP_85B7DD:
 CODE_85B7F5:
   RTL                                       ; $85B7F5 |
 
-CODE_85B7F6:
+CODE_FL_85B7F6:
   JSL.L CODE_FL_86C3F8                      ; $85B7F6 |
   LDA.B $1A,X                               ; $85B7FA |
   PHX                                       ; $85B7FC |
@@ -7746,7 +7746,7 @@ CODE_85B843:
 CODE_85B853:
   RTL                                       ; $85B853 |
 
-CODE_85B854:
+CODE_FL_85B854:
   JSL.L CODE_FL_86C3F8                      ; $85B854 |
   LDA.B $1A,X                               ; $85B858 |
   PHX                                       ; $85B85A |
@@ -7782,7 +7782,7 @@ CODE_85B890:
   JSL.L CODE_FL_85AC4F                      ; $85B890 |
   JMP.W CODE_JP_85B7C5                      ; $85B894 |
 
-CODE_85B897:
+CODE_FL_85B897:
   JSL.L CODE_FL_86C3F8                      ; $85B897 |
   LDA.B $1A,X                               ; $85B89B |
   PHX                                       ; $85B89D |
@@ -7828,7 +7828,7 @@ CODE_85B8CC:
 CODE_85B8EB:
   RTL                                       ; $85B8EB |
 
-CODE_85B8EC:
+CODE_FL_85B8EC:
   JSL.L CODE_FL_86C3F8                      ; $85B8EC |
   LDA.B $1A,X                               ; $85B8F0 |
   PHX                                       ; $85B8F2 |
@@ -7863,15 +7863,15 @@ CODE_85B919:
   JSL.L push_sound_queue                    ; $85B923 |
   JMP.W CODE_JP_85B6FE                      ; $85B927 |
 
-CODE_85B92A:
+CODE_FL_85B92A:
   LDA.B $0D,X                               ; $85B92A |
-  BMI CODE_85B938                           ; $85B92C |
+  BMI CODE_FL_85B938                        ; $85B92C |
   CMP.W #$0090                              ; $85B92E |
-  BCC CODE_85B938                           ; $85B931 |
+  BCC CODE_FL_85B938                        ; $85B931 |
   LDA.W #$0090                              ; $85B933 |
   STA.B $0D,X                               ; $85B936 |
 
-CODE_85B938:
+CODE_FL_85B938:
   JSL.L CODE_FL_86C3F8                      ; $85B938 |
   LDA.B $1A,X                               ; $85B93C |
   CMP.W #$0004                              ; $85B93E |
@@ -7910,7 +7910,7 @@ CODE_85B96C:
   JSL.L push_sound_queue                    ; $85B976 |
   JMP.W CODE_JP_85B6FE                      ; $85B97A |
 
-CODE_85B97D:
+CODE_FL_85B97D:
   JSL.L CODE_FL_86C407                      ; $85B97D |
   LDA.B $1A,X                               ; $85B981 |
   PHX                                       ; $85B983 |
@@ -7939,7 +7939,7 @@ CODE_85B9A2:
   JSL.L push_sound_queue                    ; $85B9AC |
   JMP.W CODE_JP_85B6FE                      ; $85B9B0 |
 
-CODE_85B9B3:
+CODE_FL_85B9B3:
   JSL.L CODE_FL_86C3F8                      ; $85B9B3 |
   LDA.B $1A,X                               ; $85B9B7 |
   PHX                                       ; $85B9B9 |
@@ -7978,7 +7978,7 @@ CODE_85B9E6:
 CODE_85B9F0:
   RTL                                       ; $85B9F0 |
 
-CODE_85B9F1:
+CODE_FL_85B9F1:
   JSL.L CODE_FL_86C3F8                      ; $85B9F1 |
   LDA.B $1A,X                               ; $85B9F5 |
   PHX                                       ; $85B9F7 |
@@ -8009,7 +8009,7 @@ CODE_85BA16:
   INC.B $1A,X                               ; $85BA21 |
   RTL                                       ; $85BA23 |
 
-CODE_85BA24:
+CODE_FL_85BA24:
   JSL.L CODE_FL_86C407                      ; $85BA24 |
   LDA.B $1A,X                               ; $85BA28 |
   PHX                                       ; $85BA2A |
@@ -8033,7 +8033,7 @@ CODE_85BA3F:
   JSL.L spawn_item_drop                     ; $85BA4A |
   JML.L CODE_FL_86CA2D                      ; $85BA4E |
 
-CODE_85BA52:
+CODE_FL_85BA52:
   JSL.L CODE_FL_86C407                      ; $85BA52 |
   LDA.B $1A,X                               ; $85BA56 |
   PHX                                       ; $85BA58 |
@@ -8081,7 +8081,7 @@ CODE_FL_85BAA5:
   JSL.L CODE_FL_85A940                      ; $85BAAC |
   RTL                                       ; $85BAB0 |
 
-CODE_85BAB1:
+CODE_FL_85BAB1:
   JSL.L CODE_FL_86C407                      ; $85BAB1 |
   PHX                                       ; $85BAB5 |
   ASL A                                     ; $85BAB6 |
@@ -8114,7 +8114,7 @@ CODE_85BAE5:
   JSL.L spawn_item_drop                     ; $85BAEC |
   JML.L CODE_FL_86CA2D                      ; $85BAF0 |
 
-CODE_85BAF4:
+CODE_FL_85BAF4:
   JSL.L CODE_FL_86C3F8                      ; $85BAF4 |
   LDA.B $1A,X                               ; $85BAF8 |
   PHX                                       ; $85BAFA |
@@ -8150,7 +8150,7 @@ CODE_85BB25:
 CODE_85BB34:
   RTL                                       ; $85BB34 |
 
-CODE_85BB35:
+CODE_FL_85BB35:
   JSL.L CODE_FL_86C3F8                      ; $85BB35 |
   LDA.B $1A,X                               ; $85BB39 |
   PHX                                       ; $85BB3B |
@@ -8183,7 +8183,7 @@ CODE_85BB64:
   JSL.L CODE_FL_83D2CA                      ; $85BB67 |
   JMP.W CODE_FL_85B6F7                      ; $85BB6B |
 
-CODE_85BB6E:
+CODE_FL_85BB6E:
   JSL.L CODE_FL_86C3F8                      ; $85BB6E |
   LDA.B $1A,X                               ; $85BB72 |
   PHX                                       ; $85BB74 |
@@ -8218,7 +8218,7 @@ CODE_85BB95:
   INC.B $1A,X                               ; $85BBAF |
   RTL                                       ; $85BBB1 |
 
-CODE_85BBB2:
+CODE_FL_85BBB2:
   JSL.L CODE_FL_86C3F8                      ; $85BBB2 |
   LDA.B $1A,X                               ; $85BBB6 |
   PHX                                       ; $85BBB8 |
@@ -8252,7 +8252,7 @@ CODE_85BBD6:
   INC.B $1A,X                               ; $85BBEC |
   RTL                                       ; $85BBEE |
 
-CODE_85BBEF:
+CODE_FL_85BBEF:
   JSL.L CODE_FL_86C3F8                      ; $85BBEF |
   LDA.B $1A,X                               ; $85BBF3 |
   PHX                                       ; $85BBF5 |
@@ -8329,15 +8329,15 @@ CODE_85BC77:
 CODE_85BC7E:
   RTL                                       ; $85BC7E |
 
-CODE_85BC7F:
+CODE_FL_85BC7F:
   LDA.W #$0183                              ; $85BC7F |
   BRA CODE_85BC8C                           ; $85BC82 |
 
-CODE_85BC84:
+CODE_FL_85BC84:
   LDA.W #$0008                              ; $85BC84 |
   BRA CODE_85BC8C                           ; $85BC87 |
 
-CODE_85BC89:
+CODE_FL_85BC89:
   LDA.W #$0007                              ; $85BC89 |
 
 CODE_85BC8C:
@@ -8372,7 +8372,7 @@ CODE_85BC98:
 CODE_85BCC7:
   JML.L CODE_FL_86CA57                      ; $85BCC7 |
 
-CODE_85BCCB:
+CODE_FL_85BCCB:
   LDA.W #$0008                              ; $85BCCB |
   STA.B $10                                 ; $85BCCE |
   LDA.W #$0004                              ; $85BCD0 |
@@ -8405,7 +8405,7 @@ CODE_85BCD5:
 CODE_85BD0B:
   JML.L CODE_FL_86CA57                      ; $85BD0B |
 
-CODE_85BD0F:
+CODE_FL_85BD0F:
   JSL.L CODE_FL_85F885                      ; $85BD0F |
   JSL.L CODE_FL_86C3F8                      ; $85BD13 |
   LDA.B $1A,X                               ; $85BD17 |
@@ -8456,7 +8456,7 @@ CODE_85BD6F:
 CODE_85BD73:
   JML.L CODE_FL_86CA36                      ; $85BD73 |
 
-CODE_85BD77:
+CODE_FL_85BD77:
   JSL.L CODE_FL_85F885                      ; $85BD77 |
   JSL.L CODE_FL_86C3F8                      ; $85BD7B |
   LDA.B $1A,X                               ; $85BD7F |
@@ -8501,7 +8501,7 @@ CODE_85BD94:
 CODE_85BDCF:
   JML.L CODE_JL_85BE8C                      ; $85BDCF |
 
-CODE_85BDD3:
+CODE_FL_85BDD3:
   JSL.L CODE_FL_85F885                      ; $85BDD3 |
   JSL.L CODE_FL_86C3F8                      ; $85BDD7 |
   LDA.B $1A,X                               ; $85BDDB |
@@ -8526,7 +8526,7 @@ CODE_85BDF0:
 CODE_85BDFA:
   JML.L CODE_JL_85BE8C                      ; $85BDFA |
 
-CODE_85BDFE:
+CODE_FL_85BDFE:
   JSL.L CODE_FL_85F885                      ; $85BDFE |
   JSL.L CODE_FL_86C3F8                      ; $85BE02 |
   LDA.B $1A,X                               ; $85BE06 |
@@ -8546,7 +8546,7 @@ PTR16_85BE15:
 CODE_85BE1B:
   JML.L CODE_JL_85BE8C                      ; $85BE1B |
 
-CODE_85BE1F:
+CODE_FL_85BE1F:
   JSL.L CODE_FL_85F885                      ; $85BE1F |
   JSL.L CODE_FL_86C3F8                      ; $85BE23 |
   LDA.B $1A,X                               ; $85BE27 |
@@ -8631,7 +8631,7 @@ CODE_85BEC0:
 CODE_85BEC6:
   RTL                                       ; $85BEC6 |
 
-CODE_85BEC7:
+CODE_FL_85BEC7:
   JSL.L CODE_FL_85AAC6                      ; $85BEC7 |
   JSL.L CODE_FL_85F885                      ; $85BECB |
   LDY.B $44,X                               ; $85BECF |
@@ -8656,7 +8656,7 @@ CODE_85BEE7:
 CODE_85BEF0:
   JML.L CODE_FL_85A9F7                      ; $85BEF0 |
 
-CODE_85BEF4:
+CODE_FL_85BEF4:
   JSL.L CODE_FL_97FC80                      ; $85BEF4 |
   LDA.B $00,X                               ; $85BEF8 |
   BNE CODE_85BF00                           ; $85BEFA |
@@ -8665,7 +8665,7 @@ CODE_85BEF4:
 CODE_85BF00:
   RTL                                       ; $85BF00 |
 
-CODE_85BF01:
+CODE_FL_85BF01:
   JSL.L CODE_FL_86C3F8                      ; $85BF01 |
   LDA.B $1A,X                               ; $85BF05 |
   PHX                                       ; $85BF07 |
@@ -8732,7 +8732,7 @@ CODE_85BF7D:
 CODE_85BF87:
   RTL                                       ; $85BF87 |
 
-CODE_85BF88:
+CODE_FL_85BF88:
   JSL.L CODE_FL_86C3F8                      ; $85BF88 |
   LDA.B $1A,X                               ; $85BF8C |
   PHX                                       ; $85BF8E |
@@ -8791,7 +8791,7 @@ CODE_85BFDD:
 CODE_85BFFB:
   RTL                                       ; $85BFFB |
 
-CODE_85BFFC:
+CODE_FL_85BFFC:
   JSL.L CODE_FL_86C3F8                      ; $85BFFC |
   LDA.B $1A,X                               ; $85C000 |
   PHX                                       ; $85C002 |
@@ -8903,7 +8903,7 @@ CODE_85C0A9:
 CODE_85C0B7:
   RTL                                       ; $85C0B7 |
 
-CODE_85C0B8:
+CODE_FL_85C0B8:
   JSL.L CODE_FL_86C3F8                      ; $85C0B8 |
   BNE CODE_85C0CC                           ; $85C0BC |
   LDA.W #$0077                              ; $85C0BE |
@@ -8916,7 +8916,7 @@ CODE_85C0CC:
   JSL.L CODE_FL_86C70D                      ; $85C0CC |
   JML.L CODE_FL_86CA36                      ; $85C0D0 |
 
-CODE_85C0D4:
+CODE_FL_85C0D4:
   JSL.L CODE_FL_82BE73                      ; $85C0D4 |
   JSL.L CODE_FL_86C3F8                      ; $85C0D8 |
   PHX                                       ; $85C0DC |
@@ -9119,7 +9119,7 @@ CODE_85C255:
 CODE_85C28B:
   RTL                                       ; $85C28B |
 
-CODE_85C28C:
+CODE_FL_85C28C:
   JSL.L CODE_FL_85B20C                      ; $85C28C |
   JSL.L CODE_FL_85F7C9                      ; $85C290 |
   JSL.L CODE_FL_8CFD8F                      ; $85C294 |
@@ -9277,7 +9277,7 @@ CODE_85C3E9:
 CODE_85C3F7:
   RTL                                       ; $85C3F7 |
 
-CODE_85C3F8:
+CODE_FL_85C3F8:
   JSL.L CODE_FL_85B20C                      ; $85C3F8 |
   JSL.L CODE_FL_85F7C9                      ; $85C3FC |
   JSL.L CODE_FL_8CFD8F                      ; $85C400 |
@@ -9373,7 +9373,7 @@ CODE_85C4BF:
 CODE_85C4CD:
   RTL                                       ; $85C4CD |
 
-CODE_85C4CE:
+CODE_FL_85C4CE:
   LDA.W #$0003                              ; $85C4CE |
   JSL.L CODE_FL_85B216                      ; $85C4D1 |
   LDA.W #$0006                              ; $85C4D5 |
@@ -9591,7 +9591,7 @@ CODE_85C6B6:
 CODE_85C6BA:
   RTL                                       ; $85C6BA |
 
-CODE_85C6BB:
+CODE_FL_85C6BB:
   LDA.W #$0003                              ; $85C6BB |
   JSL.L CODE_FL_85B216                      ; $85C6BE |
   LDA.W #$0006                              ; $85C6C2 |
@@ -9756,7 +9756,7 @@ CODE_85C828:
   LDA.W #$32CA                              ; $85C828 |
   JMP.W CODE_JP_85C683                      ; $85C82B |
 
-CODE_85C82E:
+CODE_FL_85C82E:
   LDA.W #$0003                              ; $85C82E |
   JSL.L CODE_FL_85B056                      ; $85C831 |
   JSL.L CODE_FL_8CFD8F                      ; $85C835 |
@@ -9827,7 +9827,7 @@ CODE_85C8A8:
 CODE_85C8B9:
   JML.L CODE_FL_86CA2D                      ; $85C8B9 |
 
-CODE_85C8BD:
+CODE_FL_85C8BD:
   LDA.W #$0003                              ; $85C8BD |
   JSL.L CODE_FL_85B216                      ; $85C8C0 |
   LDA.W #$0006                              ; $85C8C4 |
@@ -10118,7 +10118,7 @@ CODE_85CB4D:
 CODE_85CB51:
   RTL                                       ; $85CB51 |
 
-CODE_85CB52:
+CODE_FL_85CB52:
   LDA.W #$0003                              ; $85CB52 |
   JSL.L CODE_FL_85B056                      ; $85CB55 |
   JSL.L CODE_FL_8CFD8F                      ; $85CB59 |
@@ -10199,7 +10199,7 @@ CODE_85CBDC:
 CODE_85CBED:
   JML.L CODE_FL_86CA2D                      ; $85CBED |
 
-CODE_85CBF1:
+CODE_FL_85CBF1:
   JSL.L CODE_FL_85AAC6                      ; $85CBF1 |
   JSL.L CODE_FL_85F7C9                      ; $85CBF5 |
   LDY.B $44,X                               ; $85CBF9 |
@@ -10226,7 +10226,7 @@ CODE_85CBF1:
 CODE_85CC24:
   JML.L CODE_FL_85A9F7                      ; $85CC24 |
 
-CODE_85CC28:
+CODE_FL_85CC28:
   JSL.L CODE_FL_86C424                      ; $85CC28 |
   PHX                                       ; $85CC2C |
   ASL A                                     ; $85CC2D |
@@ -10291,7 +10291,7 @@ CODE_85CC98:
   JSL.L CODE_FL_85AC4F                      ; $85CC98 |
   JML.L CODE_FL_86CA36                      ; $85CC9C |
 
-CODE_85CCA0:
+CODE_FL_85CCA0:
   JSL.L CODE_FL_86C3F8                      ; $85CCA0 |
   PHX                                       ; $85CCA4 |
   ASL A                                     ; $85CCA5 |
@@ -10383,7 +10383,7 @@ CODE_85CD30:
   STA.W $0004,Y                             ; $85CD3A |
   JML.L CODE_FL_86CA2D                      ; $85CD3D |
 
-CODE_85CD41:
+CODE_FL_85CD41:
   JSL.L CODE_FL_8CFD8F                      ; $85CD41 |
   PHX                                       ; $85CD45 |
   ASL A                                     ; $85CD46 |
@@ -10579,7 +10579,7 @@ CODE_85CEC4:
   STZ.B $E4                                 ; $85CED6 |
   JML.L CODE_FL_86CA2D                      ; $85CED8 |
 
-CODE_85CEDC:
+CODE_FL_85CEDC:
   JSL.L CODE_FL_85CEEF                      ; $85CEDC |
   LDA.L $7E7C34                             ; $85CEE0 |
   CMP.W #$0005                              ; $85CEE4 |
@@ -10618,7 +10618,7 @@ CODE_85CF1D:
   JSL.L CODE_FL_86A046                      ; $85CF1D |
   BRA CODE_85CF6E                           ; $85CF21 |
 
-CODE_85CF23:
+CODE_FL_85CF23:
   JSL.L CODE_FL_86C3F8                      ; $85CF23 |
   PHX                                       ; $85CF27 |
   ASL A                                     ; $85CF28 |
@@ -10691,7 +10691,7 @@ CODE_85CF9C:
   STZ.B $46,X                               ; $85CF9C |
   RTL                                       ; $85CF9E |
 
-CODE_85CF9F:
+CODE_FL_85CF9F:
   JSL.L CODE_FL_86C3F8                      ; $85CF9F |
   PHX                                       ; $85CFA3 |
   ASL A                                     ; $85CFA4 |
@@ -10779,7 +10779,7 @@ CODE_85D038:
   STZ.B $46,X                               ; $85D038 |
   RTL                                       ; $85D03A |
 
-CODE_85D03B:
+CODE_FL_85D03B:
   JSL.L CODE_FL_86C424                      ; $85D03B |
   PHX                                       ; $85D03F |
   ASL A                                     ; $85D040 |
@@ -10885,7 +10885,7 @@ CODE_85D0EE:
   STZ.B $06,X                               ; $85D10C |
   JML.L CODE_JL_8AFB07                      ; $85D10E |
 
-CODE_85D112:
+CODE_FL_85D112:
   JSL.L CODE_FL_8CFD8F                      ; $85D112 |
   PHX                                       ; $85D116 |
   ASL A                                     ; $85D117 |
@@ -10981,7 +10981,7 @@ CODE_85D1A7:
   STA.W $0004,Y                             ; $85D1B3 |
   JML.L CODE_FL_86CA2D                      ; $85D1B6 |
 
-CODE_85D1BA:
+CODE_FL_85D1BA:
   LDA.B $1A,X                               ; $85D1BA |
   PHX                                       ; $85D1BC |
   ASL A                                     ; $85D1BD |
@@ -11034,7 +11034,7 @@ CODE_85D1FD:
   STZ.B $46,X                               ; $85D1FD |
   RTL                                       ; $85D1FF |
 
-CODE_85D200:
+CODE_FL_85D200:
   LDA.W #$0004                              ; $85D200 |
   JSL.L CODE_FL_85B065                      ; $85D203 |
   JSL.L CODE_FL_8CFD8F                      ; $85D207 |
@@ -11139,7 +11139,7 @@ CODE_85D2FB:
   LDA.B $4E,X                               ; $85D2FB |
   JML.L CODE_FL_85B4B4                      ; $85D2FD |
 
-CODE_85D301:
+CODE_FL_85D301:
   LDA.W #$0003                              ; $85D301 |
   JSL.L CODE_FL_85B065                      ; $85D304 |
   JSL.L CODE_FL_8CFD8F                      ; $85D308 |
@@ -11205,7 +11205,7 @@ CODE_85D391:
   LDA.B $4E,X                               ; $85D391 |
   JML.L CODE_FL_85B4B4                      ; $85D393 |
 
-CODE_85D397:
+CODE_FL_85D397:
   LDA.W #$0004                              ; $85D397 |
   JSL.L CODE_FL_85B065                      ; $85D39A |
   JSL.L CODE_FL_8CFD8F                      ; $85D39E |
@@ -11341,7 +11341,7 @@ CODE_85D4BF:
   STA.B $1A,X                               ; $85D4C2 |
   JMP.W CODE_JP_85D434                      ; $85D4C4 |
 
-CODE_85D4C7:
+CODE_FL_85D4C7:
   LDA.W #$0003                              ; $85D4C7 |
   JSL.L CODE_FL_85B065                      ; $85D4CA |
   JSL.L CODE_FL_8CFD8F                      ; $85D4CE |
@@ -11406,7 +11406,7 @@ CODE_85D556:
   LDA.B $4E,X                               ; $85D556 |
   JML.L CODE_FL_85B4B4                      ; $85D558 |
 
-CODE_JL_85D55C:
+CODE_FL_85D55C:
   LDA.W #$0003                              ; $85D55C |
   JSL.L CODE_FL_85B065                      ; $85D55F |
   JSL.L CODE_FL_8CFD8F                      ; $85D563 |
@@ -11471,7 +11471,7 @@ CODE_85D5EB:
   LDA.B $4E,X                               ; $85D5EB |
   JML.L CODE_FL_85B4B4                      ; $85D5ED |
 
-CODE_85D5F1:
+CODE_FL_85D5F1:
   LDA.W #$0003                              ; $85D5F1 |
   JSL.L CODE_FL_85B065                      ; $85D5F4 |
   JSL.L CODE_FL_8CFD8F                      ; $85D5F8 |
@@ -11577,7 +11577,7 @@ CODE_85D6C2:
   LDA.B $4E,X                               ; $85D6C6 |
   JML.L CODE_FL_85B4B4                      ; $85D6C8 |
 
-CODE_85D6CC:
+CODE_FL_85D6CC:
   LDA.W #$0003                              ; $85D6CC |
   JSL.L CODE_FL_85B065                      ; $85D6CF |
   JSL.L CODE_FL_8CFD8F                      ; $85D6D3 |
@@ -11790,7 +11790,7 @@ CODE_85D894:
   LDA.W #$1012                              ; $85D8C4 |
   JML.L CODE_FL_86CAEE                      ; $85D8C7 |
 
-CODE_85D8CB:
+CODE_FL_85D8CB:
   LDA.W #$0003                              ; $85D8CB |
   JSL.L CODE_FL_85B065                      ; $85D8CE |
   JSL.L CODE_FL_8CFD8F                      ; $85D8D2 |
@@ -11858,7 +11858,7 @@ CODE_85D962:
   LDA.B $4E,X                               ; $85D962 |
   JML.L CODE_FL_85B4B4                      ; $85D964 |
 
-CODE_85D968:
+CODE_FL_85D968:
   JSL.L CODE_FL_8CFD8F                      ; $85D968 |
   PHX                                       ; $85D96C |
   ASL A                                     ; $85D96D |
@@ -11915,7 +11915,7 @@ CODE_85D9CC:
   DEC.B $1A,X                               ; $85D9E5 |
   RTL                                       ; $85D9E7 |
 
-CODE_85D9E8:
+CODE_FL_85D9E8:
   LDA.W #$0003                              ; $85D9E8 |
   JSL.L CODE_FL_85B065                      ; $85D9EB |
   JSL.L CODE_FL_8CFD8F                      ; $85D9EF |
@@ -11981,7 +11981,7 @@ CODE_85DA78:
   LDA.B $4E,X                               ; $85DA78 |
   JML.L CODE_FL_85B4B4                      ; $85DA7A |
 
-CODE_85DA7E:
+CODE_FL_85DA7E:
   LDA.W #$0003                              ; $85DA7E |
   JSL.L CODE_FL_85B065                      ; $85DA81 |
   JSL.L CODE_FL_8CFD8F                      ; $85DA85 |
@@ -12046,7 +12046,7 @@ CODE_85DB0D:
   LDA.B $4E,X                               ; $85DB0D |
   JML.L CODE_FL_85B4B4                      ; $85DB0F |
 
-CODE_85DB13:
+CODE_FL_85DB13:
   LDA.W #$0003                              ; $85DB13 |
   JSL.L CODE_FL_85B065                      ; $85DB16 |
   JSL.L CODE_FL_8CFD8F                      ; $85DB1A |
@@ -12114,7 +12114,7 @@ CODE_85DBAA:
   LDA.B $4E,X                               ; $85DBAA |
   JML.L CODE_FL_85B4B4                      ; $85DBAC |
 
-CODE_JL_85DBB0:
+CODE_FL_85DBB0:
   LDA.W #$0003                              ; $85DBB0 |
   JSL.L CODE_FL_85B065                      ; $85DBB3 |
   JSL.L CODE_FL_8CFD8F                      ; $85DBB7 |
@@ -12191,7 +12191,7 @@ CODE_85DC5A:
   LDA.B $4E,X                               ; $85DC5A |
   JML.L CODE_FL_85B4B4                      ; $85DC5C |
 
-CODE_85DC60:
+CODE_FL_85DC60:
   JSL.L CODE_FL_86C424                      ; $85DC60 |
   PHX                                       ; $85DC64 |
   ASL A                                     ; $85DC65 |
@@ -12214,7 +12214,7 @@ CODE_85DC75:
   STA.B $09,X                               ; $85DC80 |
   BRA CODE_85DCAD                           ; $85DC82 |
 
-CODE_85DC84:
+CODE_FL_85DC84:
   JSL.L CODE_FL_86C424                      ; $85DC84 |
   PHX                                       ; $85DC88 |
   ASL A                                     ; $85DC89 |
@@ -12249,7 +12249,7 @@ CODE_85DCAD:
   INC.B $1A,X                               ; $85DCBA |
   RTL                                       ; $85DCBC |
 
-CODE_85DCBD:
+CODE_FL_85DCBD:
   JSL.L CODE_FL_86C424                      ; $85DCBD |
   PHX                                       ; $85DCC1 |
   ASL A                                     ; $85DCC2 |
@@ -12290,7 +12290,7 @@ CODE_85DCFC:
   JSL.L CODE_FL_86C70D                      ; $85DCFC |
   JML.L CODE_FL_86CA36                      ; $85DD00 |
 
-CODE_85DD04:
+CODE_FL_85DD04:
   LDA.W #$0003                              ; $85DD04 |
   JSL.L CODE_FL_85B225                      ; $85DD07 |
   LDA.W #$0004                              ; $85DD0B |
@@ -12653,7 +12653,7 @@ CODE_85DFD1:
   STA.B $1A,X                               ; $85DFFC |
   RTL                                       ; $85DFFE |
 
-CODE_85DFFF:
+CODE_FL_85DFFF:
   JSL.L CODE_FL_8CFD84                      ; $85DFFF |
   PHX                                       ; $85E003 |
   ASL A                                     ; $85E004 |
@@ -12682,7 +12682,7 @@ CODE_85E026:
   JSL.L CODE_FL_86C70D                      ; $85E02A |
   JML.L CODE_FL_86CA36                      ; $85E02E |
 
-CODE_85E032:
+CODE_FL_85E032:
   JSL.L CODE_FL_86C424                      ; $85E032 |
   PHX                                       ; $85E036 |
   ASL A                                     ; $85E037 |
@@ -12722,7 +12722,7 @@ CODE_FL_85E05F:
 CODE_85E06A:
   RTL                                       ; $85E06A |
 
-CODE_85E06B:
+CODE_FL_85E06B:
   LDY.B $3A,X                               ; $85E06B |
   LDA.W $0000,Y                             ; $85E06D |
   STA.B $00,X                               ; $85E070 |
@@ -12754,7 +12754,7 @@ CODE_85E098:
   CLC                                       ; $85E098 |
   RTS                                       ; $85E099 |
 
-CODE_85E09A:
+CODE_FL_85E09A:
   JSL.L CODE_FL_97FC80                      ; $85E09A |
   LDA.B $1A,X                               ; $85E09E |
   PHX                                       ; $85E0A0 |
@@ -12832,7 +12832,7 @@ CODE_85E123:
 CODE_85E124:
   JML.L CODE_FL_86CA36                      ; $85E124 |
 
-CODE_85E128:
+CODE_FL_85E128:
   LDY.B $3A,X                               ; $85E128 |
   LDA.W $0009,Y                             ; $85E12A |
   STA.B $09,X                               ; $85E12D |
@@ -12852,7 +12852,7 @@ CODE_FL_85E13C:
   PLX                                       ; $85E148 |
   RTL                                       ; $85E149 |
 
-CODE_85E14A:
+CODE_FL_85E14A:
   JSL.L CODE_FL_97FC80                      ; $85E14A |
   LDA.B $1A,X                               ; $85E14E |
   PHX                                       ; $85E150 |
@@ -12919,7 +12919,7 @@ CODE_85E1B5:
 CODE_JP_85E1BA:
   JML.L CODE_FL_86CA36                      ; $85E1BA |
 
-CODE_85E1BE:
+CODE_FL_85E1BE:
   JSL.L CODE_FL_97FC80                      ; $85E1BE |
   LDA.B $1A,X                               ; $85E1C2 |
   PHX                                       ; $85E1C4 |
@@ -12938,7 +12938,7 @@ CODE_85E1D5:
   STZ.B $3C,X                               ; $85E1D5 |
   BRA CODE_85E161                           ; $85E1D7 |
 
-CODE_85E1D9:
+CODE_FL_85E1D9:
   JSL.L CODE_FL_97FC80                      ; $85E1D9 |
   LDA.B $1A,X                               ; $85E1DD |
   PHX                                       ; $85E1DF |
@@ -13023,7 +13023,7 @@ CODE_85E261:
 CODE_85E262:
   JML.L CODE_FL_86CA36                      ; $85E262 |
 
-CODE_85E266:
+CODE_FL_85E266:
   JSL.L CODE_FL_86C407                      ; $85E266 |
   PHX                                       ; $85E26A |
   ASL A                                     ; $85E26B |
@@ -13096,7 +13096,7 @@ CODE_85E2C5:
   STZ.B $0C                                 ; $85E2E3 |
   RTS                                       ; $85E2E5 |
 
-CODE_85E2E6:
+CODE_FL_85E2E6:
   LDA.B $1A,X                               ; $85E2E6 |
   PHX                                       ; $85E2E8 |
   ASL A                                     ; $85E2E9 |
@@ -13230,7 +13230,7 @@ CODE_85E3C9:
   JSR.W CODE_FN_85E5F8                      ; $85E3C9 |
   BRA CODE_JP_85E38C                        ; $85E3CC |
 
-CODE_85E3CE:
+CODE_FL_85E3CE:
   LDA.B $1A,X                               ; $85E3CE |
   PHX                                       ; $85E3D0 |
   ASL A                                     ; $85E3D1 |
@@ -13352,7 +13352,7 @@ CODE_85E4A6:
   JSR.W CODE_FN_85E68C                      ; $85E4A6 |
   JMP.W CODE_JP_85E38C                      ; $85E4A9 |
 
-CODE_85E4AC:
+CODE_FL_85E4AC:
   JSL.L CODE_FL_97FC80                      ; $85E4AC |
   LDA.B $1A,X                               ; $85E4B0 |
   PHX                                       ; $85E4B2 |
@@ -13698,7 +13698,7 @@ CODE_FN_85E719:
   STA.B $22,X                               ; $85E728 |
   RTS                                       ; $85E72A |
 
-CODE_85E72B:
+CODE_FL_85E72B:
   JSL.L CODE_FL_97FC80                      ; $85E72B |
   JSL.L CODE_FL_86C855                      ; $85E72F |
   LDA.B $1A,X                               ; $85E733 |
@@ -13756,7 +13756,7 @@ CODE_85E788:
 CODE_85E78D:
   JML.L CODE_FL_86CA36                      ; $85E78D |
 
-CODE_85E791:
+CODE_FL_85E791:
   LDA.B $1A,X                               ; $85E791 |
   PHX                                       ; $85E793 |
   ASL A                                     ; $85E794 |
@@ -13869,7 +13869,7 @@ CODE_85E859:
   STZ.B $00,X                               ; $85E859 |
   RTL                                       ; $85E85B |
 
-CODE_85E85C:
+CODE_FL_85E85C:
   LDA.B $1A,X                               ; $85E85C |
   PHX                                       ; $85E85E |
   ASL A                                     ; $85E85F |
@@ -13968,7 +13968,7 @@ CODE_85E90C:
   STZ.B $00,X                               ; $85E90C |
   RTL                                       ; $85E90E |
 
-CODE_85E90F:
+CODE_FL_85E90F:
   JSL.L CODE_FL_86C407                      ; $85E90F |
   PHX                                       ; $85E913 |
   ASL A                                     ; $85E914 |
@@ -14119,7 +14119,7 @@ CODE_85EA0A:
 CODE_85EA12:
   RTS                                       ; $85EA12 |
 
-CODE_85EA13:
+CODE_FL_85EA13:
   JSL.L CODE_FL_97FC80                      ; $85EA13 |
   LDA.B $1A,X                               ; $85EA17 |
   PHX                                       ; $85EA19 |
@@ -14171,7 +14171,7 @@ CODE_85EA65:
 CODE_85EA66:
   JML.L CODE_FL_86CA36                      ; $85EA66 |
 
-CODE_85EA6A:
+CODE_FL_85EA6A:
   JSL.L CODE_FL_97FC80                      ; $85EA6A |
   LDA.B $1A,X                               ; $85EA6E |
   PHX                                       ; $85EA70 |
@@ -14224,7 +14224,7 @@ CODE_85EABB:
 CODE_85EABF:
   JML.L CODE_FL_86CA36                      ; $85EABF |
 
-CODE_85EAC3:
+CODE_FL_85EAC3:
   LDA.B $1A,X                               ; $85EAC3 |
   PHX                                       ; $85EAC5 |
   ASL A                                     ; $85EAC6 |
@@ -14301,7 +14301,7 @@ CODE_85EB3C:
 CODE_85EB41:
   JML.L CODE_FL_86CA36                      ; $85EB41 |
 
-CODE_85EB45:
+CODE_FL_85EB45:
   LDY.B $A6                                 ; $85EB45 |
   LDA.W $0000,Y                             ; $85EB47 |
   STA.B $00,X                               ; $85EB4A |
@@ -14346,7 +14346,7 @@ CODE_85EB8F:
   STA.B $09,X                               ; $85EB93 |
   RTL                                       ; $85EB95 |
 
-CODE_85EB96:
+CODE_FL_85EB96:
   LDA.B $1A,X                               ; $85EB96 |
   PHX                                       ; $85EB98 |
   ASL A                                     ; $85EB99 |
@@ -14404,7 +14404,7 @@ CODE_85EBE7:
 CODE_85EBEB:
   RTL                                       ; $85EBEB |
 
-CODE_85EBEC:
+CODE_FL_85EBEC:
   LDA.B $1A,X                               ; $85EBEC |
   PHX                                       ; $85EBEE |
   ASL A                                     ; $85EBEF |
@@ -14434,7 +14434,7 @@ CODE_85EC0B:
   BNE CODE_85EBEB                           ; $85EC1D |
   JML.L CODE_FL_86CA36                      ; $85EC1F |
 
-CODE_85EC23:
+CODE_FL_85EC23:
   LDY.B $3A,X                               ; $85EC23 |
   LDA.B $3C,X                               ; $85EC25 |
   CMP.W $0022,Y                             ; $85EC27 |
@@ -14458,7 +14458,7 @@ CODE_85EC40:
   STA.B $0D,X                               ; $85EC4D |
   RTL                                       ; $85EC4F |
 
-CODE_85EC50:
+CODE_FL_85EC50:
   JSL.L CODE_FL_97FC80                      ; $85EC50 |
   LDA.B $1A,X                               ; $85EC54 |
   PHX                                       ; $85EC56 |
@@ -14525,7 +14525,7 @@ CODE_85ECBC:
 CODE_JP_85ECC1:
   JML.L CODE_FL_86CA36                      ; $85ECC1 |
 
-CODE_85ECC5:
+CODE_FL_85ECC5:
   JSL.L CODE_FL_97FC80                      ; $85ECC5 |
   LDA.B $1A,X                               ; $85ECC9 |
   PHX                                       ; $85ECCB |
@@ -14544,7 +14544,7 @@ CODE_85ECDC:
   STZ.B $3C,X                               ; $85ECDC |
   BRA CODE_85EC67                           ; $85ECDE |
 
-CODE_85ECE0:
+CODE_FL_85ECE0:
   JSL.L CODE_FL_97FC80                      ; $85ECE0 |
   LDA.B $1A,X                               ; $85ECE4 |
   PHX                                       ; $85ECE6 |
@@ -14595,7 +14595,7 @@ CODE_85ED30:
 CODE_85ED31:
   JML.L CODE_FL_86CA36                      ; $85ED31 |
 
-CODE_85ED35:
+CODE_FL_85ED35:
   JSL.L CODE_FL_85ED51                      ; $85ED35 |
 
 CODE_JP_85ED39:
@@ -14708,7 +14708,7 @@ CODE_85EDE4:
   STA.W $0092,Y                             ; $85EDEF |
   BRA CODE_JP_85EDBB                        ; $85EDF2 |
 
-CODE_85EDF4:
+CODE_FL_85EDF4:
   JSL.L CODE_FL_85EDFB                      ; $85EDF4 |
   JMP.W CODE_JP_85ED39                      ; $85EDF8 |
 
@@ -15058,7 +15058,7 @@ CODE_FN_85F04A:
   STA.B $11,X                               ; $85F063 |
   RTS                                       ; $85F065 |
 
-CODE_85F066:
+CODE_FL_85F066:
   JSL.L CODE_FL_97FC80                      ; $85F066 |
   LDA.B $1A,X                               ; $85F06A |
   PHX                                       ; $85F06C |
@@ -15102,7 +15102,7 @@ CODE_85F0A3:
 CODE_85F0A8:
   JML.L CODE_FL_86CA36                      ; $85F0A8 |
 
-CODE_85F0AC:
+CODE_FL_85F0AC:
   JSL.L CODE_FL_97FC80                      ; $85F0AC |
   LDA.B $1A,X                               ; $85F0B0 |
   PHX                                       ; $85F0B2 |
@@ -15272,7 +15272,7 @@ CODE_85F1C4:
 CODE_85F1CC:
   RTS                                       ; $85F1CC |
 
-CODE_85F1CD:
+CODE_FL_85F1CD:
   JSL.L CODE_FL_97FC80                      ; $85F1CD |
   LDA.B $1A,X                               ; $85F1D1 |
   PHX                                       ; $85F1D3 |
@@ -15313,7 +15313,7 @@ CODE_85F20E:
 CODE_85F20F:
   JML.L CODE_FL_86CA36                      ; $85F20F |
 
-CODE_85F213:
+CODE_FL_85F213:
   JSL.L CODE_FL_97FC80                      ; $85F213 |
   LDA.B $1A,X                               ; $85F217 |
   PHX                                       ; $85F219 |
@@ -15368,7 +15368,7 @@ CODE_85F26A:
 CODE_85F26E:
   JML.L CODE_FL_86CA36                      ; $85F26E |
 
-CODE_85F272:
+CODE_FL_85F272:
   LDA.B $1A,X                               ; $85F272 |
   PHX                                       ; $85F274 |
   ASL A                                     ; $85F275 |
@@ -15444,7 +15444,7 @@ CODE_85F2EB:
 CODE_85F2F0:
   JML.L CODE_FL_86CA36                      ; $85F2F0 |
 
-CODE_85F2F4:
+CODE_FL_85F2F4:
   STZ.W $19CC                               ; $85F2F4 |
   RTL                                       ; $85F2F7 |
 
@@ -15580,7 +15580,7 @@ CODE_85F3FC:
   SEC                                       ; $85F3FF |
   RTL                                       ; $85F400 |
 
-CODE_85F401:
+CODE_FL_85F401:
   INC.W $19B2                               ; $85F401 |
   JSL.L CODE_FL_85F30A                      ; $85F404 |
   BCC CODE_85F420                           ; $85F408 |
@@ -15601,7 +15601,7 @@ CODE_85F421:
   JSL.L CODE_FL_80E9D9                      ; $85F421 |
   JML.L CODE_FL_848000                      ; $85F425 |
 
-CODE_85F429:
+CODE_FL_85F429:
   INC.W $19B2                               ; $85F429 |
   JSL.L CODE_FL_85F386                      ; $85F42C |
   BCC CODE_85F468                           ; $85F430 |
@@ -15618,7 +15618,7 @@ CODE_85F444:
   LDA.W #$0002                              ; $85F448 |
   JML.L CODE_JL_85F2F8                      ; $85F44B |
 
-CODE_85F44F:
+CODE_FL_85F44F:
   INC.W $19B2                               ; $85F44F |
   JSL.L CODE_FL_85F386                      ; $85F452 |
   BCC CODE_85F468                           ; $85F456 |
@@ -15648,7 +15648,7 @@ CODE_85F477:
 CODE_85F485:
   RTL                                       ; $85F485 |
 
-CODE_85F486:
+CODE_FL_85F486:
   LDA.B $1A,X                               ; $85F486 |
   BNE CODE_85F4EB                           ; $85F488 |
   INC.W $19B2                               ; $85F48A |
@@ -15700,7 +15700,7 @@ CODE_85F4EB:
   STZ.B $E4                                 ; $85F4EF |
   JMP.W CODE_JP_85F576                      ; $85F4F1 |
 
-CODE_85F4F4:
+CODE_FL_85F4F4:
   INC.W $19B2                               ; $85F4F4 |
   STZ.W $19CC                               ; $85F4F7 |
   LDY.W $197E                               ; $85F4FA |
@@ -15778,7 +15778,7 @@ CODE_JP_85F576:
 CODE_JP_85F58C:
   RTL                                       ; $85F58C |
 
-CODE_85F58D:
+CODE_FL_85F58D:
   LDA.B $1A,X                               ; $85F58D |
   BNE CODE_85F5BD                           ; $85F58F |
   JSL.L CODE_FL_85F614                      ; $85F591 |
@@ -15807,14 +15807,14 @@ CODE_85F5BD:
   STZ.B $E4                                 ; $85F5C1 |
   BRA CODE_85F5D9                           ; $85F5C3 |
 
-CODE_85F5C5:
+CODE_FL_85F5C5:
   JSL.L CODE_FL_85F614                      ; $85F5C5 |
   BCC CODE_85F5F2                           ; $85F5C9 |
   STX.W $19CC                               ; $85F5CB |
   STZ.W $19CE                               ; $85F5CE |
   BRA CODE_85F5DC                           ; $85F5D1 |
 
-CODE_JL_85F5D3:
+CODE_FL_85F5D3:
   JSL.L CODE_FL_85F614                      ; $85F5D3 |
   BCC CODE_85F5F2                           ; $85F5D7 |
 
@@ -15879,7 +15879,7 @@ CODE_85F649:
   CLC                                       ; $85F649 |
   RTL                                       ; $85F64A |
 
-CODE_85F64B:
+CODE_FL_85F64B:
   INC.W $19B2                               ; $85F64B |
   LDY.W $197E                               ; $85F64E |
   BNE CODE_85F656                           ; $85F651 |
@@ -15952,7 +15952,7 @@ CODE_JP_85F6BA:
 CODE_JP_85F6D9:
   RTL                                       ; $85F6D9 |
 
-CODE_85F6DA:
+CODE_FL_85F6DA:
   INC.W $19B2                               ; $85F6DA |
   LDY.W $197E                               ; $85F6DD |
   BEQ CODE_85F736                           ; $85F6E0 |
@@ -15997,7 +15997,7 @@ CODE_85F6F0:
 CODE_85F736:
   RTL                                       ; $85F736 |
 
-CODE_85F737:
+CODE_FL_85F737:
   JSL.L CODE_FL_85F614                      ; $85F737 |
   BCC CODE_85F740                           ; $85F73B |
   JMP.W CODE_JP_85F6BA                      ; $85F73D |

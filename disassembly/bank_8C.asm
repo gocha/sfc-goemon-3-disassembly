@@ -1,6 +1,6 @@
 org $8C8000
 
-CODE_8C8000:
+CODE_FL_8C8000:
   JSL.L CODE_FL_85F7C9                      ; $8C8000 |
   JSR.W CODE_FN_8C8969                      ; $8C8004 |
   JSR.W CODE_FN_8C8985                      ; $8C8007 |
@@ -1391,7 +1391,7 @@ CODE_FN_8C8A5D:
 CODE_8C8A94:
   RTS                                       ; $8C8A94 |
 
-CODE_8C8A95:
+CODE_FL_8C8A95:
   JSL.L CODE_FL_85F7C9                      ; $8C8A95 |
   JSL.L CODE_FL_8CFD8F                      ; $8C8A99 |
   PHX                                       ; $8C8A9D |
@@ -1421,7 +1421,7 @@ CODE_8C8ABC:
 CODE_8C8AC5:
   RTL                                       ; $8C8AC5 |
 
-CODE_8C8AC6:
+CODE_FL_8C8AC6:
   JSR.W CODE_FN_8C8E02                      ; $8C8AC6 |
   LDA.B $1A,X                               ; $8C8AC9 |
   PHX                                       ; $8C8ACB |
@@ -1612,7 +1612,7 @@ CODE_8C8C14:
   db $59,$50,$B9,$83,$5A,$50,$9D,$83        ; $8C8C51 |
   db $5B,$50,$D1,$83,$5C,$50,$D1,$83        ; $8C8C59 |
 
-CODE_8C8C61:
+CODE_FL_8C8C61:
   JSL.L CODE_FL_85AAC6                      ; $8C8C61 |
   JSL.L CODE_FL_8CFD84                      ; $8C8C65 |
   PHX                                       ; $8C8C69 |
@@ -1643,7 +1643,7 @@ CODE_8C8C8B:
 CODE_8C8C97:
   RTL                                       ; $8C8C97 |
 
-CODE_8C8C98:
+CODE_FL_8C8C98:
   JSR.W CODE_FN_8C8E43                      ; $8C8C98 |
   JSL.L CODE_FL_8CFD8F                      ; $8C8C9B |
   PHX                                       ; $8C8C9F |
@@ -1905,7 +1905,7 @@ CODE_FN_8C8E43:
 CODE_8C8E50:
   RTS                                       ; $8C8E50 |
 
-CODE_8C8E51:
+CODE_FL_8C8E51:
   JSL.L CODE_FL_86C424                      ; $8C8E51 |
   PHX                                       ; $8C8E55 |
   ASL A                                     ; $8C8E56 |
@@ -1955,7 +1955,7 @@ CODE_8C8E9E:
 CODE_8C8E9F:
   JML.L CODE_FL_86CA36                      ; $8C8E9F |
 
-CODE_8C8EA3:
+CODE_FL_8C8EA3:
   JSL.L CODE_FL_85F885                      ; $8C8EA3 |
   JSR.W CODE_FN_8C94B6                      ; $8C8EA7 |
   JSL.L CODE_FL_86C3F8                      ; $8C8EAA |
@@ -2762,7 +2762,7 @@ CODE_8C9441:
   JSL.L CODE_FL_8CF9C3                      ; $8C9456 |
   JML.L CODE_FL_86CA2D                      ; $8C945A |
 
-CODE_8C945E:
+CODE_FL_8C945E:
   JSL.L CODE_FL_86C412                      ; $8C945E |
   PHX                                       ; $8C9462 |
   ASL A                                     ; $8C9463 |
@@ -2903,7 +2903,7 @@ CODE_8C9543:
   LDA.B $00                                 ; $8C9543 |
   RTS                                       ; $8C9545 |
 
-CODE_8C9546:
+CODE_FL_8C9546:
   JSL.L CODE_FL_85F885                      ; $8C9546 |
   JSR.W CODE_FN_8C99A4                      ; $8C954A |
   JSL.L CODE_FL_86C3F8                      ; $8C954D |
@@ -3544,7 +3544,7 @@ CODE_8C994E:
   JSL.L CODE_FL_85A986                      ; $8C9960 |
   JML.L CODE_FL_86CA2D                      ; $8C9964 |
 
-CODE_8C9968:
+CODE_FL_8C9968:
   JSL.L CODE_FL_85F885                      ; $8C9968 |
   JSL.L CODE_FL_86C3F8                      ; $8C996C |
   PHX                                       ; $8C9970 |
@@ -3648,7 +3648,7 @@ CODE_8C9A19:
   LDA.B $00                                 ; $8C9A19 |
   RTS                                       ; $8C9A1B |
 
-CODE_8C9A1C:
+CODE_FL_8C9A1C:
   LDA.W #$0004                              ; $8C9A1C |
   JSR.W CODE_FN_8C9D6A                      ; $8C9A1F |
   JSL.L CODE_FL_86C41D                      ; $8C9A22 |
@@ -3761,7 +3761,7 @@ CODE_8C9AD7:
   JSR.W CODE_FN_8C9DC6                      ; $8C9ADA |
   RTL                                       ; $8C9ADD |
 
-CODE_8C9ADE:
+CODE_FL_8C9ADE:
   LDA.W #$0003                              ; $8C9ADE |
   JSR.W CODE_FN_8C9D6A                      ; $8C9AE1 |
   JSL.L CODE_FL_86C870                      ; $8C9AE4 |
@@ -3804,7 +3804,7 @@ CODE_8C9B18:
   JSR.W CODE_FN_8C9E67                      ; $8C9B20 |
   RTL                                       ; $8C9B23 |
 
-CODE_8C9B24:
+CODE_FL_8C9B24:
   LDA.W #$0004                              ; $8C9B24 |
   JSR.W CODE_FN_8C9D6A                      ; $8C9B27 |
   JSL.L CODE_FL_86C41D                      ; $8C9B2A |
@@ -3917,7 +3917,7 @@ CODE_8C9BDF:
   JSR.W CODE_FN_8C9DC6                      ; $8C9BE2 |
   RTL                                       ; $8C9BE5 |
 
-CODE_8C9BE6:
+CODE_FL_8C9BE6:
   LDA.W #$0003                              ; $8C9BE6 |
   JSR.W CODE_FN_8C9D6A                      ; $8C9BE9 |
   JSL.L CODE_FL_86C870                      ; $8C9BEC |
@@ -3960,7 +3960,7 @@ CODE_8C9C20:
   JSR.W CODE_FN_8C9E67                      ; $8C9C28 |
   RTL                                       ; $8C9C2B |
 
-CODE_8C9C2C:
+CODE_FL_8C9C2C:
   LDA.W #$0004                              ; $8C9C2C |
   JSR.W CODE_FN_8C9D6A                      ; $8C9C2F |
   JSL.L CODE_FL_86C41D                      ; $8C9C32 |
@@ -4074,7 +4074,7 @@ CODE_8C9CEF:
   JSR.W CODE_FN_8C9DE5                      ; $8C9CF2 |
   RTL                                       ; $8C9CF5 |
 
-CODE_8C9CF6:
+CODE_FL_8C9CF6:
   LDA.W #$0003                              ; $8C9CF6 |
   JSR.W CODE_FN_8C9D6A                      ; $8C9CF9 |
   JSL.L CODE_FL_86C870                      ; $8C9CFC |
@@ -4126,7 +4126,7 @@ CODE_8C9D3C:
 CODE_8C9D4A:
   RTL                                       ; $8C9D4A |
 
-CODE_8C9D4B:
+CODE_FL_8C9D4B:
   LDA.B $1A,X                               ; $8C9D4B |
   PHX                                       ; $8C9D4D |
   ASL A                                     ; $8C9D4E |
@@ -4355,7 +4355,7 @@ CODE_8C9EB7:
   STA.B $1A,X                               ; $8C9EC3 |
   RTS                                       ; $8C9EC5 |
 
-CODE_8C9EC6:
+CODE_FL_8C9EC6:
   JSL.L CODE_FL_86C424                      ; $8C9EC6 |
   PHX                                       ; $8C9ECA |
   ASL A                                     ; $8C9ECB |
@@ -4403,7 +4403,7 @@ CODE_8C9F15:
 CODE_8C9F16:
   JML.L CODE_FL_86CA36                      ; $8C9F16 |
 
-CODE_8C9F1A:
+CODE_FL_8C9F1A:
   JSL.L CODE_FL_86C3BB                      ; $8C9F1A |
   PHX                                       ; $8C9F1E |
   ASL A                                     ; $8C9F1F |
@@ -5295,7 +5295,7 @@ CODE_JP_8CA4EF:
   LDX.B $24                                 ; $8CA4EF |
   RTS                                       ; $8CA4F1 |
 
-CODE_8CA4F2:
+CODE_FL_8CA4F2:
   LDA.B $38,X                               ; $8CA4F2 |
   BEQ CODE_8CA504                           ; $8CA4F4 |
   LDY.B $44,X                               ; $8CA4F6 |
@@ -7834,7 +7834,7 @@ CODE_FN_8CB746:
   STA.W $0022,Y                             ; $8CB759 |
   RTS                                       ; $8CB75C |
 
-CODE_8CB75D:
+CODE_FL_8CB75D:
   LDY.B $44,X                               ; $8CB75D |
   LDA.W $001A,Y                             ; $8CB75F |
   CMP.W #$0003                              ; $8CB762 |
@@ -8039,7 +8039,7 @@ CODE_JP_8CB8B0:
   JSL.L CODE_FL_86CA36                      ; $8CB8B0 |
   RTL                                       ; $8CB8B4 |
 
-CODE_8CB8B5:
+CODE_FL_8CB8B5:
   JSL.L CODE_FL_86C3A3                      ; $8CB8B5 |
   STZ.B $32,X                               ; $8CB8B9 |
   STZ.B $22,X                               ; $8CB8BB |
@@ -8114,7 +8114,7 @@ CODE_8CB944:
 CODE_8CB945:
   RTL                                       ; $8CB945 |
 
-CODE_8CB946:
+CODE_FL_8CB946:
   JSL.L CODE_FL_86C3A3                      ; $8CB946 |
   JSR.W CODE_FN_8CB94E                      ; $8CB94A |
   RTL                                       ; $8CB94D |
@@ -8283,7 +8283,7 @@ CODE_8CBA57:
   STA.B $0D,X                               ; $8CBA62 |
   RTS                                       ; $8CBA64 |
 
-CODE_8CBA65:
+CODE_FL_8CBA65:
   JSL.L CODE_FL_86C3A3                      ; $8CBA65 |
   JSR.W CODE_FN_8CBA6D                      ; $8CBA69 |
   RTL                                       ; $8CBA6C |
@@ -8649,7 +8649,7 @@ DATA8_8CBC61:
   db $46,$30,$00,$00,$4A,$30,$00,$00        ; $8CBF9D |
   db $D0,$30,$00,$00,$D4,$30,$00,$00        ; $8CBFA5 |
 
-CODE_8CBFAD:
+CODE_FL_8CBFAD:
   JSR.W CODE_FN_8CBFB1                      ; $8CBFAD |
   RTL                                       ; $8CBFB0 |
 
@@ -8881,7 +8881,7 @@ CODE_8CC159:
 CODE_8CC168:
   RTS                                       ; $8CC168 |
 
-CODE_8CC169:
+CODE_FL_8CC169:
   JSL.L CODE_FL_85F7C9                      ; $8CC169 |
   JSL.L CODE_FL_8CFD8F                      ; $8CC16D |
   PHX                                       ; $8CC171 |
@@ -8987,7 +8987,7 @@ CODE_8CC243:
 CODE_8CC254:
   RTL                                       ; $8CC254 |
 
-CODE_8CC255:
+CODE_FL_8CC255:
   JSL.L CODE_FL_85F7C9                      ; $8CC255 |
   JSL.L CODE_FL_8CFD8F                      ; $8CC259 |
   PHX                                       ; $8CC25D |
@@ -9098,7 +9098,7 @@ CODE_FL_8CC32D:
 CODE_8CC344:
   RTL                                       ; $8CC344 |
 
-CODE_8CC345:
+CODE_FL_8CC345:
   JSL.L CODE_FL_85F7C9                      ; $8CC345 |
   JSL.L CODE_FL_8CFD8F                      ; $8CC349 |
   PHX                                       ; $8CC34D |
@@ -9199,7 +9199,7 @@ CODE_8CC3F6:
 CODE_8CC42C:
   RTL                                       ; $8CC42C |
 
-CODE_8CC42D:
+CODE_FL_8CC42D:
   JSL.L CODE_FL_85F7C9                      ; $8CC42D |
   JSL.L CODE_FL_8CFD8F                      ; $8CC431 |
   PHX                                       ; $8CC435 |
@@ -9342,7 +9342,7 @@ CODE_8CC559:
 CODE_8CC567:
   RTL                                       ; $8CC567 |
 
-CODE_8CC568:
+CODE_FL_8CC568:
   JSL.L CODE_FL_85AAC6                      ; $8CC568 |
   JSL.L CODE_FL_85F7C9                      ; $8CC56C |
   LDY.B $44,X                               ; $8CC570 |
@@ -9377,7 +9377,7 @@ CODE_8CC59D:
   db $F0,$FF,$10,$00,$00,$00,$00,$00        ; $8CC5A1 |
   db $00,$00,$00,$00,$10,$00,$F0,$FF        ; $8CC5A9 |
 
-CODE_8CC5B1:
+CODE_FL_8CC5B1:
   JSL.L CODE_FL_85F7C9                      ; $8CC5B1 |
   JSL.L CODE_FL_8CFD8F                      ; $8CC5B5 |
   PHX                                       ; $8CC5B9 |
@@ -9442,7 +9442,7 @@ CODE_8CC620:
   db $0C,$00                                ; $8CC62C |
   db $0C,$00,$18,$00,$E8,$FF                ; $8CC62E |
 
-CODE_8CC634:
+CODE_FL_8CC634:
   JSL.L CODE_FL_85F7C9                      ; $8CC634 |
   JSL.L CODE_FL_8CFD8F                      ; $8CC638 |
   PHX                                       ; $8CC63C |
@@ -9603,7 +9603,7 @@ UNREACH_8CC758:
   db $F8,$FF                                ; $8CC75C |
   db $F8,$FF                                ; $8CC75E |
 
-CODE_8CC760:
+CODE_FL_8CC760:
   JSL.L CODE_FL_85F885                      ; $8CC760 |
   JSL.L CODE_FL_86C3F8                      ; $8CC764 |
   PHX                                       ; $8CC768 |
@@ -9694,7 +9694,7 @@ CODE_8CC808:
   JSL.L CODE_FL_85A986                      ; $8CC80C |
   JML.L CODE_FL_86CA36                      ; $8CC810 |
 
-CODE_8CC814:
+CODE_FL_8CC814:
   JSL.L CODE_FL_85F885                      ; $8CC814 |
   JSL.L CODE_FL_86C3F8                      ; $8CC818 |
   PHX                                       ; $8CC81C |
@@ -9797,7 +9797,7 @@ CODE_8CC8CA:
   JSL.L CODE_FL_85A986                      ; $8CC8CE |
   JML.L CODE_FL_86CA36                      ; $8CC8D2 |
 
-CODE_8CC8D6:
+CODE_FL_8CC8D6:
   JSL.L CODE_FL_85AD36                      ; $8CC8D6 |
   JSL.L CODE_FL_85F885                      ; $8CC8DA |
   JSL.L CODE_FL_86C3F8                      ; $8CC8DE |
@@ -9909,7 +9909,7 @@ CODE_8CC9B1:
   JSL.L CODE_FL_85ABC2                      ; $8CC9B9 |
   JML.L CODE_FL_86CA2D                      ; $8CC9BD |
 
-CODE_8CC9C1:
+CODE_FL_8CC9C1:
   JSL.L CODE_FL_86C3F8                      ; $8CC9C1 |
   PHX                                       ; $8CC9C5 |
   ASL A                                     ; $8CC9C6 |
@@ -9982,7 +9982,7 @@ CODE_8CCA2E:
   DEC.B $1A,X                               ; $8CCA43 |
   RTL                                       ; $8CCA45 |
 
-CODE_8CCA46:
+CODE_FL_8CCA46:
   JSL.L CODE_FL_85AAC6                      ; $8CCA46 |
   JSL.L CODE_FL_86C3C9                      ; $8CCA4A |
   PHX                                       ; $8CCA4E |
@@ -10224,7 +10224,7 @@ CODE_8CCB86:
   db $08,$00                                ; $8CCC03 |
   db $88,$00                                ; $8CCC05 |
 
-CODE_8CCC07:
+CODE_FL_8CCC07:
   LDA.B $1A,X                               ; $8CCC07 |
   PHX                                       ; $8CCC09 |
   ASL A                                     ; $8CCC0A |
@@ -10335,7 +10335,7 @@ CODE_8CCCC7:
 CODE_8CCCDF:
   RTL                                       ; $8CCCDF |
 
-CODE_8CCCE0:
+CODE_FL_8CCCE0:
   LDA.B $1A,X                               ; $8CCCE0 |
   PHX                                       ; $8CCCE2 |
   ASL A                                     ; $8CCCE3 |
@@ -10395,7 +10395,7 @@ CODE_8CCD47:
 CODE_8CCD4B:
   RTL                                       ; $8CCD4B |
 
-CODE_8CCD4C:
+CODE_FL_8CCD4C:
   JSL.L CODE_FL_85AE1F                      ; $8CCD4C |
   JSL.L CODE_FL_86C3BB                      ; $8CCD50 |
   PHX                                       ; $8CCD54 |
@@ -10464,7 +10464,7 @@ CODE_8CCDC8:
   STZ.B $32,X                               ; $8CCDCA |
   RTL                                       ; $8CCDCC |
 
-CODE_8CCDCD:
+CODE_FL_8CCDCD:
   JSL.L CODE_FL_86C424                      ; $8CCDCD |
   PHX                                       ; $8CCDD1 |
   ASL A                                     ; $8CCDD2 |
@@ -10718,7 +10718,7 @@ DATA8_8CCF61:
   db $DA,$00,$04,$00,$DC,$00,$04,$00        ; $8CCF69 |
   db $00,$00,$00,$00                        ; $8CCF71 |
 
-CODE_8CCF75:
+CODE_FL_8CCF75:
   LDA.B $44,X                               ; $8CCF75 |
   BEQ CODE_8CCF7E                           ; $8CCF77 |
   LDA.W #$0002                              ; $8CCF79 |
@@ -10955,7 +10955,7 @@ CODE_FL_8CD110:
 
   db $A0,$00,$A0,$00,$90,$00                ; $8CD119 |
 
-CODE_8CD11F:
+CODE_FL_8CD11F:
   LDA.W #$0002                              ; $8CD11F |
   LDY.W #$0002                              ; $8CD122 |
   JSL.L CODE_FL_85AD62                      ; $8CD125 |
@@ -11134,7 +11134,7 @@ CODE_8CD24E:
 CODE_8CD260:
   RTL                                       ; $8CD260 |
 
-CODE_8CD261:
+CODE_FL_8CD261:
   JSL.L CODE_FL_86C3F8                      ; $8CD261 |
   PHX                                       ; $8CD265 |
   ASL A                                     ; $8CD266 |
@@ -11235,7 +11235,7 @@ CODE_8CD2F9:
 CODE_8CD30F:
   RTL                                       ; $8CD30F |
 
-CODE_8CD310:
+CODE_FL_8CD310:
   JSL.L CODE_FL_86C3B0                      ; $8CD310 |
   PHX                                       ; $8CD314 |
   ASL A                                     ; $8CD315 |
@@ -11428,7 +11428,7 @@ CODE_8CD466:
 CODE_8CD46B:
   RTL                                       ; $8CD46B |
 
-CODE_8CD46C:
+CODE_FL_8CD46C:
   JSL.L CODE_FL_85F885                      ; $8CD46C |
   JSL.L CODE_FL_86C3F8                      ; $8CD470 |
   PHX                                       ; $8CD474 |
@@ -11473,7 +11473,7 @@ CODE_8CD4B8:
   JSL.L CODE_FL_85A986                      ; $8CD4BF |
   JML.L CODE_FL_86CA2D                      ; $8CD4C3 |
 
-CODE_8CD4C7:
+CODE_FL_8CD4C7:
   JSL.L CODE_FL_86C3B0                      ; $8CD4C7 |
   PHX                                       ; $8CD4CB |
   ASL A                                     ; $8CD4CC |
@@ -11540,7 +11540,7 @@ CODE_8CD537:
 CODE_8CD538:
   RTL                                       ; $8CD538 |
 
-CODE_8CD539:
+CODE_FL_8CD539:
   JSL.L CODE_FL_86C424                      ; $8CD539 |
   PHX                                       ; $8CD53D |
   ASL A                                     ; $8CD53E |
@@ -11654,7 +11654,7 @@ CODE_8CD5DC:
   db $00,$00,$EA,$00                        ; $8CD5FD |
   db $EC,$00,$00,$00                        ; $8CD601 |
 
-CODE_8CD605:
+CODE_FL_8CD605:
   JSL.L CODE_FL_86C424                      ; $8CD605 |
   PHX                                       ; $8CD609 |
   ASL A                                     ; $8CD60A |
@@ -11698,7 +11698,7 @@ CODE_8CD628:
 CODE_8CD655:
   RTL                                       ; $8CD655 |
 
-CODE_8CD656:
+CODE_FL_8CD656:
   JSL.L CODE_FL_86C407                      ; $8CD656 |
   LDA.B $1A,X                               ; $8CD65A |
   PHX                                       ; $8CD65C |
@@ -11762,7 +11762,7 @@ CODE_8CD6BD:
   JSL.L CODE_FL_86C239                      ; $8CD6BD |
   RTL                                       ; $8CD6C1 |
 
-CODE_8CD6C2:
+CODE_FL_8CD6C2:
   JSL.L CODE_FL_86C3C9                      ; $8CD6C2 |
   PHX                                       ; $8CD6C6 |
   ASL A                                     ; $8CD6C7 |
@@ -11799,10 +11799,10 @@ CODE_8CD6EF:
 CODE_8CD6FD:
   RTL                                       ; $8CD6FD |
 
-CODE_8CD6FE:
+CODE_FL_8CD6FE:
   RTL                                       ; $8CD6FE |
 
-CODE_8CD6FF:
+CODE_FL_8CD6FF:
   JSL.L CODE_FL_85F885                      ; $8CD6FF |
   JSL.L CODE_FL_85FDDA                      ; $8CD703 |
   JSL.L CODE_FL_86C3F8                      ; $8CD707 |
@@ -11871,7 +11871,7 @@ CODE_8CD781:
   JSL.L CODE_FL_85A986                      ; $8CD781 |
   JML.L CODE_FL_86CA2D                      ; $8CD785 |
 
-CODE_8CD789:
+CODE_FL_8CD789:
   JSL.L CODE_FL_86C3B0                      ; $8CD789 |
   PHX                                       ; $8CD78D |
   ASL A                                     ; $8CD78E |
@@ -11947,7 +11947,7 @@ CODE_8CD7ED:
 CODE_8CD807:
   RTL                                       ; $8CD807 |
 
-CODE_8CD808:
+CODE_FL_8CD808:
   JSL.L CODE_FL_86C3B0                      ; $8CD808 |
   PHX                                       ; $8CD80C |
   ASL A                                     ; $8CD80D |
@@ -12037,7 +12037,7 @@ CODE_8CD8A9:
   JSL.L CODE_FL_85ABC2                      ; $8CD8AF |
   JML.L CODE_FL_86CA2D                      ; $8CD8B3 |
 
-CODE_8CD8B7:
+CODE_FL_8CD8B7:
   JSL.L CODE_FL_86C3B0                      ; $8CD8B7 |
   PHX                                       ; $8CD8BB |
   ASL A                                     ; $8CD8BC |
@@ -12085,7 +12085,7 @@ CODE_8CD8F2:
   STA.B $10                                 ; $8CD8FF |
   JML.L CODE_FL_85F8A1                      ; $8CD901 |
 
-CODE_8CD905:
+CODE_FL_8CD905:
   LDA.B $3C,X                               ; $8CD905 |
   BEQ CODE_8CD912                           ; $8CD907 |
   JSL.L CODE_FL_8CD8EA                      ; $8CD909 |
@@ -12155,7 +12155,7 @@ CODE_8CD974:
   STA.B $3C,X                               ; $8CD974 |
   RTL                                       ; $8CD976 |
 
-CODE_8CD977:
+CODE_FL_8CD977:
   JSL.L CODE_FL_86C424                      ; $8CD977 |
   PHX                                       ; $8CD97B |
   ASL A                                     ; $8CD97C |
@@ -12197,7 +12197,7 @@ CODE_8CD9A4:
 CODE_8CD9C6:
   RTL                                       ; $8CD9C6 |
 
-CODE_8CD9C7:
+CODE_FL_8CD9C7:
   JSL.L CODE_FL_86C3C9                      ; $8CD9C7 |
   PHX                                       ; $8CD9CB |
   ASL A                                     ; $8CD9CC |
@@ -12304,7 +12304,7 @@ CODE_FL_8CDA5B:
 CODE_8CDA9C:
   RTL                                       ; $8CDA9C |
 
-CODE_8CDA9D:
+CODE_FL_8CDA9D:
   JSL.L CODE_FL_8CDB0D                      ; $8CDA9D |
   JSL.L CODE_FL_86C412                      ; $8CDAA1 |
   PHX                                       ; $8CDAA5 |
@@ -12415,7 +12415,7 @@ CODE_8CDB6C:
   STA.B $3C,X                               ; $8CDB6C |
   RTL                                       ; $8CDB6E |
 
-CODE_8CDB6F:
+CODE_FL_8CDB6F:
   INC.B $3E,X                               ; $8CDB6F |
   JSL.L CODE_FL_86C3F8                      ; $8CDB71 |
   LDY.B $44,X                               ; $8CDB75 |
@@ -12461,7 +12461,7 @@ CODE_8CDBA6:
 CODE_8CDBB2:
   RTL                                       ; $8CDBB2 |
 
-CODE_8CDBB3:
+CODE_FL_8CDBB3:
   JSL.L CODE_FL_85F885                      ; $8CDBB3 |
   JSL.L CODE_FL_86C424                      ; $8CDBB7 |
   PHX                                       ; $8CDBBB |
@@ -12605,7 +12605,7 @@ CODE_8CDCB6:
 CODE_8CDCCA:
   RTL                                       ; $8CDCCA |
 
-CODE_8CDCCB:
+CODE_FL_8CDCCB:
   JSL.L CODE_FL_86C3C9                      ; $8CDCCB |
   PHX                                       ; $8CDCCF |
   ASL A                                     ; $8CDCD0 |
@@ -12952,7 +12952,7 @@ CODE_FL_8CDF08:
   db $40,$00,$40,$00,$40,$01,$00,$00        ; $8CDF4A |
   db $00,$00,$60,$00                        ; $8CDF52 |
 
-CODE_8CDF56:
+CODE_FL_8CDF56:
   JSL.L CODE_FL_85AAC6                      ; $8CDF56 |
   JSL.L CODE_FL_86C3C9                      ; $8CDF5A |
   PHX                                       ; $8CDF5E |
@@ -13044,7 +13044,7 @@ CODE_8CDFED:
   STA.B $1A,X                               ; $8CE012 |
   RTL                                       ; $8CE014 |
 
-CODE_8CE015:
+CODE_FL_8CE015:
   JSL.L CODE_FL_86C412                      ; $8CE015 |
   PHX                                       ; $8CE019 |
   ASL A                                     ; $8CE01A |
@@ -13313,7 +13313,7 @@ CODE_FL_8CE20D:
 CODE_8CE21F:
   RTL                                       ; $8CE21F |
 
-CODE_8CE220:
+CODE_FL_8CE220:
   INC.B $3E,X                               ; $8CE220 |
   JSL.L CODE_FL_86C3F8                      ; $8CE222 |
   PHX                                       ; $8CE226 |
@@ -13398,7 +13398,7 @@ CODE_8CE2A7:
   STA.B $0E                                 ; $8CE2B9 |
   JML.L CODE_FL_85F8A1                      ; $8CE2BB |
 
-CODE_8CE2BF:
+CODE_FL_8CE2BF:
   JSL.L CODE_FL_86C424                      ; $8CE2BF |
   PHX                                       ; $8CE2C3 |
   ASL A                                     ; $8CE2C4 |
@@ -13492,7 +13492,7 @@ CODE_8CE35D:
 CODE_8CE36B:
   RTL                                       ; $8CE36B |
 
-CODE_8CE36C:
+CODE_FL_8CE36C:
   JSL.L CODE_FL_85F885                      ; $8CE36C |
   JSL.L CODE_FL_86C412                      ; $8CE370 |
   PHX                                       ; $8CE374 |
@@ -13552,7 +13552,7 @@ CODE_8CE3D4:
 CODE_8CE3EC:
   JML.L CODE_JL_86B364                      ; $8CE3EC |
 
-CODE_8CE3F0:
+CODE_FL_8CE3F0:
   JSL.L CODE_FL_86C424                      ; $8CE3F0 |
   PHX                                       ; $8CE3F4 |
   ASL A                                     ; $8CE3F5 |
@@ -13611,7 +13611,7 @@ CODE_8CE447:
 CODE_8CE45A:
   RTL                                       ; $8CE45A |
 
-CODE_8CE45B:
+CODE_FL_8CE45B:
   JSL.L CODE_FL_85F885                      ; $8CE45B |
   JSL.L CODE_FL_86C424                      ; $8CE45F |
   PHX                                       ; $8CE463 |
@@ -13709,7 +13709,7 @@ CODE_FN_8CE4E5:
   JSL.L CODE_FL_858256                      ; $8CE4F3 |
   RTS                                       ; $8CE4F7 |
 
-CODE_8CE4F8:
+CODE_FL_8CE4F8:
   JSL.L CODE_FL_86C855                      ; $8CE4F8 |
   JSL.L CODE_FL_85A62E                      ; $8CE4FC |
   BEQ CODE_8CE51D                           ; $8CE500 |
@@ -13730,7 +13730,7 @@ CODE_8CE515:
 CODE_8CE51D:
   RTL                                       ; $8CE51D |
 
-CODE_8CE51E:
+CODE_FL_8CE51E:
   JSL.L CODE_FL_86C855                      ; $8CE51E |
   JSL.L CODE_FL_85A62E                      ; $8CE522 |
   BEQ CODE_8CE51D                           ; $8CE526 |
@@ -13741,7 +13741,7 @@ CODE_8CE51E:
   JSL.L try_drop_item                       ; $8CE533 |
   JML.L CODE_FL_86CA2D                      ; $8CE537 |
 
-CODE_8CE53B:
+CODE_FL_8CE53B:
   JSL.L CODE_FL_86C855                      ; $8CE53B |
   JSL.L CODE_FL_85A62E                      ; $8CE53F |
   BEQ CODE_8CE51D                           ; $8CE543 |
@@ -13752,7 +13752,7 @@ CODE_8CE53B:
   JSL.L spawn_item_drop                     ; $8CE550 |
   JML.L CODE_FL_86CA2D                      ; $8CE554 |
 
-CODE_8CE558:
+CODE_FL_8CE558:
   JSL.L CODE_FL_86C855                      ; $8CE558 |
   JSL.L CODE_FL_85A62E                      ; $8CE55C |
   BEQ CODE_8CE51D                           ; $8CE560 |
@@ -13763,7 +13763,7 @@ CODE_8CE558:
   JSL.L spawn_item_drop                     ; $8CE56D |
   JML.L CODE_FL_86CA2D                      ; $8CE571 |
 
-CODE_8CE575:
+CODE_FL_8CE575:
   JSL.L CODE_FL_86C424                      ; $8CE575 |
   PHX                                       ; $8CE579 |
   ASL A                                     ; $8CE57A |
@@ -13839,7 +13839,7 @@ CODE_FN_8CE5D2:
   JSL.L CODE_FL_8580F7                      ; $8CE5EB |
   RTS                                       ; $8CE5EF |
 
-CODE_8CE5F0:
+CODE_FL_8CE5F0:
   JSL.L CODE_FL_86C424                      ; $8CE5F0 |
   PHX                                       ; $8CE5F4 |
   ASL A                                     ; $8CE5F5 |
@@ -13960,7 +13960,7 @@ CODE_8CE6A0:
 CODE_8CE6CE:
   RTL                                       ; $8CE6CE |
 
-CODE_8CE6CF:
+CODE_FL_8CE6CF:
   JSL.L CODE_FL_86C412                      ; $8CE6CF |
   PHX                                       ; $8CE6D3 |
   ASL A                                     ; $8CE6D4 |
@@ -14145,7 +14145,7 @@ CODE_8CE832:
   STZ.B $34,X                               ; $8CE832 |
   JML.L CODE_FL_86CA2D                      ; $8CE834 |
 
-CODE_8CE838:
+CODE_FL_8CE838:
   JSL.L CODE_FL_86C412                      ; $8CE838 |
   LDA.B $1A,X                               ; $8CE83C |
   PHX                                       ; $8CE83E |
@@ -14213,7 +14213,7 @@ CODE_8CE899:
 CODE_8CE8B4:
   RTL                                       ; $8CE8B4 |
 
-CODE_8CE8B5:
+CODE_FL_8CE8B5:
   JSL.L CODE_FL_86C412                      ; $8CE8B5 |
   LDA.B $1A,X                               ; $8CE8B9 |
   PHX                                       ; $8CE8BB |
@@ -14240,7 +14240,7 @@ CODE_8CE8CE:
   STA.B $34,X                               ; $8CE8E6 |
   JML.L CODE_FL_86C63A                      ; $8CE8E8 |
 
-CODE_8CE8EC:
+CODE_FL_8CE8EC:
   JSL.L CODE_FL_86C412                      ; $8CE8EC |
   LDA.B $1A,X                               ; $8CE8F0 |
   PHX                                       ; $8CE8F2 |
@@ -14294,7 +14294,7 @@ CODE_8CE93B:
 CODE_8CE951:
   RTL                                       ; $8CE951 |
 
-CODE_8CE952:
+CODE_FL_8CE952:
   JSL.L CODE_FL_86C3F8                      ; $8CE952 |
   LDA.B $1A,X                               ; $8CE956 |
   PHX                                       ; $8CE958 |
@@ -14348,7 +14348,7 @@ CODE_8CE9A7:
 CODE_8CE9AF:
   RTL                                       ; $8CE9AF |
 
-CODE_8CE9B0:
+CODE_FL_8CE9B0:
   JSL.L CODE_FL_86C424                      ; $8CE9B0 |
   PHX                                       ; $8CE9B4 |
   ASL A                                     ; $8CE9B5 |
@@ -14391,7 +14391,7 @@ CODE_8CE9F4:
   JSL.L CODE_FL_85A71F                      ; $8CE9F4 |
   JML.L CODE_FL_86CA2D                      ; $8CE9F8 |
 
-CODE_8CE9FC:
+CODE_FL_8CE9FC:
   JSL.L CODE_FL_86C424                      ; $8CE9FC |
   PHX                                       ; $8CEA00 |
   ASL A                                     ; $8CEA01 |
@@ -14431,7 +14431,7 @@ CODE_8CEA3D:
   JSL.L CODE_FL_85AC4F                      ; $8CEA3D |
   BRA CODE_8CE9F4                           ; $8CEA41 |
 
-CODE_8CEA43:
+CODE_FL_8CEA43:
   JSL.L CODE_FL_86C3F8                      ; $8CEA43 |
   PHX                                       ; $8CEA47 |
   ASL A                                     ; $8CEA48 |
@@ -14680,7 +14680,7 @@ CODE_8CEBDE:
 CODE_8CEBE5:
   RTS                                       ; $8CEBE5 |
 
-CODE_8CEBE6:
+CODE_FL_8CEBE6:
   JSL.L CODE_FL_86C3B0                      ; $8CEBE6 |
   PHX                                       ; $8CEBEA |
   ASL A                                     ; $8CEBEB |
@@ -14729,7 +14729,7 @@ CODE_8CEC2A:
   BCC CODE_8CEC19                           ; $8CEC2E |
   BRA CODE_8CEC25                           ; $8CEC30 |
 
-CODE_8CEC32:
+CODE_FL_8CEC32:
   LDA.B $3C,X                               ; $8CEC32 |
   BEQ CODE_8CEC3A                           ; $8CEC34 |
   JSL.L CODE_FL_8CECD8                      ; $8CEC36 |
@@ -14965,7 +14965,7 @@ DATA16_8CEDE7:
 DATA16_8CEDE9:
   dw $0136,$0138,$013A                      ; $8CEDE9 |
 
-CODE_8CEDEF:
+CODE_FL_8CEDEF:
   JSL.L CODE_FL_86C3F8                      ; $8CEDEF |
   LDY.B $44,X                               ; $8CEDF3 |
   LDA.W $001A,Y                             ; $8CEDF5 |
@@ -15018,7 +15018,7 @@ CODE_8CEE34:
 CODE_8CEE40:
   RTL                                       ; $8CEE40 |
 
-CODE_8CEE41:
+CODE_FL_8CEE41:
   JSL.L CODE_FL_86C3F8                      ; $8CEE41 |
   LDA.B $1A,X                               ; $8CEE45 |
   PHX                                       ; $8CEE47 |
@@ -15100,7 +15100,7 @@ CODE_8CEEB8:
 CODE_8CEECC:
   RTL                                       ; $8CEECC |
 
-CODE_8CEECD:
+CODE_FL_8CEECD:
   JSL.L CODE_FL_85F885                      ; $8CEECD |
   JSL.L CODE_FL_86C3EE                      ; $8CEED1 |
   PHX                                       ; $8CEED5 |
@@ -15178,7 +15178,7 @@ CODE_FN_8CEF4E:
 CODE_8CEF55:
   RTS                                       ; $8CEF55 |
 
-CODE_8CEF56:
+CODE_FL_8CEF56:
   JSL.L CODE_FL_86C424                      ; $8CEF56 |
   PHX                                       ; $8CEF5A |
   ASL A                                     ; $8CEF5B |
@@ -15230,7 +15230,7 @@ CODE_8CEF88:
 CODE_8CEFB3:
   RTL                                       ; $8CEFB3 |
 
-CODE_8CEFB4:
+CODE_FL_8CEFB4:
   JSL.L CODE_FL_86C3F8                      ; $8CEFB4 |
   PHX                                       ; $8CEFB8 |
   ASL A                                     ; $8CEFB9 |
@@ -15349,7 +15349,7 @@ CODE_8CF097:
   STA.B $00,X                               ; $8CF09E |
   RTL                                       ; $8CF0A0 |
 
-CODE_8CF0A1:
+CODE_FL_8CF0A1:
   JSL.L CODE_FL_85AAC6                      ; $8CF0A1 |
   JSL.L CODE_FL_86C3B0                      ; $8CF0A5 |
   PHX                                       ; $8CF0A9 |
@@ -15391,7 +15391,7 @@ CODE_8CF0ED:
   STA.B $00,X                               ; $8CF0EE |
   RTL                                       ; $8CF0F0 |
 
-CODE_8CF0F1:
+CODE_FL_8CF0F1:
   JSL.L CODE_FL_86C3F8                      ; $8CF0F1 |
   PHX                                       ; $8CF0F5 |
   ASL A                                     ; $8CF0F6 |
@@ -15547,7 +15547,7 @@ CODE_8CF1FF:
 CODE_8CF203:
   RTL                                       ; $8CF203 |
 
-CODE_8CF204:
+CODE_FL_8CF204:
   JSL.L CODE_FL_86C3F8                      ; $8CF204 |
   PHX                                       ; $8CF208 |
   ASL A                                     ; $8CF209 |
@@ -15605,7 +15605,7 @@ CODE_8CF25B:
 CODE_8CF267:
   RTL                                       ; $8CF267 |
 
-CODE_8CF268:
+CODE_FL_8CF268:
   LDA.B $1A,X                               ; $8CF268 |
   PHX                                       ; $8CF26A |
   ASL A                                     ; $8CF26B |
@@ -15675,7 +15675,7 @@ CODE_8CF2BD:
 CODE_8CF2E5:
   RTL                                       ; $8CF2E5 |
 
-CODE_8CF2E6:
+CODE_FL_8CF2E6:
   LDA.B $1A,X                               ; $8CF2E6 |
   PHX                                       ; $8CF2E8 |
   ASL A                                     ; $8CF2E9 |
@@ -15722,7 +15722,7 @@ CODE_8CF32D:
 CODE_8CF32E:
   JML.L CODE_FL_86CA2D                      ; $8CF32E |
 
-CODE_8CF332:
+CODE_FL_8CF332:
   JSL.L CODE_FL_86C424                      ; $8CF332 |
   PHX                                       ; $8CF336 |
   ASL A                                     ; $8CF337 |
@@ -16036,7 +16036,7 @@ CODE_JP_8CF56D:
 CODE_8CF571:
   RTL                                       ; $8CF571 |
 
-CODE_8CF572:
+CODE_FL_8CF572:
   JSL.L CODE_FL_86C3B0                      ; $8CF572 |
   PHX                                       ; $8CF576 |
   ASL A                                     ; $8CF577 |
@@ -16100,7 +16100,7 @@ CODE_8CF5DF:
   JSL.L push_sound_queue                    ; $8CF5E9 |
   JML.L CODE_FL_86CA2D                      ; $8CF5ED |
 
-CODE_8CF5F1:
+CODE_FL_8CF5F1:
   JSL.L CODE_FL_86C3F8                      ; $8CF5F1 |
   PHX                                       ; $8CF5F5 |
   ASL A                                     ; $8CF5F6 |
@@ -16353,7 +16353,7 @@ CODE_FL_8CF7F2:
 CODE_8CF801:
   RTL                                       ; $8CF801 |
 
-CODE_8CF802:
+CODE_FL_8CF802:
   JSL.L CODE_FL_86C3F8                      ; $8CF802 |
   PHX                                       ; $8CF806 |
   ASL A                                     ; $8CF807 |
@@ -16453,7 +16453,7 @@ CODE_8CF8B3:
   STZ.B $26,X                               ; $8CF8B7 |
   RTL                                       ; $8CF8B9 |
 
-CODE_8CF8BA:
+CODE_FL_8CF8BA:
   JSL.L CODE_FL_86C3F8                      ; $8CF8BA |
   PHX                                       ; $8CF8BE |
   ASL A                                     ; $8CF8BF |
@@ -16499,7 +16499,7 @@ CODE_8CF8FE:
   STZ.B $26,X                               ; $8CF902 |
   RTL                                       ; $8CF904 |
 
-CODE_8CF905:
+CODE_FL_8CF905:
   JSL.L CODE_FL_86C3C9                      ; $8CF905 |
   PHX                                       ; $8CF909 |
   ASL A                                     ; $8CF90A |
@@ -17514,12 +17514,12 @@ CODE_FL_8CFF1E:
   REP #$20                                  ; $8CFF24 |
   RTL                                       ; $8CFF26 |
 
-CODE_8CFF27:
+CODE_FL_8CFF27:
   LDA.W #$0040                              ; $8CFF27 |
   STA.W $0B29                               ; $8CFF2A |
   JMP.W LOOSE_OP_8CCA36                     ; $8CFF2D |
 
-CODE_8CFF30:
+CODE_FL_8CFF30:
   INC.B $3E,X                               ; $8CFF30 |
   LDA.B $3E,X                               ; $8CFF32 |
   CMP.W #$0005                              ; $8CFF34 |
@@ -17545,7 +17545,7 @@ CODE_8CFF30:
 CODE_8CFF5D:
   RTL                                       ; $8CFF5D |
 
-CODE_8CFF5E:
+CODE_FL_8CFF5E:
   LDA.W #$8000                              ; $8CFF5E |
   STA.B $92                                 ; $8CFF61 |
   LDA.W #$0040                              ; $8CFF63 |

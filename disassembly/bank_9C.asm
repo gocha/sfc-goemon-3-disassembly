@@ -2,7 +2,7 @@ org $9C8000
 
 incbin ../assets/bank_9C.bin:$0000..$7D80   ; $9C8000 |
 
-CODE_9CFD80:
+CODE_FL_9CFD80:
   JSR.W CODE_FN_9CFDA1                      ; $9CFD80 |
   JSR.W CODE_FN_9CFDAC                      ; $9CFD83 |
   JSL.L CODE_FL_86C424                      ; $9CFD86 |
@@ -97,7 +97,7 @@ CODE_9CFE35:
 CODE_9CFE43:
   RTL                                       ; $9CFE43 |
 
-CODE_9CFE44:
+CODE_FL_9CFE44:
   JSL.L CODE_FL_86C3F8                      ; $9CFE44 |
   PHX                                       ; $9CFE48 |
   ASL A                                     ; $9CFE49 |

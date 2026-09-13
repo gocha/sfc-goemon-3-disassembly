@@ -19288,7 +19288,7 @@ CODE_83FEBB:
 CODE_83FED8:
   RTL                                       ; $83FED8 |
 
-CODE_83FED9:
+CODE_FL_83FED9:
   LDY.B $A6                                 ; $83FED9 |
   LDA.W $0000,Y                             ; $83FEDB |
   STA.B $00,X                               ; $83FEDE |
@@ -19332,7 +19332,7 @@ CODE_83FF20:
   STA.B $09,X                               ; $83FF24 |
   RTL                                       ; $83FF26 |
 
-CODE_83FF27:
+CODE_FL_83FF27:
   LDA.B $1A,X                               ; $83FF27 |
   PHX                                       ; $83FF29 |
   ASL A                                     ; $83FF2A |
@@ -19390,7 +19390,7 @@ CODE_83FF79:
 CODE_83FF7D:
   RTL                                       ; $83FF7D |
 
-CODE_83FF7E:
+CODE_FL_83FF7E:
   LDA.B $1A,X                               ; $83FF7E |
   PHX                                       ; $83FF80 |
   ASL A                                     ; $83FF81 |

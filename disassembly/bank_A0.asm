@@ -2,7 +2,7 @@ org $A08000
 
 incbin ../assets/bank_A0.bin:$0000..$6F80   ; $A08000 |
 
-CODE_A0EF80:
+CODE_FL_A0EF80:
   JSR.W CODE_FN_A0EFD6                      ; $A0EF80 |
   JSL.L CODE_FL_86C3F8                      ; $A0EF83 |
   PHX                                       ; $A0EF87 |
@@ -491,7 +491,7 @@ CODE_A0F35E:
   LDX.W #$0C10                              ; $A0F37E |
   JML.L CODE_FL_86CA57                      ; $A0F381 |
 
-CODE_A0F385:
+CODE_FL_A0F385:
   JSL.L CODE_FL_86C3F8                      ; $A0F385 |
   PHX                                       ; $A0F389 |
   ASL A                                     ; $A0F38A |
@@ -609,7 +609,7 @@ CODE_A0F43F:
 CODE_A0F440:
   JML.L CODE_FL_86CA36                      ; $A0F440 |
 
-CODE_A0F444:
+CODE_FL_A0F444:
   JSL.L CODE_FL_86C3F8                      ; $A0F444 |
   PHX                                       ; $A0F448 |
   ASL A                                     ; $A0F449 |
@@ -665,7 +665,7 @@ CODE_A0F4A1:
 CODE_A0F4A4:
   JML.L CODE_FL_86C82F                      ; $A0F4A4 |
 
-CODE_A0F4A8:
+CODE_FL_A0F4A8:
   JSL.L CODE_FL_86C3F8                      ; $A0F4A8 |
   PHX                                       ; $A0F4AC |
   ASL A                                     ; $A0F4AD |
@@ -742,7 +742,7 @@ CODE_A0F517:
 CODE_A0F520:
   JML.L CODE_FL_86CA36                      ; $A0F520 |
 
-CODE_A0F524:
+CODE_FL_A0F524:
   JSL.L CODE_FL_86C3F8                      ; $A0F524 |
   PHX                                       ; $A0F528 |
   ASL A                                     ; $A0F529 |
@@ -811,7 +811,7 @@ CODE_A0F591:
 CODE_A0F592:
   JML.L CODE_FL_86CA36                      ; $A0F592 |
 
-CODE_A0F596:
+CODE_FL_A0F596:
   JSL.L CODE_FL_86C3B0                      ; $A0F596 |
   PHX                                       ; $A0F59A |
   ASL A                                     ; $A0F59B |
@@ -935,7 +935,7 @@ CODE_A0F65C:
 CODE_A0F66B:
   RTL                                       ; $A0F66B |
 
-CODE_A0F66C:
+CODE_FL_A0F66C:
   LDA.B $1A,X                               ; $A0F66C |
   BEQ CODE_A0F671                           ; $A0F66E |
   RTL                                       ; $A0F670 |

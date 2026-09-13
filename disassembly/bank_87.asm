@@ -8113,7 +8113,7 @@ DATA8_87DED5:
   db $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF        ; $87DFF5 |
   db $FF,$FF,$FF                            ; $87DFFD |
 
-CODE_87E000:
+CODE_FL_87E000:
   LDA.W #$0008                              ; $87E000 |
   STA.W $0E30                               ; $87E003 |
   LDX.W #$0DF0                              ; $87E006 |

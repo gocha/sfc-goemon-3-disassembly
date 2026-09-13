@@ -29,7 +29,7 @@ CODE_JL_B3FC30:
   LDA.W #$0371                              ; $B3FC36 |
   STA.B $18,X                               ; $B3FC39 |
 
-CODE_B3FC3B:
+CODE_FL_B3FC3B:
   JSL.L CODE_FL_8695B7                      ; $B3FC3B |
   BCC CODE_B3FC7B                           ; $B3FC3F |
   JSL.L CODE_FL_86C3F8                      ; $B3FC41 |
@@ -66,7 +66,7 @@ CODE_B3FC77:
 CODE_B3FC7B:
   JML.L CODE_FL_86CA36                      ; $B3FC7B |
 
-CODE_B3FC7F:
+CODE_FL_B3FC7F:
   JSL.L CODE_FL_8695B7                      ; $B3FC7F |
   BCC CODE_B3FC7B                           ; $B3FC83 |
   CLC                                       ; $B3FC85 |
@@ -114,7 +114,7 @@ DATA8_B3FCE1:
   db $00,$01,$00,$01,$02,$02,$02,$02        ; $B3FCE1 |
   db $03,$04,$03,$04,$03,$04,$03,$05        ; $B3FCE9 |
 
-CODE_B3FCF1:
+CODE_FL_B3FCF1:
   JSL.L CODE_FL_8695B7                      ; $B3FCF1 |
   BCC CODE_B3FD3C                           ; $B3FCF5 |
   JSL.L CODE_FL_86C424                      ; $B3FCF7 |
@@ -175,7 +175,7 @@ CODE_FL_B3FD40:
   LSR.B $32,X                               ; $B3FD61 |
   RTL                                       ; $B3FD63 |
 
-CODE_B3FD64:
+CODE_FL_B3FD64:
   LDA.W #$0005                              ; $B3FD64 |
   STA.W $05B8                               ; $B3FD67 |
   JSL.L CODE_FL_97FC80                      ; $B3FD6A |
@@ -241,7 +241,7 @@ CODE_B3FDD1:
 CODE_B3FDD9:
   JML.L CODE_FL_86CA36                      ; $B3FDD9 |
 
-CODE_B3FDDD:
+CODE_FL_B3FDDD:
   LDA.B $2C,X                               ; $B3FDDD |
   BEQ CODE_B3FDD9                           ; $B3FDDF |
   JML.L CODE_FL_86C3F8                      ; $B3FDE1 |
@@ -259,7 +259,7 @@ CODE_FL_B3FDE5:
 CODE_B3FDF9:
   RTL                                       ; $B3FDF9 |
 
-CODE_B3FDFA:
+CODE_FL_B3FDFA:
   JSL.L CODE_FL_86C7DF                      ; $B3FDFA |
   JSL.L CODE_FL_86C3B0                      ; $B3FDFE |
   LDA.B $1A,X                               ; $B3FE02 |
@@ -526,7 +526,7 @@ CODE_B3FFA3:
   STA.W $1672                               ; $B3FFAB |
   RTL                                       ; $B3FFAE |
 
-CODE_B3FFAF:
+CODE_FL_B3FFAF:
   LDA.B $1A,X                               ; $B3FFAF |
   PHX                                       ; $B3FFB1 |
   ASL A                                     ; $B3FFB2 |

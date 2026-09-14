@@ -1902,36 +1902,36 @@ CODE_FL_808C9F:
 CODE_FL_808CB3:
   LDA.B !r_room_mode                        ; $808CB3 |
   STA.L $7008E4                             ; $808CB5 |
-  REP #$30                                  ; $808CB9 |
-  PHB                                       ; $808CBB |
-  LDA.W #$0000                              ; $808CBC |
-  STA.L $001C00                             ; $808CBF |
-  LDA.W #$00FD                              ; $808CC3 |
-  LDX.W #$1C01                              ; $808CC6 |
-  TXY                                       ; $808CC9 |
-  INY                                       ; $808CCA |
-  MVN $00,$00                               ; $808CCB |
-  PLB                                       ; $808CCE |
-  REP #$30                                  ; $808CCF |
-  PHB                                       ; $808CD1 |
-  LDA.W #$0000                              ; $808CD2 |
-  STA.L $7E8400                             ; $808CD5 |
-  LDA.W #$3BFD                              ; $808CD9 |
-  LDX.W #$8401                              ; $808CDC |
-  TXY                                       ; $808CDF |
-  INY                                       ; $808CE0 |
-  MVN $7E,$7E                               ; $808CE1 |
-  PLB                                       ; $808CE4 |
-  REP #$30                                  ; $808CE5 |
-  PHB                                       ; $808CE7 |
-  LDA.W #$0000                              ; $808CE8 |
-  STA.L $7E7C16                             ; $808CEB |
-  LDA.W #$006B                              ; $808CEF |
-  LDX.W #$7C17                              ; $808CF2 |
-  TXY                                       ; $808CF5 |
-  INY                                       ; $808CF6 |
-  MVN $7E,$7E                               ; $808CF7 |
-  PLB                                       ; $808CFA |
+  REP #$30                                  ; $808CB9 |\
+  PHB                                       ; $808CBB | |
+  LDA.W #$0000                              ; $808CBC | |
+  STA.L $001C00                             ; $808CBF | |
+  LDA.W #$00FD                              ; $808CC3 | | Clear $001C00 - $001FFF
+  LDX.W #$1C01                              ; $808CC6 | |
+  TXY                                       ; $808CC9 | |
+  INY                                       ; $808CCA | |
+  MVN $00,$00                               ; $808CCB | |
+  PLB                                       ; $808CCE |/
+  REP #$30                                  ; $808CCF |\
+  PHB                                       ; $808CD1 | |
+  LDA.W #$0000                              ; $808CD2 | |
+  STA.L $7E8400                             ; $808CD5 | |
+  LDA.W #$3BFD                              ; $808CD9 | | Clear $7E8400 - $7E43FF
+  LDX.W #$8401                              ; $808CDC | |
+  TXY                                       ; $808CDF | |
+  INY                                       ; $808CE0 | |
+  MVN $7E,$7E                               ; $808CE1 | |
+  PLB                                       ; $808CE4 |/
+  REP #$30                                  ; $808CE5 |\
+  PHB                                       ; $808CE7 | |
+  LDA.W #$0000                              ; $808CE8 | |
+  STA.L $7E7C16                             ; $808CEB | |
+  LDA.W #$006B                              ; $808CEF | | Clear $7E7C16 - $7E7C83
+  LDX.W #$7C17                              ; $808CF2 | |
+  TXY                                       ; $808CF5 | |
+  INY                                       ; $808CF6 | |
+  MVN $7E,$7E                               ; $808CF7 | |
+  PLB                                       ; $808CFA |/
   RTL                                       ; $808CFB |
 
 

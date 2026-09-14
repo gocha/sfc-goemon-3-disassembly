@@ -4895,7 +4895,7 @@ CODE_86A2C6:
   STA.B $00                                 ; $86A2C6 |
   PHX                                       ; $86A2C8 |
   TAX                                       ; $86A2C9 |
-  LDA.L DATA8_84F6A6,X                      ; $86A2CA |
+  LDA.L tourist_data+2,X                    ; $86A2CA |
   TAY                                       ; $86A2CE |
   CMP.W #$0110                              ; $86A2CF |
   BNE CODE_86A2DD                           ; $86A2D2 |
@@ -4905,16 +4905,16 @@ CODE_86A2C6:
 
 CODE_86A2DD:
   STY.W $19C4                               ; $86A2DD |
-  LDA.L DATA8_84F6A8,X                      ; $86A2E0 |
+  LDA.L tourist_data+4,X                    ; $86A2E0 |
   STA.W $19BE                               ; $86A2E4 |
   CLC                                       ; $86A2E7 |
-  LDA.L DATA8_84F6AA,X                      ; $86A2E8 |
+  LDA.L tourist_data+6,X                    ; $86A2E8 |
   ADC.W #$0018                              ; $86A2EC |
   STA.W $19C0                               ; $86A2EF |
-  LDA.L DATA8_84F6AC,X                      ; $86A2F2 |
+  LDA.L tourist_data+8,X                    ; $86A2F2 |
   AND.W #$007F                              ; $86A2F6 |
   STA.B $C0                                 ; $86A2F9 |
-  LDA.L DATA8_84F6A4,X                      ; $86A2FB |
+  LDA.L tourist_data,X                      ; $86A2FB |
   PLX                                       ; $86A2FF |
   STA.B $40,X                               ; $86A300 |
   LDA.W #$0114                              ; $86A302 |
@@ -5006,7 +5006,7 @@ CODE_86A3A8:
   TXA                                       ; $86A3AB |
   ADC.W #$0009                              ; $86A3AC |
   TAX                                       ; $86A3AF |
-  LDA.L DATA8_84F6A4,X                      ; $86A3B0 |
+  LDA.L tourist_data,X                      ; $86A3B0 |
   TAY                                       ; $86A3B4 |
   INY                                       ; $86A3B5 |
   BEQ CODE_86A3C0                           ; $86A3B6 |
@@ -5061,13 +5061,13 @@ CODE_86A3FD:
   BNE CODE_86A424                           ; $86A40C |
   LDX.B $0C                                 ; $86A40E |
   BCC CODE_86A41D                           ; $86A410 |
-  LDA.L DATA8_84F6A6,X                      ; $86A412 |
+  LDA.L tourist_data+2,X                    ; $86A412 |
   CMP.W #$012A                              ; $86A416 |
   BEQ CODE_86A41D                           ; $86A419 |
   INC.B $08                                 ; $86A41B |
 
 CODE_86A41D:
-  LDA.L DATA8_84F6A4,X                      ; $86A41D |
+  LDA.L tourist_data,X                      ; $86A41D |
   INC A                                     ; $86A421 |
   BNE CODE_86A3FD                           ; $86A422 |
 

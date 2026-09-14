@@ -2088,34 +2088,46 @@ CODE_FL_808E05:
   RTL                                       ; $808E17 |
 
 
-CODE_FL_808E18:
+;----------------------------------------------------------------
+; Multiply an 8-bit value by a 16-bit value.
+;
+; Input:
+;   A = 8-bit multiplicand
+;   Y = 16-bit multiplier
+;
+; Output:
+;   A, $00-$01 = lower 16 bits of product
+;   Y, $02-$03 = upper 8 bits of product (zero-extended)
+;
+; Remarks:
+;   The 24-bit product is stored in direct page $00-$03
+;   and returned as YA.
+;----------------------------------------------------------------
+multiply_8x16:
   SEP #$20                                  ; $808E18 |
 
 CODE_808E1A:
-  STA.W !reg_wrmpya                         ; $808E1A |
-  TYA                                       ; $808E1D |
-  STA.W !reg_wrmpyb                         ; $808E1E |
-  STZ.B $02                                 ; $808E21 |
-  STZ.B $03                                 ; $808E23 |
+  STA.W !reg_wrmpya                         ; $808E1A |\
+  TYA                                       ; $808E1D | | Multiply low byte
+  STA.W !reg_wrmpyb                         ; $808E1E |/
+  STZ.B $02                                 ; $808E21 |\  Clear upper result
+  STZ.B $03                                 ; $808E23 |/
   REP #$20                                  ; $808E25 |
-
-  LDA.W !reg_rdmpyl                         ; $808E27 |
+  LDA.W !reg_rdmpyl                         ; $808E27 | Get partial product
   STA.B $00                                 ; $808E2A |
-  TYA                                       ; $808E2C |
-  XBA                                       ; $808E2D |
-  SEP #$20                                  ; $808E2E |
-  STA.W !reg_wrmpyb                         ; $808E30 |
-  NOP                                       ; $808E33 |
-  NOP                                       ; $808E34 |
-  CLC                                       ; $808E35 |
-
+  TYA                                       ; $808E2C |\
+  XBA                                       ; $808E2D | | Multiply high byte
+  SEP #$20                                  ; $808E2E | |
+  STA.W !reg_wrmpyb                         ; $808E30 |/
+  NOP                                       ; $808E33 |\
+  NOP                                       ; $808E34 | | Wait for multiplication
+  CLC                                       ; $808E35 |/
   REP #$20                                  ; $808E36 |
-
   LDA.W !reg_rdmpyl                         ; $808E38 |
-  ADC.B $01                                 ; $808E3B |
+  ADC.B $01                                 ; $808E3B | Add partial product to result
   STA.B $01                                 ; $808E3D |
-  LDY.B $02                                 ; $808E3F |
-  LDA.B $00                                 ; $808E41 |
+  LDY.B $02                                 ; $808E3F | Get upper result
+  LDA.B $00                                 ; $808E41 | Get lower result
   RTL                                       ; $808E43 |
 
 

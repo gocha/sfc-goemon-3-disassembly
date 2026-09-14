@@ -6351,7 +6351,7 @@ CODE_JP_8ADFDD:
   LDA.L DATA8_978000,X                      ; $8ADFEC |
   AND.W #$00FF                              ; $8ADFF0 |
   LDY.B $00                                 ; $8ADFF3 |
-  JSL.L CODE_FL_808E18                      ; $8ADFF5 |
+  JSL.L multiply_8x16                       ; $8ADFF5 |
   LDA.B $01                                 ; $8ADFF9 |
   CLC                                       ; $8ADFFB |
   ADC.W $1D64                               ; $8ADFFC |

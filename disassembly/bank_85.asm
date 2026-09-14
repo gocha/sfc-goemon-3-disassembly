@@ -875,7 +875,7 @@ CODE_FN_858604:
   INC A                                     ; $858610 |
   LDY.W $1C01                               ; $858611 |
   REP #$30                                  ; $858614 |
-  JSL.L CODE_FL_808E18                      ; $858616 |
+  JSL.L multiply_8x16                       ; $858616 |
   SEC                                       ; $85861A |
   SBC.W $1C01                               ; $85861B |
   STA.B $0E                                 ; $85861E |

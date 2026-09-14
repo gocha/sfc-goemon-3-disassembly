@@ -965,7 +965,7 @@ CODE_848713:
   STA.B $14                                 ; $848713 |
   TAY                                       ; $848715 |
   LDA.B $08                                 ; $848716 |
-  JSL.L CODE_FL_808E18                      ; $848718 |
+  JSL.L multiply_8x16                       ; $848718 |
   LDA.B $00                                 ; $84871C |
   STA.B $1C                                 ; $84871E |
   LDA.B $02                                 ; $848720 |
@@ -990,7 +990,7 @@ CODE_848713:
   STA.B $12                                 ; $848745 |
   TAY                                       ; $848747 |
   LDA.B $08                                 ; $848748 |
-  JSL.L CODE_FL_808E18                      ; $84874A |
+  JSL.L multiply_8x16                       ; $84874A |
   LDA.B $00                                 ; $84874E |
   STA.B $18                                 ; $848750 |
   LDA.B $02                                 ; $848752 |
@@ -4037,7 +4037,7 @@ CODE_849EFD:
   STA.B $16                                 ; $849F06 |
   LDA.L DATA8_978000,X                      ; $849F08 |
   LDY.B $12                                 ; $849F0C |
-  JSL.L CODE_FL_808E18                      ; $849F0E |
+  JSL.L multiply_8x16                       ; $849F0E |
   STA.B $08                                 ; $849F12 |
   STY.B $0A                                 ; $849F14 |
   BIT.B $18                                 ; $849F16 |
@@ -4077,7 +4077,7 @@ CODE_849F38:
 CODE_849F4E:
   LDA.W #$0080                              ; $849F4E |
   LDY.B $10                                 ; $849F51 |
-  JSL.L CODE_FL_808E18                      ; $849F53 |
+  JSL.L multiply_8x16                       ; $849F53 |
   STA.B $0C                                 ; $849F57 |
   STY.B $0E                                 ; $849F59 |
   LDA.B $0C                                 ; $849F5B |
@@ -4092,12 +4092,12 @@ CODE_849F6B:
   STA.B $10                                 ; $849F6B |
   LDA.W #$0080                              ; $849F6D |
   LDY.B $12                                 ; $849F70 |
-  JSL.L CODE_FL_808E18                      ; $849F72 |
+  JSL.L multiply_8x16                       ; $849F72 |
   STA.B $0C                                 ; $849F76 |
   STY.B $0E                                 ; $849F78 |
   LDA.B $16                                 ; $849F7A |
   LDY.B $0C                                 ; $849F7C |
-  JSL.L CODE_FL_808E18                      ; $849F7E |
+  JSL.L multiply_8x16                       ; $849F7E |
   STA.B $0C                                 ; $849F82 |
   STY.B $0E                                 ; $849F84 |
   LDA.B $0D                                 ; $849F86 |
@@ -4183,7 +4183,7 @@ CODE_FN_849FFD:
 CODE_84A00D:
   TAY                                       ; $84A00D |
   LDA.W #$00E8                              ; $84A00E |
-  JSL.L CODE_FL_808E18                      ; $84A011 |
+  JSL.L multiply_8x16                       ; $84A011 |
   STA.B $00                                 ; $84A015 |
   STY.B $02                                 ; $84A017 |
   LDA.B $01                                 ; $84A019 |
@@ -4208,7 +4208,7 @@ CODE_84A023:
 CODE_84A039:
   TAY                                       ; $84A039 |
   LDA.W #$00D0                              ; $84A03A |
-  JSL.L CODE_FL_808E18                      ; $84A03D |
+  JSL.L multiply_8x16                       ; $84A03D |
   STA.B $00                                 ; $84A041 |
   STY.B $02                                 ; $84A043 |
   LDA.B $01                                 ; $84A045 |

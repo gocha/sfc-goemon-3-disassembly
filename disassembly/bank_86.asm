@@ -1951,7 +1951,7 @@ CODE_868D7F:
 CODE_868DD6:
   TAY                                       ; $868DD6 |
   PLA                                       ; $868DD7 |
-  JSL.L CODE_FL_808E18                      ; $868DD8 |
+  JSL.L multiply_8x16                       ; $868DD8 |
   LDA.B $01                                 ; $868DDC |
   BIT.B $06                                 ; $868DDE |
   BPL CODE_868DE6                           ; $868DE0 |
@@ -2467,7 +2467,7 @@ CODE_869217:
   PHY                                       ; $86921D |
   TAY                                       ; $86921E |
   LDA.W $1C96                               ; $86921F |
-  JSL.L CODE_FL_808E18                      ; $869222 |
+  JSL.L multiply_8x16                       ; $869222 |
   LDA.B $01                                 ; $869226 |
   PLY                                       ; $869228 |
   PLB                                       ; $869229 |
@@ -2888,14 +2888,14 @@ CODE_FL_869550:
   TYX                                       ; $869559 |
   LDA.B $08                                 ; $86955A |
   ASL A                                     ; $86955C |
-  JSL.L CODE_FL_86957C                      ; $86955D |
+  JSL.L rng_random_below                    ; $86955D |
   JSL.L CODE_FL_86C84F                      ; $869561 |
   SEC                                       ; $869565 |
   SBC.B $08                                 ; $869566 |
   STA.B $09,X                               ; $869568 |
   LDA.B $0A                                 ; $86956A |
   ASL A                                     ; $86956C |
-  JSL.L CODE_FL_86957C                      ; $86956D |
+  JSL.L rng_random_below                    ; $86956D |
   JSL.L CODE_FL_86C849                      ; $869571 |
   SEC                                       ; $869575 |
   SBC.B $0A                                 ; $869576 |
@@ -2903,17 +2903,38 @@ CODE_FL_869550:
   PLX                                       ; $86957A |
   RTL                                       ; $86957B |
 
-CODE_FL_86957C:
+;----------------------------------------------------------------
+; Generate a random value below the specified range.
+;
+; Input:
+;   A = upper bound (exclusive)
+;
+; Output:
+;   A = random value from 0 to A-1
+;
+; Remarks:
+;   The RNG state in the direct page is also updated.
+;----------------------------------------------------------------
+rng_random_below:
   PHY                                       ; $86957C |
   PHA                                       ; $86957D |
-  JSL.L CODE_FL_86958B                      ; $86957E |
+  JSL.L rng_update                          ; $86957E |
   PLY                                       ; $869582 |
-  JSL.L CODE_FL_808E18                      ; $869583 |
+  JSL.L multiply_8x16                       ; $869583 |
   LDA.B $01                                 ; $869587 |
   PLY                                       ; $869589 |
   RTL                                       ; $86958A |
 
-CODE_FL_86958B:
+;----------------------------------------------------------------
+; Update the random number generator.
+;
+; Output:
+;   A = updated RNG value
+;
+; Remarks:
+;   The RNG state in the direct page is also updated.
+;----------------------------------------------------------------
+rng_update:
   PHX                                       ; $86958B |
   SEP #$20                                  ; $86958C |
   LDA.W $1C8E                               ; $86958E |
@@ -2924,15 +2945,15 @@ CODE_FL_86958B:
   TAX                                       ; $869598 |
   SEP #$20                                  ; $869599 |
   LDA.B !r_rng                              ; $86959B |
-  ADC.L $808000,X                           ; $86959D |
+  ADC.L $808000,X                           ; $86959D | Update RNG low byte
   XBA                                       ; $8695A1 |
   LDA.B $87                                 ; $8695A2 |
-  EOR.L $828000,X                           ; $8695A4 |
+  EOR.L $828000,X                           ; $8695A4 | Update RNG high byte
   REP #$20                                  ; $8695A8 |
   STA.B !r_rng                              ; $8695AA |
-  INC.W $1C92                               ; $8695AC |
-  INC.W $1C92                               ; $8695AF |
-  INC.W $1C92                               ; $8695B2 |
+  INC.W $1C92                               ; $8695AC |\
+  INC.W $1C92                               ; $8695AF | | Advance sequence
+  INC.W $1C92                               ; $8695B2 |/
   PLX                                       ; $8695B5 |
   RTL                                       ; $8695B6 |
 
@@ -9386,7 +9407,7 @@ CODE_FN_86C2F0:
 CODE_86C2F7:
   TAY                                       ; $86C2F7 |
   LDA.B $0E                                 ; $86C2F8 |
-  JSL.L CODE_FL_808E18                      ; $86C2FA |
+  JSL.L multiply_8x16                       ; $86C2FA |
   PLP                                       ; $86C2FE |
   BPL CODE_86C305                           ; $86C2FF |
   EOR.W #$FFFF                              ; $86C301 |

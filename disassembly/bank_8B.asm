@@ -5356,7 +5356,7 @@ CODE_8BA5F3:
 CODE_FN_8BA5F7:
   LDA.B $86                                 ; $8BA5F7 |
   LDY.W #$0017                              ; $8BA5F9 |
-  JSL.L CODE_FL_808E18                      ; $8BA5FC |
+  JSL.L multiply_8x16                       ; $8BA5FC |
   ADC.W $1C38                               ; $8BA600 |
   EOR.B $86                                 ; $8BA603 |
   STA.B $86                                 ; $8BA605 |
@@ -6300,7 +6300,7 @@ CODE_8BAC9D:
   AND.W #$00FF                              ; $8BAC9D |
   PLX                                       ; $8BACA0 |
   LDY.W !reg_rddivl                         ; $8BACA1 |
-  JSL.L CODE_FL_808E18                      ; $8BACA4 |
+  JSL.L multiply_8x16                       ; $8BACA4 |
   LDA.B $01                                 ; $8BACA8 |
   LDY.B $08                                 ; $8BACAA |
   BPL CODE_8BACB2                           ; $8BACAC |
@@ -12944,7 +12944,7 @@ CODE_FL_8BDE35:
   ADC.W #$FFFD                              ; $8BDE54 |
   STA.B $08                                 ; $8BDE57 |
   LDA.W #$0003                              ; $8BDE59 |
-  JSL.L CODE_FL_86957C                      ; $8BDE5C |
+  JSL.L rng_random_below                    ; $8BDE5C |
   CLC                                       ; $8BDE60 |
   ADC.B $08                                 ; $8BDE61 |
   ASL A                                     ; $8BDE63 |
@@ -12976,21 +12976,21 @@ CODE_FL_8BDE88:
   JSL.L CODE_FL_86C9A4                      ; $8BDE8B |
   BCS CODE_8BDED0                           ; $8BDE8F |
   LDA.W #$0018                              ; $8BDE91 |
-  JSL.L CODE_FL_86957C                      ; $8BDE94 |
+  JSL.L rng_random_below                    ; $8BDE94 |
   CLC                                       ; $8BDE98 |
   ADC.W #$0020                              ; $8BDE99 |
   STA.B $08                                 ; $8BDE9C |
   LDA.W #$0008                              ; $8BDE9E |
-  JSL.L CODE_FL_86957C                      ; $8BDEA1 |
+  JSL.L rng_random_below                    ; $8BDEA1 |
   STA.B $0A                                 ; $8BDEA5 |
   CLC                                       ; $8BDEA7 |
   JSL.L CODE_FL_869607                      ; $8BDEA8 |
   LDA.W #$0200                              ; $8BDEAC |
-  JSL.L CODE_FL_86957C                      ; $8BDEAF |
+  JSL.L rng_random_below                    ; $8BDEAF |
   ADC.W #$FE00                              ; $8BDEB3 |
   STA.W $0028,Y                             ; $8BDEB6 |
   LDA.W #$00C0                              ; $8BDEB9 |
-  JSL.L CODE_FL_86957C                      ; $8BDEBC |
+  JSL.L rng_random_below                    ; $8BDEBC |
   ADC.W #$FEE0                              ; $8BDEC0 |
   STA.W $0026,Y                             ; $8BDEC3 |
   TDC                                       ; $8BDEC6 |
@@ -13122,7 +13122,7 @@ CODE_8BDF8E:
   LDA.B $22,X                               ; $8BDFA6 |
   ORA.W #$4000                              ; $8BDFA8 |
   STA.B $22,X                               ; $8BDFAB |
-  JSL.L CODE_FL_86958B                      ; $8BDFAD |
+  JSL.L rng_update                          ; $8BDFAD |
   AND.W #$0004                              ; $8BDFB1 |
   STA.B $3A,X                               ; $8BDFB4 |
   TAY                                       ; $8BDFB6 |
@@ -13711,7 +13711,7 @@ CODE_8BE3C6:
   STA.W $0009,Y                             ; $8BE3D1 |
   LDA.W #$009C                              ; $8BE3D4 |
   SBC.W $1C6C                               ; $8BE3D7 |
-  JSL.L CODE_FL_86957C                      ; $8BE3DA |
+  JSL.L rng_random_below                    ; $8BE3DA |
   CLC                                       ; $8BE3DE |
   ADC.B $3E,X                               ; $8BE3DF |
 

@@ -2888,14 +2888,14 @@ CODE_FL_869550:
   TYX                                       ; $869559 |
   LDA.B $08                                 ; $86955A |
   ASL A                                     ; $86955C |
-  JSL.L rng_random_below                    ; $86955D |
+  JSL.L random_below                        ; $86955D |
   JSL.L CODE_FL_86C84F                      ; $869561 |
   SEC                                       ; $869565 |
   SBC.B $08                                 ; $869566 |
   STA.B $09,X                               ; $869568 |
   LDA.B $0A                                 ; $86956A |
   ASL A                                     ; $86956C |
-  JSL.L rng_random_below                    ; $86956D |
+  JSL.L random_below                        ; $86956D |
   JSL.L CODE_FL_86C849                      ; $869571 |
   SEC                                       ; $869575 |
   SBC.B $0A                                 ; $869576 |
@@ -2913,12 +2913,12 @@ CODE_FL_869550:
 ;   A = random value from 0 to A-1
 ;
 ; Remarks:
-;   The RNG state in the direct page is also updated.
+;   Advances the internal RNG state.
 ;----------------------------------------------------------------
-rng_random_below:
+random_below:
   PHY                                       ; $86957C |
   PHA                                       ; $86957D |
-  JSL.L rng_update                          ; $86957E |
+  JSL.L random_gen_adv                      ; $86957E |
   PLY                                       ; $869582 |
   JSL.L multiply_8x16                       ; $869583 |
   LDA.B $01                                 ; $869587 |
@@ -2926,15 +2926,15 @@ rng_random_below:
   RTL                                       ; $86958A |
 
 ;----------------------------------------------------------------
-; Update the random number generator.
+; Generate the next random value.
 ;
 ; Output:
 ;   A = updated RNG value
 ;
 ; Remarks:
-;   The RNG state in the direct page is also updated.
+;   Advances the internal RNG state.
 ;----------------------------------------------------------------
-rng_update:
+random_gen_adv:
   PHX                                       ; $86958B |
   SEP #$20                                  ; $86958C |
   LDA.W $1C8E                               ; $86958E |
@@ -7986,7 +7986,7 @@ CODE_FL_86B8BD:
 CODE_86B8D9:
   ASL A                                     ; $86B8D9 |
   STA.B $00                                 ; $86B8DA |
-  JSL.L rng_advance                         ; $86B8DC |
+  JSL.L random_gen_base                     ; $86B8DC |
   AND.W #$000F                              ; $86B8E0 |
   ADC.W #$001C                              ; $86B8E3 |
   SBC.B $00                                 ; $86B8E6 |
@@ -9617,7 +9617,7 @@ CODE_FL_86C42B:
 ; Remarks:
 ;   Advances the internal RNG state.
 ;----------------------------------------------------------------
-rng_advance:
+random_gen_base:
   LDA.B !r_rng                              ; $86C432 |
   ASL A                                     ; $86C434 |
   ADC.B !r_rng                              ; $86C435 |

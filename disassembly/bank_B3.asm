@@ -88,7 +88,7 @@ CODE_FL_B3FC7F:
   JSL.L CODE_FL_8AB499                      ; $B3FCAB |
   LDA.W #$005A                              ; $B3FCAF |
   STA.B $2C,X                               ; $B3FCB2 |
-  JSL.L rng_update                          ; $B3FCB4 |
+  JSL.L random_gen_adv                      ; $B3FCB4 |
   AND.W #$0007                              ; $B3FCB8 |
   LDY.B !r_room_id                          ; $B3FCBB |
   CPY.W #$00FC                              ; $B3FCBD |
@@ -125,7 +125,7 @@ CODE_FL_B3FCF1:
   LDA.W #$0371                              ; $B3FD03 |
   JSL.L CODE_FL_B3FC10                      ; $B3FD06 |
   BCS CODE_B3FD20                           ; $B3FD0A |
-  JSL.L rng_update                          ; $B3FD0C |
+  JSL.L random_gen_adv                      ; $B3FD0C |
   AND.W #$0001                              ; $B3FD10 |
   INC A                                     ; $B3FD13 |
   STA.W $004E,Y                             ; $B3FD14 |
@@ -144,7 +144,7 @@ CODE_FL_B3FD21:
   LDA.W #$0372                              ; $B3FD27 |
   JSL.L CODE_FL_8695CE                      ; $B3FD2A |
   BCS CODE_B3FD3A                           ; $B3FD2E |
-  JSL.L rng_update                          ; $B3FD30 |
+  JSL.L random_gen_adv                      ; $B3FD30 |
   AND.W #$000F                              ; $B3FD34 |
   STA.W $004E,Y                             ; $B3FD37 |
 

@@ -5197,7 +5197,7 @@ CODE_85A7E0:
 
 CODE_85A7F6:
   STA.B $00                                 ; $85A7F6 |
-  JSL.L rng_advance                         ; $85A7F8 |
+  JSL.L random_gen_base                     ; $85A7F8 |
   AND.W #$000F                              ; $85A7FC |
   CLC                                       ; $85A7FF |
   ADC.W #$0020                              ; $85A800 |
@@ -5524,7 +5524,7 @@ CODE_FL_85AA07:
 try_drop_item:
   LDA.W #$C000                              ; $85AA0F | Set drop threshold
   STA.B $00                                 ; $85AA12 |
-  JSL.L rng_advance                         ; $85AA14 |  Generate random value
+  JSL.L random_gen_base                     ; $85AA14 |  Generate random value
   CMP.B $00                                 ; $85AA18 |\ Skip drop if random value >= 0xC000
   BCS ret_drop                              ; $85AA1A |/
   AND.W #$000F                              ; $85AA1C | Select one of 16 drop entries
@@ -6123,7 +6123,7 @@ CODE_FL_85AD8B:
 CODE_85ADA7:
   ASL A                                     ; $85ADA7 |
   STA.B $00                                 ; $85ADA8 |
-  JSL.L rng_advance                         ; $85ADAA |
+  JSL.L random_gen_base                     ; $85ADAA |
   AND.W #$000F                              ; $85ADAE |
   ADC.W #$001C                              ; $85ADB1 |
   SBC.B $00                                 ; $85ADB4 |
@@ -7291,7 +7291,7 @@ CODE_FL_85B50F:
 
 CODE_FL_85B51A:
   STA.B $00                                 ; $85B51A |
-  JSL.L rng_advance                         ; $85B51C |
+  JSL.L random_gen_base                     ; $85B51C |
   LDA.B !r_rng                              ; $85B520 |
   AND.W #$007F                              ; $85B522 |
   ADC.B $00                                 ; $85B525 |
@@ -7299,7 +7299,7 @@ CODE_FL_85B51A:
 
 CODE_FL_85B528:
   STA.B $00                                 ; $85B528 |
-  JSL.L rng_advance                         ; $85B52A |
+  JSL.L random_gen_base                     ; $85B52A |
   LDA.B !r_rng                              ; $85B52E |
   AND.B $00                                 ; $85B530 |
   BNE CODE_85B535                           ; $85B532 |

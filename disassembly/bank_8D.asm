@@ -1023,13 +1023,13 @@ CODE_8D8720:
 
 CODE_8D872D:
   LDA.W #$0011                              ; $8D872D |
-  JSL.L rng_random_below                    ; $8D8730 |
+  JSL.L random_below                        ; $8D8730 |
   ASL A                                     ; $8D8734 |
   CLC                                       ; $8D8735 |
   ADC.W #$1CAE                              ; $8D8736 |
   STA.B $0A                                 ; $8D8739 |
   LDA.W #$0011                              ; $8D873B |
-  JSL.L rng_random_below                    ; $8D873E |
+  JSL.L random_below                        ; $8D873E |
   ASL A                                     ; $8D8742 |
   CLC                                       ; $8D8743 |
   ADC.W #$1CAE                              ; $8D8744 |
@@ -7321,7 +7321,7 @@ CODE_8DB4FF:
 CODE_8DB513:
   LDA.W #$0052                              ; $8DB513 |
   JSL.L CODE_FL_86CAEE                      ; $8DB516 |
-  JSL.L rng_advance                         ; $8DB51A |
+  JSL.L random_gen_base                     ; $8DB51A |
   AND.W #$00FF                              ; $8DB51E |
   ADC.W #$0200                              ; $8DB521 |
   EOR.W #$FFFF                              ; $8DB524 |
@@ -7706,7 +7706,7 @@ CODE_8DB7B5:
   TYX                                       ; $8DB7B7 |
   PHX                                       ; $8DB7B8 |
   LDA.W $0CAE                               ; $8DB7B9 |
-  JSL.L rng_random_below                    ; $8DB7BC |
+  JSL.L random_below                        ; $8DB7BC |
   LDY.W #$0050                              ; $8DB7C0 |
   JSL.L multiply_8x16                       ; $8DB7C3 |
   CLC                                       ; $8DB7C7 |
@@ -8568,7 +8568,7 @@ PTR16_8DBDC2:
 CODE_8DBDCA:
   JSL.L CODE_FL_86C70D                      ; $8DBDCA |
   LDA.W #$0020                              ; $8DBDCE |
-  JSL.L rng_random_below                    ; $8DBDD1 |
+  JSL.L random_below                        ; $8DBDD1 |
   TAY                                       ; $8DBDD5 |
   LDA.B $4E,X                               ; $8DBDD6 |
   LSR A                                     ; $8DBDD8 |
@@ -8583,7 +8583,7 @@ CODE_8DBDDF:
   LDA.B $0D,X                               ; $8DBDE6 |
   STA.B $3A,X                               ; $8DBDE8 |
   LDA.W #$00B8                              ; $8DBDEA |
-  JSL.L rng_random_below                    ; $8DBDED |
+  JSL.L random_below                        ; $8DBDED |
   ASL A                                     ; $8DBDF1 |
   ASL A                                     ; $8DBDF2 |
   ADC.W #$F8E0                              ; $8DBDF3 |

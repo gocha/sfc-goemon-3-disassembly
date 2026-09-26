@@ -31,10 +31,6 @@ You can use [MSYS2](https://www.msys2.org/) on Windows. After installation, inst
 * Run `make clean` if needed.
 * Run `make` to build the ROM, or `make compare` to build and verify its SHA1 hash.
 
-### Useful Tools
-
-* [M1TE](https://github.com/nesdoug/M1TE2): Graphic Editor
-
 ## Code Style
 
 The code style is loosely based on [yoshisisland-disassembly](https://github.com/brunovalads/yoshisisland-disassembly).
@@ -64,3 +60,7 @@ update_room:
 ```
 
 For details not covered here, follow the surrounding code and use the reference project as guidance.
+
+## Useful Tools
+
+* [M1TE](https://github.com/nesdoug/M1TE2): Graphic Editor

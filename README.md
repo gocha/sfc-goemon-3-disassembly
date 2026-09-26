@@ -35,6 +35,32 @@ You can use [MSYS2](https://www.msys2.org/) on Windows. After installation, inst
 
 * [M1TE](https://github.com/nesdoug/M1TE2): Graphic Editor
 
-## Format
+## Code Style
 
-The code style is based on [yoshisisland-disassembly](https://github.com/brunovalads/yoshisisland-disassembly).
+The code style is loosely based on [yoshisisland-disassembly](https://github.com/brunovalads/yoshisisland-disassembly).
+The main conventions used in this project are:
+
+* Use `ALL_CAPS_UNDERSCORE` for constants and `all_lowercase_and_underscore_delimiting` for meaningful labels and variables.
+* Use parent labels for routines and major data blocks, and `.sublabels` for local control flow. Parent labels end with a colon; sublabels do not.
+* Prefix Asar variables with `!reg_` for hardware registers, `!r_` for RAM, and `!s_` for SRAM.
+
+For example:
+
+```asm
+ROOM_COUNT = $0185
+
+!reg_nmitimen = $4200
+!r_room_id = $008E
+!s_save_data = $700000
+
+update_room:
+  LDA.B !r_room_id
+
+.loop
+  ...
+
+.ret
+  RTL
+```
+
+For details not covered here, follow the surrounding code and use the reference project as guidance.

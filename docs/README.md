@@ -2,6 +2,7 @@
 
 - [Asset Table Format](asset-table.md)
 - [Konami SNES Compression Format](konami-snes-compression.md)
+- [Konami SNES Compressor Strategies](konami-snes-compressor.md)
 - [Text Format](text-format.md)
 
 ## Bank Overview

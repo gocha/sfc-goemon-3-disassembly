@@ -40,12 +40,17 @@ The following command types are used during decompression:
 |-----------|-------------------------|-------------|--------------------------------------------|
 | 0x00-0x7F | 0xx - LZ Copy           | 1           | Copy data from sliding window (see below)  |
 | 0x80-0x9F | 100 - Raw Copy          | L           | Copy L raw bytes                           |
-| 0xA0-0xBF | 101 - RLE Pair          | 1           | Repeat the sequence `[00 V]` (L + 2) times |
+| 0xA0-0xBF | 101 - Zero/Value Pairs  | L + 2       | Output `[00 Vn]` for each following value byte |
 | 0xC0-0xDF | 110 - RLE Byte          | 1           | Repeat byte V (L + 2) times                |
 | 0xE0-0xFE | 111 - Zero RLE          | 0           | Repeat zero byte (L + 2) times             |
 | 0xFF      | 111 - Extended Zero RLE | 1           | Repeat zero byte (N + 2) times             |
 
-`V` and `N` denote the value of the following extra byte.
+`Vn` denotes each of the following value bytes. `N` denotes the value of the
+single following length byte.
+
+For a Zero/Value Pairs command, the value bytes are independent rather than a
+single repeated value. For example, `A1 12 34 56` expands to
+`00 12 00 34 00 56`.
 
 During decompression, all output bytes are written to a buffer, which also serves as the sliding window for LZ references.
 
@@ -100,6 +105,8 @@ Source:      0 1 2 3 4 5 6 7 8 9 A B C D E F
 Destination: 0 8 1 9 2 A 3 B 4 C 5 D 6 E 7 F
 ```
 
-The same operation can be used for both interleaving and deinterleaving.
+Compression applies the inverse permutation: bytes at even destination indexes
+are placed in the first eight source bytes, and bytes at odd destination
+indexes are placed in the last eight source bytes.
 
 Only the Konami logo tileset is currently known to use this flag.
